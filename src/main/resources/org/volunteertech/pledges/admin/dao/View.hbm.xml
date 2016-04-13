@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.admin.dao">
+	<class name="ViewImpl" table="VIEW">
+		<id name="id" column="VIEWID">
+	
+            <generator class="native"/>
+	  
+        </id>
+        
+		<property name="viewName" type="string" column="VIEWNAME" length="50" not-null="true"></property>	
+	  
+        <set name="messageResource" table="MESSAGERESOURCE" inverse="true" lazy="true" fetch="select" cascade="save-update">
+            <key>
+                <column name="VIEWID" not-null="true" />
+            </key>
+            <one-to-many class="org.volunteertech.pledges.localisation.dao.MessageResourceImpl" />
+        </set>
+  
+        <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

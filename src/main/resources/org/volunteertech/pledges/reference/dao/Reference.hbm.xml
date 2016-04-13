@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.reference.dao">
+	<class name="ReferenceImpl" table="REFERENCE">
+		<id name="id" column="REFERENCEID">
+	
+            <generator class="native"/>
+	  
+        </id>
+        
+		<property name="refType" type="string" column="REFTYPE" length="50" not-null="true"></property>	
+	  
+		<property name="refDesc" type="string" column="REFDESC" length="50" not-null="true"></property>	
+	  
+		<property name="parentId" type="long" column="PARENTID" length="10" not-null="true"></property>	
+	  
+		<property name="refIndex" type="long" column="REFINDEX" length="10" not-null="true"></property>	
+	  
+		<property name="description" type="string" column="DESCRIPTION" length="200" ></property>	
+	  
+  		<!-- Mapping for many-to-many relationship defined as ReferenceCategory.references in ApplicationDef.xml -->
+        <set name="referenceCategory" table="REFERENCECATEGORY_REFERENCE"
+            inverse="true" lazy="true" fetch="select">
+            <key column="REFERENCECATEGORYID" />
+            <many-to-many column="REFERENCEID" class="ReferenceImpl" />
+        </set>
+
+  
+        <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

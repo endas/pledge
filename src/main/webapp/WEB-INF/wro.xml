@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<groups xmlns="http://www.isdc.ro/wro"  
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">  
+   
+   <!-- CSS resources -->  
+   <group name="bundledCss">  
+     <css>/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css</css>  
+     <css>/resources/bootstrap/bootstrap-datepicker-1.4.0-dist/css/bootstrap-datepicker3.min.css</css>  
+     <css>/resources/bootstrap/bootstrap-ladda-buttons-0.9.4/dist/ladda-themeless.min.css</css>  
+     <css>/resources/bootstrap/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css</css>  
+     <css>/resources/bootstrap/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css</css>
+     <css>/resources/css/redcross.css</css>
+   </group>
+   
+   <!-- Global JS resources -->  
+   <group name="bundledJs">  
+     <js>/resources/jquery/jquery-1.12.0.min.js</js>
+     <js>/resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.js</js>
+     <js>/resources/bootstrap/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js</js>  
+     <js>/resources/bootstrap/bootstrap-datepicker-1.4.0-dist/js/bootstrap-datepicker.min.js</js>  
+     <js>/resources/bootstrap/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js</js>  
+     <js>/resources/bootstrap/bootstrap-ladda-buttons-0.9.4/dist/spin.min.js</js>  
+     <js>/resources/bootstrap/bootstrap-ladda-buttons-0.9.4/dist/ladda.min.js</js>    
+     <js>/WEB-INF/resources/js/netgrains.js</js>  
+     <js>/WEB-INF/resources/js/validation.js</js>    
+   </group>  
+   
+   
+   
+   <!-- Page specific JS resources -->
+   
+   <group name="addressJs">
+   
+     <js>/WEB-INF/resources/js/address/address.js</js>
+   </group>
+
+   <group name="addressTableJs">
+     <js>/WEB-INF/resources/js/address/address_table.js</js>
+   </group>
+
+   
+   <group name="addressCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="registerOfPledgesJs">
+   
+     <js>/WEB-INF/resources/js/registerofpledges/registerofpledges.js</js>
+   </group>
+
+   <group name="registerOfPledgesTableJs">
+     <js>/WEB-INF/resources/js/registerofpledges/registerofpledges_table.js</js>
+   </group>
+
+   
+   <group name="registerOfPledgesCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="accommodationPledgeJs">
+   
+     <js>/WEB-INF/resources/js/accommodationpledge/accommodationpledge.js</js>
+   </group>
+
+   <group name="accommodationPledgeTableJs">
+     <js>/WEB-INF/resources/js/accommodationpledge/accommodationpledge_table.js</js>
+   </group>
+
+   
+   <group name="accommodationPledgeCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="servicePledgeJs">
+   
+     <js>/WEB-INF/resources/js/servicepledge/servicepledge.js</js>
+   </group>
+
+   <group name="servicePledgeTableJs">
+     <js>/WEB-INF/resources/js/servicepledge/servicepledge_table.js</js>
+   </group>
+
+   
+   <group name="servicePledgeCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="goodsPledgeJs">
+   
+     <js>/WEB-INF/resources/js/goodspledge/goodspledge.js</js>
+   </group>
+
+   <group name="goodsPledgeTableJs">
+     <js>/WEB-INF/resources/js/goodspledge/goodspledge_table.js</js>
+   </group>
+
+   
+   <group name="goodsPledgeCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="referenceCategoryJs">
+   
+     <js>/WEB-INF/resources/js/referencecategory/referencecategory.js</js>
+   </group>
+
+   <group name="referenceCategoryTableJs">
+     <js>/WEB-INF/resources/js/referencecategory/referencecategory_table.js</js>
+   </group>
+
+   
+   <group name="referenceCategoryCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="referenceJs">
+   
+     <js>/WEB-INF/resources/js/reference/reference.js</js>
+   </group>
+
+   <group name="referenceTableJs">
+     <js>/WEB-INF/resources/js/reference/reference_table.js</js>
+   </group>
+
+   
+   <group name="referenceCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="landingJs">
+   
+     <js>/resources/scrolling/jquery.easing.min.js</js>
+     <js>/resources/scrolling/scrolling-nav.js</js>
+     
+     <js>/WEB-INF/resources/js/landing/landing.js</js>
+   </group>
+
+   <group name="landingTableJs">
+     <js>/WEB-INF/resources/js/landing/landing_table.js</js>
+   </group>
+
+   
+   <group name="landingCss">
+   
+     <css>/resources/css/redcross.css</css>    
+     
+   </group>
+   
+
+   <group name="viewJs">
+   
+     <js>/WEB-INF/resources/js/view/view.js</js>
+   </group>
+
+   <group name="viewTableJs">
+     <js>/WEB-INF/resources/js/view/view_table.js</js>
+   </group>
+
+   
+   <group name="viewCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="messageResourceJs">
+   
+     <js>/WEB-INF/resources/js/messageresource/messageresource.js</js>
+   </group>
+
+   <group name="messageResourceTableJs">
+     <js>/WEB-INF/resources/js/messageresource/messageresource_table.js</js>
+   </group>
+
+   
+   <group name="messageResourceCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="applicationUserJs">
+   
+     <js>/WEB-INF/resources/js/applicationuser/applicationuser.js</js>
+   </group>
+
+   <group name="applicationUserTableJs">
+     <js>/WEB-INF/resources/js/applicationuser/applicationuser_table.js</js>
+   </group>
+
+   
+   <group name="applicationUserCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   <group name="applicationUserDetailsJs">
+   
+     <js>/WEB-INF/resources/js/applicationuserdetails/applicationuserdetails.js</js>
+   </group>
+
+   <group name="applicationUserDetailsTableJs">
+     <js>/WEB-INF/resources/js/applicationuserdetails/applicationuserdetails_table.js</js>
+   </group>
+
+   
+   <group name="applicationUserDetailsCss">
+   
+     <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+
+   
+ 
+ </groups>

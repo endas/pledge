@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.servicepledge.dao">
+	<class name="ServicePledgeImpl" table="SERVICEPLEDGE">
+		<id name="id" column="SERVICEPLEDGEID">
+	
+            <generator class="native"/>
+	  
+        </id>
+        
+		<property name="pledgeServiceLevelOne" type="long" column="PLEDGESERVICELEVELONE" length="10" ></property>	
+	  
+		<property name="pledgeServiceLevelTwo" type="long" column="PLEDGESERVICELEVELTWO" length="10" ></property>	
+	  
+		<property name="pledgeServiceLevelThree" type="long" column="PLEDGESERVICELEVELTHREE" length="10" ></property>	
+	  
+		<property name="additionalInformation" type="string" column="ADDITIONALINFORMATION" length="500" ></property>	
+	  
+		<property name="pledgeServiceQualification" type="string" column="PLEDGESERVICEQUALIFICATION" length="500" ></property>	
+	  
+		<property name="pledgeServiceDateAvailable" type="timestamp" column="PLEDGESERVICEDATEAVAILABLE"  ></property>	
+	  
+		<property name="pledgeServiceHoursPerWeek" type="long" column="PLEDGESERVICEHOURSPERWEEK" length="10" ></property>	
+	  
+        <many-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl" fetch="select">
+            <column name="REGISTEROFPLEDGESID" not-null="false" />
+        </many-to-one>
+  
+        <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.localisation.dao">
+	<class name="MessageResourceImpl" table="MESSAGERESOURCE">
+		<id name="id" column="MESSAGERESOURCEID">
+	
+            <generator class="native"/>
+	  
+        </id>
+        
+		<property name="messageKey" type="string" column="MESSAGEKEY" length="200" not-null="true"></property>	
+	  
+		<property name="locale" type="string" column="LOCALE" length="10" not-null="true"></property>	
+	  
+		<property name="localeReferenceId" type="long" column="LOCALEREFERENCEID" length="10" not-null="true"></property>	
+	  
+		<property name="message" type="string" column="MESSAGE" length="2000" not-null="true"></property>	
+	  
+        <many-to-one name="view" class="org.volunteertech.pledges.admin.dao.ViewImpl" fetch="select">
+            <column name="VIEWID" not-null="false" />
+        </many-to-one>
+  
+        <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

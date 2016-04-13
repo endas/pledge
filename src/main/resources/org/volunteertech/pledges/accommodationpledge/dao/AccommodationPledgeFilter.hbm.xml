@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.accommodationpledge.dao">
+	<class name="AccommodationPledgeFilter" table="ACCOMMODATIONPLEDGEFILTER">
+		<id name="id" column="USERID">
+            <generator class="assigned"/>
+        </id>
+        
+        <property name="createdByID" type="long" column="CREATEDBYID"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.users.dao">
+	<class name="ApplicationUserHistory" table="APPLICATIONUSERHISTORY">
+		<id name="id" column="APPLICATIONUSERHISTORYID">
+            <generator class="native"/>
+        </id>
+        <property name="applicationUserID" type="long" column="APPLICATIONUSERID"/>
+        
+		<property name="username" type="string" column="USERNAME" length="45"></property>	
+	  
+		<property name="password" type="string" column="PASSWORD" length="60"></property>	
+	  
+		<property name="enabled" type="boolean" column="ENABLED" ></property>	
+	  
+        <property name="createdByID" type="long" column="CREATEDBYID"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

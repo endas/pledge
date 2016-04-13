@@ -1,0 +1,8 @@
+/bin/
+/build/
+/.settings/
+/RemoteSystemsTempFiles/
+/.metadata/
+.classpath
+.project
+.gradle
