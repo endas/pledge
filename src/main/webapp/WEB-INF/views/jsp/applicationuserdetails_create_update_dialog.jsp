@@ -37,18 +37,7 @@
 				  
 		  </div>
   
-		  <div id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="applicationuserdetails.representorganisation.label" for="frmApplicationUserDetailsCreateUpdateRepresentOrganisation" class="control-label"><spring:message code="frmApplicationUserDetailsRepresentOrganisationLabel"/></label>	
-			<select class="form-control" data-display-name="Are you pledging on behalf of an organisation?" data-select-type="standalone" data-required="true" id="frmApplicationUserDetailsCreateUpdateRepresentOrganisation" aria-describedby="frmApplicationUserDetailsCreateUpdateRepresentOrganisationHelpBlock">
-			</select>
-	  
-			<span id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsRepresentOrganisationHelpBlock"/></span>
-			<div id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationAlertBlockText"></span>
-			</div>
-				  
-		  </div>
+		
   
 		  <div id="frmApplicationUserDetailsCreateUpdateTelephoneNumberFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.telephonenumber.label" for="frmApplicationUserDetailsCreateUpdateTelephoneNumber" class="control-label"><spring:message code="frmApplicationUserDetailsTelephoneNumberLabel"/></label>
@@ -156,7 +145,18 @@
 			</div>
 				  
 		  </div>
-
+		<div id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="applicationuserdetails.representorganisation.label" for="frmApplicationUserDetailsCreateUpdateRepresentOrganisation" class="control-label"><spring:message code="frmApplicationUserDetailsRepresentOrganisationLabel"/></label>	
+			<select class="form-control" data-display-name="Are you pledging on behalf of an organisation?" data-select-type="standalone" data-required="true" id="frmApplicationUserDetailsCreateUpdateRepresentOrganisation" aria-describedby="frmApplicationUserDetailsCreateUpdateRepresentOrganisationHelpBlock">
+			</select>
+	  
+			<span id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsRepresentOrganisationHelpBlock"/></span>
+			<div id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationAlertBlockText"></span>
+			</div>
+				  
+		  </div>
         </form>
       </div>
       <div class="modal-footer">

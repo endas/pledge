@@ -239,10 +239,11 @@ public class ApplicationUserDetailsDaoImpl implements ApplicationUserDetailsDao
      */
     public List<ApplicationUserDetails> listApplicationUserDetailsByEmailAddress(String emailAddress)
     {
-        @SuppressWarnings("unchecked")
-        List<ApplicationUserDetails> result = this.sessionFactory.getCurrentSession().createQuery("from ApplicationUserDetailsImpl as applicationUserDetails where applicationUserDetails.emailAddress = :emailaddress order by applicationUserDetails.id asc").setParameter("emailaddress", emailAddress).list();
-
-        return result;
+    	return null;//FIXME - update this to refer to the ApplicationUser email instead
+//        @SuppressWarnings("unchecked")
+//        List<ApplicationUserDetails> result = this.sessionFactory.getCurrentSession().createQuery("from ApplicationUserDetailsImpl as applicationUserDetails where applicationUserDetails.emailAddress = :emailaddress order by applicationUserDetails.id asc").setParameter("emailaddress", emailAddress).list();
+//
+//        return result;
     }
 
     

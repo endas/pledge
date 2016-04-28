@@ -68,7 +68,7 @@
     
 		  </div>
   
-		  <div id="frmApplicationUserCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+		  <%-- <div id="frmApplicationUserCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuser.savebutton.label" for="frmApplicationUserCreateUpdateSaveButton" class="control-label"><spring:message code="frmApplicationUserSaveButtonLabel"/></label>
 			<span id="frmApplicationUserCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmApplicationUserSaveButtonHelpBlock"/></span>
 			<div id="frmApplicationUserCreateUpdateSaveButtonAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -76,13 +76,13 @@
   				<span id="frmApplicationUserCreateUpdateSaveButtonAlertBlockText"></span>
 			</div>
 				  
-		  </div>
+		  </div> --%>
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" id="frmApplicationUserCreateUpdateCloseButton" class="btn btn-default">Close</button>
-        <button type="button" id="frmApplicationUserCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Send message</span></button>
+        <button type="button" id="frmApplicationUserCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save</span></button>
       </div>
     </div>
   </div>

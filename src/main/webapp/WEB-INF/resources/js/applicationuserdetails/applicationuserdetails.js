@@ -20,9 +20,6 @@ var frmApplicationUserDetailsPostCodeBuffer = document.getElementById("frmApplic
 var frmApplicationUserDetailsCountryBuffer = document.getElementById("frmApplicationUserDetailsCountry").value;
       
 var frmApplicationUserDetailsCountryTextBuffer = getSelectedText(document.getElementById("frmApplicationUserDetailsCountry"));      
-      
-var frmApplicationUserDetailsEmailAddressBuffer = document.getElementById("frmApplicationUserDetailsEmailAddress").value;
-      
 
 $( document ).ready(function() {
 	var displayTextAreaCount = false;
@@ -320,17 +317,17 @@ if ($('#frmApplicationUserDetailsMode').val() == 'LOCALIZE'){
 			changedCounter++;
 		}
 	
-		if (document.getElementById("frmApplicationUserDetailsEmailAddress").value != frmApplicationUserDetailsEmailAddressBuffer){
-			document.getElementById("frmApplicationUserDetailsEmailAddressFormGroup").className += " has-error";
-			replaceText(document.getElementById("frmApplicationUserDetailsEmailAddressHelpBlock"), "Previous Value: " + frmApplicationUserDetailsEmailAddressBuffer);
-			
-			if (focusSet == false){
-				focusControl = document.getElementById("frmApplicationUserDetailsEmailAddress");
-				focusSet = true;
-			}
-			changedCounter++;
-		}
-	
+//		if (document.getElementById("frmApplicationUserDetailsEmailAddress").value != frmApplicationUserDetailsEmailAddressBuffer){
+//			document.getElementById("frmApplicationUserDetailsEmailAddressFormGroup").className += " has-error";
+//			replaceText(document.getElementById("frmApplicationUserDetailsEmailAddressHelpBlock"), "Previous Value: " + frmApplicationUserDetailsEmailAddressBuffer);
+//			
+//			if (focusSet == false){
+//				focusControl = document.getElementById("frmApplicationUserDetailsEmailAddress");
+//				focusSet = true;
+//			}
+//			changedCounter++;
+//		}
+//	
 	
 		if (changedCounter > 0){
 	

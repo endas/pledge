@@ -687,7 +687,7 @@ $( document ).ready(function() {
 
 								document.getElementById("frmApplicationUserDetailsRepresentOrganisationMessage").innerHTML = obj.representOrganisationReferenceTranslation;
 
-								document.getElementById("frmApplicationUserDetailsEmailAddressMessage").innerHTML = obj.emailAddress;
+//								document.getElementById("frmApplicationUserDetailsEmailAddressMessage").innerHTML = obj.emailAddress;
 
 								document.getElementById("frmApplicationUserDetailsTelephoneNumberMessage").innerHTML = obj.telephoneNumber;
 
