@@ -90,6 +90,18 @@
 				  
 		  </div>
   
+ 		 <div id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="servicepledge.pledgeservicedateavailableto.label" for="frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo" class="control-label"><spring:message code="frmServicePledgePledgeServiceDateAvailableToLabel"/></label>
+			<input type="text" data-display-name="Date Available Until" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo" placeholder="<spring:message code="frmServicePledgePledgeServiceDateAvailableToPlaceHolder"/>" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToHelpBlock"  data-toggle="popover"/>
+			<span id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToHelpBlock" class="help-block"><spring:message code="frmServicePledgePledgeServiceDateAvailableToHelpBlock"/></span>
+			<div id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToAlertBlockText"></span>
+			</div> 
+		  </div>
+  
+  
+  
 		  <div id="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.pledgeservicehoursperweek.label" for="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek" class="control-label"><spring:message code="frmServicePledgePledgeServiceHoursPerWeekLabel"/></label>	
 			<select class="form-control" data-display-name="Hours per week" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekHelpBlock">
@@ -103,7 +115,7 @@
 				  
 		  </div>
   
-		  <div id="frmServicePledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+		 <%--  <div id="frmServicePledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.savebutton.label" for="frmServicePledgeCreateUpdateSaveButton" class="control-label"><spring:message code="frmServicePledgeSaveButtonLabel"/></label>
 			<span id="frmServicePledgeCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmServicePledgeSaveButtonHelpBlock"/></span>
 			<div id="frmServicePledgeCreateUpdateSaveButtonAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -111,13 +123,13 @@
   				<span id="frmServicePledgeCreateUpdateSaveButtonAlertBlockText"></span>
 			</div>
 				  
-		  </div>
+		  </div> --%>
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" id="frmServicePledgeCreateUpdateCloseButton" class="btn btn-default">Close</button>
-        <button type="button" id="frmServicePledgeCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Send message</span></button>
+        <button type="button" id="frmServicePledgeCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save Pledge</span></button>
       </div>
     </div>
   </div>

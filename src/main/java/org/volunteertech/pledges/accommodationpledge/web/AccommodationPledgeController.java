@@ -193,7 +193,8 @@ public class AccommodationPledgeController extends BaseController
 
 			
 			// POST/REDIRECT/GET
-			return "redirect:/accommodationpledge/" + accommodationPledge.getId() + "/update";
+//			return "redirect:/accommodationpledge/" + accommodationPledge.getId() + "/update";
+			return "redirect:/entitylist/";
 		}
 
 	}

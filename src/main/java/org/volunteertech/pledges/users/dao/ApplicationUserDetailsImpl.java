@@ -59,6 +59,9 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
     private Long representOrganisation;
     
     /** the pledge is from an organisation */
+    private String organisationName;
+    
+    /** the pledge is from an organisation */
     private String representOrganisationReferenceTranslation;
     
 	
@@ -527,7 +530,17 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 	}
     
     
-     @Override
+    @Override
+	public String getOrganisationName() {
+		return this.organisationName;
+	}
+
+	@Override
+	public void setOrganisationName(String organisationName) {
+		this.organisationName = organisationName;
+	}
+
+	@Override
      public String toString(){
     	return "ApplicationUserDetails [id=" + id + ", " + "contactName=" + contactName + ", " + "representOrganisation=" + representOrganisation + ", " + "telephoneNumber=" + telephoneNumber + ", " + "addressOne=" + addressOne + ", " + "addressTwo=" + addressTwo + ", " + "city=" + city + ", " + "stateProvinceRegion=" + stateProvinceRegion + ", " + "postCode=" + postCode + ", " + "country=" + country + ", " + "emailAddress=" + emailAddress + "]";
      }

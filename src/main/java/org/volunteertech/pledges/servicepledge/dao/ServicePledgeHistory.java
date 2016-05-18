@@ -46,6 +46,7 @@ public class ServicePledgeHistory
 	
     /** the participant date of birth */
     private Date pledgeServiceDateAvailable;
+    private Date pledgeServiceDateAvailableTo;
     
     /** the address type */
     private Long pledgeServiceHoursPerWeek;
@@ -323,7 +324,13 @@ public class ServicePledgeHistory
         return dateUpdated;
     }
     
-     
+    public void setPledgeServiceDateAvailableTo(Date date){
+		this.pledgeServiceDateAvailableTo = date;
+	}
+	
+	public Date getPledgeServiceDateAvailableTo(){
+		return this.pledgeServiceDateAvailableTo;
+	}
 }
     
     

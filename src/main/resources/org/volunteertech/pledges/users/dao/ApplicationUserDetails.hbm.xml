@@ -19,7 +19,7 @@
 		<property name="contactName" type="string" column="CONTACTNAME" length="50" not-null="true"></property>	
 	  
 		<property name="representOrganisation" type="long" column="REPRESENTORGANISATION" length="10" not-null="true"></property>	
-	  
+	  	<property name="organisationName" type="string" column="ORGANISATIONNAME" length="256" not-null="false"></property>	
 		<property name="telephoneNumber" type="string" column="TELEPHONENUMBER" length="20" ></property>	
 	  
 		<property name="addressOne" type="string" column="ADDRESSONE" length="50" not-null="true"></property>	

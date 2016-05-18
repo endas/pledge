@@ -79,8 +79,11 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     /** the participant comments */
     private String pledgeServiceQualification;
 	
-    /** the participant date of birth */
+    /** date available from */
     private Date pledgeServiceDateAvailable;
+    
+    /** available to */
+    private Date pledgeServiceDateAvailableTo;
     
     /** the address type */
     private Long pledgeServiceHoursPerWeek;
@@ -495,11 +498,32 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 		return this.currentMode;
 	}
     
+	public void setPledgeServiceDateAvailableTo(Date date){
+		this.pledgeServiceDateAvailableTo = date;
+	}
+	
+	public Date getPledgeServiceDateAvailableTo(){
+		return this.pledgeServiceDateAvailableTo;
+	}
+
+	@Override
+	public String toString() {
+		return "ServicePledgeImpl [id=" + id + ", parentObjectId=" + parentObjectId + ", currentMode=" + currentMode
+				+ ", pledgeServiceLevelOne=" + pledgeServiceLevelOne + ", pledgeServiceLevelOneReferenceTranslation="
+				+ pledgeServiceLevelOneReferenceTranslation + ", pledgeServiceLevelTwo=" + pledgeServiceLevelTwo
+				+ ", pledgeServiceLevelTwoReferenceTranslation=" + pledgeServiceLevelTwoReferenceTranslation
+				+ ", pledgeServiceLevelThree=" + pledgeServiceLevelThree
+				+ ", pledgeServiceLevelThreeReferenceTranslation=" + pledgeServiceLevelThreeReferenceTranslation
+				+ ", additionalInformation=" + additionalInformation + ", pledgeServiceQualification="
+				+ pledgeServiceQualification + ", pledgeServiceDateAvailable=" + pledgeServiceDateAvailable
+				+ ", pledgeServiceDateAvailableTo=" + pledgeServiceDateAvailableTo + ", pledgeServiceHoursPerWeek="
+				+ pledgeServiceHoursPerWeek + ", pledgeServiceHoursPerWeekReferenceTranslation="
+				+ pledgeServiceHoursPerWeekReferenceTranslation + ", registerOfPledges=" + registerOfPledges
+				+ ", createdByID=" + createdByID + ", updatedByID=" + updatedByID + ", dateCreated=" + dateCreated
+				+ ", dateUpdated=" + dateUpdated + "]";
+	}
     
-     @Override
-     public String toString(){
-    	return "ServicePledge [id=" + id + ", " + "pledgeServiceLevelOne=" + pledgeServiceLevelOne + ", " + "pledgeServiceLevelTwo=" + pledgeServiceLevelTwo + ", " + "pledgeServiceLevelThree=" + pledgeServiceLevelThree + ", " + "additionalInformation=" + additionalInformation + ", " + "pledgeServiceQualification=" + pledgeServiceQualification + ", " + "pledgeServiceDateAvailable=" + pledgeServiceDateAvailable + ", " + "pledgeServiceHoursPerWeek=" + pledgeServiceHoursPerWeek + "]";
-     }
+   
 }
     
     

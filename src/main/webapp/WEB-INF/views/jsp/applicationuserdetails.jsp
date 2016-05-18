@@ -414,6 +414,37 @@
 		  </div>
       
 		</spring:bind>
+		
+		<spring:bind path="organisationName">
+      
+		  <div id="frmApplicationUserDetailsOrganisationNameFormGroup" class="form-group has-feedback hidden ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmApplicationUserDetailsOrganisationNameLabel" for="frmApplicationUserDetailsOrganisationName" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsOrganisationNameLabel"/></label>
+		  
+			<div class="col-sm-10">
+				
+				<spring:message code="frmApplicationUserDetailsOrganisationNamePlaceHolder" var="frmApplicationUserDetailsOrganisationNamePlaceHolder"/>    
+    
+				<form:input path="organisationName" type="text" data-display-name="Organisation Name" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsOrganisationName" placeholder="${frmApplicationUserDetailsOrganisationNamePlaceHolder}" aria-describedby="frmApplicationUserDetailsOrganisationNameHelpBlock" data-validate-key-press="true"/>
+    
+				<span id="frmApplicationUserDetailsOrganisationNameFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmApplicationUserDetailsOrganisationNameAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmApplicationUserDetailsOrganisationNameAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmApplicationUserDetailsOrganisationNameHelpBlock" path="organisationName" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmApplicationUserDetailsOrganisationNameHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmApplicationUserDetailsOrganisationNameHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		</spring:bind>
 			</div> <!-- class="panel-body" -->
 		</div> <!-- class="panel panel-default" -->
 	</div> <!-- class="container" -->

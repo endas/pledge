@@ -1,5 +1,6 @@
 package org.volunteertech.pledges.users.validator;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -9,6 +10,7 @@ import org.springframework.validation.Validator;
 
 import com.netgrains.validators.EmailValidator;
 import org.volunteertech.pledges.users.dao.ApplicationUser;
+import org.volunteertech.pledges.reference.ReferenceStore;
 import org.volunteertech.pledges.users.business.ApplicationUserBo;
 
 @Component
@@ -26,18 +28,19 @@ public class ApplicationUserFormValidator implements Validator {
 		return ApplicationUser.class.isAssignableFrom(clazz);
 	}
 
+    final static Logger logger = LoggerFactory.getLogger(ApplicationUserFormValidator.class);
 	@Override
 	public void validate(Object target, Errors errors) {
 
 		ApplicationUser applicationUser = (ApplicationUser) target;
 		
-		if (applicationUser.getUsername().length() > 45){
-			errors.rejectValue("username", "applicationuser.username.validation.length", new Object[] {45}, "< 45");
-		}
-		  
-		if ( (applicationUser.getUsername().length() > 0) && (applicationUser.getUsername().length() < 5) ){
-			errors.rejectValue("username", "applicationuser.username.optional.validation.minimumlength", new Object[] {5}, "> 5");
-		}
+//		if (applicationUser.getUsername().length() > 45){
+//			errors.rejectValue("username", "applicationuser.username.validation.length", new Object[] {45}, "< 45");
+//		}
+//		  
+//		if ( (applicationUser.getUsername().length() > 0) && (applicationUser.getUsername().length() < 5) ){
+//			errors.rejectValue("username", "applicationuser.username.optional.validation.minimumlength", new Object[] {5}, "> 5");
+//		}
 		    
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "applicationuser.password.validation.required");    
         
@@ -49,7 +52,17 @@ public class ApplicationUserFormValidator implements Validator {
 			errors.rejectValue("password", "applicationuser.password.validation.minimumlength", new Object[] {5}, "> 5");
 		}
 		    
-		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "applicationuser.username.validation.required");    
+//      
+//		if(!emailValidator.valid(applicationUserDetails.getEmailAddress())){
+//			errors.rejectValue("emailAddress", "applicationuserdetails.emailaddress.email.invalid");
+//		}
+//    
+//      
+		if(!emailValidator.valid(applicationUser.getUsername())){
+			errors.rejectValue("username", "applicationuser.username.invalid");
+		}
+  
 
 
 	}

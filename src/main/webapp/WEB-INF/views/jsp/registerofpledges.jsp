@@ -299,6 +299,7 @@
 							<th>Action</th>
 							
 					<th><spring:message code="frmServicePledgePledgeServiceDateAvailableLabel"/></th>
+					<th><spring:message code="frmServicePledgePledgeServiceDateAvailableToLabel"/></th>
 
 					<th><spring:message code="frmServicePledgePledgeServiceLevelOneLabel"/></th>
 

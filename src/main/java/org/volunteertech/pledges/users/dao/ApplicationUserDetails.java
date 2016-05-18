@@ -106,6 +106,18 @@ public interface ApplicationUserDetails extends Serializable {
      */
     public String getRepresentOrganisationReferenceTranslation();
       
+    /**
+     * blah blah who needs comments
+     * @return
+     */
+	public String getOrganisationName();
+	
+	   
+    /**
+     * blah blah who needs comments
+     * @return
+     */
+	public void setOrganisationName(String organisationName);
     
     /**
      * Sets An example of a Telephone Number
@@ -300,6 +312,8 @@ public interface ApplicationUserDetails extends Serializable {
      * @return A member of the CurrentMode Enumeration
      */
 	public CurrentMode getCurrentMode();
+	
+
 }
     
     

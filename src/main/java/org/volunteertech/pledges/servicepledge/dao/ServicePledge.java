@@ -175,6 +175,11 @@ public interface ServicePledge extends Serializable {
      * @param pledgeServiceDateAvailable is the participant date of birth
      */
     public void setPledgeServiceDateAvailable(Date pledgeServiceDateAvailable);
+    
+    public void setPledgeServiceDateAvailableTo(Date d);
+	
+	public Date getPledgeServiceDateAvailableTo();
+    
 
     /**
      * Returns the participant date of birth

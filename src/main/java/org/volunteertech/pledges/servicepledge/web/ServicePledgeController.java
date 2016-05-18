@@ -381,6 +381,14 @@ public class ServicePledgeController extends BaseController
   			messageResource = populateMessageResource(ServicePledgeTranslationBackingBeanImpl.PLEDGESERVICEDATEAVAILABLE_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, servicePledgeTranslationBackingBean.getPledgeServiceDateAvailableHelpText());
   			messageResourceList.add(messageResource);
   		
+  			
+  	messageResource = populateMessageResource(ServicePledgeTranslationBackingBeanImpl.PLEDGESERVICEDATEAVAILABLETO_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, servicePledgeTranslationBackingBean.getPledgeServiceDateAvailableLabel());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(ServicePledgeTranslationBackingBeanImpl.PLEDGESERVICEDATEAVAILABLETO_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, servicePledgeTranslationBackingBean.getPledgeServiceDateAvailablePlaceHolder());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(ServicePledgeTranslationBackingBeanImpl.PLEDGESERVICEDATEAVAILABLETO_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, servicePledgeTranslationBackingBean.getPledgeServiceDateAvailableHelpText());
+  			messageResourceList.add(messageResource);
+  			
 	messageResource = populateMessageResource(ServicePledgeTranslationBackingBeanImpl.PLEDGESERVICEHOURSPERWEEK_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, servicePledgeTranslationBackingBean.getPledgeServiceHoursPerWeekLabel());
   			messageResourceList.add(messageResource);
   			messageResource = populateMessageResource(ServicePledgeTranslationBackingBeanImpl.PLEDGESERVICEHOURSPERWEEK_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, servicePledgeTranslationBackingBean.getPledgeServiceHoursPerWeekPlaceHolder());

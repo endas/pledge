@@ -214,7 +214,7 @@
 				  
 		  </div>
   
-		  <div id="frmAccommodationPledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+		  <%-- <div id="frmAccommodationPledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.savebutton.label" for="frmAccommodationPledgeCreateUpdateSaveButton" class="control-label"><spring:message code="frmAccommodationPledgeSaveButtonLabel"/></label>
 			<span id="frmAccommodationPledgeCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeSaveButtonHelpBlock"/></span>
 			<div id="frmAccommodationPledgeCreateUpdateSaveButtonAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -222,13 +222,13 @@
   				<span id="frmAccommodationPledgeCreateUpdateSaveButtonAlertBlockText"></span>
 			</div>
 				  
-		  </div>
+		  </div> --%>
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" id="frmAccommodationPledgeCreateUpdateCloseButton" class="btn btn-default">Close</button>
-        <button type="button" id="frmAccommodationPledgeCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Send message</span></button>
+        <button type="button" id="frmAccommodationPledgeCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save Pledge</span></button>
       </div>
     </div>
   </div>
