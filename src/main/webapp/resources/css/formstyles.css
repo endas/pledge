@@ -1,0 +1,43 @@
+        body {
+            background: url('../images/aboutuBG.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+        .panel-heading {
+            border-radius: 0px;
+            background-color: #cc0001;
+            padding-left: 40px;
+        }
+        .btn {
+            color: #ffffff;
+            font-size: 1em;
+            background: #f80000;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+            border-radius: 0px;
+            width: 30%;
+            border-color: #f80000;
+        }
+        .btn:hover {
+            text-decoration: none;
+            background: ;
+        }
+        .form-control {
+            border-radius: 0px;
+        }
+        .form-control:focus {
+            border-color: #f80000;
+            box-shadow: none;
+        }
+        .form-control-static {
+            padding: 0px 15px;
+        }
+        .btn {
+            width: 30%;
+            min-width: 250px;
+        }
+        .modal-footer {
+            text-align: center;
+        }

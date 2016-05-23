@@ -19,12 +19,9 @@
 	<spring:url value="/wro/bundledCss.css" var="bundledCss" />
 	<spring:url value="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" var="fontAwesomeCss" />
 	<spring:url value="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" var="dataTablesForBootstrapCss" />
-	<spring:url value="/resources/css/formstyles.css" var="formStylesCss" />
-	
 
 	<link href="${bundledCss}" rel="stylesheet" />
 	<link href="${fontAwesomeCss}" rel="stylesheet" />
 	<link href="${dataTablesForBootstrapCss}" rel="stylesheet" />
-	<link href="${formStylesCss}" rel="stylesheet" />
 	
 </head>

@@ -454,7 +454,7 @@
 	    
 			<div class="panel-body">
 		    
-	    <button type="submit" class="btn-lg btn-primary"><spring:message code="frmApplicationUserDetailsSaveButtonLabel"/></button>
+	    <button type="submit" class="btn btn-primary"><spring:message code="frmApplicationUserDetailsSaveButtonLabel"/></button>
 
 			</div> <!-- class="panel-body" -->
 		</div> <!-- class="panel panel-default" -->
