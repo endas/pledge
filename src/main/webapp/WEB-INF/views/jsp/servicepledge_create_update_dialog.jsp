@@ -17,7 +17,7 @@
 		  
 		  <div id="frmServicePledgeCreateUpdatePledgeServiceLevelOneFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.pledgeservicelevelone.label" for="frmServicePledgeCreateUpdatePledgeServiceLevelOne" class="control-label"><spring:message code="frmServicePledgePledgeServiceLevelOneLabel"/></label>	
-			<select class="form-control" data-display-name="Your Service" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceLevelOne" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceLevelOneHelpBlock">
+			<select class="form-control" data-display-name="Your Service" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceLevelOne" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceLevelOneHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmServicePledgeCreateUpdatePledgeServiceLevelTwo'), 'theValueToSet', 'PledgeServiceLevelTwo', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>')">
 			</select>
 	  
 			<span id="frmServicePledgeCreateUpdatePledgeServiceLevelOneHelpBlock" class="help-block"><spring:message code="frmServicePledgePledgeServiceLevelOneHelpBlock"/></span>
@@ -30,7 +30,7 @@
   
 		  <div id="frmServicePledgeCreateUpdatePledgeServiceLevelTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.pledgeserviceleveltwo.label" for="frmServicePledgeCreateUpdatePledgeServiceLevelTwo" class="control-label"><spring:message code="frmServicePledgePledgeServiceLevelTwoLabel"/></label>	
-			<select class="form-control" data-display-name="" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceLevelTwo" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceLevelTwoHelpBlock">
+			<select class="form-control" data-display-name="" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceLevelTwo" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceLevelTwoHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmServicePledgeCreateUpdatePledgeServiceLevelThree'), 'theValueToSet', 'PledgeServiceLevelThree', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>')">
 			</select>
 	  
 			<span id="frmServicePledgeCreateUpdatePledgeServiceLevelTwoHelpBlock" class="help-block"><spring:message code="frmServicePledgePledgeServiceLevelTwoHelpBlock"/></span>

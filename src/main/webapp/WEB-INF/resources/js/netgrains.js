@@ -70,10 +70,7 @@ function loadChildSelectAndSelectValue(parentSelect, childSelect, selectedValue,
 		parentSelectValue= -1;
 	}
 	
-	if (parentSelectValue == -1){
-		removeSelectOptions(childSelect);
-		return;
-	}
+	removeSelectOptions(childSelect);
 
 	$.ajax({
 		dataType: "json",
@@ -84,11 +81,6 @@ function loadChildSelectAndSelectValue(parentSelect, childSelect, selectedValue,
 		referenceType: referenceType
 		},
 		success: function( data ) {
-			removeSelectOptions(childSelect);
-			var unselectedOption = document.createElement("option");
-			unselectedOption.value = -1;
-			unselectedOption.textContent = unselectedText;
-			childSelect.appendChild(unselectedOption);
 
 			$.each( data, function( key, val ) {
 				var el = document.createElement("option");
