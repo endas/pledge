@@ -38,8 +38,12 @@
 	  
 		<one-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl"
 			constrained="true"></one-to-one>
-  
-        <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
+			
+		<many-to-one name="applicationUser" class="org.volunteertech.pledges.users.dao.ApplicationUserImpl" unique="true" cascade="save-update"  lazy="false"  column="APPLICATIONUSERID" update="false">
+			
+		</many-to-one>
+		 
+		<property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
         <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>

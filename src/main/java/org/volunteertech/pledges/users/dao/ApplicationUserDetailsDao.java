@@ -141,6 +141,11 @@ public interface ApplicationUserDetailsDao
     
     
     /**
+     * @return the application user details obj that has the specific userID.. can only be one
+     */
+    public List<ApplicationUserDetails> getApplicationUserDetailsByApplicationUser(Long appUserId);
+    
+    /**
      * Load all existing ApplicationUserDetailsHistory objects for a particular ApplicationUserDetails from the database.
      * Hibernate will generate the appropriate SQL,
      * send it to the database and populate ApplicationUserDetailsHistory objects with the data.

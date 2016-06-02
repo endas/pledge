@@ -348,9 +348,9 @@
       
 		</spring:bind>
       
-		<%-- <spring:bind path="emailAddress">
+		 <spring:bind path="emailAddress">
       
-		  <div id="frmApplicationUserDetailsEmailAddressFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  <div id="frmApplicationUserDetailsEmailAddressFormGroup" class="hidden form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
 			<label id="frmApplicationUserDetailsEmailAddressLabel" for="frmApplicationUserDetailsEmailAddress" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsEmailAddressLabel"/></label>
 		  
@@ -377,7 +377,7 @@
 				</c:choose>
 		  </div>
       
-		</spring:bind> --%>
+		</spring:bind> 
       	<spring:bind path="representOrganisation">
       
 		  <div id="frmApplicationUserDetailsRepresentOrganisationFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">

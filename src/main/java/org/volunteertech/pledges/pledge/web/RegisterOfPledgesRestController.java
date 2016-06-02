@@ -29,7 +29,7 @@ import org.volunteertech.pledges.pledge.dao.RegisterOfPledgesSaveException;
 import org.volunteertech.pledges.pledge.validator.RegisterOfPledgesFormValidator;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.users.security.SecurityUser;
-
+import org.volunteertech.pledges.users.service.ApplicationUserService;
 import org.volunteertech.pledges.reference.ReferenceStore;
 
 
@@ -78,7 +78,8 @@ public class RegisterOfPledgesRestController extends BaseController
 	@Autowired
 	private RegisterOfPledgesService registerOfPledgesService;
 	
-	
+	@Autowired
+	private ApplicationUserService applicationUserService;
 
 
 	/**
@@ -191,6 +192,14 @@ public class RegisterOfPledgesRestController extends BaseController
 			
 			applicationUserDetailsList = registerOfPledgesService.getRegisterOfPledgesBo().getRegisterOfPledgesDao().updateApplicationUserDetails(applicationUserDetails.getParentObjectId(), applicationUserDetails, userId);
 			applicationUserDetailsList = this.registerOfPledgesService.translateApplicationUserDetailsReferenceValues(applicationUserDetailsList, locale);
+			// another HACK to keep the username and email in sync. No time to come up with a better way.
+			for(ApplicationUserDetails d:  applicationUserDetailsList){
+				
+				if(d.getApplicationUser()!=null){
+					d.getApplicationUser().setUsername(d.getEmailAddress());
+					applicationUserService.storeApplicationUser(d.getApplicationUser(), userId);
+				}
+			}
 	    }
 		catch (Exception ex){
 		// TODO needs custom exception handling

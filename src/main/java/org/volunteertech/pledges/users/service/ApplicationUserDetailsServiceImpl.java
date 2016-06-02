@@ -2,22 +2,29 @@ package org.volunteertech.pledges.users.service;
 import com.netgrains.security.Authorisation;
 import com.netgrains.security.AuthorisationException;
 import com.netgrains.security.InvalidUserIDException;
+
+import org.volunteertech.pledges.users.dao.ApplicationUser;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.business.ApplicationUserDetailsBo;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsFilter;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsHistory;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsLoadException;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsSaveException;
+import org.volunteertech.pledges.users.web.ApplicationUserDetailsController;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Locale;
 
 import org.volunteertech.pledges.main.constants.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.volunteertech.pledges.reference.service.ReferenceService;
@@ -48,6 +55,7 @@ import org.volunteertech.pledges.localisation.service.MessageResourceService;
  */
 public class ApplicationUserDetailsServiceImpl implements ApplicationUserDetailsService
 {
+	final Logger logger = LoggerFactory.getLogger(ApplicationUserDetailsServiceImpl.class);
 	/**
 	 * The Business Object
 	 */
@@ -344,6 +352,8 @@ public class ApplicationUserDetailsServiceImpl implements ApplicationUserDetails
 			if(applicationUserDetails.isNew()){
 		    	this.getApplicationUserDetailsBo().createAndStoreApplicationUserDetails(applicationUserDetails, userId);
 			}else{
+				
+
 		    	this.getApplicationUserDetailsBo().updateApplicationUserDetails(applicationUserDetails, userId);
 			}
         }
@@ -471,7 +481,8 @@ public class ApplicationUserDetailsServiceImpl implements ApplicationUserDetails
 			if (representOrganisationReferenceId == null || representOrganisationReferenceId == -1){
 				representOrganisationLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
 			}else{
-				representOrganisationLocaleReference = this.messageResourceService.getMessage(representOrganisationReferenceId, new String[0], locale);
+				logger.info("\n\n\n\n GGGGGGG " + representOrganisationReferenceId + " " + messageResourceService);
+				representOrganisationLocaleReference = messageResourceService.getMessage(representOrganisationReferenceId, new String[0], locale);
 			}
 			
 			applicationUserDetails.setRepresentOrganisationReferenceTranslation(representOrganisationLocaleReference);

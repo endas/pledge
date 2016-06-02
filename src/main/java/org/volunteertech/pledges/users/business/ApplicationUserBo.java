@@ -3,6 +3,7 @@ import com.netgrains.security.AuthorisationException;
 import com.netgrains.security.InvalidUserIDException;
 import org.volunteertech.pledges.users.dao.ApplicationUser;
 import org.volunteertech.pledges.users.dao.ApplicationUserDao;
+import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.dao.ApplicationUserFilter;
 import org.volunteertech.pledges.users.dao.ApplicationUserHistory;
 import org.volunteertech.pledges.users.dao.ApplicationUserLoadException;
@@ -178,6 +179,9 @@ public interface ApplicationUserBo
      */
     public Long updateApplicationUserFilter(ApplicationUserFilter applicationUserFilter, Long userId)
         throws ApplicationUserLoadException, ApplicationUserSaveException, AuthorisationException, InvalidUserIDException;
+    
+    
+//    public ApplicationUser getApplicationUserByDetails(ApplicationUserDetails details);
     
 }
     
