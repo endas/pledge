@@ -183,5 +183,7 @@ public interface ApplicationUserBo
     
 //    public ApplicationUser getApplicationUserByDetails(ApplicationUserDetails details);
     
+    
+    
 }
     

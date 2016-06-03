@@ -139,6 +139,9 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
     public void setUsername(String username)
     {
       this.username=username;
+      if (this.applicationUserDetails !=null){
+    	  applicationUserDetails.setEmailAddress(username);
+      }
     }
 
     /**
@@ -147,7 +150,11 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
      */
     public String getUsername()
     {
-      return this.username;
+      if (this.applicationUserDetails !=null){
+    	  return this.getApplicationUserDetails().getEmailAddress()+"got";
+      }else{	  
+    	  return this.username;
+      }
     }
     
     
@@ -307,16 +314,18 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
 	public CurrentMode getCurrentMode() {
 		return this.currentMode;
 	}
-//    
-//	@Override
-//	public ApplicationUserDetails getApplicationUserDetails() {
-//		return this.applicationUserDetails;
-//	}
-//
-//	@Override
-//	public void setApplicationUserDetails(ApplicationUserDetails details) {
-//		this.applicationUserDetails = details;
-//	}
+    
+	@Override
+	public ApplicationUserDetails getApplicationUserDetails() {
+		return this.applicationUserDetails;
+	}
+
+	
+
+	@Override
+	public void setApplicationUserDetails(ApplicationUserDetails userDetails) {
+		this.applicationUserDetails = userDetails;
+	}
 
 	@Override
 	public String toString() {
@@ -325,6 +334,7 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
 				+ userRoles + ", createdByID=" + createdByID + ", updatedByID=" + updatedByID + ", dateCreated="
 				+ dateCreated + ", dateUpdated=" + dateUpdated + "]";
 	}
+
 	
 	
 }

@@ -109,8 +109,7 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 	/** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
 	private Date dateUpdated;
 
-	@JsonBackReference(value="applicationuser-applicationuserdetails")
-	private ApplicationUser applicationUser;
+
 
 	/**
 	 * Default Constructor for the ApplicationUserDetails bean
@@ -541,28 +540,15 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 		this.organisationName = organisationName;
 	}
 
-	@Override
-	public ApplicationUser getApplicationUser() {
-		return this.applicationUser;
-	}
-
-	@Override
-	public void setApplicationUser(ApplicationUser user) {
-		this.applicationUser=user;
-	}
+	
 
 	@Override
     public String toString(){
-   	return "ApplicationUserDetails [id=" + id + ", " + "contactName=" + contactName + ", " + "representOrganisation=" + representOrganisation + ", " + "telephoneNumber=" + telephoneNumber + ", " + "addressOne=" + addressOne + ", " + "addressTwo=" + addressTwo + ", " + "city=" + city + ", " + "stateProvinceRegion=" + stateProvinceRegion + ", " + "postCode=" + postCode + ", " + "country=" + country + ", " + "emailAddress= " + emailAddress +
-   		 applicationUser + "]";
+   	return "ApplicationUserDetails [id=" + id + ", " + "contactName=" + contactName + ", " + "representOrganisation=" + representOrganisation + ", " + "telephoneNumber=" + telephoneNumber + ", " + "addressOne=" + addressOne + ", " + "addressTwo=" + addressTwo + ", " + "city=" + city + ", " + "stateProvinceRegion=" + stateProvinceRegion + ", " + "postCode=" + postCode + ", " + "country=" + country + ", " + "emailAddress= " + emailAddress + "]";
     }
 
 
-	@Override
-	public void setAppUserAndEmailFromUsername(ApplicationUser user) {
-		this.applicationUser=user;
-		this.emailAddress=user.getUsername();
-	}
+	
 }
 
 

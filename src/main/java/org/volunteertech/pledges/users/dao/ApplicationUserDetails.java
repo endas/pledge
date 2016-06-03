@@ -313,17 +313,6 @@ public interface ApplicationUserDetails extends Serializable {
      */
 	public CurrentMode getCurrentMode();
 	
-	/**
-	 * @return exactly what it says on da tin
-	 */
-	public ApplicationUser getApplicationUser();
-	
-	/**
-	 * @param user
-	 */
-	public void setApplicationUser(ApplicationUser user);
-	
-	public void setAppUserAndEmailFromUsername(ApplicationUser user);
 }
     
     

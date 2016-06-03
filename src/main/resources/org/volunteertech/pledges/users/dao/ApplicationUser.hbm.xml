@@ -22,6 +22,9 @@
             <element type="long" column="REFERENCEID"/>
         </set>
 	  
+	  	<many-to-one name="applicationUserDetails" class="org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl" unique="true" cascade="save-update"  lazy="false">
+		</many-to-one>
+	  
         <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>

@@ -31,8 +31,7 @@ import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.users.security.SecurityUser;
 import org.volunteertech.pledges.users.service.ApplicationUserService;
 import org.volunteertech.pledges.reference.ReferenceStore;
-
-
+import org.volunteertech.pledges.users.dao.ApplicationUser;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl;
 
@@ -189,15 +188,14 @@ public class RegisterOfPledgesRestController extends BaseController
 
 		try{
 			// TODO needs security update and move processing inside the business object
-			
 			applicationUserDetailsList = registerOfPledgesService.getRegisterOfPledgesBo().getRegisterOfPledgesDao().updateApplicationUserDetails(applicationUserDetails.getParentObjectId(), applicationUserDetails, userId);
 			applicationUserDetailsList = this.registerOfPledgesService.translateApplicationUserDetailsReferenceValues(applicationUserDetailsList, locale);
-			// another HACK to keep the username and email in sync. No time to come up with a better way.
+			
 			for(ApplicationUserDetails d:  applicationUserDetailsList){
 				
-				if(d.getApplicationUser()!=null){
-					d.getApplicationUser().setUsername(d.getEmailAddress());
-					applicationUserService.storeApplicationUser(d.getApplicationUser(), userId);
+				if(user.getApplicationUser().getApplicationUserDetails().getId() == d.getId()){
+					user.getApplicationUser().setUsername(d.getEmailAddress());
+					applicationUserService.storeApplicationUser(user.getApplicationUser(), userId);
 				}
 			}
 	    }

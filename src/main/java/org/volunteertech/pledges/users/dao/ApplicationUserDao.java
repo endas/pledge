@@ -167,6 +167,7 @@ public interface ApplicationUserDao
      * @return
      */
     public ApplicationUser getApplicationUserByDetails(ApplicationUserDetails details);
+    
 	
 }
     

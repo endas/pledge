@@ -93,8 +93,9 @@ public class HomeController
 				try{
 					// Link the application User Details email to the ApplicationUser email..not ideal at all.. but works for the moment
 					registerOfPledgesImpl.getApplicationUserDetails().setEmailAddress(user.getApplicationUser().getUsername());
-					registerOfPledgesImpl.getApplicationUserDetails().setApplicationUser(user.getApplicationUser());
 					registerOfPledgesService.storeRegisterOfPledges(registerOfPledgesImpl, userId);
+					user.getApplicationUser().setApplicationUserDetails(registerOfPledgesImpl.getApplicationUserDetails());
+					applicationUserService.storeApplicationUser(user.getApplicationUser(), userId);
 					
 					applicationUserDetailsService.storeApplicationUserDetails(registerOfPledgesImpl.getApplicationUserDetails(), userId);
 				}
