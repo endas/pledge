@@ -3,6 +3,8 @@ import com.netgrains.security.Authorisation;
 import com.netgrains.security.AuthorisationException;
 import com.netgrains.security.InvalidUserIDException;
 import org.volunteertech.pledges.users.dao.ApplicationUser;
+import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
+import org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl;
 import org.volunteertech.pledges.users.business.ApplicationUserBo;
 import org.volunteertech.pledges.users.dao.ApplicationUserFilter;
 import org.volunteertech.pledges.users.dao.ApplicationUserHistory;
@@ -18,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import org.volunteertech.pledges.main.constants.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -32,7 +36,7 @@ import com.netgrains.security.EmailExistsException;
 import com.netgrains.security.HashEncoderGenerator;
 
 import org.volunteertech.pledges.users.security.SecurityUser;
-
+import org.volunteertech.pledges.users.web.ApplicationUserDetailsController;
 import org.volunteertech.pledges.reference.service.ReferenceService;
   
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
@@ -76,6 +80,7 @@ public class ApplicationUserServiceImpl implements ApplicationUserService, UserD
 	 */
     MessageResourceService messageResourceService;	  
 	  
+    final Logger logger = LoggerFactory.getLogger(ApplicationUserServiceImpl.class);
     
     /**
      * Default Constructor for the ApplicationUser Business Object.
@@ -522,7 +527,13 @@ public class ApplicationUserServiceImpl implements ApplicationUserService, UserD
     {
         super.finalize();
         
-    }    
+    }
+
+
+//	@Override
+//	public ApplicationUser getApplicationUserByDetails(ApplicationUserDetails details) {
+//		return this.applicationUserBo.getApplicationUserByDetails(details);
+//	}    
     
     
 }

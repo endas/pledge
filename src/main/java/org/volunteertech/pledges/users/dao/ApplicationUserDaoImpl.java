@@ -195,6 +195,21 @@ public class ApplicationUserDaoImpl implements ApplicationUserDao
         return result;
     }
     
+
+    /**
+     * Load existing ApplicationUser objects from the database that have a details id 
+     * @return List a List of ApplicationUser objects that match application user details
+     */
+    public ApplicationUser getApplicationUserByDetails(ApplicationUserDetails details)
+    {
+        @SuppressWarnings("unchecked")
+        List<ApplicationUser> result = this.sessionFactory.getCurrentSession().createQuery("from ApplicationUserImpl as applicationUser where applicationUser.applicationUserDetails.getId() = id: order by applicationUser.id asc").setParameter("id", details.getId()).list();
+        if (result.size() >= 1){
+        	return result.get(0);
+        }else{
+        	return null;
+        }
+    }
     
     
     /**

@@ -19,11 +19,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl;
 import org.volunteertech.pledges.pledge.service.RegisterOfPledgesService;
+import org.volunteertech.pledges.users.dao.ApplicationUser;
+import org.volunteertech.pledges.users.dao.ApplicationUserImpl;
 import org.volunteertech.pledges.users.security.SecurityUser;
+import org.volunteertech.pledges.users.service.ApplicationUserDetailsService;
+import org.volunteertech.pledges.users.service.ApplicationUserService;
+
 
 import com.netgrains.security.HashEncoderGenerator;
 
@@ -52,6 +59,12 @@ public class HomeController
 	@Autowired
 	RegisterOfPledgesService registerOfPledgesService;	
 	
+	@Autowired
+	ApplicationUserService applicationUserService;
+	
+	@Autowired
+	ApplicationUserDetailsService applicationUserDetailsService;
+	
 	/**
 	 * Request mapping for the root or web context of the project
 	 */
@@ -78,8 +91,13 @@ public class HomeController
 			RegisterOfPledges registerOfPledgesImpl = new RegisterOfPledgesImpl();
 			if (registerOfPledgesList.size() == 0){
 				try{
-					
+					// Link the application User Details email to the ApplicationUser email..not ideal at all.. but works for the moment
+					registerOfPledgesImpl.getApplicationUserDetails().setEmailAddress(user.getApplicationUser().getUsername());
 					registerOfPledgesService.storeRegisterOfPledges(registerOfPledgesImpl, userId);
+					user.getApplicationUser().setApplicationUserDetails(registerOfPledgesImpl.getApplicationUserDetails());
+					applicationUserService.storeApplicationUser(user.getApplicationUser(), userId);
+					
+					applicationUserDetailsService.storeApplicationUserDetails(registerOfPledgesImpl.getApplicationUserDetails(), userId);
 				}
 				catch(Exception ex){
 					// Do nothing

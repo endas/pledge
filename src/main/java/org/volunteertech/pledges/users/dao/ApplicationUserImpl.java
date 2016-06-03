@@ -75,6 +75,8 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
     
+    private ApplicationUserDetails applicationUserDetails;
+    
 
     /**
      * Default Constructor for the ApplicationUser bean
@@ -136,7 +138,10 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
      */
     public void setUsername(String username)
     {
-      this.username = username;
+      this.username=username;
+      if (this.applicationUserDetails !=null){
+    	  applicationUserDetails.setEmailAddress(username);
+      }
     }
 
     /**
@@ -145,7 +150,11 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
      */
     public String getUsername()
     {
-      return username;
+      if (this.applicationUserDetails !=null){
+    	  return this.getApplicationUserDetails().getEmailAddress()+"got";
+      }else{	  
+    	  return this.username;
+      }
     }
     
     
@@ -306,11 +315,28 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
 		return this.currentMode;
 	}
     
-    
-     @Override
-     public String toString(){
-    	return "ApplicationUser [id=" + id + ", " + "username=" + username + ", " + "password=" + password + ", " + "enabled=" + enabled + ", " + "userRoles=" + userRoles.toString() + "]";
-     }
+	@Override
+	public ApplicationUserDetails getApplicationUserDetails() {
+		return this.applicationUserDetails;
+	}
+
+	
+
+	@Override
+	public void setApplicationUserDetails(ApplicationUserDetails userDetails) {
+		this.applicationUserDetails = userDetails;
+	}
+
+	@Override
+	public String toString() {
+		return "ApplicationUserImpl [id=" + id + ", parentObjectId=" + parentObjectId + ", currentMode=" + currentMode
+				+ ", username=" + username + ", password=" + password + ", enabled=" + enabled + ", userRoles="
+				+ userRoles + ", createdByID=" + createdByID + ", updatedByID=" + updatedByID + ", dateCreated="
+				+ dateCreated + ", dateUpdated=" + dateUpdated + "]";
+	}
+
+	
+	
 }
     
     

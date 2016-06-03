@@ -22,7 +22,7 @@
 		<property name="pledgeServiceQualification" type="string" column="PLEDGESERVICEQUALIFICATION" length="500" ></property>	
 	  
 		<property name="pledgeServiceDateAvailable" type="timestamp" column="PLEDGESERVICEDATEAVAILABLE"  ></property>	
-	  
+	  	<property name="pledgeServiceDateAvailableTo" type="timestamp" column="PLEDGESERVICEDATEAVAILABLETO"  not-null="false"></property>	
 		<property name="pledgeServiceHoursPerWeek" type="long" column="PLEDGESERVICEHOURSPERWEEK" length="10" ></property>	
 	  
         <many-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl" fetch="select">

@@ -12,6 +12,7 @@
      <css>/resources/bootstrap/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css</css>  
      <css>/resources/bootstrap/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css</css>
      <css>/resources/css/redcross.css</css>
+     <css>/resources/css/main.css</css>
    </group>
    
    <!-- Global JS resources -->  
@@ -44,6 +45,12 @@
    <group name="addressCss">
    
      <css>/resources/css/redcross.css</css>
+     
+   </group>
+   
+   <group name="formStylesCss">
+   
+     <css>/resources/css/formstyles.css</css>
      
    </group>
    

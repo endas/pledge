@@ -37,7 +37,7 @@
 				  
 		  </div>
   
-		  <div id="frmViewCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+		 <%--  <div id="frmViewCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="view.savebutton.label" for="frmViewCreateUpdateSaveButton" class="control-label"><spring:message code="frmViewSaveButtonLabel"/></label>
 			<span id="frmViewCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmViewSaveButtonHelpBlock"/></span>
 			<div id="frmViewCreateUpdateSaveButtonAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -45,13 +45,13 @@
   				<span id="frmViewCreateUpdateSaveButtonAlertBlockText"></span>
 			</div>
 				  
-		  </div>
+		  </div> --%>
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" id="frmViewCreateUpdateCloseButton" class="btn btn-default">Close</button>
-        <button type="button" id="frmViewCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Send message</span></button>
+        <button type="button" id="frmViewCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save Pledge</span></button>
       </div>
     </div>
   </div>

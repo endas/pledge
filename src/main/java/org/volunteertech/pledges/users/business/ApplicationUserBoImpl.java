@@ -4,6 +4,7 @@ import com.netgrains.security.AuthorisationException;
 import com.netgrains.security.InvalidUserIDException;
 import org.volunteertech.pledges.users.dao.ApplicationUser;
 import org.volunteertech.pledges.users.dao.ApplicationUserDao;
+import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.dao.ApplicationUserFilter;
 import org.volunteertech.pledges.users.dao.ApplicationUserHistory;
 import org.volunteertech.pledges.users.dao.ApplicationUserLoadException;
@@ -372,7 +373,12 @@ public class ApplicationUserBoImpl implements ApplicationUserBo
     {
         super.finalize();
         
-    }    
+    }
+
+//	@Override
+//	public ApplicationUser getApplicationUserByDetails(ApplicationUserDetails details) {
+//		return this.getApplicationUserDao().getApplicationUserByDetails(details)
+//	}    
     
     
 }

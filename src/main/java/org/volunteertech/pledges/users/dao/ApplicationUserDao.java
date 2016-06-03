@@ -162,6 +162,12 @@ public interface ApplicationUserDao
     public Long updateApplicationUserFilter(ApplicationUserFilter applicationUserFilter, Long userId)
         throws ApplicationUserLoadException, ApplicationUserSaveException, AuthorisationException, InvalidUserIDException;
     
+    /**
+     * @param details
+     * @return
+     */
+    public ApplicationUser getApplicationUserByDetails(ApplicationUserDetails details);
+    
 	
 }
     

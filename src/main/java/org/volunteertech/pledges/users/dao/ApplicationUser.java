@@ -184,6 +184,18 @@ public interface ApplicationUser extends Serializable {
      * @return A member of the CurrentMode Enumeration
      */
 	public CurrentMode getCurrentMode();
+	
+	/**
+	 * @return
+	 */
+	public ApplicationUserDetails getApplicationUserDetails();
+	
+	/**
+	 * @param user
+	 * @return
+	 */
+	public void setApplicationUserDetails(ApplicationUserDetails user);
+	
 }
     
     

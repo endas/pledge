@@ -83,21 +83,13 @@
 				  
 		  </div>
   
-		  <div id="frmGoodsPledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="goodspledge.savebutton.label" for="frmGoodsPledgeCreateUpdateSaveButton" class="control-label"><spring:message code="frmGoodsPledgeSaveButtonLabel"/></label>
-			<span id="frmGoodsPledgeCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmGoodsPledgeSaveButtonHelpBlock"/></span>
-			<div id="frmGoodsPledgeCreateUpdateSaveButtonAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmGoodsPledgeCreateUpdateSaveButtonAlertBlockText"></span>
-			</div>
-				  
-		  </div>
+		
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" id="frmGoodsPledgeCreateUpdateCloseButton" class="btn btn-default">Close</button>
-        <button type="button" id="frmGoodsPledgeCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Send message</span></button>
+        <button type="button" id="frmGoodsPledgeCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save Pledge</span></button>
       </div>
     </div>
   </div>

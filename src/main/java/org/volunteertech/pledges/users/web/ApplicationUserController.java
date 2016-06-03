@@ -94,7 +94,7 @@ public class ApplicationUserController extends BaseController
     @Autowired
     private DatabaseDrivenMessageSource messageSource;
     
-
+    private String blank  = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
     @Autowired
     private MessageResourceService messageResourceService;
@@ -159,22 +159,19 @@ public class ApplicationUserController extends BaseController
 	
 	// process login form and create new user
 	@RequestMapping(value = "/applicationuser/createuser", method = RequestMethod.POST)
-	public String registerApplicationUser(@ModelAttribute("applicationUserFormModel") ApplicationUserImpl applicationUser,
+	public String registerApplicationUser(@ModelAttribute("applicationUserFormModel") @Validated  ApplicationUserImpl applicationUser,
 			BindingResult result, Model model, Locale locale,
 			final RedirectAttributes redirectAttributes) {
 
-		logger.debug("createApplicationUser()");
-
- 		ApplicationUser registered = new ApplicationUserImpl();
+		
  		if (!result.hasErrors()){
-			registered = createUserAccount(applicationUser, result);
+ 			ApplicationUser registered = createUserAccount(applicationUser, result);
+			if (registered == null) {
+				applicationUser.setCurrentMode(ApplicationUser.CurrentMode.UPDATE);
+	        	result.rejectValue("username", "userActionCreateAccountAccountAlreadyExists");
+	    	}
 		}
 		
-		if (registered == null) {
-			applicationUser.setCurrentMode(ApplicationUser.CurrentMode.UPDATE);
-        	result.rejectValue("username", "userActionCreateAccountAccountAlreadyExists");
-    	}
-    	
     	if (result.hasErrors()) {
         	return "login";
     	} 

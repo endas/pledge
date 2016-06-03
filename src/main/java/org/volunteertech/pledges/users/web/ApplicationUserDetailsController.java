@@ -31,11 +31,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.volunteertech.pledges.users.security.SecurityUser;
 
 import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
+import org.volunteertech.pledges.users.dao.ApplicationUser;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl;
 import org.volunteertech.pledges.users.service.ApplicationUserDetailsService;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsLoadException;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsSaveException;
+import org.volunteertech.pledges.users.dao.ApplicationUserImpl;
 import org.volunteertech.pledges.users.validator.ApplicationUserDetailsFormValidator;
 import org.volunteertech.pledges.users.view.ApplicationUserDetailsTranslationBackingBean;
 import org.volunteertech.pledges.users.view.ApplicationUserDetailsTranslationBackingBeanImpl;
@@ -74,10 +76,7 @@ import org.volunteertech.pledges.reference.ReferenceStore;
 public class ApplicationUserDetailsController extends BaseController
 {
 
-    /**
-     * userId used for development. This should be taken from the session.
-     */
-	private Long userId = new Long(0);
+
 	 
 	final Logger logger = LoggerFactory.getLogger(ApplicationUserDetailsController.class);
 	
@@ -218,12 +217,17 @@ public class ApplicationUserDetailsController extends BaseController
 	
 	// support access to the supporting webpage by creating a new instance and returning 
 	@RequestMapping(value = "/applicationuserdetailswebpage", method = RequestMethod.GET)
-	public String createApplicationUserDetailsForWebPageView(Model model, HttpServletRequest request, Locale locale) {
+	public String createApplicationUserDetailsForWebPageView(Authentication authentication, Model model, HttpServletRequest request, Locale locale) {
 
-		logger.debug("createApplicationUserDetailsForWebPageView()");
-
-		ApplicationUserDetails applicationUserDetails = new ApplicationUserDetailsImpl();
-		
+		SecurityUser user = (SecurityUser)authentication.getPrincipal();
+        Long userId = user.getApplicationUser().getId();
+		List<ApplicationUserDetails> applicationUserDetailsList = applicationUserDetailsService.getApplicationUserDetailsBo().getApplicationUserDetailsDao().getApplicationUserDetailsByApplicationUser(userId);
+		ApplicationUserDetails applicationUserDetails;
+		if (applicationUserDetailsList.size() > 0){
+			applicationUserDetails = applicationUserDetailsList.get(0);//assumes only one exists.(should be true as it is constrained)
+		}else{
+			applicationUserDetails = new ApplicationUserDetailsImpl();
+		}
 		try{
 			// TODO: Needs exception handling policy
 	    	applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);
@@ -244,15 +248,18 @@ public class ApplicationUserDetailsController extends BaseController
 
 	// show update form
 	@RequestMapping(value = "/applicationuserdetails/{id}/update", method = RequestMethod.GET)
-	public String showUpdateApplicationUserDetailsForm(@PathVariable("id") int id, Model model, Locale locale) {
+	public String showUpdateApplicationUserDetailsForm(Authentication authentication, @PathVariable("id") int id, Model model, Locale locale) {
 
 		logger.debug("showUpdateApplicationUserDetailsForm() : {}", id);
 		ApplicationUserDetails applicationUserDetails = null;
 		try{
 			// TODO: Needs exception handling policy
+			SecurityUser user = (SecurityUser)authentication.getPrincipal();
+	        Long userId = user.getApplicationUser().getId();
 			applicationUserDetails = applicationUserDetailsService.load(new Long(id), userId);
+			logger.info("\n\n\n\n Application user details : " + applicationUserDetails.toString());
 			applicationUserDetails.setCurrentMode(ApplicationUserDetails.CurrentMode.UPDATE);
-			this.applicationUserDetailsService.translateReferenceValues(applicationUserDetails, locale);
+			applicationUserDetailsService.translateReferenceValues(applicationUserDetails, locale);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -285,12 +292,14 @@ public class ApplicationUserDetailsController extends BaseController
 
 	// show user
 	@RequestMapping(value = "/applicationuserdetails/{id}", method = RequestMethod.GET)
-	public String showApplicationUserDetails(@PathVariable("id") int id, Model model, Locale locale) {
+	public String showApplicationUserDetails(Authentication authentication,@PathVariable("id") int id, Model model, Locale locale) {
 
 		logger.debug("showApplicationUserDetails() id: {}", id);
 		ApplicationUserDetails applicationUserDetails = null;
 		try{
 			// TODO: Needs exception handling policy
+			SecurityUser user = (SecurityUser)authentication.getPrincipal();
+	        Long userId = user.getApplicationUser().getId();
 			applicationUserDetails = applicationUserDetailsService.load(new Long(id), userId);
 		}
 		catch (Exception ex){
