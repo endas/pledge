@@ -190,14 +190,6 @@ public class RegisterOfPledgesRestController extends BaseController
 			// TODO needs security update and move processing inside the business object
 			applicationUserDetailsList = registerOfPledgesService.getRegisterOfPledgesBo().getRegisterOfPledgesDao().updateApplicationUserDetails(applicationUserDetails.getParentObjectId(), applicationUserDetails, userId);
 			applicationUserDetailsList = this.registerOfPledgesService.translateApplicationUserDetailsReferenceValues(applicationUserDetailsList, locale);
-			
-			for(ApplicationUserDetails d:  applicationUserDetailsList){
-				
-				if(user.getApplicationUser().getApplicationUserDetails().getId() == d.getId()){
-					user.getApplicationUser().setUsername(d.getEmailAddress());
-					applicationUserService.storeApplicationUser(user.getApplicationUser(), userId);
-				}
-			}
 	    }
 		catch (Exception ex){
 		// TODO needs custom exception handling

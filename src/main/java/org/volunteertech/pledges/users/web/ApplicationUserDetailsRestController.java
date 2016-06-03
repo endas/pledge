@@ -137,9 +137,12 @@ public class ApplicationUserDetailsRestController extends BaseController
         
 		try{
 			// TODO needs security update
-			applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);
-			
-
+			applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);	
+			if(user.getApplicationUser().getApplicationUserDetails().getId() == applicationUserDetails.getId()){
+				logger.info("application user found DESX \n\n\n\n\n\n\n\n\n\n");
+				user.getApplicationUser().setUsername(applicationUserDetails.getEmailAddress());
+				applicationUserService.storeApplicationUser(user.getApplicationUser(), userId);
+			}
 		}
 		catch (Exception ex){
 		// TODO needs custom exception handling

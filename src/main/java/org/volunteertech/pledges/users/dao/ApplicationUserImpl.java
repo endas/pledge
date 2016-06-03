@@ -150,11 +150,7 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
      */
     public String getUsername()
     {
-      if (this.applicationUserDetails !=null){
-    	  return this.getApplicationUserDetails().getEmailAddress()+"got";
-      }else{	  
-    	  return this.username;
-      }
+    	return this.username;
     }
     
     
