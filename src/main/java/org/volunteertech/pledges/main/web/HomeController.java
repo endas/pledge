@@ -72,8 +72,7 @@ public class HomeController
 	public String showLandingPage(Model model) {
 
 		logger.debug("showLandingPage()");
-		return "forward:/landingwebpage";
-
+		return "forward:/applicationuser/createuser";
 	}
 	
 	

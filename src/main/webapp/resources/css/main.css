@@ -98,6 +98,10 @@ input[type="password"] {
     background: #f80000;
 }
 
+.home-login-link {
+    font-size: 0.9em;
+}
+
 Media Queries
 
 

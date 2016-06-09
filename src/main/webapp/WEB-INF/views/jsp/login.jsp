@@ -59,7 +59,8 @@
 					</table>
 
 					<h3 class="text-center">${loginInstruction}</h3>
-
+					
+					
 
 					<form:form id="frmSignIn" class="form-signin" action="${loginUrl}"
 						method="post" accept-charset="utf-8"
@@ -99,17 +100,27 @@
 								<form:errors path="password" class="help-block" />
 							</div>
 						</spring:bind>
-						<button class="btn btn-lg btn-primary btn-block" type="submit">${signIn}</button>
+						<button class="btn btn-lg btn-primary btn-block btn-login" type="submit">${signIn}</button>
 						<input type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}" />
 						<form:errors element="div" />
 						<br />
 						
 					</form:form>
-					<div class="text-center">
-						<a href="<c:url value="/landingwebpage" />">Return Home</a>
-					</div>
-
+					<c:choose>
+					<c:when test="${applicationUserFormModel['currentMode'] == 'ADD'}">
+						<div class="text-center">
+							<span>Already have an account? <a class="home-login-link" href="<c:url value="/login" />">Click here </a>to log in</span>
+						</div>
+					</c:when>
+					</c:choose>
+					<c:choose>
+						<c:when test="${applicationUserFormModel['currentMode'] == 'UPDATE'}">
+						<div class="text-center">
+							<a href="<c:url value="/applicationuser/createuser" />">Return Home</a>
+						</div> 
+						</c:when>
+					</c:choose>
 				</div>
 
 				<!-- Empty Space -->

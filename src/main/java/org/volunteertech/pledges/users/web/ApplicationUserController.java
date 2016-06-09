@@ -94,7 +94,6 @@ public class ApplicationUserController extends BaseController
     @Autowired
     private DatabaseDrivenMessageSource messageSource;
     
-    private String blank  = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
     @Autowired
     private MessageResourceService messageResourceService;
