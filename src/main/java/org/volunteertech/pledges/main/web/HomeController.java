@@ -86,6 +86,7 @@ public class HomeController
 		Long userId = user.getApplicationUser().getId();
 		
 		if (request.isUserInRole("ROLE_CLIENT")) {
+			logger.info("client login");
 			List <RegisterOfPledges> registerOfPledgesList = registerOfPledgesService.getRegisterOfPledgesBo().listRegisterOfPledgesByCreatedById(userId);
 			RegisterOfPledges registerOfPledgesImpl = new RegisterOfPledgesImpl();
 			if (registerOfPledgesList.size() == 0){
@@ -108,8 +109,10 @@ public class HomeController
 				return "forward:/registerofpledges/" + registerOfPledgesImpl.getId() + "/update";
 			}
 		
+		}else{
+			logger.info("Non client login \n\n\n\n\n\n\n\n XXXXXX \n\n\n\n\n");
 		}
-	
+		
 		logger.debug("showEntityList()");
 		return "entitylist";
 

@@ -4,6 +4,11 @@ var frmApplicationUserDetailsCreateUpdateContactNameBuffer = null;
 var frmApplicationUserDetailsCreateUpdateRepresentOrganisationTextBuffer = null;
 var frmApplicationUserDetailsCreateUpdateRepresentOrganisationValueBuffer = 0;
 var frmApplicationUserDetailsCreateUpdateRepresentOrganisationSetupCompleted = false;
+
+
+var frmApplicationUserDetailsCreateUpdateOrganisationNameTextBuffer = null;
+var frmApplicationUserDetailsCreateUpdateOrganisationNameValueBuffer = 0;
+var frmApplicationUserDetailsCreateUpdateOrganisationNameCompleted = false;
     
 var frmApplicationUserDetailsCreateUpdateTelephoneNumberBuffer = null;
     
@@ -499,6 +504,9 @@ $( document ).ready(function() {
     
 					modal.find('#frmApplicationUserDetailsCreateUpdatePostCode').val(data.postCode);
 					frmApplicationUserDetailsCreateUpdatePostCodeBuffer = data.postCode;
+					
+					modal.find('#frmApplicationUserDetailsCreateUpdateOrganisationName').val(data.organisationName);
+					frmApplicationUserDetailsCreateUpdateOrganisationNameBuffer = data.organisationName;
     
         			function frmApplicationUserDetailsCreateUpdateCountryTimeOut() {
     					setTimeout(function () {
@@ -596,6 +604,7 @@ $( document ).ready(function() {
 				id : modal.find('#frmApplicationUserDetailsCreateUpdateLoadedObjectId').val(),
 				contactName : modal.find('#frmApplicationUserDetailsCreateUpdateContactName').val(),
 				representOrganisation : modal.find('#frmApplicationUserDetailsCreateUpdateRepresentOrganisation').val(),
+				organisationName : modal.find('#frmApplicationUserDetailsCreateUpdateOrganisationName').val(),
 				telephoneNumber : modal.find('#frmApplicationUserDetailsCreateUpdateTelephoneNumber').val(),
 				addressOne : modal.find('#frmApplicationUserDetailsCreateUpdateAddressOne').val(),
 				addressTwo : modal.find('#frmApplicationUserDetailsCreateUpdateAddressTwo').val(),

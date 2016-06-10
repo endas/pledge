@@ -159,9 +159,9 @@
 		  
 		   <div id="frmApplicationUserDetailsCreateUpdateOrganisationNameFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.representorganisation.label" for="frmApplicationUserDetailsCreateUpdateOrganisationName" class="control-label"><spring:message code="frmApplicationUserDetailsOrganisationNameLabel"/></label>	
-			<select class="form-control" data-display-name="What is the organisation name?" data-select-type="standalone" data-required="true" id="frmApplicationUserDetailsCreateUpdateOrganisationName" aria-describedby="frmApplicationUserDetailsCreateUpdateOrganisationNameHelpBlock">
-			</select>
-	  
+		
+	  		<input type="text" data-display-name="Organisation Name" data-minlength="2" data-required="false" maxlength="80" class="form-control" id="frmApplicationUserDetailsCreateUpdateOrganisationName" placeholder="<spring:message code="frmApplicationUserDetailsOrganisationNamePlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateOrganisationNameHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+    	
 			<span id="frmApplicationUserDetailsCreateUpdateOrganisationNameHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsOrganisationNameHelpBlock"/></span>
 			<div id="frmApplicationUserDetailsCreateUpdateOrganisationNameAlertBlock" class="alert alert-dismissible hidden" role="alert">
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
