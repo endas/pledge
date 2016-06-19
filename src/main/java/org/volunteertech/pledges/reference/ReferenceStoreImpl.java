@@ -225,27 +225,27 @@ public class ReferenceStoreImpl implements ReferenceStore
 	
 	
 	/**
-	 * Map to hold values related to the GoodsCategory Reference Type
+	 * Map to hold values related to the GoodsCategoryOne Reference Type
 	 */
-	private SortedMap<Long,String> goodsCategory = null;
+	private SortedMap<Long,String> goodsCategoryOne = null;
 	
 	/**
-	 * Map to hold values related to the GoodsCategory Reference Type but sorted by parentId to provide
+	 * Map to hold values related to the GoodsCategoryOne Reference Type but sorted by parentId to provide
 	 * caching for parent driven select boxes
 	 */
-	private SortedMap<Long,TreeMap<Long,String>> goodsCategoryByParentId = null;
+	private SortedMap<Long,TreeMap<Long,String>> goodsCategoryOneByParentId = null;
 	
 	
 	/**
-	 * Map to hold values related to the Goods Reference Type
+	 * Map to hold values related to the GoodsCategoryTwo Reference Type
 	 */
-	private SortedMap<Long,String> goods = null;
+	private SortedMap<Long,String> goodsCategoryTwo = null;
 	
 	/**
-	 * Map to hold values related to the Goods Reference Type but sorted by parentId to provide
+	 * Map to hold values related to the GoodsCategoryTwo Reference Type but sorted by parentId to provide
 	 * caching for parent driven select boxes
 	 */
-	private SortedMap<Long,TreeMap<Long,String>> goodsByParentId = null;
+	private SortedMap<Long,TreeMap<Long,String>> goodsCategoryTwoByParentId = null;
 	
 	
 	/**
@@ -308,6 +308,54 @@ public class ReferenceStoreImpl implements ReferenceStore
 	private SortedMap<Long,TreeMap<Long,String>> pledgeServiceLevelThreeByParentId = null;
 	
 	
+	/**
+	 * Map to hold values related to the GoodsCategoryThree Reference Type
+	 */
+	private SortedMap<Long,String> goodsCategoryThree = null;
+	
+	/**
+	 * Map to hold values related to the GoodsCategoryThree Reference Type but sorted by parentId to provide
+	 * caching for parent driven select boxes
+	 */
+	private SortedMap<Long,TreeMap<Long,String>> goodsCategoryThreeByParentId = null;
+	
+	
+	/**
+	 * Map to hold values related to the GoodsSize Reference Type
+	 */
+	private SortedMap<Long,String> goodsSize = null;
+	
+	/**
+	 * Map to hold values related to the GoodsSize Reference Type but sorted by parentId to provide
+	 * caching for parent driven select boxes
+	 */
+	private SortedMap<Long,TreeMap<Long,String>> goodsSizeByParentId = null;
+	
+	
+	/**
+	 * Map to hold values related to the GoodsQuantity Reference Type
+	 */
+	private SortedMap<Long,String> goodsQuantity = null;
+	
+	/**
+	 * Map to hold values related to the GoodsQuantity Reference Type but sorted by parentId to provide
+	 * caching for parent driven select boxes
+	 */
+	private SortedMap<Long,TreeMap<Long,String>> goodsQuantityByParentId = null;
+	
+	
+	/**
+	 * Map to hold values related to the NewOrUsed Reference Type
+	 */
+	private SortedMap<Long,String> newOrUsed = null;
+	
+	/**
+	 * Map to hold values related to the NewOrUsed Reference Type but sorted by parentId to provide
+	 * caching for parent driven select boxes
+	 */
+	private SortedMap<Long,TreeMap<Long,String>> newOrUsedByParentId = null;
+	
+	
 	
     /**
      * Default Constructor for the ReferenceStore class
@@ -354,13 +402,17 @@ public class ReferenceStoreImpl implements ReferenceStore
 		integerCount1to40 = initialiseIntegerCount1to40();		
 		pledgeServiceLevelOne = initialisePledgeServiceLevelOne();		
 		pledgeServiceLevelTwo = initialisePledgeServiceLevelTwo();		
-		goodsCategory = initialiseGoodsCategory();		
-		goods = initialiseGoods();		
+		goodsCategoryOne = initialiseGoodsCategoryOne();		
+		goodsCategoryTwo = initialiseGoodsCategoryTwo();		
 		goodsCondition = initialiseGoodsCondition();		
 		ownerOccupierType = initialiseOwnerOccupierType();		
 		locale = initialiseLocale();		
 		userRole = initialiseUserRole();		
 		pledgeServiceLevelThree = initialisePledgeServiceLevelThree();		
+		goodsCategoryThree = initialiseGoodsCategoryThree();		
+		goodsSize = initialiseGoodsSize();		
+		goodsQuantity = initialiseGoodsQuantity();		
+		newOrUsed = initialiseNewOrUsed();		
 		
     }
 	
@@ -1789,58 +1841,58 @@ public class ReferenceStoreImpl implements ReferenceStore
 	
 
 	/**
-	 * Returns the Sorted Map that represents the values of the GoodsCategory RefType
+	 * Returns the Sorted Map that represents the values of the GoodsCategoryOne RefType
 	 * @return
 	 */
-	public SortedMap<Long,String> getGoodsCategory()
+	public SortedMap<Long,String> getGoodsCategoryOne()
 	{
-		if (goodsCategory == null)
+		if (goodsCategoryOne == null)
 		{
-			initialiseGoodsCategory();
+			initialiseGoodsCategoryOne();
 		}
-		return goodsCategory;
+		return goodsCategoryOne;
 	}
 
 	/**
-	 * Returns the Sorted Map that represents the values of the GoodsCategory RefType
+	 * Returns the Sorted Map that represents the values of the GoodsCategoryOne RefType
 	 * sorted by parentId
 	 * @return
 	 */
-	public SortedMap<Long,String> getGoodsCategoryByParentId(Long parentId)
+	public SortedMap<Long,String> getGoodsCategoryOneByParentId(Long parentId)
 	{
 		SortedMap<Long,String> returnValue = null;
 		
-		if (goodsCategoryByParentId == null)
+		if (goodsCategoryOneByParentId == null)
 		{
-			initialiseGoodsCategory();
+			initialiseGoodsCategoryOne();
 		}
 		
 		if (parentId != null){
-			returnValue = goodsCategoryByParentId.get(parentId);
+			returnValue = goodsCategoryOneByParentId.get(parentId);
 		}
 		return returnValue;
 	}
 	
 	
 	/**
-	 * Initialise the possible choices for GoodsCategory
+	 * Initialise the possible choices for GoodsCategoryOne
 	 * from the REFERENCE table
 	 */ 
-	public SortedMap<Long,String> initialiseGoodsCategory()
+	public SortedMap<Long,String> initialiseGoodsCategoryOne()
 	{
 		TreeMap<Long,String> map = new TreeMap<Long,String>();
 		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
 		List<Reference> referenceRecords = null;
 		Reference dataRow = null;
 
-		logger.debug("Initialising the GoodsCategory dropdown buffer");
+		logger.debug("Initialising the GoodsCategoryOne dropdown buffer");
 		
 		try
 		{
-			// Load all values of referenceCategoryDesc GoodsCategory
+			// Load all values of referenceCategoryDesc GoodsCategoryOne
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORY, new Long(1));
-			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsCategory");
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYONE, new Long(1));
+			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsCategoryOne");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
 			while(it.hasNext())
@@ -1851,14 +1903,14 @@ public class ReferenceStoreImpl implements ReferenceStore
 		}
 		catch(Exception ex)
 		{
-    		logger.error("Initialisation of GoodsCategory dropdown buffer failed", ex);
+    		logger.error("Initialisation of GoodsCategoryOne dropdown buffer failed", ex);
 		}
 		
-		logger.debug("Initialising the GoodsCategoryByParentId dropdown buffer");
+		logger.debug("Initialising the GoodsCategoryOneByParentId dropdown buffer");
 		
 		try
 		{
-			// Load all values of referenceCategoryDesc GoodsCategory and sort by parentId
+			// Load all values of referenceCategoryDesc GoodsCategoryOne and sort by parentId
 			Iterator<Reference> it = referenceRecords.iterator();
 			
 			while(it.hasNext())
@@ -1875,11 +1927,11 @@ public class ReferenceStoreImpl implements ReferenceStore
 				}
  	        }
  	        
- 	        this.goodsCategoryByParentId = parentIdMap;
+ 	        this.goodsCategoryOneByParentId = parentIdMap;
 		}
 		catch(Exception ex)
 		{
-    		logger.error("Initialisation of GoodsCategory dropdown buffer failed", ex);
+    		logger.error("Initialisation of GoodsCategoryOne dropdown buffer failed", ex);
 		}
 		
 		
@@ -1889,58 +1941,58 @@ public class ReferenceStoreImpl implements ReferenceStore
 	
 
 	/**
-	 * Returns the Sorted Map that represents the values of the Goods RefType
+	 * Returns the Sorted Map that represents the values of the GoodsCategoryTwo RefType
 	 * @return
 	 */
-	public SortedMap<Long,String> getGoods()
+	public SortedMap<Long,String> getGoodsCategoryTwo()
 	{
-		if (goods == null)
+		if (goodsCategoryTwo == null)
 		{
-			initialiseGoods();
+			initialiseGoodsCategoryTwo();
 		}
-		return goods;
+		return goodsCategoryTwo;
 	}
 
 	/**
-	 * Returns the Sorted Map that represents the values of the Goods RefType
+	 * Returns the Sorted Map that represents the values of the GoodsCategoryTwo RefType
 	 * sorted by parentId
 	 * @return
 	 */
-	public SortedMap<Long,String> getGoodsByParentId(Long parentId)
+	public SortedMap<Long,String> getGoodsCategoryTwoByParentId(Long parentId)
 	{
 		SortedMap<Long,String> returnValue = null;
 		
-		if (goodsByParentId == null)
+		if (goodsCategoryTwoByParentId == null)
 		{
-			initialiseGoods();
+			initialiseGoodsCategoryTwo();
 		}
 		
 		if (parentId != null){
-			returnValue = goodsByParentId.get(parentId);
+			returnValue = goodsCategoryTwoByParentId.get(parentId);
 		}
 		return returnValue;
 	}
 	
 	
 	/**
-	 * Initialise the possible choices for Goods
+	 * Initialise the possible choices for GoodsCategoryTwo
 	 * from the REFERENCE table
 	 */ 
-	public SortedMap<Long,String> initialiseGoods()
+	public SortedMap<Long,String> initialiseGoodsCategoryTwo()
 	{
 		TreeMap<Long,String> map = new TreeMap<Long,String>();
 		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
 		List<Reference> referenceRecords = null;
 		Reference dataRow = null;
 
-		logger.debug("Initialising the Goods dropdown buffer");
+		logger.debug("Initialising the GoodsCategoryTwo dropdown buffer");
 		
 		try
 		{
-			// Load all values of referenceCategoryDesc Goods
+			// Load all values of referenceCategoryDesc GoodsCategoryTwo
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODS, new Long(1));
-			referenceRecords = this.referenceDao.listReferenceByRefType("Goods");
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYTWO, new Long(1));
+			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsCategoryTwo");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
 			while(it.hasNext())
@@ -1951,14 +2003,14 @@ public class ReferenceStoreImpl implements ReferenceStore
 		}
 		catch(Exception ex)
 		{
-    		logger.error("Initialisation of Goods dropdown buffer failed", ex);
+    		logger.error("Initialisation of GoodsCategoryTwo dropdown buffer failed", ex);
 		}
 		
-		logger.debug("Initialising the GoodsByParentId dropdown buffer");
+		logger.debug("Initialising the GoodsCategoryTwoByParentId dropdown buffer");
 		
 		try
 		{
-			// Load all values of referenceCategoryDesc Goods and sort by parentId
+			// Load all values of referenceCategoryDesc GoodsCategoryTwo and sort by parentId
 			Iterator<Reference> it = referenceRecords.iterator();
 			
 			while(it.hasNext())
@@ -1975,11 +2027,11 @@ public class ReferenceStoreImpl implements ReferenceStore
 				}
  	        }
  	        
- 	        this.goodsByParentId = parentIdMap;
+ 	        this.goodsCategoryTwoByParentId = parentIdMap;
 		}
 		catch(Exception ex)
 		{
-    		logger.error("Initialisation of Goods dropdown buffer failed", ex);
+    		logger.error("Initialisation of GoodsCategoryTwo dropdown buffer failed", ex);
 		}
 		
 		
@@ -2488,6 +2540,406 @@ public class ReferenceStoreImpl implements ReferenceStore
 	
 	
 
+	/**
+	 * Returns the Sorted Map that represents the values of the GoodsCategoryThree RefType
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsCategoryThree()
+	{
+		if (goodsCategoryThree == null)
+		{
+			initialiseGoodsCategoryThree();
+		}
+		return goodsCategoryThree;
+	}
+
+	/**
+	 * Returns the Sorted Map that represents the values of the GoodsCategoryThree RefType
+	 * sorted by parentId
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsCategoryThreeByParentId(Long parentId)
+	{
+		SortedMap<Long,String> returnValue = null;
+		
+		if (goodsCategoryThreeByParentId == null)
+		{
+			initialiseGoodsCategoryThree();
+		}
+		
+		if (parentId != null){
+			returnValue = goodsCategoryThreeByParentId.get(parentId);
+		}
+		return returnValue;
+	}
+	
+	
+	/**
+	 * Initialise the possible choices for GoodsCategoryThree
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseGoodsCategoryThree()
+	{
+		TreeMap<Long,String> map = new TreeMap<Long,String>();
+		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
+		List<Reference> referenceRecords = null;
+		Reference dataRow = null;
+
+		logger.debug("Initialising the GoodsCategoryThree dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc GoodsCategoryThree
+			
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYTHREE, new Long(1));
+			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsCategoryThree");
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				map.put(dataRow.getId(), dataRow.getRefDesc());
+	        }
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of GoodsCategoryThree dropdown buffer failed", ex);
+		}
+		
+		logger.debug("Initialising the GoodsCategoryThreeByParentId dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc GoodsCategoryThree and sort by parentId
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				Long parentId = dataRow.getParentId();
+				
+				if (parentId != 0){
+					if (parentIdMap.get(parentId) == null){
+						parentIdMap.put(parentId, new TreeMap<Long,String>());
+					}
+	
+					parentIdMap.get(parentId).put(dataRow.getId(), dataRow.getRefDesc());
+				}
+ 	        }
+ 	        
+ 	        this.goodsCategoryThreeByParentId = parentIdMap;
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of GoodsCategoryThree dropdown buffer failed", ex);
+		}
+		
+		
+		return map;
+	}    
+	
+	
+
+	/**
+	 * Returns the Sorted Map that represents the values of the GoodsSize RefType
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsSize()
+	{
+		if (goodsSize == null)
+		{
+			initialiseGoodsSize();
+		}
+		return goodsSize;
+	}
+
+	/**
+	 * Returns the Sorted Map that represents the values of the GoodsSize RefType
+	 * sorted by parentId
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsSizeByParentId(Long parentId)
+	{
+		SortedMap<Long,String> returnValue = null;
+		
+		if (goodsSizeByParentId == null)
+		{
+			initialiseGoodsSize();
+		}
+		
+		if (parentId != null){
+			returnValue = goodsSizeByParentId.get(parentId);
+		}
+		return returnValue;
+	}
+	
+	
+	/**
+	 * Initialise the possible choices for GoodsSize
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseGoodsSize()
+	{
+		TreeMap<Long,String> map = new TreeMap<Long,String>();
+		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
+		List<Reference> referenceRecords = null;
+		Reference dataRow = null;
+
+		logger.debug("Initialising the GoodsSize dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc GoodsSize
+			
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSSIZE, new Long(1));
+			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsSize");
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				map.put(dataRow.getId(), dataRow.getRefDesc());
+	        }
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of GoodsSize dropdown buffer failed", ex);
+		}
+		
+		logger.debug("Initialising the GoodsSizeByParentId dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc GoodsSize and sort by parentId
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				Long parentId = dataRow.getParentId();
+				
+				if (parentId != 0){
+					if (parentIdMap.get(parentId) == null){
+						parentIdMap.put(parentId, new TreeMap<Long,String>());
+					}
+	
+					parentIdMap.get(parentId).put(dataRow.getId(), dataRow.getRefDesc());
+				}
+ 	        }
+ 	        
+ 	        this.goodsSizeByParentId = parentIdMap;
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of GoodsSize dropdown buffer failed", ex);
+		}
+		
+		
+		return map;
+	}    
+	
+	
+
+	/**
+	 * Returns the Sorted Map that represents the values of the GoodsQuantity RefType
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsQuantity()
+	{
+		if (goodsQuantity == null)
+		{
+			initialiseGoodsQuantity();
+		}
+		return goodsQuantity;
+	}
+
+	/**
+	 * Returns the Sorted Map that represents the values of the GoodsQuantity RefType
+	 * sorted by parentId
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsQuantityByParentId(Long parentId)
+	{
+		SortedMap<Long,String> returnValue = null;
+		
+		if (goodsQuantityByParentId == null)
+		{
+			initialiseGoodsQuantity();
+		}
+		
+		if (parentId != null){
+			returnValue = goodsQuantityByParentId.get(parentId);
+		}
+		return returnValue;
+	}
+	
+	
+	/**
+	 * Initialise the possible choices for GoodsQuantity
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseGoodsQuantity()
+	{
+		TreeMap<Long,String> map = new TreeMap<Long,String>();
+		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
+		List<Reference> referenceRecords = null;
+		Reference dataRow = null;
+
+		logger.debug("Initialising the GoodsQuantity dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc GoodsQuantity
+			
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSQUANTITY, new Long(1));
+			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsQuantity");
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				map.put(dataRow.getId(), dataRow.getRefDesc());
+	        }
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of GoodsQuantity dropdown buffer failed", ex);
+		}
+		
+		logger.debug("Initialising the GoodsQuantityByParentId dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc GoodsQuantity and sort by parentId
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				Long parentId = dataRow.getParentId();
+				
+				if (parentId != 0){
+					if (parentIdMap.get(parentId) == null){
+						parentIdMap.put(parentId, new TreeMap<Long,String>());
+					}
+	
+					parentIdMap.get(parentId).put(dataRow.getId(), dataRow.getRefDesc());
+				}
+ 	        }
+ 	        
+ 	        this.goodsQuantityByParentId = parentIdMap;
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of GoodsQuantity dropdown buffer failed", ex);
+		}
+		
+		
+		return map;
+	}    
+	
+	
+
+	/**
+	 * Returns the Sorted Map that represents the values of the NewOrUsed RefType
+	 * @return
+	 */
+	public SortedMap<Long,String> getNewOrUsed()
+	{
+		if (newOrUsed == null)
+		{
+			initialiseNewOrUsed();
+		}
+		return newOrUsed;
+	}
+
+	/**
+	 * Returns the Sorted Map that represents the values of the NewOrUsed RefType
+	 * sorted by parentId
+	 * @return
+	 */
+	public SortedMap<Long,String> getNewOrUsedByParentId(Long parentId)
+	{
+		SortedMap<Long,String> returnValue = null;
+		
+		if (newOrUsedByParentId == null)
+		{
+			initialiseNewOrUsed();
+		}
+		
+		if (parentId != null){
+			returnValue = newOrUsedByParentId.get(parentId);
+		}
+		return returnValue;
+	}
+	
+	
+	/**
+	 * Initialise the possible choices for NewOrUsed
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseNewOrUsed()
+	{
+		TreeMap<Long,String> map = new TreeMap<Long,String>();
+		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
+		List<Reference> referenceRecords = null;
+		Reference dataRow = null;
+
+		logger.debug("Initialising the NewOrUsed dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc NewOrUsed
+			
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_NEWORUSED, new Long(1));
+			referenceRecords = this.referenceDao.listReferenceByRefType("NewOrUsed");
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				map.put(dataRow.getId(), dataRow.getRefDesc());
+	        }
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of NewOrUsed dropdown buffer failed", ex);
+		}
+		
+		logger.debug("Initialising the NewOrUsedByParentId dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc NewOrUsed and sort by parentId
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				Long parentId = dataRow.getParentId();
+				
+				if (parentId != 0){
+					if (parentIdMap.get(parentId) == null){
+						parentIdMap.put(parentId, new TreeMap<Long,String>());
+					}
+	
+					parentIdMap.get(parentId).put(dataRow.getId(), dataRow.getRefDesc());
+				}
+ 	        }
+ 	        
+ 	        this.newOrUsedByParentId = parentIdMap;
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of NewOrUsed dropdown buffer failed", ex);
+		}
+		
+		
+		return map;
+	}    
+	
+	
+
 	
     /**
      * Cleans up any Collection Objects created by the Class instance
@@ -2537,11 +2989,11 @@ public class ReferenceStoreImpl implements ReferenceStore
     	logger.debug("Clearing PledgeServiceLevelTwo dropdown buffer in clear()");
         pledgeServiceLevelTwo.clear();
 		
-    	logger.debug("Clearing GoodsCategory dropdown buffer in clear()");
-        goodsCategory.clear();
+    	logger.debug("Clearing GoodsCategoryOne dropdown buffer in clear()");
+        goodsCategoryOne.clear();
 		
-    	logger.debug("Clearing Goods dropdown buffer in clear()");
-        goods.clear();
+    	logger.debug("Clearing GoodsCategoryTwo dropdown buffer in clear()");
+        goodsCategoryTwo.clear();
 		
     	logger.debug("Clearing GoodsCondition dropdown buffer in clear()");
         goodsCondition.clear();
@@ -2557,6 +3009,18 @@ public class ReferenceStoreImpl implements ReferenceStore
 		
     	logger.debug("Clearing PledgeServiceLevelThree dropdown buffer in clear()");
         pledgeServiceLevelThree.clear();
+		
+    	logger.debug("Clearing GoodsCategoryThree dropdown buffer in clear()");
+        goodsCategoryThree.clear();
+		
+    	logger.debug("Clearing GoodsSize dropdown buffer in clear()");
+        goodsSize.clear();
+		
+    	logger.debug("Clearing GoodsQuantity dropdown buffer in clear()");
+        goodsQuantity.clear();
+		
+    	logger.debug("Clearing NewOrUsed dropdown buffer in clear()");
+        newOrUsed.clear();
 		
         return;
     }    
@@ -2609,11 +3073,11 @@ public class ReferenceStoreImpl implements ReferenceStore
     	logger.debug("Clearing PledgeServiceLevelTwo dropdown buffer in finalize()");
         pledgeServiceLevelTwo.clear();
 		
-    	logger.debug("Clearing GoodsCategory dropdown buffer in finalize()");
-        goodsCategory.clear();
+    	logger.debug("Clearing GoodsCategoryOne dropdown buffer in finalize()");
+        goodsCategoryOne.clear();
 		
-    	logger.debug("Clearing Goods dropdown buffer in finalize()");
-        goods.clear();
+    	logger.debug("Clearing GoodsCategoryTwo dropdown buffer in finalize()");
+        goodsCategoryTwo.clear();
 		
     	logger.debug("Clearing GoodsCondition dropdown buffer in finalize()");
         goodsCondition.clear();
@@ -2629,6 +3093,18 @@ public class ReferenceStoreImpl implements ReferenceStore
 		
     	logger.debug("Clearing PledgeServiceLevelThree dropdown buffer in finalize()");
         pledgeServiceLevelThree.clear();
+		
+    	logger.debug("Clearing GoodsCategoryThree dropdown buffer in finalize()");
+        goodsCategoryThree.clear();
+		
+    	logger.debug("Clearing GoodsSize dropdown buffer in finalize()");
+        goodsSize.clear();
+		
+    	logger.debug("Clearing GoodsQuantity dropdown buffer in finalize()");
+        goodsQuantity.clear();
+		
+    	logger.debug("Clearing NewOrUsed dropdown buffer in finalize()");
+        newOrUsed.clear();
 		
         return;
     }    

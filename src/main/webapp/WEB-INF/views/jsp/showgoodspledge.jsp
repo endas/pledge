@@ -44,8 +44,50 @@
 	
 
 	<div class="row">
-		<label class="col-sm-2">Type of Goods</label>
-		<div class="col-sm-10">${goodsPledge.pledgedGoods}</div>
+		<label class="col-sm-2">Goods Category One</label>
+		<div class="col-sm-10">${goodsPledge.goodsCategoryOne}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Goods Category Two</label>
+		<div class="col-sm-10">${goodsPledge.goodsCategoryTwo}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Goods Category Three</label>
+		<div class="col-sm-10">${goodsPledge.goodsCategoryThree}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Size</label>
+		<div class="col-sm-10">${goodsPledge.goodsSize}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">New/Used</label>
+		<div class="col-sm-10">${goodsPledge.goodsNewOrUsed}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Goods Condition</label>
+		<div class="col-sm-10">${goodsPledge.goodsCondition}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Quantity</label>
+		<div class="col-sm-10">${goodsPledge.goodsQuantity}</div>
 	</div>
 
 
@@ -60,20 +102,6 @@
 	<div class="row">
 		<label class="col-sm-2">Package Size</label>
 		<div class="col-sm-10">${goodsPledge.itemSize}</div>
-	</div>
-
-
-
-	<div class="row">
-		<label class="col-sm-2">Condition</label>
-		<div class="col-sm-10">${goodsPledge.goodsCondition}</div>
-	</div>
-
-
-
-	<div class="row">
-		<label class="col-sm-2">Number of Items of this type</label>
-		<div class="col-sm-10">${goodsPledge.numberOfItems}</div>
 	</div>
 
 

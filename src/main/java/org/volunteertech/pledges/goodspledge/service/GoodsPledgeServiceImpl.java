@@ -172,13 +172,85 @@ public class GoodsPledgeServiceImpl implements GoodsPledgeService
     
     
     /**
-     * Returns a <code>List</code> of GoodsPledge objects that have a matching pledgedGoods
-     * @return List a List of GoodsPledge objects that match the pledgedGoods property given as parameter.
-     * @param pledgedGoods the pledgedGoods on which to match the required records.
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCategoryOne
+     * @return List a List of GoodsPledge objects that match the goodsCategoryOne property given as parameter.
+     * @param goodsCategoryOne the goodsCategoryOne on which to match the required records.
      */
-    public List<GoodsPledge> listGoodsPledgeByPledgedGoods(Long pledgedGoods)
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryOne(Long goodsCategoryOne)
     {
-        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByPledgedGoods(pledgedGoods);
+        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByGoodsCategoryOne(goodsCategoryOne);
+
+        return result;
+    }
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCategoryTwo
+     * @return List a List of GoodsPledge objects that match the goodsCategoryTwo property given as parameter.
+     * @param goodsCategoryTwo the goodsCategoryTwo on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryTwo(Long goodsCategoryTwo)
+    {
+        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByGoodsCategoryTwo(goodsCategoryTwo);
+
+        return result;
+    }
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCategoryThree
+     * @return List a List of GoodsPledge objects that match the goodsCategoryThree property given as parameter.
+     * @param goodsCategoryThree the goodsCategoryThree on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryThree(Long goodsCategoryThree)
+    {
+        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByGoodsCategoryThree(goodsCategoryThree);
+
+        return result;
+    }
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsSize
+     * @return List a List of GoodsPledge objects that match the goodsSize property given as parameter.
+     * @param goodsSize the goodsSize on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsSize(Long goodsSize)
+    {
+        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByGoodsSize(goodsSize);
+
+        return result;
+    }
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsNewOrUsed
+     * @return List a List of GoodsPledge objects that match the goodsNewOrUsed property given as parameter.
+     * @param goodsNewOrUsed the goodsNewOrUsed on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsNewOrUsed(Long goodsNewOrUsed)
+    {
+        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByGoodsNewOrUsed(goodsNewOrUsed);
+
+        return result;
+    }
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCondition
+     * @return List a List of GoodsPledge objects that match the goodsCondition property given as parameter.
+     * @param goodsCondition the goodsCondition on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCondition(Long goodsCondition)
+    {
+        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByGoodsCondition(goodsCondition);
+
+        return result;
+    }
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsQuantity
+     * @return List a List of GoodsPledge objects that match the goodsQuantity property given as parameter.
+     * @param goodsQuantity the goodsQuantity on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsQuantity(Long goodsQuantity)
+    {
+        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByGoodsQuantity(goodsQuantity);
 
         return result;
     }
@@ -203,30 +275,6 @@ public class GoodsPledgeServiceImpl implements GoodsPledgeService
     public List<GoodsPledge> listGoodsPledgeByItemSize(String itemSize)
     {
         List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByItemSize(itemSize);
-
-        return result;
-    }
-
-    /**
-     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCondition
-     * @return List a List of GoodsPledge objects that match the goodsCondition property given as parameter.
-     * @param goodsCondition the goodsCondition on which to match the required records.
-     */
-    public List<GoodsPledge> listGoodsPledgeByGoodsCondition(Long goodsCondition)
-    {
-        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByGoodsCondition(goodsCondition);
-
-        return result;
-    }
-
-    /**
-     * Returns a <code>List</code> of GoodsPledge objects that have a matching numberOfItems
-     * @return List a List of GoodsPledge objects that match the numberOfItems property given as parameter.
-     * @param numberOfItems the numberOfItems on which to match the required records.
-     */
-    public List<GoodsPledge> listGoodsPledgeByNumberOfItems(Long numberOfItems)
-    {
-        List<GoodsPledge> result = this.getGoodsPledgeBo().listGoodsPledgeByNumberOfItems(numberOfItems);
 
         return result;
     }
@@ -406,15 +454,55 @@ public class GoodsPledgeServiceImpl implements GoodsPledgeService
 	 */    
     public GoodsPledge translateReferenceValues(GoodsPledge goodsPledge, Locale locale){
     	
-			Long pledgedGoodsReferenceId =  goodsPledge.getPledgedGoods();
-			String pledgedGoodsLocaleReference = null;
-			if (pledgedGoodsReferenceId == null || pledgedGoodsReferenceId == -1){
-				pledgedGoodsLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
+			Long goodsCategoryOneReferenceId =  goodsPledge.getGoodsCategoryOne();
+			String goodsCategoryOneLocaleReference = null;
+			if (goodsCategoryOneReferenceId == null || goodsCategoryOneReferenceId == -1){
+				goodsCategoryOneLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
 			}else{
-				pledgedGoodsLocaleReference = this.messageResourceService.getMessage(pledgedGoodsReferenceId, new String[0], locale);
+				goodsCategoryOneLocaleReference = this.messageResourceService.getMessage(goodsCategoryOneReferenceId, new String[0], locale);
 			}
 			
-			goodsPledge.setPledgedGoodsReferenceTranslation(pledgedGoodsLocaleReference);
+			goodsPledge.setGoodsCategoryOneReferenceTranslation(goodsCategoryOneLocaleReference);
+
+			Long goodsCategoryTwoReferenceId =  goodsPledge.getGoodsCategoryTwo();
+			String goodsCategoryTwoLocaleReference = null;
+			if (goodsCategoryTwoReferenceId == null || goodsCategoryTwoReferenceId == -1){
+				goodsCategoryTwoLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
+			}else{
+				goodsCategoryTwoLocaleReference = this.messageResourceService.getMessage(goodsCategoryTwoReferenceId, new String[0], locale);
+			}
+			
+			goodsPledge.setGoodsCategoryTwoReferenceTranslation(goodsCategoryTwoLocaleReference);
+
+			Long goodsCategoryThreeReferenceId =  goodsPledge.getGoodsCategoryThree();
+			String goodsCategoryThreeLocaleReference = null;
+			if (goodsCategoryThreeReferenceId == null || goodsCategoryThreeReferenceId == -1){
+				goodsCategoryThreeLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
+			}else{
+				goodsCategoryThreeLocaleReference = this.messageResourceService.getMessage(goodsCategoryThreeReferenceId, new String[0], locale);
+			}
+			
+			goodsPledge.setGoodsCategoryThreeReferenceTranslation(goodsCategoryThreeLocaleReference);
+
+			Long goodsSizeReferenceId =  goodsPledge.getGoodsSize();
+			String goodsSizeLocaleReference = null;
+			if (goodsSizeReferenceId == null || goodsSizeReferenceId == -1){
+				goodsSizeLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
+			}else{
+				goodsSizeLocaleReference = this.messageResourceService.getMessage(goodsSizeReferenceId, new String[0], locale);
+			}
+			
+			goodsPledge.setGoodsSizeReferenceTranslation(goodsSizeLocaleReference);
+
+			Long goodsNewOrUsedReferenceId =  goodsPledge.getGoodsNewOrUsed();
+			String goodsNewOrUsedLocaleReference = null;
+			if (goodsNewOrUsedReferenceId == null || goodsNewOrUsedReferenceId == -1){
+				goodsNewOrUsedLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
+			}else{
+				goodsNewOrUsedLocaleReference = this.messageResourceService.getMessage(goodsNewOrUsedReferenceId, new String[0], locale);
+			}
+			
+			goodsPledge.setGoodsNewOrUsedReferenceTranslation(goodsNewOrUsedLocaleReference);
 
 			Long goodsConditionReferenceId =  goodsPledge.getGoodsCondition();
 			String goodsConditionLocaleReference = null;
@@ -425,6 +513,16 @@ public class GoodsPledgeServiceImpl implements GoodsPledgeService
 			}
 			
 			goodsPledge.setGoodsConditionReferenceTranslation(goodsConditionLocaleReference);
+
+			Long goodsQuantityReferenceId =  goodsPledge.getGoodsQuantity();
+			String goodsQuantityLocaleReference = null;
+			if (goodsQuantityReferenceId == null || goodsQuantityReferenceId == -1){
+				goodsQuantityLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
+			}else{
+				goodsQuantityLocaleReference = this.messageResourceService.getMessage(goodsQuantityReferenceId, new String[0], locale);
+			}
+			
+			goodsPledge.setGoodsQuantityReferenceTranslation(goodsQuantityLocaleReference);
 
     	return goodsPledge;
     }

@@ -62,11 +62,53 @@ public interface GoodsPledgeDao
     
     
     /**
-     * Load existing GoodsPledge objects from the database that have a pledgedGoods column
-     * that matches the pledgedGoods parameter.
-     * @return List a List of GoodsPledge objects that match the pledgedGoods parameter.
+     * Load existing GoodsPledge objects from the database that have a goodsCategoryOne column
+     * that matches the goodsCategoryOne parameter.
+     * @return List a List of GoodsPledge objects that match the goodsCategoryOne parameter.
      */
-    public List<GoodsPledge> listGoodsPledgeByPledgedGoods(Long pledgedGoods);
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryOne(Long goodsCategoryOne);
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsCategoryTwo column
+     * that matches the goodsCategoryTwo parameter.
+     * @return List a List of GoodsPledge objects that match the goodsCategoryTwo parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryTwo(Long goodsCategoryTwo);
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsCategoryThree column
+     * that matches the goodsCategoryThree parameter.
+     * @return List a List of GoodsPledge objects that match the goodsCategoryThree parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryThree(Long goodsCategoryThree);
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsSize column
+     * that matches the goodsSize parameter.
+     * @return List a List of GoodsPledge objects that match the goodsSize parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsSize(Long goodsSize);
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsNewOrUsed column
+     * that matches the goodsNewOrUsed parameter.
+     * @return List a List of GoodsPledge objects that match the goodsNewOrUsed parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsNewOrUsed(Long goodsNewOrUsed);
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsCondition column
+     * that matches the goodsCondition parameter.
+     * @return List a List of GoodsPledge objects that match the goodsCondition parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCondition(Long goodsCondition);
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsQuantity column
+     * that matches the goodsQuantity parameter.
+     * @return List a List of GoodsPledge objects that match the goodsQuantity parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsQuantity(Long goodsQuantity);
 
     /**
      * Load existing GoodsPledge objects from the database that have a additionalInformation column
@@ -81,20 +123,6 @@ public interface GoodsPledgeDao
      * @return List a List of GoodsPledge objects that match the itemSize parameter.
      */
     public List<GoodsPledge> listGoodsPledgeByItemSize(String itemSize);
-
-    /**
-     * Load existing GoodsPledge objects from the database that have a goodsCondition column
-     * that matches the goodsCondition parameter.
-     * @return List a List of GoodsPledge objects that match the goodsCondition parameter.
-     */
-    public List<GoodsPledge> listGoodsPledgeByGoodsCondition(Long goodsCondition);
-
-    /**
-     * Load existing GoodsPledge objects from the database that have a numberOfItems column
-     * that matches the numberOfItems parameter.
-     * @return List a List of GoodsPledge objects that match the numberOfItems parameter.
-     */
-    public List<GoodsPledge> listGoodsPledgeByNumberOfItems(Long numberOfItems);
 
     
     /**

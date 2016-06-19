@@ -99,11 +99,53 @@ public interface GoodsPledgeService
     
     
     /**
-     * Returns a <code>List</code> of GoodsPledge objects that have a matching pledgedGoods
-     * @return List a List of GoodsPledge objects that match the pledgedGoods property given as parameter.
-     * @param pledgedGoods the pledgedGoods on which to match the required records.
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCategoryOne
+     * @return List a List of GoodsPledge objects that match the goodsCategoryOne property given as parameter.
+     * @param goodsCategoryOne the goodsCategoryOne on which to match the required records.
      */
-    public List<GoodsPledge> listGoodsPledgeByPledgedGoods(Long pledgedGoods);
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryOne(Long goodsCategoryOne);
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCategoryTwo
+     * @return List a List of GoodsPledge objects that match the goodsCategoryTwo property given as parameter.
+     * @param goodsCategoryTwo the goodsCategoryTwo on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryTwo(Long goodsCategoryTwo);
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCategoryThree
+     * @return List a List of GoodsPledge objects that match the goodsCategoryThree property given as parameter.
+     * @param goodsCategoryThree the goodsCategoryThree on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryThree(Long goodsCategoryThree);
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsSize
+     * @return List a List of GoodsPledge objects that match the goodsSize property given as parameter.
+     * @param goodsSize the goodsSize on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsSize(Long goodsSize);
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsNewOrUsed
+     * @return List a List of GoodsPledge objects that match the goodsNewOrUsed property given as parameter.
+     * @param goodsNewOrUsed the goodsNewOrUsed on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsNewOrUsed(Long goodsNewOrUsed);
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCondition
+     * @return List a List of GoodsPledge objects that match the goodsCondition property given as parameter.
+     * @param goodsCondition the goodsCondition on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCondition(Long goodsCondition);
+
+    /**
+     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsQuantity
+     * @return List a List of GoodsPledge objects that match the goodsQuantity property given as parameter.
+     * @param goodsQuantity the goodsQuantity on which to match the required records.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsQuantity(Long goodsQuantity);
 
     /**
      * Returns a <code>List</code> of GoodsPledge objects that have a matching additionalInformation
@@ -118,20 +160,6 @@ public interface GoodsPledgeService
      * @param itemSize the itemSize on which to match the required records.
      */
     public List<GoodsPledge> listGoodsPledgeByItemSize(String itemSize);
-
-    /**
-     * Returns a <code>List</code> of GoodsPledge objects that have a matching goodsCondition
-     * @return List a List of GoodsPledge objects that match the goodsCondition property given as parameter.
-     * @param goodsCondition the goodsCondition on which to match the required records.
-     */
-    public List<GoodsPledge> listGoodsPledgeByGoodsCondition(Long goodsCondition);
-
-    /**
-     * Returns a <code>List</code> of GoodsPledge objects that have a matching numberOfItems
-     * @return List a List of GoodsPledge objects that match the numberOfItems property given as parameter.
-     * @param numberOfItems the numberOfItems on which to match the required records.
-     */
-    public List<GoodsPledge> listGoodsPledgeByNumberOfItems(Long numberOfItems);
 
     
     

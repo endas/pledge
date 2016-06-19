@@ -44,15 +44,27 @@
 			  
 			{
 				"targets": 1,
-				"data": "additionalInformation"
+				"data": "goodsCategoryOneReferenceTranslation"
 			},
 			{
 				"targets": 2,
-				"data": "itemSize"
+				"data": "goodsCategoryTwoReferenceTranslation"
 			},
 			{
 				"targets": 3,
-				"data": "numberOfItems"
+				"data": "goodsCategoryThreeReferenceTranslation"
+			},
+			{
+				"targets": 4,
+				"data": "goodsQuantityReferenceTranslation"
+			},
+			{
+				"targets": 5,
+				"data": "additionalInformation"
+			},
+			{
+				"targets": 6,
+				"data": "itemSize"
 			}
 			]
 		} );

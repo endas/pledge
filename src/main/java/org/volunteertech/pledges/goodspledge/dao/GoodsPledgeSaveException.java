@@ -24,7 +24,7 @@ public class GoodsPledgeSaveException extends Exception
     /**
      * Create a GoodsPledgeSaveException Object to give details
      * of issues saving to the database.
-     * @param pledgedGoods The primary key of the Object that could not be saved
+     * @param goodsCategoryOne The primary key of the Object that could not be saved
      * @param cause The Exception that caused the original error.
      */
     public GoodsPledgeSaveException(String message, Throwable cause)

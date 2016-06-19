@@ -339,11 +339,53 @@ public class GoodsPledgeController extends BaseController
 			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSPLEDGE_SUBHEADER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getFormSubHeader());
 			messageResourceList.add(messageResource);
 			
-	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.PLEDGEDGOODS_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getPledgedGoodsLabel());
+	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYONE_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryOneLabel());
   			messageResourceList.add(messageResource);
-  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.PLEDGEDGOODS_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getPledgedGoodsPlaceHolder());
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYONE_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryOnePlaceHolder());
   			messageResourceList.add(messageResource);
-  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.PLEDGEDGOODS_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getPledgedGoodsHelpText());
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYONE_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryOneHelpText());
+  			messageResourceList.add(messageResource);
+  		
+	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYTWO_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryTwoLabel());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYTWO_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryTwoPlaceHolder());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYTWO_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryTwoHelpText());
+  			messageResourceList.add(messageResource);
+  		
+	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYTHREE_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryThreeLabel());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYTHREE_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryThreePlaceHolder());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYTHREE_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryThreeHelpText());
+  			messageResourceList.add(messageResource);
+  		
+	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSSIZE_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsSizeLabel());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSSIZE_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsSizePlaceHolder());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSSIZE_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsSizeHelpText());
+  			messageResourceList.add(messageResource);
+  		
+	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSNEWORUSED_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsNewOrUsedLabel());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSNEWORUSED_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsNewOrUsedPlaceHolder());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSNEWORUSED_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsNewOrUsedHelpText());
+  			messageResourceList.add(messageResource);
+  		
+	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionLabel());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionPlaceHolder());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionHelpText());
+  			messageResourceList.add(messageResource);
+  		
+	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSQUANTITY_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsQuantityLabel());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSQUANTITY_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsQuantityPlaceHolder());
+  			messageResourceList.add(messageResource);
+  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSQUANTITY_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsQuantityHelpText());
   			messageResourceList.add(messageResource);
   		
 	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ADDITIONALINFORMATION_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getAdditionalInformationLabel());
@@ -358,20 +400,6 @@ public class GoodsPledgeController extends BaseController
   			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ITEMSIZE_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getItemSizePlaceHolder());
   			messageResourceList.add(messageResource);
   			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ITEMSIZE_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getItemSizeHelpText());
-  			messageResourceList.add(messageResource);
-  		
-	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionLabel());
-  			messageResourceList.add(messageResource);
-  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionPlaceHolder());
-  			messageResourceList.add(messageResource);
-  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionHelpText());
-  			messageResourceList.add(messageResource);
-  		
-	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.NUMBEROFITEMS_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getNumberOfItemsLabel());
-  			messageResourceList.add(messageResource);
-  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.NUMBEROFITEMS_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getNumberOfItemsPlaceHolder());
-  			messageResourceList.add(messageResource);
-  			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.NUMBEROFITEMS_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getNumberOfItemsHelpText());
   			messageResourceList.add(messageResource);
   		
 	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.SAVEBUTTON_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getSaveButtonLabel());
@@ -440,24 +468,41 @@ public class GoodsPledgeController extends BaseController
 	
 
 	private void setDropDownContents(Model model, GoodsPledge goodsPledge, Locale locale) {
-			
-		Map<Long, String> pledgedGoodsGoodsCategoryMap = referenceStore.getGoodsCategory();
-		SortedMap<Long, String> localizedpledgedGoodsGoodsCategoryMap = new TreeMap<Long, String>(pledgedGoodsGoodsCategoryMap);
-		for (Map.Entry<Long, String> entry : pledgedGoodsGoodsCategoryMap.entrySet()) {
-			localizedpledgedGoodsGoodsCategoryMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+		
+		Map<Long, String> goodsCategoryOneMap = referenceStore.getGoodsCategoryOne();
+		SortedMap<Long, String> localizedgoodsCategoryOneMap = new TreeMap<Long, String>(goodsCategoryOneMap);
+		for (Map.Entry<Long, String> entry : goodsCategoryOneMap.entrySet()) {
+			localizedgoodsCategoryOneMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 		}
-		model.addAttribute("pledgedGoodsGoodsCategoryMap", localizedpledgedGoodsGoodsCategoryMap);
-
-		if (goodsPledge != null){
-			Map<Long, String> pledgedGoodsMap = referenceStore.getGoodsByParentId(goodsPledge.getPledgedGoodsGoodsCategory());
-			if (pledgedGoodsMap != null){
-				SortedMap<Long, String> localizedpledgedGoodsMap = new TreeMap<Long, String>(pledgedGoodsMap);
-				for (Map.Entry<Long, String> entry : pledgedGoodsMap.entrySet()) {
-					localizedpledgedGoodsMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-				}
-				model.addAttribute("pledgedGoodsMap", localizedpledgedGoodsMap);
-			}
+		model.addAttribute("goodsCategoryOneMap", localizedgoodsCategoryOneMap);
+	      
+		Map<Long, String> goodsCategoryTwoMap = referenceStore.getGoodsCategoryTwo();
+		SortedMap<Long, String> localizedgoodsCategoryTwoMap = new TreeMap<Long, String>(goodsCategoryTwoMap);
+		for (Map.Entry<Long, String> entry : goodsCategoryTwoMap.entrySet()) {
+			localizedgoodsCategoryTwoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 		}
+		model.addAttribute("goodsCategoryTwoMap", localizedgoodsCategoryTwoMap);
+	      
+		Map<Long, String> goodsCategoryThreeMap = referenceStore.getGoodsCategoryThree();
+		SortedMap<Long, String> localizedgoodsCategoryThreeMap = new TreeMap<Long, String>(goodsCategoryThreeMap);
+		for (Map.Entry<Long, String> entry : goodsCategoryThreeMap.entrySet()) {
+			localizedgoodsCategoryThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+		}
+		model.addAttribute("goodsCategoryThreeMap", localizedgoodsCategoryThreeMap);
+	      
+		Map<Long, String> goodsSizeMap = referenceStore.getGoodsSize();
+		SortedMap<Long, String> localizedgoodsSizeMap = new TreeMap<Long, String>(goodsSizeMap);
+		for (Map.Entry<Long, String> entry : goodsSizeMap.entrySet()) {
+			localizedgoodsSizeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+		}
+		model.addAttribute("goodsSizeMap", localizedgoodsSizeMap);
+	      
+		Map<Long, String> goodsNewOrUsedMap = referenceStore.getNewOrUsed();
+		SortedMap<Long, String> localizedgoodsNewOrUsedMap = new TreeMap<Long, String>(goodsNewOrUsedMap);
+		for (Map.Entry<Long, String> entry : goodsNewOrUsedMap.entrySet()) {
+			localizedgoodsNewOrUsedMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+		}
+		model.addAttribute("goodsNewOrUsedMap", localizedgoodsNewOrUsedMap);
 	      
 		Map<Long, String> goodsConditionMap = referenceStore.getGoodsCondition();
 		SortedMap<Long, String> localizedgoodsConditionMap = new TreeMap<Long, String>(goodsConditionMap);
@@ -465,6 +510,13 @@ public class GoodsPledgeController extends BaseController
 			localizedgoodsConditionMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 		}
 		model.addAttribute("goodsConditionMap", localizedgoodsConditionMap);
+	      
+		Map<Long, String> goodsQuantityMap = referenceStore.getGoodsQuantity();
+		SortedMap<Long, String> localizedgoodsQuantityMap = new TreeMap<Long, String>(goodsQuantityMap);
+		for (Map.Entry<Long, String> entry : goodsQuantityMap.entrySet()) {
+			localizedgoodsQuantityMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+		}
+		model.addAttribute("goodsQuantityMap", localizedgoodsQuantityMap);
 	      
 		
 		Map<Long, String> localeMap = referenceStore.getLocale();

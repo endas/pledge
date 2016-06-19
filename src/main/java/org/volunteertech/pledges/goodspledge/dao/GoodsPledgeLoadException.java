@@ -24,7 +24,7 @@ public class GoodsPledgeLoadException extends Exception
     /**
      * Create a GoodsPledgeLoadException Object to give details
      * of issues loading from the database.
-     * @param pledgedGoods A supporting message
+     * @param goodsCategoryOne A supporting message
      * @param cause The Exception that caused the original error.
      */
     public GoodsPledgeLoadException(String message, Throwable cause)
@@ -36,7 +36,7 @@ public class GoodsPledgeLoadException extends Exception
     /**
      * Create a GoodsPledgeLoadException Object to give details
      * of issues loading from the database.
-     * @param pledgedGoods A supporting message
+     * @param goodsCategoryOne A supporting message
      */
     public GoodsPledgeLoadException(String message)
     {

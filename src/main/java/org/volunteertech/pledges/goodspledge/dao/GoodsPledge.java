@@ -68,54 +68,180 @@ public interface GoodsPledge extends Serializable {
      */
 	public void setParentObjectId(Long parentObjectId);
     
-    /**
-     * Sets the parent GoodsCategory of the address type that has been chosen by the user
-     * @param pledgedGoodsGoodsCategory is the parent of the address type
-     */
-    public void setPledgedGoodsGoodsCategory(Long pledgedGoodsGoodsCategory);
     
     /**
-     * Returns the parent GoodsCategory of the address type that has been chosen by the user or saved in the database
-     * @return the parent GoodsCategory of the address type
+     * Sets the goods category level one that has been chosen by the user
+     * @param goodsCategoryOne is the goods category level one
      */
-    public Long getPledgedGoodsGoodsCategory();
-    
-    /**
-     * Sets the translated reference mapping for the parent GoodsCategory of the address type that has been chosen by the user
-     * @param pledgedGoodsGoodsCategory is the the translated reference mapping for the parent of the address type
-     */
-    public void setPledgedGoodsGoodsCategoryReferenceTranslation(String pledgedGoodsGoodsCategory);
+    public void setGoodsCategoryOne(Long goodsCategoryOne);
 
     /**
-     * Returns the translated reference mapping for the parent GoodsCategory of the address type that has been chosen by the user or saved in the database
-     * @return the translated reference mapping for the parent GoodsCategory of the address type
+     * Returns the goods category level one that has been chosen by the user or saved in the database
+     * @return the goods category level one
      */
-    public String getPledgedGoodsGoodsCategoryReferenceTranslation();    
-    
+    public Long getGoodsCategoryOne();
     
     /**
-     * Sets the address type that has been chosen by the user
-     * @param pledgedGoods is the address type
+     * Sets the translated reference mapping for the goods category level one that has been chosen by the user
+     * @param the translated reference mapping for goodsCategoryOne is the goods category level one
      */
-    public void setPledgedGoods(Long pledgedGoods);
+    public void setGoodsCategoryOneReferenceTranslation(String goodsCategoryOneReferenceTranslation);
 
     /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
+     * Returns the translated reference mapping for the goods category level one that has been chosen by the user or saved in the database
+     * @return the translated reference mapping for the goods category level one
      */
-    public Long getPledgedGoods();
+    public String getGoodsCategoryOneReferenceTranslation();
+      
     
     /**
-     * Sets the translated reference mapping for the address type that has been chosen by the user
-     * @param the translated reference mapping for pledgedGoods is the address type
+     * Sets the goods category level two that has been chosen by the user
+     * @param goodsCategoryTwo is the goods category level two
      */
-    public void setPledgedGoodsReferenceTranslation(String pledgedGoodsReferenceTranslation);
+    public void setGoodsCategoryTwo(Long goodsCategoryTwo);
 
     /**
-     * Returns the translated reference mapping for the address type that has been chosen by the user or saved in the database
-     * @return the translated reference mapping for the address type
+     * Returns the goods category level two that has been chosen by the user or saved in the database
+     * @return the goods category level two
      */
-    public String getPledgedGoodsReferenceTranslation();
+    public Long getGoodsCategoryTwo();
+    
+    /**
+     * Sets the translated reference mapping for the goods category level two that has been chosen by the user
+     * @param the translated reference mapping for goodsCategoryTwo is the goods category level two
+     */
+    public void setGoodsCategoryTwoReferenceTranslation(String goodsCategoryTwoReferenceTranslation);
+
+    /**
+     * Returns the translated reference mapping for the goods category level two that has been chosen by the user or saved in the database
+     * @return the translated reference mapping for the goods category level two
+     */
+    public String getGoodsCategoryTwoReferenceTranslation();
+      
+    
+    /**
+     * Sets the goods category level three that has been chosen by the user
+     * @param goodsCategoryThree is the goods category level three
+     */
+    public void setGoodsCategoryThree(Long goodsCategoryThree);
+
+    /**
+     * Returns the goods category level three that has been chosen by the user or saved in the database
+     * @return the goods category level three
+     */
+    public Long getGoodsCategoryThree();
+    
+    /**
+     * Sets the translated reference mapping for the goods category level three that has been chosen by the user
+     * @param the translated reference mapping for goodsCategoryThree is the goods category level three
+     */
+    public void setGoodsCategoryThreeReferenceTranslation(String goodsCategoryThreeReferenceTranslation);
+
+    /**
+     * Returns the translated reference mapping for the goods category level three that has been chosen by the user or saved in the database
+     * @return the translated reference mapping for the goods category level three
+     */
+    public String getGoodsCategoryThreeReferenceTranslation();
+      
+    
+    /**
+     * Sets the goods size that has been chosen by the user
+     * @param goodsSize is the goods size
+     */
+    public void setGoodsSize(Long goodsSize);
+
+    /**
+     * Returns the goods size that has been chosen by the user or saved in the database
+     * @return the goods size
+     */
+    public Long getGoodsSize();
+    
+    /**
+     * Sets the translated reference mapping for the goods size that has been chosen by the user
+     * @param the translated reference mapping for goodsSize is the goods size
+     */
+    public void setGoodsSizeReferenceTranslation(String goodsSizeReferenceTranslation);
+
+    /**
+     * Returns the translated reference mapping for the goods size that has been chosen by the user or saved in the database
+     * @return the translated reference mapping for the goods size
+     */
+    public String getGoodsSizeReferenceTranslation();
+      
+    
+    /**
+     * Sets the goods size that has been chosen by the user
+     * @param goodsNewOrUsed is the goods size
+     */
+    public void setGoodsNewOrUsed(Long goodsNewOrUsed);
+
+    /**
+     * Returns the goods size that has been chosen by the user or saved in the database
+     * @return the goods size
+     */
+    public Long getGoodsNewOrUsed();
+    
+    /**
+     * Sets the translated reference mapping for the goods size that has been chosen by the user
+     * @param the translated reference mapping for goodsNewOrUsed is the goods size
+     */
+    public void setGoodsNewOrUsedReferenceTranslation(String goodsNewOrUsedReferenceTranslation);
+
+    /**
+     * Returns the translated reference mapping for the goods size that has been chosen by the user or saved in the database
+     * @return the translated reference mapping for the goods size
+     */
+    public String getGoodsNewOrUsedReferenceTranslation();
+      
+    
+    /**
+     * Sets the goods condition that has been chosen by the user
+     * @param goodsCondition is the goods condition
+     */
+    public void setGoodsCondition(Long goodsCondition);
+
+    /**
+     * Returns the goods condition that has been chosen by the user or saved in the database
+     * @return the goods condition
+     */
+    public Long getGoodsCondition();
+    
+    /**
+     * Sets the translated reference mapping for the goods condition that has been chosen by the user
+     * @param the translated reference mapping for goodsCondition is the goods condition
+     */
+    public void setGoodsConditionReferenceTranslation(String goodsConditionReferenceTranslation);
+
+    /**
+     * Returns the translated reference mapping for the goods condition that has been chosen by the user or saved in the database
+     * @return the translated reference mapping for the goods condition
+     */
+    public String getGoodsConditionReferenceTranslation();
+      
+    
+    /**
+     * Sets the quantity of goods that has been chosen by the user
+     * @param goodsQuantity is the quantity of goods
+     */
+    public void setGoodsQuantity(Long goodsQuantity);
+
+    /**
+     * Returns the quantity of goods that has been chosen by the user or saved in the database
+     * @return the quantity of goods
+     */
+    public Long getGoodsQuantity();
+    
+    /**
+     * Sets the translated reference mapping for the quantity of goods that has been chosen by the user
+     * @param the translated reference mapping for goodsQuantity is the quantity of goods
+     */
+    public void setGoodsQuantityReferenceTranslation(String goodsQuantityReferenceTranslation);
+
+    /**
+     * Returns the translated reference mapping for the quantity of goods that has been chosen by the user or saved in the database
+     * @return the translated reference mapping for the quantity of goods
+     */
+    public String getGoodsQuantityReferenceTranslation();
       
     
     /**
@@ -142,44 +268,6 @@ public interface GoodsPledge extends Serializable {
      * @return the participant comments
      */
     public String getItemSize();
-    
-    
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param goodsCondition is the address type
-     */
-    public void setGoodsCondition(Long goodsCondition);
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getGoodsCondition();
-    
-    /**
-     * Sets the translated reference mapping for the address type that has been chosen by the user
-     * @param the translated reference mapping for goodsCondition is the address type
-     */
-    public void setGoodsConditionReferenceTranslation(String goodsConditionReferenceTranslation);
-
-    /**
-     * Returns the translated reference mapping for the address type that has been chosen by the user or saved in the database
-     * @return the translated reference mapping for the address type
-     */
-    public String getGoodsConditionReferenceTranslation();
-      
-    
-    /**
-     * Sets the address type
-     * @param numberOfItems is the address type
-     */
-    public void setNumberOfItems(Long numberOfItems);
-
-    /**
-     * Returns the address type
-     * @return the address type
-     */
-    public Long getNumberOfItems();
     
     /**
      * Sets the associated RegisterOfPledges mapped as the registerOfPledges property

@@ -62,11 +62,19 @@
     
 	  	<spring:url value="/goodspledges" var="goodsPledgeActionUrl" />
 	
-	<spring:message code="frmGoodsPledgePledgedGoodsGoodsCategoryPlaceHolder" var="unselectedPledgedGoodsGoodsCategory"/>
+	<spring:message code="frmGoodsPledgeGoodsCategoryOnePlaceHolder" var="unselectedGoodsCategoryOne"/>
     
-	<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder" var="unselectedPledgedGoods"/>
+	<spring:message code="frmGoodsPledgeGoodsCategoryTwoPlaceHolder" var="unselectedGoodsCategoryTwo"/>
+    
+	<spring:message code="frmGoodsPledgeGoodsCategoryThreePlaceHolder" var="unselectedGoodsCategoryThree"/>
+    
+	<spring:message code="frmGoodsPledgeGoodsSizePlaceHolder" var="unselectedGoodsSize"/>
+    
+	<spring:message code="frmGoodsPledgeGoodsNewOrUsedPlaceHolder" var="unselectedGoodsNewOrUsed"/>
     
 	<spring:message code="frmGoodsPledgeGoodsConditionPlaceHolder" var="unselectedGoodsCondition"/>
+    
+	<spring:message code="frmGoodsPledgeGoodsQuantityPlaceHolder" var="unselectedGoodsQuantity"/>
     
 	<form:form id="frmGoodsPledge" class="form-horizontal" method="post" accept-charset="utf-8"
                 modelAttribute="goodsPledgeFormModel" action="${goodsPledgeActionUrl}">
