@@ -207,7 +207,7 @@ public class ReferenceCategoryDaoImpl implements ReferenceCategoryDao
      */
     public List<Reference> getReferences(Long referenceCategoryId, Long userId) throws ReferenceCategoryLoadException, AuthorisationException, InvalidUserIDException{
     	@SuppressWarnings("unchecked")
-		List<Reference> result = this.sessionFactory.getCurrentSession().createQuery("select distinct references from ReferenceCategoryImpl as referenceCategory join referenceCategory.references as references where referenceCategory.id = :referenceCategoryId order by references.id asc").setParameter("referenceCategoryId", referenceCategoryId).list();
+		List<Reference> result = this.sessionFactory.getCurrentSession().createQuery("select distinct references from ReferenceCategoryImpl as referenceCategory join referenceCategory.references as references where referenceCategory.id = :referenceCategoryId order by references.id, references.refIndex asc").setParameter("referenceCategoryId", referenceCategoryId).list();
     	return result;
     }
       

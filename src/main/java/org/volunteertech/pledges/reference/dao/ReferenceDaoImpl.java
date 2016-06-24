@@ -123,7 +123,7 @@ public class ReferenceDaoImpl implements ReferenceDao
     public List<Reference> listReferenceByRefType(String refType)
     {
         @SuppressWarnings("unchecked")
-        List<Reference> result = this.sessionFactory.getCurrentSession().createQuery("from ReferenceImpl as reference where reference.refType = :reftype order by reference.id asc").setParameter("reftype", refType).list();
+        List<Reference> result = this.sessionFactory.getCurrentSession().createQuery("from ReferenceImpl as reference where reference.refType = :reftype order by reference.refIndex asc").setParameter("reftype", refType).list();
 
         return result;
     }
