@@ -74,39 +74,39 @@ import org.volunteertech.pledges.reference.ReferenceStore;
 public class GoodsPledgeController extends BaseController
 {
 
-	/**
-	 * userId used for development. This should be taken from the session.
-	 */
+    /**
+     * userId used for development. This should be taken from the session.
+     */
 	private Long userId = new Long(0);
-
+	 
 	final Logger logger = LoggerFactory.getLogger(GoodsPledgeController.class);
-
+	
 	@Autowired
 	private ReferenceStore referenceStore;
-
+	
 	@Autowired
 	private GoodsPledgeService goodsPledgeService;
 
 	@Autowired
 	private GoodsPledgeFormValidator goodsPledgeFormValidator;
-
-	@Autowired
-	private DatabaseDrivenMessageSource messageSource;
-
-
-
-	@Autowired
-	private MessageResourceService messageResourceService;
+	
+    @Autowired
+    private DatabaseDrivenMessageSource messageSource;
+    
 
 
-
+    @Autowired
+    private MessageResourceService messageResourceService;
+  
+    
+	
 	//Set a form validator
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		binder.setValidator(goodsPledgeFormValidator);
 	}
-
-
+	
+	
 	/**
 	 * Open the list page
 	 */
@@ -114,11 +114,11 @@ public class GoodsPledgeController extends BaseController
 	public String showAllGoodsPledge(Model model, Locale locale) {
 
 		logger.debug("showAllGoodsPledge()");
-
+			
 		return "goodspledge_table";
 
 	}
-
+	
 	/**
 	 * Open the localize page
 	 */
@@ -134,13 +134,13 @@ public class GoodsPledgeController extends BaseController
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
-
+		
 		return "goodspledge_localize";
 
 	}
-
-
-
+	
+	
+	
 
 	// save or update GoodsPledge
 	// 1. @ModelAttribute bind form value
@@ -153,15 +153,15 @@ public class GoodsPledgeController extends BaseController
 
 		logger.debug("saveOrUpdateGoodsPledge() : {}", goodsPledge);
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
-		Long userId = user.getApplicationUser().getId();
-
+        Long userId = user.getApplicationUser().getId();
+		
 
 		if (result.hasErrors()) {
 			setDropDownContents(model, goodsPledge, locale);
 			String updateIssueMessage = messageSource.getMessage("goodsPledgeUpdateIssueMessage", new String[0], locale);
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
-
+			
 			return "goodspledge";
 		} else {
 
@@ -182,14 +182,18 @@ public class GoodsPledgeController extends BaseController
 
 			try{
 				// TODO: Needs exception handling policy
-				goodsPledgeService.storeGoodsPledge(goodsPledge, userId);
+			    	goodsPledgeService.storeGoodsPledge(goodsPledge, userId);
 			}
 			catch (Exception ex){
 				logger.error("Exception caught !!!!!!!!!!!!!!", ex);
 			}
+			
+	
+			
 
+			
 			// POST/REDIRECT/GET
-			return "redirect:/entitylist";
+			return "redirect:/goodspledge/" + goodsPledge.getId() + "/update";
 		}
 
 	}
@@ -201,7 +205,7 @@ public class GoodsPledgeController extends BaseController
 		logger.debug("showAddGoodsPledgeForm()");
 
 		GoodsPledge goodsPledge = new GoodsPledgeImpl();
-
+		
 		goodsPledge.setCurrentMode(GoodsPledge.CurrentMode.ADD);
 
 		model.addAttribute("goodsPledgeFormModel", goodsPledge);
@@ -211,7 +215,7 @@ public class GoodsPledgeController extends BaseController
 		return "goodspledge";
 
 	}
-
+	
 	// support access to the supporting webpage by creating a new instance and returning 
 	@RequestMapping(value = "/goodspledgewebpage", method = RequestMethod.GET)
 	public String createGoodsPledgeForWebPageView(Model model, HttpServletRequest request, Locale locale) {
@@ -219,15 +223,15 @@ public class GoodsPledgeController extends BaseController
 		logger.debug("createGoodsPledgeForWebPageView()");
 
 		GoodsPledge goodsPledge = new GoodsPledgeImpl();
-
+		
 		try{
 			// TODO: Needs exception handling policy
-			goodsPledgeService.storeGoodsPledge(goodsPledge, userId);
+	    	goodsPledgeService.storeGoodsPledge(goodsPledge, userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
 		}
-
+		
 
 		model.addAttribute("goodsPledgeFormModel", goodsPledge);
 
@@ -236,7 +240,7 @@ public class GoodsPledgeController extends BaseController
 		return "goodspledgewebpage";
 
 	}
-
+	
 
 	// show update form
 	@RequestMapping(value = "/goodspledge/{id}/update", method = RequestMethod.GET)
@@ -254,11 +258,11 @@ public class GoodsPledgeController extends BaseController
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
 		}
 
-
+		
 		model.addAttribute("goodsPledgeFormModel", goodsPledge);
-
+		
 		setDropDownContents(model, goodsPledge, locale);
-
+		
 		return "goodspledge";
 
 	}
@@ -266,15 +270,15 @@ public class GoodsPledgeController extends BaseController
 	// delete goodsPledge
 	@RequestMapping(value = "/goodspledge/{id}/delete", method = RequestMethod.POST)
 	public String deleteGoodsPledge(@PathVariable("id") int id, 
-			final RedirectAttributes redirectAttributes) {
+		final RedirectAttributes redirectAttributes) {
 
 		logger.debug("deleteUser() : {}", id);
 
 		//goodsPledgeService.delete(id);
-
+		
 		redirectAttributes.addFlashAttribute("css", "success");
 		redirectAttributes.addFlashAttribute("msg", "User is deleted!");
-
+		
 		return "redirect:/goodspledge/all";
 
 	}
@@ -293,20 +297,20 @@ public class GoodsPledgeController extends BaseController
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
 		}
 
-
+		
 		if (goodsPledge == null) {
 			model.addAttribute("css", "danger");
 			model.addAttribute("msg", "User not found");
 		}
 		model.addAttribute("goodsPledge", goodsPledge);
-
+		
 		setDropDownContents(model, goodsPledge, locale);
 
 		return "showgoodspledge";
 
 	}
-
-
+	
+	
 	// save or update GoodsPledgeTranslation
 	// 1. @ModelAttribute bind form value
 	// 2. @Validated form validator
@@ -320,21 +324,20 @@ public class GoodsPledgeController extends BaseController
 		Long translationLocaleReferenceId = goodsPledgeTranslationBackingBean.getNewLocale();
 		String translationLocale = messageSource.getMessage(referenceStore.getRefDesc(translationLocaleReferenceId), new String[0], new Locale("en"));
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
-		Long userId = user.getApplicationUser().getId();
-
+        Long userId = user.getApplicationUser().getId();
+		
 
 		try{
-
+			
 			// TODO: Needs exception handling policy
 			List<MessageResource> messageResourceList  = new ArrayList<MessageResource>();
-
+			
 			MessageResource messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSPLEDGE_HEADER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getViewTitle());
 			messageResourceList.add(messageResource);
 			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSPLEDGE_TITLE_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getFormTitle());
 			messageResourceList.add(messageResource);
 			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSPLEDGE_SUBHEADER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getFormSubHeader());
 			messageResourceList.add(messageResource);
-<<<<<<< HEAD
 			
 	messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCATEGORYONE_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsCategoryOneLabel());
   			messageResourceList.add(messageResource);
@@ -406,65 +409,20 @@ public class GoodsPledgeController extends BaseController
   			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.SAVEBUTTON_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getSaveButtonHelpText());
   			messageResourceList.add(messageResource);
   		
-=======
->>>>>>> refs/heads/master
 
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.PLEDGEDGOODS_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getPledgedGoodsLabel());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.PLEDGEDGOODS_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getPledgedGoodsPlaceHolder());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.PLEDGEDGOODS_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getPledgedGoodsHelpText());
-			messageResourceList.add(messageResource);
-
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ADDITIONALINFORMATION_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getAdditionalInformationLabel());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ADDITIONALINFORMATION_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getAdditionalInformationPlaceHolder());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ADDITIONALINFORMATION_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getAdditionalInformationHelpText());
-			messageResourceList.add(messageResource);
-
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ITEMSIZE_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getItemSizeLabel());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ITEMSIZE_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getItemSizePlaceHolder());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.ITEMSIZE_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getItemSizeHelpText());
-			messageResourceList.add(messageResource);
-
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionLabel());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionPlaceHolder());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.GOODSCONDITION_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getGoodsConditionHelpText());
-			messageResourceList.add(messageResource);
-
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.NUMBEROFITEMS_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getNumberOfItemsLabel());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.NUMBEROFITEMS_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getNumberOfItemsPlaceHolder());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.NUMBEROFITEMS_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getNumberOfItemsHelpText());
-			messageResourceList.add(messageResource);
-
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.SAVEBUTTON_LABEL_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getSaveButtonLabel());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.SAVEBUTTON_PLACEHOLDER_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getSaveButtonPlaceHolder());
-			messageResourceList.add(messageResource);
-			messageResource = populateMessageResource(GoodsPledgeTranslationBackingBeanImpl.SAVEBUTTON_HELPBLOCK_MAPPING_KEY, translationLocale, translationLocaleReferenceId, goodsPledgeTranslationBackingBean.getSaveButtonHelpText());
-			messageResourceList.add(messageResource);
-
-
-
+			
 
 			this.messageSource.updateTexts(messageResourceList, userId);			
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
 		}
-
+			
 		// POST/REDIRECT/GET
 		return "redirect:/goodspledge/add?language=" + translationLocale;
 
 	}
-
+	
 	private MessageResource populateMessageResource(String messageKey, String locale, Long localeReferenceId, String message){
 		MessageResource messageResource = new MessageResourceImpl();
 		messageResource.setMessageKey(messageKey);
@@ -472,11 +430,11 @@ public class GoodsPledgeController extends BaseController
 		messageResource.setLocaleReferenceId(localeReferenceId);
 		messageResource.setMessage(message);
 
-
+		
 		return messageResource;
-
+	
 	}
-
+	
 
 	/**
 	 * Opens the details of the RegisterOfPledges that owns the GoodsPledge identified by the
@@ -485,15 +443,15 @@ public class GoodsPledgeController extends BaseController
 	 */
 	@RequestMapping(value = "/goodspledge/{id}/registerofpledges", method = RequestMethod.GET)
 	public String showRegisterOfPledges(Authentication authentication, @PathVariable("id") int id, 
-			final RedirectAttributes redirectAttributes) {
+		final RedirectAttributes redirectAttributes) {
 		String returnPath = null;
 
 		logger.debug("showRegisterOfPledges() : {}", id);
-
+		
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
-		Long userId = user.getApplicationUser().getId();
+        Long userId = user.getApplicationUser().getId();
 		//TODO: Needs exception handling
-
+		
 		List<RegisterOfPledges> registerOfPledgesList = this.goodsPledgeService.getGoodsPledgeBo().getGoodsPledgeDao().listRegisterOfPledgesByGoodsPledgeId(new Long(id), userId);
 
 		if (registerOfPledgesList.size() == 1){
@@ -502,27 +460,19 @@ public class GoodsPledgeController extends BaseController
 		else{
 			returnPath = "forward:/registerofpledges/all";
 		}
-
+		
 		return returnPath;
 
 	}
 
-
+	
 
 	private void setDropDownContents(Model model, GoodsPledge goodsPledge, Locale locale) {
-<<<<<<< HEAD
 		
 		Map<Long, String> goodsCategoryOneMap = referenceStore.getGoodsCategoryOne();
 		SortedMap<Long, String> localizedgoodsCategoryOneMap = new TreeMap<Long, String>(goodsCategoryOneMap);
 		for (Map.Entry<Long, String> entry : goodsCategoryOneMap.entrySet()) {
 			localizedgoodsCategoryOneMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-=======
-
-		Map<Long, String> pledgedGoodsGoodsCategoryMap = referenceStore.getGoodsCategory();
-		SortedMap<Long, String> localizedpledgedGoodsGoodsCategoryMap = new TreeMap<Long, String>(pledgedGoodsGoodsCategoryMap);
-		for (Map.Entry<Long, String> entry : pledgedGoodsGoodsCategoryMap.entrySet()) {
-			localizedpledgedGoodsGoodsCategoryMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
->>>>>>> refs/heads/master
 		}
 		model.addAttribute("goodsCategoryOneMap", localizedgoodsCategoryOneMap);
 	      
@@ -531,7 +481,6 @@ public class GoodsPledgeController extends BaseController
 		for (Map.Entry<Long, String> entry : goodsCategoryTwoMap.entrySet()) {
 			localizedgoodsCategoryTwoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 		}
-<<<<<<< HEAD
 		model.addAttribute("goodsCategoryTwoMap", localizedgoodsCategoryTwoMap);
 	      
 		Map<Long, String> goodsCategoryThreeMap = referenceStore.getGoodsCategoryThree();
@@ -555,16 +504,12 @@ public class GoodsPledgeController extends BaseController
 		}
 		model.addAttribute("goodsNewOrUsedMap", localizedgoodsNewOrUsedMap);
 	      
-=======
-
->>>>>>> refs/heads/master
 		Map<Long, String> goodsConditionMap = referenceStore.getGoodsCondition();
 		SortedMap<Long, String> localizedgoodsConditionMap = new TreeMap<Long, String>(goodsConditionMap);
 		for (Map.Entry<Long, String> entry : goodsConditionMap.entrySet()) {
 			localizedgoodsConditionMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 		}
 		model.addAttribute("goodsConditionMap", localizedgoodsConditionMap);
-<<<<<<< HEAD
 	      
 		Map<Long, String> goodsQuantityMap = referenceStore.getGoodsQuantity();
 		SortedMap<Long, String> localizedgoodsQuantityMap = new TreeMap<Long, String>(goodsQuantityMap);
@@ -574,19 +519,15 @@ public class GoodsPledgeController extends BaseController
 		model.addAttribute("goodsQuantityMap", localizedgoodsQuantityMap);
 	      
 		
-=======
-
-
->>>>>>> refs/heads/master
 		Map<Long, String> localeMap = referenceStore.getLocale();
 		SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
 		for (Map.Entry<Long, String> entry : localeMap.entrySet()) {
 			localizedLocaleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 		}
-
+		
 		model.addAttribute("localeMap", localizedLocaleMap);
 	}
-
+	
 	private void setTranslationDropDownContents(Model model, Locale locale) {
 		Map<Long, String> localeMap = referenceStore.getLocale();
 		SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
@@ -595,6 +536,6 @@ public class GoodsPledgeController extends BaseController
 		}
 		model.addAttribute("localeMap", localizedLocaleMap);
 	}
-
+	
 
 }
