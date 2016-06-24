@@ -29,10 +29,9 @@ import org.volunteertech.pledges.pledge.dao.RegisterOfPledgesSaveException;
 import org.volunteertech.pledges.pledge.validator.RegisterOfPledgesFormValidator;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.users.security.SecurityUser;
-
+import org.volunteertech.pledges.users.service.ApplicationUserService;
 import org.volunteertech.pledges.reference.ReferenceStore;
-
-
+import org.volunteertech.pledges.users.dao.ApplicationUser;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl;
 
@@ -78,7 +77,8 @@ public class RegisterOfPledgesRestController extends BaseController
 	@Autowired
 	private RegisterOfPledgesService registerOfPledgesService;
 	
-	
+	@Autowired
+	private ApplicationUserService applicationUserService;
 
 
 	/**
@@ -188,7 +188,6 @@ public class RegisterOfPledgesRestController extends BaseController
 
 		try{
 			// TODO needs security update and move processing inside the business object
-			
 			applicationUserDetailsList = registerOfPledgesService.getRegisterOfPledgesBo().getRegisterOfPledgesDao().updateApplicationUserDetails(applicationUserDetails.getParentObjectId(), applicationUserDetails, userId);
 			applicationUserDetailsList = this.registerOfPledgesService.translateApplicationUserDetailsReferenceValues(applicationUserDetailsList, locale);
 	    }

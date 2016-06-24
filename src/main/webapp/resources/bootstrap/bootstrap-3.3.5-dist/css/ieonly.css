@@ -1,0 +1,9 @@
+.ieonly {
+    display: block;
+}
+#branding {
+    background-color: white;
+}
+#logotable {
+    display: none;
+}

@@ -98,6 +98,15 @@ public class ServicePledgeTranslationBackingBeanImpl extends ServicePledgeImpl i
 
 	/** The message resource mapping for the help text attached to the pledgeServiceDateAvailable property */  
 	public static final String PLEDGESERVICEDATEAVAILABLE_HELPBLOCK_MAPPING_KEY = "frmServicePledgePledgeServiceDateAvailableHelpBlock";
+	
+	/** The message resource mapping for the Label attached to the pledgeServiceDateAvailable property */  
+	public static final String PLEDGESERVICEDATEAVAILABLETO_LABEL_MAPPING_KEY = "frmServicePledgePledgeServiceDateAvailableToLabel";
+	
+	/** The message resource mapping for the place holder attached to the pledgeServiceDateAvailable property */  
+	public static final String PLEDGESERVICEDATEAVAILABLETO_PLACEHOLDER_MAPPING_KEY = "frmServicePledgePledgeServiceDateAvailableToPlaceHolder";
+	
+	/** The message resource mapping for the help text attached to the pledgeServiceDateAvailable property */  
+	public static final String PLEDGESERVICEDATEAVAILABLETO_HELPBLOCK_MAPPING_KEY = "frmServicePledgePledgeServiceDateAvailableToHelpBlock";
 
 	/** The message resource mapping for the Label attached to the pledgeServiceHoursPerWeek property */  
 	public static final String PLEDGESERVICEHOURSPERWEEK_LABEL_MAPPING_KEY = "frmServicePledgePledgeServiceHoursPerWeekLabel";

@@ -16,6 +16,8 @@ var frmServicePledgeAdditionalInformationBuffer = document.getElementById("frmSe
 var frmServicePledgePledgeServiceQualificationBuffer = document.getElementById("frmServicePledgePledgeServiceQualification").value;
       
 var frmServicePledgePledgeServiceDateAvailableBuffer = document.getElementById("frmServicePledgePledgeServiceDateAvailable").value;
+
+var frmServicePledgePledgeServiceDateAvailableToBuffer = document.getElementById("frmServicePledgePledgeServiceDateAvailableTo").value;
       
 var frmServicePledgePledgeServiceHoursPerWeekBuffer = document.getElementById("frmServicePledgePledgeServiceHoursPerWeek").value;
       
@@ -291,6 +293,18 @@ if ($('#frmServicePledgeMode').val() == 'LOCALIZE'){
 			changedCounter++;
 		}
 	
+		if (document.getElementById("frmServicePledgePledgeServiceDateAvailableTo").value != frmServicePledgePledgeServiceDateAvailableToBuffer){
+			document.getElementById("frmServicePledgePledgeServiceDateAvailableToFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmServicePledgePledgeServiceDateAvailableToHelpBlock"), "Previous Value: " + frmServicePledgePledgeServiceDateAvailableToBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmServicePledgePledgeServiceDateAvailableTo");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+		
+		
 		if (document.getElementById("frmServicePledgePledgeServiceHoursPerWeek").value != frmServicePledgePledgeServiceHoursPerWeekBuffer){
 			document.getElementById("frmServicePledgePledgeServiceHoursPerWeekFormGroup").className += " has-error";
 			replaceText(document.getElementById("frmServicePledgePledgeServiceHoursPerWeekHelpBlock"), "Previous Value: " + frmServicePledgePledgeServiceHoursPerWeekTextBuffer);

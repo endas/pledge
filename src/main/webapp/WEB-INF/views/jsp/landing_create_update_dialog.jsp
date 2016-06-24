@@ -29,7 +29,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" id="frmLandingCreateUpdateCloseButton" class="btn btn-default">Close</button>
-        <button type="button" id="frmLandingCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Send message</span></button>
+        <button type="button" id="frmLandingCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save Pledge</span></button>
       </div>
     </div>
   </div>

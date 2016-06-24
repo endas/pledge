@@ -117,7 +117,14 @@
 		  <div id="frmApplicationUserDetailsRepresentOrganisationFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 			<label id="frmApplicationUserDetailsRepresentOrganisationLabel" for="frmApplicationUserDetailsRepresentOrganisation" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsRepresentOrganisationLabel"/></label>
 			<div class="col-sm-10">
-			  <p id="frmApplicationUserDetailsRepresentOrganisationMessage" class="form-control-static"><c:out value="${registerOfPledgesFormModel.applicationUserDetails.representOrganisationReferenceTranslation}"></c:out></p>    
+			  <p id="frmApplicationUserDetailsRepresentOrganisationMessage" class="form-control-static"><c:out value="${registerOfPledgesFormModel.applicationUserDetails.representOrganisation}"></c:out></p>    
+			</div>
+		  </div>
+		  
+		   <div id="frmApplicationUserDetailsOrganisationNameFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+			<label id="frmApplicationUserDetailsOrganisationNameLabel" for="frmApplicationUserDetailsOrganisationName" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsOrganisationNameLabel"/></label>
+			<div class="col-sm-10">
+			  <p id="frmApplicationUserDetailsOrganisationNameMessage" class="form-control-static"><c:out value="${registerOfPledgesFormModel.applicationUserDetails.organisationName}"></c:out></p>    
 			</div>
 		  </div>
       
@@ -299,6 +306,7 @@
 							<th>Action</th>
 							
 					<th><spring:message code="frmServicePledgePledgeServiceDateAvailableLabel"/></th>
+					<th><spring:message code="frmServicePledgePledgeServiceDateAvailableToLabel"/></th>
 
 					<th><spring:message code="frmServicePledgePledgeServiceLevelOneLabel"/></th>
 

@@ -37,19 +37,7 @@
 				  
 		  </div>
   
-		  <div id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="applicationuserdetails.representorganisation.label" for="frmApplicationUserDetailsCreateUpdateRepresentOrganisation" class="control-label"><spring:message code="frmApplicationUserDetailsRepresentOrganisationLabel"/></label>	
-			<select class="form-control" data-display-name="Are you pledging on behalf of an organisation?" data-select-type="standalone" data-required="true" id="frmApplicationUserDetailsCreateUpdateRepresentOrganisation" aria-describedby="frmApplicationUserDetailsCreateUpdateRepresentOrganisationHelpBlock">
-			</select>
-	  
-			<span id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsRepresentOrganisationHelpBlock"/></span>
-			<div id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationAlertBlockText"></span>
-			</div>
-				  
-		  </div>
-  
+		
 		  <div id="frmApplicationUserDetailsCreateUpdateTelephoneNumberFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.telephonenumber.label" for="frmApplicationUserDetailsCreateUpdateTelephoneNumber" class="control-label"><spring:message code="frmApplicationUserDetailsTelephoneNumberLabel"/></label>
 			<input type="tel" data-display-name="Phone Number" data-minlength="7" data-required="false" maxlength="20" class="form-control" id="frmApplicationUserDetailsCreateUpdateTelephoneNumber" placeholder="<spring:message code="frmApplicationUserDetailsTelephoneNumberPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateTelephoneNumberHelpBlock" data-data-type="long" data-validate-key-press="true" data-toggle="popover"/>
@@ -147,7 +135,7 @@
 				  
 		  </div>
   
-		  <div id="frmApplicationUserDetailsCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+		  <%-- <div id="frmApplicationUserDetailsCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.savebutton.label" for="frmApplicationUserDetailsCreateUpdateSaveButton" class="control-label"><spring:message code="frmApplicationUserDetailsSaveButtonLabel"/></label>
 			<span id="frmApplicationUserDetailsCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsSaveButtonHelpBlock"/></span>
 			<div id="frmApplicationUserDetailsCreateUpdateSaveButtonAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -155,13 +143,39 @@
   				<span id="frmApplicationUserDetailsCreateUpdateSaveButtonAlertBlockText"></span>
 			</div>
 				  
+		  </div> --%>
+		  <div id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="applicationuserdetails.representorganisation.label" for="frmApplicationUserDetailsCreateUpdateRepresentOrganisation" class="control-label"><spring:message code="frmApplicationUserDetailsRepresentOrganisationLabel"/></label>	
+			<select class="form-control" data-display-name="Are you pledging on behalf of an organisation?." data-select-type="standalone" data-required="true" id="frmApplicationUserDetailsCreateUpdateRepresentOrganisation" aria-describedby="frmApplicationUserDetailsCreateUpdateRepresentOrganisationHelpBlock">
+			</select>
+	  
+			<span id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsRepresentOrganisationHelpBlock"/></span>
+			<div id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmApplicationUserDetailsCreateUpdateRepresentOrganisationAlertBlockText"></span>
+			</div>
+				  
 		  </div>
-
+		  
+		   <div id="frmApplicationUserDetailsCreateUpdateOrganisationNameFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="applicationuserdetails.representorganisation.label" for="frmApplicationUserDetailsCreateUpdateOrganisationName" class="control-label"><spring:message code="frmApplicationUserDetailsOrganisationNameLabel"/></label>	
+		
+	  		<input type="text" data-display-name="Organisation Name" data-minlength="2" data-required="false" maxlength="80" class="form-control" id="frmApplicationUserDetailsCreateUpdateOrganisationName" placeholder="<spring:message code="frmApplicationUserDetailsOrganisationNamePlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateOrganisationNameHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+    	
+			<span id="frmApplicationUserDetailsCreateUpdateOrganisationNameHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsOrganisationNameHelpBlock"/></span>
+			<div id="frmApplicationUserDetailsCreateUpdateOrganisationNameAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmApplicationUserDetailsCreateUpdateOrganisationNameAlertBlockText"></span>
+			</div>
+				  
+		  </div>
+		  
+		  
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" id="frmApplicationUserDetailsCreateUpdateCloseButton" class="btn btn-default">Close</button>
-        <button type="button" id="frmApplicationUserDetailsCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Send message</span></button>
+        <button type="button" id="frmApplicationUserDetailsCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save Pledge</span></button>
       </div>
     </div>
   </div>

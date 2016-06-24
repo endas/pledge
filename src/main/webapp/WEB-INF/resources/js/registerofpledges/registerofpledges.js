@@ -4,6 +4,11 @@ var frmApplicationUserDetailsCreateUpdateContactNameBuffer = null;
 var frmApplicationUserDetailsCreateUpdateRepresentOrganisationTextBuffer = null;
 var frmApplicationUserDetailsCreateUpdateRepresentOrganisationValueBuffer = 0;
 var frmApplicationUserDetailsCreateUpdateRepresentOrganisationSetupCompleted = false;
+
+
+var frmApplicationUserDetailsCreateUpdateOrganisationNameTextBuffer = null;
+var frmApplicationUserDetailsCreateUpdateOrganisationNameValueBuffer = 0;
+var frmApplicationUserDetailsCreateUpdateOrganisationNameCompleted = false;
     
 var frmApplicationUserDetailsCreateUpdateTelephoneNumberBuffer = null;
     
@@ -86,6 +91,7 @@ var frmServicePledgeCreateUpdateAdditionalInformationBuffer = null;
 var frmServicePledgeCreateUpdatePledgeServiceQualificationBuffer = null;
     
 var frmServicePledgeCreateUpdatePledgeServiceDateAvailableBuffer = null;
+var frmServicePledgeCreateUpdatePledgeServiceDateAvailableToBuffer = null;
     
 var frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekTextBuffer = null;
 var frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekValueBuffer = 0;
@@ -190,7 +196,7 @@ $( document ).ready(function() {
 					var editModalAnchorText = "<a href='#' class='btn btn-info btn-sm' data-toggle='modal' data-backdrop='static' data-target='#accommodationPledgeCreateUpdateModal' data-id='" + obj.id + "' data-modal-title='OFFER ACCOMMODATION' data-callback-table-body-id='accommodationPledgesTableBody' data-property-url='accommodationpledges' data-callback-display-type='table' aria-label='view'><span class='glyphicon glyphicon-edit'></a>";
 					var editAnchorURI = rootContext + "/accommodationpledge/" + obj.id + "/update";
 					var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
-					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText + editAnchorText + "</div>";
+					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 					row.appendChild(cell);
 					
 								var cell = document.createElement("td");
@@ -250,11 +256,17 @@ $( document ).ready(function() {
 					var editModalAnchorText = "<a href='#' class='btn btn-info btn-sm' data-toggle='modal' data-backdrop='static' data-target='#servicePledgeCreateUpdateModal' data-id='" + obj.id + "' data-modal-title='OFFER SKILLS/SERVICES' data-callback-table-body-id='servicePledgesTableBody' data-property-url='servicepledges' data-callback-display-type='table' aria-label='view'><span class='glyphicon glyphicon-edit'></a>";
 					var editAnchorURI = rootContext + "/servicepledge/" + obj.id + "/update";
 					var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
-					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText + editAnchorText + "</div>";
+					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 					row.appendChild(cell);
 					
 								var cell = document.createElement("td");
 								var cellText = document.createTextNode(obj.pledgeServiceDateAvailable);
+								cell.appendChild(cellText);
+								row.appendChild(cell);
+								
+								
+								var cell = document.createElement("td");
+								var cellText = document.createTextNode(obj.pledgeServiceDateAvailableTo);
 								cell.appendChild(cellText);
 								row.appendChild(cell);
 
@@ -305,7 +317,7 @@ $( document ).ready(function() {
 					var editModalAnchorText = "<a href='#' class='btn btn-info btn-sm' data-toggle='modal' data-backdrop='static' data-target='#goodsPledgeCreateUpdateModal' data-id='" + obj.id + "' data-modal-title='OFFER GOODS AND MEDICINES' data-callback-table-body-id='goodsPledgesTableBody' data-property-url='goodspledges' data-callback-display-type='table' aria-label='view'><span class='glyphicon glyphicon-edit'></a>";
 					var editAnchorURI = rootContext + "/goodspledge/" + obj.id + "/update";
 					var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
-					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText + editAnchorText + "</div>";
+					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 					row.appendChild(cell);
 					
 								var cell = document.createElement("td");
@@ -506,6 +518,9 @@ $( document ).ready(function() {
     
 					modal.find('#frmApplicationUserDetailsCreateUpdatePostCode').val(data.postCode);
 					frmApplicationUserDetailsCreateUpdatePostCodeBuffer = data.postCode;
+					
+					modal.find('#frmApplicationUserDetailsCreateUpdateOrganisationName').val(data.organisationName);
+					frmApplicationUserDetailsCreateUpdateOrganisationNameBuffer = data.organisationName;
     
         			function frmApplicationUserDetailsCreateUpdateCountryTimeOut() {
     					setTimeout(function () {
@@ -603,6 +618,7 @@ $( document ).ready(function() {
 				id : modal.find('#frmApplicationUserDetailsCreateUpdateLoadedObjectId').val(),
 				contactName : modal.find('#frmApplicationUserDetailsCreateUpdateContactName').val(),
 				representOrganisation : modal.find('#frmApplicationUserDetailsCreateUpdateRepresentOrganisation').val(),
+				organisationName : modal.find('#frmApplicationUserDetailsCreateUpdateOrganisationName').val(),
 				telephoneNumber : modal.find('#frmApplicationUserDetailsCreateUpdateTelephoneNumber').val(),
 				addressOne : modal.find('#frmApplicationUserDetailsCreateUpdateAddressOne').val(),
 				addressTwo : modal.find('#frmApplicationUserDetailsCreateUpdateAddressTwo').val(),
@@ -635,7 +651,7 @@ $( document ).ready(function() {
 								var editModalAnchorText = "<a href='#' class='btn btn-info btn-sm' data-toggle='modal' data-backdrop='static' data-target='#applicationUserDetailsCreateUpdateModal' data-id='" + obj.id + "' data-modal-title='" + modalTitle + "' data-callback-table-body-id='" + callBackTableBodyId + "' data-property-url='applicationuserdetails' data-callback-display-type='inline' aria-label='view'><span class='glyphicon glyphicon-edit'></a>";
 								var editAnchorURI = rootContext + "/applicationuserdetails/" + obj.id + "/update";
 								var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
-								cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText + editAnchorText + "</div>";
+								cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 								row.appendChild(cell);
 								
 								var cell = document.createElement("td");
@@ -701,7 +717,7 @@ $( document ).ready(function() {
 
 								document.getElementById("frmApplicationUserDetailsRepresentOrganisationMessage").innerHTML = obj.representOrganisationReferenceTranslation;
 
-								document.getElementById("frmApplicationUserDetailsEmailAddressMessage").innerHTML = obj.emailAddress;
+//								document.getElementById("frmApplicationUserDetailsEmailAddressMessage").innerHTML = obj.emailAddress;
 
 								document.getElementById("frmApplicationUserDetailsTelephoneNumberMessage").innerHTML = obj.telephoneNumber;
 
@@ -1325,7 +1341,7 @@ $( document ).ready(function() {
 								var editModalAnchorText = "<a href='#' class='btn btn-info btn-sm' data-toggle='modal' data-backdrop='static' data-target='#accommodationPledgeCreateUpdateModal' data-id='" + obj.id + "' data-modal-title='" + modalTitle + "' data-callback-table-body-id='" + callBackTableBodyId + "' data-property-url='accommodationpledges' data-callback-display-type='table' aria-label='view'><span class='glyphicon glyphicon-edit'></a>";
 								var editAnchorURI = rootContext + "/accommodationpledge/" + obj.id + "/update";
 								var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
-								cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText + editAnchorText + "</div>";
+								cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 								row.appendChild(cell);
 								
 								var cell = document.createElement("td");
@@ -1682,6 +1698,9 @@ $( document ).ready(function() {
 					modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailable').val(data.pledgeServiceDateAvailable);
 					frmServicePledgeCreateUpdatePledgeServiceDateAvailableBuffer = data.pledgeServiceDateAvailable;
     
+					modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo').val(data.pledgeServiceDateAvailableTo);
+					frmServicePledgeCreateUpdatePledgeServiceDateAvailableToBuffer = data.pledgeServiceDateAvailableTo;
+					
         			function frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekTimeOut() {
     					setTimeout(function () {
         					if (frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekSetupCompleted == false){
@@ -1795,6 +1814,7 @@ $( document ).ready(function() {
 				additionalInformation : modal.find('#frmServicePledgeCreateUpdateAdditionalInformation').val(),
 				pledgeServiceQualification : modal.find('#frmServicePledgeCreateUpdatePledgeServiceQualification').val(),
 				pledgeServiceDateAvailable : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailable').val(),
+				pledgeServiceDateAvailableTo : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo').val(),
 				pledgeServiceHoursPerWeek : modal.find('#frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek').val()
 			};
 			
@@ -1820,11 +1840,16 @@ $( document ).ready(function() {
 								var editModalAnchorText = "<a href='#' class='btn btn-info btn-sm' data-toggle='modal' data-backdrop='static' data-target='#servicePledgeCreateUpdateModal' data-id='" + obj.id + "' data-modal-title='" + modalTitle + "' data-callback-table-body-id='" + callBackTableBodyId + "' data-property-url='servicepledges' data-callback-display-type='table' aria-label='view'><span class='glyphicon glyphicon-edit'></a>";
 								var editAnchorURI = rootContext + "/servicepledge/" + obj.id + "/update";
 								var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
-								cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText + editAnchorText + "</div>";
+								cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 								row.appendChild(cell);
 								
 								var cell = document.createElement("td");
 								var cellText = document.createTextNode(obj.pledgeServiceDateAvailable);
+								cell.appendChild(cellText);
+								row.appendChild(cell);
+								
+								var cell = document.createElement("td");
+								var cellText = document.createTextNode(obj.pledgeServiceDateAvailableTo);
 								cell.appendChild(cellText);
 								row.appendChild(cell);
 
@@ -2446,7 +2471,7 @@ $( document ).ready(function() {
 								var editModalAnchorText = "<a href='#' class='btn btn-info btn-sm' data-toggle='modal' data-backdrop='static' data-target='#goodsPledgeCreateUpdateModal' data-id='" + obj.id + "' data-modal-title='" + modalTitle + "' data-callback-table-body-id='" + callBackTableBodyId + "' data-property-url='goodspledges' data-callback-display-type='table' aria-label='view'><span class='glyphicon glyphicon-edit'></a>";
 								var editAnchorURI = rootContext + "/goodspledge/" + obj.id + "/update";
 								var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
-								cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText + editAnchorText + "</div>";
+								cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 								row.appendChild(cell);
 								
 								var cell = document.createElement("td");

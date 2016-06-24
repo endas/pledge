@@ -24,6 +24,7 @@ import java.util.Locale;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl;
 import org.volunteertech.pledges.users.service.ApplicationUserDetailsService;
+import org.volunteertech.pledges.users.service.ApplicationUserService;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsLoadException;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsSaveException;
 import org.volunteertech.pledges.users.validator.ApplicationUserDetailsFormValidator;
@@ -67,6 +68,9 @@ public class ApplicationUserDetailsRestController extends BaseController
 	
 	@Autowired
 	private ApplicationUserDetailsService applicationUserDetailsService;
+	
+	@Autowired
+	private ApplicationUserService applicationUserService;
 	
 	
 
@@ -126,14 +130,19 @@ public class ApplicationUserDetailsRestController extends BaseController
     @RequestMapping(value = "/restful/applicationuserdetails/update", method = RequestMethod.POST)
     @ResponseBody
     public List<ApplicationUserDetails> updateApplicationUserDetails(Authentication authentication, @RequestBody ApplicationUserDetails applicationUserDetails) {
-        logger.debug("In the updateApplicationUserDetails controller and got Id: " + applicationUserDetails.getId());
+        logger.info("In the updateApplicationUserDetails controller and got Id: " + applicationUserDetails.getId());
 
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
         Long userId = user.getApplicationUser().getId();
         
 		try{
 			// TODO needs security update
-			applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);
+			applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);	
+			if(user.getApplicationUser().getApplicationUserDetails().getId() == applicationUserDetails.getId()){
+				logger.info("application user found DESX \n\n\n\n\n\n\n\n\n\n");
+				user.getApplicationUser().setUsername(applicationUserDetails.getEmailAddress());
+				applicationUserService.storeApplicationUser(user.getApplicationUser(), userId);
+			}
 		}
 		catch (Exception ex){
 		// TODO needs custom exception handling

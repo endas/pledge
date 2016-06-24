@@ -101,12 +101,12 @@ public class ApplicationUserDetailsFormValidator implements Validator {
 			errors.rejectValue("country", "applicationuserdetails.country.validation.required");
 		}
         
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailAddress", "applicationuserdetails.emailaddress.validation.required");    
-        
-		if(!emailValidator.valid(applicationUserDetails.getEmailAddress())){
-			errors.rejectValue("emailAddress", "applicationuserdetails.emailaddress.email.invalid");
-		}
-    
+//		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailAddress", "applicationuserdetails.emailaddress.validation.required");    
+//        
+//		if(!emailValidator.valid(applicationUserDetails.getEmailAddress())){
+//			errors.rejectValue("emailAddress", "applicationuserdetails.emailaddress.email.invalid");
+//		}
+//    
 		
 
 

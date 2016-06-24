@@ -2,6 +2,7 @@ package org.volunteertech.pledges.users.service;
 import com.netgrains.security.AuthorisationException;
 import com.netgrains.security.InvalidUserIDException;
 import org.volunteertech.pledges.users.dao.ApplicationUser;
+import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.business.ApplicationUserBo;
 import org.volunteertech.pledges.users.dao.ApplicationUserFilter;
 import org.volunteertech.pledges.users.dao.ApplicationUserHistory;
@@ -168,6 +169,7 @@ public interface ApplicationUserService
     public void storeApplicationUser(ApplicationUser applicationUser, Long userId)
         throws ApplicationUserSaveException, ApplicationUserLoadException, AuthorisationException, InvalidUserIDException;
     
+   
     
     /**
      * Loads a ApplicationUserFilter object based on the participantID of the currently logged in user
@@ -220,6 +222,13 @@ public interface ApplicationUserService
 	 * @param locale the Locale to be displayed
 	 */    
     public List<ApplicationUser> translateReferenceValues(List<ApplicationUser> applicationUserList, Locale locale);
+    
+    
+    /**
+     * @param details
+     * @return
+     */
+//    public ApplicationUser getApplicationUserByDetails(ApplicationUserDetails details);
     
 	
     

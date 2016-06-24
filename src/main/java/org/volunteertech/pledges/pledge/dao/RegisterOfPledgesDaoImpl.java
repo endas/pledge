@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.math.BigDecimal;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
-
-
+import org.volunteertech.pledges.users.dao.ApplicationUserDao;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
-
+import org.volunteertech.pledges.users.dao.ApplicationUserDetailsDao;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl;
 
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledge;
@@ -58,10 +58,24 @@ public class RegisterOfPledgesDaoImpl implements RegisterOfPledgesDao
      */
     private SessionFactory sessionFactory;
     
-    
+    /**
+	 * The Data Access Object
+	 */
+    @Autowired
+	ApplicationUserDetailsDao  applicationUserDetailsDao;
     
 
-    /**
+    public ApplicationUserDetailsDao getApplicationUserDetailsDao() {
+		return applicationUserDetailsDao;
+	}
+
+
+	public void setApplicationUserDetailsDao(ApplicationUserDetailsDao applicationUserDetailsDao) {
+		this.applicationUserDetailsDao = applicationUserDetailsDao;
+	}
+
+
+	/**
      * Default Constructor for the RegisterOfPledges entity data manager
      */
     public RegisterOfPledgesDaoImpl()

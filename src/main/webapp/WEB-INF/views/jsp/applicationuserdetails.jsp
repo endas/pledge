@@ -123,42 +123,7 @@
       
 		</spring:bind>
       
-		<spring:bind path="representOrganisation">
-      
-		  <div id="frmApplicationUserDetailsRepresentOrganisationFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-		  
-			<label id="frmApplicationUserDetailsRepresentOrganisationLabel" for="frmApplicationUserDetailsRepresentOrganisation" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsRepresentOrganisationLabel"/></label>
-		  
-			<div class="col-sm-5 select-container">
-				
-	<spring:message code="frmApplicationUserDetailsRepresentOrganisationPlaceHolder" var="unselectedRepresentOrganisation"/>
-    	
-				<form:select path="representOrganisation" data-display-name="Are you pledging on behalf of an organisation?" data-reference-type="Yes_No" data-select-type="standalone" data-required="true" class="form-control" id="frmApplicationUserDetailsRepresentOrganisation" aria-describedby="frmApplicationUserDetailsRepresentOrganisationHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmApplicationUserDetails'), frmApplicationUserDetailsBuffer, '', 'Select placeholder')"
->
-					<form:option value="-1" label="${unselectedRepresentOrganisation}" />
-					
-					<form:options items="${representOrganisationMap}" />
-					
-				</form:select>
-	  
-				<span id="frmApplicationUserDetailsRepresentOrganisationFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
-				<div id="frmApplicationUserDetailsRepresentOrganisationAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  					<span id="frmApplicationUserDetailsRepresentOrganisationAlertBlockText"></span>
-				</div>
-			</div>
-				
-				<c:choose>
-				  <c:when test="${status.error}">
-				<form:errors id="frmApplicationUserDetailsRepresentOrganisationHelpBlock" path="representOrganisation" class="help-block col-sm-offset-2 col-sm-10" />
-				  </c:when>
-				  <c:otherwise>
-				<span id="frmApplicationUserDetailsRepresentOrganisationHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmApplicationUserDetailsRepresentOrganisationHelpBlock"/></span>				  
-				  </c:otherwise>
-				</c:choose>
-		  </div>
-      
-		</spring:bind>
+		
       
 		<spring:bind path="telephoneNumber">
       
@@ -383,9 +348,9 @@
       
 		</spring:bind>
       
-		<spring:bind path="emailAddress">
+		 <spring:bind path="emailAddress">
       
-		  <div id="frmApplicationUserDetailsEmailAddressFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  <div id="frmApplicationUserDetailsEmailAddressFormGroup" class="hidden form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
 			<label id="frmApplicationUserDetailsEmailAddressLabel" for="frmApplicationUserDetailsEmailAddress" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsEmailAddressLabel"/></label>
 		  
@@ -412,8 +377,74 @@
 				</c:choose>
 		  </div>
       
-		</spring:bind>
+		</spring:bind> 
+      	<spring:bind path="representOrganisation">
       
+		  <div id="frmApplicationUserDetailsRepresentOrganisationFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmApplicationUserDetailsRepresentOrganisationLabel" for="frmApplicationUserDetailsRepresentOrganisation" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsRepresentOrganisationLabel"/></label>
+		  
+			<div class="col-sm-5 select-container">
+				
+	<spring:message code="frmApplicationUserDetailsRepresentOrganisationPlaceHolder" var="unselectedRepresentOrganisation"/>
+    	
+				<form:select path="representOrganisation" data-display-name="Are you pledging on behalf of an organisation?" data-reference-type="Yes_No" data-select-type="standalone" data-required="true" class="form-control" id="frmApplicationUserDetailsRepresentOrganisation" aria-describedby="frmApplicationUserDetailsRepresentOrganisationHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmApplicationUserDetails'), frmApplicationUserDetailsBuffer, '', 'Select placeholder')"
+>
+					<form:option value="-1" label="${unselectedRepresentOrganisation}" />
+					
+					<form:options items="${representOrganisationMap}" />
+					
+				</form:select>
+	  
+				<span id="frmApplicationUserDetailsRepresentOrganisationFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmApplicationUserDetailsRepresentOrganisationAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmApplicationUserDetailsRepresentOrganisationAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmApplicationUserDetailsRepresentOrganisationHelpBlock" path="representOrganisation" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmApplicationUserDetailsRepresentOrganisationHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmApplicationUserDetailsRepresentOrganisationHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		</spring:bind>
+		
+		<spring:bind path="organisationName">
+      
+		  <div id="frmApplicationUserDetailsOrganisationNameFormGroup" class="form-group has-feedback hidden ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmApplicationUserDetailsOrganisationNameLabel" for="frmApplicationUserDetailsOrganisationName" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsOrganisationNameLabel"/></label>
+		  
+			<div class="col-sm-10">
+				
+				<spring:message code="frmApplicationUserDetailsOrganisationNamePlaceHolder" var="frmApplicationUserDetailsOrganisationNamePlaceHolder"/>    
+    
+				<form:input path="organisationName" type="text" data-display-name="Organisation Name" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsOrganisationName" placeholder="${frmApplicationUserDetailsOrganisationNamePlaceHolder}" aria-describedby="frmApplicationUserDetailsOrganisationNameHelpBlock" data-validate-key-press="true"/>
+    
+				<span id="frmApplicationUserDetailsOrganisationNameFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmApplicationUserDetailsOrganisationNameAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmApplicationUserDetailsOrganisationNameAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmApplicationUserDetailsOrganisationNameHelpBlock" path="organisationName" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmApplicationUserDetailsOrganisationNameHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmApplicationUserDetailsOrganisationNameHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		</spring:bind>
 			</div> <!-- class="panel-body" -->
 		</div> <!-- class="panel panel-default" -->
 	</div> <!-- class="container" -->
@@ -423,7 +454,7 @@
 	    
 			<div class="panel-body">
 		    
-	    <button type="submit" class="btn-lg btn-primary"><spring:message code="frmApplicationUserDetailsSaveButtonLabel"/></button>
+	    <button type="submit" class="btn btn-primary"><spring:message code="frmApplicationUserDetailsSaveButtonLabel"/></button>
 
 			</div> <!-- class="panel-body" -->
 		</div> <!-- class="panel panel-default" -->

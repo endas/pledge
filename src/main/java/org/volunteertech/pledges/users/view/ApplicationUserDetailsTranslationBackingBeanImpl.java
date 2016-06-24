@@ -30,7 +30,8 @@ import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
  */
 public class ApplicationUserDetailsTranslationBackingBeanImpl extends ApplicationUserDetailsImpl implements ApplicationUserDetailsTranslationBackingBean, Serializable { 
 
-    private static final long serialVersionUID = 1L;
+   
+	private static final long serialVersionUID = 1L;
     
     /** The identifier for the About You view */
     public static final Long VIEW_ID = new Long(12);
@@ -224,6 +225,22 @@ public class ApplicationUserDetailsTranslationBackingBeanImpl extends Applicatio
     private String representOrganisationTooltipMessageKey;
     private String representOrganisationTooltip;
     
+    
+    
+    private String organisationNameLabelMessageKey;
+    private String organisationNameLabel;
+
+    private String organisationNamePlaceHolderMessageKey;
+    private String organisationNamePlaceHolder;
+    
+    private String organisationNameHelpTextMessageKey;
+    private String organisationNameHelpText;
+    
+    private String organisationNameTooltipMessageKey;
+    private String organisationNameTooltip;
+    
+    
+    
     private String telephoneNumberLabelMessageKey;
     private String telephoneNumberLabel;
 
@@ -365,6 +382,17 @@ public class ApplicationUserDetailsTranslationBackingBeanImpl extends Applicatio
 		representOrganisationHelpText = new String();
 		representOrganisationTooltipMessageKey = new String();
 		representOrganisationTooltip = new String();
+		
+	
+		organisationNameLabel = new String();
+		organisationNamePlaceHolderMessageKey = new String();
+		organisationNamePlaceHolder = new String();
+		organisationNameHelpTextMessageKey = new String();
+		organisationNameHelpText = new String();
+		organisationNameTooltipMessageKey = new String();
+		organisationNameTooltip = new String();
+		
+		
 		telephoneNumberLabelMessageKey = new String();  
 		telephoneNumberLabel = new String();
 		telephoneNumberPlaceHolderMessageKey = new String();
@@ -2356,7 +2384,7 @@ public class ApplicationUserDetailsTranslationBackingBeanImpl extends Applicatio
 		return (this.id == null);
 	}
 	
-    
+	
     
 /*     @Override
      public String toString(){

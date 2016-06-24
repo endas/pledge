@@ -55,14 +55,15 @@
 		<div class="col-sm-10">${applicationUserDetails.contactName}</div>
 	</div>
 
-
-
 	<div class="row">
 		<label class="col-sm-2">Are you pledging on behalf of an organisation?</label>
 		<div class="col-sm-10">${applicationUserDetails.representOrganisation}</div>
 	</div>
-
-
+	
+	<div class="row">
+		<label class="col-sm-2">What is the organisation name?</label>
+		<div class="col-sm-10">${applicationUserDetails.organisationName}</div>
+	</div>
 
 	<div class="row">
 		<label class="col-sm-2">Phone Number</label>

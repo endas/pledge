@@ -63,7 +63,7 @@
 				  
 		  </div>
   
-		  <div id="frmMessageResourceCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+		  <%-- <div id="frmMessageResourceCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="messageresource.savebutton.label" for="frmMessageResourceCreateUpdateSaveButton" class="control-label"><spring:message code="frmMessageResourceSaveButtonLabel"/></label>
 			<span id="frmMessageResourceCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmMessageResourceSaveButtonHelpBlock"/></span>
 			<div id="frmMessageResourceCreateUpdateSaveButtonAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -71,13 +71,13 @@
   				<span id="frmMessageResourceCreateUpdateSaveButtonAlertBlockText"></span>
 			</div>
 				  
-		  </div>
+		  </div> --%>
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" id="frmMessageResourceCreateUpdateCloseButton" class="btn btn-default">Close</button>
-        <button type="button" id="frmMessageResourceCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Send message</span></button>
+        <button type="button" id="frmMessageResourceCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save Pledge</span></button>
       </div>
     </div>
   </div>

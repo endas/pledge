@@ -241,7 +241,6 @@ public class ApplicationUserDetailsDaoImpl implements ApplicationUserDetailsDao
     {
         @SuppressWarnings("unchecked")
         List<ApplicationUserDetails> result = this.sessionFactory.getCurrentSession().createQuery("from ApplicationUserDetailsImpl as applicationUserDetails where applicationUserDetails.emailAddress = :emailaddress order by applicationUserDetails.id asc").setParameter("emailaddress", emailAddress).list();
-
         return result;
     }
 
@@ -481,7 +480,16 @@ public class ApplicationUserDetailsDaoImpl implements ApplicationUserDetailsDao
     {
         super.finalize();
         
-    }    
+    }
+
+
+	@Override
+	public List<ApplicationUserDetails> getApplicationUserDetailsByApplicationUser(Long appUserId) {
+		 @SuppressWarnings("unchecked")
+        List<ApplicationUserDetails> result = this.sessionFactory.getCurrentSession().createQuery("from ApplicationUserDetailsImpl as applicationUserDetails where applicationUserDetails.applicationUser.id = :userId order by applicationUserDetails.id asc").setParameter("userId", appUserId).list();
+
+        return result;
+	}    
     
 }
     
