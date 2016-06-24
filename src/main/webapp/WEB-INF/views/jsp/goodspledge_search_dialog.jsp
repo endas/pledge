@@ -42,11 +42,17 @@
 
 	<spring:url value="/goodspledges" var="goodsPledgeActionUrl" />
 	
-	<spring:message code="goodspledge.pledgedgoods.goodscategory.select.unselected" var="unselectedPledgedGoodsGoodsCategory"/>
+	<spring:message code="goodspledge.goodscategoryone.select.unselected" var="unselectedGoodsCategoryOne"/>
     
-	<spring:message code="goodspledge.pledgedgoods.select.unselected" var="unselectedPledgedGoods"/>
+	<spring:message code="goodspledge.goodscategorytwo.select.unselected" var="unselectedGoodsCategoryTwo"/>
+    
+	<spring:message code="goodspledge.goodscategorythree.select.unselected" var="unselectedGoodsCategoryThree"/>
+    
+	<spring:message code="goodspledge.goodssize.select.unselected" var="unselectedGoodsSize"/>
     
 	<spring:message code="goodspledge.goodscondition.select.unselected" var="unselectedGoodsCondition"/>
+    
+	<spring:message code="goodspledge.goodsquantity.select.unselected" var="unselectedGoodsQuantity"/>
     
 	<div class="well">
 	<form:form id="frmGoodsPledge" class="form-horizontal" method="post" accept-charset="utf-8"
@@ -54,23 +60,103 @@
 
 		<form:hidden id="frmGoodsPledgeGoodsPledgeId" path="id" />
 		
-		<spring:bind path="pledgedGoods">
-		  <div id="frmGoodsPledgePledgedGoodsFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
-			<label class="col-sm-2 control-label">Type of Goods</label>
+		<spring:bind path="goodsCategoryOne">
+		  <div id="frmGoodsPledgeGoodsCategoryOneFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
+			<label class="col-sm-2 control-label">Goods Category One</label>
 			<div class="col-sm-5">
-				
-				<form:select path="pledgedGoodsGoodsCategory" class="form-control" id="frmGoodsPledgePledgedGoodsGoodsCategory">
-					<form:option value="-1" label="${unselectedPledgedGoodsGoodsCategory}" />
-					<form:options items="${pledgedGoodsGoodsCategoryMap}" />
-				</form:select>
-      	
-				<form:select path="pledgedGoods" class="form-control" id="frmGoodsPledgePledgedGoods">
-					<form:option value="-1" label="${unselectedPledgedGoods}" />
-					<form:options items="${pledgedGoodsMap}" />
+					
+				<form:select path="goodsCategoryOne" class="form-control" id="frmGoodsPledgeGoodsCategoryOne">
+					<form:option value="-1" label="${unselectedGoodsCategoryOne}" />
+					<form:options items="${goodsCategoryOneMap}" />
 				</form:select>
     
-				<span id="frmGoodsPledgePledgedGoodsJavascriptErrorDisplay" class="control-label"> </span>				  
-				<form:errors path="pledgedGoods" class="control-label" />
+				<span id="frmGoodsPledgeGoodsCategoryOneJavascriptErrorDisplay" class="control-label"> </span>				  
+				<form:errors path="goodsCategoryOne" class="control-label" />
+				  
+			</div>
+		  </div>
+		</spring:bind>
+      
+		<spring:bind path="goodsCategoryTwo">
+		  <div id="frmGoodsPledgeGoodsCategoryTwoFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
+			<label class="col-sm-2 control-label">Goods Category Two</label>
+			<div class="col-sm-5">
+					
+				<form:select path="goodsCategoryTwo" class="form-control" id="frmGoodsPledgeGoodsCategoryTwo">
+					<form:option value="-1" label="${unselectedGoodsCategoryTwo}" />
+					<form:options items="${goodsCategoryTwoMap}" />
+				</form:select>
+    
+				<span id="frmGoodsPledgeGoodsCategoryTwoJavascriptErrorDisplay" class="control-label"> </span>				  
+				<form:errors path="goodsCategoryTwo" class="control-label" />
+				  
+			</div>
+		  </div>
+		</spring:bind>
+      
+		<spring:bind path="goodsCategoryThree">
+		  <div id="frmGoodsPledgeGoodsCategoryThreeFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
+			<label class="col-sm-2 control-label">Goods Category Three</label>
+			<div class="col-sm-5">
+					
+				<form:select path="goodsCategoryThree" class="form-control" id="frmGoodsPledgeGoodsCategoryThree">
+					<form:option value="-1" label="${unselectedGoodsCategoryThree}" />
+					<form:options items="${goodsCategoryThreeMap}" />
+				</form:select>
+    
+				<span id="frmGoodsPledgeGoodsCategoryThreeJavascriptErrorDisplay" class="control-label"> </span>				  
+				<form:errors path="goodsCategoryThree" class="control-label" />
+				  
+			</div>
+		  </div>
+		</spring:bind>
+      
+		<spring:bind path="goodsSize">
+		  <div id="frmGoodsPledgeGoodsSizeFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
+			<label class="col-sm-2 control-label">Size</label>
+			<div class="col-sm-5">
+					
+				<form:select path="goodsSize" class="form-control" id="frmGoodsPledgeGoodsSize">
+					<form:option value="-1" label="${unselectedGoodsSize}" />
+					<form:options items="${goodsSizeMap}" />
+				</form:select>
+    
+				<span id="frmGoodsPledgeGoodsSizeJavascriptErrorDisplay" class="control-label"> </span>				  
+				<form:errors path="goodsSize" class="control-label" />
+				  
+			</div>
+		  </div>
+		</spring:bind>
+      
+		<spring:bind path="goodsCondition">
+		  <div id="frmGoodsPledgeGoodsConditionFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
+			<label class="col-sm-2 control-label">Goods Condition</label>
+			<div class="col-sm-5">
+					
+				<form:select path="goodsCondition" class="form-control" id="frmGoodsPledgeGoodsCondition">
+					<form:option value="-1" label="${unselectedGoodsCondition}" />
+					<form:options items="${goodsConditionMap}" />
+				</form:select>
+    
+				<span id="frmGoodsPledgeGoodsConditionJavascriptErrorDisplay" class="control-label"> </span>				  
+				<form:errors path="goodsCondition" class="control-label" />
+				  
+			</div>
+		  </div>
+		</spring:bind>
+      
+		<spring:bind path="goodsQuantity">
+		  <div id="frmGoodsPledgeGoodsQuantityFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
+			<label class="col-sm-2 control-label">Quantity</label>
+			<div class="col-sm-5">
+					
+				<form:select path="goodsQuantity" class="form-control" id="frmGoodsPledgeGoodsQuantity">
+					<form:option value="-1" label="${unselectedGoodsQuantity}" />
+					<form:options items="${goodsQuantityMap}" />
+				</form:select>
+    
+				<span id="frmGoodsPledgeGoodsQuantityJavascriptErrorDisplay" class="control-label"> </span>				  
+				<form:errors path="goodsQuantity" class="control-label" />
 				  
 			</div>
 		  </div>
@@ -99,37 +185,6 @@
     
 				<span id="frmGoodsPledgeItemSizeJavascriptErrorDisplay" class="control-label"> </span>				  
 				<form:errors path="itemSize" class="control-label" />
-				  
-			</div>
-		  </div>
-		</spring:bind>
-      
-		<spring:bind path="goodsCondition">
-		  <div id="frmGoodsPledgeGoodsConditionFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
-			<label class="col-sm-2 control-label">Condition</label>
-			<div class="col-sm-5">
-					
-				<form:select path="goodsCondition" class="form-control" id="frmGoodsPledgeGoodsCondition">
-					<form:option value="-1" label="${unselectedGoodsCondition}" />
-					<form:options items="${goodsConditionMap}" />
-				</form:select>
-    
-				<span id="frmGoodsPledgeGoodsConditionJavascriptErrorDisplay" class="control-label"> </span>				  
-				<form:errors path="goodsCondition" class="control-label" />
-				  
-			</div>
-		  </div>
-		</spring:bind>
-      
-		<spring:bind path="numberOfItems">
-		  <div id="frmGoodsPledgeNumberOfItemsFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
-			<label class="col-sm-2 control-label">Number of Items of this type</label>
-			<div class="col-sm-10">
-				
-				<form:input path="numberOfItems" type="text" maxlength="10" class="form-control" id="frmGoodsPledgeNumberOfItems" placeholder="Number of Items of this type"  onkeypress="return checkIntegerKeyPressAndRenderErrorMessage(event, this, document.getElementById('frmGoodsPledgeNumberOfItemsJavascriptErrorDisplay'), document.getElementById('frmGoodsPledgeNumberOfItemsFormGroup'), 'The Number of Items of this type can only accept digits 0-9', 'has-error', 'Valid', false)"  onpaste="return checkPastedDataIsNumberValidAndRenderErrorMessage(event, this, document.getElementById('frmGoodsPledgeNumberOfItemsJavascriptErrorDisplay'), 'The value that you attempted to paste into Number of Items of this type can only contain digits 0-9', 'Valid')"  />
-    
-				<span id="frmGoodsPledgeNumberOfItemsJavascriptErrorDisplay" class="control-label"> </span>				  
-				<form:errors path="numberOfItems" class="control-label" />
 				  
 			</div>
 		  </div>
@@ -181,63 +236,39 @@ $( document ).ready(function() {
 	$.fn.datepicker.defaults.autoclose = true;
 	$('.datepicker').datepicker()
 
-    <!-- Initalise handling for the frmGoodsPledgePledgedGoods and frmGoodsPledgePledgedGoodsGoodsCategory interactions -->
-	$( "#frmGoodsPledgePledgedGoodsGoodsCategory").change(function(){
-		document.getElementById("frmGoodsPledgePledgedGoods").options.selectedIndex = 0;
-		var parentSelect = document.getElementById("frmGoodsPledgePledgedGoodsGoodsCategory");
-		var parentSelectValue = parentSelect.options[parentSelect.selectedIndex].value;		
-
-		$.ajax({
-			dataType: "json",
-			url: rootContext + "/referenceslist",
-			data: {
-			parentid: parentSelectValue,
-			referencetype: "Goods"
-			},
-			success: function( data ) {
-				$("#frmGoodsPledgePledgedGoods").html('');
-				var unselectedOption = document.createElement("option");
-				unselectedOption.value = -1;
-				unselectedOption.textContent = "Select Type of Goods";
-				document.getElementById("frmGoodsPledgePledgedGoods").appendChild(unselectedOption);
-
-				$.each( data, function( key, val ) {
-					var el = document.createElement("option");
-    				el.textContent = val;
-					el.value = key;
-					
-					if (key == frmGoodsPledgePledgedGoodsBuffer){
-						el.selected = true;
-					}
-
-    				document.getElementById("frmGoodsPledgePledgedGoods").appendChild(el);
-				});
-			}
-		});
-	});
-    
-	
-  
-  
 	// Display a count of the characters in the Additional Information textarea input
 	check_textarea_length(500, document.getElementById("frmGoodsPledgeAdditionalInformation"), document.getElementById('frmGoodsPledgeAdditionalInformationJavascriptErrorDisplay'));
   
 });
 
 
-      var frmGoodsPledgePledgedGoodsBuffer = document.getElementById("frmGoodsPledgePledgedGoods").value;
+      var frmGoodsPledgeGoodsCategoryOneBuffer = document.getElementById("frmGoodsPledgeGoodsCategoryOne").value;
       
-      var frmGoodsPledgePledgedGoodsTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgePledgedGoods"));      
+      var frmGoodsPledgeGoodsCategoryOneTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsCategoryOne"));      
       
-      var frmGoodsPledgeAdditionalInformationBuffer = document.getElementById("frmGoodsPledgeAdditionalInformation").value;
+      var frmGoodsPledgeGoodsCategoryTwoBuffer = document.getElementById("frmGoodsPledgeGoodsCategoryTwo").value;
       
-      var frmGoodsPledgeItemSizeBuffer = document.getElementById("frmGoodsPledgeItemSize").value;
+      var frmGoodsPledgeGoodsCategoryTwoTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsCategoryTwo"));      
+      
+      var frmGoodsPledgeGoodsCategoryThreeBuffer = document.getElementById("frmGoodsPledgeGoodsCategoryThree").value;
+      
+      var frmGoodsPledgeGoodsCategoryThreeTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsCategoryThree"));      
+      
+      var frmGoodsPledgeGoodsSizeBuffer = document.getElementById("frmGoodsPledgeGoodsSize").value;
+      
+      var frmGoodsPledgeGoodsSizeTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsSize"));      
       
       var frmGoodsPledgeGoodsConditionBuffer = document.getElementById("frmGoodsPledgeGoodsCondition").value;
       
       var frmGoodsPledgeGoodsConditionTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsCondition"));      
       
-      var frmGoodsPledgeNumberOfItemsBuffer = document.getElementById("frmGoodsPledgeNumberOfItems").value;
+      var frmGoodsPledgeGoodsQuantityBuffer = document.getElementById("frmGoodsPledgeGoodsQuantity").value;
+      
+      var frmGoodsPledgeGoodsQuantityTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsQuantity"));      
+      
+      var frmGoodsPledgeAdditionalInformationBuffer = document.getElementById("frmGoodsPledgeAdditionalInformation").value;
+      
+      var frmGoodsPledgeItemSizeBuffer = document.getElementById("frmGoodsPledgeItemSize").value;
       
       var frmGoodsPledgeSaveButtonBuffer = document.getElementById("frmGoodsPledgeSaveButton").value;
       
@@ -250,12 +281,67 @@ $( document ).ready(function() {
 		var focusSet = false;
 		var focusControl;
 	
-		if (document.getElementById("frmGoodsPledgePledgedGoods").value != frmGoodsPledgePledgedGoodsBuffer){
-			document.getElementById("frmGoodsPledgePledgedGoodsFormGroup").className += " has-error";
-			replaceText(document.getElementById("frmGoodsPledgePledgedGoodsJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgePledgedGoodsTextBuffer);
+		if (document.getElementById("frmGoodsPledgeGoodsCategoryOne").value != frmGoodsPledgeGoodsCategoryOneBuffer){
+			document.getElementById("frmGoodsPledgeGoodsCategoryOneFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsCategoryOneJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgeGoodsCategoryOneTextBuffer);
 			
 			if (focusSet == false){
-				focusControl = document.getElementById("frmGoodsPledgePledgedGoods");
+				focusControl = document.getElementById("frmGoodsPledgeGoodsCategoryOne");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsCategoryTwo").value != frmGoodsPledgeGoodsCategoryTwoBuffer){
+			document.getElementById("frmGoodsPledgeGoodsCategoryTwoFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsCategoryTwoJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgeGoodsCategoryTwoTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsCategoryTwo");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsCategoryThree").value != frmGoodsPledgeGoodsCategoryThreeBuffer){
+			document.getElementById("frmGoodsPledgeGoodsCategoryThreeFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsCategoryThreeJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgeGoodsCategoryThreeTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsCategoryThree");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsSize").value != frmGoodsPledgeGoodsSizeBuffer){
+			document.getElementById("frmGoodsPledgeGoodsSizeFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsSizeJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgeGoodsSizeTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsSize");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsCondition").value != frmGoodsPledgeGoodsConditionBuffer){
+			document.getElementById("frmGoodsPledgeGoodsConditionFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsConditionJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgeGoodsConditionTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsCondition");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsQuantity").value != frmGoodsPledgeGoodsQuantityBuffer){
+			document.getElementById("frmGoodsPledgeGoodsQuantityFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsQuantityJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgeGoodsQuantityTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsQuantity");
 				focusSet = true;
 			}
 			changedCounter++;
@@ -278,28 +364,6 @@ $( document ).ready(function() {
 			
 			if (focusSet == false){
 				focusControl = document.getElementById("frmGoodsPledgeItemSize");
-				focusSet = true;
-			}
-			changedCounter++;
-		}
-	
-		if (document.getElementById("frmGoodsPledgeGoodsCondition").value != frmGoodsPledgeGoodsConditionBuffer){
-			document.getElementById("frmGoodsPledgeGoodsConditionFormGroup").className += " has-error";
-			replaceText(document.getElementById("frmGoodsPledgeGoodsConditionJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgeGoodsConditionTextBuffer);
-			
-			if (focusSet == false){
-				focusControl = document.getElementById("frmGoodsPledgeGoodsCondition");
-				focusSet = true;
-			}
-			changedCounter++;
-		}
-	
-		if (document.getElementById("frmGoodsPledgeNumberOfItems").value != frmGoodsPledgeNumberOfItemsBuffer){
-			document.getElementById("frmGoodsPledgeNumberOfItemsFormGroup").className += " has-error";
-			replaceText(document.getElementById("frmGoodsPledgeNumberOfItemsJavascriptErrorDisplay"), "Previous Value: " + frmGoodsPledgeNumberOfItemsBuffer);
-			
-			if (focusSet == false){
-				focusControl = document.getElementById("frmGoodsPledgeNumberOfItems");
 				focusSet = true;
 			}
 			changedCounter++;

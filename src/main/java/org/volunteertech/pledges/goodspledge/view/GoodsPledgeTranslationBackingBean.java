@@ -60,115 +60,799 @@ public interface GoodsPledgeTranslationBackingBean extends GoodsPledge{
     
     
     /**
-     * Sets the pledgedGoodsLabelMessageKey
-     * @param pledgedGoodsLabelMessageKey
+     * Sets the goodsCategoryOneLabelMessageKey
+     * @param goodsCategoryOneLabelMessageKey
      */
-    public void setPledgedGoodsLabelMessageKey(String pledgedGoodsLabelMessageKey);
+    public void setGoodsCategoryOneLabelMessageKey(String goodsCategoryOneLabelMessageKey);
     
     
     /**
-     * Returns the pledgedGoodsLabelMessageKey
-     * @return the pledgedGoodsLabelMessageKey
+     * Returns the goodsCategoryOneLabelMessageKey
+     * @return the goodsCategoryOneLabelMessageKey
      */
-    public String getPledgedGoodsLabelMessageKey();
+    public String getGoodsCategoryOneLabelMessageKey();
     
     
     /**
-     * Sets the pledgedGoodsLabel
-     * @param pledgedGoodsLabel
+     * Sets the goodsCategoryOneLabel
+     * @param goodsCategoryOneLabel
      */
-    public void setPledgedGoodsLabel(String pledgedGoodsLabel);
+    public void setGoodsCategoryOneLabel(String goodsCategoryOneLabel);
     
     
     /**
-     * Returns the pledgedGoodsLabel
-     * @return the pledgedGoodsLabel
+     * Returns the goodsCategoryOneLabel
+     * @return the goodsCategoryOneLabel
      */
-    public String getPledgedGoodsLabel();
+    public String getGoodsCategoryOneLabel();
     
     
     /**
-     * Sets the pledgedGoodsPlaceHolderMessageKey
-     * @param pledgedGoodsPlaceHolderMessageKey
+     * Sets the goodsCategoryOnePlaceHolderMessageKey
+     * @param goodsCategoryOnePlaceHolderMessageKey
      */
-    public void setPledgedGoodsPlaceHolderMessageKey(String pledgedGoodsPlaceHolderMessageKey);
+    public void setGoodsCategoryOnePlaceHolderMessageKey(String goodsCategoryOnePlaceHolderMessageKey);
     
     
     /**
-     * Returns the pledgedGoodsPlaceHolderMessageKey
-     * @return the pledgedGoodsPlaceHolderMessageKey
+     * Returns the goodsCategoryOnePlaceHolderMessageKey
+     * @return the goodsCategoryOnePlaceHolderMessageKey
      */
-    public String getPledgedGoodsPlaceHolderMessageKey();
+    public String getGoodsCategoryOnePlaceHolderMessageKey();
     
     
     /**
-     * Sets the pledgedGoodsPlaceHolder
-     * @param pledgedGoodsPlaceHolder
+     * Sets the goodsCategoryOnePlaceHolder
+     * @param goodsCategoryOnePlaceHolder
      */
-    public void setPledgedGoodsPlaceHolder(String pledgedGoodsPlaceHolder);
+    public void setGoodsCategoryOnePlaceHolder(String goodsCategoryOnePlaceHolder);
     
     
     /**
-     * Returns the pledgedGoodsPlaceHolder
-     * @return the pledgedGoodsPlaceHolder
+     * Returns the goodsCategoryOnePlaceHolder
+     * @return the goodsCategoryOnePlaceHolder
      */
-    public String getPledgedGoodsPlaceHolder();
+    public String getGoodsCategoryOnePlaceHolder();
     
     
     /**
-     * Sets the pledgedGoodsHelpTextMessageKey
-     * @param pledgedGoodsHelpTextMessageKey
+     * Sets the goodsCategoryOneHelpTextMessageKey
+     * @param goodsCategoryOneHelpTextMessageKey
      */
-    public void setPledgedGoodsHelpTextMessageKey(String pledgedGoodsHelpTextMessageKey);
+    public void setGoodsCategoryOneHelpTextMessageKey(String goodsCategoryOneHelpTextMessageKey);
     
     
     /**
-     * Returns the pledgedGoodsHelpTextMessageKey
-     * @return the pledgedGoodsHelpTextMessageKey
+     * Returns the goodsCategoryOneHelpTextMessageKey
+     * @return the goodsCategoryOneHelpTextMessageKey
      */
-    public String getPledgedGoodsHelpTextMessageKey();
+    public String getGoodsCategoryOneHelpTextMessageKey();
     
     
     /**
-     * Sets the pledgedGoodsHelpText
-     * @param pledgedGoodsHelpText
+     * Sets the goodsCategoryOneHelpText
+     * @param goodsCategoryOneHelpText
      */
-    public void setPledgedGoodsHelpText(String pledgedGoodsHelpText);
+    public void setGoodsCategoryOneHelpText(String goodsCategoryOneHelpText);
     
     
     /**
-     * Returns the pledgedGoodsHelpText
-     * @return the pledgedGoodsHelpText
+     * Returns the goodsCategoryOneHelpText
+     * @return the goodsCategoryOneHelpText
      */
-    public String getPledgedGoodsHelpText();
+    public String getGoodsCategoryOneHelpText();
     
     
     /**
-     * Sets the pledgedGoodsTooltipMessageKey
-     * @param pledgedGoodsTooltipMessageKey
+     * Sets the goodsCategoryOneTooltipMessageKey
+     * @param goodsCategoryOneTooltipMessageKey
      */
-    public void setPledgedGoodsTooltipMessageKey(String pledgedGoodsTooltipMessageKey);
+    public void setGoodsCategoryOneTooltipMessageKey(String goodsCategoryOneTooltipMessageKey);
     
     
     /**
-     * Returns the pledgedGoodsTooltipMessageKey
-     * @return the pledgedGoodsTooltipMessageKey
+     * Returns the goodsCategoryOneTooltipMessageKey
+     * @return the goodsCategoryOneTooltipMessageKey
      */
-    public String getPledgedGoodsTooltipMessageKey();
+    public String getGoodsCategoryOneTooltipMessageKey();
     
     
     /**
-     * Sets the pledgedGoodsTooltip
-     * @param pledgedGoodsTooltip
+     * Sets the goodsCategoryOneTooltip
+     * @param goodsCategoryOneTooltip
      */
-    public void setPledgedGoodsTooltip(String pledgedGoodsTooltip);
+    public void setGoodsCategoryOneTooltip(String goodsCategoryOneTooltip);
     
     
     /**
-     * Returns the pledgedGoodsTooltip
-     * @return the pledgedGoodsTooltip
+     * Returns the goodsCategoryOneTooltip
+     * @return the goodsCategoryOneTooltip
      */
-    public String getPledgedGoodsTooltip();
+    public String getGoodsCategoryOneTooltip();
+    
+        
+
+    
+    /**
+     * Sets the goodsCategoryTwoLabelMessageKey
+     * @param goodsCategoryTwoLabelMessageKey
+     */
+    public void setGoodsCategoryTwoLabelMessageKey(String goodsCategoryTwoLabelMessageKey);
+    
+    
+    /**
+     * Returns the goodsCategoryTwoLabelMessageKey
+     * @return the goodsCategoryTwoLabelMessageKey
+     */
+    public String getGoodsCategoryTwoLabelMessageKey();
+    
+    
+    /**
+     * Sets the goodsCategoryTwoLabel
+     * @param goodsCategoryTwoLabel
+     */
+    public void setGoodsCategoryTwoLabel(String goodsCategoryTwoLabel);
+    
+    
+    /**
+     * Returns the goodsCategoryTwoLabel
+     * @return the goodsCategoryTwoLabel
+     */
+    public String getGoodsCategoryTwoLabel();
+    
+    
+    /**
+     * Sets the goodsCategoryTwoPlaceHolderMessageKey
+     * @param goodsCategoryTwoPlaceHolderMessageKey
+     */
+    public void setGoodsCategoryTwoPlaceHolderMessageKey(String goodsCategoryTwoPlaceHolderMessageKey);
+    
+    
+    /**
+     * Returns the goodsCategoryTwoPlaceHolderMessageKey
+     * @return the goodsCategoryTwoPlaceHolderMessageKey
+     */
+    public String getGoodsCategoryTwoPlaceHolderMessageKey();
+    
+    
+    /**
+     * Sets the goodsCategoryTwoPlaceHolder
+     * @param goodsCategoryTwoPlaceHolder
+     */
+    public void setGoodsCategoryTwoPlaceHolder(String goodsCategoryTwoPlaceHolder);
+    
+    
+    /**
+     * Returns the goodsCategoryTwoPlaceHolder
+     * @return the goodsCategoryTwoPlaceHolder
+     */
+    public String getGoodsCategoryTwoPlaceHolder();
+    
+    
+    /**
+     * Sets the goodsCategoryTwoHelpTextMessageKey
+     * @param goodsCategoryTwoHelpTextMessageKey
+     */
+    public void setGoodsCategoryTwoHelpTextMessageKey(String goodsCategoryTwoHelpTextMessageKey);
+    
+    
+    /**
+     * Returns the goodsCategoryTwoHelpTextMessageKey
+     * @return the goodsCategoryTwoHelpTextMessageKey
+     */
+    public String getGoodsCategoryTwoHelpTextMessageKey();
+    
+    
+    /**
+     * Sets the goodsCategoryTwoHelpText
+     * @param goodsCategoryTwoHelpText
+     */
+    public void setGoodsCategoryTwoHelpText(String goodsCategoryTwoHelpText);
+    
+    
+    /**
+     * Returns the goodsCategoryTwoHelpText
+     * @return the goodsCategoryTwoHelpText
+     */
+    public String getGoodsCategoryTwoHelpText();
+    
+    
+    /**
+     * Sets the goodsCategoryTwoTooltipMessageKey
+     * @param goodsCategoryTwoTooltipMessageKey
+     */
+    public void setGoodsCategoryTwoTooltipMessageKey(String goodsCategoryTwoTooltipMessageKey);
+    
+    
+    /**
+     * Returns the goodsCategoryTwoTooltipMessageKey
+     * @return the goodsCategoryTwoTooltipMessageKey
+     */
+    public String getGoodsCategoryTwoTooltipMessageKey();
+    
+    
+    /**
+     * Sets the goodsCategoryTwoTooltip
+     * @param goodsCategoryTwoTooltip
+     */
+    public void setGoodsCategoryTwoTooltip(String goodsCategoryTwoTooltip);
+    
+    
+    /**
+     * Returns the goodsCategoryTwoTooltip
+     * @return the goodsCategoryTwoTooltip
+     */
+    public String getGoodsCategoryTwoTooltip();
+    
+        
+
+    
+    /**
+     * Sets the goodsCategoryThreeLabelMessageKey
+     * @param goodsCategoryThreeLabelMessageKey
+     */
+    public void setGoodsCategoryThreeLabelMessageKey(String goodsCategoryThreeLabelMessageKey);
+    
+    
+    /**
+     * Returns the goodsCategoryThreeLabelMessageKey
+     * @return the goodsCategoryThreeLabelMessageKey
+     */
+    public String getGoodsCategoryThreeLabelMessageKey();
+    
+    
+    /**
+     * Sets the goodsCategoryThreeLabel
+     * @param goodsCategoryThreeLabel
+     */
+    public void setGoodsCategoryThreeLabel(String goodsCategoryThreeLabel);
+    
+    
+    /**
+     * Returns the goodsCategoryThreeLabel
+     * @return the goodsCategoryThreeLabel
+     */
+    public String getGoodsCategoryThreeLabel();
+    
+    
+    /**
+     * Sets the goodsCategoryThreePlaceHolderMessageKey
+     * @param goodsCategoryThreePlaceHolderMessageKey
+     */
+    public void setGoodsCategoryThreePlaceHolderMessageKey(String goodsCategoryThreePlaceHolderMessageKey);
+    
+    
+    /**
+     * Returns the goodsCategoryThreePlaceHolderMessageKey
+     * @return the goodsCategoryThreePlaceHolderMessageKey
+     */
+    public String getGoodsCategoryThreePlaceHolderMessageKey();
+    
+    
+    /**
+     * Sets the goodsCategoryThreePlaceHolder
+     * @param goodsCategoryThreePlaceHolder
+     */
+    public void setGoodsCategoryThreePlaceHolder(String goodsCategoryThreePlaceHolder);
+    
+    
+    /**
+     * Returns the goodsCategoryThreePlaceHolder
+     * @return the goodsCategoryThreePlaceHolder
+     */
+    public String getGoodsCategoryThreePlaceHolder();
+    
+    
+    /**
+     * Sets the goodsCategoryThreeHelpTextMessageKey
+     * @param goodsCategoryThreeHelpTextMessageKey
+     */
+    public void setGoodsCategoryThreeHelpTextMessageKey(String goodsCategoryThreeHelpTextMessageKey);
+    
+    
+    /**
+     * Returns the goodsCategoryThreeHelpTextMessageKey
+     * @return the goodsCategoryThreeHelpTextMessageKey
+     */
+    public String getGoodsCategoryThreeHelpTextMessageKey();
+    
+    
+    /**
+     * Sets the goodsCategoryThreeHelpText
+     * @param goodsCategoryThreeHelpText
+     */
+    public void setGoodsCategoryThreeHelpText(String goodsCategoryThreeHelpText);
+    
+    
+    /**
+     * Returns the goodsCategoryThreeHelpText
+     * @return the goodsCategoryThreeHelpText
+     */
+    public String getGoodsCategoryThreeHelpText();
+    
+    
+    /**
+     * Sets the goodsCategoryThreeTooltipMessageKey
+     * @param goodsCategoryThreeTooltipMessageKey
+     */
+    public void setGoodsCategoryThreeTooltipMessageKey(String goodsCategoryThreeTooltipMessageKey);
+    
+    
+    /**
+     * Returns the goodsCategoryThreeTooltipMessageKey
+     * @return the goodsCategoryThreeTooltipMessageKey
+     */
+    public String getGoodsCategoryThreeTooltipMessageKey();
+    
+    
+    /**
+     * Sets the goodsCategoryThreeTooltip
+     * @param goodsCategoryThreeTooltip
+     */
+    public void setGoodsCategoryThreeTooltip(String goodsCategoryThreeTooltip);
+    
+    
+    /**
+     * Returns the goodsCategoryThreeTooltip
+     * @return the goodsCategoryThreeTooltip
+     */
+    public String getGoodsCategoryThreeTooltip();
+    
+        
+
+    
+    /**
+     * Sets the goodsSizeLabelMessageKey
+     * @param goodsSizeLabelMessageKey
+     */
+    public void setGoodsSizeLabelMessageKey(String goodsSizeLabelMessageKey);
+    
+    
+    /**
+     * Returns the goodsSizeLabelMessageKey
+     * @return the goodsSizeLabelMessageKey
+     */
+    public String getGoodsSizeLabelMessageKey();
+    
+    
+    /**
+     * Sets the goodsSizeLabel
+     * @param goodsSizeLabel
+     */
+    public void setGoodsSizeLabel(String goodsSizeLabel);
+    
+    
+    /**
+     * Returns the goodsSizeLabel
+     * @return the goodsSizeLabel
+     */
+    public String getGoodsSizeLabel();
+    
+    
+    /**
+     * Sets the goodsSizePlaceHolderMessageKey
+     * @param goodsSizePlaceHolderMessageKey
+     */
+    public void setGoodsSizePlaceHolderMessageKey(String goodsSizePlaceHolderMessageKey);
+    
+    
+    /**
+     * Returns the goodsSizePlaceHolderMessageKey
+     * @return the goodsSizePlaceHolderMessageKey
+     */
+    public String getGoodsSizePlaceHolderMessageKey();
+    
+    
+    /**
+     * Sets the goodsSizePlaceHolder
+     * @param goodsSizePlaceHolder
+     */
+    public void setGoodsSizePlaceHolder(String goodsSizePlaceHolder);
+    
+    
+    /**
+     * Returns the goodsSizePlaceHolder
+     * @return the goodsSizePlaceHolder
+     */
+    public String getGoodsSizePlaceHolder();
+    
+    
+    /**
+     * Sets the goodsSizeHelpTextMessageKey
+     * @param goodsSizeHelpTextMessageKey
+     */
+    public void setGoodsSizeHelpTextMessageKey(String goodsSizeHelpTextMessageKey);
+    
+    
+    /**
+     * Returns the goodsSizeHelpTextMessageKey
+     * @return the goodsSizeHelpTextMessageKey
+     */
+    public String getGoodsSizeHelpTextMessageKey();
+    
+    
+    /**
+     * Sets the goodsSizeHelpText
+     * @param goodsSizeHelpText
+     */
+    public void setGoodsSizeHelpText(String goodsSizeHelpText);
+    
+    
+    /**
+     * Returns the goodsSizeHelpText
+     * @return the goodsSizeHelpText
+     */
+    public String getGoodsSizeHelpText();
+    
+    
+    /**
+     * Sets the goodsSizeTooltipMessageKey
+     * @param goodsSizeTooltipMessageKey
+     */
+    public void setGoodsSizeTooltipMessageKey(String goodsSizeTooltipMessageKey);
+    
+    
+    /**
+     * Returns the goodsSizeTooltipMessageKey
+     * @return the goodsSizeTooltipMessageKey
+     */
+    public String getGoodsSizeTooltipMessageKey();
+    
+    
+    /**
+     * Sets the goodsSizeTooltip
+     * @param goodsSizeTooltip
+     */
+    public void setGoodsSizeTooltip(String goodsSizeTooltip);
+    
+    
+    /**
+     * Returns the goodsSizeTooltip
+     * @return the goodsSizeTooltip
+     */
+    public String getGoodsSizeTooltip();
+    
+        
+
+    
+    /**
+     * Sets the goodsNewOrUsedLabelMessageKey
+     * @param goodsNewOrUsedLabelMessageKey
+     */
+    public void setGoodsNewOrUsedLabelMessageKey(String goodsNewOrUsedLabelMessageKey);
+    
+    
+    /**
+     * Returns the goodsNewOrUsedLabelMessageKey
+     * @return the goodsNewOrUsedLabelMessageKey
+     */
+    public String getGoodsNewOrUsedLabelMessageKey();
+    
+    
+    /**
+     * Sets the goodsNewOrUsedLabel
+     * @param goodsNewOrUsedLabel
+     */
+    public void setGoodsNewOrUsedLabel(String goodsNewOrUsedLabel);
+    
+    
+    /**
+     * Returns the goodsNewOrUsedLabel
+     * @return the goodsNewOrUsedLabel
+     */
+    public String getGoodsNewOrUsedLabel();
+    
+    
+    /**
+     * Sets the goodsNewOrUsedPlaceHolderMessageKey
+     * @param goodsNewOrUsedPlaceHolderMessageKey
+     */
+    public void setGoodsNewOrUsedPlaceHolderMessageKey(String goodsNewOrUsedPlaceHolderMessageKey);
+    
+    
+    /**
+     * Returns the goodsNewOrUsedPlaceHolderMessageKey
+     * @return the goodsNewOrUsedPlaceHolderMessageKey
+     */
+    public String getGoodsNewOrUsedPlaceHolderMessageKey();
+    
+    
+    /**
+     * Sets the goodsNewOrUsedPlaceHolder
+     * @param goodsNewOrUsedPlaceHolder
+     */
+    public void setGoodsNewOrUsedPlaceHolder(String goodsNewOrUsedPlaceHolder);
+    
+    
+    /**
+     * Returns the goodsNewOrUsedPlaceHolder
+     * @return the goodsNewOrUsedPlaceHolder
+     */
+    public String getGoodsNewOrUsedPlaceHolder();
+    
+    
+    /**
+     * Sets the goodsNewOrUsedHelpTextMessageKey
+     * @param goodsNewOrUsedHelpTextMessageKey
+     */
+    public void setGoodsNewOrUsedHelpTextMessageKey(String goodsNewOrUsedHelpTextMessageKey);
+    
+    
+    /**
+     * Returns the goodsNewOrUsedHelpTextMessageKey
+     * @return the goodsNewOrUsedHelpTextMessageKey
+     */
+    public String getGoodsNewOrUsedHelpTextMessageKey();
+    
+    
+    /**
+     * Sets the goodsNewOrUsedHelpText
+     * @param goodsNewOrUsedHelpText
+     */
+    public void setGoodsNewOrUsedHelpText(String goodsNewOrUsedHelpText);
+    
+    
+    /**
+     * Returns the goodsNewOrUsedHelpText
+     * @return the goodsNewOrUsedHelpText
+     */
+    public String getGoodsNewOrUsedHelpText();
+    
+    
+    /**
+     * Sets the goodsNewOrUsedTooltipMessageKey
+     * @param goodsNewOrUsedTooltipMessageKey
+     */
+    public void setGoodsNewOrUsedTooltipMessageKey(String goodsNewOrUsedTooltipMessageKey);
+    
+    
+    /**
+     * Returns the goodsNewOrUsedTooltipMessageKey
+     * @return the goodsNewOrUsedTooltipMessageKey
+     */
+    public String getGoodsNewOrUsedTooltipMessageKey();
+    
+    
+    /**
+     * Sets the goodsNewOrUsedTooltip
+     * @param goodsNewOrUsedTooltip
+     */
+    public void setGoodsNewOrUsedTooltip(String goodsNewOrUsedTooltip);
+    
+    
+    /**
+     * Returns the goodsNewOrUsedTooltip
+     * @return the goodsNewOrUsedTooltip
+     */
+    public String getGoodsNewOrUsedTooltip();
+    
+        
+
+    
+    /**
+     * Sets the goodsConditionLabelMessageKey
+     * @param goodsConditionLabelMessageKey
+     */
+    public void setGoodsConditionLabelMessageKey(String goodsConditionLabelMessageKey);
+    
+    
+    /**
+     * Returns the goodsConditionLabelMessageKey
+     * @return the goodsConditionLabelMessageKey
+     */
+    public String getGoodsConditionLabelMessageKey();
+    
+    
+    /**
+     * Sets the goodsConditionLabel
+     * @param goodsConditionLabel
+     */
+    public void setGoodsConditionLabel(String goodsConditionLabel);
+    
+    
+    /**
+     * Returns the goodsConditionLabel
+     * @return the goodsConditionLabel
+     */
+    public String getGoodsConditionLabel();
+    
+    
+    /**
+     * Sets the goodsConditionPlaceHolderMessageKey
+     * @param goodsConditionPlaceHolderMessageKey
+     */
+    public void setGoodsConditionPlaceHolderMessageKey(String goodsConditionPlaceHolderMessageKey);
+    
+    
+    /**
+     * Returns the goodsConditionPlaceHolderMessageKey
+     * @return the goodsConditionPlaceHolderMessageKey
+     */
+    public String getGoodsConditionPlaceHolderMessageKey();
+    
+    
+    /**
+     * Sets the goodsConditionPlaceHolder
+     * @param goodsConditionPlaceHolder
+     */
+    public void setGoodsConditionPlaceHolder(String goodsConditionPlaceHolder);
+    
+    
+    /**
+     * Returns the goodsConditionPlaceHolder
+     * @return the goodsConditionPlaceHolder
+     */
+    public String getGoodsConditionPlaceHolder();
+    
+    
+    /**
+     * Sets the goodsConditionHelpTextMessageKey
+     * @param goodsConditionHelpTextMessageKey
+     */
+    public void setGoodsConditionHelpTextMessageKey(String goodsConditionHelpTextMessageKey);
+    
+    
+    /**
+     * Returns the goodsConditionHelpTextMessageKey
+     * @return the goodsConditionHelpTextMessageKey
+     */
+    public String getGoodsConditionHelpTextMessageKey();
+    
+    
+    /**
+     * Sets the goodsConditionHelpText
+     * @param goodsConditionHelpText
+     */
+    public void setGoodsConditionHelpText(String goodsConditionHelpText);
+    
+    
+    /**
+     * Returns the goodsConditionHelpText
+     * @return the goodsConditionHelpText
+     */
+    public String getGoodsConditionHelpText();
+    
+    
+    /**
+     * Sets the goodsConditionTooltipMessageKey
+     * @param goodsConditionTooltipMessageKey
+     */
+    public void setGoodsConditionTooltipMessageKey(String goodsConditionTooltipMessageKey);
+    
+    
+    /**
+     * Returns the goodsConditionTooltipMessageKey
+     * @return the goodsConditionTooltipMessageKey
+     */
+    public String getGoodsConditionTooltipMessageKey();
+    
+    
+    /**
+     * Sets the goodsConditionTooltip
+     * @param goodsConditionTooltip
+     */
+    public void setGoodsConditionTooltip(String goodsConditionTooltip);
+    
+    
+    /**
+     * Returns the goodsConditionTooltip
+     * @return the goodsConditionTooltip
+     */
+    public String getGoodsConditionTooltip();
+    
+        
+
+    
+    /**
+     * Sets the goodsQuantityLabelMessageKey
+     * @param goodsQuantityLabelMessageKey
+     */
+    public void setGoodsQuantityLabelMessageKey(String goodsQuantityLabelMessageKey);
+    
+    
+    /**
+     * Returns the goodsQuantityLabelMessageKey
+     * @return the goodsQuantityLabelMessageKey
+     */
+    public String getGoodsQuantityLabelMessageKey();
+    
+    
+    /**
+     * Sets the goodsQuantityLabel
+     * @param goodsQuantityLabel
+     */
+    public void setGoodsQuantityLabel(String goodsQuantityLabel);
+    
+    
+    /**
+     * Returns the goodsQuantityLabel
+     * @return the goodsQuantityLabel
+     */
+    public String getGoodsQuantityLabel();
+    
+    
+    /**
+     * Sets the goodsQuantityPlaceHolderMessageKey
+     * @param goodsQuantityPlaceHolderMessageKey
+     */
+    public void setGoodsQuantityPlaceHolderMessageKey(String goodsQuantityPlaceHolderMessageKey);
+    
+    
+    /**
+     * Returns the goodsQuantityPlaceHolderMessageKey
+     * @return the goodsQuantityPlaceHolderMessageKey
+     */
+    public String getGoodsQuantityPlaceHolderMessageKey();
+    
+    
+    /**
+     * Sets the goodsQuantityPlaceHolder
+     * @param goodsQuantityPlaceHolder
+     */
+    public void setGoodsQuantityPlaceHolder(String goodsQuantityPlaceHolder);
+    
+    
+    /**
+     * Returns the goodsQuantityPlaceHolder
+     * @return the goodsQuantityPlaceHolder
+     */
+    public String getGoodsQuantityPlaceHolder();
+    
+    
+    /**
+     * Sets the goodsQuantityHelpTextMessageKey
+     * @param goodsQuantityHelpTextMessageKey
+     */
+    public void setGoodsQuantityHelpTextMessageKey(String goodsQuantityHelpTextMessageKey);
+    
+    
+    /**
+     * Returns the goodsQuantityHelpTextMessageKey
+     * @return the goodsQuantityHelpTextMessageKey
+     */
+    public String getGoodsQuantityHelpTextMessageKey();
+    
+    
+    /**
+     * Sets the goodsQuantityHelpText
+     * @param goodsQuantityHelpText
+     */
+    public void setGoodsQuantityHelpText(String goodsQuantityHelpText);
+    
+    
+    /**
+     * Returns the goodsQuantityHelpText
+     * @return the goodsQuantityHelpText
+     */
+    public String getGoodsQuantityHelpText();
+    
+    
+    /**
+     * Sets the goodsQuantityTooltipMessageKey
+     * @param goodsQuantityTooltipMessageKey
+     */
+    public void setGoodsQuantityTooltipMessageKey(String goodsQuantityTooltipMessageKey);
+    
+    
+    /**
+     * Returns the goodsQuantityTooltipMessageKey
+     * @return the goodsQuantityTooltipMessageKey
+     */
+    public String getGoodsQuantityTooltipMessageKey();
+    
+    
+    /**
+     * Sets the goodsQuantityTooltip
+     * @param goodsQuantityTooltip
+     */
+    public void setGoodsQuantityTooltip(String goodsQuantityTooltip);
+    
+    
+    /**
+     * Returns the goodsQuantityTooltip
+     * @return the goodsQuantityTooltip
+     */
+    public String getGoodsQuantityTooltip();
     
         
 
@@ -397,234 +1081,6 @@ public interface GoodsPledgeTranslationBackingBean extends GoodsPledge{
      * @return the itemSizeTooltip
      */
     public String getItemSizeTooltip();
-    
-        
-
-    
-    /**
-     * Sets the goodsConditionLabelMessageKey
-     * @param goodsConditionLabelMessageKey
-     */
-    public void setGoodsConditionLabelMessageKey(String goodsConditionLabelMessageKey);
-    
-    
-    /**
-     * Returns the goodsConditionLabelMessageKey
-     * @return the goodsConditionLabelMessageKey
-     */
-    public String getGoodsConditionLabelMessageKey();
-    
-    
-    /**
-     * Sets the goodsConditionLabel
-     * @param goodsConditionLabel
-     */
-    public void setGoodsConditionLabel(String goodsConditionLabel);
-    
-    
-    /**
-     * Returns the goodsConditionLabel
-     * @return the goodsConditionLabel
-     */
-    public String getGoodsConditionLabel();
-    
-    
-    /**
-     * Sets the goodsConditionPlaceHolderMessageKey
-     * @param goodsConditionPlaceHolderMessageKey
-     */
-    public void setGoodsConditionPlaceHolderMessageKey(String goodsConditionPlaceHolderMessageKey);
-    
-    
-    /**
-     * Returns the goodsConditionPlaceHolderMessageKey
-     * @return the goodsConditionPlaceHolderMessageKey
-     */
-    public String getGoodsConditionPlaceHolderMessageKey();
-    
-    
-    /**
-     * Sets the goodsConditionPlaceHolder
-     * @param goodsConditionPlaceHolder
-     */
-    public void setGoodsConditionPlaceHolder(String goodsConditionPlaceHolder);
-    
-    
-    /**
-     * Returns the goodsConditionPlaceHolder
-     * @return the goodsConditionPlaceHolder
-     */
-    public String getGoodsConditionPlaceHolder();
-    
-    
-    /**
-     * Sets the goodsConditionHelpTextMessageKey
-     * @param goodsConditionHelpTextMessageKey
-     */
-    public void setGoodsConditionHelpTextMessageKey(String goodsConditionHelpTextMessageKey);
-    
-    
-    /**
-     * Returns the goodsConditionHelpTextMessageKey
-     * @return the goodsConditionHelpTextMessageKey
-     */
-    public String getGoodsConditionHelpTextMessageKey();
-    
-    
-    /**
-     * Sets the goodsConditionHelpText
-     * @param goodsConditionHelpText
-     */
-    public void setGoodsConditionHelpText(String goodsConditionHelpText);
-    
-    
-    /**
-     * Returns the goodsConditionHelpText
-     * @return the goodsConditionHelpText
-     */
-    public String getGoodsConditionHelpText();
-    
-    
-    /**
-     * Sets the goodsConditionTooltipMessageKey
-     * @param goodsConditionTooltipMessageKey
-     */
-    public void setGoodsConditionTooltipMessageKey(String goodsConditionTooltipMessageKey);
-    
-    
-    /**
-     * Returns the goodsConditionTooltipMessageKey
-     * @return the goodsConditionTooltipMessageKey
-     */
-    public String getGoodsConditionTooltipMessageKey();
-    
-    
-    /**
-     * Sets the goodsConditionTooltip
-     * @param goodsConditionTooltip
-     */
-    public void setGoodsConditionTooltip(String goodsConditionTooltip);
-    
-    
-    /**
-     * Returns the goodsConditionTooltip
-     * @return the goodsConditionTooltip
-     */
-    public String getGoodsConditionTooltip();
-    
-        
-
-    
-    /**
-     * Sets the numberOfItemsLabelMessageKey
-     * @param numberOfItemsLabelMessageKey
-     */
-    public void setNumberOfItemsLabelMessageKey(String numberOfItemsLabelMessageKey);
-    
-    
-    /**
-     * Returns the numberOfItemsLabelMessageKey
-     * @return the numberOfItemsLabelMessageKey
-     */
-    public String getNumberOfItemsLabelMessageKey();
-    
-    
-    /**
-     * Sets the numberOfItemsLabel
-     * @param numberOfItemsLabel
-     */
-    public void setNumberOfItemsLabel(String numberOfItemsLabel);
-    
-    
-    /**
-     * Returns the numberOfItemsLabel
-     * @return the numberOfItemsLabel
-     */
-    public String getNumberOfItemsLabel();
-    
-    
-    /**
-     * Sets the numberOfItemsPlaceHolderMessageKey
-     * @param numberOfItemsPlaceHolderMessageKey
-     */
-    public void setNumberOfItemsPlaceHolderMessageKey(String numberOfItemsPlaceHolderMessageKey);
-    
-    
-    /**
-     * Returns the numberOfItemsPlaceHolderMessageKey
-     * @return the numberOfItemsPlaceHolderMessageKey
-     */
-    public String getNumberOfItemsPlaceHolderMessageKey();
-    
-    
-    /**
-     * Sets the numberOfItemsPlaceHolder
-     * @param numberOfItemsPlaceHolder
-     */
-    public void setNumberOfItemsPlaceHolder(String numberOfItemsPlaceHolder);
-    
-    
-    /**
-     * Returns the numberOfItemsPlaceHolder
-     * @return the numberOfItemsPlaceHolder
-     */
-    public String getNumberOfItemsPlaceHolder();
-    
-    
-    /**
-     * Sets the numberOfItemsHelpTextMessageKey
-     * @param numberOfItemsHelpTextMessageKey
-     */
-    public void setNumberOfItemsHelpTextMessageKey(String numberOfItemsHelpTextMessageKey);
-    
-    
-    /**
-     * Returns the numberOfItemsHelpTextMessageKey
-     * @return the numberOfItemsHelpTextMessageKey
-     */
-    public String getNumberOfItemsHelpTextMessageKey();
-    
-    
-    /**
-     * Sets the numberOfItemsHelpText
-     * @param numberOfItemsHelpText
-     */
-    public void setNumberOfItemsHelpText(String numberOfItemsHelpText);
-    
-    
-    /**
-     * Returns the numberOfItemsHelpText
-     * @return the numberOfItemsHelpText
-     */
-    public String getNumberOfItemsHelpText();
-    
-    
-    /**
-     * Sets the numberOfItemsTooltipMessageKey
-     * @param numberOfItemsTooltipMessageKey
-     */
-    public void setNumberOfItemsTooltipMessageKey(String numberOfItemsTooltipMessageKey);
-    
-    
-    /**
-     * Returns the numberOfItemsTooltipMessageKey
-     * @return the numberOfItemsTooltipMessageKey
-     */
-    public String getNumberOfItemsTooltipMessageKey();
-    
-    
-    /**
-     * Sets the numberOfItemsTooltip
-     * @param numberOfItemsTooltip
-     */
-    public void setNumberOfItemsTooltip(String numberOfItemsTooltip);
-    
-    
-    /**
-     * Returns the numberOfItemsTooltip
-     * @return the numberOfItemsTooltip
-     */
-    public String getNumberOfItemsTooltip();
     
         
 

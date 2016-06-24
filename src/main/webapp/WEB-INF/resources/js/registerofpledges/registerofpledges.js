@@ -97,23 +97,37 @@ var frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekTextBuffer = null;
 var frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekValueBuffer = 0;
 var frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekSetupCompleted = false;
     
-var frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategoryTextBuffer = null;        
-var frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategoryValueBuffer = 0;
-var frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySetupCompleted = false;
-      
-var frmGoodsPledgeCreateUpdatePledgedGoodsTextBuffer = null;
-var frmGoodsPledgeCreateUpdatePledgedGoodsValueBuffer = 0;
-var frmGoodsPledgeCreateUpdatePledgedGoodsSetupCompleted = false;
+var frmGoodsPledgeCreateUpdateGoodsCategoryOneTextBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsCategoryOneValueBuffer = 0;
+var frmGoodsPledgeCreateUpdateGoodsCategoryOneSetupCompleted = false;
     
-var frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsCategoryTwoTextBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsCategoryTwoValueBuffer = 0;
+var frmGoodsPledgeCreateUpdateGoodsCategoryTwoSetupCompleted = false;
     
-var frmGoodsPledgeCreateUpdateItemSizeBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsCategoryThreeTextBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsCategoryThreeValueBuffer = 0;
+var frmGoodsPledgeCreateUpdateGoodsCategoryThreeSetupCompleted = false;
+    
+var frmGoodsPledgeCreateUpdateGoodsSizeTextBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsSizeValueBuffer = 0;
+var frmGoodsPledgeCreateUpdateGoodsSizeSetupCompleted = false;
+    
+var frmGoodsPledgeCreateUpdateGoodsNewOrUsedTextBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsNewOrUsedValueBuffer = 0;
+var frmGoodsPledgeCreateUpdateGoodsNewOrUsedSetupCompleted = false;
     
 var frmGoodsPledgeCreateUpdateGoodsConditionTextBuffer = null;
 var frmGoodsPledgeCreateUpdateGoodsConditionValueBuffer = 0;
 var frmGoodsPledgeCreateUpdateGoodsConditionSetupCompleted = false;
     
-var frmGoodsPledgeCreateUpdateNumberOfItemsBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsQuantityTextBuffer = null;
+var frmGoodsPledgeCreateUpdateGoodsQuantityValueBuffer = 0;
+var frmGoodsPledgeCreateUpdateGoodsQuantitySetupCompleted = false;
+    
+var frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = null;
+    
+var frmGoodsPledgeCreateUpdateItemSizeBuffer = null;
     
 
 $( document ).ready(function() {
@@ -307,17 +321,17 @@ $( document ).ready(function() {
 					row.appendChild(cell);
 					
 								var cell = document.createElement("td");
-								var cellText = document.createTextNode(obj.additionalInformation);
+								var cellText = document.createTextNode(obj.goodsCategoryOneReferenceTranslation);
 								cell.appendChild(cellText);
 								row.appendChild(cell);
 
 								var cell = document.createElement("td");
-								var cellText = document.createTextNode(obj.itemSize);
+								var cellText = document.createTextNode(obj.goodsCategoryTwoReferenceTranslation);
 								cell.appendChild(cellText);
 								row.appendChild(cell);
 
 								var cell = document.createElement("td");
-								var cellText = document.createTextNode(obj.numberOfItems);
+								var cellText = document.createTextNode(obj.goodsCategoryThreeReferenceTranslation);
 								cell.appendChild(cellText);
 								row.appendChild(cell);
 					goodsPledgesTableBody.appendChild(row);
@@ -1953,35 +1967,154 @@ $( document ).ready(function() {
 			frmGoodsPledgeCreateUpdateLaddaSubmitButtonHandler.start();
 
    			
-  		var frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySelectInput = document.getElementById('frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategory');
-  		var frmGoodsPledgeCreateUpdatePledgedGoodsSelectInput = document.getElementById('frmGoodsPledgeCreateUpdatePledgedGoods');
-
-  		if (frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySelectInput.length == 0){
+  		var goodsCategoryOneSelectInput = document.getElementById('frmGoodsPledgeCreateUpdateGoodsCategoryOne');
+  		
+  		if (goodsCategoryOneSelectInput.length == 0){
 			$.ajax({
 				dataType: "json",
 				url: rootContext + "/restful/referenceslist",
 				data: {
-				referenceType: "GoodsCategory"
+				referenceType: "GoodsCategoryOne"
 				},
 				success: function( data ) {
 					var unselectedOption = document.createElement("option");
 					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select GoodsCategory";
-					frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySelectInput.appendChild(unselectedOption);
+					unselectedOption.textContent = "Select Goods Category One";
+					goodsCategoryOneSelectInput.appendChild(unselectedOption);
 
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
     					el.textContent = val;
 						el.value = key;
 					
-    					frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySelectInput.appendChild(el);
-    					frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySetupCompleted = true;
+    					goodsCategoryOneSelectInput.appendChild(el);
+    					frmGoodsPledgeCreateUpdateGoodsCategoryOneSetupCompleted = true;
 					});
 				}
 			});
   		}
   		else{
-  			frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySetupCompleted = true;
+  			frmGoodsPledgeCreateUpdateGoodsCategoryOneSetupCompleted = true;
+  		}
+      
+  		var goodsCategoryTwoSelectInput = document.getElementById('frmGoodsPledgeCreateUpdateGoodsCategoryTwo');
+  		
+  		if (goodsCategoryTwoSelectInput.length == 0){
+			$.ajax({
+				dataType: "json",
+				url: rootContext + "/restful/referenceslist",
+				data: {
+				referenceType: "GoodsCategoryTwo"
+				},
+				success: function( data ) {
+					var unselectedOption = document.createElement("option");
+					unselectedOption.value = -1;
+					unselectedOption.textContent = "Select Goods Category Two";
+					goodsCategoryTwoSelectInput.appendChild(unselectedOption);
+
+					$.each( data, function( key, val ) {
+						var el = document.createElement("option");
+    					el.textContent = val;
+						el.value = key;
+					
+    					goodsCategoryTwoSelectInput.appendChild(el);
+    					frmGoodsPledgeCreateUpdateGoodsCategoryTwoSetupCompleted = true;
+					});
+				}
+			});
+  		}
+  		else{
+  			frmGoodsPledgeCreateUpdateGoodsCategoryTwoSetupCompleted = true;
+  		}
+      
+  		var goodsCategoryThreeSelectInput = document.getElementById('frmGoodsPledgeCreateUpdateGoodsCategoryThree');
+  		
+  		if (goodsCategoryThreeSelectInput.length == 0){
+			$.ajax({
+				dataType: "json",
+				url: rootContext + "/restful/referenceslist",
+				data: {
+				referenceType: "GoodsCategoryThree"
+				},
+				success: function( data ) {
+					var unselectedOption = document.createElement("option");
+					unselectedOption.value = -1;
+					unselectedOption.textContent = "Select Goods Category Three";
+					goodsCategoryThreeSelectInput.appendChild(unselectedOption);
+
+					$.each( data, function( key, val ) {
+						var el = document.createElement("option");
+    					el.textContent = val;
+						el.value = key;
+					
+    					goodsCategoryThreeSelectInput.appendChild(el);
+    					frmGoodsPledgeCreateUpdateGoodsCategoryThreeSetupCompleted = true;
+					});
+				}
+			});
+  		}
+  		else{
+  			frmGoodsPledgeCreateUpdateGoodsCategoryThreeSetupCompleted = true;
+  		}
+      
+  		var goodsSizeSelectInput = document.getElementById('frmGoodsPledgeCreateUpdateGoodsSize');
+  		
+  		if (goodsSizeSelectInput.length == 0){
+			$.ajax({
+				dataType: "json",
+				url: rootContext + "/restful/referenceslist",
+				data: {
+				referenceType: "GoodsSize"
+				},
+				success: function( data ) {
+					var unselectedOption = document.createElement("option");
+					unselectedOption.value = -1;
+					unselectedOption.textContent = "Select Size";
+					goodsSizeSelectInput.appendChild(unselectedOption);
+
+					$.each( data, function( key, val ) {
+						var el = document.createElement("option");
+    					el.textContent = val;
+						el.value = key;
+					
+    					goodsSizeSelectInput.appendChild(el);
+    					frmGoodsPledgeCreateUpdateGoodsSizeSetupCompleted = true;
+					});
+				}
+			});
+  		}
+  		else{
+  			frmGoodsPledgeCreateUpdateGoodsSizeSetupCompleted = true;
+  		}
+      
+  		var goodsNewOrUsedSelectInput = document.getElementById('frmGoodsPledgeCreateUpdateGoodsNewOrUsed');
+  		
+  		if (goodsNewOrUsedSelectInput.length == 0){
+			$.ajax({
+				dataType: "json",
+				url: rootContext + "/restful/referenceslist",
+				data: {
+				referenceType: "NewOrUsed"
+				},
+				success: function( data ) {
+					var unselectedOption = document.createElement("option");
+					unselectedOption.value = -1;
+					unselectedOption.textContent = "Select New/Used";
+					goodsNewOrUsedSelectInput.appendChild(unselectedOption);
+
+					$.each( data, function( key, val ) {
+						var el = document.createElement("option");
+    					el.textContent = val;
+						el.value = key;
+					
+    					goodsNewOrUsedSelectInput.appendChild(el);
+    					frmGoodsPledgeCreateUpdateGoodsNewOrUsedSetupCompleted = true;
+					});
+				}
+			});
+  		}
+  		else{
+  			frmGoodsPledgeCreateUpdateGoodsNewOrUsedSetupCompleted = true;
   		}
       
   		var goodsConditionSelectInput = document.getElementById('frmGoodsPledgeCreateUpdateGoodsCondition');
@@ -1996,7 +2129,7 @@ $( document ).ready(function() {
 				success: function( data ) {
 					var unselectedOption = document.createElement("option");
 					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Condition";
+					unselectedOption.textContent = "Select Goods Condition";
 					goodsConditionSelectInput.appendChild(unselectedOption);
 
 					$.each( data, function( key, val ) {
@@ -2012,6 +2145,36 @@ $( document ).ready(function() {
   		}
   		else{
   			frmGoodsPledgeCreateUpdateGoodsConditionSetupCompleted = true;
+  		}
+      
+  		var goodsQuantitySelectInput = document.getElementById('frmGoodsPledgeCreateUpdateGoodsQuantity');
+  		
+  		if (goodsQuantitySelectInput.length == 0){
+			$.ajax({
+				dataType: "json",
+				url: rootContext + "/restful/referenceslist",
+				data: {
+				referenceType: "GoodsQuantity"
+				},
+				success: function( data ) {
+					var unselectedOption = document.createElement("option");
+					unselectedOption.value = -1;
+					unselectedOption.textContent = "Select Quantity";
+					goodsQuantitySelectInput.appendChild(unselectedOption);
+
+					$.each( data, function( key, val ) {
+						var el = document.createElement("option");
+    					el.textContent = val;
+						el.value = key;
+					
+    					goodsQuantitySelectInput.appendChild(el);
+    					frmGoodsPledgeCreateUpdateGoodsQuantitySetupCompleted = true;
+					});
+				}
+			});
+  		}
+  		else{
+  			frmGoodsPledgeCreateUpdateGoodsQuantitySetupCompleted = true;
   		}
       
 
@@ -2054,36 +2217,103 @@ $( document ).ready(function() {
 				},
 				success: function( data ) {
 					
-					//modal.find('#frmGoodsPledgeCreateUpdatePledgedGoods').focus();
+					//modal.find('#frmGoodsPledgeCreateUpdateGoodsCategoryOne').focus();
   
-        			function frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategoryTimeOut() {
+        			function frmGoodsPledgeCreateUpdateGoodsCategoryOneTimeOut() {
     					setTimeout(function () {
-        					if (frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySetupCompleted == false){
-	        					frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategoryTimeOut();
+        					if (frmGoodsPledgeCreateUpdateGoodsCategoryOneSetupCompleted == false){
+	        					frmGoodsPledgeCreateUpdateGoodsCategoryOneTimeOut();
         					}
         					else{
-        						if (data.pledgedGoodsGoodsCategory != null){
-        							frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySelectInput.value = data.pledgedGoodsGoodsCategory;
-        							frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategoryValueBuffer =  data.pledgedGoodsGoodsCategory;
-        							frmGoodsPledgeCreateUpdatePledgedGoodsValueBuffer =  data.pledgedGoods;
-        						}
-        						else{
-        							frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySelectInput.value = -1;
-        							frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategoryValueBuffer = -1;
-        							frmGoodsPledgeCreateUpdatePledgedGoodsValueBuffer = -1;
-        						}
+        						if (data.goodsCategoryOne != null){
+									goodsCategoryOneSelectInput.value = data.goodsCategoryOne;
+								}
+								else{
+									goodsCategoryOneSelectInput.value = -1;
+									frmGoodsPledgeCreateUpdateGoodsCategoryOneValueBuffer = -1;
+								}
 							}
         				}, 100);
 					}
 					
-					frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategoryTimeOut();
+					frmGoodsPledgeCreateUpdateGoodsCategoryOneTimeOut();
         
-					modal.find('#frmGoodsPledgeCreateUpdateAdditionalInformation').val(data.additionalInformation);
-					frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = data.additionalInformation;
-    
-					modal.find('#frmGoodsPledgeCreateUpdateItemSize').val(data.itemSize);
-					frmGoodsPledgeCreateUpdateItemSizeBuffer = data.itemSize;
-    
+        			function frmGoodsPledgeCreateUpdateGoodsCategoryTwoTimeOut() {
+    					setTimeout(function () {
+        					if (frmGoodsPledgeCreateUpdateGoodsCategoryTwoSetupCompleted == false){
+	        					frmGoodsPledgeCreateUpdateGoodsCategoryTwoTimeOut();
+        					}
+        					else{
+        						if (data.goodsCategoryTwo != null){
+									goodsCategoryTwoSelectInput.value = data.goodsCategoryTwo;
+								}
+								else{
+									goodsCategoryTwoSelectInput.value = -1;
+									frmGoodsPledgeCreateUpdateGoodsCategoryTwoValueBuffer = -1;
+								}
+							}
+        				}, 100);
+					}
+					
+					frmGoodsPledgeCreateUpdateGoodsCategoryTwoTimeOut();
+        
+        			function frmGoodsPledgeCreateUpdateGoodsCategoryThreeTimeOut() {
+    					setTimeout(function () {
+        					if (frmGoodsPledgeCreateUpdateGoodsCategoryThreeSetupCompleted == false){
+	        					frmGoodsPledgeCreateUpdateGoodsCategoryThreeTimeOut();
+        					}
+        					else{
+        						if (data.goodsCategoryThree != null){
+									goodsCategoryThreeSelectInput.value = data.goodsCategoryThree;
+								}
+								else{
+									goodsCategoryThreeSelectInput.value = -1;
+									frmGoodsPledgeCreateUpdateGoodsCategoryThreeValueBuffer = -1;
+								}
+							}
+        				}, 100);
+					}
+					
+					frmGoodsPledgeCreateUpdateGoodsCategoryThreeTimeOut();
+        
+        			function frmGoodsPledgeCreateUpdateGoodsSizeTimeOut() {
+    					setTimeout(function () {
+        					if (frmGoodsPledgeCreateUpdateGoodsSizeSetupCompleted == false){
+	        					frmGoodsPledgeCreateUpdateGoodsSizeTimeOut();
+        					}
+        					else{
+        						if (data.goodsSize != null){
+									goodsSizeSelectInput.value = data.goodsSize;
+								}
+								else{
+									goodsSizeSelectInput.value = -1;
+									frmGoodsPledgeCreateUpdateGoodsSizeValueBuffer = -1;
+								}
+							}
+        				}, 100);
+					}
+					
+					frmGoodsPledgeCreateUpdateGoodsSizeTimeOut();
+        
+        			function frmGoodsPledgeCreateUpdateGoodsNewOrUsedTimeOut() {
+    					setTimeout(function () {
+        					if (frmGoodsPledgeCreateUpdateGoodsNewOrUsedSetupCompleted == false){
+	        					frmGoodsPledgeCreateUpdateGoodsNewOrUsedTimeOut();
+        					}
+        					else{
+        						if (data.goodsNewOrUsed != null){
+									goodsNewOrUsedSelectInput.value = data.goodsNewOrUsed;
+								}
+								else{
+									goodsNewOrUsedSelectInput.value = -1;
+									frmGoodsPledgeCreateUpdateGoodsNewOrUsedValueBuffer = -1;
+								}
+							}
+        				}, 100);
+					}
+					
+					frmGoodsPledgeCreateUpdateGoodsNewOrUsedTimeOut();
+        
         			function frmGoodsPledgeCreateUpdateGoodsConditionTimeOut() {
     					setTimeout(function () {
         					if (frmGoodsPledgeCreateUpdateGoodsConditionSetupCompleted == false){
@@ -2103,24 +2333,30 @@ $( document ).ready(function() {
 					
 					frmGoodsPledgeCreateUpdateGoodsConditionTimeOut();
         
-					modal.find('#frmGoodsPledgeCreateUpdateNumberOfItems').val(data.numberOfItems);
-					frmGoodsPledgeCreateUpdateNumberOfItemsBuffer = data.numberOfItems;
-    
-    				// Initalise handling for the frmGoodsPledgeCreateUpdatePledgedGoods and frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategory interactions
-					function frmGoodsPledgeCreateUpdatePledgedGoodsTimeOut() {
+        			function frmGoodsPledgeCreateUpdateGoodsQuantityTimeOut() {
     					setTimeout(function () {
-        					if (frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySetupCompleted == false){
-	        					frmGoodsPledgeCreateUpdatePledgedGoodsTimeOut();
+        					if (frmGoodsPledgeCreateUpdateGoodsQuantitySetupCompleted == false){
+	        					frmGoodsPledgeCreateUpdateGoodsQuantityTimeOut();
         					}
         					else{
-			     				var event = document.createEvent("HTMLEvents");
-     							event.initEvent("change", false, true);
-			     				frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategorySelectInput.dispatchEvent(event);
+        						if (data.goodsQuantity != null){
+									goodsQuantitySelectInput.value = data.goodsQuantity;
+								}
+								else{
+									goodsQuantitySelectInput.value = -1;
+									frmGoodsPledgeCreateUpdateGoodsQuantityValueBuffer = -1;
+								}
 							}
         				}, 100);
 					}
 					
-					frmGoodsPledgeCreateUpdatePledgedGoodsTimeOut()
+					frmGoodsPledgeCreateUpdateGoodsQuantityTimeOut();
+        
+					modal.find('#frmGoodsPledgeCreateUpdateAdditionalInformation').val(data.additionalInformation);
+					frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = data.additionalInformation;
+    
+					modal.find('#frmGoodsPledgeCreateUpdateItemSize').val(data.itemSize);
+					frmGoodsPledgeCreateUpdateItemSizeBuffer = data.itemSize;
     
 					// Display a count of the characters in the Additional Information textarea input
 					$('#frmGoodsPledgeCreateUpdateAdditionalInformationCountBlock').text($('#frmGoodsPledgeCreateUpdateAdditionalInformation').val().length.toString().concat('/').concat('500'));
@@ -2141,7 +2377,7 @@ $( document ).ready(function() {
 			if (frmGoodsPledgeCreateUpdateLaddaSubmitButtonHandler != null){
 				frmGoodsPledgeCreateUpdateLaddaSubmitButtonHandler.stop();
 			}
-			$('#frmGoodsPledgeCreateUpdatePledgedGoods').focus()
+			$('#frmGoodsPledgeCreateUpdateGoodsCategoryOne').focus()
 		});	
 		
 		
@@ -2202,12 +2438,15 @@ $( document ).ready(function() {
 			var goodsPledge = {
 				parentObjectId : modal.find('#frmGoodsPledgeCreateUpdateParentObjectId').val(),
 				id : modal.find('#frmGoodsPledgeCreateUpdateLoadedObjectId').val(),
-				pledgedGoodsGoodsCategory : modal.find('#frmGoodsPledgeCreateUpdatePledgedGoodsGoodsCategory').val(),
-				pledgedGoods : modal.find('#frmGoodsPledgeCreateUpdatePledgedGoods').val(),
-				additionalInformation : modal.find('#frmGoodsPledgeCreateUpdateAdditionalInformation').val(),
-				itemSize : modal.find('#frmGoodsPledgeCreateUpdateItemSize').val(),
+				goodsCategoryOne : modal.find('#frmGoodsPledgeCreateUpdateGoodsCategoryOne').val(),
+				goodsCategoryTwo : modal.find('#frmGoodsPledgeCreateUpdateGoodsCategoryTwo').val(),
+				goodsCategoryThree : modal.find('#frmGoodsPledgeCreateUpdateGoodsCategoryThree').val(),
+				goodsSize : modal.find('#frmGoodsPledgeCreateUpdateGoodsSize').val(),
+				goodsNewOrUsed : modal.find('#frmGoodsPledgeCreateUpdateGoodsNewOrUsed').val(),
 				goodsCondition : modal.find('#frmGoodsPledgeCreateUpdateGoodsCondition').val(),
-				numberOfItems : modal.find('#frmGoodsPledgeCreateUpdateNumberOfItems').val()
+				goodsQuantity : modal.find('#frmGoodsPledgeCreateUpdateGoodsQuantity').val(),
+				additionalInformation : modal.find('#frmGoodsPledgeCreateUpdateAdditionalInformation').val(),
+				itemSize : modal.find('#frmGoodsPledgeCreateUpdateItemSize').val()
 			};
 			
 			var propertyUrl = modal.find('#frmGoodsPledgeCreateUpdatePropertyUrl').val();
@@ -2236,17 +2475,17 @@ $( document ).ready(function() {
 								row.appendChild(cell);
 								
 								var cell = document.createElement("td");
-								var cellText = document.createTextNode(obj.additionalInformation);
+								var cellText = document.createTextNode(obj.goodsCategoryOneReferenceTranslation);
 								cell.appendChild(cellText);
 								row.appendChild(cell);
 
 								var cell = document.createElement("td");
-								var cellText = document.createTextNode(obj.itemSize);
+								var cellText = document.createTextNode(obj.goodsCategoryTwoReferenceTranslation);
 								cell.appendChild(cellText);
 								row.appendChild(cell);
 
 								var cell = document.createElement("td");
-								var cellText = document.createTextNode(obj.numberOfItems);
+								var cellText = document.createTextNode(obj.goodsCategoryThreeReferenceTranslation);
 								cell.appendChild(cellText);
 								row.appendChild(cell);
 
@@ -2259,11 +2498,11 @@ $( document ).ready(function() {
 						else if (callBackDisplayType == "inline"){
 							$.each(data, function(idx, obj) {
 								
-								document.getElementById("frmGoodsPledgeAdditionalInformationMessage").innerHTML = obj.additionalInformation;
+								document.getElementById("frmGoodsPledgeGoodsCategoryOneMessage").innerHTML = obj.goodsCategoryOneReferenceTranslation;
 
-								document.getElementById("frmGoodsPledgeItemSizeMessage").innerHTML = obj.itemSize;
+								document.getElementById("frmGoodsPledgeGoodsCategoryTwoMessage").innerHTML = obj.goodsCategoryTwoReferenceTranslation;
 
-								document.getElementById("frmGoodsPledgeNumberOfItemsMessage").innerHTML = obj.numberOfItems;
+								document.getElementById("frmGoodsPledgeGoodsCategoryThreeMessage").innerHTML = obj.goodsCategoryThreeReferenceTranslation;
 
 							});
 						}

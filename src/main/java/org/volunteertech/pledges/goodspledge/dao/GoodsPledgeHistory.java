@@ -29,20 +29,32 @@ public class GoodsPledgeHistory
 	private Long goodsPledgeID;
 	 
     
-    /** the address type */
-    private Long pledgedGoods;
+    /** the goods category level one */
+    private Long goodsCategoryOne;
+	
+    /** the goods category level two */
+    private Long goodsCategoryTwo;
+	
+    /** the goods category level three */
+    private Long goodsCategoryThree;
+	
+    /** the goods size */
+    private Long goodsSize;
+	
+    /** the goods size */
+    private Long goodsNewOrUsed;
+	
+    /** the goods condition */
+    private Long goodsCondition;
+	
+    /** the quantity of goods */
+    private Long goodsQuantity;
 	
     /** the participant comments */
     private String additionalInformation;
 	
     /** the participant comments */
     private String itemSize;
-	
-    /** the address type */
-    private Long goodsCondition;
-	
-    /** the address type */
-    private Long numberOfItems;
 	     
     
     /** The user ID of the person that originally created the underlying record **/
@@ -64,11 +76,15 @@ public class GoodsPledgeHistory
     public GoodsPledgeHistory()
     {
     	goodsPledgeID = new Long(0);
-    	pledgedGoods = new Long("0");
+    	goodsCategoryOne = new Long("0");
+		goodsCategoryTwo = new Long("0");
+		goodsCategoryThree = new Long("0");
+		goodsSize = new Long("0");
+		goodsNewOrUsed = new Long("0");
+		goodsCondition = new Long("0");
+		goodsQuantity = new Long("0");
 		additionalInformation = new String();
 		itemSize = new String();
-		goodsCondition = new Long("0");
-		numberOfItems = new Long("0");
 		
     }
     
@@ -112,21 +128,135 @@ public class GoodsPledgeHistory
     
     
     /**
-     * Sets the address type that has been chosen by the user
-     * @param pledgedGoods is the address type
+     * Sets the goods category level one that has been chosen by the user
+     * @param goodsCategoryOne is the goods category level one
      */
-    public void setPledgedGoods(Long pledgedGoods)
+    public void setGoodsCategoryOne(Long goodsCategoryOne)
     {
-      this.pledgedGoods = pledgedGoods;
+      this.goodsCategoryOne = goodsCategoryOne;
     }
 
     /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
+     * Returns the goods category level one that has been chosen by the user or saved in the database
+     * @return the goods category level one
      */
-    public Long getPledgedGoods()
+    public Long getGoodsCategoryOne()
     {
-      return pledgedGoods;
+      return goodsCategoryOne;
+    }
+
+    
+    /**
+     * Sets the goods category level two that has been chosen by the user
+     * @param goodsCategoryTwo is the goods category level two
+     */
+    public void setGoodsCategoryTwo(Long goodsCategoryTwo)
+    {
+      this.goodsCategoryTwo = goodsCategoryTwo;
+    }
+
+    /**
+     * Returns the goods category level two that has been chosen by the user or saved in the database
+     * @return the goods category level two
+     */
+    public Long getGoodsCategoryTwo()
+    {
+      return goodsCategoryTwo;
+    }
+
+    
+    /**
+     * Sets the goods category level three that has been chosen by the user
+     * @param goodsCategoryThree is the goods category level three
+     */
+    public void setGoodsCategoryThree(Long goodsCategoryThree)
+    {
+      this.goodsCategoryThree = goodsCategoryThree;
+    }
+
+    /**
+     * Returns the goods category level three that has been chosen by the user or saved in the database
+     * @return the goods category level three
+     */
+    public Long getGoodsCategoryThree()
+    {
+      return goodsCategoryThree;
+    }
+
+    
+    /**
+     * Sets the goods size that has been chosen by the user
+     * @param goodsSize is the goods size
+     */
+    public void setGoodsSize(Long goodsSize)
+    {
+      this.goodsSize = goodsSize;
+    }
+
+    /**
+     * Returns the goods size that has been chosen by the user or saved in the database
+     * @return the goods size
+     */
+    public Long getGoodsSize()
+    {
+      return goodsSize;
+    }
+
+    
+    /**
+     * Sets the goods size that has been chosen by the user
+     * @param goodsNewOrUsed is the goods size
+     */
+    public void setGoodsNewOrUsed(Long goodsNewOrUsed)
+    {
+      this.goodsNewOrUsed = goodsNewOrUsed;
+    }
+
+    /**
+     * Returns the goods size that has been chosen by the user or saved in the database
+     * @return the goods size
+     */
+    public Long getGoodsNewOrUsed()
+    {
+      return goodsNewOrUsed;
+    }
+
+    
+    /**
+     * Sets the goods condition that has been chosen by the user
+     * @param goodsCondition is the goods condition
+     */
+    public void setGoodsCondition(Long goodsCondition)
+    {
+      this.goodsCondition = goodsCondition;
+    }
+
+    /**
+     * Returns the goods condition that has been chosen by the user or saved in the database
+     * @return the goods condition
+     */
+    public Long getGoodsCondition()
+    {
+      return goodsCondition;
+    }
+
+    
+    /**
+     * Sets the quantity of goods that has been chosen by the user
+     * @param goodsQuantity is the quantity of goods
+     */
+    public void setGoodsQuantity(Long goodsQuantity)
+    {
+      this.goodsQuantity = goodsQuantity;
+    }
+
+    /**
+     * Returns the quantity of goods that has been chosen by the user or saved in the database
+     * @return the quantity of goods
+     */
+    public Long getGoodsQuantity()
+    {
+      return goodsQuantity;
     }
 
     
@@ -165,44 +295,6 @@ public class GoodsPledgeHistory
     public String getItemSize()
     {
       return itemSize;
-    }
-
-    
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param goodsCondition is the address type
-     */
-    public void setGoodsCondition(Long goodsCondition)
-    {
-      this.goodsCondition = goodsCondition;
-    }
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getGoodsCondition()
-    {
-      return goodsCondition;
-    }
-
-    
-    /**
-     * Sets the address type
-     * @param numberOfItems is the address type
-     */
-    public void setNumberOfItems(Long numberOfItems)
-    {
-      this.numberOfItems = numberOfItems;
-    }
-
-    /**
-     * Returns the address type
-     * @return the address type
-     */
-    public Long getNumberOfItems()
-    {
-      return numberOfItems;
     }
 
 

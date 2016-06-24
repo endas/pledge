@@ -44,11 +44,19 @@
       </div>
     </nav>
 	
-	<spring:message code="frmGoodsPledgePledgedGoodsGoodsCategoryPlaceHolder" var="unselectedPledgedGoodsGoodsCategory"/>
+	<spring:message code="frmGoodsPledgeGoodsCategoryOnePlaceHolder" var="unselectedGoodsCategoryOne"/>
     
-	<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder" var="unselectedPledgedGoods"/>
+	<spring:message code="frmGoodsPledgeGoodsCategoryTwoPlaceHolder" var="unselectedGoodsCategoryTwo"/>
+    
+	<spring:message code="frmGoodsPledgeGoodsCategoryThreePlaceHolder" var="unselectedGoodsCategoryThree"/>
+    
+	<spring:message code="frmGoodsPledgeGoodsSizePlaceHolder" var="unselectedGoodsSize"/>
+    
+	<spring:message code="frmGoodsPledgeGoodsNewOrUsedPlaceHolder" var="unselectedGoodsNewOrUsed"/>
     
 	<spring:message code="frmGoodsPledgeGoodsConditionPlaceHolder" var="unselectedGoodsCondition"/>
+    
+	<spring:message code="frmGoodsPledgeGoodsQuantityPlaceHolder" var="unselectedGoodsQuantity"/>
     
 	<spring:url value="/goodspledge/translate" var="goodsPledgeActionUrl" />
 	  
@@ -142,47 +150,35 @@
 	    
 			<div class="panel-body">
 		    
-		  <div id="frmGoodsPledgePledgedGoodsFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  <div id="frmGoodsPledgeGoodsCategoryOneFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
-			<label id="frmGoodsPledgePledgedGoodsLabel" for="frmGoodsPledgePledgedGoods" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgePledgedGoodsLabel"/></label>
+			<label id="frmGoodsPledgeGoodsCategoryOneLabel" for="frmGoodsPledgeGoodsCategoryOne" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsCategoryOneLabel"/></label>
 		  
-			<div class="col-sm-5 parent-select-container">
+			<div class="col-sm-5 select-container">
 				
-	<spring:message code="frmfrmGoodsPledgePledgedGoodsGoodsCategoryPlaceHolder" var="unselectedPledgedGoodsGoodsCategory"/>
-    
-	<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder" var="unselectedPledgedGoods"/>
-    
-      <div class="well">
-				<form:select path="pledgedGoodsGoodsCategory" data-display-name="Type of Goods" data-reference-type="GoodsCategory" data-select-type="parent" data-required="false" class="form-control parent-select" id="frmGoodsPledgePledgedGoodsGoodsCategory" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgePledgedGoods'), frmGoodsPledgePledgedGoodsBuffer, 'Goods', 'Select Type of Goods')">
-					<form:option value="-1" label="${unselectedPledgedGoodsGoodsCategory}" />
-					
-					<form:options items="${pledgedGoodsGoodsCategoryMap}" />
-					
-				</form:select>
-      	
-				<form:select path="pledgedGoods" data-display-name="Type of Goods" data-reference-type="Goods" data-select-type="child" data-required="false" class="form-control" id="frmGoodsPledgePledgedGoods" aria-describedby="frmGoodsPledgePledgedGoodsHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+	<spring:message code="frmGoodsPledgeGoodsCategoryOnePlaceHolder" var="unselectedGoodsCategoryOne"/>
+    	
+				<form:select path="goodsCategoryOne" data-display-name="Goods Category One" data-reference-type="GoodsCategoryOne" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryOne" aria-describedby="frmGoodsPledgeGoodsCategoryOneHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsCategoryTwo'), frmGoodsPledgeGoodsCategoryTwoBuffer, 'GoodsCategoryTwo', 'Select placeholder')"
 >
-					<form:option value="-1" label="${unselectedPledgedGoods}" />
+					<form:option value="-1" label="${unselectedGoodsCategoryOne}" />
 					
-					<form:options items="${pledgedGoodsMap}" />
+					<form:options items="${goodsCategoryOneMap}" />
 					
 				</form:select>
 	  
-	  </div> <!-- class="well" -->
-	  
-				<span id="frmGoodsPledgePledgedGoodsFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
-				<div id="frmGoodsPledgePledgedGoodsAlertBlock" class="alert alert-dismissible hidden" role="alert">
+				<span id="frmGoodsPledgeGoodsCategoryOneFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmGoodsPledgeGoodsCategoryOneAlertBlock" class="alert alert-dismissible hidden" role="alert">
   					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  					<span id="frmGoodsPledgePledgedGoodsAlertBlockText"></span>
+  					<span id="frmGoodsPledgeGoodsCategoryOneAlertBlockText"></span>
 				</div>
 			</div>
 				
 				<c:choose>
 				  <c:when test="${status.error}">
-				<form:errors id="frmGoodsPledgePledgedGoodsHelpBlock" path="pledgedGoods" class="help-block col-sm-offset-2 col-sm-10" />
+				<form:errors id="frmGoodsPledgeGoodsCategoryOneHelpBlock" path="goodsCategoryOne" class="help-block col-sm-offset-2 col-sm-10" />
 				  </c:when>
 				  <c:otherwise>
-				<span id="frmGoodsPledgePledgedGoodsHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgePledgedGoodsHelpBlock"/></span>				  
+				<span id="frmGoodsPledgeGoodsCategoryOneHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeGoodsCategoryOneHelpBlock"/></span>				  
 				  </c:otherwise>
 				</c:choose>
 		  </div>
@@ -190,31 +186,427 @@
 		<div class="well">
         
 		  <div class="form-group">
-		  	<label id="frmGoodsPledgePledgedGoodsLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgePledgedGoodsLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgePledgedGoodsLabelTranslateToLabel" for="frmGoodsPledgePledgedGoodsLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+		  	<label id="frmGoodsPledgeGoodsCategoryOneLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryOneLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryOneLabelTranslateToLabel" for="frmGoodsPledgeGoodsCategoryOneLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
 			<div class="col-sm-6">
-				<form:input path="pledgedGoodsLabel" type="text" class="form-control" id="frmGoodsPledgePledgedGoodsLabelLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgePledgedGoodsLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
+				<form:input path="goodsCategoryOneLabel" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryOneLabelLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryOneLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
 			</div>
 		  </div>
 		  
 		  <div class="form-group">
-		  	<label id="frmGoodsPledgePledgedGoodsPlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgePledgedGoodsPlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgePledgedGoodsPlaceHolderTranslateToLabel" for="frmGoodsPledgePledgedGoodsPlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+		  	<label id="frmGoodsPledgeGoodsCategoryOnePlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryOnePlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryOnePlaceHolderTranslateToLabel" for="frmGoodsPledgeGoodsCategoryOnePlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
 			<div class="col-sm-6">
-				<form:input path="pledgedGoodsPlaceHolder" type="text" class="form-control" id="frmGoodsPledgePledgedGoodsPlaceHolderLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgePledgedGoodsPlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
+				<form:input path="goodsCategoryOnePlaceHolder" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryOnePlaceHolderLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryOnePlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
 			</div>
 		  </div>	
 		  <div class="form-group">
-		  	<label id="frmGoodsPledgePledgedGoodsHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgePledgedGoodsHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgePledgedGoodsHelpBlockTranslateToLabel" for="frmGoodsPledgePledgedGoodsHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+		  	<label id="frmGoodsPledgeGoodsCategoryOneHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryOneHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryOneHelpBlockTranslateToLabel" for="frmGoodsPledgeGoodsCategoryOneHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
 			<div class="col-sm-6">
-				<form:input path="pledgedGoodsHelpText" type="text" class="form-control" id="frmGoodsPledgePledgedGoodsHelpBlockLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgePledgedGoodsHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
+				<form:input path="goodsCategoryOneHelpText" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryOneHelpBlockLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryOneHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		</div> <!-- div class="well" -->
+      
+		  <div id="frmGoodsPledgeGoodsCategoryTwoFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmGoodsPledgeGoodsCategoryTwoLabel" for="frmGoodsPledgeGoodsCategoryTwo" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsCategoryTwoLabel"/></label>
+		  
+			<div class="col-sm-5 select-container">
+				
+	<spring:message code="frmGoodsPledgeGoodsCategoryTwoPlaceHolder" var="unselectedGoodsCategoryTwo"/>
+    	
+				<form:select path="goodsCategoryTwo" data-display-name="Goods Category Two" data-reference-type="GoodsCategoryTwo" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryTwo" aria-describedby="frmGoodsPledgeGoodsCategoryTwoHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsSize'), frmGoodsPledgeGoodsSizeBuffer, 'GoodsSize', 'Select placeholder')"
+>
+					<form:option value="-1" label="${unselectedGoodsCategoryTwo}" />
+					
+					<form:options items="${goodsCategoryTwoMap}" />
+					
+				</form:select>
+	  
+				<span id="frmGoodsPledgeGoodsCategoryTwoFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmGoodsPledgeGoodsCategoryTwoAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmGoodsPledgeGoodsCategoryTwoAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmGoodsPledgeGoodsCategoryTwoHelpBlock" path="goodsCategoryTwo" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmGoodsPledgeGoodsCategoryTwoHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeGoodsCategoryTwoHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		<div class="well">
+        
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsCategoryTwoLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryTwoLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryTwoLabelTranslateToLabel" for="frmGoodsPledgeGoodsCategoryTwoLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsCategoryTwoLabel" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryTwoLabelLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryTwoLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsCategoryTwoPlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryTwoPlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryTwoPlaceHolderTranslateToLabel" for="frmGoodsPledgeGoodsCategoryTwoPlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsCategoryTwoPlaceHolder" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryTwoPlaceHolderLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryTwoPlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>	
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsCategoryTwoHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryTwoHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryTwoHelpBlockTranslateToLabel" for="frmGoodsPledgeGoodsCategoryTwoHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsCategoryTwoHelpText" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryTwoHelpBlockLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryTwoHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		</div> <!-- div class="well" -->
+      
+		  <div id="frmGoodsPledgeGoodsCategoryThreeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmGoodsPledgeGoodsCategoryThreeLabel" for="frmGoodsPledgeGoodsCategoryThree" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsCategoryThreeLabel"/></label>
+		  
+			<div class="col-sm-5 select-container">
+				
+	<spring:message code="frmGoodsPledgeGoodsCategoryThreePlaceHolder" var="unselectedGoodsCategoryThree"/>
+    	
+				<form:select path="goodsCategoryThree" data-display-name="Goods Category Three" data-reference-type="GoodsCategoryThree" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryThree" aria-describedby="frmGoodsPledgeGoodsCategoryThreeHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+>
+					<form:option value="-1" label="${unselectedGoodsCategoryThree}" />
+					
+					<form:options items="${goodsCategoryThreeMap}" />
+					
+				</form:select>
+	  
+				<span id="frmGoodsPledgeGoodsCategoryThreeFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmGoodsPledgeGoodsCategoryThreeAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmGoodsPledgeGoodsCategoryThreeAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmGoodsPledgeGoodsCategoryThreeHelpBlock" path="goodsCategoryThree" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmGoodsPledgeGoodsCategoryThreeHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeGoodsCategoryThreeHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		<div class="well">
+        
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsCategoryThreeLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryThreeLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryThreeLabelTranslateToLabel" for="frmGoodsPledgeGoodsCategoryThreeLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsCategoryThreeLabel" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryThreeLabelLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryThreeLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsCategoryThreePlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryThreePlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryThreePlaceHolderTranslateToLabel" for="frmGoodsPledgeGoodsCategoryThreePlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsCategoryThreePlaceHolder" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryThreePlaceHolderLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryThreePlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>	
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsCategoryThreeHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsCategoryThreeHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsCategoryThreeHelpBlockTranslateToLabel" for="frmGoodsPledgeGoodsCategoryThreeHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsCategoryThreeHelpText" type="text" class="form-control" id="frmGoodsPledgeGoodsCategoryThreeHelpBlockLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsCategoryThreeHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		</div> <!-- div class="well" -->
+      
+		  <div id="frmGoodsPledgeGoodsSizeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmGoodsPledgeGoodsSizeLabel" for="frmGoodsPledgeGoodsSize" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsSizeLabel"/></label>
+		  
+			<div class="col-sm-5 select-container">
+				
+	<spring:message code="frmGoodsPledgeGoodsSizePlaceHolder" var="unselectedGoodsSize"/>
+    	
+				<form:select path="goodsSize" data-display-name="Size" data-reference-type="GoodsSize" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsSize" aria-describedby="frmGoodsPledgeGoodsSizeHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+>
+					<form:option value="-1" label="${unselectedGoodsSize}" />
+					
+					<form:options items="${goodsSizeMap}" />
+					
+				</form:select>
+	  
+				<span id="frmGoodsPledgeGoodsSizeFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmGoodsPledgeGoodsSizeAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmGoodsPledgeGoodsSizeAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmGoodsPledgeGoodsSizeHelpBlock" path="goodsSize" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmGoodsPledgeGoodsSizeHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeGoodsSizeHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		<div class="well">
+        
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsSizeLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsSizeLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsSizeLabelTranslateToLabel" for="frmGoodsPledgeGoodsSizeLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsSizeLabel" type="text" class="form-control" id="frmGoodsPledgeGoodsSizeLabelLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsSizeLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsSizePlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsSizePlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsSizePlaceHolderTranslateToLabel" for="frmGoodsPledgeGoodsSizePlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsSizePlaceHolder" type="text" class="form-control" id="frmGoodsPledgeGoodsSizePlaceHolderLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsSizePlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>	
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsSizeHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsSizeHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsSizeHelpBlockTranslateToLabel" for="frmGoodsPledgeGoodsSizeHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsSizeHelpText" type="text" class="form-control" id="frmGoodsPledgeGoodsSizeHelpBlockLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsSizeHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		</div> <!-- div class="well" -->
+      
+		  <div id="frmGoodsPledgeGoodsNewOrUsedFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmGoodsPledgeGoodsNewOrUsedLabel" for="frmGoodsPledgeGoodsNewOrUsed" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsNewOrUsedLabel"/></label>
+		  
+			<div class="col-sm-5 select-container">
+				
+	<spring:message code="frmGoodsPledgeGoodsNewOrUsedPlaceHolder" var="unselectedGoodsNewOrUsed"/>
+    	
+				<form:select path="goodsNewOrUsed" data-display-name="New/Used" data-reference-type="NewOrUsed" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsNewOrUsed" aria-describedby="frmGoodsPledgeGoodsNewOrUsedHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+>
+					<form:option value="-1" label="${unselectedGoodsNewOrUsed}" />
+					
+					<form:options items="${goodsNewOrUsedMap}" />
+					
+				</form:select>
+	  
+				<span id="frmGoodsPledgeGoodsNewOrUsedFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmGoodsPledgeGoodsNewOrUsedAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmGoodsPledgeGoodsNewOrUsedAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmGoodsPledgeGoodsNewOrUsedHelpBlock" path="goodsNewOrUsed" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmGoodsPledgeGoodsNewOrUsedHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeGoodsNewOrUsedHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		<div class="well">
+        
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsNewOrUsedLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsNewOrUsedLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsNewOrUsedLabelTranslateToLabel" for="frmGoodsPledgeGoodsNewOrUsedLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsNewOrUsedLabel" type="text" class="form-control" id="frmGoodsPledgeGoodsNewOrUsedLabelLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsNewOrUsedLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsNewOrUsedPlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsNewOrUsedPlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsNewOrUsedPlaceHolderTranslateToLabel" for="frmGoodsPledgeGoodsNewOrUsedPlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsNewOrUsedPlaceHolder" type="text" class="form-control" id="frmGoodsPledgeGoodsNewOrUsedPlaceHolderLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsNewOrUsedPlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>	
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsNewOrUsedHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsNewOrUsedHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsNewOrUsedHelpBlockTranslateToLabel" for="frmGoodsPledgeGoodsNewOrUsedHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsNewOrUsedHelpText" type="text" class="form-control" id="frmGoodsPledgeGoodsNewOrUsedHelpBlockLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsNewOrUsedHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		</div> <!-- div class="well" -->
+      
+		  <div id="frmGoodsPledgeGoodsConditionFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmGoodsPledgeGoodsConditionLabel" for="frmGoodsPledgeGoodsCondition" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsConditionLabel"/></label>
+		  
+			<div class="col-sm-5 select-container">
+				
+	<spring:message code="frmGoodsPledgeGoodsConditionPlaceHolder" var="unselectedGoodsCondition"/>
+    	
+				<form:select path="goodsCondition" data-display-name="Goods Condition" data-reference-type="GoodsCondition" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCondition" aria-describedby="frmGoodsPledgeGoodsConditionHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+>
+					<form:option value="-1" label="${unselectedGoodsCondition}" />
+					
+					<form:options items="${goodsConditionMap}" />
+					
+				</form:select>
+	  
+				<span id="frmGoodsPledgeGoodsConditionFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmGoodsPledgeGoodsConditionAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmGoodsPledgeGoodsConditionAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmGoodsPledgeGoodsConditionHelpBlock" path="goodsCondition" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmGoodsPledgeGoodsConditionHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeGoodsConditionHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		<div class="well">
+        
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsConditionLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsConditionLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsConditionLabelTranslateToLabel" for="frmGoodsPledgeGoodsConditionLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsConditionLabel" type="text" class="form-control" id="frmGoodsPledgeGoodsConditionLabelLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsConditionLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsConditionPlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsConditionPlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsConditionPlaceHolderTranslateToLabel" for="frmGoodsPledgeGoodsConditionPlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsConditionPlaceHolder" type="text" class="form-control" id="frmGoodsPledgeGoodsConditionPlaceHolderLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsConditionPlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>	
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsConditionHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsConditionHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsConditionHelpBlockTranslateToLabel" for="frmGoodsPledgeGoodsConditionHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsConditionHelpText" type="text" class="form-control" id="frmGoodsPledgeGoodsConditionHelpBlockLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsConditionHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		</div> <!-- div class="well" -->
+      
+		  <div id="frmGoodsPledgeGoodsQuantityFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  
+			<label id="frmGoodsPledgeGoodsQuantityLabel" for="frmGoodsPledgeGoodsQuantity" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsQuantityLabel"/></label>
+		  
+			<div class="col-sm-5 select-container">
+				
+	<spring:message code="frmGoodsPledgeGoodsQuantityPlaceHolder" var="unselectedGoodsQuantity"/>
+    	
+				<form:select path="goodsQuantity" data-display-name="Quantity" data-reference-type="GoodsQuantity" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsQuantity" aria-describedby="frmGoodsPledgeGoodsQuantityHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+>
+					<form:option value="-1" label="${unselectedGoodsQuantity}" />
+					
+					<form:options items="${goodsQuantityMap}" />
+					
+				</form:select>
+	  
+				<span id="frmGoodsPledgeGoodsQuantityFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div id="frmGoodsPledgeGoodsQuantityAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<span id="frmGoodsPledgeGoodsQuantityAlertBlockText"></span>
+				</div>
+			</div>
+				
+				<c:choose>
+				  <c:when test="${status.error}">
+				<form:errors id="frmGoodsPledgeGoodsQuantityHelpBlock" path="goodsQuantity" class="help-block col-sm-offset-2 col-sm-10" />
+				  </c:when>
+				  <c:otherwise>
+				<span id="frmGoodsPledgeGoodsQuantityHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeGoodsQuantityHelpBlock"/></span>				  
+				  </c:otherwise>
+				</c:choose>
+		  </div>
+      
+		<div class="well">
+        
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsQuantityLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsQuantityLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsQuantityLabelTranslateToLabel" for="frmGoodsPledgeGoodsQuantityLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsQuantityLabel" type="text" class="form-control" id="frmGoodsPledgeGoodsQuantityLabelLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsQuantityLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsQuantityPlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsQuantityPlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsQuantityPlaceHolderTranslateToLabel" for="frmGoodsPledgeGoodsQuantityPlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsQuantityPlaceHolder" type="text" class="form-control" id="frmGoodsPledgeGoodsQuantityPlaceHolderLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsQuantityPlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
+			</div>
+		  </div>	
+		  <div class="form-group">
+		  	<label id="frmGoodsPledgeGoodsQuantityHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
+			<p id="frmGoodsPledgeGoodsQuantityHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
+			<label id="frmGoodsPledgeGoodsQuantityHelpBlockTranslateToLabel" for="frmGoodsPledgeGoodsQuantityHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
+			<div class="col-sm-6">
+				<form:input path="goodsQuantityHelpText" type="text" class="form-control" id="frmGoodsPledgeGoodsQuantityHelpBlockLocalizer" placeholder=""/>
+				<span id="frmGoodsPledgeGoodsQuantityHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
 			</div>
 		  </div>
 		  
@@ -335,132 +727,6 @@
 			<div class="col-sm-6">
 				<form:input path="itemSizeHelpText" type="text" class="form-control" id="frmGoodsPledgeItemSizeHelpBlockLocalizer" placeholder=""/>
 				<span id="frmGoodsPledgeItemSizeHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
-			</div>
-		  </div>
-		  
-		</div> <!-- div class="well" -->
-      
-		  <div id="frmGoodsPledgeGoodsConditionFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-		  
-			<label id="frmGoodsPledgeGoodsConditionLabel" for="frmGoodsPledgeGoodsCondition" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsConditionLabel"/></label>
-		  
-			<div class="col-sm-5 select-container">
-				
-	<spring:message code="frmGoodsPledgeGoodsConditionPlaceHolder" var="unselectedGoodsCondition"/>
-    	
-				<form:select path="goodsCondition" data-display-name="Condition" data-reference-type="GoodsCondition" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCondition" aria-describedby="frmGoodsPledgeGoodsConditionHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
->
-					<form:option value="-1" label="${unselectedGoodsCondition}" />
-					
-					<form:options items="${goodsConditionMap}" />
-					
-				</form:select>
-	  
-				<span id="frmGoodsPledgeGoodsConditionFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
-				<div id="frmGoodsPledgeGoodsConditionAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  					<span id="frmGoodsPledgeGoodsConditionAlertBlockText"></span>
-				</div>
-			</div>
-				
-				<c:choose>
-				  <c:when test="${status.error}">
-				<form:errors id="frmGoodsPledgeGoodsConditionHelpBlock" path="goodsCondition" class="help-block col-sm-offset-2 col-sm-10" />
-				  </c:when>
-				  <c:otherwise>
-				<span id="frmGoodsPledgeGoodsConditionHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeGoodsConditionHelpBlock"/></span>				  
-				  </c:otherwise>
-				</c:choose>
-		  </div>
-      
-		<div class="well">
-        
-		  <div class="form-group">
-		  	<label id="frmGoodsPledgeGoodsConditionLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgeGoodsConditionLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgeGoodsConditionLabelTranslateToLabel" for="frmGoodsPledgeGoodsConditionLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
-			<div class="col-sm-6">
-				<form:input path="goodsConditionLabel" type="text" class="form-control" id="frmGoodsPledgeGoodsConditionLabelLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgeGoodsConditionLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
-			</div>
-		  </div>
-		  
-		  <div class="form-group">
-		  	<label id="frmGoodsPledgeGoodsConditionPlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgeGoodsConditionPlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgeGoodsConditionPlaceHolderTranslateToLabel" for="frmGoodsPledgeGoodsConditionPlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
-			<div class="col-sm-6">
-				<form:input path="goodsConditionPlaceHolder" type="text" class="form-control" id="frmGoodsPledgeGoodsConditionPlaceHolderLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgeGoodsConditionPlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
-			</div>
-		  </div>	
-		  <div class="form-group">
-		  	<label id="frmGoodsPledgeGoodsConditionHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgeGoodsConditionHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgeGoodsConditionHelpBlockTranslateToLabel" for="frmGoodsPledgeGoodsConditionHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
-			<div class="col-sm-6">
-				<form:input path="goodsConditionHelpText" type="text" class="form-control" id="frmGoodsPledgeGoodsConditionHelpBlockLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgeGoodsConditionHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
-			</div>
-		  </div>
-		  
-		</div> <!-- div class="well" -->
-      
-		  <div id="frmGoodsPledgeNumberOfItemsFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-		  
-			<label id="frmGoodsPledgeNumberOfItemsLabel" for="frmGoodsPledgeNumberOfItems" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeNumberOfItemsLabel"/></label>
-		  
-			<div class="col-sm-10">
-				
-				<spring:message code="frmGoodsPledgeNumberOfItemsPlaceHolder" var="frmGoodsPledgeNumberOfItemsPlaceHolder"/>    
-    
-				<form:input path="numberOfItems" type="text" data-display-name="Number of Items of this type" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmGoodsPledgeNumberOfItems" placeholder="${frmGoodsPledgeNumberOfItemsPlaceHolder}" aria-describedby="frmGoodsPledgeNumberOfItemsHelpBlock" data-data-type="long" data-validate-key-press="true" onpaste="return checkPastedDataIsNumberValidAndRenderErrorMessage(event, this, document.getElementById('frmGoodsPledgeNumberOfItemsJavascriptErrorDisplay'), 'The value that you attempted to paste into Number of Items of this type can only contain digits 0-9', 'Valid')" />
-    
-				<span id="frmGoodsPledgeNumberOfItemsFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
-				<div id="frmGoodsPledgeNumberOfItemsAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  					<span id="frmGoodsPledgeNumberOfItemsAlertBlockText"></span>
-				</div>
-			</div>
-				
-				<c:choose>
-				  <c:when test="${status.error}">
-				<form:errors id="frmGoodsPledgeNumberOfItemsHelpBlock" path="numberOfItems" class="help-block col-sm-offset-2 col-sm-10" />
-				  </c:when>
-				  <c:otherwise>
-				<span id="frmGoodsPledgeNumberOfItemsHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmGoodsPledgeNumberOfItemsHelpBlock"/></span>				  
-				  </c:otherwise>
-				</c:choose>
-		  </div>
-      
-		<div class="well">
-        
-		  <div class="form-group">
-		  	<label id="frmGoodsPledgeNumberOfItemsLabelTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgeNumberOfItemsLabelLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgeNumberOfItemsLabelTranslateToLabel" for="frmGoodsPledgeNumberOfItemsLabelLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
-			<div class="col-sm-6">
-				<form:input path="numberOfItemsLabel" type="text" class="form-control" id="frmGoodsPledgeNumberOfItemsLabelLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgeNumberOfItemsLabelLocalizerHelpBlock" class="help-block"><spring:message code="labelLocalizerHelpBlockText"/></span>
-			</div>
-		  </div>
-		  
-		  <div class="form-group">
-		  	<label id="frmGoodsPledgeNumberOfItemsPlaceHolderTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgeNumberOfItemsPlaceHolderLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgeNumberOfItemsPlaceHolderTranslateToLabel" for="frmGoodsPledgeNumberOfItemsPlaceHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
-			<div class="col-sm-6">
-				<form:input path="numberOfItemsPlaceHolder" type="text" class="form-control" id="frmGoodsPledgeNumberOfItemsPlaceHolderLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgeNumberOfItemsPlaceHolderLocalizerHelpBlock" class="help-block"><spring:message code="placeHolderLocalizerHelpBlockText"/></span>
-			</div>
-		  </div>	
-		  <div class="form-group">
-		  	<label id="frmGoodsPledgeNumberOfItemsHelpBlockTranslateFromLabel" class="col-sm-1 control-label left-align"><spring:message code="existingLocaleLabel"/></label>
-			<p id="frmGoodsPledgeNumberOfItemsHelpBlockLocalizerLabel" class="col-sm-4 form-control-static"></p>
-			<label id="frmGoodsPledgeNumberOfItemsHelpBlockTranslateToLabel" for="frmGoodsPledgeNumberOfItemsHelpBlockHolderLocalizer" class="col-sm-1 control-label left-align"><spring:message code="newLocaleLabel"/></label>
-			<div class="col-sm-6">
-				<form:input path="numberOfItemsHelpText" type="text" class="form-control" id="frmGoodsPledgeNumberOfItemsHelpBlockLocalizer" placeholder=""/>
-				<span id="frmGoodsPledgeNumberOfItemsHelpBlockLocalizerHelpBlock" class="help-block"><spring:message code="helpBlockLocalizerHelpBlockText"/></span>
 			</div>
 		  </div>
 		  

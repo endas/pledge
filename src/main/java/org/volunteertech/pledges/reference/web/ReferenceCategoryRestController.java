@@ -396,23 +396,23 @@ public class ReferenceCategoryRestController extends BaseController
 				break;
 		  
 		
-			case("GoodsCategory"):
-				Map<Long, String> goodsCategoryMap = referenceStore.getGoodsCategory(); 
-				SortedMap<Long, String> localizedGoodsCategoryMap = new TreeMap<Long, String>(goodsCategoryMap);
-				for (Map.Entry<Long, String> entry : localizedGoodsCategoryMap.entrySet()) {
-					localizedGoodsCategoryMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+			case("GoodsCategoryOne"):
+				Map<Long, String> goodsCategoryOneMap = referenceStore.getGoodsCategoryOne(); 
+				SortedMap<Long, String> localizedGoodsCategoryOneMap = new TreeMap<Long, String>(goodsCategoryOneMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsCategoryOneMap.entrySet()) {
+					localizedGoodsCategoryOneMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 				}
-				returnValue = localizedGoodsCategoryMap;
+				returnValue = localizedGoodsCategoryOneMap;
 				break;
 		  
 		
-			case("Goods"):
-				Map<Long, String> goodsMap = referenceStore.getGoods(); 
-				SortedMap<Long, String> localizedGoodsMap = new TreeMap<Long, String>(goodsMap);
-				for (Map.Entry<Long, String> entry : localizedGoodsMap.entrySet()) {
-					localizedGoodsMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+			case("GoodsCategoryTwo"):
+				Map<Long, String> goodsCategoryTwoMap = referenceStore.getGoodsCategoryTwo(); 
+				SortedMap<Long, String> localizedGoodsCategoryTwoMap = new TreeMap<Long, String>(goodsCategoryTwoMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsCategoryTwoMap.entrySet()) {
+					localizedGoodsCategoryTwoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 				}
-				returnValue = localizedGoodsMap;
+				returnValue = localizedGoodsCategoryTwoMap;
 				break;
 		  
 		
@@ -463,6 +463,46 @@ public class ReferenceCategoryRestController extends BaseController
 					localizedPledgeServiceLevelThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 				}
 				returnValue = localizedPledgeServiceLevelThreeMap;
+				break;
+		  
+		
+			case("GoodsCategoryThree"):
+				Map<Long, String> goodsCategoryThreeMap = referenceStore.getGoodsCategoryThree(); 
+				SortedMap<Long, String> localizedGoodsCategoryThreeMap = new TreeMap<Long, String>(goodsCategoryThreeMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsCategoryThreeMap.entrySet()) {
+					localizedGoodsCategoryThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedGoodsCategoryThreeMap;
+				break;
+		  
+		
+			case("GoodsSize"):
+				Map<Long, String> goodsSizeMap = referenceStore.getGoodsSize(); 
+				SortedMap<Long, String> localizedGoodsSizeMap = new TreeMap<Long, String>(goodsSizeMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsSizeMap.entrySet()) {
+					localizedGoodsSizeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedGoodsSizeMap;
+				break;
+		  
+		
+			case("GoodsQuantity"):
+				Map<Long, String> goodsQuantityMap = referenceStore.getGoodsQuantity(); 
+				SortedMap<Long, String> localizedGoodsQuantityMap = new TreeMap<Long, String>(goodsQuantityMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsQuantityMap.entrySet()) {
+					localizedGoodsQuantityMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedGoodsQuantityMap;
+				break;
+		  
+		
+			case("NewOrUsed"):
+				Map<Long, String> newOrUsedMap = referenceStore.getNewOrUsed(); 
+				SortedMap<Long, String> localizedNewOrUsedMap = new TreeMap<Long, String>(newOrUsedMap);
+				for (Map.Entry<Long, String> entry : localizedNewOrUsedMap.entrySet()) {
+					localizedNewOrUsedMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedNewOrUsedMap;
 				break;
 		  
 		
@@ -627,23 +667,23 @@ public class ReferenceCategoryRestController extends BaseController
 				break;
 		  
 				  
-			case("GoodsCategory"):
-				Map<Long, String> goodsCategoryMap = referenceStore.getGoodsCategoryByParentId(new Long(parentId)); 
-				SortedMap<Long, String> localizedGoodsCategoryMap = new TreeMap<Long, String>(goodsCategoryMap);
-				for (Map.Entry<Long, String> entry : localizedGoodsCategoryMap.entrySet()) {
-					localizedGoodsCategoryMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+			case("GoodsCategoryOne"):
+				Map<Long, String> goodsCategoryOneMap = referenceStore.getGoodsCategoryOneByParentId(new Long(parentId)); 
+				SortedMap<Long, String> localizedGoodsCategoryOneMap = new TreeMap<Long, String>(goodsCategoryOneMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsCategoryOneMap.entrySet()) {
+					localizedGoodsCategoryOneMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 				}
-				returnValue = localizedGoodsCategoryMap;
+				returnValue = localizedGoodsCategoryOneMap;
 				break;
 		  
 				  
-			case("Goods"):
-				Map<Long, String> goodsMap = referenceStore.getGoodsByParentId(new Long(parentId)); 
-				SortedMap<Long, String> localizedGoodsMap = new TreeMap<Long, String>(goodsMap);
-				for (Map.Entry<Long, String> entry : localizedGoodsMap.entrySet()) {
-					localizedGoodsMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+			case("GoodsCategoryTwo"):
+				Map<Long, String> goodsCategoryTwoMap = referenceStore.getGoodsCategoryTwoByParentId(new Long(parentId)); 
+				SortedMap<Long, String> localizedGoodsCategoryTwoMap = new TreeMap<Long, String>(goodsCategoryTwoMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsCategoryTwoMap.entrySet()) {
+					localizedGoodsCategoryTwoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 				}
-				returnValue = localizedGoodsMap;
+				returnValue = localizedGoodsCategoryTwoMap;
 				break;
 		  
 				  
@@ -694,6 +734,46 @@ public class ReferenceCategoryRestController extends BaseController
 					localizedPledgeServiceLevelThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
 				}
 				returnValue = localizedPledgeServiceLevelThreeMap;
+				break;
+		  
+				  
+			case("GoodsCategoryThree"):
+				Map<Long, String> goodsCategoryThreeMap = referenceStore.getGoodsCategoryThreeByParentId(new Long(parentId)); 
+				SortedMap<Long, String> localizedGoodsCategoryThreeMap = new TreeMap<Long, String>(goodsCategoryThreeMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsCategoryThreeMap.entrySet()) {
+					localizedGoodsCategoryThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedGoodsCategoryThreeMap;
+				break;
+		  
+				  
+			case("GoodsSize"):
+				Map<Long, String> goodsSizeMap = referenceStore.getGoodsSizeByParentId(new Long(parentId)); 
+				SortedMap<Long, String> localizedGoodsSizeMap = new TreeMap<Long, String>(goodsSizeMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsSizeMap.entrySet()) {
+					localizedGoodsSizeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedGoodsSizeMap;
+				break;
+		  
+				  
+			case("GoodsQuantity"):
+				Map<Long, String> goodsQuantityMap = referenceStore.getGoodsQuantityByParentId(new Long(parentId)); 
+				SortedMap<Long, String> localizedGoodsQuantityMap = new TreeMap<Long, String>(goodsQuantityMap);
+				for (Map.Entry<Long, String> entry : localizedGoodsQuantityMap.entrySet()) {
+					localizedGoodsQuantityMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedGoodsQuantityMap;
+				break;
+		  
+				  
+			case("NewOrUsed"):
+				Map<Long, String> newOrUsedMap = referenceStore.getNewOrUsedByParentId(new Long(parentId)); 
+				SortedMap<Long, String> localizedNewOrUsedMap = new TreeMap<Long, String>(newOrUsedMap);
+				for (Map.Entry<Long, String> entry : localizedNewOrUsedMap.entrySet()) {
+					localizedNewOrUsedMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedNewOrUsedMap;
 				break;
 		  
 		

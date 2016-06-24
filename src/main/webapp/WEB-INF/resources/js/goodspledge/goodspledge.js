@@ -1,17 +1,35 @@
 
-var frmGoodsPledgePledgedGoodsBuffer = document.getElementById("frmGoodsPledgePledgedGoods").value;
+var frmGoodsPledgeGoodsCategoryOneBuffer = document.getElementById("frmGoodsPledgeGoodsCategoryOne").value;
       
-var frmGoodsPledgePledgedGoodsTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgePledgedGoods"));      
+var frmGoodsPledgeGoodsCategoryOneTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsCategoryOne"));      
       
-var frmGoodsPledgeAdditionalInformationBuffer = document.getElementById("frmGoodsPledgeAdditionalInformation").value;
+var frmGoodsPledgeGoodsCategoryTwoBuffer = document.getElementById("frmGoodsPledgeGoodsCategoryTwo").value;
       
-var frmGoodsPledgeItemSizeBuffer = document.getElementById("frmGoodsPledgeItemSize").value;
+var frmGoodsPledgeGoodsCategoryTwoTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsCategoryTwo"));      
+      
+var frmGoodsPledgeGoodsCategoryThreeBuffer = document.getElementById("frmGoodsPledgeGoodsCategoryThree").value;
+      
+var frmGoodsPledgeGoodsCategoryThreeTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsCategoryThree"));      
+      
+var frmGoodsPledgeGoodsSizeBuffer = document.getElementById("frmGoodsPledgeGoodsSize").value;
+      
+var frmGoodsPledgeGoodsSizeTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsSize"));      
+      
+var frmGoodsPledgeGoodsNewOrUsedBuffer = document.getElementById("frmGoodsPledgeGoodsNewOrUsed").value;
+      
+var frmGoodsPledgeGoodsNewOrUsedTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsNewOrUsed"));      
       
 var frmGoodsPledgeGoodsConditionBuffer = document.getElementById("frmGoodsPledgeGoodsCondition").value;
       
 var frmGoodsPledgeGoodsConditionTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsCondition"));      
       
-var frmGoodsPledgeNumberOfItemsBuffer = document.getElementById("frmGoodsPledgeNumberOfItems").value;
+var frmGoodsPledgeGoodsQuantityBuffer = document.getElementById("frmGoodsPledgeGoodsQuantity").value;
+      
+var frmGoodsPledgeGoodsQuantityTextBuffer = getSelectedText(document.getElementById("frmGoodsPledgeGoodsQuantity"));      
+      
+var frmGoodsPledgeAdditionalInformationBuffer = document.getElementById("frmGoodsPledgeAdditionalInformation").value;
+      
+var frmGoodsPledgeItemSizeBuffer = document.getElementById("frmGoodsPledgeItemSize").value;
       
 
 $( document ).ready(function() {
@@ -66,12 +84,6 @@ $( document ).ready(function() {
 		registerKeyEventListeners();
 	}
 
-    // Initalise handling for the frmGoodsPledgePledgedGoods and frmGoodsPledgePledgedGoodsGoodsCategory interactions
-	var frmGoodsPledgePledgedGoodsGoodsCategoryEvent = document.createEvent("HTMLEvents");
-	frmGoodsPledgePledgedGoodsGoodsCategoryEvent.initEvent("change", false, true);
-	var frmGoodsPledgePledgedGoodsGoodsCategorySelectInput = document.getElementById("frmGoodsPledgePledgedGoodsGoodsCategory");
-  	frmGoodsPledgePledgedGoodsGoodsCategorySelectInput.dispatchEvent(frmGoodsPledgePledgedGoodsGoodsCategoryEvent);
-  
 if ($('#frmGoodsPledgeMode').val() == 'LOCALIZE'){
 	$('#existingLocale').change(function () {
 		var selectedLocale = $('#existingLocale option:selected').val();
@@ -220,12 +232,78 @@ if ($('#frmGoodsPledgeMode').val() == 'LOCALIZE'){
 		var focusSet = false;
 		var focusControl;
 	
-		if (document.getElementById("frmGoodsPledgePledgedGoods").value != frmGoodsPledgePledgedGoodsBuffer){
-			document.getElementById("frmGoodsPledgePledgedGoodsFormGroup").className += " has-error";
-			replaceText(document.getElementById("frmGoodsPledgePledgedGoodsHelpBlock"), "Previous Value: " + frmGoodsPledgePledgedGoodsTextBuffer);
+		if (document.getElementById("frmGoodsPledgeGoodsCategoryOne").value != frmGoodsPledgeGoodsCategoryOneBuffer){
+			document.getElementById("frmGoodsPledgeGoodsCategoryOneFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsCategoryOneHelpBlock"), "Previous Value: " + frmGoodsPledgeGoodsCategoryOneTextBuffer);
 			
 			if (focusSet == false){
-				focusControl = document.getElementById("frmGoodsPledgePledgedGoods");
+				focusControl = document.getElementById("frmGoodsPledgeGoodsCategoryOne");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsCategoryTwo").value != frmGoodsPledgeGoodsCategoryTwoBuffer){
+			document.getElementById("frmGoodsPledgeGoodsCategoryTwoFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsCategoryTwoHelpBlock"), "Previous Value: " + frmGoodsPledgeGoodsCategoryTwoTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsCategoryTwo");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsCategoryThree").value != frmGoodsPledgeGoodsCategoryThreeBuffer){
+			document.getElementById("frmGoodsPledgeGoodsCategoryThreeFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsCategoryThreeHelpBlock"), "Previous Value: " + frmGoodsPledgeGoodsCategoryThreeTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsCategoryThree");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsSize").value != frmGoodsPledgeGoodsSizeBuffer){
+			document.getElementById("frmGoodsPledgeGoodsSizeFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsSizeHelpBlock"), "Previous Value: " + frmGoodsPledgeGoodsSizeTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsSize");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsNewOrUsed").value != frmGoodsPledgeGoodsNewOrUsedBuffer){
+			document.getElementById("frmGoodsPledgeGoodsNewOrUsedFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsNewOrUsedHelpBlock"), "Previous Value: " + frmGoodsPledgeGoodsNewOrUsedTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsNewOrUsed");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsCondition").value != frmGoodsPledgeGoodsConditionBuffer){
+			document.getElementById("frmGoodsPledgeGoodsConditionFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsConditionHelpBlock"), "Previous Value: " + frmGoodsPledgeGoodsConditionTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsCondition");
+				focusSet = true;
+			}
+			changedCounter++;
+		}
+	
+		if (document.getElementById("frmGoodsPledgeGoodsQuantity").value != frmGoodsPledgeGoodsQuantityBuffer){
+			document.getElementById("frmGoodsPledgeGoodsQuantityFormGroup").className += " has-error";
+			replaceText(document.getElementById("frmGoodsPledgeGoodsQuantityHelpBlock"), "Previous Value: " + frmGoodsPledgeGoodsQuantityTextBuffer);
+			
+			if (focusSet == false){
+				focusControl = document.getElementById("frmGoodsPledgeGoodsQuantity");
 				focusSet = true;
 			}
 			changedCounter++;
@@ -248,28 +326,6 @@ if ($('#frmGoodsPledgeMode').val() == 'LOCALIZE'){
 			
 			if (focusSet == false){
 				focusControl = document.getElementById("frmGoodsPledgeItemSize");
-				focusSet = true;
-			}
-			changedCounter++;
-		}
-	
-		if (document.getElementById("frmGoodsPledgeGoodsCondition").value != frmGoodsPledgeGoodsConditionBuffer){
-			document.getElementById("frmGoodsPledgeGoodsConditionFormGroup").className += " has-error";
-			replaceText(document.getElementById("frmGoodsPledgeGoodsConditionHelpBlock"), "Previous Value: " + frmGoodsPledgeGoodsConditionTextBuffer);
-			
-			if (focusSet == false){
-				focusControl = document.getElementById("frmGoodsPledgeGoodsCondition");
-				focusSet = true;
-			}
-			changedCounter++;
-		}
-	
-		if (document.getElementById("frmGoodsPledgeNumberOfItems").value != frmGoodsPledgeNumberOfItemsBuffer){
-			document.getElementById("frmGoodsPledgeNumberOfItemsFormGroup").className += " has-error";
-			replaceText(document.getElementById("frmGoodsPledgeNumberOfItemsHelpBlock"), "Previous Value: " + frmGoodsPledgeNumberOfItemsBuffer);
-			
-			if (focusSet == false){
-				focusControl = document.getElementById("frmGoodsPledgeNumberOfItems");
 				focusSet = true;
 			}
 			changedCounter++;

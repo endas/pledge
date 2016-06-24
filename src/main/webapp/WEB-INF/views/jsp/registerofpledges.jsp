@@ -375,11 +375,11 @@
 							<tr>
 							<th>Action</th>
 							
-					<th><spring:message code="frmGoodsPledgeAdditionalInformationLabel"/></th>
+					<th><spring:message code="frmGoodsPledgeGoodsCategoryOneLabel"/></th>
 
-					<th><spring:message code="frmGoodsPledgeItemSizeLabel"/></th>
+					<th><spring:message code="frmGoodsPledgeGoodsCategoryTwoLabel"/></th>
 
-					<th><spring:message code="frmGoodsPledgeNumberOfItemsLabel"/></th>
+					<th><spring:message code="frmGoodsPledgeGoodsCategoryThreeLabel"/></th>
 
 							</tr>
 						</thead>	

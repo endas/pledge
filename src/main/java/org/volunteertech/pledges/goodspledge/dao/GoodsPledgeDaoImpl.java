@@ -116,14 +116,92 @@ public class GoodsPledgeDaoImpl implements GoodsPledgeDao
 
     
     /**
-     * Load existing GoodsPledge objects from the database that have a pledgedGoods column
-     * that matches the pledgedGoods parameter.
-     * @return List a List of GoodsPledge objects that match the pledgedGoods parameter.
+     * Load existing GoodsPledge objects from the database that have a goodsCategoryOne column
+     * that matches the goodsCategoryOne parameter.
+     * @return List a List of GoodsPledge objects that match the goodsCategoryOne parameter.
      */
-    public List<GoodsPledge> listGoodsPledgeByPledgedGoods(Long pledgedGoods)
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryOne(Long goodsCategoryOne)
     {
         @SuppressWarnings("unchecked")
-        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.pledgedGoods = :pledgedgoods order by goodsPledge.id asc").setParameter("pledgedgoods", pledgedGoods).list();
+        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.goodsCategoryOne = :goodscategoryone order by goodsPledge.id asc").setParameter("goodscategoryone", goodsCategoryOne).list();
+
+        return result;
+    }
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsCategoryTwo column
+     * that matches the goodsCategoryTwo parameter.
+     * @return List a List of GoodsPledge objects that match the goodsCategoryTwo parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryTwo(Long goodsCategoryTwo)
+    {
+        @SuppressWarnings("unchecked")
+        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.goodsCategoryTwo = :goodscategorytwo order by goodsPledge.id asc").setParameter("goodscategorytwo", goodsCategoryTwo).list();
+
+        return result;
+    }
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsCategoryThree column
+     * that matches the goodsCategoryThree parameter.
+     * @return List a List of GoodsPledge objects that match the goodsCategoryThree parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCategoryThree(Long goodsCategoryThree)
+    {
+        @SuppressWarnings("unchecked")
+        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.goodsCategoryThree = :goodscategorythree order by goodsPledge.id asc").setParameter("goodscategorythree", goodsCategoryThree).list();
+
+        return result;
+    }
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsSize column
+     * that matches the goodsSize parameter.
+     * @return List a List of GoodsPledge objects that match the goodsSize parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsSize(Long goodsSize)
+    {
+        @SuppressWarnings("unchecked")
+        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.goodsSize = :goodssize order by goodsPledge.id asc").setParameter("goodssize", goodsSize).list();
+
+        return result;
+    }
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsNewOrUsed column
+     * that matches the goodsNewOrUsed parameter.
+     * @return List a List of GoodsPledge objects that match the goodsNewOrUsed parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsNewOrUsed(Long goodsNewOrUsed)
+    {
+        @SuppressWarnings("unchecked")
+        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.goodsNewOrUsed = :goodsneworused order by goodsPledge.id asc").setParameter("goodsneworused", goodsNewOrUsed).list();
+
+        return result;
+    }
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsCondition column
+     * that matches the goodsCondition parameter.
+     * @return List a List of GoodsPledge objects that match the goodsCondition parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsCondition(Long goodsCondition)
+    {
+        @SuppressWarnings("unchecked")
+        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.goodsCondition = :goodscondition order by goodsPledge.id asc").setParameter("goodscondition", goodsCondition).list();
+
+        return result;
+    }
+
+    /**
+     * Load existing GoodsPledge objects from the database that have a goodsQuantity column
+     * that matches the goodsQuantity parameter.
+     * @return List a List of GoodsPledge objects that match the goodsQuantity parameter.
+     */
+    public List<GoodsPledge> listGoodsPledgeByGoodsQuantity(Long goodsQuantity)
+    {
+        @SuppressWarnings("unchecked")
+        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.goodsQuantity = :goodsquantity order by goodsPledge.id asc").setParameter("goodsquantity", goodsQuantity).list();
 
         return result;
     }
@@ -150,32 +228,6 @@ public class GoodsPledgeDaoImpl implements GoodsPledgeDao
     {
         @SuppressWarnings("unchecked")
         List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.itemSize = :itemsize order by goodsPledge.id asc").setParameter("itemsize", itemSize).list();
-
-        return result;
-    }
-
-    /**
-     * Load existing GoodsPledge objects from the database that have a goodsCondition column
-     * that matches the goodsCondition parameter.
-     * @return List a List of GoodsPledge objects that match the goodsCondition parameter.
-     */
-    public List<GoodsPledge> listGoodsPledgeByGoodsCondition(Long goodsCondition)
-    {
-        @SuppressWarnings("unchecked")
-        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.goodsCondition = :goodscondition order by goodsPledge.id asc").setParameter("goodscondition", goodsCondition).list();
-
-        return result;
-    }
-
-    /**
-     * Load existing GoodsPledge objects from the database that have a numberOfItems column
-     * that matches the numberOfItems parameter.
-     * @return List a List of GoodsPledge objects that match the numberOfItems parameter.
-     */
-    public List<GoodsPledge> listGoodsPledgeByNumberOfItems(Long numberOfItems)
-    {
-        @SuppressWarnings("unchecked")
-        List<GoodsPledge> result = this.sessionFactory.getCurrentSession().createQuery("from GoodsPledgeImpl as goodsPledge where goodsPledge.numberOfItems = :numberofitems order by goodsPledge.id asc").setParameter("numberofitems", numberOfItems).list();
 
         return result;
     }

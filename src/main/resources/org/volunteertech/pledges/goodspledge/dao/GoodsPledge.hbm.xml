@@ -11,17 +11,23 @@
 	  
         </id>
         
-		<property name="pledgedGoodsGoodsCategory" type="long" column="PLEDGEDGOODSGOODSCATEGORY" length="10"></property>	
-	    
-		<property name="pledgedGoods" type="long" column="PLEDGEDGOODS" length="10" ></property>	
+		<property name="goodsCategoryOne" type="long" column="GOODSCATEGORYONE" length="10" ></property>	
+	  
+		<property name="goodsCategoryTwo" type="long" column="GOODSCATEGORYTWO" length="10" ></property>	
+	  
+		<property name="goodsCategoryThree" type="long" column="GOODSCATEGORYTHREE" length="10" ></property>	
+	  
+		<property name="goodsSize" type="long" column="GOODSSIZE" length="10" ></property>	
+	  
+		<property name="goodsNewOrUsed" type="long" column="GOODSNEWORUSED" length="10" ></property>	
+	  
+		<property name="goodsCondition" type="long" column="GOODSCONDITION" length="10" ></property>	
+	  
+		<property name="goodsQuantity" type="long" column="GOODSQUANTITY" length="10" ></property>	
 	  
 		<property name="additionalInformation" type="string" column="ADDITIONALINFORMATION" length="500" ></property>	
 	  
 		<property name="itemSize" type="string" column="ITEMSIZE" length="500" ></property>	
-	  
-		<property name="goodsCondition" type="long" column="GOODSCONDITION" length="10" ></property>	
-	  
-		<property name="numberOfItems" type="long" column="NUMBEROFITEMS" length="10" ></property>	
 	  
         <many-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl" fetch="select">
             <column name="REGISTEROFPLEDGESID" not-null="false" />

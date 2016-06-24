@@ -338,44 +338,44 @@ public interface ReferenceStore
 	
 
 	/**
-	 * Returns the Sorted Map that represents the values of the goodsCategory RefType
+	 * Returns the Sorted Map that represents the values of the goodsCategoryOne RefType
 	 * @return
 	 */
-	public SortedMap<Long,String> getGoodsCategory();	
+	public SortedMap<Long,String> getGoodsCategoryOne();	
 	
 	/**
-	 * Initialise the possible choices for GoodsCategory
+	 * Initialise the possible choices for GoodsCategoryOne
 	 * from the REFERENCE table
 	 */ 
-	public SortedMap<Long,String> initialiseGoodsCategory();
+	public SortedMap<Long,String> initialiseGoodsCategoryOne();
 	
 	/**
-	 * Returns the Sorted Map that represents the values of the goodsCategory RefType
+	 * Returns the Sorted Map that represents the values of the goodsCategoryOne RefType
 	 * sorted by parentId
 	 * @return
 	 */
-	public SortedMap<Long,String> getGoodsCategoryByParentId(Long parentId);	
+	public SortedMap<Long,String> getGoodsCategoryOneByParentId(Long parentId);	
 	
 	
 
 	/**
-	 * Returns the Sorted Map that represents the values of the goods RefType
+	 * Returns the Sorted Map that represents the values of the goodsCategoryTwo RefType
 	 * @return
 	 */
-	public SortedMap<Long,String> getGoods();	
+	public SortedMap<Long,String> getGoodsCategoryTwo();	
 	
 	/**
-	 * Initialise the possible choices for Goods
+	 * Initialise the possible choices for GoodsCategoryTwo
 	 * from the REFERENCE table
 	 */ 
-	public SortedMap<Long,String> initialiseGoods();
+	public SortedMap<Long,String> initialiseGoodsCategoryTwo();
 	
 	/**
-	 * Returns the Sorted Map that represents the values of the goods RefType
+	 * Returns the Sorted Map that represents the values of the goodsCategoryTwo RefType
 	 * sorted by parentId
 	 * @return
 	 */
-	public SortedMap<Long,String> getGoodsByParentId(Long parentId);	
+	public SortedMap<Long,String> getGoodsCategoryTwoByParentId(Long parentId);	
 	
 	
 
@@ -481,6 +481,90 @@ public interface ReferenceStore
 	 * @return
 	 */
 	public SortedMap<Long,String> getPledgeServiceLevelThreeByParentId(Long parentId);	
+	
+	
+
+	/**
+	 * Returns the Sorted Map that represents the values of the goodsCategoryThree RefType
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsCategoryThree();	
+	
+	/**
+	 * Initialise the possible choices for GoodsCategoryThree
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseGoodsCategoryThree();
+	
+	/**
+	 * Returns the Sorted Map that represents the values of the goodsCategoryThree RefType
+	 * sorted by parentId
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsCategoryThreeByParentId(Long parentId);	
+	
+	
+
+	/**
+	 * Returns the Sorted Map that represents the values of the goodsSize RefType
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsSize();	
+	
+	/**
+	 * Initialise the possible choices for GoodsSize
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseGoodsSize();
+	
+	/**
+	 * Returns the Sorted Map that represents the values of the goodsSize RefType
+	 * sorted by parentId
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsSizeByParentId(Long parentId);	
+	
+	
+
+	/**
+	 * Returns the Sorted Map that represents the values of the goodsQuantity RefType
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsQuantity();	
+	
+	/**
+	 * Initialise the possible choices for GoodsQuantity
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseGoodsQuantity();
+	
+	/**
+	 * Returns the Sorted Map that represents the values of the goodsQuantity RefType
+	 * sorted by parentId
+	 * @return
+	 */
+	public SortedMap<Long,String> getGoodsQuantityByParentId(Long parentId);	
+	
+	
+
+	/**
+	 * Returns the Sorted Map that represents the values of the newOrUsed RefType
+	 * @return
+	 */
+	public SortedMap<Long,String> getNewOrUsed();	
+	
+	/**
+	 * Initialise the possible choices for NewOrUsed
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseNewOrUsed();
+	
+	/**
+	 * Returns the Sorted Map that represents the values of the newOrUsed RefType
+	 * sorted by parentId
+	 * @return
+	 */
+	public SortedMap<Long,String> getNewOrUsedByParentId(Long parentId);	
 	
 	
 
