@@ -71,6 +71,7 @@ function loadChildSelectAndSelectValue(parentSelect, childSelect, selectedValue,
 	}
 	
 	removeSelectOptions(childSelect);
+	var formGroupId = childSelect.id.concat('FormGroup');
 
 	$.ajax({
 		dataType: "json",
@@ -81,6 +82,7 @@ function loadChildSelectAndSelectValue(parentSelect, childSelect, selectedValue,
 		referenceType: referenceType
 		},
 		success: function( data ) {
+			$('#' + formGroupId).collapse('show');
 
 			$.each( data, function( key, val ) {
 				var el = document.createElement("option");
@@ -93,6 +95,10 @@ function loadChildSelectAndSelectValue(parentSelect, childSelect, selectedValue,
 
 				childSelect.appendChild(el);
 			});
+		},
+		error: function( data ){
+			$('#' + formGroupId).collapse('hide');
+			
 		}
 	});
 }

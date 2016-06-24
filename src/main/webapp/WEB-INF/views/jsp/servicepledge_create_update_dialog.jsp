@@ -28,7 +28,7 @@
 				  
 		  </div>
   
-		  <div id="frmServicePledgeCreateUpdatePledgeServiceLevelTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+		  <div id="frmServicePledgeCreateUpdatePledgeServiceLevelTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''} collapse">
 			<label id="servicepledge.pledgeserviceleveltwo.label" for="frmServicePledgeCreateUpdatePledgeServiceLevelTwo" class="control-label"><spring:message code="frmServicePledgePledgeServiceLevelTwoLabel"/></label>	
 			<select class="form-control" data-display-name="" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceLevelTwo" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceLevelTwoHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmServicePledgeCreateUpdatePledgeServiceLevelThree'), 'theValueToSet', 'PledgeServiceLevelThree', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>')">
 			</select>
@@ -41,7 +41,7 @@
 				  
 		  </div>
   
-		  <div id="frmServicePledgeCreateUpdatePledgeServiceLevelThreeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+		  <div id="frmServicePledgeCreateUpdatePledgeServiceLevelThreeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''} collapse">
 			<label id="servicepledge.pledgeservicelevelthree.label" for="frmServicePledgeCreateUpdatePledgeServiceLevelThree" class="control-label"><spring:message code="frmServicePledgePledgeServiceLevelThreeLabel"/></label>	
 			<select class="form-control" data-display-name="" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceLevelThree" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceLevelThreeHelpBlock">
 			</select>

@@ -29,9 +29,8 @@ import org.volunteertech.pledges.reference.dao.ReferenceCategorySaveException;
 import org.volunteertech.pledges.reference.validator.ReferenceCategoryFormValidator;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.users.security.SecurityUser;
-
+import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
-
 import org.volunteertech.pledges.reference.ReferenceStore;
 
 
@@ -688,6 +687,11 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("GoodsCondition"):
+				// Mods MOC 24/06/2016: Hard coded reference relationships for goods pledge dropdowns
+				if (parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__TRANSPORT)) || parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__SPECIALIST_ITEMS))){
+					parentId = Long.toString(Constants.REFERENCE_GOODSCATEGORYONE__TECHNOLOGY);
+				}
+				
 				Map<Long, String> goodsConditionMap = referenceStore.getGoodsConditionByParentId(new Long(parentId)); 
 				SortedMap<Long, String> localizedGoodsConditionMap = new TreeMap<Long, String>(goodsConditionMap);
 				for (Map.Entry<Long, String> entry : localizedGoodsConditionMap.entrySet()) {
@@ -758,6 +762,16 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("GoodsQuantity"):
+				// Mods MOC 24/06/2016: Hard coded reference relationships for goods pledge dropdowns
+				if (parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__BABIES_AND_CHILDRENS_CLOTHES))){
+					parentId = Long.toString(Constants.REFERENCE_GOODSCATEGORYONE__ADULT_CLOTHING);
+				}
+
+				// Mods MOC 24/06/2016: Hard coded reference relationships for goods pledge dropdowns
+				if (parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__BABIES_AND_CHILDRENS_FOOTWEAR)) || parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__ADULT_FOOTWEAR)) || parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__FURNITURE)) || parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__BABIES_AND_CHILDRENS_ITEMS)) || parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__TRANSPORT)) || parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__OUTDOOR_LIVING)) || parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__PERSONAL)) || parentId.equals(String.valueOf(Constants.REFERENCE_GOODSCATEGORYONE__SPECIALIST_ITEMS))){
+					parentId = Long.toString(Constants.REFERENCE_GOODSCATEGORYONE__TECHNOLOGY);
+				}
+			
 				Map<Long, String> goodsQuantityMap = referenceStore.getGoodsQuantityByParentId(new Long(parentId)); 
 				SortedMap<Long, String> localizedGoodsQuantityMap = new TreeMap<Long, String>(goodsQuantityMap);
 				for (Map.Entry<Long, String> entry : localizedGoodsQuantityMap.entrySet()) {

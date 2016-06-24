@@ -1659,6 +1659,9 @@ $( document ).ready(function() {
         					else{
         						if (data.pledgeServiceLevelTwo != null){
 									pledgeServiceLevelTwoSelectInput.value = data.pledgeServiceLevelTwo;
+									var formGroupId = pledgeServiceLevelTwoSelectInput.id.concat('FormGroup');
+									$('#' + formGroupId).collapse('show');
+									
 								}
 								else{
 									pledgeServiceLevelTwoSelectInput.value = -1;
@@ -1678,6 +1681,9 @@ $( document ).ready(function() {
         					else{
         						if (data.pledgeServiceLevelThree != null){
 									pledgeServiceLevelThreeSelectInput.value = data.pledgeServiceLevelThree;
+									var formGroupId = pledgeServiceLevelThreeSelectInput.id.concat('FormGroup');
+									$('#' + formGroupId).collapse('show');
+									
 								}
 								else{
 									pledgeServiceLevelThreeSelectInput.value = -1;
@@ -1977,11 +1983,6 @@ $( document ).ready(function() {
 				referenceType: "GoodsCategoryOne"
 				},
 				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Goods Category One";
-					goodsCategoryOneSelectInput.appendChild(unselectedOption);
-
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
     					el.textContent = val;
@@ -1990,13 +1991,15 @@ $( document ).ready(function() {
     					goodsCategoryOneSelectInput.appendChild(el);
     					frmGoodsPledgeCreateUpdateGoodsCategoryOneSetupCompleted = true;
 					});
+					
 				}
 			});
   		}
   		else{
   			frmGoodsPledgeCreateUpdateGoodsCategoryOneSetupCompleted = true;
   		}
-      
+  		goodsCategoryOneSelectInput.selectedIndex = 0;
+  		
   		var goodsCategoryTwoSelectInput = document.getElementById('frmGoodsPledgeCreateUpdateGoodsCategoryTwo');
   		
   		if (goodsCategoryTwoSelectInput.length == 0){
@@ -2007,11 +2010,6 @@ $( document ).ready(function() {
 				referenceType: "GoodsCategoryTwo"
 				},
 				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Goods Category Two";
-					goodsCategoryTwoSelectInput.appendChild(unselectedOption);
-
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
     					el.textContent = val;
@@ -2037,10 +2035,6 @@ $( document ).ready(function() {
 				referenceType: "GoodsCategoryThree"
 				},
 				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Goods Category Three";
-					goodsCategoryThreeSelectInput.appendChild(unselectedOption);
 
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
@@ -2067,10 +2061,6 @@ $( document ).ready(function() {
 				referenceType: "GoodsSize"
 				},
 				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Size";
-					goodsSizeSelectInput.appendChild(unselectedOption);
 
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
@@ -2097,10 +2087,6 @@ $( document ).ready(function() {
 				referenceType: "NewOrUsed"
 				},
 				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select New/Used";
-					goodsNewOrUsedSelectInput.appendChild(unselectedOption);
 
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
@@ -2110,6 +2096,7 @@ $( document ).ready(function() {
     					goodsNewOrUsedSelectInput.appendChild(el);
     					frmGoodsPledgeCreateUpdateGoodsNewOrUsedSetupCompleted = true;
 					});
+					goodsNewOrUsedSelectInput.selectedIndex = 0;
 				}
 			});
   		}
@@ -2127,10 +2114,6 @@ $( document ).ready(function() {
 				referenceType: "GoodsCondition"
 				},
 				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Goods Condition";
-					goodsConditionSelectInput.appendChild(unselectedOption);
 
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
@@ -2157,10 +2140,6 @@ $( document ).ready(function() {
 				referenceType: "GoodsQuantity"
 				},
 				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Quantity";
-					goodsQuantitySelectInput.appendChild(unselectedOption);
 
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
@@ -2229,8 +2208,8 @@ $( document ).ready(function() {
 									goodsCategoryOneSelectInput.value = data.goodsCategoryOne;
 								}
 								else{
-									goodsCategoryOneSelectInput.value = -1;
-									frmGoodsPledgeCreateUpdateGoodsCategoryOneValueBuffer = -1;
+									goodsCategoryOneSelectInput.selectedIndex = 0;
+									//frmGoodsPledgeCreateUpdateGoodsCategoryOneValueBuffer = -1;
 								}
 							}
         				}, 100);
@@ -2246,6 +2225,8 @@ $( document ).ready(function() {
         					else{
         						if (data.goodsCategoryTwo != null){
 									goodsCategoryTwoSelectInput.value = data.goodsCategoryTwo;
+									var formGroupId = goodsCategoryTwoSelectInput.id.concat('FormGroup');
+									$('#' + formGroupId).collapse('show');
 								}
 								else{
 									goodsCategoryTwoSelectInput.value = -1;
@@ -2265,6 +2246,9 @@ $( document ).ready(function() {
         					else{
         						if (data.goodsCategoryThree != null){
 									goodsCategoryThreeSelectInput.value = data.goodsCategoryThree;
+									var formGroupId = goodsCategoryThreeSelectInput.id.concat('FormGroup');
+									$('#' + formGroupId).collapse('show');
+									
 								}
 								else{
 									goodsCategoryThreeSelectInput.value = -1;
@@ -2284,6 +2268,9 @@ $( document ).ready(function() {
         					else{
         						if (data.goodsSize != null){
 									goodsSizeSelectInput.value = data.goodsSize;
+									var formGroupId = goodsSizeSelectInput.id.concat('FormGroup');
+									$('#' + formGroupId).collapse('show');
+									
 								}
 								else{
 									goodsSizeSelectInput.value = -1;
@@ -2305,8 +2292,8 @@ $( document ).ready(function() {
 									goodsNewOrUsedSelectInput.value = data.goodsNewOrUsed;
 								}
 								else{
-									goodsNewOrUsedSelectInput.value = -1;
-									frmGoodsPledgeCreateUpdateGoodsNewOrUsedValueBuffer = -1;
+									goodsNewOrUsedSelectInput.selectedIndex = 0;
+									//frmGoodsPledgeCreateUpdateGoodsNewOrUsedValueBuffer = -1;
 								}
 							}
         				}, 100);
@@ -2322,6 +2309,9 @@ $( document ).ready(function() {
         					else{
         						if (data.goodsCondition != null){
 									goodsConditionSelectInput.value = data.goodsCondition;
+									var formGroupId = goodsConditionSelectInput.id.concat('FormGroup');
+									$('#' + formGroupId).collapse('show');
+									
 								}
 								else{
 									goodsConditionSelectInput.value = -1;
@@ -2341,6 +2331,9 @@ $( document ).ready(function() {
         					else{
         						if (data.goodsQuantity != null){
 									goodsQuantitySelectInput.value = data.goodsQuantity;
+									var formGroupId = goodsQuantitySelectInput.id.concat('FormGroup');
+									$('#' + formGroupId).collapse('show');
+									
 								}
 								else{
 									goodsQuantitySelectInput.value = -1;
