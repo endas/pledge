@@ -1038,17 +1038,17 @@ public final class Constants {
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCONDITION__FULL_WORKING_ORDER = 309;
+	public static final long REFERENCE_GOODSCONDITION_TECHNOLOGY_FULL_WORKING_ORDER = 309;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCONDITION__MINOR_REPAIRS = 310;
+	public static final long REFERENCE_GOODSCONDITION_TECHNOLOGY_MINOR_REPAIRS = 310;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCONDITION__MAJOR_REPAIRS = 311;
+	public static final long REFERENCE_GOODSCONDITION_TECHNOLOGY_MAJOR_REPAIRS = 311;
 
     /**
      * 
@@ -2398,37 +2398,52 @@ public final class Constants {
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYONE__CLOTHING_AND_FOOTWEAR__ADULT_ = 3001;
+	public static final long REFERENCE_GOODSCATEGORYONE__ADULT_CLOTHING = 3001;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYONE__FURNITURE = 3002;
+	public static final long REFERENCE_GOODSCATEGORYONE__ADULT_FOOTWEAR = 3002;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYONE__BABIES_AND_CHILDRENS_ITEMS = 3003;
+	public static final long REFERENCE_GOODSCATEGORYONE__FURNITURE = 3003;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYONE__TRANSPORT = 3004;
+	public static final long REFERENCE_GOODSCATEGORYONE__BABIES_AND_CHILDRENS_CLOTHES = 3004;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYONE__OUTDOOR_LIVING = 3005;
+	public static final long REFERENCE_GOODSCATEGORYONE__BABIES_AND_CHILDRENS_FOOTWEAR = 3005;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYONE__PERSONAL = 3006;
+	public static final long REFERENCE_GOODSCATEGORYONE__BABIES_AND_CHILDRENS_ITEMS = 3006;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYONE__SPECIALIST_ITEMS = 3007;
+	public static final long REFERENCE_GOODSCATEGORYONE__TRANSPORT = 3007;
+
+    /**
+     * 
+     */
+	public static final long REFERENCE_GOODSCATEGORYONE__OUTDOOR_LIVING = 3008;
+
+    /**
+     * 
+     */
+	public static final long REFERENCE_GOODSCATEGORYONE__PERSONAL = 3009;
+
+    /**
+     * 
+     */
+	public static final long REFERENCE_GOODSCATEGORYONE__SPECIALIST_ITEMS = 3010;
 
     /**
      * 
@@ -2468,27 +2483,32 @@ public final class Constants {
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYTWO_CLOTHING_AND_FOOTWEAR__ADULT__PLEASE_SELECT_A_CATEGORY = 4007;
+	public static final long REFERENCE_GOODSCATEGORYTWO_ADULT_CLOTHING_PLEASE_SELECT_A_CATEGORY = 4007;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYTWO_CLOTHING_AND_FOOTWEAR__ADULT__WOMENS_CLOTHES = 4008;
+	public static final long REFERENCE_GOODSCATEGORYTWO_ADULT_CLOTHING_WOMENS_CLOTHES = 4008;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYTWO_CLOTHING_AND_FOOTWEAR__ADULT__MENS_CLOTHES = 4010;
+	public static final long REFERENCE_GOODSCATEGORYTWO_ADULT_CLOTHING_MENS_CLOTHES = 4010;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYTWO_CLOTHING_AND_FOOTWEAR__ADULT__WOMENS_FOOTWEAR = 4012;
+	public static final long REFERENCE_GOODSCATEGORYTWO_ADULT_FOOTWEAR_PLEASE_SELECT_A_CATEGORY = 4011;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSCATEGORYTWO_CLOTHING_AND_FOOTWEAR__ADULT__MENS_FOOTWEAR = 4014;
+	public static final long REFERENCE_GOODSCATEGORYTWO_ADULT_FOOTWEAR_WOMENS_FOOTWEAR = 4012;
+
+    /**
+     * 
+     */
+	public static final long REFERENCE_GOODSCATEGORYTWO_ADULT_FOOTWEAR_MENS_FOOTWEAR = 4014;
 
     /**
      * 
@@ -2923,22 +2943,22 @@ public final class Constants {
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_WOMENS_CLOTHES_PLEASE_SELECT_THE_SIZE = 5999;
+	public static final long REFERENCE_GOODSSIZE_ADULT_CLOTHING_PLEASE_SELECT_THE_SIZE = 5999;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_WOMENS_CLOTHES_SMALL = 6000;
+	public static final long REFERENCE_GOODSSIZE_ADULT_CLOTHING_SMALL = 6000;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_WOMENS_CLOTHES_MEDIUM = 6001;
+	public static final long REFERENCE_GOODSSIZE_ADULT_CLOTHING_MEDIUM = 6001;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_WOMENS_CLOTHES_LARGE = 6002;
+	public static final long REFERENCE_GOODSSIZE_ADULT_CLOTHING_LARGE = 6002;
 
     /**
      * 
@@ -3068,442 +3088,186 @@ public final class Constants {
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6029;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6030;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_PLEASE_SELECT_THE_QUANTITY = 6999;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6031;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_1 = 7000;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6032;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_2 = 7001;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6033;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_3 = 7002;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6034;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_4 = 7003;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6035;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_5 = 7004;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6036;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_6 = 7005;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6037;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_7 = 7006;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6038;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_8 = 7007;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_MENS_FOOTWEAR_MEN_S_SHOE_SIZE = 6039;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_9 = 7008;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6040;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_10 = 7009;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6041;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_10_24 = 7010;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6042;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_25_49 = 7011;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6043;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_50_74 = 7012;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6044;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_75_99 = 7013;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6045;
+	public static final long REFERENCE_GOODSQUANTITY_TECHNOLOGY_100_ = 7014;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6046;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_PLEASE_SELECT_THE_QUANTITY = 7015;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6047;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_10_KILOS_1_BLACK_BAG = 7016;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6048;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_20KILOS = 7017;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6049;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_30KILOS = 7018;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6050;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_40KILOS = 7019;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6051;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_50KILOS = 7020;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6052;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_60KILOS = 7021;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6053;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_70KILOS = 7022;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6054;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_80KILOS = 7023;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6055;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_90KILOS = 7024;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6056;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_100KILOS = 7025;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6057;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_150KILOS = 7026;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6058;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_200KILOS = 7027;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6059;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_250KILOS = 7028;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6060;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_300KILOS = 7029;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6061;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_350KILOS = 7030;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6062;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_400KILOS = 7031;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6063;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_450KILOS = 7032;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6064;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_500KILOS = 7033;
 
     /**
      * 
      */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6065;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6066;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6067;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6068;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6069;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6070;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6071;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6072;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_FOOTWEAR_CHILD_S_SHOE_SIZE = 6073;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_TOYS_CHILD_S_TOY_SIZE = 6074;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_TOYS_CHILD_S_TOY_SIZE = 6075;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_TOYS_CHILD_S_TOY_SIZE = 6076;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_TOYS_CHILD_S_TOY_SIZE = 6077;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_TOYS_CHILD_S_TOY_SIZE = 6078;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_TOYS_CHILD_S_TOY_SIZE = 6079;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSSIZE_TOYS_CHILD_S_TOY_SIZE = 6080;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_PLEASE_SELECT_THE_QUANTITY = 6999;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_1 = 7000;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_2 = 7001;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_3 = 7002;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_4 = 7003;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_5 = 7004;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_6 = 7005;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_7 = 7006;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_8 = 7007;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_9 = 7008;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_10 = 7009;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_10_24 = 7010;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_25_49 = 7011;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_50_74 = 7012;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_75_99 = 7013;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_PLEASE_SELECT_AN_ITEM_100_ = 7014;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_PLEASE_SELECT_THE_QUANTITY = 7015;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_10_KILOS_1_BLACK_BAG = 7016;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_20KILOS = 7017;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_30KILOS = 7018;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_40KILOS = 7019;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_50KILOS = 7020;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_60KILOS = 7021;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_70KILOS = 7022;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_80KILOS = 7023;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_90KILOS = 7024;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_100KILOS = 7025;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_150KILOS = 7026;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_200KILOS = 7027;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_250KILOS = 7028;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_300KILOS = 7029;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_350KILOS = 7030;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_400KILOS = 7031;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_450KILOS = 7032;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_500KILOS = 7033;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_GOODSQUANTITY_WOMENS_CLOTHES_500_KILOS_ = 7034;
+	public static final long REFERENCE_GOODSQUANTITY_ADULT_CLOTHING_500_KILOS_ = 7034;
 
     /**
      * English
@@ -3535,19 +3299,5 @@ public final class Constants {
      */
 	public static final long REFERENCE_LOCALE__EN_US = 11005;
 
-    /**
-     * 
-     */
-	public static final long REFERENCE_NEWORUSED__NEW_OR_USED = 12000;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_NEWORUSED__NEW_OR_USED = 12001;
-
-    /**
-     * 
-     */
-	public static final long REFERENCE_NEWORUSED__NEW_OR_USED = 12002;
 
 }
