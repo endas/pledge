@@ -478,10 +478,9 @@ public class ApplicationUserDetailsServiceImpl implements ApplicationUserDetails
     	
 			Long representOrganisationReferenceId =  applicationUserDetails.getRepresentOrganisation();
 			String representOrganisationLocaleReference = null;
-			if (representOrganisationReferenceId == null || representOrganisationReferenceId == -1){
+			if (representOrganisationReferenceId == null || representOrganisationReferenceId <= 0 ){
 				representOrganisationLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
 			}else{
-				logger.info("\n\n\n\n GGGGGGG " + representOrganisationReferenceId + " " + messageResourceService);
 				representOrganisationLocaleReference = messageResourceService.getMessage(representOrganisationReferenceId, new String[0], locale);
 			}
 			
@@ -489,7 +488,7 @@ public class ApplicationUserDetailsServiceImpl implements ApplicationUserDetails
 
 			Long countryReferenceId =  applicationUserDetails.getCountry();
 			String countryLocaleReference = null;
-			if (countryReferenceId == null || countryReferenceId == -1){
+			if (countryReferenceId == null || countryReferenceId <= 0){
 				countryLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
 			}else{
 				countryLocaleReference = this.messageResourceService.getMessage(countryReferenceId, new String[0], locale);

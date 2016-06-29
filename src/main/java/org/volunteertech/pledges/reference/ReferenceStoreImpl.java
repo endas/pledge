@@ -435,8 +435,14 @@ public class ReferenceStoreImpl implements ReferenceStore
      * @param referenceId the referenceId for which the corresponding reference description will be returned.
      */
     public String getRefDesc(Long referenceId){
-    	String refDesc = referenceMap.get(referenceId).getRefDesc(); 
-    	return refDesc;
+    
+    	try {
+			String refDesc = referenceMap.get(referenceId).getRefDesc(); 
+			return refDesc;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
+		}
     }
 	
 	
