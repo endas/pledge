@@ -21,6 +21,9 @@
 </c:choose>
 
 <spring:url value="/resources/images/redx.png" var="loginLogo" />
+<spring:url value="/resources/images/background-littlegirl.jpg" var="bgLarge" />
+<spring:url value="/resources/images/background-littlegirl-992.jpg" var="bgMed" />
+<spring:url value="/resources/images/background-littlegirl-768.jpg" var="bgSmall" />
 
 <spring:message code="login.title" var="title" />
 <spring:message code="login.user.identifier" var="userIdentifier" />
@@ -118,7 +121,7 @@
 						<c:when test="${applicationUserFormModel['currentMode'] == 'UPDATE'}">
 						<div class="text-center">
 							<a href="<c:url value="/applicationuser/createuser" />">Return Home</a>
-						</div> 
+						</div>
 						</c:when>
 					</c:choose>
 				</div>
@@ -139,5 +142,234 @@
 									"alert-danger", 50000);
 						});
 	</script>
+	<style>
+	/* CUSTOM STYLES */
+
+	body {
+	    overflow-x: hidden;
+	    overflow-y: hidden;
+	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    color: #112223;
+	}
+	a {
+	    color: #222223;
+	    font-size: 0.78em;
+	    text-decoration: underline;
+	}
+	table {
+	    margin: 0 auto;
+	    width: 100%;
+	}
+	h3 {
+	    color: #112223;
+	    padding: 20px 0px;
+	    font-size: 1.4em;
+	    font-weight: 600;
+	}
+	.ieonly {
+	    display: none;
+	}
+	.loginbackground {
+	    background-color: rgba(255, 255, 255, 0.7);
+	    height: 100%;
+	    min-height: 100%;
+	    display: block;
+	}
+	.fullbg {
+	    background: url('${bgLarge}') no-repeat center center fixed;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    background-size: cover;
+	    -o-background-size: cover;
+		padding : 0;
+	}
+	html,
+	body {
+	    height: 100%;
+	}
+	.fill {
+	    min-height: 100%;
+	    height: 100%;
+	}
+	.vertical-center {
+	    display: flex;
+	    align-items: center;
+	}
+	#branding {
+	    margin: auto;
+	    width: 400px;
+	}
+	#branding img {
+	    width: 100%;
+	    padding: 0px
+	}
+	#redcrosstext {
+	    font-size: 2.5em;
+	    padding: 20px 5px 20px;
+	}
+	#left-cell {
+	    width: 25%;
+	    min-width: 30%;
+	}
+	#right-cell {
+	    text-align: left;
+	}
+	input {
+	    border-radius: 1px;
+	    padding: 15px 10px;
+	    width: 100%
+	}
+	input[type="text"] {
+	    font-size: 0.9em;
+	    font-weight: 400
+	}
+	input[type="text"] {
+	    font-size: 0.9em;
+	    font-weight: 400
+	}
+	input[type="password"] {
+	    font-size: 0.9em;
+	    font-weight: 400
+	}
+	.btn {
+	    color: #ffffff;
+	    font-size: 1em;
+	    background: #f80000;
+	    padding: 10px 20px 10px 20px;
+	    text-decoration: none;
+	    border-radius: 0px;
+	}
+	.btn:hover {
+	    text-decoration: none;
+	    background: #f80000;
+	}
+
+	/* Media Queries */
+
+
+	/* Large & Above */
+
+	@media only screen and (min-width: 1200px) {
+	    table {
+	        width: 350px;
+	    }
+	    #redcrosstext {
+	        font-size: 2.2em;
+	        padding: 5% 5%;
+	    }
+	}
+
+	/* Large */
+
+	@media only screen and (max-width: 1200px) {
+	    table {
+	        width: 300px
+	    }
+	    #redcrosstext {
+	        font-size: 2em;
+	        padding: 5% 5%;
+	    }
+	}
+
+	/* Medium */
+
+	@media only screen and (max-width: 992px) {
+	    #redcrosstext {
+	        font-size: 2em;
+	        padding: 5% 5%;
+	    }
+	    #branding {
+	        margin: auto;
+	        width: 350px;
+	    }
+	    a {
+	        font-size: 0.78em;
+	        text-decoration: underline;
+	    }
+	    table {
+	        width: 400px;
+	    }
+	    .fullbg {
+	        background: url('${bgMed}') no-repeat center center fixed;
+	        -webkit-background-size: cover;
+	        -moz-background-size: cover;
+	        background-size: cover;
+	        -o-background-size: cover;
+	    }
+	}
+
+	/* Small */
+
+	@media only screen and (max-width: 768px) {
+	    #redcrosstext {
+	        font-size: 2.2em;
+	        padding: 5% 5%;
+	    }
+	    #branding {
+	        border-radius: 1px;
+	        padding: 15px 10px;
+	        width: 80%;
+	        margin: 0 auto;
+	    }
+	    a {
+	        font-size: 0.78em;
+	        text-decoration: underline;
+	    }
+	    .fullbg {
+	        background: url('${bgSmall}') no-repeat center center fixed;
+	        -webkit-background-size: cover;
+	        -moz-background-size: cover;
+	        background-size: cover;
+	        -o-background-size: cover;
+	    }
+	}
+
+	/* Extra-Small */
+
+	@media only screen and (max-width: 480px) {
+	    #branding {
+	        border-radius: 1px;
+	        padding: 15px 10px;
+	        width: 100%;
+	        margin: 0 auto;
+	        font-size: 0.9em;
+	    }
+	    #redcrosstext {
+	        font-size: 2.2em;
+	        padding: 5% 5%;
+	    }
+	    a {
+	        font-size: 0.78em;
+	        text-decoration: underline;
+	    }
+	    table {
+	        width: 300px;
+	    }
+	}
+
+	/* Super-Small */
+
+	@media only screen and (max-width: 320px) {
+	    #branding {
+	        border-radius: 1px;
+	        width: 100%;
+	        margin: 0 auto;
+	        font-size: 0.8em;
+	    }
+	    input {
+	        border-radius: 1px;
+	        padding: 15px 10px;
+	        width: 100%;
+	    }
+	    a {
+	        font-size: 0.75em;
+	        text-decoration: underline;
+	    }
+	    table {
+	        width: 300px;
+	    }
+	}
+
+	</style>
 </body>
 </html>
