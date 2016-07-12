@@ -118,11 +118,11 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     /** the participant comments */
     private String otherAmenities;
 	
-    /** the address type */
-    private Long canYouAccommodate;
-    
-    /** the address type */
-    private String canYouAccommodateReferenceTranslation;
+//    /** the address type */
+//    private Long canYouAccommodate;
+//    
+//    /** the address type */
+//    private String canYouAccommodateReferenceTranslation;
     
 	
     /** the participant comments */
@@ -145,7 +145,24 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
     
-
+    private Boolean accommodateFamily;
+        
+    private Boolean accommodateCouple;
+    
+    private Boolean accommodateSingleMale;
+    
+    private Boolean accommodateSingleFemale;
+    
+    
+    private Boolean accommodateFamilyReferenceTranslation;
+    
+    private Boolean accommodateCoupleReferenceTranslation;
+    
+    private Boolean accommodateSingleMaleReferenceTranslation;
+    
+    private Boolean accommodateSingleFemaleReferenceTranslation;
+    
+  
     /**
      * Default Constructor for the AccommodationPledge bean
      */
@@ -180,7 +197,15 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 		
 		this.otherAmenities = new String();
 		
-		this.canYouAccommodate = new Long("0");
+//		this.canYouAccommodate = new Long("0");
+		
+		this.accommodateFamily = false;
+        
+	    this.accommodateCouple = false;
+	    
+	    this.accommodateSingleMale = false;
+	    
+	    this.accommodateSingleFemale = false;
 		
 		this.additionalInformation = new String();
 		
@@ -614,43 +639,8 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     
     
     
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param canYouAccommodate is the address type
-     */
-    public void setCanYouAccommodate(Long canYouAccommodate)
-    {
-      this.canYouAccommodate = canYouAccommodate;
-    }
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getCanYouAccommodate()
-    {
-      return canYouAccommodate;
-    }
-    
-    
-    /**
-     * Sets the translated reference mapping for the address type that has been chosen by the user
-     * @param the translated reference mapping for canYouAccommodate is the address type
-     */
-    public void setCanYouAccommodateReferenceTranslation(String canYouAccommodateReferenceTranslation)
-    {
-      this.canYouAccommodateReferenceTranslation = canYouAccommodateReferenceTranslation;
-    }
-
-    /**
-     * Returns the translated reference mapping for the address type that has been chosen by the user or saved in the database
-     * @return the translated reference mapping for the address type
-     */
-    public String getCanYouAccommodateReferenceTranslation()
-    {
-      return canYouAccommodateReferenceTranslation;
-    }
-      
+   
+       
     
     /**
      * Sets the participant comments
@@ -787,9 +777,73 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 	}
     
     
-     @Override
+    public Boolean getAccommodateFamily() {
+		return accommodateFamily;
+	}
+
+	public void setAccommodateFamily(Boolean accommodateFamily) {
+		this.accommodateFamily = accommodateFamily;
+	}
+
+	public Boolean getAccommodateCouple() {
+		return accommodateCouple;
+	}
+
+	public void setAccommodateCouple(Boolean accommodateCouple) {
+		this.accommodateCouple = accommodateCouple;
+	}
+
+	public Boolean getAccommodateSingleMale() {
+		return accommodateSingleMale;
+	}
+
+	public void setAccommodateSingleMale(Boolean accommodateSingleMale) {
+		this.accommodateSingleMale = accommodateSingleMale;
+	}
+
+	public Boolean getAccommodateSingleFemale() {
+		return accommodateSingleFemale;
+	}
+
+	public void setAccommodateSingleFemale(Boolean accommodateSingleFemale) {
+		this.accommodateSingleFemale = accommodateSingleFemale;
+	}
+
+	public Boolean getAccommodateFamilyReferenceTranslation() {
+		return accommodateFamilyReferenceTranslation;
+	}
+
+	public void setAccommodateFamilyReferenceTranslation(Boolean accommodateFamilyReferenceTranslation) {
+		this.accommodateFamilyReferenceTranslation = accommodateFamilyReferenceTranslation;
+	}
+
+	public Boolean getAccommodateCoupleReferenceTranslation() {
+		return accommodateCoupleReferenceTranslation;
+	}
+
+	public void setAccommodateCoupleReferenceTranslation(Boolean accommodateCoupleReferenceTranslation) {
+		this.accommodateCoupleReferenceTranslation = accommodateCoupleReferenceTranslation;
+	}
+
+	public Boolean getAccommodateSingleMaleReferenceTranslation() {
+		return accommodateSingleMaleReferenceTranslation;
+	}
+
+	public void setAccommodateSingleMaleReferenceTranslation(Boolean accommodateSingleMaleReferenceTranslation) {
+		this.accommodateSingleMaleReferenceTranslation = accommodateSingleMaleReferenceTranslation;
+	}
+
+	public Boolean getAccommodateSingleFemaleReferenceTranslation() {
+		return accommodateSingleFemaleReferenceTranslation;
+	}
+
+	public void setAccommodateSingleFemaleReferenceTranslation(Boolean accommodateSingleFemaleReferenceTranslation) {
+		this.accommodateSingleFemaleReferenceTranslation = accommodateSingleFemaleReferenceTranslation;
+	}
+
+	@Override
      public String toString(){
-    	return "AccommodationPledge [id=" + id + ", " + "addressOne=" + addressOne + ", " + "addressTwo=" + addressTwo + ", " + "city=" + city + ", " + "stateProvinceRegion=" + stateProvinceRegion + ", " + "postCode=" + postCode + ", " + "country=" + country + ", " + "ownerOccupier=" + ownerOccupier + ", " + "accommodationDateFrom=" + accommodationDateFrom + ", " + "accommodationDateTo=" + accommodationDateTo + ", " + "accommodationType=" + accommodationType + ", " + "accommodationCondition=" + accommodationCondition + ", " + "numberOfBeds=" + numberOfBeds + ", " + "vacantOrShared=" + vacantOrShared + ", " + "otherAmenities=" + otherAmenities + ", " + "canYouAccommodate=" + canYouAccommodate + ", " + "additionalInformation=" + additionalInformation + "]";
+    	return "AccommodationPledge [id=" + id + ", " + "addressOne=" + addressOne + ", " + "addressTwo=" + addressTwo + ", " + "city=" + city + ", " + "stateProvinceRegion=" + stateProvinceRegion + ", " + "postCode=" + postCode + ", " + "country=" + country + ", " + "ownerOccupier=" + ownerOccupier + ", " + "accommodationDateFrom=" + accommodationDateFrom + ", " + "accommodationDateTo=" + accommodationDateTo + ", " + "accommodationType=" + accommodationType + ", " + "accommodationCondition=" + accommodationCondition + ", " + "numberOfBeds=" + numberOfBeds + ", " + "vacantOrShared=" + vacantOrShared + ", " + "otherAmenities=" + otherAmenities + ", " + "additionalInformation=" + additionalInformation + "]";
      }
 }
     

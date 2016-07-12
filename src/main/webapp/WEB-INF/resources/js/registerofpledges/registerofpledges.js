@@ -237,6 +237,7 @@ $( document ).ready(function() {
 				});
 			}
 		});
+		
 	}
 
 
@@ -981,35 +982,35 @@ $( document ).ready(function() {
   			frmAccommodationPledgeCreateUpdateVacantOrSharedSetupCompleted = true;
   		}
       
-  		var canYouAccommodateSelectInput = document.getElementById('frmAccommodationPledgeCreateUpdateCanYouAccommodate');
-  		
-  		if (canYouAccommodateSelectInput.length == 0){
-			$.ajax({
-				dataType: "json",
-				url: rootContext + "/restful/referenceslist",
-				data: {
-				referenceType: "YouCanAccommodate"
-				},
-				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select How many people can you accommodate?";
-					canYouAccommodateSelectInput.appendChild(unselectedOption);
-
-					$.each( data, function( key, val ) {
-						var el = document.createElement("option");
-    					el.textContent = val;
-						el.value = key;
-					
-    					canYouAccommodateSelectInput.appendChild(el);
-    					frmAccommodationPledgeCreateUpdateCanYouAccommodateSetupCompleted = true;
-					});
-				}
-			});
-  		}
-  		else{
-  			frmAccommodationPledgeCreateUpdateCanYouAccommodateSetupCompleted = true;
-  		}
+//  		var canYouAccommodateSelectInput = document.getElementById('frmAccommodationPledgeCreateUpdateCanYouAccommodate');
+//  		
+//  		if (canYouAccommodateSelectInput.length == 0){
+//			$.ajax({
+//				dataType: "json",
+//				url: rootContext + "/restful/referenceslist",
+//				data: {
+//				referenceType: "YouCanAccommodate"
+//				},
+//				success: function( data ) {
+//					var unselectedOption = document.createElement("option");
+//					unselectedOption.value = -1;
+//					unselectedOption.textContent = "Select How many people can you accommodate?";
+//					canYouAccommodateSelectInput.appendChild(unselectedOption);
+//
+//					$.each( data, function( key, val ) {
+//						var el = document.createElement("option");
+//    					el.textContent = val;
+//						el.value = key;
+//					
+//    					canYouAccommodateSelectInput.appendChild(el);
+//    					frmAccommodationPledgeCreateUpdateCanYouAccommodateSetupCompleted = true;
+//					});
+//				}
+//			});
+//  		}
+//  		else{
+//  			frmAccommodationPledgeCreateUpdateCanYouAccommodateSetupCompleted = true;
+//  		}
       
 
 		// Reset all of the input contents.
@@ -1274,6 +1275,7 @@ $( document ).ready(function() {
     					}
 						$(containerId).toggleClass('has-error', true);
 						if (!$(this).is(':checkbox')){
+							
 							$(feedbackIconContainerId).toggleClass('glyphicon-remove', true);
 						}
     					validationSuccess = false;
@@ -1281,7 +1283,12 @@ $( document ).ready(function() {
     			}
 				
         	});
-        	
+			if(!modal.find('#idAccommodateFamily').is(':checked') && !modal.find('#idAccommodateCouple').is(':checked') && !modal.find('#idAccommodateSingleMale').is(':checked')
+			&& !modal.find('#idAccommodateSingleFemale').is(':checked')){
+				$('#frmAccommodationPledgeCreateUpdateCanYouAccommodateFormGroup').addClass('has-error');
+				$('#frmAccommodationPledgeCreateUpdateCanYouAccommodateHelpBlock').text("Please select one.")
+				validationSuccess = false;
+			}
         	if (validationSuccess == false){
         		frmAccommodationPledgeCreateUpdateLaddaSubmitButtonHandler.stop();
         		return false;
@@ -1315,10 +1322,14 @@ $( document ).ready(function() {
 				numberOfBeds : modal.find('#frmAccommodationPledgeCreateUpdateNumberOfBeds').val(),
 				vacantOrShared : modal.find('#frmAccommodationPledgeCreateUpdateVacantOrShared').val(),
 				otherAmenities : modal.find('#frmAccommodationPledgeCreateUpdateOtherAmenities').val(),
-				canYouAccommodate : modal.find('#frmAccommodationPledgeCreateUpdateCanYouAccommodate').val(),
+				accommodateFamily : modal.find('#idAccommodateFamily').is(':checked'),
+				accommodateCouple : modal.find('#idAccommodateCouple').is(':checked'),
+				accommodateSingleMale : modal.find('#idAccommodateSingleMale').is(':checked'),
+				accommodateSingleFemale : modal.find('#idAccommodateSingleFemale').is(':checked'),
 				additionalInformation : modal.find('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val()
 			};
-			
+
+
 			var propertyUrl = modal.find('#frmAccommodationPledgeCreateUpdatePropertyUrl').val();
 			var url = rootContext + "/restful/registerofpledges/" + propertyUrl + "/" + mode;
 			
@@ -2664,7 +2675,9 @@ if ($('#frmRegisterOfPledgesMode').val() == 'LOCALIZE'){
   	newLocaleSelectInput.dispatchEvent(newLocaleChangeEvent);
 } // end if ($('#frmRegisterOfPledgesMode').val() == 'LOCALIZE')
 
-});
+$('#frmApplicationUserDetailsCreateUpdateCountry').val("159");
+$('#frmApplicationUserDetailsCreateUpdateCountry').prop('disabled', 'disabled');
+});// end of document.ready line (133)
 
 
 	/**

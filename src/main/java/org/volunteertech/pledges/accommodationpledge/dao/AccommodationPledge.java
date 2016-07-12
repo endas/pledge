@@ -323,29 +323,29 @@ public interface AccommodationPledge extends Serializable {
     public String getOtherAmenities();
     
     
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param canYouAccommodate is the address type
-     */
-    public void setCanYouAccommodate(Long canYouAccommodate);
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getCanYouAccommodate();
-    
-    /**
-     * Sets the translated reference mapping for the address type that has been chosen by the user
-     * @param the translated reference mapping for canYouAccommodate is the address type
-     */
-    public void setCanYouAccommodateReferenceTranslation(String canYouAccommodateReferenceTranslation);
-
-    /**
-     * Returns the translated reference mapping for the address type that has been chosen by the user or saved in the database
-     * @return the translated reference mapping for the address type
-     */
-    public String getCanYouAccommodateReferenceTranslation();
+//    /**
+//     * Sets the address type that has been chosen by the user
+//     * @param canYouAccommodate is the address type
+//     */
+//    public void setCanYouAccommodate(Long canYouAccommodate);
+//
+//    /**
+//     * Returns the address type that has been chosen by the user or saved in the database
+//     * @return the address type
+//     */
+//    public Long getCanYouAccommodate();
+//    
+//    /**
+//     * Sets the translated reference mapping for the address type that has been chosen by the user
+//     * @param the translated reference mapping for canYouAccommodate is the address type
+//     */
+//    public void setCanYouAccommodateReferenceTranslation(String canYouAccommodateReferenceTranslation);
+//
+//    /**
+//     * Returns the translated reference mapping for the address type that has been chosen by the user or saved in the database
+//     * @return the translated reference mapping for the address type
+//     */
+//    public String getCanYouAccommodateReferenceTranslation();
       
     
     /**
@@ -438,6 +438,37 @@ public interface AccommodationPledge extends Serializable {
      * @return A member of the CurrentMode Enumeration
      */
 	public CurrentMode getCurrentMode();
+	
+	public Boolean getAccommodateFamily();
+
+	public void setAccommodateFamily(Boolean accommodateFamily);
+
+	public Boolean getAccommodateCouple();
+
+	public void setAccommodateCouple(Boolean accommodateCouple);
+	public Boolean getAccommodateSingleMale();
+
+	public void setAccommodateSingleMale(Boolean accommodateSingleMale);
+
+	public Boolean getAccommodateSingleFemale();
+
+	public void setAccommodateSingleFemale(Boolean accommodateSingleFemale);
+
+	public Boolean getAccommodateFamilyReferenceTranslation();
+
+	public void setAccommodateFamilyReferenceTranslation(Boolean accommodateFamilyReferenceTranslation);
+
+	public Boolean getAccommodateCoupleReferenceTranslation();
+
+	public void setAccommodateCoupleReferenceTranslation(Boolean accommodateCoupleReferenceTranslation);
+
+	public Boolean getAccommodateSingleMaleReferenceTranslation();
+
+	public void setAccommodateSingleMaleReferenceTranslation(Boolean accommodateSingleMaleReferenceTranslation);
+
+	public Boolean getAccommodateSingleFemaleReferenceTranslation();
+
+	public void setAccommodateSingleFemaleReferenceTranslation(Boolean accommodateSingleFemaleReferenceTranslation);
 }
     
     

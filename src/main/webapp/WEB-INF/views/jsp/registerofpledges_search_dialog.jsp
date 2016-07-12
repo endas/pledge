@@ -97,7 +97,7 @@
 
 					<th>Vacant or Shared</th>
 
-					<th>How many people can you accommodate?</th>
+					<th>Who can you accommodate?</th>
 
 					<th>When is the accommodation available from?</th>
 

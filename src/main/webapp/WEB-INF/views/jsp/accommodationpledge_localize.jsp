@@ -1042,7 +1042,7 @@
 				
 	<spring:message code="frmAccommodationPledgeCanYouAccommodatePlaceHolder" var="unselectedCanYouAccommodate"/>
     	
-				<form:select path="canYouAccommodate" data-display-name="How many people can you accommodate?" data-reference-type="YouCanAccommodate" data-select-type="standalone" data-required="false" class="form-control" id="frmAccommodationPledgeCanYouAccommodate" aria-describedby="frmAccommodationPledgeCanYouAccommodateHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmAccommodationPledge'), frmAccommodationPledgeBuffer, '', 'Select placeholder')"
+				<form:select path="canYouAccommodate" data-display-name="Who can you accommodate?" data-reference-type="YouCanAccommodate" data-select-type="standalone" data-required="false" class="form-control" id="frmAccommodationPledgeCanYouAccommodate" aria-describedby="frmAccommodationPledgeCanYouAccommodateHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmAccommodationPledge'), frmAccommodationPledgeBuffer, '', 'Select placeholder')"
 >
 					<form:option value="-1" label="${unselectedCanYouAccommodate}" />
 					

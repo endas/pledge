@@ -68,23 +68,38 @@ body {
 #right-cell {
     text-align: left;
 }
-input {
+input[type="button"] {
     border-radius: 1px;
     padding: 15px 10px;
     width: 100%
 }
 input[type="text"] {
     font-size: 0.9em;
-    font-weight: 400
+    font-weight: 400;
+    width: 100%;
 }
-input[type="text"] {
-    font-size: 0.9em;
-    font-weight: 400
-}
+
 input[type="password"] {
     font-size: 0.9em;
-    font-weight: 400
+    font-weight: 400;
+    width: 100%;
 }
+
+input[type=checkbox], input[type=radio] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    display:inline;
+    margin: 0 0.5em 0 0.5em;
+}
+input[type=radio] {
+    bottom: 2px;
+}
+
+.inline-checkbox-label{
+	font-weight: normal;
+}
+
 .btn {
     color: #ffffff;
     font-size: 1em;
@@ -101,6 +116,8 @@ input[type="password"] {
 .home-login-link {
     font-size: 0.9em;
 }
+
+
 
 Media Queries
 

@@ -38,7 +38,10 @@
 	  
 		<property name="otherAmenities" type="string" column="OTHERAMENITIES" length="500"></property>	
 	  
-		<property name="canYouAccommodate" type="long" column="CANYOUACCOMMODATE" length="10"></property>	
+		<property name="accommodateFamily"  type="boolean" column="ACCOMMODATEFAMILY" />
+		<property name="accommodateCouple"  type="boolean" column="ACCOMMODATECOUPLE" />
+	  	<property name="accommodateSingleMale"  type="boolean" column="ACCOMMODATESINGLEMALE" />
+	  	<property name="accommodateSingleFemale"  type="boolean" column="ACCOMMODATESINGLEFEMALE" />
 	  
 		<property name="additionalInformation" type="string" column="ADDITIONALINFORMATION" length="500"></property>	
 	  

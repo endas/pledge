@@ -278,7 +278,7 @@
       
 		<spring:bind path="canYouAccommodate">
 		  <div id="frmAccommodationPledgeCanYouAccommodateFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
-			<label class="col-sm-2 control-label">How many people can you accommodate?</label>
+			<label class="col-sm-2 control-label">Who can you accommodate?</label>
 			<div class="col-sm-5">
 					
 				<form:select path="canYouAccommodate" class="form-control" id="frmAccommodationPledgeCanYouAccommodate">

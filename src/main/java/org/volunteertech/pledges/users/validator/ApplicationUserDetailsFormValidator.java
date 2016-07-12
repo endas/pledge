@@ -96,7 +96,8 @@ public class ApplicationUserDetailsFormValidator implements Validator {
 		if ( (applicationUserDetails.getPostCode().length() > 0) && (applicationUserDetails.getPostCode().length() < 0) ){
 			errors.rejectValue("postCode", "applicationuserdetails.postcode.optional.validation.minimumlength", new Object[] {0}, "> 0");
 		}
-		    
+		   
+		applicationUserDetails.setCountry(159L);//always ireland for the time being
 		if(applicationUserDetails.getCountry() == 0 || applicationUserDetails.getCountry() == -1){
 			errors.rejectValue("country", "applicationuserdetails.country.validation.required");
 		}

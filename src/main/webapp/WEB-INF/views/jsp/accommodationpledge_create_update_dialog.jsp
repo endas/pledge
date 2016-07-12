@@ -191,9 +191,19 @@
   
 		  <div id="frmAccommodationPledgeCreateUpdateCanYouAccommodateFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.canyouaccommodate.label" for="frmAccommodationPledgeCreateUpdateCanYouAccommodate" class="control-label"><spring:message code="frmAccommodationPledgeCanYouAccommodateLabel"/></label>	
-			<select class="form-control" data-display-name="How many people can you accommodate?" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateCanYouAccommodate" aria-describedby="frmAccommodationPledgeCreateUpdateCanYouAccommodateHelpBlock">
-			</select>
-	  
+			
+			
+			 <div>
+				<label class="inline-checkbox-label"><span>Family</span><input type="checkbox" name="accommodateFamily" id="idAccommodateFamily" ></label>
+	
+		  		<label class="inline-checkbox-label"><span>Couple</span><input type="checkbox" name="accommodateCouple" id="idAccommodateCouple"></label>
+	
+		  		<label class="inline-checkbox-label"><span>Single Male</span><input type="checkbox" name="accommodateSingleMale" id="idAccommodateSingleMale"></label>
+	
+		  		<label class="inline-checkbox-label"><span>Single Female</span><input type="checkbox" name="accommodateSingleFemale" id="idAccommodateSingleFeMale"></label>
+			</div>
+			 
+			 
 			<span id="frmAccommodationPledgeCreateUpdateCanYouAccommodateHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeCanYouAccommodateHelpBlock"/></span>
 			<div id="frmAccommodationPledgeCreateUpdateCanYouAccommodateAlertBlock" class="alert alert-dismissible hidden" role="alert">
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -233,4 +243,14 @@
     </div>
   </div>
 </div>
-	
+<!-- <style>
+input[type=checkbox], input[type=radio] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+}
+input[type=radio] {
+    bottom: 2px;
+}
+</style>
+	 -->

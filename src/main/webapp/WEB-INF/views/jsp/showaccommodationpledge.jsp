@@ -142,7 +142,7 @@
 
 
 	<div class="row">
-		<label class="col-sm-2">How many people can you accommodate?</label>
+		<label class="col-sm-2">Who can you accommodate?</label>
 		<div class="col-sm-10">${accommodationPledge.canYouAccommodate}</div>
 	</div>
 

@@ -54,9 +54,9 @@
 	<spring:message code="frmAccommodationPledgeNumberOfBedsPlaceHolder" var="unselectedNumberOfBeds"/>
     
 	<spring:message code="frmAccommodationPledgeVacantOrSharedPlaceHolder" var="unselectedVacantOrShared"/>
-    
+    <%-- 
 	<spring:message code="frmAccommodationPledgeCanYouAccommodatePlaceHolder" var="unselectedCanYouAccommodate"/>
-    
+     --%>
 	<spring:url value="/accommodationpledge/post" var="accommodationPledgeActionUrl" />
 	  
 	<form:form id="frmAccommodationPledge" role="form" class="form-horizontal" method="post" accept-charset="utf-8"
@@ -555,42 +555,23 @@
       
 		</spring:bind>
       
-		<spring:bind path="canYouAccommodate">
+		
       
-		  <div id="frmAccommodationPledgeCanYouAccommodateFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  <div id="frmAccommodationPledgeAccommodateFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
-			<label id="frmAccommodationPledgeCanYouAccommodateLabel" for="frmAccommodationPledgeCanYouAccommodate" class="col-sm-2 control-label"><spring:message code="frmAccommodationPledgeCanYouAccommodateLabel"/></label>
-		  
-			<div class="col-sm-5 select-container">
-				
-	<spring:message code="frmAccommodationPledgeCanYouAccommodatePlaceHolder" var="unselectedCanYouAccommodate"/>
-    	
-				<form:select path="canYouAccommodate" data-display-name="How many people can you accommodate?" data-reference-type="YouCanAccommodate" data-select-type="standalone" data-required="false" class="form-control" id="frmAccommodationPledgeCanYouAccommodate" aria-describedby="frmAccommodationPledgeCanYouAccommodateHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmAccommodationPledge'), frmAccommodationPledgeBuffer, '', 'Select placeholder')"
->
-					<form:option value="-1" label="${unselectedCanYouAccommodate}" />
-					
-					<form:options items="${canYouAccommodateMap}" />
-					
-				</form:select>
-	  
-				<span id="frmAccommodationPledgeCanYouAccommodateFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
-				<div id="frmAccommodationPledgeCanYouAccommodateAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  					<span id="frmAccommodationPledgeCanYouAccommodateAlertBlockText"></span>
-				</div>
-			</div>
-				
-				<c:choose>
+		  <label id="frmAccommodationPledgeCanYouAccommodateLabel" for="frmAccommodationPledgeCanYouAccommodate" class="col-sm-2 control-label"><spring:message code="frmAccommodationPledgeCanYouAccommodateLabel"/></label>
+		 		
+				<%-- <c:choose>
 				  <c:when test="${status.error}">
 				<form:errors id="frmAccommodationPledgeCanYouAccommodateHelpBlock" path="canYouAccommodate" class="help-block col-sm-offset-2 col-sm-10" />
 				  </c:when>
 				  <c:otherwise>
 				<span id="frmAccommodationPledgeCanYouAccommodateHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmAccommodationPledgeCanYouAccommodateHelpBlock"/></span>				  
 				  </c:otherwise>
-				</c:choose>
+				</c:choose> --%>
 		  </div>
       
-		</spring:bind>
+		
       
 		<spring:bind path="additionalInformation">
       

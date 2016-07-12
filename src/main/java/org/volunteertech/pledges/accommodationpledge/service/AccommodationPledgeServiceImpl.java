@@ -598,15 +598,15 @@ public class AccommodationPledgeServiceImpl implements AccommodationPledgeServic
 			
 			accommodationPledge.setVacantOrSharedReferenceTranslation(vacantOrSharedLocaleReference);
 
-			Long canYouAccommodateReferenceId =  accommodationPledge.getCanYouAccommodate();
-			String canYouAccommodateLocaleReference = null;
-			if (canYouAccommodateReferenceId == null || canYouAccommodateReferenceId == -1){
-				canYouAccommodateLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
-			}else{
-				canYouAccommodateLocaleReference = this.messageResourceService.getMessage(canYouAccommodateReferenceId, new String[0], locale);
-			}
-			
-			accommodationPledge.setCanYouAccommodateReferenceTranslation(canYouAccommodateLocaleReference);
+//			Long canYouAccommodateReferenceId =  accommodationPledge.getCanYouAccommodate();
+//			String canYouAccommodateLocaleReference = null;
+//			if (canYouAccommodateReferenceId == null || canYouAccommodateReferenceId == -1){
+//				canYouAccommodateLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
+//			}else{
+//				canYouAccommodateLocaleReference = this.messageResourceService.getMessage(canYouAccommodateReferenceId, new String[0], locale);
+//			}
+//			
+//			accommodationPledge.setCanYouAccommodateReferenceTranslation(canYouAccommodateLocaleReference);
 
     	return accommodationPledge;
     }

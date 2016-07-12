@@ -91,6 +91,16 @@ public class AccommodationPledgeHistory
     private Date dateUpdated;
     
 
+    private Boolean accommodateFamily;
+    
+    private Boolean accommodateCouple;
+    
+    private Boolean accommodateSingleMale;
+    
+    private Boolean accommodateSingleFemale;
+    
+    
+    
     /**
      * Default Constructor for the AccommodationPledge bean
      */
@@ -421,23 +431,23 @@ public class AccommodationPledgeHistory
     }
 
     
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param canYouAccommodate is the address type
-     */
-    public void setCanYouAccommodate(Long canYouAccommodate)
-    {
-      this.canYouAccommodate = canYouAccommodate;
-    }
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getCanYouAccommodate()
-    {
-      return canYouAccommodate;
-    }
+//    /**
+//     * Sets the address type that has been chosen by the user
+//     * @param canYouAccommodate is the address type
+//     */
+//    public void setCanYouAccommodate(Long canYouAccommodate)
+//    {
+//      this.canYouAccommodate = canYouAccommodate;
+//    }
+//
+//    /**
+//     * Returns the address type that has been chosen by the user or saved in the database
+//     * @return the address type
+//     */
+//    public Long getCanYouAccommodate()
+//    {
+//      return canYouAccommodate;
+//    }
 
     
     /**
@@ -530,7 +540,38 @@ public class AccommodationPledgeHistory
         return dateUpdated;
     }
     
-     
+    public Boolean getAccommodateFamily() {
+		return accommodateFamily;
+	}
+
+	public void setAccommodateFamily(Boolean accommodateFamily) {
+		this.accommodateFamily = accommodateFamily;
+	}
+
+	public Boolean getAccommodateCouple() {
+		return accommodateCouple;
+	}
+
+	public void setAccommodateCouple(Boolean accommodateCouple) {
+		this.accommodateCouple = accommodateCouple;
+	}
+
+	public Boolean getAccommodateSingleMale() {
+		return accommodateSingleMale;
+	}
+
+	public void setAccommodateSingleMale(Boolean accommodateSingleMale) {
+		this.accommodateSingleMale = accommodateSingleMale;
+	}
+
+	public Boolean getAccommodateSingleFemale() {
+		return accommodateSingleFemale;
+	}
+
+	public void setAccommodateSingleFemale(Boolean accommodateSingleFemale) {
+		this.accommodateSingleFemale = accommodateSingleFemale;
+	}
+
 }
     
     

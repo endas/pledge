@@ -218,6 +218,10 @@ $( document ).ready(function() {
 			$('#frmApplicationUserDetailsOrganisationNameFormGroup').addClass("hidden");
 		}
 	});
+
+	//	set the country to Ireland and disable
+	$('#frmApplicationUserDetailsCountry').val("159");
+	$('#frmApplicationUserDetailsCountry').prop('disabled', 'disabled');
 });
 
 

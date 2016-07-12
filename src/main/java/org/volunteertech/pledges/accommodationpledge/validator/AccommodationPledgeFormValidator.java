@@ -94,7 +94,11 @@ public class AccommodationPledgeFormValidator implements Validator {
 		if ( (accommodationPledge.getAdditionalInformation().length() > 0) && (accommodationPledge.getAdditionalInformation().length() < 0) ){
 			errors.rejectValue("additionalInformation", "accommodationpledge.additionalinformation.optional.validation.minimumlength", new Object[] {0}, "> 0");
 		}
-		    
+		
+		if ( !accommodationPledge.getAccommodateCouple() && !accommodationPledge.getAccommodateFamily() && !accommodationPledge.getAccommodateSingleMale() && !accommodationPledge.getAccommodateSingleFemale() ){
+			errors.rejectValue("accommodateFamily", "accommodationpledge.additionalinformation.optional.validation.minimumlength", new Object[] {0}, "> 0");
+		}
+		
 		
 
 
