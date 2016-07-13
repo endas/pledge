@@ -124,6 +124,10 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
     
+    private Date dateAvailableFrom;
+    
+    private Date dateAvailableTo;
+    
 
     /**
      * Default Constructor for the GoodsPledge bean
@@ -151,6 +155,7 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
 		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();
+    	this.dateAvailableFrom = new Date();
     }
     
     /**
@@ -616,6 +621,29 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
      public String toString(){
     	return "GoodsPledge [id=" + id + ", " + "goodsCategoryOne=" + goodsCategoryOne + ", " + "goodsCategoryTwo=" + goodsCategoryTwo + ", " + "goodsCategoryThree=" + goodsCategoryThree + ", " + "goodsSize=" + goodsSize + ", " + "goodsNewOrUsed=" + goodsNewOrUsed + ", " + "goodsCondition=" + goodsCondition + ", " + "goodsQuantity=" + goodsQuantity + ", " + "additionalInformation=" + additionalInformation + ", " + "itemSize=" + itemSize + "]";
      }
+
+	@Override
+	public Date getDateAvailableFrom() {
+		// TODO Auto-generated method stub
+		return this.dateAvailableFrom;
+	}
+
+	@Override
+	public Date getDateAvailableTo() {
+		// TODO Auto-generated method stub
+		return this.dateAvailableTo;
+	}
+
+	public void setDateAvailableFrom(Date dateAvailableFrom) {
+		this.dateAvailableFrom = dateAvailableFrom;
+	}
+
+	public void setDateAvailableTo(Date dateAvailableTo) {
+		this.dateAvailableTo = dateAvailableTo;
+	}
+	
+	
+	
 }
     
     

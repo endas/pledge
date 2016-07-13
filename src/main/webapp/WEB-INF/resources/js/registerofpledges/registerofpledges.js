@@ -2355,11 +2355,14 @@ $( document ).ready(function() {
 					}
 					
 					frmGoodsPledgeCreateUpdateGoodsQuantityTimeOut();
-        
+					debugger;
 					modal.find('#frmGoodsPledgeCreateUpdateAdditionalInformation').val(data.additionalInformation);
 					frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = data.additionalInformation;
     
 					modal.find('#frmGoodsPledgeCreateUpdateItemSize').val(data.itemSize);
+					
+					modal.find('#frmGoodsPledgeCreateUpdateGoodsDateFrom').val(data.dateAvailableFrom);
+					modal.find('#frmGoodsPledgeCreateUpdateGoodsDateTo').val(data.dateAvailableTo);
 					frmGoodsPledgeCreateUpdateItemSizeBuffer = data.itemSize;
     
 					// Display a count of the characters in the Additional Information textarea input
@@ -2437,8 +2440,6 @@ $( document ).ready(function() {
 			}
 
 
-			
-			
 			var goodsPledge = {
 				parentObjectId : modal.find('#frmGoodsPledgeCreateUpdateParentObjectId').val(),
 				id : modal.find('#frmGoodsPledgeCreateUpdateLoadedObjectId').val(),
@@ -2450,7 +2451,9 @@ $( document ).ready(function() {
 				goodsCondition : modal.find('#frmGoodsPledgeCreateUpdateGoodsCondition').val(),
 				goodsQuantity : modal.find('#frmGoodsPledgeCreateUpdateGoodsQuantity').val(),
 				additionalInformation : modal.find('#frmGoodsPledgeCreateUpdateAdditionalInformation').val(),
-				itemSize : modal.find('#frmGoodsPledgeCreateUpdateItemSize').val()
+				itemSize : modal.find('#frmGoodsPledgeCreateUpdateItemSize').val(),
+				dateAvailableFrom: modal.find('#frmGoodsPledgeCreateUpdateGoodsDateFrom').val(),
+				dateAvailableTo: modal.find('#frmGoodsPledgeCreateUpdateGoodsDateTo').val(),
 			};
 			
 			var propertyUrl = modal.find('#frmGoodsPledgeCreateUpdatePropertyUrl').val();

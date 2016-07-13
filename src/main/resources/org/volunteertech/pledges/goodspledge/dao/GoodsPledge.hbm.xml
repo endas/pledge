@@ -28,6 +28,9 @@
 		<property name="additionalInformation" type="string" column="ADDITIONALINFORMATION" length="500" ></property>	
 	  
 		<property name="itemSize" type="string" column="ITEMSIZE" length="500" ></property>	
+		
+		<property name="dateAvailableFrom" type="timestamp" column="DATEAVAILABLEFROM" ></property>
+		<property name="dateAvailableTo" type="timestamp" column="DATEAVAILABLETO" ></property>		
 	  
         <many-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl" fetch="select">
             <column name="REGISTEROFPLEDGESID" not-null="false" />

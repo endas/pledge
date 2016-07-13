@@ -80,7 +80,8 @@
   
 		  <div id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.pledgeservicedateavailable.label" for="frmServicePledgeCreateUpdatePledgeServiceDateAvailable" class="control-label"><spring:message code="frmServicePledgePledgeServiceDateAvailableLabel"/></label>
-			<input type="text" data-display-name="Date Available for Use" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" id="frmServicePledgeCreateUpdatePledgeServiceDateAvailable" placeholder="<spring:message code="frmServicePledgePledgeServiceDateAvailablePlaceHolder"/>" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceDateAvailableHelpBlock"  data-toggle="popover"/>
+			<input type="text" data-display-name="Date Available for Use" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" id="frmServicePledgeCreateUpdatePledgeServiceDateAvailable" 
+			placeholder="<spring:message code="frmAccommodationPledgeAccommodationDateToPlaceHolder"/>" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceDateAvailableHelpBlock"  data-toggle="popover"/>
     
 			<span id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableHelpBlock" class="help-block"><spring:message code="frmServicePledgePledgeServiceDateAvailableHelpBlock"/></span>
 			<div id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -92,7 +93,10 @@
   
  		 <div id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.pledgeservicedateavailableto.label" for="frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo" class="control-label"><spring:message code="frmServicePledgePledgeServiceDateAvailableToLabel"/></label>
-			<input type="text" data-display-name="Date Available Until" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo" placeholder="<spring:message code="frmServicePledgePledgeServiceDateAvailableToPlaceHolder"/>" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToHelpBlock"  data-toggle="popover"/>
+			<input type="text" data-display-name="Date Available Until" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" 
+			id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo" 
+			placeholder="<spring:message code="frmAccommodationPledgeAccommodationDateToPlaceHolder"/>"
+			aria-describedby="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToHelpBlock"  data-toggle="popover"/>
 			<span id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToHelpBlock" class="help-block"><spring:message code="frmServicePledgePledgeServiceDateAvailableToHelpBlock"/></span>
 			<div id="frmServicePledgeCreateUpdatePledgeServiceDateAvailableToAlertBlock" class="alert alert-dismissible hidden" role="alert">
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

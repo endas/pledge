@@ -347,6 +347,15 @@ public interface GoodsPledge extends Serializable {
      * @return A member of the CurrentMode Enumeration
      */
 	public CurrentMode getCurrentMode();
+	
+	
+	public Date getDateAvailableFrom();
+	
+	public void setDateAvailableFrom(Date d);
+	
+	public Date getDateAvailableTo();
+	
+	public void setDateAvailableTo(Date d);
 }
     
     

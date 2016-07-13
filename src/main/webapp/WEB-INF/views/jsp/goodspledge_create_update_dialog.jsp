@@ -19,13 +19,11 @@
 			<label id="goodspledge.goodscategoryone.label" for="frmGoodsPledgeCreateUpdateGoodsCategoryOne" class="control-label"><spring:message code="frmGoodsPledgeGoodsCategoryOneLabel"/></label>	
 			<select class="form-control" data-display-name="Goods Category One" data-select-type="standalone" data-required="false" id="frmGoodsPledgeCreateUpdateGoodsCategoryOne" aria-describedby="frmGoodsPledgeCreateUpdateGoodsCategoryOneHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeCreateUpdateGoodsCategoryTwo'), 'theValueToSet', 'GoodsCategoryTwo', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeCreateUpdateGoodsCondition'), 'theValueToSet', 'GoodsCondition', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeCreateUpdateGoodsQuantity'), 'theValueToSet', 'GoodsQuantity', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeCreateUpdateGoodsSize'), 'theValueToSet', 'GoodsSize', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeCreateUpdateGoodsCategoryThree'), 'theValueToSet', 'GoodsCategoryThree', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>')">
 			</select>
-	  
 			<span id="frmGoodsPledgeCreateUpdateGoodsCategoryOneHelpBlock" class="help-block"><spring:message code="frmGoodsPledgeGoodsCategoryOneHelpBlock"/></span>
 			<div id="frmGoodsPledgeCreateUpdateGoodsCategoryOneAlertBlock" class="alert alert-dismissible hidden" role="alert">
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   				<span id="frmGoodsPledgeCreateUpdateGoodsCategoryOneAlertBlockText"></span>
-			</div>
-				  
+			</div>	  
 		  </div>
   
 		  <div id="frmGoodsPledgeCreateUpdateGoodsCategoryTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''} collapse">
@@ -129,6 +127,38 @@
 			</div>
 				  
 		  </div>
+		  
+		
+		<div id="frmGoodsPledgeCreateUpdateGoodsDateFromFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.accommodationdatefrom.label" for="frmGoodsPledgeCreateUpdateGoodsDateFrom" class="control-label"><spring:message code="frmGoodsPledgeGoodsDateFromLabel"/></label>
+			<input type="text" data-display-name="When are the goods available from?" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" id="frmGoodsPledgeCreateUpdateGoodsDateFrom" 
+			placeholder="<spring:message code="frmAccommodationPledgeAccommodationDateFromPlaceHolder"/>" 
+			aria-describedby="frmGoodsPledgeCreateUpdateGoodsDateFromHelpBlock"  data-toggle="popover"/>
+    
+			<%-- <span id="frmGoodsPledgeCreateUpdateGoodsDateFromHelpBlock" class="help-block"><spring:message code="frmGoodsPledgeGoodsDateFromHelpBlock"/></span> --%>
+			<div id="frmGoodsPledgeCreateUpdateGoodsDateFromAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmGoodsPledgeCreateUpdateGoodsDateFromAlertBlockText"></span>
+			</div>		  
+		  </div>
+  
+		  <div id="frmGoodsPledgeCreateUpdateGoodsDateToFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.accommodationdateto.label" for="frmGoodsPledgeCreateUpdateGoodsDateTo" class="control-label"><spring:message code="frmGoodsPledgeGoodsDateToLabel"/></label>
+			<input type="text" data-display-name="When are the goods available until?" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" id="frmGoodsPledgeCreateUpdateGoodsDateTo" 
+			placeholder="<spring:message code="frmAccommodationPledgeAccommodationDateFromPlaceHolder"/>"  
+			aria-describedby="frmGoodsPledgeCreateUpdateGoodsDateToHelpBlock"  data-toggle="popover"/>
+
+			<%-- <span id="frmGoodsPledgeCreateUpdateGoodsDateToHelpBlock" class="help-block">
+			<spring:message code="frmGoodsPledgeGoodsDateToHelpBlock"/></span> --%>
+			<div id="frmGoodsPledgeCreateUpdateGoodsDateToAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmGoodsPledgeCreateUpdateGoodsDateToAlertBlockText"></span>
+			</div>	  
+		  </div>
+		
+		  
+		  
+		  
         </form>
       </div>
       <div class="modal-footer">

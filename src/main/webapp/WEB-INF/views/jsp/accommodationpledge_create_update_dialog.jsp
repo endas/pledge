@@ -116,13 +116,13 @@
 		  <div id="frmAccommodationPledgeCreateUpdateAccommodationDateToFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.accommodationdateto.label" for="frmAccommodationPledgeCreateUpdateAccommodationDateTo" class="control-label"><spring:message code="frmAccommodationPledgeAccommodationDateToLabel"/></label>
 			<input type="text" data-display-name="When is the accommodation available until?" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" id="frmAccommodationPledgeCreateUpdateAccommodationDateTo" placeholder="<spring:message code="frmAccommodationPledgeAccommodationDateToPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateAccommodationDateToHelpBlock"  data-toggle="popover"/>
-    
-			<span id="frmAccommodationPledgeCreateUpdateAccommodationDateToHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAccommodationDateToHelpBlock"/></span>
+
+			<span id="frmAccommodationPledgeCreateUpdateAccommodationDateToHelpBlock" class="help-block">
+			<spring:message code="frmAccommodationPledgeAccommodationDateToHelpBlock"/></span>
 			<div id="frmAccommodationPledgeCreateUpdateAccommodationDateToAlertBlock" class="alert alert-dismissible hidden" role="alert">
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   				<span id="frmAccommodationPledgeCreateUpdateAccommodationDateToAlertBlockText"></span>
-			</div>
-				  
+			</div>	  
 		  </div>
   
 		  <div id="frmAccommodationPledgeCreateUpdateAccommodationTypeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">

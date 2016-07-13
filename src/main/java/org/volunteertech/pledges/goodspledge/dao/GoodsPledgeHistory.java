@@ -69,7 +69,10 @@ public class GoodsPledgeHistory
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
     
-
+    private Date dateAvailableFrom;
+    
+    private Date dateAvailableTo;
+    
     /**
      * Default Constructor for the GoodsPledge bean
      */
@@ -368,6 +371,25 @@ public class GoodsPledgeHistory
     {
         return dateUpdated;
     }
+
+    
+	public Date getDateAvailableFrom() {
+		return dateAvailableFrom;
+	}
+
+	public void setDateAvailableFrom(Date dateAvailableFrom) {
+		this.dateAvailableFrom = dateAvailableFrom;
+	}
+
+	public Date getDateAvailableTo() {
+		return dateAvailableTo;
+	}
+
+	public void setDateAvailableTo(Date dateAvailableTo) {
+		this.dateAvailableTo = dateAvailableTo;
+	}
+    
+    
     
      
 }
