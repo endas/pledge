@@ -1495,10 +1495,6 @@ $( document ).ready(function() {
 				amenities : _.map(modal.find('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect').val(), Number),
 				otherAmenities : modal.find('#frmAccommodationPledgeCreateUpdateOtherAmenities').val(),
 				accommodateWho : _.map(modal.find('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect').val(), Number),
-				accommodateFamily : modal.find('#idAccommodateFamily').is(':checked'),
-				accommodateCouple : modal.find('#idAccommodateCouple').is(':checked'),
-				accommodateSingleMale : modal.find('#idAccommodateSingleMale').is(':checked'),
-				accommodateSingleFemale : modal.find('#idAccommodateSingleFemale').is(':checked'),
 				additionalInformation : modal.find('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val()
 		};
 

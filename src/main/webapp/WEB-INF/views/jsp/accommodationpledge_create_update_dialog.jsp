@@ -214,30 +214,7 @@
 			</div>
 				  
 		  </div>
-  
-<%-- 		  <div id="frmAccommodationPledgeCreateUpdateCanYouAccommodateFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.canyouaccommodate.label" for="frmAccommodationPledgeCreateUpdateCanYouAccommodate" class="control-label"><spring:message code="frmAccommodationPledgeCanYouAccommodateLabel"/></label>	
-			
-			
-			 <div>
-				<label class="inline-checkbox-label"><span>Family</span><input type="checkbox" name="accommodateFamily" id="idAccommodateFamily" ></label>
-	
-		  		<label class="inline-checkbox-label"><span>Couple</span><input type="checkbox" name="accommodateCouple" id="idAccommodateCouple"></label>
-	
-		  		<label class="inline-checkbox-label"><span>Single Male</span><input type="checkbox" name="accommodateSingleMale" id="idAccommodateSingleMale"></label>
-	
-		  		<label class="inline-checkbox-label"><span>Single Female</span><input type="checkbox" name="accommodateSingleFemale" id="idAccommodateSingleFeMale"></label>
-			</div>
-			 
-			 
-			<span id="frmAccommodationPledgeCreateUpdateCanYouAccommodateHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeCanYouAccommodateHelpBlock"/></span>
-			<div id="frmAccommodationPledgeCreateUpdateCanYouAccommodateAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateCanYouAccommodateAlertBlockText"></span>
-			</div>
-				  
-		  </div>
-   --%>
+
   		<div id="frmAccommodationPledgeCreateUpdateAccommodateWhoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.accommodatewho.label" for="frmAccommodationPledgeCreateUpdateAccommodateWhoSelect" class="control-label"><spring:message code="frmAccommodationPledgeAccommodateWhoLabel"/></label>
 			<select id="frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect" name="accommodatewho" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeAccommodateWhoPlaceHolder"/>" >
