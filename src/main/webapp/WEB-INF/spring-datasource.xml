@@ -34,6 +34,25 @@
 		
 	</beans>
 
+		<beans profile="localmysql ">
+		<!--Bean to load properties file -->  
+		<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location">
+				<value>/WEB-INF/resources/local_mysql_config.properties</value>
+			</property>
+		</bean>
+		
+		<!-- Create a DBCP connection pool -->
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${jdbc.driverClassName}" />
+			<property name="url" value="${jdbc.url}" />
+			<property name="username" value="${jdbc.username}" />
+			<property name="password" value="${jdbc.password}" />
+			<property name="initialSize" value="${jdbc.initialSize}"/>
+		</bean>
+		
+	</beans>
+	
 
 	<beans profile="local">
 		<!--Bean to load properties file -->  

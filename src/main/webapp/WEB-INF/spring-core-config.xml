@@ -14,8 +14,15 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
         
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        
+        
+        <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
+        <!-- <property name="annotatedClasses">
+			<list>
+			   <value>org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeHistory</value>
+			</list>
+		</property> -->
         <property name="mappingResources">
             <list>
                 
@@ -28,7 +35,7 @@
                 <value>org/volunteertech/pledges/pledge/dao/RegisterOfPledgesFilter.hbm.xml</value>
 
                 <value>org/volunteertech/pledges/accommodationpledge/dao/AccommodationPledge.hbm.xml</value>
-                <value>org/volunteertech/pledges/accommodationpledge/dao/AccommodationPledgeHistory.hbm.xml</value>
+             	<value>org/volunteertech/pledges/accommodationpledge/dao/AccommodationPledgeHistory.hbm.xml</value> 
                 <value>org/volunteertech/pledges/accommodationpledge/dao/AccommodationPledgeFilter.hbm.xml</value>
 
                 <value>org/volunteertech/pledges/servicepledge/dao/ServicePledge.hbm.xml</value>
@@ -69,6 +76,7 @@
 
             </list>
         </property>
+        
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
@@ -81,6 +89,7 @@
 				<prop key="hibernate.hbm2ddl.import_files">${hibernate.importfiles}</prop>
             </props>
         </property>
+        
     </bean>
 
     

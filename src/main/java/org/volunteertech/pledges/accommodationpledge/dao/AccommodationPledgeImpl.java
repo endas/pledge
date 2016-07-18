@@ -3,9 +3,11 @@ package org.volunteertech.pledges.accommodationpledge.dao;
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledge;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
 import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -118,12 +120,7 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     /** the participant comments */
     private String otherAmenities;
 	
-//    /** the address type */
-//    private Long canYouAccommodate;
-//    
-//    /** the address type */
-//    private String canYouAccommodateReferenceTranslation;
-    
+
 	
     /** the participant comments */
     private String additionalInformation;
@@ -145,24 +142,11 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
     
-    private Boolean accommodateFamily;
-        
-    private Boolean accommodateCouple;
+   
+    private Set<Long> amenities = new HashSet<Long>();
+    private Set<Long> facilities = new HashSet<Long>();
+    private Set<Long> accommodateWho = new HashSet<Long>();
     
-    private Boolean accommodateSingleMale;
-    
-    private Boolean accommodateSingleFemale;
-    
-    
-    private Boolean accommodateFamilyReferenceTranslation;
-    
-    private Boolean accommodateCoupleReferenceTranslation;
-    
-    private Boolean accommodateSingleMaleReferenceTranslation;
-    
-    private Boolean accommodateSingleFemaleReferenceTranslation;
-    
-  
     /**
      * Default Constructor for the AccommodationPledge bean
      */
@@ -196,16 +180,6 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 		this.vacantOrShared = new Long("0");
 		
 		this.otherAmenities = new String();
-		
-//		this.canYouAccommodate = new Long("0");
-		
-		this.accommodateFamily = false;
-        
-	    this.accommodateCouple = false;
-	    
-	    this.accommodateSingleMale = false;
-	    
-	    this.accommodateSingleFemale = false;
 		
 		this.additionalInformation = new String();
 		
@@ -776,75 +750,37 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 		return this.currentMode;
 	}
     
-    
-    public Boolean getAccommodateFamily() {
-		return accommodateFamily;
-	}
-
-	public void setAccommodateFamily(Boolean accommodateFamily) {
-		this.accommodateFamily = accommodateFamily;
-	}
-
-	public Boolean getAccommodateCouple() {
-		return accommodateCouple;
-	}
-
-	public void setAccommodateCouple(Boolean accommodateCouple) {
-		this.accommodateCouple = accommodateCouple;
-	}
-
-	public Boolean getAccommodateSingleMale() {
-		return accommodateSingleMale;
-	}
-
-	public void setAccommodateSingleMale(Boolean accommodateSingleMale) {
-		this.accommodateSingleMale = accommodateSingleMale;
-	}
-
-	public Boolean getAccommodateSingleFemale() {
-		return accommodateSingleFemale;
-	}
-
-	public void setAccommodateSingleFemale(Boolean accommodateSingleFemale) {
-		this.accommodateSingleFemale = accommodateSingleFemale;
-	}
-
-	public Boolean getAccommodateFamilyReferenceTranslation() {
-		return accommodateFamilyReferenceTranslation;
-	}
-
-	public void setAccommodateFamilyReferenceTranslation(Boolean accommodateFamilyReferenceTranslation) {
-		this.accommodateFamilyReferenceTranslation = accommodateFamilyReferenceTranslation;
-	}
-
-	public Boolean getAccommodateCoupleReferenceTranslation() {
-		return accommodateCoupleReferenceTranslation;
-	}
-
-	public void setAccommodateCoupleReferenceTranslation(Boolean accommodateCoupleReferenceTranslation) {
-		this.accommodateCoupleReferenceTranslation = accommodateCoupleReferenceTranslation;
-	}
-
-	public Boolean getAccommodateSingleMaleReferenceTranslation() {
-		return accommodateSingleMaleReferenceTranslation;
-	}
-
-	public void setAccommodateSingleMaleReferenceTranslation(Boolean accommodateSingleMaleReferenceTranslation) {
-		this.accommodateSingleMaleReferenceTranslation = accommodateSingleMaleReferenceTranslation;
-	}
-
-	public Boolean getAccommodateSingleFemaleReferenceTranslation() {
-		return accommodateSingleFemaleReferenceTranslation;
-	}
-
-	public void setAccommodateSingleFemaleReferenceTranslation(Boolean accommodateSingleFemaleReferenceTranslation) {
-		this.accommodateSingleFemaleReferenceTranslation = accommodateSingleFemaleReferenceTranslation;
-	}
-
 	@Override
      public String toString(){
     	return "AccommodationPledge [id=" + id + ", " + "addressOne=" + addressOne + ", " + "addressTwo=" + addressTwo + ", " + "city=" + city + ", " + "stateProvinceRegion=" + stateProvinceRegion + ", " + "postCode=" + postCode + ", " + "country=" + country + ", " + "ownerOccupier=" + ownerOccupier + ", " + "accommodationDateFrom=" + accommodationDateFrom + ", " + "accommodationDateTo=" + accommodationDateTo + ", " + "accommodationType=" + accommodationType + ", " + "accommodationCondition=" + accommodationCondition + ", " + "numberOfBeds=" + numberOfBeds + ", " + "vacantOrShared=" + vacantOrShared + ", " + "otherAmenities=" + otherAmenities + ", " + "additionalInformation=" + additionalInformation + "]";
      }
+
+	public Set<Long> getAmenities() {
+		return this.amenities;
+	}
+
+	public void setAmenities(Set<Long> amenities) {
+		this.amenities = amenities;
+	}
+
+	public Set<Long> getFacilities() {
+		return facilities;
+	}
+
+	public void setFacilities(Set<Long> facilities) {
+		this.facilities = facilities;
+	}
+
+	public Set<Long> getAccommodateWho() {
+		return accommodateWho;
+	}
+
+	public void setAccommodateWho(Set<Long> accommodateWho) {
+		this.accommodateWho = accommodateWho;
+	}
+
+
+
 }
     
     

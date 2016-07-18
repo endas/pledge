@@ -4,6 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
         
 <hibernate-mapping package="org.volunteertech.pledges.accommodationpledge.dao">
+	
 	<class name="AccommodationPledgeImpl" table="ACCOMMODATIONPLEDGE">
 		<id name="id" column="ACCOMMODATIONPLEDGEID">
 	
@@ -39,23 +40,43 @@
 	  
 		<property name="otherAmenities" type="string" column="OTHERAMENITIES" length="500" ></property>	
 	  
-		<!--  <property name="canYouAccommodate" type="long" column="CANYOUACCOMMODATE" length="10" ></property>-->	
-		
-		<property name="accommodateFamily"  type="boolean" column="ACCOMMODATEFAMILY" not-null="false"/>
-		<property name="accommodateCouple"  type="boolean" column="ACCOMMODATECOUPLE" not-null="false"/>
-	  	<property name="accommodateSingleMale"  type="boolean" column="ACCOMMODATESINGLEMALE" not-null="false" />
-	  	<property name="accommodateSingleFemale"  type="boolean" column="ACCOMMODATESINGLEFEMALE" not-null="false" />
-	  
 		<property name="additionalInformation" type="string" column="ADDITIONALINFORMATION" length="500" ></property>	
 	  
         <many-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl" fetch="select">
             <column name="REGISTEROFPLEDGESID" not-null="false" />
         </many-to-one>
   
+  		<!--  TODO - convert these mappings to full foreign keys on the referenceImpl class-->
+		<set name="facilities" table="ACCOMMODATION_FACILITIES" fetch="join" cascade="all">
+            <key>
+                <column name="ACCOMMODATIONPLEDGEID" not-null="true" />
+            </key>
+            <!-- <many-to-many column="REFERENCEID" class="org.volunteertech.pledges.reference.dao.ReferenceImpl" unique="true"/>
+             --><element type="long" column="REFERENCE_ID" not-null="true"  />
+        </set> 
+  		<!--  TODO - convert these mappings to full foreign keys on the referenceImpl class-->
+   		<set name="amenities" table="ACCOMMODATION_AMENITIES" fetch="join" cascade="all">
+            <key>
+                <column name="ACCOMMODATIONPLEDGEID" not-null="true" />
+            </key>
+            <!-- <many-to-many column="REFERENCEID" class="org.volunteertech.pledges.reference.dao.ReferenceImpl" unique="true"/>
+             --><element type="long" column="REFERENCE_ID" not-null="true"  />
+        </set>
+        <!--  TODO - convert these mappings to full foreign keys on the referenceImpl class-->
+        <set name="accommodateWho" table="ACCOMMODATION_WHO" fetch="join" cascade="all">
+            <key>
+                <column name="ACCOMMODATIONPLEDGEID" not-null="true" />
+            </key>
+            <!-- <many-to-many column="REFERENCEID" class="org.volunteertech.pledges.reference.dao.ReferenceImpl" unique="true"/>
+             --><element type="long" column="REFERENCE_ID" not-null="true"  />
+        </set>  
+  		
+  		  		
         <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
         <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+        
     </class>
 </hibernate-mapping>
 

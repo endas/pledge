@@ -100,6 +100,7 @@
   <!-- Refer to spring-datasource.xml to see the available profiles and how they are configured -->
   <context-param>
     <param-name>spring.profiles.active</param-name>
+    <!-- <param-value>localmysql</param-value> -->
     <param-value>local</param-value>
   </context-param>
 

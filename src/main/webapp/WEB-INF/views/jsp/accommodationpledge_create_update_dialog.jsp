@@ -23,8 +23,7 @@
 			<div id="frmAccommodationPledgeCreateUpdateAddressOneAlertBlock" class="alert alert-dismissible hidden" role="alert">
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   				<span id="frmAccommodationPledgeCreateUpdateAddressOneAlertBlockText"></span>
-			</div>
-				  
+			</div>  
 		  </div>
   
 		  <div id="frmAccommodationPledgeCreateUpdateAddressTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
@@ -176,6 +175,33 @@
 			</div>
 				  
 		  </div>
+		  
+		  
+		  <div id="frmAccommodationPledgeCreateUpdateFacilitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.amenities.label" for="frmAccommodationPledgeCreateUpdateFacilities" class="control-label"><spring:message code="frmAccommodationPledgeFacilitiesLabel"/></label>
+			<select id="frmApplicationUserDetailsCreateUpdateFacilitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeFacilitiesPlaceHolder"/>" >
+      			  
+   			 </select>
+			<span id="frmAccommodationPledgeCreateUpdateFacilitiesCountBlock" class="help-block"></span>
+			<div id="frmAccommodationPledgeCreateUpdateFacilitiesAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateFacilitiesAlertBlockText"></span>
+			</div>	  
+		  </div>
+  
+  		
+		  <div id="frmAccommodationPledgeCreateUpdateAmenitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.amenities.label" for="frmAccommodationPledgeCreateUpdateAmenities" class="control-label"><spring:message code="frmAccommodationPledgeAmenitiesLabel"/></label>
+			<select id="frmApplicationUserDetailsCreateUpdateAmenitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeAmenitiesPlaceHolder"/>" >
+      			  
+   			 </select>
+			<span id="frmAccommodationPledgeCreateUpdateAmenitiesCountBlock" class="help-block"></span>
+			<div id="frmAccommodationPledgeCreateUpdateAmenitiesAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateAmenitiesAlertBlockText"></span>
+			</div>	  
+		  </div>
+  
   
 		  <div id="frmAccommodationPledgeCreateUpdateOtherAmenitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.otheramenities.label" for="frmAccommodationPledgeCreateUpdateOtherAmenities" class="control-label"><spring:message code="frmAccommodationPledgeOtherAmenitiesLabel"/></label>
@@ -189,7 +215,7 @@
 				  
 		  </div>
   
-		  <div id="frmAccommodationPledgeCreateUpdateCanYouAccommodateFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+<%-- 		  <div id="frmAccommodationPledgeCreateUpdateCanYouAccommodateFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.canyouaccommodate.label" for="frmAccommodationPledgeCreateUpdateCanYouAccommodate" class="control-label"><spring:message code="frmAccommodationPledgeCanYouAccommodateLabel"/></label>	
 			
 			
@@ -211,6 +237,19 @@
 			</div>
 				  
 		  </div>
+   --%>
+  		<div id="frmAccommodationPledgeCreateUpdateAccommodateWhoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.accommodatewho.label" for="frmAccommodationPledgeCreateUpdateAccommodateWhoSelect" class="control-label"><spring:message code="frmAccommodationPledgeAccommodateWhoLabel"/></label>
+			<select id="frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect" name="accommodatewho" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeAccommodateWhoPlaceHolder"/>" >
+      			  
+   			 </select>
+			<span id="frmAccommodationPledgeCreateUpdateAccommodateWhoCountBlock" class="help-block"></span>
+			<div id="frmAccommodationPledgeCreateUpdateAccommodateWhoAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateAccommodateWhoAlertBlockText"></span>
+			</div>	  
+		  </div>
+  
   
 		  <div id="frmAccommodationPledgeCreateUpdateAdditionalInformationFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.additionalinformation.label" for="frmAccommodationPledgeCreateUpdateAdditionalInformation" class="control-label"><spring:message code="frmAccommodationPledgeAdditionalInformationLabel"/></label>
@@ -243,14 +282,4 @@
     </div>
   </div>
 </div>
-<!-- <style>
-input[type=checkbox], input[type=radio] {
-    vertical-align: middle;
-    position: relative;
-    bottom: 1px;
-}
-input[type=radio] {
-    bottom: 2px;
-}
-</style>
-	 -->
+

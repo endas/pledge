@@ -438,37 +438,16 @@ public interface AccommodationPledge extends Serializable {
      * @return A member of the CurrentMode Enumeration
      */
 	public CurrentMode getCurrentMode();
+		
+	public Set<Long> getAmenities();
+
+	public void setAmenities(Set<Long> amenities);
 	
-	public Boolean getAccommodateFamily();
+	public void setFacilities(Set<Long> facilities);
 
-	public void setAccommodateFamily(Boolean accommodateFamily);
+	public Set<Long> getAccommodateWho();
 
-	public Boolean getAccommodateCouple();
-
-	public void setAccommodateCouple(Boolean accommodateCouple);
-	public Boolean getAccommodateSingleMale();
-
-	public void setAccommodateSingleMale(Boolean accommodateSingleMale);
-
-	public Boolean getAccommodateSingleFemale();
-
-	public void setAccommodateSingleFemale(Boolean accommodateSingleFemale);
-
-	public Boolean getAccommodateFamilyReferenceTranslation();
-
-	public void setAccommodateFamilyReferenceTranslation(Boolean accommodateFamilyReferenceTranslation);
-
-	public Boolean getAccommodateCoupleReferenceTranslation();
-
-	public void setAccommodateCoupleReferenceTranslation(Boolean accommodateCoupleReferenceTranslation);
-
-	public Boolean getAccommodateSingleMaleReferenceTranslation();
-
-	public void setAccommodateSingleMaleReferenceTranslation(Boolean accommodateSingleMaleReferenceTranslation);
-
-	public Boolean getAccommodateSingleFemaleReferenceTranslation();
-
-	public void setAccommodateSingleFemaleReferenceTranslation(Boolean accommodateSingleFemaleReferenceTranslation);
+	public void setAccommodateWho(Set<Long> accommodateWho);
 }
     
     

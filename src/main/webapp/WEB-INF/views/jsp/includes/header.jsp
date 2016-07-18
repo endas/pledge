@@ -21,10 +21,11 @@
 	<spring:url value="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" var="dataTablesForBootstrapCss" />
 	<spring:url value="/resources/css/formstyles.css" var="formStylesCss" />
 	
-
 	<link href="${bundledCss}" rel="stylesheet" />
 	<link href="${fontAwesomeCss}" rel="stylesheet" />
 	<link href="${dataTablesForBootstrapCss}" rel="stylesheet" />
 	<link href="${formStylesCss}" rel="stylesheet" />
-	
+	<!--<spring:url value="/wro/underscoreJs.js" var="underscoreJs" />		-->
+	<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" var="underscoreJs" />	
+	<script src="${underscoreJs}"></script>
 </head>

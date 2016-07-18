@@ -12,7 +12,8 @@
      <css>/resources/bootstrap/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css</css>  
      <css>/resources/bootstrap/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css</css>
      <css>/resources/css/redcross.css</css>
-     <css>/resources/css/main.css</css>
+     <css>/resources/css/main.css</css> 
+     <css>/WEB-INF/resources/js/lib/chosen_v1.6.1/chosen.min.css</css>  
    </group>
    
    <!-- Global JS resources -->  
@@ -23,12 +24,15 @@
      <js>/resources/bootstrap/bootstrap-datepicker-1.4.0-dist/js/bootstrap-datepicker.min.js</js>  
      <js>/resources/bootstrap/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js</js>  
      <js>/resources/bootstrap/bootstrap-ladda-buttons-0.9.4/dist/spin.min.js</js>  
-     <js>/resources/bootstrap/bootstrap-ladda-buttons-0.9.4/dist/ladda.min.js</js>    
+     <js>/resources/bootstrap/bootstrap-ladda-buttons-0.9.4/dist/ladda.min.js</js> 
+     <js>/WEB-INF/resources/js/lib/chosen_v1.6.1/chosen.jquery.min.js</js>
      <js>/WEB-INF/resources/js/netgrains.js</js>  
      <js>/WEB-INF/resources/js/validation.js</js>    
    </group>  
    
-   
+   <group name="underscoreJs">
+   		<js>/WEB-INF/resources/js/lib/underscore-min.js</js>   
+   </group>
    
    <!-- Page specific JS resources -->
    
@@ -58,6 +62,7 @@
    <group name="registerOfPledgesJs">
    
      <js>/WEB-INF/resources/js/registerofpledges/registerofpledges.js</js>
+     
    </group>
 
    <group name="registerOfPledgesTableJs">
