@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.goodspledge.dao">
+	<class name="GoodsPledgeImpl" table="GOODSPLEDGE">
+		<id name="id" column="GOODSPLEDGEID">
+	
+            <generator class="native"/>
+	  
+        </id>
+        
+		<property name="goodsCategoryOne" type="long" column="GOODSCATEGORYONE" length="10" ></property>	
+	  
+		<property name="goodsCategoryTwo" type="long" column="GOODSCATEGORYTWO" length="10" ></property>	
+	  
+		<property name="goodsCategoryThree" type="long" column="GOODSCATEGORYTHREE" length="10" ></property>	
+	  
+		<property name="goodsSize" type="long" column="GOODSSIZE" length="10" ></property>	
+	  
+		<property name="goodsNewOrUsed" type="long" column="GOODSNEWORUSED" length="10" ></property>	
+	  
+		<property name="goodsCondition" type="long" column="GOODSCONDITION" length="10" ></property>	
+	  
+		<property name="goodsQuantity" type="long" column="GOODSQUANTITY" length="10" ></property>	
+	  
+		<property name="additionalInformation" type="string" column="ADDITIONALINFORMATION" length="500" ></property>	
+	  
+		<property name="itemSize" type="string" column="ITEMSIZE" length="500" ></property>	
+	  
+        <many-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl" fetch="select">
+            <column name="REGISTEROFPLEDGESID" not-null="false" />
+        </many-to-one>
+  
+        <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

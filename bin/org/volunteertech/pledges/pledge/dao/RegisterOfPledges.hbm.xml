@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.pledge.dao">
+	<class name="RegisterOfPledgesImpl" table="REGISTEROFPLEDGES">
+		<id name="id" column="REGISTEROFPLEDGESID">
+	
+            <generator class="native"/>
+	  
+        </id>
+        
+  		<!-- Mapping for one-to-one relationship defined in RegisterOfPledges.applicationUserDetails in ApplicationDef.xml -->
+		<one-to-one name="applicationUserDetails" class="org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl"
+			cascade="save-update"></one-to-one>
+  
+        <set name="accommodationPledges" table="ACCOMMODATIONPLEDGE" inverse="true" lazy="true" fetch="select" cascade="save-update">
+            <key>
+                <column name="REGISTEROFPLEDGESID" not-null="true" />
+            </key>
+            <one-to-many class="org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeImpl" />
+        </set>
+  
+        <set name="servicePledges" table="SERVICEPLEDGE" inverse="true" lazy="true" fetch="select" cascade="save-update">
+            <key>
+                <column name="REGISTEROFPLEDGESID" not-null="true" />
+            </key>
+            <one-to-many class="org.volunteertech.pledges.servicepledge.dao.ServicePledgeImpl" />
+        </set>
+  
+        <set name="goodsPledges" table="GOODSPLEDGE" inverse="true" lazy="true" fetch="select" cascade="save-update">
+            <key>
+                <column name="REGISTEROFPLEDGESID" not-null="true" />
+            </key>
+            <one-to-many class="org.volunteertech.pledges.goodspledge.dao.GoodsPledgeImpl" />
+        </set>
+  
+        <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

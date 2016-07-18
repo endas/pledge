@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.reference.dao">
+	<class name="ReferenceHistory" table="REFERENCEHISTORY">
+		<id name="id" column="REFERENCEHISTORYID">
+            <generator class="native"/>
+        </id>
+        <property name="referenceID" type="long" column="REFERENCEID"/>
+        
+		<property name="refType" type="string" column="REFTYPE" length="50"></property>	
+	  
+		<property name="refDesc" type="string" column="REFDESC" length="50"></property>	
+	  
+		<property name="parentId" type="long" column="PARENTID" length="10"></property>	
+	  
+		<property name="refIndex" type="long" column="REFINDEX" length="10"></property>	
+	  
+		<property name="description" type="string" column="DESCRIPTION" length="200"></property>	
+	  
+        <property name="createdByID" type="long" column="CREATEDBYID"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

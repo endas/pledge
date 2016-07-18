@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.address.dao">
+	<class name="AddressHistory" table="ADDRESSHISTORY">
+		<id name="id" column="ADDRESSHISTORYID">
+            <generator class="native"/>
+        </id>
+        <property name="addressID" type="long" column="ADDRESSID"/>
+        
+		<property name="addressOne" type="string" column="ADDRESSONE" length="50"></property>	
+	  
+		<property name="addressTwo" type="string" column="ADDRESSTWO" length="50"></property>	
+	  
+		<property name="city" type="string" column="CITY" length="50"></property>	
+	  
+		<property name="stateProvinceRegion" type="string" column="STATEPROVINCEREGION" length="50"></property>	
+	  
+		<property name="postCode" type="string" column="POSTCODE" length="10"></property>	
+	  
+		<property name="country" type="long" column="COUNTRY" length="10"></property>	
+	  
+        <property name="createdByID" type="long" column="CREATEDBYID"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+

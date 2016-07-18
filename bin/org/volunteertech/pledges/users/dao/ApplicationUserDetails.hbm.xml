@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.volunteertech.pledges.users.dao">
+	<class name="ApplicationUserDetailsImpl" table="APPLICATIONUSERDETAILS" dynamic-update="true">
+		<id name="id" column="APPLICATIONUSERDETAILSID">
+	
+			<!-- This entity is the focus of a one-to-one association defined as RegisterOfPledges.applicationUserDetails in ApplicationDef.xml -->
+			<!-- Use a foreign identifier generator to ensure that the primary key is matched to that of the RegisterOfPledges entity. -->
+			<!-- With constrained=”true” on the registerOfPledges property, we ensure that the corresponding RegisterOfPledges does exist. -->
+			<generator class="foreign">
+				<param name="property">registerOfPledges</param>
+			</generator>
+
+        </id>
+        
+		<property name="contactName" type="string" column="CONTACTNAME" length="50" not-null="true"></property>	
+	  
+		<property name="representOrganisation" type="long" column="REPRESENTORGANISATION" length="10" not-null="true"></property>	
+	  	<property name="organisationName" type="string" column="ORGANISATIONNAME" length="256" not-null="false"></property>	
+		<property name="telephoneNumber" type="string" column="TELEPHONENUMBER" length="20" ></property>	
+	  
+		<property name="addressOne" type="string" column="ADDRESSONE" length="50" not-null="true"></property>	
+	  
+		<property name="addressTwo" type="string" column="ADDRESSTWO" length="50" not-null="true"></property>	
+	  
+		<property name="city" type="string" column="CITY" length="50" ></property>	
+	  
+		<property name="stateProvinceRegion" type="string" column="STATEPROVINCEREGION" length="50" ></property>	
+	  
+		<property name="postCode" type="string" column="POSTCODE" length="10" ></property>	
+	  
+		<property name="country" type="long" column="COUNTRY" length="10" not-null="true"></property>	
+	  
+		<property name="emailAddress" type="string" column="EMAILADDRESS" length="256" not-null="true"></property>	
+	  
+		<one-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl"
+			constrained="true"></one-to-one>
+			 
+		<property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
+        <property name="updatedByID" type="long" column="UPDATEDBYID"/>
+        <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
+        <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+    </class>
+</hibernate-mapping>
+
