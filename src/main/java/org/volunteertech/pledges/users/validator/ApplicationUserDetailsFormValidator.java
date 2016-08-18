@@ -63,15 +63,15 @@ public class ApplicationUserDetailsFormValidator implements Validator {
 			errors.rejectValue("addressOne", "applicationuserdetails.addressone.validation.minimumlength", new Object[] {5}, "> 5");
 		}
 		    
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "addressTwo", "applicationuserdetails.addresstwo.validation.required");    
+//		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "addressTwo", "applicationuserdetails.addresstwo.validation.required");    
         
 		if (applicationUserDetails.getAddressTwo().length() > 50){
 			errors.rejectValue("addressTwo", "applicationuserdetails.addresstwo.validation.length", new Object[] {50}, "< 50");
 		}
 		  
-		if ( (applicationUserDetails.getAddressTwo().length() > 0) && (applicationUserDetails.getAddressTwo().length() < 5) ){
-			errors.rejectValue("addressTwo", "applicationuserdetails.addresstwo.validation.minimumlength", new Object[] {5}, "> 5");
-		}
+//		if ( (applicationUserDetails.getAddressTwo().length() > 0) && (applicationUserDetails.getAddressTwo().length() < 5) ){
+//			errors.rejectValue("addressTwo", "applicationuserdetails.addresstwo.validation.minimumlength", new Object[] {5}, "> 5");
+//		}
 		    
 		if (applicationUserDetails.getCity().length() > 50){
 			errors.rejectValue("city", "applicationuserdetails.city.validation.length", new Object[] {50}, "< 50");

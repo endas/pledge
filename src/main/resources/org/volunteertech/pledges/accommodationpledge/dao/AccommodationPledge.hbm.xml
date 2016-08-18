@@ -14,7 +14,7 @@
         
 		<property name="addressOne" type="string" column="ADDRESSONE" length="50" not-null="true"></property>	
 	  
-		<property name="addressTwo" type="string" column="ADDRESSTWO" length="50" not-null="true"></property>	
+		<property name="addressTwo" type="string" column="ADDRESSTWO" length="50" not-null="false"></property>	
 	  
 		<property name="city" type="string" column="CITY" length="50" ></property>	
 	  
