@@ -7,9 +7,7 @@
 	
 	<class name="AccommodationPledgeImpl" table="ACCOMMODATIONPLEDGE">
 		<id name="id" column="ACCOMMODATIONPLEDGEID">
-	
             <generator class="native"/>
-	  
         </id>
         
 		<property name="addressOne" type="string" column="ADDRESSONE" length="50" not-null="true"></property>	

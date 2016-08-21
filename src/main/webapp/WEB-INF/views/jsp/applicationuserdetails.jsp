@@ -416,7 +416,7 @@
                                                 <spring:message code="frmApplicationUserDetailsRepresentOrganisationPlaceHolder" var="unselectedRepresentOrganisation" />
 
                                                 <form:select path="representOrganisation" data-display-name="Are you pledging on behalf of an organisation?" data-reference-type="Yes_No" data-select-type="standalone" data-required="true" class="form-control" id="frmApplicationUserDetailsRepresentOrganisation" aria-describedby="frmApplicationUserDetailsRepresentOrganisationHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmApplicationUserDetails'), frmApplicationUserDetailsBuffer, '', 'Select placeholder')">
-                                                    <form:option value="-1" label="${unselectedRepresentOrganisation}" />
+                                                    <form:option value="false" label="${unselectedRepresentOrganisation}" />
 
                                                     <form:options items="${representOrganisationMap}" />
 

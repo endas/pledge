@@ -55,7 +55,7 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 	private String contactName;
 
 	/** the pledge is from an organisation */
-	private Long representOrganisation;
+	private Boolean representOrganisation;
 
 	/** the pledge is from an organisation */
 	private String organisationName;
@@ -119,7 +119,7 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 
 		this.contactName = new String();
 
-		this.representOrganisation = new Long("0");
+		this.representOrganisation = false;
 
 		this.telephoneNumber = new String();
 
@@ -203,7 +203,7 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 	 * Sets the pledge is from an organisation that has been chosen by the user
 	 * @param representOrganisation is the pledge is from an organisation
 	 */
-	public void setRepresentOrganisation(Long representOrganisation)
+	public void setRepresentOrganisation(Boolean representOrganisation)
 	{
 		this.representOrganisation = representOrganisation;
 	}
@@ -212,7 +212,7 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 	 * Returns the pledge is from an organisation that has been chosen by the user or saved in the database
 	 * @return the pledge is from an organisation
 	 */
-	public Long getRepresentOrganisation()
+	public Boolean getRepresentOrganisation()
 	{
 		return representOrganisation;
 	}

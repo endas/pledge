@@ -475,16 +475,12 @@ public class ApplicationUserDetailsServiceImpl implements ApplicationUserDetails
 	 * @param locale the Locale to be displayed
 	 */    
     public ApplicationUserDetails translateReferenceValues(ApplicationUserDetails applicationUserDetails, Locale locale){
-    	
-			Long representOrganisationReferenceId =  applicationUserDetails.getRepresentOrganisation();
-			String representOrganisationLocaleReference = null;
-			if (representOrganisationReferenceId == null || representOrganisationReferenceId <= 0 ){
-				representOrganisationLocaleReference = this.messageResourceService.getMessage("global.select.noselection", new String[0], locale);
+			Boolean representOrganisation =  applicationUserDetails.getRepresentOrganisation();
+			if(representOrganisation){
+				applicationUserDetails.setRepresentOrganisationReferenceTranslation(messageResourceService.getMessage(Constants.REFERENCE_YES_NO__YES, new String[0], locale));
 			}else{
-				representOrganisationLocaleReference = messageResourceService.getMessage(representOrganisationReferenceId, new String[0], locale);
+				applicationUserDetails.setRepresentOrganisationReferenceTranslation(messageResourceService.getMessage(Constants.REFERENCE_YES_NO__NO, new String[0], locale));
 			}
-			
-			applicationUserDetails.setRepresentOrganisationReferenceTranslation(representOrganisationLocaleReference);
 
 			Long countryReferenceId =  applicationUserDetails.getCountry();
 			String countryLocaleReference = null;

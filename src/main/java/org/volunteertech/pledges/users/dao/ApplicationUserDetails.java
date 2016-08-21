@@ -86,13 +86,13 @@ public interface ApplicationUserDetails extends Serializable {
      * Sets the pledge is from an organisation that has been chosen by the user
      * @param representOrganisation is the pledge is from an organisation
      */
-    public void setRepresentOrganisation(Long representOrganisation);
+    public void setRepresentOrganisation(Boolean representOrganisation);
 
     /**
      * Returns the pledge is from an organisation that has been chosen by the user or saved in the database
      * @return the pledge is from an organisation
      */
-    public Long getRepresentOrganisation();
+    public Boolean getRepresentOrganisation();
     
     /**
      * Sets the translated reference mapping for the pledge is from an organisation that has been chosen by the user
