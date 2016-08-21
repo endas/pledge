@@ -41,9 +41,9 @@ public class ApplicationUserDetailsFormValidator implements Validator {
 			errors.rejectValue("contactName", "applicationuserdetails.contactname.validation.minimumlength", new Object[] {2}, "> 2");
 		}
 		    
-		if(applicationUserDetails.getRepresentOrganisation() == 0 || applicationUserDetails.getRepresentOrganisation() == -1){
-			errors.rejectValue("representOrganisation", "applicationuserdetails.representorganisation.validation.required");
-		}
+//		if(applicationUserDetails.getRepresentOrganisation() == 0 || applicationUserDetails.getRepresentOrganisation() == -1){
+//			errors.rejectValue("representOrganisation", "applicationuserdetails.representorganisation.validation.required");
+//		}
         
 		if (applicationUserDetails.getTelephoneNumber().length() > 20){
 			errors.rejectValue("telephoneNumber", "applicationuserdetails.telephonenumber.validation.length", new Object[] {20}, "< 20");

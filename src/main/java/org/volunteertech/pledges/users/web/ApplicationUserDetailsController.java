@@ -495,10 +495,10 @@ public class ApplicationUserDetailsController extends BaseController
 	private void setDropDownContents(Model model, ApplicationUserDetails applicationUserDetails, Locale locale) {
 		
 		Map<Long, String> representOrganisationMap = referenceStore.getYes_No();
-		SortedMap<Long, String> localizedrepresentOrganisationMap = new TreeMap<Long, String>(representOrganisationMap);
-		for (Map.Entry<Long, String> entry : representOrganisationMap.entrySet()) {
-			localizedrepresentOrganisationMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
+		//All This stuff is completely ridiculous IMO -It is just a boolean field.. Dessie..
+		Map<Boolean, String> localizedrepresentOrganisationMap = new HashMap<Boolean, String>();
+		localizedrepresentOrganisationMap.put(false,  messageSource.getMessage(representOrganisationMap.get(Constants.REFERENCE_YES_NO__NO), new String[0], locale));
+		localizedrepresentOrganisationMap.put(true,  messageSource.getMessage(representOrganisationMap.get(Constants.REFERENCE_YES_NO__YES), new String[0], locale));
 		model.addAttribute("representOrganisationMap", localizedrepresentOrganisationMap);
 	      
 		Map<Long, String> countryMap = referenceStore.getEuropeCountry();

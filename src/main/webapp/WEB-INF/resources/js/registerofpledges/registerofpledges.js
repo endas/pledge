@@ -403,13 +403,19 @@ $( document ).ready(function() {
 				success: function( data ) {
 					var unselectedOption = document.createElement("option");
 					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Are you pledging on behalf of an organisation?";
+					
+					unselectedOption.textContent = "Select are you pledging on behalf of an organisation?";
 					representOrganisationSelectInput.appendChild(unselectedOption);
 
 					$.each( data, function( key, val ) {
 						var el = document.createElement("option");
 						el.textContent = val;
-						el.value = key;
+						//hardcoding this for the moment... needs to be sorted if other languages are used
+						if(el.textContent=="Yes"){
+							el.value = true;
+						}else{
+							el.value = false;
+						}
 
 						representOrganisationSelectInput.appendChild(el);
 						frmApplicationUserDetailsCreateUpdateRepresentOrganisationSetupCompleted = true;
@@ -420,7 +426,9 @@ $( document ).ready(function() {
 		else{
 			frmApplicationUserDetailsCreateUpdateRepresentOrganisationSetupCompleted = true;
 		}
-
+		$(representOrganisationSelectInput).change(function(v){
+			$('#frmApplicationUserDetailsCreateUpdateOrganisationNameFormGroup').toggle($(this).val());
+		});
 		var countrySelectInput = document.getElementById('frmApplicationUserDetailsCreateUpdateCountry');
 
 		if (countrySelectInput.length == 0){
@@ -600,6 +608,8 @@ $( document ).ready(function() {
 
 					frmApplicationUserDetailsCreateUpdateRepresentOrganisationTimeOut();
 
+					modal.find('#frmApplicationUserDetailsRepresentOrganisation').val(data.representOrganisation);
+					
 					modal.find('#frmApplicationUserDetailsCreateUpdateTelephoneNumber').val(data.telephoneNumber);
 					frmApplicationUserDetailsCreateUpdateTelephoneNumberBuffer = data.telephoneNumber;
 
@@ -618,8 +628,13 @@ $( document ).ready(function() {
 					modal.find('#frmApplicationUserDetailsCreateUpdatePostCode').val(data.postCode);
 					frmApplicationUserDetailsCreateUpdatePostCodeBuffer = data.postCode;
 
+					modal.find('#frmApplicationUserDetailsRepresentOrganisation').val(data.representOrganisationReferenceTranslation);
+					modal.find('#frmApplicationUserDetailsCreateUpdateOrganisationNameFormGroup').toggle(data.representOrganisation);
+//					frmApplicationUserDetailsCreateUpdateRepresentOrganisationBuffer = data.representOrganisation;
+					
 					modal.find('#frmApplicationUserDetailsCreateUpdateOrganisationName').val(data.organisationName);
 					frmApplicationUserDetailsCreateUpdateOrganisationNameBuffer = data.organisationName;
+					
 
 					function frmApplicationUserDetailsCreateUpdateCountryTimeOut() {
 						setTimeout(function () {
@@ -654,7 +669,8 @@ $( document ).ready(function() {
 		if (frmApplicationUserDetailsCreateUpdateLaddaSubmitButtonHandler != null){
 			frmApplicationUserDetailsCreateUpdateLaddaSubmitButtonHandler.stop();
 		}
-		$('#frmApplicationUserDetailsCreateUpdateContactInformationInstructions').focus()
+		$('#frmApplicationUserDetailsCreateUpdateContactInformationInstructions').focus();
+		
 	});	
 
 
@@ -759,6 +775,7 @@ $( document ).ready(function() {
 							row.appendChild(cell);
 
 							var cell = document.createElement("td");
+//							var cellText = document.createTextNode(obj.representOrganisation) == "true"?"Yes":"No";
 							var cellText = document.createTextNode(obj.representOrganisationReferenceTranslation);
 							cell.appendChild(cellText);
 							row.appendChild(cell);

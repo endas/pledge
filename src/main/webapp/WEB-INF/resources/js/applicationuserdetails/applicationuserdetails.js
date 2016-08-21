@@ -212,7 +212,8 @@ $( document ).ready(function() {
 
 	
 	$('#frmApplicationUserDetailsRepresentOrganisation').change(function(event){
-		if($(event.currentTarget).val()=="131"){
+		
+		if($(event.currentTarget).val()=="true"){
 			$('#frmApplicationUserDetailsOrganisationNameFormGroup').removeClass("hidden");
 		}else{
 			$('#frmApplicationUserDetailsOrganisationNameFormGroup').addClass("hidden");
