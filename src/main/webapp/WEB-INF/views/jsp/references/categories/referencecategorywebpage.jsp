@@ -1,11 +1,13 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><!DOCTYPE html>
 <html lang="en">
-<spring:message code="reference.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="referencecategory.form.title" var="title"/>
+<jsp:include page="../../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
-	<jsp:param name="beanName" value="reference" />
+	<jsp:param name="beanName" value="referenceCategory" />
 </jsp:include>
 <body>
+
+<jsp:include page="../reference_create_update_dialog.jsp"/>
 
 <spring:url value="/landingwebpage" var="urlHome"/>
 <spring:url value="/entitylist" var="urlAppHome"/>
@@ -28,6 +30,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             
+				<li><a role="button" data-toggle="modal" data-backdrop="static" data-target="#referenceCreateUpdateModal" data-id=null data-modal-title="Add Reference" data-association-type="many-to-many" data-callback-display-type="table" data-callback-table-body-id="referencesTableBody" data-property-url="references">Add Reference</a></li>
+      
             <li><a class="page-scroll" href="#aboutSection">About</a></li>
             <li><a class="page-scroll" href="#servicesSection">Services</a></li>
             <li><a class="page-scroll" href="#productsSection">Products</a></li>
@@ -50,9 +54,9 @@
      <div class="container-fluid hero">
      		<spring:url value="/resources/images/redcross-banner.jpg" var="headerBanner" />
 			<div class="jumbotron">
-			  <h1><spring:message code="reference.form.header"/></h1>
+			  <h1><spring:message code="referencecategory.form.header"/></h1>
 			  
-			  <p><spring:message code="reference.form.subheader"/></p>
+			  <p><spring:message code="referencecategory.form.subheader"/></p>
 			  <a class="btn btn-primary btn-lg" data-toggle="modal" data-backdrop="static" data-target="#contactInformationCreateUpdateModal" data-id="${landingFormModel.id}" data-modal-title="Contact Us" data-association-type="one-to-one" data-callback-display-type="inline" data-callback-table-body-id="contactInformationTableBody" data-property-url="contactinformation">Contact Us</a>
 			  <h2>Built by Netgrains</h2>
 			  <p>This system was built using Netgrains Data Harvester software.</p>
@@ -60,14 +64,14 @@
 			</div>
     </div>
     
-	  	<spring:url value="/references" var="referenceActionUrl" />
+	  	<spring:url value="/referencecategorys" var="referenceCategoryActionUrl" />
 	
-	<form:form id="frmReference" class="form-horizontal" method="post" accept-charset="utf-8"
-                modelAttribute="referenceFormModel" action="${referenceActionUrl}">
-		<form:hidden id="frmReferenceReferenceId" path="id" />
-		<input type="hidden" id="frmReferenceReferenceMode" value="webpage" />
+	<form:form id="frmReferenceCategory" class="form-horizontal" method="post" accept-charset="utf-8"
+                modelAttribute="referenceCategoryFormModel" action="${referenceCategoryActionUrl}">
+		<form:hidden id="frmReferenceCategoryReferenceCategoryId" path="id" />
+		<input type="hidden" id="frmReferenceCategoryReferenceCategoryMode" value="webpage" />
 	</form:form>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
+<jsp:include page="../../includes/redcrossfooter.jsp" />
 
 
 <script>  
@@ -75,9 +79,9 @@ var rootContext = "${pageContext.request.contextPath}";
 </script>
 
   
-<spring:url value="/wro/referenceJs.js" var="referenceJs" />
+<spring:url value="/wro/referenceCategoryJs.js" var="referenceCategoryJs" />
   
-<script src="${referenceJs}"></script>
+<script src="${referenceCategoryJs}"></script>
 
 </body>
 </html>

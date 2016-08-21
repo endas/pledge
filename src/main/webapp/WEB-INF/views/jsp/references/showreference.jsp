@@ -1,7 +1,7 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><!DOCTYPE html>
 <html lang="en">
-<spring:message code="referencecategory.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="reference.form.title" var="title"/>
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 </jsp:include>
 <body>
@@ -38,42 +38,56 @@
 		</div>
 	</c:if>
 
-	<h1><spring:message code="referencecategory.form.header"/></h1>
+	<h1><spring:message code="reference.form.header"/></h1>
 	<br />
 	
 	
 
 	<div class="row">
-		<label class="col-sm-2">Reference Category</label>
-		<div class="col-sm-10">${referenceCategory.referenceCategoryDesc}</div>
+		<label class="col-sm-2">Reference Type</label>
+		<div class="col-sm-10">${reference.refType}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Parent Category Id</label>
-		<div class="col-sm-10">${referenceCategory.parentCategoryId}</div>
+		<label class="col-sm-2">Reference Description</label>
+		<div class="col-sm-10">${reference.refDesc}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Parent Id</label>
+		<div class="col-sm-10">${reference.parentId}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Reference Index</label>
+		<div class="col-sm-10">${reference.refIndex}</div>
 	</div>
 
 
 
 	<div class="row">
 		<label class="col-sm-2">Long Description</label>
-		<div class="col-sm-10">${referenceCategory.description}</div>
+		<div class="col-sm-10">${reference.description}</div>
 	</div>
 
 
 
 	<div class="row">
 		<label class="col-sm-2">Save</label>
-		<div class="col-sm-10">${referenceCategory.saveButton}</div>
+		<div class="col-sm-10"><spring:message code="frmReferenceSaveButtonLabel"/></div>
 	</div>
 
 
 
 
 </div>
-<jsp:include page="../jsp/includes/footer.jsp" />
-<spring:url value="/scripts/js/referencecategory/referencecategory.js" var="referencecategoryJs" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
+<spring:url value="/scripts/js/reference/reference.js" var="referenceJs" />
 </body>
 </html>

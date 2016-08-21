@@ -72,6 +72,7 @@ import org.volunteertech.pledges.reference.ReferenceStore;
 public class ReferenceCategoryController extends BaseController
 {
 
+	public static final String TEMPLATE_PREFIX = "references/categories/";
     /**
      * userId used for development. This should be taken from the session.
      */
@@ -113,7 +114,7 @@ public class ReferenceCategoryController extends BaseController
 
 		logger.debug("showAllReferenceCategory()");
 			
-		return "referencecategory_table";
+		return TEMPLATE_PREFIX+"referencecategory_table";
 
 	}
 	
@@ -133,7 +134,7 @@ public class ReferenceCategoryController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "referencecategory_localize";
+		return TEMPLATE_PREFIX+"referencecategory_localize";
 
 	}
 	
@@ -160,7 +161,7 @@ public class ReferenceCategoryController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "referencecategory";
+			return TEMPLATE_PREFIX+"referencecategory";
 		} else {
 
 			// Add message to flash scope
@@ -210,7 +211,7 @@ public class ReferenceCategoryController extends BaseController
 
 		setDropDownContents(model, referenceCategory, locale);
 
-		return "referencecategory";
+		return TEMPLATE_PREFIX+"referencecategory";
 
 	}
 	
@@ -235,7 +236,7 @@ public class ReferenceCategoryController extends BaseController
 
 		setDropDownContents(model, referenceCategory, locale);
 
-		return "referencecategorywebpage";
+		return TEMPLATE_PREFIX+"referencecategorywebpage";
 
 	}
 	
@@ -261,7 +262,7 @@ public class ReferenceCategoryController extends BaseController
 		
 		setDropDownContents(model, referenceCategory, locale);
 		
-		return "referencecategory";
+		return TEMPLATE_PREFIX+"referencecategory";
 
 	}
 
@@ -304,7 +305,7 @@ public class ReferenceCategoryController extends BaseController
 		
 		setDropDownContents(model, referenceCategory, locale);
 
-		return "showreferencecategory";
+		return TEMPLATE_PREFIX+"showreferencecategory";
 
 	}
 	

@@ -1,9 +1,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><!DOCTYPE html>
 <html lang="en">
-<spring:message code="reference.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="referencecategory.form.title" var="title"/>
+<jsp:include page="../../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
-	<jsp:param name="beanName" value="reference" />
+	<jsp:param name="beanName" value="referenceCategory" />
 </jsp:include>
 <body>
 <spring:url value="/landingwebpage" var="urlHome"/>
@@ -32,7 +32,7 @@
     
 	<div class="container">
 		<div class="page-header">
-			<h1><spring:message code="reference.form.header"/></h1>
+			<h1><spring:message code="referencecategory.form.header"/></h1>
 		</div>
 	</div>
 	<div id="frmLoadedFeedBack" class="alert alert-${css} alert-dismissible <c:if test="${empty msg}">invisible</c:if>" role="alert">
@@ -44,28 +44,22 @@
 	
 	<spring:message code="global.date.dateformat" var="dateFormat"/>
 		
-	<spring:url value="/reference/add" var="addReferenceUrl" />
+	<spring:url value="/referencecategory/add" var="addReferenceCategoryUrl" />
 	<div class="container">
 		<div class="well">
 		
 		<div class="table-responsive">
-		<table id="referenceTable" class="table table-striped table-bordered">
+		<table id="referenceCategoryTable" class="table table-striped table-bordered">
 			<thead>
 				<tr>
 					<th></th> <!-- Actions buttons -->
 					 
-					<th><spring:message code="frmReferenceRefTypeLabel"/></th>      
+					<th><spring:message code="frmReferenceCategoryReferenceCategoryDescLabel"/></th>      
        
-					<th><spring:message code="frmReferenceRefDescLabel"/></th>      
+					<th><spring:message code="frmReferenceCategoryParentCategoryIdLabel"/></th>      
        
-					<th><spring:message code="frmReferenceParentIdLabel"/></th>      
-       
-					<th><spring:message code="frmReferenceRefIndexLabel"/></th>      
-       
-					<th><spring:message code="frmReferenceDescriptionLabel"/></th>      
+					<th><spring:message code="frmReferenceCategoryDescriptionLabel"/></th>      
       
-					<th></th> <!-- Associations links -->
-					
 				</tr>
 			</thead>
 			<tbody>
@@ -75,7 +69,7 @@
 		</div>
 		</div> <!-- class="well" -->
 	</div> <!-- class="container" -->
-		<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
+		<jsp:include page="../../includes/redcrossfooter.jsp" />
 	
 <script>  
 var rootContext = "${pageContext.request.contextPath}";
@@ -87,9 +81,9 @@ var rootContext = "${pageContext.request.contextPath}";
 <script src="${dataTablesForBootstrapJs}"></script>
 
   
-<spring:url value="/wro/referenceTableJs.js" var="referenceTableJs" />
+<spring:url value="/wro/referenceCategoryTableJs.js" var="referenceCategoryTableJs" />
   
-<script src="${referenceTableJs}"></script>
+<script src="${referenceCategoryTableJs}"></script>
 
 
 </body>

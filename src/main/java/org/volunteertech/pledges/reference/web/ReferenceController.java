@@ -73,7 +73,7 @@ import org.volunteertech.pledges.reference.ReferenceStore;
 @Controller
 public class ReferenceController extends BaseController
 {
-
+	public static final String TEMPLATE_PREFIX = "references/";
     /**
      * userId used for development. This should be taken from the session.
      */
@@ -115,7 +115,7 @@ public class ReferenceController extends BaseController
 
 		logger.debug("showAllReference()");
 			
-		return "reference_table";
+		return TEMPLATE_PREFIX+"reference_table";
 
 	}
 	
@@ -135,7 +135,7 @@ public class ReferenceController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "reference_localize";
+		return TEMPLATE_PREFIX+"reference_localize";
 
 	}
 	
@@ -162,7 +162,7 @@ public class ReferenceController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "reference";
+			return TEMPLATE_PREFIX+"reference";
 		} else {
 
 			// Add message to flash scope
@@ -212,7 +212,7 @@ public class ReferenceController extends BaseController
 
 		setDropDownContents(model, reference, locale);
 
-		return "reference";
+		return TEMPLATE_PREFIX+"reference";
 
 	}
 	
@@ -237,7 +237,7 @@ public class ReferenceController extends BaseController
 
 		setDropDownContents(model, reference, locale);
 
-		return "referencewebpage";
+		return TEMPLATE_PREFIX+"referencewebpage";
 
 	}
 	
@@ -263,7 +263,7 @@ public class ReferenceController extends BaseController
 		
 		setDropDownContents(model, reference, locale);
 		
-		return "reference";
+		return TEMPLATE_PREFIX+"reference";
 
 	}
 
@@ -306,7 +306,7 @@ public class ReferenceController extends BaseController
 		
 		setDropDownContents(model, reference, locale);
 
-		return "showreference";
+		return TEMPLATE_PREFIX+"showreference";
 
 	}
 	
@@ -427,7 +427,7 @@ public class ReferenceController extends BaseController
 		List<ReferenceCategory> referenceCategoryList = this.referenceService.getReferenceBo().getReferenceDao().listReferenceCategoryByReferenceId(new Long(id), userId);
 
 		if (referenceCategoryList.size() == 1){
-			returnPath = "forward:/referencecategory/" + referenceCategoryList.get(0).getId() + "/update";
+			returnPath = "forward:/referencecategory"+referenceCategoryList.get(0).getId() + "/update";
 		}
 		else{
 			returnPath = "forward:/referencecategory/all";
