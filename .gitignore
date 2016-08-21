@@ -6,3 +6,5 @@
 .classpath
 .project
 .gradle
+.idea/
+*.orig
