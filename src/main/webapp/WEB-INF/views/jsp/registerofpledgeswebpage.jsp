@@ -11,7 +11,7 @@
 
 <jsp:include page="../jsp/accommodationpledge_create_update_dialog.jsp"/>
 
-<jsp:include page="../jsp/servicepledge_create_update_dialog.jsp"/>
+<jsp:include page="services/servicepledge_create_update_dialog.jsp"/>
 
 <jsp:include page="../jsp/goodspledge_create_update_dialog.jsp"/>
 

@@ -80,7 +80,7 @@
 
 
 </div>
-<jsp:include page="../jsp/includes/footer.jsp" />
+<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
 <spring:url value="/scripts/js/applicationuser/applicationuser.js" var="applicationuserJs" />
 </body>
 </html>
