@@ -74,6 +74,8 @@ import org.volunteertech.pledges.reference.ReferenceStore;
 public class ServicePledgeController extends BaseController
 {
 
+	public static final String TEMPLATE_PREFIX = "services/";
+
     /**
      * userId used for development. This should be taken from the session.
      */
@@ -115,7 +117,7 @@ public class ServicePledgeController extends BaseController
 
 		logger.debug("showAllServicePledge()");
 			
-		return "servicepledge_table";
+		return TEMPLATE_PREFIX + "servicepledge_table";
 
 	}
 	
@@ -135,7 +137,7 @@ public class ServicePledgeController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "servicepledge_localize";
+		return TEMPLATE_PREFIX + "servicepledge_localize";
 
 	}
 	
@@ -162,7 +164,7 @@ public class ServicePledgeController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "servicepledge";
+			return TEMPLATE_PREFIX + "servicepledge";
 		} else {
 
 			// Add message to flash scope
@@ -212,7 +214,7 @@ public class ServicePledgeController extends BaseController
 
 		setDropDownContents(model, servicePledge, locale);
 
-		return "servicepledge";
+		return TEMPLATE_PREFIX + "servicepledge";
 
 	}
 	
@@ -237,7 +239,7 @@ public class ServicePledgeController extends BaseController
 
 		setDropDownContents(model, servicePledge, locale);
 
-		return "servicepledgewebpage";
+		return TEMPLATE_PREFIX + "servicepledgewebpage";
 
 	}
 	
@@ -263,7 +265,7 @@ public class ServicePledgeController extends BaseController
 		
 		setDropDownContents(model, servicePledge, locale);
 		
-		return "servicepledge";
+		return TEMPLATE_PREFIX + "servicepledge";
 
 	}
 
@@ -306,7 +308,7 @@ public class ServicePledgeController extends BaseController
 		
 		setDropDownContents(model, servicePledge, locale);
 
-		return "showservicepledge";
+		return TEMPLATE_PREFIX + "showservicepledge";
 
 	}
 	
