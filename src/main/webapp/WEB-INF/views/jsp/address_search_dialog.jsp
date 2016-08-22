@@ -108,10 +108,10 @@
       
 		<spring:bind path="postCode">
 		  <div id="frmAddressPostCodeFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
-			<label class="col-sm-2 control-label">Post Code</label>
+			<label class="col-sm-2 control-label">Eircode</label>
 			<div class="col-sm-10">
 				
-				<form:input path="postCode" type="text" maxlength="10" class="form-control" id="frmAddressPostCode" placeholder="Post Code"  />
+				<form:input path="postCode" type="text" maxlength="10" class="form-control" id="frmAddressPostCode" placeholder="Eircode"  />
     
 				<span id="frmAddressPostCodeJavascriptErrorDisplay" class="control-label"> </span>				  
 				<form:errors path="postCode" class="control-label" />

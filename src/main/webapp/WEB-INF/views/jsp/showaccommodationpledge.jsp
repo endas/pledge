@@ -72,7 +72,7 @@
 
 
 	<div class="row">
-		<label class="col-sm-2">Post Code</label>
+		<label class="col-sm-2">Eircode</label>
 		<div class="col-sm-10">${accommodationPledge.postCode}</div>
 	</div>
 

@@ -64,7 +64,7 @@
   
 		  <div id="frmAccommodationPledgeCreateUpdatePostCodeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.postcode.label" for="frmAccommodationPledgeCreateUpdatePostCode" class="control-label"><spring:message code="frmAccommodationPledgePostCodeLabel"/></label>
-			<input type="text" data-display-name="Post Code" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAccommodationPledgeCreateUpdatePostCode" placeholder="<spring:message code="frmAccommodationPledgePostCodePlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="Eircode" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAccommodationPledgeCreateUpdatePostCode" placeholder="<spring:message code="frmAccommodationPledgePostCodePlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmAccommodationPledgeCreateUpdatePostCodeHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgePostCodeHelpBlock"/></span>
 			<div id="frmAccommodationPledgeCreateUpdatePostCodeAlertBlock" class="alert alert-dismissible hidden" role="alert">

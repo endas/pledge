@@ -386,7 +386,7 @@
 				
 				<spring:message code="frmAddressPostCodePlaceHolder" var="frmAddressPostCodePlaceHolder"/>    
     
-				<form:input path="postCode" type="text" data-display-name="Post Code" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAddressPostCode" placeholder="${frmAddressPostCodePlaceHolder}" aria-describedby="frmAddressPostCodeHelpBlock" data-validate-key-press="true"/>
+				<form:input path="postCode" type="text" data-display-name="Eircode" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAddressPostCode" placeholder="${frmAddressPostCodePlaceHolder}" aria-describedby="frmAddressPostCodeHelpBlock" data-validate-key-press="true"/>
     
 				<span id="frmAddressPostCodeFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
 				<div id="frmAddressPostCodeAlertBlock" class="alert alert-dismissible hidden" role="alert">

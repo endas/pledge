@@ -100,7 +100,7 @@
   
 		  <div id="frmApplicationUserDetailsCreateUpdatePostCodeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.postcode.label" for="frmApplicationUserDetailsCreateUpdatePostCode" class="control-label"><spring:message code="frmApplicationUserDetailsPostCodeLabel"/></label>
-			<input type="text" data-display-name="Post Code" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmApplicationUserDetailsCreateUpdatePostCode" placeholder="<spring:message code="frmApplicationUserDetailsPostCodePlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="Eircode" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmApplicationUserDetailsCreateUpdatePostCode" placeholder="<spring:message code="frmApplicationUserDetailsPostCodePlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmApplicationUserDetailsCreateUpdatePostCodeHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsPostCodeHelpBlock"/></span>
 			<div id="frmApplicationUserDetailsCreateUpdatePostCodeAlertBlock" class="alert alert-dismissible hidden" role="alert">

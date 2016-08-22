@@ -65,7 +65,7 @@
   
 		  <div id="frmAddressCreateUpdatePostCodeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="address.postcode.label" for="frmAddressCreateUpdatePostCode" class="control-label"><spring:message code="frmAddressPostCodeLabel"/></label>
-			<input type="text" data-display-name="Post Code" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAddressCreateUpdatePostCode" placeholder="<spring:message code="frmAddressPostCodePlaceHolder"/>" aria-describedby="frmAddressCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="Eircode" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAddressCreateUpdatePostCode" placeholder="<spring:message code="frmAddressPostCodePlaceHolder"/>" aria-describedby="frmAddressCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmAddressCreateUpdatePostCodeHelpBlock" class="help-block"><spring:message code="frmAddressPostCodeHelpBlock"/></span>
 			<div id="frmAddressCreateUpdatePostCodeAlertBlock" class="alert alert-dismissible hidden" role="alert">
