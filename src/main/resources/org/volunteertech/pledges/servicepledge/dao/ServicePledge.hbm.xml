@@ -25,6 +25,13 @@
 	  	<property name="pledgeServiceDateAvailableTo" type="timestamp" column="PLEDGESERVICEDATEAVAILABLETO"  not-null="false"></property>	
 		<property name="pledgeServiceHoursPerWeek" type="long" column="PLEDGESERVICEHOURSPERWEEK" length="10" ></property>	
 	  
+	  	<set name="pledgeServiceTravelAbilities" table="SERVICE_TRAVEL_ABILITY" fetch="join" cascade="all">
+            <key>
+                <column name="SERVICEPLEDGEID" not-null="true" />
+            </key>
+            <element type="long" column="REFERENCE_ID" not-null="true"  />
+        </set>  
+	  
         <many-to-one name="registerOfPledges" class="org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl" fetch="select">
             <column name="REGISTEROFPLEDGESID" not-null="false" />
         </many-to-one>

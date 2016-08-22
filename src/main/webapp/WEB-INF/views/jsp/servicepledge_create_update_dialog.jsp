@@ -109,6 +109,7 @@
 		  <div id="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.pledgeservicehoursperweek.label" for="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek" class="control-label"><spring:message code="frmServicePledgePledgeServiceHoursPerWeekLabel"/></label>	
 			<select class="form-control" data-display-name="Hours per week" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekHelpBlock">
+			
 			</select>
 	  
 			<span id="frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekHelpBlock" class="help-block"><spring:message code="frmServicePledgePledgeServiceHoursPerWeekHelpBlock"/></span>
@@ -119,6 +120,18 @@
 				  
 		  </div>
   
+  		 <div id="frmServicePledgeCreateUpdateTravelAbilitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="servicepledge.travel.label" for="frmServicePledgeCreateUpdateTravelAbilities" class="control-label"><spring:message code="frmServicePledgeTravelLabel"/></label>
+			<select id="frmServicePledgeCreateUpdateTravelAbilitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmServicePledgeCreateUpdateTravelAbilitiesPlaceHolder"/>" >
+      			  
+   			 </select>
+			<span id="frmServicePledgeCreateUpdateTravelAbilitiesCountBlock" class="help-block"></span>
+			<div id="frmServicePledgeCreateUpdateTravelAbilitiesAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmServicePledgeCreateUpdateTravelAbilitiesAlertBlockText"></span>
+			</div>	  
+		  </div>
+  	
 		 <%--  <div id="frmServicePledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.savebutton.label" for="frmServicePledgeCreateUpdateSaveButton" class="control-label"><spring:message code="frmServicePledgeSaveButtonLabel"/></label>
 			<span id="frmServicePledgeCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmServicePledgeSaveButtonHelpBlock"/></span>

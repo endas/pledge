@@ -1219,6 +1219,9 @@ $( document ).ready(function() {
 		var select = modal.find('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect');
 		select.find('option').prop('selected', false).end().trigger("chosen:updated");
 		
+		var select = modal.find('#frmServicePledgeCreateUpdateTravelAbilitiesSelect');
+		select.find('option').prop('selected', false).end().trigger("chosen:updated");
+		
 		if (id != null){
 			$.ajax({
 				dataType: "json",
@@ -1396,28 +1399,41 @@ $( document ).ready(function() {
 					// Display a count of the characters in the Is there anything else that you would like to say about the accommodation? textarea input
 					$('#frmAccommodationPledgeCreateUpdateAdditionalInformationCountBlock').text($('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val().length.toString().concat('/').concat('500'));
 
-					var select = modal.find('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect');
-					select.find('option').prop('selected', false);
-					_.each(data.amenities, function(item){
-						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
-					});
-					$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
-					
-					select = modal.find('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect');
-					select.find('option').prop('selected', false);
-					_.each(data.facilities, function(item){
-						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
-					});
-					$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
-					
-					
-					var select = modal.find('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect');
-					select.find('option').prop('selected', false);
-					_.each(data.accommodateWho, function(item){
-						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
-					});
-
-					$('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect').chosen();
+					function configureMultiSelect(elementID){
+						var select = modal.find(elementID);
+						select.find('option').prop('selected', false);
+						_.each(data.amenities, function(item){
+							select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
+						});
+						$(elementID).chosen();
+					}
+					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect');
+					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect');
+					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect');
+					configureMultiSelect('#frmServicePledgeCreateUpdateTravelAbilitiesSelect');
+							
+//					var select = modal.find('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect');
+//					select.find('option').prop('selected', false);
+//					_.each(data.amenities, function(item){
+//						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
+//					});
+//					$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
+//					
+//					select = modal.find('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect');
+//					select.find('option').prop('selected', false);
+//					_.each(data.facilities, function(item){
+//						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
+//					});
+//					$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
+//					
+//					
+//					var select = modal.find('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect');
+//					select.find('option').prop('selected', false);
+//					_.each(data.accommodateWho, function(item){
+//						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
+//					});
+//
+//					$('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect').chosen();
 				}
 			});
 		}
@@ -1757,35 +1773,17 @@ $( document ).ready(function() {
 		}
 
 		var pledgeServiceHoursPerWeekSelectInput = document.getElementById('frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek');
-
-		if (pledgeServiceHoursPerWeekSelectInput.length == 0){
-			$.ajax({
-				dataType: "json",
-				url: rootContext + "/restful/referenceslist",
-				data: {
-					referenceType: "IntegerCount1to40"
-				},
-				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Hours per week";
-					pledgeServiceHoursPerWeekSelectInput.appendChild(unselectedOption);
-
-					$.each( data, function( key, val ) {
-						var el = document.createElement("option");
-						el.textContent = val;
-						el.value = key;
-
-						pledgeServiceHoursPerWeekSelectInput.appendChild(el);
-						frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekSetupCompleted = true;
-					});
-				}
-			});
+		var unselectedOption = document.createElement("option");
+		unselectedOption.value = -1;
+		unselectedOption.textContent = "Select Hours per week";
+		pledgeServiceHoursPerWeekSelectInput.appendChild(unselectedOption);
+		for (i = 1; i < 41; i++) {
+			var el = document.createElement("option");
+			el.textContent = i;
+			el.value = i;
+			pledgeServiceHoursPerWeekSelectInput.appendChild(el);
 		}
-		else{
-			frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekSetupCompleted = true;
-		}
-
+		frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekSetupCompleted = true;
 
 		// Reset all of the input contents.
 		$( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea, select")).each(function(){
