@@ -80,7 +80,7 @@
 	</div>
 
 </div>
-<jsp:include page="../jsp/includes/footer.jsp" />
+<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
 <script>
 
 var rootContext = "${pageContext.request.contextPath}";

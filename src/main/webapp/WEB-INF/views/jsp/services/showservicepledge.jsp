@@ -1,7 +1,7 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><!DOCTYPE html>
 <html lang="en">
 <spring:message code="servicepledge.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 </jsp:include>
 <body>
@@ -101,7 +101,7 @@
 
 
 </div>
-<jsp:include page="../jsp/includes/footer.jsp" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
 <spring:url value="/scripts/js/servicepledge/servicepledge.js" var="servicepledgeJs" />
 </body>
 </html>

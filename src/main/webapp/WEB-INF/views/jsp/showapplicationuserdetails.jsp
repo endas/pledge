@@ -130,7 +130,7 @@
 
 
 </div>
-<jsp:include page="../jsp/includes/footer.jsp" />
+<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
 <spring:url value="/scripts/js/applicationuserdetails/applicationuserdetails.js" var="applicationuserdetailsJs" />
 </body>
 </html>
