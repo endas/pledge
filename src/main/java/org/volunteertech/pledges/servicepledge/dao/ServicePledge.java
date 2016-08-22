@@ -290,6 +290,11 @@ public interface ServicePledge extends Serializable {
      * @return A member of the CurrentMode Enumeration
      */
 	public CurrentMode getCurrentMode();
+	
+	
+	public Set<Long> getPledgeServiceTravelAbilities();
+
+	public void setPledgeServiceTravelAbilities(Set<Long> pledgeServiceTravelAbilities);
 }
     
     

@@ -64,7 +64,7 @@
   
 		  <div id="frmApplicationUserDetailsCreateUpdateAddressTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.addresstwo.label" for="frmApplicationUserDetailsCreateUpdateAddressTwo" class="control-label"><spring:message code="frmApplicationUserDetailsAddressTwoLabel"/></label>
-			<input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="true" maxlength="50" class="form-control" id="frmApplicationUserDetailsCreateUpdateAddressTwo" placeholder="<spring:message code="frmApplicationUserDetailsAddressTwoPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCreateUpdateAddressTwo" placeholder="<spring:message code="frmApplicationUserDetailsAddressTwoPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmApplicationUserDetailsCreateUpdateAddressTwoHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsAddressTwoHelpBlock"/></span>
 			<div id="frmApplicationUserDetailsCreateUpdateAddressTwoAlertBlock" class="alert alert-dismissible hidden" role="alert">

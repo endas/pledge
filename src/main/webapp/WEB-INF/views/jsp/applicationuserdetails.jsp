@@ -213,7 +213,7 @@
 
                                                 <spring:message code="frmApplicationUserDetailsAddressTwoPlaceHolder" var="frmApplicationUserDetailsAddressTwoPlaceHolder" />
 
-                                                <form:input path="addressTwo" type="text" data-display-name="Address Line 2" data-minlength="5" data-required="true" maxlength="50" class="form-control" id="frmApplicationUserDetailsAddressTwo" placeholder="${frmApplicationUserDetailsAddressTwoPlaceHolder}" aria-describedby="frmApplicationUserDetailsAddressTwoHelpBlock" data-validate-key-press="true" />
+                                                <form:input path="addressTwo" type="text" data-display-name="Address Line 2" data-minlength="5" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsAddressTwo" placeholder="${frmApplicationUserDetailsAddressTwoPlaceHolder}" aria-describedby="frmApplicationUserDetailsAddressTwoHelpBlock" data-validate-key-press="true" />
 
                                                 <span id="frmApplicationUserDetailsAddressTwoFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                                 <div id="frmApplicationUserDetailsAddressTwoAlertBlock" class="alert alert-dismissible hidden" role="alert">

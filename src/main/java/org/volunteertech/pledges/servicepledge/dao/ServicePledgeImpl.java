@@ -91,7 +91,8 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     /** the address type */
     private String pledgeServiceHoursPerWeekReferenceTranslation;
     
-	
+    private Set<Long> pledgeServiceTravelAbilities = new HashSet<Long>();
+    
 	/** the reference to the foreign associated RegisterOfPledges **/
 	@JsonBackReference(value="registerofpledges-servicepledge")
 	private RegisterOfPledges registerOfPledges;
@@ -129,7 +130,6 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 		this.pledgeServiceDateAvailable = null;
 		
 		this.pledgeServiceHoursPerWeek = new Long("0");
-		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();
     }
@@ -521,6 +521,16 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 				+ pledgeServiceHoursPerWeekReferenceTranslation + ", registerOfPledges=" + registerOfPledges
 				+ ", createdByID=" + createdByID + ", updatedByID=" + updatedByID + ", dateCreated=" + dateCreated
 				+ ", dateUpdated=" + dateUpdated + "]";
+	}
+
+	@Override
+	public Set<Long> getPledgeServiceTravelAbilities() {
+		return this.pledgeServiceTravelAbilities;
+	}
+
+	@Override
+	public void setPledgeServiceTravelAbilities(Set<Long> pledgeServiceTravelAbilities) {
+		this.pledgeServiceTravelAbilities = pledgeServiceTravelAbilities;	
 	}
     
    
