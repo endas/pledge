@@ -355,7 +355,10 @@ public class ReferenceStoreImpl implements ReferenceStore
 	 */
 	private SortedMap<Long,TreeMap<Long,String>> newOrUsedByParentId = null;
 	
-	
+	/**
+	 * Map to hold values related to the Travel Ability Reference Type
+	 */
+	private SortedMap<Long,String> travelAbilities = null;
 	
     /**
      * Default Constructor for the ReferenceStore class
@@ -413,6 +416,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		goodsSize = initialiseGoodsSize();		
 		goodsQuantity = initialiseGoodsQuantity();		
 		newOrUsed = initialiseNewOrUsed();		
+		travelAbilities = initialiseTravelAbilities();
 		
     }
 	
@@ -1543,6 +1547,44 @@ public class ReferenceStoreImpl implements ReferenceStore
 		
 		return map;
 	}    
+	
+	
+	/**
+	 * Initialise the possible choices for Facilities
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialiseTravelAbilities()
+	{
+		TreeMap<Long,String> map = new TreeMap<Long,String>();
+		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
+		List<Reference> referenceRecords = null;
+		Reference dataRow = null;
+
+		logger.debug("Initialising the Travel Abilities dropdown buffer");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc Facilities
+			
+//			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_TRAVEL_ABILITIES, new Long(1));
+			referenceRecords = this.referenceDao.listReferenceByRefType("TravelAbility");
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				map.put(dataRow.getId(), dataRow.getRefDesc());
+	        }
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of Travel Ability dropdown buffer failed", ex);
+		}
+		
+		return map;
+	}    
+	
+	
 	
 	
 
@@ -3028,6 +3070,7 @@ public class ReferenceStoreImpl implements ReferenceStore
     	logger.debug("Clearing NewOrUsed dropdown buffer in clear()");
         newOrUsed.clear();
 		
+        travelAbilities.clear();
         return;
     }    
 
@@ -3036,84 +3079,17 @@ public class ReferenceStoreImpl implements ReferenceStore
      */
     protected void finalize() throws Throwable
     {
-    	
-    	logger.debug("Clearing IrelandCounty dropdown buffer in finalize()");
-        irelandCounty.clear();
-		
-    	logger.debug("Clearing AccommodationType dropdown buffer in finalize()");
-        accommodationType.clear();
-		
-    	logger.debug("Clearing AccommodationCondition dropdown buffer in finalize()");
-        accommodationCondition.clear();
-		
-    	logger.debug("Clearing NumberOfBeds dropdown buffer in finalize()");
-        numberOfBeds.clear();
-		
-    	logger.debug("Clearing VacantOrShared dropdown buffer in finalize()");
-        vacantOrShared.clear();
-		
-    	logger.debug("Clearing YouCanAccommodate dropdown buffer in finalize()");
-        youCanAccommodate.clear();
-		
-    	logger.debug("Clearing LocalAmenity dropdown buffer in finalize()");
-        localAmenity.clear();
-		
-    	logger.debug("Clearing MonthRange dropdown buffer in finalize()");
-        monthRange.clear();
-		
-    	logger.debug("Clearing Yes_No dropdown buffer in finalize()");
-        yes_No.clear();
-		
-    	logger.debug("Clearing EuropeCountry dropdown buffer in finalize()");
-        europeCountry.clear();
-		
-    	logger.debug("Clearing Facilities dropdown buffer in finalize()");
-        facilities.clear();
-		
-    	logger.debug("Clearing IntegerCount1to40 dropdown buffer in finalize()");
-        integerCount1to40.clear();
-		
-    	logger.debug("Clearing PledgeServiceLevelOne dropdown buffer in finalize()");
-        pledgeServiceLevelOne.clear();
-		
-    	logger.debug("Clearing PledgeServiceLevelTwo dropdown buffer in finalize()");
-        pledgeServiceLevelTwo.clear();
-		
-    	logger.debug("Clearing GoodsCategoryOne dropdown buffer in finalize()");
-        goodsCategoryOne.clear();
-		
-    	logger.debug("Clearing GoodsCategoryTwo dropdown buffer in finalize()");
-        goodsCategoryTwo.clear();
-		
-    	logger.debug("Clearing GoodsCondition dropdown buffer in finalize()");
-        goodsCondition.clear();
-		
-    	logger.debug("Clearing OwnerOccupierType dropdown buffer in finalize()");
-        ownerOccupierType.clear();
-		
-    	logger.debug("Clearing Locale dropdown buffer in finalize()");
-        locale.clear();
-		
-    	logger.debug("Clearing UserRole dropdown buffer in finalize()");
-        userRole.clear();
-		
-    	logger.debug("Clearing PledgeServiceLevelThree dropdown buffer in finalize()");
-        pledgeServiceLevelThree.clear();
-		
-    	logger.debug("Clearing GoodsCategoryThree dropdown buffer in finalize()");
-        goodsCategoryThree.clear();
-		
-    	logger.debug("Clearing GoodsSize dropdown buffer in finalize()");
-        goodsSize.clear();
-		
-    	logger.debug("Clearing GoodsQuantity dropdown buffer in finalize()");
-        goodsQuantity.clear();
-		
-    	logger.debug("Clearing NewOrUsed dropdown buffer in finalize()");
-        newOrUsed.clear();
-		
+    	this.clear();
         return;
-    }    
-
+    }
+    @Override
+    public SortedMap<Long,String> getTravelAbilities()
+	{
+		if (travelAbilities == null)
+		{
+			initialiseTravelAbilities();
+		}
+		return travelAbilities;
+	}
 	
 }

@@ -149,6 +149,10 @@ public final class Constants {
      * New or Used
      */
 	public static final long REFERENCE_CATEGORY_NEWORUSED = 27;
+	/**
+	 * Travel Ability
+	 */
+	public static final long REFERENCE_CATEGORY_TRAVEL_ABILITIES = 28;
 
     /**
      * County Antrim

@@ -575,4 +575,6 @@ public interface ReferenceStore
      */
     public String getRefDesc(Long referenceId);
 	
+    
+    public SortedMap<Long,String> getTravelAbilities();	
 }

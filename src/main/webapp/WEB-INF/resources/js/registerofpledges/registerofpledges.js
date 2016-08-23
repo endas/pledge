@@ -101,6 +101,11 @@ var frmServicePledgeCreateUpdatePledgeServiceLevelThreeSetupCompleted = false;
 
 var frmServicePledgeCreateUpdateAdditionalInformationBuffer = null;
 
+var frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesTextBuffer = null;
+var frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesValueBuffer = 0;
+var frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesSetupCompleted = false;
+
+
 var frmServicePledgeCreateUpdatePledgeServiceQualificationBuffer = null;
 
 var frmServicePledgeCreateUpdatePledgeServiceDateAvailableBuffer = null;
@@ -142,6 +147,44 @@ var frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = null;
 
 var frmGoodsPledgeCreateUpdateItemSizeBuffer = null;
 
+function configureMultiSelect(elementID){
+	var select = modal.find(elementID);
+	select.find('option').prop('selected', false);
+	_.each(data.amenities, function(item){
+		select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
+	});
+	$(elementID).chosen();
+}
+function resetModalInputs(modal){
+$( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea, select")).each(function(){
+	var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
+	var feedbackIconContainerId = ('#').concat($(this).attr('id')).concat('FeedbackIcon');
+	var feedbackHelpBlockId = ('#').concat($(this).attr('id')).concat('HelpBlock');
+
+	if ($(this).is('select')){
+		var selectType = $(this).data('select-type');
+		if (selectType == 'child'){
+			removeSelectOptions(document.getElementById($(this).attr('id')));
+		}
+		else{
+			$(this).val(-1);
+		} 
+	}
+	else if ($(this).is(':checkbox')){
+		$(this).prop('checked', false); 
+	}
+	else{
+		$(this).val("");
+	}
+	//$(feedbackHelpBlockId).text('');
+	$(containerId).toggleClass('has-warning', false);
+	$(feedbackIconContainerId).toggleClass('glyphicon-warning-sign', false);
+	$(containerId).toggleClass('has-success', false);
+	$(feedbackIconContainerId).toggleClass('glyphicon-ok', false);
+	$(containerId).toggleClass('has-error', false);
+	$(feedbackIconContainerId).toggleClass('glyphicon-remove', false);
+});
+}
 
 $( document ).ready(function() {
 	var displayTextAreaCount = false;
@@ -543,37 +586,8 @@ $( document ).ready(function() {
 			frmApplicationUserDetailsCreateUpdateAccommodateWhoSetupCompleted = true;
 		}
 
-
-
 		// Reset all of the input contents.
-		$( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea, select")).each(function(){
-			var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
-			var feedbackIconContainerId = ('#').concat($(this).attr('id')).concat('FeedbackIcon');
-			var feedbackHelpBlockId = ('#').concat($(this).attr('id')).concat('HelpBlock');
-
-			if ($(this).is('select')){
-				var selectType = $(this).data('select-type');
-				if (selectType == 'child'){
-					removeSelectOptions(document.getElementById($(this).attr('id')));
-				}
-				else{
-					$(this).val(-1);
-				} 
-			}
-			else if ($(this).is(':checkbox')){
-				$(this).prop('checked', false); 
-			}
-			else{
-				$(this).val("");
-			}
-			//$(feedbackHelpBlockId).text('');
-			$(containerId).toggleClass('has-warning', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-warning-sign', false);
-			$(containerId).toggleClass('has-success', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-ok', false);
-			$(containerId).toggleClass('has-error', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-remove', false);
-		});
+		resetModalInputs(modal);
 
 		if (id != null){
 			$.ajax({
@@ -1181,34 +1195,7 @@ $( document ).ready(function() {
 
 
 		// Reset all of the input contents.
-		$( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea, select")).each(function(){
-			var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
-			var feedbackIconContainerId = ('#').concat($(this).attr('id')).concat('FeedbackIcon');
-			var feedbackHelpBlockId = ('#').concat($(this).attr('id')).concat('HelpBlock');
-
-			if ($(this).is('select')){
-				var selectType = $(this).data('select-type');
-				if (selectType == 'child'){
-					removeSelectOptions(document.getElementById($(this).attr('id')));
-				}
-				else{
-					$(this).val(-1);
-				} 
-			}
-			else if ($(this).is(':checkbox')){
-				$(this).prop('checked', false); 
-			}
-			else{
-				$(this).val("");
-			}
-			//$(feedbackHelpBlockId).text('');
-			$(containerId).toggleClass('has-warning', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-warning-sign', false);
-			$(containerId).toggleClass('has-success', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-ok', false);
-			$(containerId).toggleClass('has-error', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-remove', false);
-		});
+		resetModalInputs(modal);
 		//reset the chosen selects
 		var select = modal.find('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect');
 		select.find('option').prop('selected', false).end().trigger("chosen:updated");
@@ -1219,8 +1206,7 @@ $( document ).ready(function() {
 		var select = modal.find('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect');
 		select.find('option').prop('selected', false).end().trigger("chosen:updated");
 		
-		var select = modal.find('#frmServicePledgeCreateUpdateTravelAbilitiesSelect');
-		select.find('option').prop('selected', false).end().trigger("chosen:updated");
+		
 		
 		if (id != null){
 			$.ajax({
@@ -1388,7 +1374,8 @@ $( document ).ready(function() {
 					}
 
 					frmAccommodationPledgeCreateUpdateCanYouAccommodateTimeOut();
-
+					
+					
 					modal.find('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val(data.additionalInformation);
 					frmAccommodationPledgeCreateUpdateAdditionalInformationBuffer = data.additionalInformation;
 
@@ -1399,41 +1386,11 @@ $( document ).ready(function() {
 					// Display a count of the characters in the Is there anything else that you would like to say about the accommodation? textarea input
 					$('#frmAccommodationPledgeCreateUpdateAdditionalInformationCountBlock').text($('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val().length.toString().concat('/').concat('500'));
 
-					function configureMultiSelect(elementID){
-						var select = modal.find(elementID);
-						select.find('option').prop('selected', false);
-						_.each(data.amenities, function(item){
-							select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
-						});
-						$(elementID).chosen();
-					}
+					
 					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect');
 					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect');
 					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect');
-					configureMultiSelect('#frmServicePledgeCreateUpdateTravelAbilitiesSelect');
-							
-//					var select = modal.find('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect');
-//					select.find('option').prop('selected', false);
-//					_.each(data.amenities, function(item){
-//						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
-//					});
-//					$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
-//					
-//					select = modal.find('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect');
-//					select.find('option').prop('selected', false);
-//					_.each(data.facilities, function(item){
-//						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
-//					});
-//					$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
-//					
-//					
-//					var select = modal.find('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect');
-//					select.find('option').prop('selected', false);
-//					_.each(data.accommodateWho, function(item){
-//						select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
-//					});
-//
-//					$('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect').chosen();
+					
 				}
 			});
 		}
@@ -1454,7 +1411,7 @@ $( document ).ready(function() {
 			frmAccommodationPledgeCreateUpdateLaddaSubmitButtonHandler.stop();
 		}
 		$('#frmAccommodationPledgeCreateUpdateAddressOne').focus();
-		debugger;
+
 		$('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect').chosen();
 		$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
 		$('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect').chosen();
@@ -1784,36 +1741,38 @@ $( document ).ready(function() {
 			pledgeServiceHoursPerWeekSelectInput.appendChild(el);
 		}
 		frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekSetupCompleted = true;
+		
+		var travelAbilitiesSelectInput = document.getElementById('frmServicePledgeCreateUpdateTravelAbilitiesSelect');
+		if (travelAbilitiesSelectInput.length == 0 ){
+			$.ajax({
+				dataType: "json",
+				url: rootContext + "/restful/referenceslist",
+				data: {
+					referenceType: "TravelAbility"
+				},
+				success: function( data ) {
 
-		// Reset all of the input contents.
-		$( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea, select")).each(function(){
-			var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
-			var feedbackIconContainerId = ('#').concat($(this).attr('id')).concat('FeedbackIcon');
-			var feedbackHelpBlockId = ('#').concat($(this).attr('id')).concat('HelpBlock');
-
-			if ($(this).is('select')){
-				var selectType = $(this).data('select-type');
-				if (selectType == 'child'){
-					removeSelectOptions(document.getElementById($(this).attr('id')));
+					var unselectedOption = document.createElement("option");
+					unselectedOption.value = -1;
+					$.each( data, function( key, val ) {
+						var el = document.createElement("option");
+						el.textContent = val;
+						el.value = key;
+						travelAbilitiesSelectInput.appendChild(el);
+						frmApplicationUserDetailsCreateUpdateTravelAbilitiesSetupCompleted = true;
+					});
 				}
-				else{
-					$(this).val(-1);
-				} 
-			}
-			else if ($(this).is(':checkbox')){
-				$(this).prop('checked', false); 
-			}
-			else{
-				$(this).val("");
-			}
-			//$(feedbackHelpBlockId).text('');
-			$(containerId).toggleClass('has-warning', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-warning-sign', false);
-			$(containerId).toggleClass('has-success', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-ok', false);
-			$(containerId).toggleClass('has-error', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-remove', false);
-		});
+			});
+		}
+		else{
+			frmApplicationUserDetailsCreateUpdateTravelAbilitiesSetupCompleted = true;
+		}
+		
+		//Reset all of the modal inputs
+		resetModalInputs(modal);
+		
+		var select = modal.find('#frmServicePledgeCreateUpdateTravelAbilitiesSelect');
+		select.find('option').prop('selected', false).end().trigger("chosen:updated");
 
 		if (id != null){
 			$.ajax({
@@ -1917,9 +1876,13 @@ $( document ).ready(function() {
 							}
 						}, 100);
 					}
-
+						
 					frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekTimeOut();
-
+					
+					modal.find('#frmServicePledgeCreateUpdatePledgeServiceTravelAbilities').val(data.pledgeServiceTravelAbilties);
+					frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesBuffer = data.pledgeServiceTravelAbilties;
+					configureMultiSelect('#frmServicePledgeCreateUpdateTravelAbilitiesSelect');
+					
 					// Display a count of the characters in the Additional Information textarea input
 					$('#frmServicePledgeCreateUpdateAdditionalInformationCountBlock').text($('#frmServicePledgeCreateUpdateAdditionalInformation').val().length.toString().concat('/').concat('500'));
 
@@ -1945,7 +1908,8 @@ $( document ).ready(function() {
 		if (frmServicePledgeCreateUpdateLaddaSubmitButtonHandler != null){
 			frmServicePledgeCreateUpdateLaddaSubmitButtonHandler.stop();
 		}
-		$('#frmServicePledgeCreateUpdatePledgeServiceLevelOne').focus()
+		$('#frmServicePledgeCreateUpdateTravelAbilitiesSelect').chosen();
+		$('#frmServicePledgeCreateUpdatePledgeServiceLevelOne').focus();	
 	});	
 
 
@@ -2010,7 +1974,8 @@ $( document ).ready(function() {
 				pledgeServiceQualification : modal.find('#frmServicePledgeCreateUpdatePledgeServiceQualification').val(),
 				pledgeServiceDateAvailable : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailable').val(),
 				pledgeServiceDateAvailableTo : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo').val(),
-				pledgeServiceHoursPerWeek : modal.find('#frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek').val()
+				pledgeServiceHoursPerWeek : modal.find('#frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek').val(),
+				pledgeServiceTravelAbilities : modal.find('#frmServicePledgeCreateUpdatePledgeServiceTravelAbilities').val()
 		};
 
 		var propertyUrl = modal.find('#frmServicePledgeCreateUpdatePropertyUrl').val();
@@ -2067,12 +2032,18 @@ $( document ).ready(function() {
 							var cellText = document.createTextNode(obj.pledgeServiceQualification);
 							cell.appendChild(cellText);
 							row.appendChild(cell);
-
+							
+							var cell = document.createElement("td");
+							var cellText = document.createTextNode(obj.pledgeServiceTravelAbilities);
+							cell.appendChild(cellText);
+							row.appendChild(cell);
+							
 							var cell = document.createElement("td");
 							var cellText = document.createTextNode(obj.additionalInformation);
 							cell.appendChild(cellText);
 							row.appendChild(cell);
-
+							
+						
 							new_tbody.appendChild(row);
 						});
 
@@ -2093,6 +2064,8 @@ $( document ).ready(function() {
 							document.getElementById("frmServicePledgePledgeServiceQualificationMessage").innerHTML = obj.pledgeServiceQualification;
 
 							document.getElementById("frmServicePledgeAdditionalInformationMessage").innerHTML = obj.additionalInformation;
+							
+							document.getElementById("frmServicePledgeServiceTravelAbilitiesMessage").innerHTML = obj.pledgeServiceTravelAbilities;
 
 						});
 					}
@@ -2342,34 +2315,7 @@ $( document ).ready(function() {
 
 
 		// Reset all of the input contents.
-		$( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea, select")).each(function(){
-			var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
-			var feedbackIconContainerId = ('#').concat($(this).attr('id')).concat('FeedbackIcon');
-			var feedbackHelpBlockId = ('#').concat($(this).attr('id')).concat('HelpBlock');
-
-			if ($(this).is('select')){
-				var selectType = $(this).data('select-type');
-				if (selectType == 'child'){
-					removeSelectOptions(document.getElementById($(this).attr('id')));
-				}
-				else{
-					$(this).val(-1);
-				} 
-			}
-			else if ($(this).is(':checkbox')){
-				$(this).prop('checked', false); 
-			}
-			else{
-				$(this).val("");
-			}
-			//$(feedbackHelpBlockId).text('');
-			$(containerId).toggleClass('has-warning', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-warning-sign', false);
-			$(containerId).toggleClass('has-success', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-ok', false);
-			$(containerId).toggleClass('has-error', false);
-			$(feedbackIconContainerId).toggleClass('glyphicon-remove', false);
-		});
+		resetModalInputs(modal);
 
 		if (id != null){
 			$.ajax({

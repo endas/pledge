@@ -86,7 +86,8 @@
                 <prop key="hibernate.connection.useUnicode">true</prop>
 				<prop key="hibernate.connection.characterEncoding">utf8</prop>
 				<prop key="hibernate.connection.charSet">utf8</prop>
-				<prop key="hibernate.hbm2ddl.import_files">${hibernate.importfiles}</prop>
+				 <!--  --><prop key="hibernate.hbm2ddl.import_files">${hibernate.importfiles}</prop> 
+				<!-- <prop key="hibernate.hbm2ddl.import_files">/hsql_import.sql,/common_inserts.sql</prop> -->
             </props>
         </property>
         

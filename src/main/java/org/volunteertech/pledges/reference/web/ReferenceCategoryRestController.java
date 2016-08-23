@@ -503,6 +503,15 @@ public class ReferenceCategoryRestController extends BaseController
 				}
 				returnValue = localizedNewOrUsedMap;
 				break;
+				
+			case("TravelAbility"):
+				Map<Long, String> travelAbilityMap = referenceStore.getTravelAbilities(); 
+				SortedMap<Long, String> localizedTravelAbilityMap = new TreeMap<Long, String>(travelAbilityMap);
+				for (Map.Entry<Long, String> entry : localizedTravelAbilityMap.entrySet()) {
+					localizedTravelAbilityMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedTravelAbilityMap;
+				break;
 		  
 		
 			default:
