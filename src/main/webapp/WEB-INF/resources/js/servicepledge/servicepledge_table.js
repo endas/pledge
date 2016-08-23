@@ -1,7 +1,7 @@
 
 	$(document).ready(function(){
 	
-	
+	alert("called");
 		var servicePledgeTable = $('#servicePledgeTable').DataTable({
 			ajax: {
 				url: rootContext + "/restful/servicepledge/list",

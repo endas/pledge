@@ -147,14 +147,16 @@ var frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = null;
 
 var frmGoodsPledgeCreateUpdateItemSizeBuffer = null;
 
-function configureMultiSelect(elementID){
+function configureMultiSelect(modal, elementID, entries){
 	var select = modal.find(elementID);
+	select.val(entries);
 	select.find('option').prop('selected', false);
-	_.each(data.amenities, function(item){
+	_.each(entries, function(item){
 		select.find('option[value="' + item + '"]').prop('selected', true).end().trigger('chosen:updated');
 	});
 	$(elementID).chosen();
 }
+
 function resetModalInputs(modal){
 $( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea, select")).each(function(){
 	var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
@@ -1387,9 +1389,9 @@ $( document ).ready(function() {
 					$('#frmAccommodationPledgeCreateUpdateAdditionalInformationCountBlock').text($('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val().length.toString().concat('/').concat('500'));
 
 					
-					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect');
-					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect');
-					configureMultiSelect('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect');
+					configureMultiSelect(modal, '#frmApplicationUserDetailsCreateUpdateAmenitiesSelect', data.amenities);
+					configureMultiSelect(modal, '#frmApplicationUserDetailsCreateUpdateFacilitiesSelect', data.facilities);
+					configureMultiSelect(modal, '#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect', data.accommodateWho);
 					
 				}
 			});
@@ -1879,9 +1881,9 @@ $( document ).ready(function() {
 						
 					frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekTimeOut();
 					
-					modal.find('#frmServicePledgeCreateUpdatePledgeServiceTravelAbilities').val(data.pledgeServiceTravelAbilties);
-					frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesBuffer = data.pledgeServiceTravelAbilties;
-					configureMultiSelect('#frmServicePledgeCreateUpdateTravelAbilitiesSelect');
+					
+					frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesBuffer = data.pledgeServiceTravelAbilities;
+					configureMultiSelect(modal, '#frmServicePledgeCreateUpdateTravelAbilitiesSelect', data.pledgeServiceTravelAbilities);
 					
 					// Display a count of the characters in the Additional Information textarea input
 					$('#frmServicePledgeCreateUpdateAdditionalInformationCountBlock').text($('#frmServicePledgeCreateUpdateAdditionalInformation').val().length.toString().concat('/').concat('500'));
@@ -1975,7 +1977,7 @@ $( document ).ready(function() {
 				pledgeServiceDateAvailable : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailable').val(),
 				pledgeServiceDateAvailableTo : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo').val(),
 				pledgeServiceHoursPerWeek : modal.find('#frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek').val(),
-				pledgeServiceTravelAbilities : modal.find('#frmServicePledgeCreateUpdatePledgeServiceTravelAbilities').val()
+				pledgeServiceTravelAbilities : _.map(modal.find('#frmServicePledgeCreateUpdateTravelAbilitiesSelect').val(), Number)				
 		};
 
 		var propertyUrl = modal.find('#frmServicePledgeCreateUpdatePropertyUrl').val();
@@ -2034,7 +2036,7 @@ $( document ).ready(function() {
 							row.appendChild(cell);
 							
 							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.pledgeServiceTravelAbilities);
+							var cellText = document.createTextNode(obj.pledgeServiceTravelAbilitiesReferenceTranslation);
 							cell.appendChild(cellText);
 							row.appendChild(cell);
 							
