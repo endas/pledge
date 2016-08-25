@@ -2,15 +2,24 @@ package org.volunteertech.pledges.main.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
 import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
+import org.volunteertech.pledges.localisation.service.MessageResourceService;
+import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
+import org.volunteertech.pledges.reference.ReferenceStore;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 
 /**
@@ -32,6 +41,12 @@ import java.util.Date;
 @Controller
 public class BaseController {
     final Logger logger = LoggerFactory.getLogger(BaseController.class);
+
+    @Autowired
+    private ReferenceStore referenceStore;
+
+    @Autowired
+    private DatabaseDrivenMessageSource messageSource;
 
     /**
      * Date Conversion Property Editor
@@ -58,6 +73,15 @@ public class BaseController {
 
         return messageResource;
 
+    }
+
+    protected void setTranslationDropDownContents(Model model, Locale locale) {
+        Map<Long, String> localeMap = referenceStore.getLocale();
+        SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
+        for (Map.Entry<Long, String> entry : localeMap.entrySet()) {
+            localizedLocaleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+        }
+        model.addAttribute("localeMap", localizedLocaleMap);
     }
 
 }

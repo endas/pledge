@@ -400,15 +400,6 @@ public class ViewController extends BaseController
 		
 		model.addAttribute("localeMap", localizedLocaleMap);
 	}
-	
-	private void setTranslationDropDownContents(Model model, Locale locale) {
-		Map<Long, String> localeMap = referenceStore.getLocale();
-		SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
-		for (Map.Entry<Long, String> entry : localeMap.entrySet()) {
-			localizedLocaleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("localeMap", localizedLocaleMap);
-	}
-	
+
 
 }
