@@ -1,5 +1,6 @@
 package org.volunteertech.pledges.users.web;
 
+import com.netgrains.security.Authorisation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -111,6 +112,7 @@ public class ApplicationUserDetailsRestController extends BaseController
 	@ResponseBody
     public ApplicationUserDetails getApplicationUserDetails(Authentication authentication, @RequestParam(value="id") String id) {
 		logger.info("Inside restful getApplicationUserDetails method...");
+		Authorisation.checkAccess(authentication, Integer.valueOf(id));
 		ApplicationUserDetails applicationUserDetails = null;
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
         Long userId = user.getApplicationUser().getId();		

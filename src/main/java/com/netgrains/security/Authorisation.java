@@ -1,7 +1,9 @@
 package com.netgrains.security;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.netgrains.security.InvalidUserIDException;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.Authentication;
+import org.volunteertech.pledges.users.security.SecurityUser;
 
 public class Authorisation
 {
@@ -13,7 +15,9 @@ public class Authorisation
 	 * @return true if the user is authorised to update the record otherwise false
 	 */
 	static final Logger logger = LoggerFactory.getLogger(Authorisation.class);
-	
+
+
+
 	public static boolean isAuthorisedUpdate(String entityName, Long userID, Long id) throws InvalidUserIDException
 	{
 		if (userID == null)
@@ -34,7 +38,16 @@ public class Authorisation
 		//for development
 		return true;
 	}
-	
+
+	public static void checkAccess(Authentication authentication, int id) {
+		SecurityUser securityUser = (SecurityUser) authentication.getPrincipal();
+		logger.debug("Checking access of {} against id {}", securityUser.getApplicationUser().getUsername(), id);
+		if (!securityUser.getApplicationUser().getApplicationUserDetails().getId().equals((long)id)) {
+			logger.warn("Blocking illegal access by {} of other user details {}", securityUser.getApplicationUser().getApplicationUserDetails().getId(), id);
+			throw new AccessDeniedException("Illegal access");
+		}
+	}
+
 	/**
 	 * Provides authorisation to view a record of an underlying table
 	 * @param entityName the name of the table/hibernate entity

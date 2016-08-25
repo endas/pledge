@@ -1,5 +1,6 @@
 package org.volunteertech.pledges.pledge.web;
 
+import com.netgrains.security.Authorisation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -209,6 +210,7 @@ public class RegisterOfPledgesRestController extends BaseController
 	@RequestMapping(value = "/restful/registerofpledges/accommodationpledges/list", method = RequestMethod.GET)
     public List<AccommodationPledge> getAccommodationPledges(Authentication authentication, @RequestParam(value="id") String registerOfPledgesId, Locale locale) {
 		logger.info("Inside restful getAccommodationPledges method...");
+		Authorisation.checkAccess(authentication, Integer.valueOf(registerOfPledgesId));
 		List<AccommodationPledge> accommodationPledgeList = null;
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
         Long userId = user.getApplicationUser().getId();
@@ -280,6 +282,7 @@ public class RegisterOfPledgesRestController extends BaseController
 	@RequestMapping(value = "/restful/registerofpledges/servicepledges/list", method = RequestMethod.GET)
     public List<ServicePledge> getServicePledges(Authentication authentication, @RequestParam(value="id") String registerOfPledgesId, Locale locale) {
 		logger.info("Inside restful getServicePledges method...");
+		Authorisation.checkAccess(authentication, Integer.valueOf(registerOfPledgesId));
 		List<ServicePledge> servicePledgeList = null;
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
         Long userId = user.getApplicationUser().getId();
@@ -351,6 +354,7 @@ public class RegisterOfPledgesRestController extends BaseController
 	@RequestMapping(value = "/restful/registerofpledges/goodspledges/list", method = RequestMethod.GET)
     public List<GoodsPledge> getGoodsPledges(Authentication authentication, @RequestParam(value="id") String registerOfPledgesId, Locale locale) {
 		logger.info("Inside restful getGoodsPledges method...");
+		Authorisation.checkAccess(authentication, Integer.valueOf(registerOfPledgesId));
 		List<GoodsPledge> goodsPledgeList = null;
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
         Long userId = user.getApplicationUser().getId();

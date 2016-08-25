@@ -12,6 +12,7 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.netgrains.security.Authorisation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -242,9 +243,9 @@ public class RegisterOfPledgesController extends BaseController
 
 	// show update form
 	@RequestMapping(value = "/registerofpledges/{id}/update", method = RequestMethod.GET)
-	public String showUpdateRegisterOfPledgesForm(@PathVariable("id") int id, Model model, Locale locale) {
-
+	public String showUpdateRegisterOfPledgesForm(Authentication authentication, @PathVariable("id") int id, Model model, Locale locale) {
 		logger.debug("showUpdateRegisterOfPledgesForm() : {}", id);
+		Authorisation.checkAccess(authentication, id);
 		RegisterOfPledges registerOfPledges = null;
 		try{
 			// TODO: Needs exception handling policy
