@@ -388,21 +388,6 @@ public class RegisterOfPledgesController extends BaseController
 
 	}
 	
-	private MessageResource populateMessageResource(String messageKey, String locale, Long localeReferenceId, String message){
-		MessageResource messageResource = new MessageResourceImpl();
-		messageResource.setMessageKey(messageKey);
-		messageResource.setLocale(locale);
-		messageResource.setLocaleReferenceId(localeReferenceId);
-		messageResource.setMessage(message);
-
-		
-		return messageResource;
-	
-	}
-	
-
-	
-
 	private void setDropDownContents(Model model, RegisterOfPledges registerOfPledges, Locale locale) {
 		
 		
@@ -414,7 +399,7 @@ public class RegisterOfPledgesController extends BaseController
 		
 		model.addAttribute("localeMap", localizedLocaleMap);
 	}
-	
+
 	private void setTranslationDropDownContents(Model model, Locale locale) {
 		Map<Long, String> localeMap = referenceStore.getLocale();
 		SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
@@ -423,6 +408,6 @@ public class RegisterOfPledgesController extends BaseController
 		}
 		model.addAttribute("localeMap", localizedLocaleMap);
 	}
-	
+
 
 }

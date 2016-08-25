@@ -399,21 +399,6 @@ public class AddressController extends BaseController
 		return "redirect:/address/add?language=" + translationLocale;
 
 	}
-	
-	private MessageResource populateMessageResource(String messageKey, String locale, Long localeReferenceId, String message){
-		MessageResource messageResource = new MessageResourceImpl();
-		messageResource.setMessageKey(messageKey);
-		messageResource.setLocale(locale);
-		messageResource.setLocaleReferenceId(localeReferenceId);
-		messageResource.setMessage(message);
-
-		
-		return messageResource;
-	
-	}
-	
-
-	
 
 	private void setDropDownContents(Model model, Address address, Locale locale) {
 		

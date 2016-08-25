@@ -512,21 +512,6 @@ public class ApplicationUserController extends BaseController
 
 	}
 	
-	private MessageResource populateMessageResource(String messageKey, String locale, Long localeReferenceId, String message){
-		MessageResource messageResource = new MessageResourceImpl();
-		messageResource.setMessageKey(messageKey);
-		messageResource.setLocale(locale);
-		messageResource.setLocaleReferenceId(localeReferenceId);
-		messageResource.setMessage(message);
-
-		
-		return messageResource;
-	
-	}
-	
-
-	
-
 	private void setDropDownContents(Model model, ApplicationUser applicationUser, Locale locale) {
 		
 		Map<Long, String> userRolesMap = referenceStore.getUserRole();

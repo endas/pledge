@@ -395,18 +395,9 @@ public class ReferenceController extends BaseController
 
 	}
 	
-	private MessageResource populateMessageResource(String messageKey, String locale, Long localeReferenceId, String message){
-		MessageResource messageResource = new MessageResourceImpl();
-		messageResource.setMessageKey(messageKey);
-		messageResource.setLocale(locale);
-		messageResource.setLocaleReferenceId(localeReferenceId);
-		messageResource.setMessage(message);
 
-		
-		return messageResource;
-	
-	}
-	
+
+
 
 	/**
 	 * Opens the details of the ReferenceCategory that owns the Reference identified by the
