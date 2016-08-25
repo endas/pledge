@@ -156,7 +156,8 @@ public class ServicePledgeController extends BaseController
 		logger.debug("saveOrUpdateServicePledge() : {}", servicePledge);
 		SecurityUser user = (SecurityUser)authentication.getPrincipal();
         Long userId = user.getApplicationUser().getId();
-		
+
+
 
 		if (result.hasErrors()) {
 			setDropDownContents(model, servicePledge, locale);
@@ -452,42 +453,15 @@ public class ServicePledgeController extends BaseController
 
 	private void setDropDownContents(Model model, ServicePledge servicePledge, Locale locale) {
 		
-		Map<Long, String> pledgeServiceLevelOneMap = referenceStore.getPledgeServiceLevelOne();
-		SortedMap<Long, String> localizedpledgeServiceLevelOneMap = new TreeMap<Long, String>(pledgeServiceLevelOneMap);
-		for (Map.Entry<Long, String> entry : pledgeServiceLevelOneMap.entrySet()) {
-			localizedpledgeServiceLevelOneMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("pledgeServiceLevelOneMap", localizedpledgeServiceLevelOneMap);
+		model.addAttribute("pledgeServiceLevelOneMap", localizeServiceMap(referenceStore.getPledgeServiceLevelOne(),locale));
 	      
-		Map<Long, String> pledgeServiceLevelTwoMap = referenceStore.getPledgeServiceLevelTwo();
-		SortedMap<Long, String> localizedpledgeServiceLevelTwoMap = new TreeMap<Long, String>(pledgeServiceLevelTwoMap);
-		for (Map.Entry<Long, String> entry : pledgeServiceLevelTwoMap.entrySet()) {
-			localizedpledgeServiceLevelTwoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("pledgeServiceLevelTwoMap", localizedpledgeServiceLevelTwoMap);
+		model.addAttribute("pledgeServiceLevelTwoMap", localizeServiceMap(referenceStore.getPledgeServiceLevelTwo(),locale));
 	      
-		Map<Long, String> pledgeServiceLevelThreeMap = referenceStore.getPledgeServiceLevelThree();
-		SortedMap<Long, String> localizedpledgeServiceLevelThreeMap = new TreeMap<Long, String>(pledgeServiceLevelThreeMap);
-		for (Map.Entry<Long, String> entry : pledgeServiceLevelThreeMap.entrySet()) {
-			localizedpledgeServiceLevelThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("pledgeServiceLevelThreeMap", localizedpledgeServiceLevelThreeMap);
+		model.addAttribute("pledgeServiceLevelThreeMap", localizeServiceMap(referenceStore.getPledgeServiceLevelThree(),locale));
 	      
-		Map<Long, String> pledgeServiceHoursPerWeekMap = referenceStore.getIntegerCount1to40();
-		SortedMap<Long, String> localizedpledgeServiceHoursPerWeekMap = new TreeMap<Long, String>(pledgeServiceHoursPerWeekMap);
-		for (Map.Entry<Long, String> entry : pledgeServiceHoursPerWeekMap.entrySet()) {
-			localizedpledgeServiceHoursPerWeekMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("pledgeServiceHoursPerWeekMap", localizedpledgeServiceHoursPerWeekMap);
+		model.addAttribute("pledgeServiceHoursPerWeekMap", localizeServiceMap(referenceStore.getIntegerCount1to40(),locale));
 	      
-		
-		Map<Long, String> localeMap = referenceStore.getLocale();
-		SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
-		for (Map.Entry<Long, String> entry : localeMap.entrySet()) {
-			localizedLocaleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		
-		model.addAttribute("localeMap", localizedLocaleMap);
+		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
 	}
 	
 

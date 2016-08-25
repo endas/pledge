@@ -76,12 +76,23 @@ public class BaseController {
     }
 
     protected void setTranslationDropDownContents(Model model, Locale locale) {
-        Map<Long, String> localeMap = referenceStore.getLocale();
-        SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
-        for (Map.Entry<Long, String> entry : localeMap.entrySet()) {
-            localizedLocaleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+        model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
+    }
+
+    /**
+     * Localize map by replacing placeholders with a proper localization string.
+     * @param dataMap .
+     * @param locale .
+     * @return localized Map.
+     */
+    protected  SortedMap<Long, String> localizeServiceMap(Map<Long, String> dataMap, Locale locale) {
+
+        SortedMap<Long, String> localizedMap = new TreeMap<Long, String>(dataMap);
+        for (Map.Entry<Long, String> entry : dataMap.entrySet()) {
+            localizedMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
         }
-        model.addAttribute("localeMap", localizedLocaleMap);
+
+        return localizedMap;
     }
 
 }
