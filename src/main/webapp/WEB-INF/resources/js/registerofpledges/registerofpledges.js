@@ -1412,8 +1412,14 @@ $( document ).ready(function() {
 		if (frmAccommodationPledgeCreateUpdateLaddaSubmitButtonHandler != null){
 			frmAccommodationPledgeCreateUpdateLaddaSubmitButtonHandler.stop();
 		}
+		
+		var isNewAccomodation = $('#accommodationPledgeCreateUpdateModal').find('#frmAccommodationPledgeCreateUpdateLoadedObjectId').val().length == 0;
+		if(isNewAccomodation){
+			$('#AccomodationSameAsProfileAddress').click();
+		}
+		
+		
 		$('#frmAccommodationPledgeCreateUpdateAddressOne').focus();
-
 		$('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect').chosen();
 		$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
 		$('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect').chosen();
@@ -2803,6 +2809,50 @@ $( document ).ready(function() {
 	$('#frmApplicationUserDetailsCreateUpdateCountry').prop('disabled', 'disabled');
 
 });// end of document.ready line (133)
+
+
+/**
+ * This function will retrieve the profile address from the database 
+ * and set it in the Create Acomodation pledge by default 
+ * @returns
+ */
+function sameAsProfileAddressSelected(){
+	
+	if($('#AccomodationSameAsProfileAddress').is(':checked')){
+		getCurrentProfileAddressFromDB();	
+	} else{
+		$('#frmAccommodationPledgeCreateUpdateAddressOne').val(""); 
+		$('#frmAccommodationPledgeCreateUpdateAddressTwo').val("");
+		$('#frmAccommodationPledgeCreateUpdateCity').val("");
+		$('#frmAccommodationPledgeCreateUpdateStateProvinceRegion').val("");
+		$('#frmAccommodationPledgeCreateUpdatePostCode').val("");
+		$('#frmAccommodationPledgeCreateUpdateCountry').val("");
+	}
+	
+		
+}
+
+function getCurrentProfileAddressFromDB(){
+
+	$.ajax({
+		dataType: "json",
+		method: "GET",
+		url : rootContext + "/restful/currentUserAddress",
+		success: function( data ) {
+			
+			$('#frmAccommodationPledgeCreateUpdateAddressOne').val(data.addressOne); 
+			$('#frmAccommodationPledgeCreateUpdateAddressTwo').val(data.addressTwo);
+			$('#frmAccommodationPledgeCreateUpdateCity').val(data.city);
+			$('#frmAccommodationPledgeCreateUpdateStateProvinceRegion').val(data.city);
+			$('#frmAccommodationPledgeCreateUpdatePostCode').val(data.postCode);
+			$('#frmAccommodationPledgeCreateUpdateCountry').val(data.country);
+		},
+		error: function( data ){
+			
+		}
+	});
+
+}
 
 
 /**
