@@ -109,6 +109,8 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
+
+    private String language;
     
 
     /**
@@ -122,7 +124,7 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 		this.pledgeServiceLevelTwo = new Long("0");
 		
 		this.pledgeServiceLevelThree = new Long("0");
-		
+
 		this.additionalInformation = new String();
 		
 		this.pledgeServiceQualification = new String();
@@ -505,6 +507,14 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 	public Date getPledgeServiceDateAvailableTo(){
 		return this.pledgeServiceDateAvailableTo;
 	}
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
 
 	@Override
 	public String toString() {

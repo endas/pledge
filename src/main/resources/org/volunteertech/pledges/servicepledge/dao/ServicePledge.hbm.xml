@@ -40,6 +40,8 @@
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
         <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+        <property name="language" type="string" length="200" column="LANGUAGE"/>
     </class>
+
 </hibernate-mapping>
 

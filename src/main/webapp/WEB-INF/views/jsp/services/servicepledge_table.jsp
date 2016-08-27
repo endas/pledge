@@ -66,7 +66,9 @@
        
 					<th><spring:message code="frmServicePledgePledgeServiceDateAvailableLabel"/></th>      
        
-					<th><spring:message code="frmServicePledgePledgeServiceHoursPerWeekLabel"/></th>      
+					<th><spring:message code="frmServicePledgePledgeServiceHoursPerWeekLabel"/></th>
+
+					<th><spring:message code="servicepledge.language"/></th>
       
 					<th></th> <!-- Associations links -->
 					
