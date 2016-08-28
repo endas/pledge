@@ -75,6 +75,10 @@ var frmAccommodationPledgeCreateUpdateNumberOfBedsTextBuffer = null;
 var frmAccommodationPledgeCreateUpdateNumberOfBedsValueBuffer = 0;
 var frmAccommodationPledgeCreateUpdateNumberOfBedsSetupCompleted = false;
 
+var frmAccommodationPledgeCreateUpdateNumberOfBedroomsTextBuffer = null;
+var frmAccommodationPledgeCreateUpdateNumberOfBedroomsValueBuffer = 0;
+var frmAccommodationPledgeCreateUpdateNumberOfBedroomsSetupCompleted = false;
+
 var frmAccommodationPledgeCreateUpdateVacantOrSharedTextBuffer = null;
 var frmAccommodationPledgeCreateUpdateVacantOrSharedValueBuffer = 0;
 var frmAccommodationPledgeCreateUpdateVacantOrSharedSetupCompleted = false;
@@ -917,7 +921,7 @@ $( document ).ready(function() {
 		modal.find('#frmAccommodationPledgeCreateUpdateCallBackDisplayType').val(callBackDisplayType);
 		modal.find('#frmAccommodationPledgeCreateUpdateCallBackTableBodyId').val(callBackTableId);
 		modal.find('#frmAccommodationPledgeCreateUpdatePropertyUrl').val(propertyUrl);
-
+		
 
 		if (mainFormObjectId == ''){
 			var invalidParentIdMessage = button.data('invalid-parent-id-message'); // Extract info from data-* attributes
@@ -970,7 +974,7 @@ $( document ).ready(function() {
 				dataType: "json",
 				url: rootContext + "/restful/referenceslist",
 				data: {
-					referenceType: "LocalAmenity"
+					referenceType: "Facilities"
 				},
 				success: function( data ) {
 
@@ -1234,6 +1238,9 @@ $( document ).ready(function() {
 
 					modal.find('#frmAccommodationPledgeCreateUpdatePostCode').val(data.postCode);
 					frmAccommodationPledgeCreateUpdatePostCodeBuffer = data.postCode;
+					
+					modal.find('#frmAccommodationPledgeCreateUpdateNumberOfBedrooms option[value="' + data.numberOfBedrooms +  '"]').attr("selected", true);
+					var frmAccommodationPledgeCreateUpdateNumberOfBedroomsValueBuffer = data.numberOfBedrooms;
 
 					function frmAccommodationPledgeCreateUpdateCountryTimeOut() {
 						setTimeout(function () {
@@ -1482,6 +1489,7 @@ $( document ).ready(function() {
 				accommodationType : modal.find('#frmAccommodationPledgeCreateUpdateAccommodationType').val(),
 				accommodationCondition : modal.find('#frmAccommodationPledgeCreateUpdateAccommodationCondition').val(),
 				numberOfBeds : modal.find('#frmAccommodationPledgeCreateUpdateNumberOfBeds').val(),
+				numberOfBedrooms : modal.find('#frmAccommodationPledgeCreateUpdateNumberOfBedrooms').val(),
 				vacantOrShared : modal.find('#frmAccommodationPledgeCreateUpdateVacantOrShared').val(),
 				facilities : _.map(modal.find('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').val(), Number),
 				amenities : _.map(modal.find('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect').val(), Number),
@@ -2035,10 +2043,10 @@ $( document ).ready(function() {
 							cell.appendChild(cellText);
 							row.appendChild(cell);
 							
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.pledgeServiceTravelAbilitiesReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
+//							var cell = document.createElement("td");
+//							var cellText = document.createTextNode(obj.pledgeServiceTravelAbilitiesReferenceTranslation);
+//							cell.appendChild(cellText);
+//							row.appendChild(cell);
 							
 							var cell = document.createElement("td");
 							var cellText = document.createTextNode(obj.additionalInformation);

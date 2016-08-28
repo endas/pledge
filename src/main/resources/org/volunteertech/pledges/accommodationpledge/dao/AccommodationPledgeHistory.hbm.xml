@@ -34,12 +34,39 @@
 	  
 		<property name="numberOfBeds" type="long" column="NUMBEROFBEDS" length="10"></property>	
 	  
+	  	<property name="numberOfBedrooms" type="long" column="NUMBEROFBEDROOMS" length="10" ></property>	
+	  
 		<property name="vacantOrShared" type="long" column="VACANTORSHARED" length="10"></property>	
 	  
 		<property name="otherAmenities" type="string" column="OTHERAMENITIES" length="500"></property>	
 	  
 		<property name="additionalInformation" type="string" column="ADDITIONALINFORMATION" length="500"></property>	
 	  
+	    
+		<set name="facilities" table="ACCOMMODATION_FACILITIES_HISTORY" fetch="join" cascade="all">
+            <key>
+                <column name="ACCOMMODATIONPLEDGEHISTORYID" not-null="true" />
+            </key>
+            <!-- <many-to-many column="REFERENCEID" class="org.volunteertech.pledges.reference.dao.ReferenceImpl" unique="true"/>
+             --><element type="long" column="REFERENCE_ID" not-null="true"  />
+        </set> 
+  		
+   		<set name="amenities" table="ACCOMMODATION_AMENITIES_HISTORY" fetch="join" cascade="all">
+            <key>
+                <column name="ACCOMMODATIONPLEDGEHISTORYID" not-null="true" />
+            </key>
+            <!-- <many-to-many column="REFERENCEID" class="org.volunteertech.pledges.reference.dao.ReferenceImpl" unique="true"/>
+             --><element type="long" column="REFERENCE_ID" not-null="true"  />
+        </set>
+        
+        <set name="accommodateWho" table="ACCOMMODATION_WHO_HISTORY" fetch="join" cascade="all">
+            <key>
+                <column name="ACCOMMODATIONPLEDGEHISTORYID" not-null="true" />
+            </key>
+            <!-- <many-to-many column="REFERENCEID" class="org.volunteertech.pledges.reference.dao.ReferenceImpl" unique="true"/>
+             --><element type="long" column="REFERENCE_ID" not-null="true"  />
+        </set>  
+  		
         <property name="createdByID" type="long" column="CREATEDBYID"/>
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED"/>

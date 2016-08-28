@@ -33,6 +33,8 @@
 		<property name="accommodationCondition" type="long" column="ACCOMMODATIONCONDITION" length="10" ></property>	
 	  
 		<property name="numberOfBeds" type="long" column="NUMBEROFBEDS" length="10" ></property>	
+		
+		<property name="numberOfBedrooms" type="long" column="NUMBEROFBEDROOMS" length="10" ></property>	
 	  
 		<property name="vacantOrShared" type="long" column="VACANTORSHARED" length="10" ></property>	
 	  
@@ -44,7 +46,7 @@
             <column name="REGISTEROFPLEDGESID" not-null="false" />
         </many-to-one>
   
-  		<!--  TODO - convert these mappings to full foreign keys on the referenceImpl class-->
+  		
 		<set name="facilities" table="ACCOMMODATION_FACILITIES" fetch="join" cascade="all">
             <key>
                 <column name="ACCOMMODATIONPLEDGEID" not-null="true" />
@@ -52,7 +54,7 @@
             <!-- <many-to-many column="REFERENCEID" class="org.volunteertech.pledges.reference.dao.ReferenceImpl" unique="true"/>
              --><element type="long" column="REFERENCE_ID" not-null="true"  />
         </set> 
-  		<!--  TODO - convert these mappings to full foreign keys on the referenceImpl class-->
+  		
    		<set name="amenities" table="ACCOMMODATION_AMENITIES" fetch="join" cascade="all">
             <key>
                 <column name="ACCOMMODATIONPLEDGEID" not-null="true" />
@@ -60,7 +62,7 @@
             <!-- <many-to-many column="REFERENCEID" class="org.volunteertech.pledges.reference.dao.ReferenceImpl" unique="true"/>
              --><element type="long" column="REFERENCE_ID" not-null="true"  />
         </set>
-        <!--  TODO - convert these mappings to full foreign keys on the referenceImpl class-->
+        
         <set name="accommodateWho" table="ACCOMMODATION_WHO" fetch="join" cascade="all">
             <key>
                 <column name="ACCOMMODATIONPLEDGEID" not-null="true" />

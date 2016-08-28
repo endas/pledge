@@ -122,7 +122,7 @@
   
   		 <div id="frmServicePledgeCreateUpdateTravelAbilitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.travel.label" for="frmServicePledgeCreateUpdateTravelAbilities" class="control-label"><spring:message code="frmServicePledgeTravelLabel"/></label>
-			<select id="frmServicePledgeCreateUpdateTravelAbilitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmServicePledgeCreateUpdateTravelAbilitiesPlaceHolder"/>" >
+			<select id="frmServicePledgeCreateUpdateTravelAbilitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmServicePledgeTravelAbilitiesPlaceHolder"/>" >
       			  
    			 </select>
 			<span id="frmServicePledgeCreateUpdateTravelAbilitiesCountBlock" class="help-block"></span>

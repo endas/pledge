@@ -448,6 +448,10 @@ public interface AccommodationPledge extends Serializable {
 	public Set<Long> getAccommodateWho();
 
 	public void setAccommodateWho(Set<Long> accommodateWho);
+	
+	public Long getNumberOfBedrooms();
+
+	public void setNumberOfBedrooms(Long numberOfBedrooms);
 }
     
     

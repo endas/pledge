@@ -163,6 +163,24 @@
 				  
 		  </div>
   
+  		<div id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.numberofbedrooms.label" for="frmAccommodationPledgeCreateUpdateNumberOfBedrooms" class="control-label"><spring:message code="frmAccommodationPledgeNumberOfBedroomsLabel"/></label>	
+			<select class="form-control" data-display-name="Number of bedrooms" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateNumberOfBedrooms" aria-describedby="frmAccommodationPledgeCreateUpdateNumberOfBedroomsHelpBlock">
+			<option value="-1">Select number of bedrooms</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
+			<option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+			<option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option>
+			<option value="19">19</option><option value="20">20</option>
+			</select>
+	  
+			<span id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeNumberOfBedroomsHelpBlock"/></span>
+			<div id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsAlertBlockText"></span>
+			</div>
+				  
+		  </div>
+  
+  
 		  <div id="frmAccommodationPledgeCreateUpdateVacantOrSharedFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.vacantorshared.label" for="frmAccommodationPledgeCreateUpdateVacantOrShared" class="control-label"><spring:message code="frmAccommodationPledgeVacantOrSharedLabel"/></label>	
 			<select class="form-control" data-display-name="Vacant or Shared" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateVacantOrShared" aria-describedby="frmAccommodationPledgeCreateUpdateVacantOrSharedHelpBlock">

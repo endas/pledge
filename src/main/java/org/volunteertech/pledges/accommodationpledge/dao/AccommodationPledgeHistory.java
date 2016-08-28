@@ -1,6 +1,7 @@
 package org.volunteertech.pledges.accommodationpledge.dao;
 import java.util.Date;
-
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,6 @@ import javax.persistence.TemporalType;
  * 
  * I Changed this to show how annotations could be used for this project.
  * Michael generated this stuff but all that XML bullshit is a pain to use manually
- * Annotations make life a bit easier.Dessie.
  * ----------
  * $Log$
  *
@@ -92,7 +92,12 @@ public class AccommodationPledgeHistory
 
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
+
+	private Long numberOfBedrooms;
     
+	private Set<Long> amenities = new HashSet<Long>();
+	private Set<Long> facilities = new HashSet<Long>();
+	private Set<Long> accommodateWho = new HashSet<Long>();
     
     /**
      * Default Constructor for the AccommodationPledge bean
@@ -406,6 +411,19 @@ public class AccommodationPledgeHistory
       return numberOfBeds;
     }
 
+	
+	
+    public void setNumberOfBedrooms(Long numberOfBedrooms)
+    {
+      this.numberOfBedrooms = numberOfBedrooms;
+    }
+
+
+	@Column(name = "NUMBEROFBEDROOMS")
+    public Long getNumberOfBedrooms()
+    {
+      return numberOfBedrooms;
+    }
     
     /**
      * Sets the address type that has been chosen by the user
@@ -447,23 +465,6 @@ public class AccommodationPledgeHistory
     }
 
     
-//    /**
-//     * Sets the address type that has been chosen by the user
-//     * @param canYouAccommodate is the address type
-//     */
-//    public void setCanYouAccommodate(Long canYouAccommodate)
-//    {
-//      this.canYouAccommodate = canYouAccommodate;
-//    }
-//
-//    /**
-//     * Returns the address type that has been chosen by the user or saved in the database
-//     * @return the address type
-//     */
-//    public Long getCanYouAccommodate()
-//    {
-//      return canYouAccommodate;
-//    }
 
     
     /**
@@ -487,6 +488,30 @@ public class AccommodationPledgeHistory
     }
 
 
+	public Set<Long> getAmenities() {
+		return this.amenities;
+	}
+
+	public void setAmenities(Set<Long> amenities) {
+		this.amenities = amenities;
+	}
+
+	public Set<Long> getFacilities() {
+		return facilities;
+	}
+
+	public void setFacilities(Set<Long> facilities) {
+		this.facilities = facilities;
+	}
+
+	public Set<Long> getAccommodateWho() {
+		return accommodateWho;
+	}
+
+	public void setAccommodateWho(Set<Long> accommodateWho) {
+		this.accommodateWho = accommodateWho;
+	}
+	
     /**
      * sets the ID of the user that created the underlying record
      */
@@ -569,6 +594,7 @@ public class AccommodationPledgeHistory
     }
     	
 
+	
 }
     
     

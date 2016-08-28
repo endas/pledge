@@ -106,6 +106,8 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     /** the address type */
     private Long numberOfBeds;
     
+    private Long numberOfBedrooms;
+    
     /** the address type */
     private String numberOfBedsReferenceTranslation;
     
@@ -117,7 +119,7 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     private String vacantOrSharedReferenceTranslation;
     
 	
-    /** the participant comments */
+
     private String otherAmenities;
 	
 
@@ -777,6 +779,14 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 
 	public void setAccommodateWho(Set<Long> accommodateWho) {
 		this.accommodateWho = accommodateWho;
+	}
+
+	public Long getNumberOfBedrooms() {
+		return numberOfBedrooms;
+	}
+
+	public void setNumberOfBedrooms(Long numberOfBedrooms) {
+		this.numberOfBedrooms = numberOfBedrooms;
 	}
 
 
