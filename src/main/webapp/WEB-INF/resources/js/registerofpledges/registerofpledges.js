@@ -1239,7 +1239,7 @@ $( document ).ready(function() {
 					modal.find('#frmAccommodationPledgeCreateUpdatePostCode').val(data.postCode);
 					frmAccommodationPledgeCreateUpdatePostCodeBuffer = data.postCode;
 					
-					modal.find('#frmAccommodationPledgeCreateUpdateNumberOfBedrooms option[value="' + data.numberOfBedrooms +  '"]').attr("selected", true);
+					modal.find('#frmAccommodationPledgeCreateUpdateNumberOfBedrooms').val(data.numberOfBedrooms)
 					var frmAccommodationPledgeCreateUpdateNumberOfBedroomsValueBuffer = data.numberOfBedrooms;
 
 					function frmAccommodationPledgeCreateUpdateCountryTimeOut() {
