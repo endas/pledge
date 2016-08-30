@@ -8,6 +8,8 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.netgrains.validators.EmailValidator;
+import com.netgrains.validators.PostcodeValidator;
+
 import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.business.ApplicationUserDetailsBo;
 
@@ -17,6 +19,10 @@ public class ApplicationUserDetailsFormValidator implements Validator {
 	@Autowired
 	@Qualifier("emailValidator")
 	EmailValidator emailValidator;
+	
+	@Autowired
+	@Qualifier("postcodeValidator")
+	PostcodeValidator postcodeValidator;
 	
 	@Autowired
 	ApplicationUserDetailsBo applicationUserDetailsBo;
@@ -89,13 +95,13 @@ public class ApplicationUserDetailsFormValidator implements Validator {
 			errors.rejectValue("stateProvinceRegion", "applicationuserdetails.stateprovinceregion.optional.validation.minimumlength", new Object[] {2}, "> 2");
 		}
 		    
-		if (applicationUserDetails.getPostCode().length() > 10){
-			errors.rejectValue("postCode", "applicationuserdetails.postcode.validation.length", new Object[] {10}, "< 10");
+		if ((applicationUserDetails.getPostCode().length() > 0) && !postcodeValidator.valid(applicationUserDetails.getPostCode())){
+			errors.rejectValue("postCode", "applicationuserdetails.postcode.validation.invalid");
 		}
 		  
-		if ( (applicationUserDetails.getPostCode().length() > 0) && (applicationUserDetails.getPostCode().length() < 0) ){
-			errors.rejectValue("postCode", "applicationuserdetails.postcode.optional.validation.minimumlength", new Object[] {0}, "> 0");
-		}
+//		if ( (applicationUserDetails.getPostCode().length() > 0) && (applicationUserDetails.getPostCode().length() < 0) ){
+//			errors.rejectValue("postCode", "applicationuserdetails.postcode.optional.validation.minimumlength", new Object[] {0}, "> 0");
+//		}
 		   
 		applicationUserDetails.setCountry(159L);//always ireland for the time being
 		if(applicationUserDetails.getCountry() == 0 || applicationUserDetails.getCountry() == -1){
