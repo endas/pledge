@@ -182,6 +182,7 @@ public class ApplicationUserDetailsController extends BaseController
 			try{
 				// TODO: Needs exception handling policy
 			    	applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);
+			    	user.getApplicationUser().setApplicationUserDetails(applicationUserDetails);
 			}
 			catch (Exception ex){
 				logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -231,6 +232,7 @@ public class ApplicationUserDetailsController extends BaseController
 		try{
 			// TODO: Needs exception handling policy
 	    	applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);
+	    	user.getApplicationUser().setApplicationUserDetails(applicationUserDetails);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

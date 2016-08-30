@@ -9,6 +9,8 @@
 		<id name="id" column="ACCOMMODATIONPLEDGEID">
             <generator class="native"/>
         </id>
+
+        <property name="sameAsProfileAddress" type="boolean" column="SAMEASPROFILEADDRESS" not-null="false"></property>
         
 		<property name="addressOne" type="string" column="ADDRESSONE" length="50" not-null="true"></property>	
 	  

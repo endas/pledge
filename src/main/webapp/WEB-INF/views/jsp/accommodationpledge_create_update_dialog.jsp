@@ -14,6 +14,13 @@
           <input id="frmAccommodationPledgeCreateUpdateCallBackTableBodyId" type="hidden"/>
           <input id="frmAccommodationPledgeCreateUpdatePropertyUrl" type="hidden"/>
           <input id="frmAccommodationPledgeCreateUpdateTitle" type="hidden"/>
+          
+        <div class="form-group">
+
+						<input type="checkbox" data-display-name="Same Address as Profile"
+							data-required="false" id="AccomodationSameAsProfileAddress"
+							onclick='sameAsProfileAddressSelected();' /> <label id="accommodationpledge.sameAsProfileAddress.label" for="AccomodationSameAsProfileAddress" class="control-label"><spring:message code="frmAccomodationSameAsProfileAddress"/></label> 
+      	</div>
 		  
 		  <div id="frmAccommodationPledgeCreateUpdateAddressOneFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.addressone.label" for="frmAccommodationPledgeCreateUpdateAddressOne" class="control-label"><spring:message code="frmAccommodationPledgeAddressOneLabel"/></label>

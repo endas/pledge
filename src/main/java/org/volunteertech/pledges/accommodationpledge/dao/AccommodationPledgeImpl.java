@@ -53,6 +53,7 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
      */
     private CurrentMode currentMode;
 
+    private Boolean sameAsProfileAddress;
     
     /** the street or house address */
     private String addressOne;
@@ -187,6 +188,7 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();
+        this.sameAsProfileAddress = true;
     }
     
     /**
@@ -225,8 +227,18 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
         this.parentObjectId = parentObjectId;
     }
 
-    
-    
+    @Override
+    public void setSameAsProfileAddress(Boolean sameAsProfileAddress) {
+        this.sameAsProfileAddress = sameAsProfileAddress;
+
+    }
+
+    @Override
+    public Boolean getSameAsProfileAddress() {
+        return this.sameAsProfileAddress;
+    }
+
+
     /**
      * Sets the street or house address
      * @param addressOne is the street or house address

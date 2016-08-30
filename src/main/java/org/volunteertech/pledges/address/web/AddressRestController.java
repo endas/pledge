@@ -28,6 +28,7 @@ import org.volunteertech.pledges.address.dao.AddressLoadException;
 import org.volunteertech.pledges.address.dao.AddressSaveException;
 import org.volunteertech.pledges.address.validator.AddressFormValidator;
 import org.volunteertech.pledges.main.web.BaseController;
+import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.security.SecurityUser;
 
 import org.volunteertech.pledges.reference.ReferenceStore;
@@ -117,6 +118,29 @@ public class AddressRestController extends BaseController
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
 		}		
 		
+		
+    	return address;
+    }
+	
+	/**
+	 * Returns a JSON representation of the Address record that matches the id parameter
+	 * @param id the primary key by which to search
+	 * @return the Address with the relevant primary key.
+	 */
+	@RequestMapping(value = "/restful/currentUserAddress", method = RequestMethod.GET)
+	@ResponseBody
+    public Address getApplicationUserAddress(Authentication authentication) {
+		logger.info("Inside restful getAddress method...");
+		Address address = new AddressImpl();
+		SecurityUser user = (SecurityUser)authentication.getPrincipal();
+		
+        ApplicationUserDetails ud = user.getApplicationUser().getApplicationUserDetails();
+        address.setAddressOne(ud.getAddressOne()); 
+        address.setAddressTwo(ud.getAddressTwo());
+        address.setCity(ud.getCity());
+        address.setCountry(ud.getCountry());
+        address.setPostCode(ud.getPostCode());
+        address.setStateProvinceRegion(ud.getStateProvinceRegion());
 		
     	return address;
     }

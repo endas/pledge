@@ -67,6 +67,11 @@ public interface AccommodationPledge extends Serializable {
      * @param parentObjectId allows restful web services to bind the parentId property when adding a new record.
      */
 	public void setParentObjectId(Long parentObjectId);
+
+
+    public void setSameAsProfileAddress(Boolean sameAsProfileAddress);
+
+    public Boolean getSameAsProfileAddress();
     
     
     /**
