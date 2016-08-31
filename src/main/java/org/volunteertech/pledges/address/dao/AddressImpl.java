@@ -112,6 +112,18 @@ public class AddressImpl implements Address, Serializable {
     	this.dateUpdated = new Date();
     }
     
+    public AddressImpl(String addressOne, String addressTwo, String city, 
+    		String state, String postcode, Long country){
+    	
+    	this.addressOne = addressOne;		
+		this.addressTwo = addressTwo;		
+		this.city = city;		
+		this.stateProvinceRegion = state;		
+		this.postCode = postcode;		
+		this.country = country;
+    	
+    }
+    
     /**
      * Returns the Id for the underlying database table record
      * @return the Id for the underlying database table record

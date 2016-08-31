@@ -2,12 +2,14 @@ package org.volunteertech.pledges.geolocation;
 
 import com.google.maps.GeoApiContext;
 import com.google.maps.model.GeocodingResult;
+import com.google.maps.model.LatLng;
 import com.google.maps.GeocodingApi;
+import org.volunteertech.pledges.address.dao.Address;
 
-public class GeoCodingService {
+public class GeoCodingService implements IGeocodingService {
 	
 	
-	public void getAddressCoordinates(){
+	public LatLng getLatitudeAndLongitude(Address address){
 		
 		GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyDS9MEtAEdfstGGB48mr5v3qZMY1D-XQ2s");
 		try {
@@ -17,7 +19,7 @@ public class GeoCodingService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		return null;		
 		
 	}
 
