@@ -73,6 +73,13 @@ public interface AccommodationPledge extends Serializable {
 
     public Boolean getSameAsProfileAddress();
     
+    public void setLatitude(double latitude);
+    
+    public double getLatitude();
+    
+    public void setLongitude(double longitude);
+    
+    public double getLongitude();    
     
     /**
      * Sets the street or house address

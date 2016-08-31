@@ -62,4 +62,6 @@ dependencies {
   
   // Wro4j - Manage resources to improve web application load time
   runtime group: 'ro.isdc.wro4j', name: 'wro4j-maven-plugin', version: '1.7.9'
+  
+  compile 'com.google.maps:google-maps-services:0.1.15'
 }

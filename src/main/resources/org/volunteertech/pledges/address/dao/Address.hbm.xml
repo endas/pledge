@@ -11,6 +11,10 @@
 	  
         </id>
         
+        <property name="latitude" type="double" column="LATITUDE"></property>
+        
+        <property name="longitude" type="double" column="LONGITUDE"></property>
+        
 		<property name="addressOne" type="string" column="ADDRESSONE" length="50" not-null="true"></property>	
 	  
 		<property name="addressTwo" type="string" column="ADDRESSTWO" length="50" not-null="true"></property>	

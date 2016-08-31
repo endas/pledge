@@ -132,6 +132,15 @@ public interface ApplicationUserDetails extends Serializable {
     public String getTelephoneNumber();
     
     
+    public void setLatitude(double latitude);
+    
+    public double getLatitude();
+    
+    public void setLongitude(double longitude);
+    
+    public double getLongitude(); 
+    
+    
     /**
      * Sets the street or house address
      * @param addressOne is the street or house address

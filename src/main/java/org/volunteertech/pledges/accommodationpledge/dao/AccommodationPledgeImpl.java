@@ -150,6 +150,10 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     private Set<Long> facilities = new HashSet<Long>();
     private Set<Long> accommodateWho = new HashSet<Long>();
     
+    private double latitude;
+    
+    private double longitude;
+    
     /**
      * Default Constructor for the AccommodationPledge bean
      */
@@ -802,6 +806,27 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 	}
 
 
+	@Override
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+		
+	}
+
+	@Override
+	public double getLatitude() {
+		return latitude;
+	}
+
+	@Override
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+		
+	}
+
+	@Override
+	public double getLongitude() {
+		return longitude;
+	}
 
 }
     

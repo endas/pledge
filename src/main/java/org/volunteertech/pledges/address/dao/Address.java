@@ -65,6 +65,14 @@ public interface Address extends Serializable {
      * @param parentObjectId allows restful web services to bind the parentId property when adding a new record.
      */
 	public void setParentObjectId(Long parentObjectId);
+	
+    public void setLatitude(double latitude);
+    
+    public double getLatitude();
+    
+    public void setLongitude(double longitude);
+    
+    public double getLongitude(); 
     
     
     /**

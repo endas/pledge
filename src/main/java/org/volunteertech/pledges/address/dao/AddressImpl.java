@@ -85,6 +85,10 @@ public class AddressImpl implements Address, Serializable {
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
     
+    private double latitude;
+    
+    private double longitude;
+    
 
     /**
      * Default Constructor for the Address bean
@@ -385,6 +389,28 @@ public class AddressImpl implements Address, Serializable {
      public String toString(){
     	return "Address [id=" + id + ", " + "addressOne=" + addressOne + ", " + "addressTwo=" + addressTwo + ", " + "city=" + city + ", " + "stateProvinceRegion=" + stateProvinceRegion + ", " + "postCode=" + postCode + ", " + "country=" + country + "]";
      }
+     
+ 	@Override
+ 	public void setLatitude(double latitude) {
+ 		this.latitude = latitude;
+ 		
+ 	}
+
+ 	@Override
+ 	public double getLatitude() {
+ 		return latitude;
+ 	}
+
+ 	@Override
+ 	public void setLongitude(double longitude) {
+ 		this.longitude = longitude;
+ 		
+ 	}
+
+ 	@Override
+ 	public double getLongitude() {
+ 		return longitude;
+ 	}
 }
     
     

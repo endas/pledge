@@ -87,6 +87,10 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 
 	/** the address type */
 	private String countryReferenceTranslation;
+	
+	private double latitude;
+	
+	private double longitude;
 
 
 	/** the contact email address where the contact type is email. */
@@ -546,6 +550,28 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
     public String toString(){
    	return "ApplicationUserDetails [id=" + id + ", " + "contactName=" + contactName + ", " + "representOrganisation=" + representOrganisation + ", " + "telephoneNumber=" + telephoneNumber + ", " + "addressOne=" + addressOne + ", " + "addressTwo=" + addressTwo + ", " + "city=" + city + ", " + "stateProvinceRegion=" + stateProvinceRegion + ", " + "postCode=" + postCode + ", " + "country=" + country + ", " + "emailAddress= " + emailAddress + "]";
     }
+
+	@Override
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+		
+	}
+
+	@Override
+	public double getLatitude() {
+		return latitude;
+	}
+
+	@Override
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+		
+	}
+
+	@Override
+	public double getLongitude() {
+		return longitude;
+	}
 
 
 	
