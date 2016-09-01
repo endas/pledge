@@ -8,6 +8,8 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.netgrains.validators.EmailValidator;
+import com.netgrains.validators.PostcodeValidator;
+
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledge;
 import org.volunteertech.pledges.accommodationpledge.business.AccommodationPledgeBo;
 
@@ -17,6 +19,10 @@ public class AccommodationPledgeFormValidator implements Validator {
 	@Autowired
 	@Qualifier("emailValidator")
 	EmailValidator emailValidator;
+	
+	@Autowired
+	@Qualifier("postcodeValidator")
+	PostcodeValidator postcodeValidator;
 	
 	@Autowired
 	AccommodationPledgeBo accommodationPledgeBo;
@@ -67,14 +73,18 @@ public class AccommodationPledgeFormValidator implements Validator {
 			errors.rejectValue("stateProvinceRegion", "accommodationpledge.stateprovinceregion.optional.validation.minimumlength", new Object[] {2}, "> 2");
 		}
 		    
-		if (accommodationPledge.getPostCode().length() > 10){
-			errors.rejectValue("postCode", "accommodationpledge.postcode.validation.length", new Object[] {10}, "< 10");
-		}
-		  
-		if ( (accommodationPledge.getPostCode().length() > 0) && (accommodationPledge.getPostCode().length() < 0) ){
-			errors.rejectValue("postCode", "accommodationpledge.postcode.optional.validation.minimumlength", new Object[] {0}, "> 0");
-		}
-		    
+//		if (accommodationPledge.getPostCode().length() > 10){
+//			errors.rejectValue("postCode", "accommodationpledge.postcode.validation.length", new Object[] {10}, "< 10");
+//		}
+//		  
+//		if ( (accommodationPledge.getPostCode().length() > 0) && (accommodationPledge.getPostCode().length() < 0) ){
+//			errors.rejectValue("postCode", "accommodationpledge.postcode.optional.validation.minimumlength", new Object[] {0}, "> 0");
+//		}
+		if ((accommodationPledge.getPostCode().length() > 0) && !postcodeValidator.valid(accommodationPledge.getPostCode())){
+			errors.rejectValue("postCode", "applicationuserdetails.postcode.validation.invalid");
+		}    
+		
+		
 		if(accommodationPledge.getCountry() == 0 || accommodationPledge.getCountry() == -1){
 			errors.rejectValue("country", "accommodationpledge.country.validation.required");
 		}

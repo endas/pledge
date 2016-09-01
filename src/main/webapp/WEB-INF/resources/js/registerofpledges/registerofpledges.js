@@ -151,6 +151,8 @@ var frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = null;
 
 var frmGoodsPledgeCreateUpdateItemSizeBuffer = null;
 
+var eircodeRegex = /^[AC-FHKNPRTV-Y]{1}[0-9]{1}[0-9W]{1}[ \-]?[0-9AC-FHKNPRTV-Y]{4}$/;
+
 function configureMultiSelect(modal, elementID, entries){
 	var select = modal.find(elementID);
 	select.val(entries);
@@ -425,6 +427,7 @@ $( document ).ready(function() {
 		modal.find('#frmApplicationUserDetailsCreateUpdateCallBackTableBodyId').val(callBackTableId);
 		modal.find('#frmApplicationUserDetailsCreateUpdatePropertyUrl').val(propertyUrl);
 
+		
 
 		if (mainFormObjectId == ''){
 			var invalidParentIdMessage = button.data('invalid-parent-id-message'); // Extract info from data-* attributes
@@ -706,6 +709,13 @@ $( document ).ready(function() {
 		var modalTitle = modal.find('#frmApplicationUserDetailsCreateUpdateTitle').val();
 		var callBackDisplayType = modal.find('#frmApplicationUserDetailsCreateUpdateCallBackDisplayType').val();
 
+		
+		if(!eircodeRegex.test(modal.find('#frmApplicationUserDetailsCreateUpdatePostCode').val())){
+			validationSuccess = false;
+			modal.find('#frmApplicationUserDetailsCreateUpdatePostCodeAlertBlock').text('Invalid value for Eircode');
+			$('#frmApplicationUserDetailsCreateUpdatePostCodeFormGroup').toggleClass('has-error', true);
+		}
+		
 		$( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox][aria-describedby], textarea, select")).each(function(){
 			var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
 			var feedbackIconContainerId = ('#').concat($(this).attr('id')).concat('FeedbackIcon');
@@ -966,7 +976,8 @@ $( document ).ready(function() {
 		else{
 			frmAccommodationPledgeCreateUpdateCountrySetupCompleted = true;
 		}
-
+		$(countrySelectInput).val(131);
+		$(countrySelectInput).prop('disabled', 'disabled');
 		
 		var facilitiesSelectInput = document.getElementById('frmApplicationUserDetailsCreateUpdateFacilitiesSelect');
 		if (facilitiesSelectInput.length == 0 ){
@@ -1440,7 +1451,14 @@ $( document ).ready(function() {
 		var modal = $('#accommodationPledgeCreateUpdateModal');
 		var modalTitle = modal.find('#frmAccommodationPledgeCreateUpdateTitle').val();
 		var callBackDisplayType = modal.find('#frmAccommodationPledgeCreateUpdateCallBackDisplayType').val();
-
+		
+		
+		if(!eircodeRegex.test(modal.find('#frmAccommodationPledgeCreateUpdatePostCode').val())){
+			validationSuccess = false;
+			modal.find('#frmAccommodationPledgeCreateUpdatePostCodeAlertBlock').text('Invalid value for Eircode');
+			$('#frmAccommodationPledgeCreateUpdatePostCodeFormGroup').toggleClass('has-error', true);
+		}
+		
 		$( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox][aria-describedby], textarea, select")).each(function(){
 			var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
 			var feedbackIconContainerId = ('#').concat($(this).attr('id')).concat('FeedbackIcon');
@@ -2834,7 +2852,7 @@ function sameAsProfileAddressSelected(){
 		$('#frmAccommodationPledgeCreateUpdateCity').val("");
 		$('#frmAccommodationPledgeCreateUpdateStateProvinceRegion').val("");
 		$('#frmAccommodationPledgeCreateUpdatePostCode').val("");
-		$('#frmAccommodationPledgeCreateUpdateCountry').val("");
+//		$('#frmAccommodationPledgeCreateUpdateCountry').val("");
 	}
 	
 		
