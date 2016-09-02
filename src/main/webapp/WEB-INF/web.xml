@@ -93,16 +93,16 @@
     	/WEB-INF/spring-mvc-config.xml,
     	/WEB-INF/spring-security-config.xml
 
-    </param-value>
+    </param-value>	
   </context-param>
 
   <!-- The spring runtime profile used to decide on the database type and other environment specific settings -->
   <!-- Refer to spring-datasource.xml to see the available profiles and how they are configured -->
   <context-param>
     <param-name>spring.profiles.active</param-name>
-    <!-- <param-value>localmysql</param-value> -->
-    <!-- <param-value>production</param-value> -->
-    <param-value>local</param-value>
+     <!-- <param-value>localmysql</param-value>  --> 
+ 	 <param-value>production</param-value>
+        <!--  <param-value>local</param-value>  -->
    
   </context-param>
 
