@@ -101,8 +101,8 @@
   <context-param>
     <param-name>spring.profiles.active</param-name>
      <!-- <param-value>localmysql</param-value>  --> 
- 	 <param-value>production</param-value>
-        <!--  <param-value>local</param-value>  -->
+ 	 <!-- <param-value>production</param-value> -->
+        <param-value>local</param-value> 
    
   </context-param>
 
