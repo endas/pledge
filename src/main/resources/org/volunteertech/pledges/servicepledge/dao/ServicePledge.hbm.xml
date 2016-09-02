@@ -41,6 +41,9 @@
         <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
         <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
         <property name="language" type="string" length="200" column="LANGUAGE"/>
+        <property name="accredited" type="boolean" column="ACCREDITED" />
+        <property name="other" type="string"  column="OTHER"/>
+        <property name="timeLimit" type="timestamp" column="TIMELIMIT"/>
     </class>
 
 </hibernate-mapping>

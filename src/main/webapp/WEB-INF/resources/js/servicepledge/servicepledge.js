@@ -17,7 +17,7 @@ var frmServicePledgePledgeServiceQualificationBuffer = document.getElementById("
       
 var frmServicePledgePledgeServiceDateAvailableBuffer = document.getElementById("frmServicePledgePledgeServiceDateAvailable").value;
 
-var frmServicePledgePledgeServiceDateAvailableToBuffer = document.getElementById("frmServicePledgePledgeServiceDateAvailableTo").value;
+var frmServicePledgePledgeServiceDateAvailableToBuffer = ""; //document.getElementById("frmServicePledgePledgeServiceDateAvailableTo").value;
       
 var frmServicePledgePledgeServiceHoursPerWeekBuffer = document.getElementById("frmServicePledgePledgeServiceHoursPerWeek").value;
       

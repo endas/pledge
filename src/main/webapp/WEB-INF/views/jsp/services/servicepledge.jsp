@@ -435,6 +435,66 @@
                     </c:choose>
                 </div>
 
+                <div
+                        class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+
+                    <form:label path="timeLimit"
+                                class="col-sm-2 control-label"><spring:message
+                            code="serviceplegde.timelimit"/></form:label>
+
+                    <div class="col-sm-10">
+
+
+                        <form:input path="timeLimit" class="form-control form-control datepicker"   />
+
+                    </div>
+                    <c:choose>
+                        <c:when test="${status.error}">
+                            <form:errors path="timeLimit" class="help-block col-sm-9"/>
+                        </c:when>
+                    </c:choose>
+                </div>
+
+                <div
+                        class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+
+                    <form:label path="other"
+                                class="col-sm-2 control-label"><spring:message
+                            code="serviceplegde.other"/></form:label>
+
+                    <div class="col-sm-10">
+
+
+                        <form:textarea path="other" class="form-control "   />
+
+                    </div>
+                    <c:choose>
+                        <c:when test="${status.error}">
+                            <form:errors path="other" class="help-block col-sm-9"/>
+                        </c:when>
+                    </c:choose>
+                </div>
+
+                <div
+                        class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+
+                    <form:label path="accredited"
+                                class="col-sm-2 control-label"><spring:message
+                            code="serviceplegde.accredited"/></form:label>
+
+                    <div class="col-sm-10">
+
+
+                        <form:checkbox path="accredited" class="form-control "   />
+
+                    </div>
+                    <c:choose>
+                        <c:when test="${status.error}">
+                            <form:errors path="other" class="help-block col-sm-9"/>
+                        </c:when>
+                    </c:choose>
+                </div>
+
 
 
 
