@@ -1,16 +1,11 @@
 package org.volunteertech.pledges.servicepledge.dao;
 
-import org.volunteertech.pledges.servicepledge.dao.ServicePledge;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 import java.util.HashSet;
-import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
@@ -111,6 +106,14 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     private Date dateUpdated;
 
     private String language;
+
+    private Boolean accredited;
+
+    private String other;
+
+    private Date timeLimit;
+
+
     
 
     /**
@@ -542,8 +545,31 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 	public void setPledgeServiceTravelAbilities(Set<Long> pledgeServiceTravelAbilities) {
 		this.pledgeServiceTravelAbilities = pledgeServiceTravelAbilities;	
 	}
-    
-   
+
+
+    public Boolean getAccredited() {
+        return accredited;
+    }
+
+    public void setAccredited(Boolean accredited) {
+        this.accredited = accredited;
+    }
+
+    public String getOther() {
+        return other;
+    }
+
+    public void setOther(String other) {
+        this.other = other;
+    }
+
+    public Date getTimeLimit() {
+        return timeLimit;
+    }
+
+    public void setTimeLimit(Date timeLimit) {
+        this.timeLimit = timeLimit;
+    }
 }
     
     

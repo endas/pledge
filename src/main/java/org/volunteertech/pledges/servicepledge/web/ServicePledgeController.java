@@ -170,18 +170,13 @@ public class ServicePledgeController extends BaseController
 
 			// Add message to flash scope
 			redirectAttributes.addFlashAttribute("css", "success");
+			String message = "servicePledgeUpdateSuccessMessage";
 			if(servicePledge.isNew()){
-				String addedSuccessMessage = messageSource.getMessage("servicePledgeAddedSuccessMessage", new String[0], locale);
-				// Add message to flash scope
-				redirectAttributes.addFlashAttribute("msg", addedSuccessMessage);
-				redirectAttributes.addFlashAttribute("css", "alert-success");
-			}else{
-				String updateSuccessMessage = messageSource.getMessage("servicePledgeUpdateSuccessMessage", new String[0], locale);
-				// Add message to flash scope
-				redirectAttributes.addFlashAttribute("msg", updateSuccessMessage);
-				redirectAttributes.addFlashAttribute("css", "alert-success");
+				message = "servicePledgeAddedSuccessMessage";
 			}
 
+			redirectAttributes.addFlashAttribute("css", "alert-success");
+			redirectAttributes.addFlashAttribute("msg", messageSource.getMessage(message, new String[0], locale));
 
 			try{
 				// TODO: Needs exception handling policy

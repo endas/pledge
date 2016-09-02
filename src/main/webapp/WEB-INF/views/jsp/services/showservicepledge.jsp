@@ -90,12 +90,25 @@
 		<div class="col-sm-10">${servicePledge.pledgeServiceHoursPerWeek}</div>
 	</div>
 
-
+	<div class="row">
+		<label class="col-sm-2"><spring:message code="serviceplegde.language"/> </label>
+		<div class="col-sm-10">${servicePledge.language}</div>
+	</div>
 
 	<div class="row">
-		<label class="col-sm-2">Save</label>
-		<div class="col-sm-10">${servicePledge.saveButton}</div>
+		<label class="col-sm-2"><spring:message code="serviceplegde.other"/> </label>
+		<div class="col-sm-10">${servicePledge.other}</div>
 	</div>
+
+	<div class="row">
+		<label class="col-sm-2"><spring:message code="serviceplegde.timelimit"/> </label>
+		<div class="col-sm-10">${servicePledge.timeLimit}</div>
+	</div>
+
+    <div class="row">
+        <label class="col-sm-2"><spring:message code="serviceplegde.accredited"/> </label>
+        <div class="col-sm-10">${servicePledge.accredited}</div>
+    </div>
 
 
 
