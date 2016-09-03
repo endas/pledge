@@ -151,7 +151,8 @@ var frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = null;
 
 var frmGoodsPledgeCreateUpdateItemSizeBuffer = null;
 
-var eircodeRegex = /^[AC-FHKNPRTV-Y]{1}[0-9]{1}[0-9W]{1}[ \-]?[0-9AC-FHKNPRTV-Y]{4}$/;
+//var eircodeRegex = /^[AC-FHKNPRTV-Y]{1}[0-9]{1}[0-9W]{1}[ \-]?[0-9AC-FHKNPRTV-Y]{4}$/;
+var eircodeRegex = /(^$|^[AC-FHKNPRTV-Y]{1}[0-9]{1}[0-9W]{1}[ \-]?[0-9AC-FHKNPRTV-Y]{4}$)/;
 
 function configureMultiSelect(modal, elementID, entries){
 	var select = modal.find(elementID);
@@ -708,11 +709,13 @@ $( document ).ready(function() {
 		var modal = $('#applicationUserDetailsCreateUpdateModal');
 		var modalTitle = modal.find('#frmApplicationUserDetailsCreateUpdateTitle').val();
 		var callBackDisplayType = modal.find('#frmApplicationUserDetailsCreateUpdateCallBackDisplayType').val();
-
 		
-		if(!eircodeRegex.test(modal.find('#frmApplicationUserDetailsCreateUpdatePostCode').val())){
+		var eircodeVal = modal.find('#frmApplicationUserDetailsCreateUpdatePostCode').val();
+		
+		if(eircodeVal != undefined && !eircodeRegex.test(eircodeVal)){
 			validationSuccess = false;
-			modal.find('#frmApplicationUserDetailsCreateUpdatePostCodeAlertBlock').text('Invalid value for Eircode');
+//			modal.find('#frmApplicationUserDetailsCreateUpdatePostCodeAlertBlock').text('Invalid value for Eircode');
+			modal.find('#frmApplicationUserDetailsCreateUpdatePostCodeHelpBlock').text('Invalid value for Eircode');
 			$('#frmApplicationUserDetailsCreateUpdatePostCodeFormGroup').toggleClass('has-error', true);
 		}
 		
@@ -1453,9 +1456,11 @@ $( document ).ready(function() {
 		var callBackDisplayType = modal.find('#frmAccommodationPledgeCreateUpdateCallBackDisplayType').val();
 		
 		
-		if(!eircodeRegex.test(modal.find('#frmAccommodationPledgeCreateUpdatePostCode').val())){
+
+		var eircodeVal = modal.find('#frmAccommodationPledgeCreateUpdatePostCode').val();
+		if(eircodeVal != undefined && !eircodeRegex.test(eircodeVal)){// 
 			validationSuccess = false;
-			modal.find('#frmAccommodationPledgeCreateUpdatePostCodeAlertBlock').text('Invalid value for Eircode');
+			modal.find('#frmAccommodationPledgeCreateUpdatePostCodeHelpBlock').text('Invalid value for Eircode');
 			$('#frmAccommodationPledgeCreateUpdatePostCodeFormGroup').toggleClass('has-error', true);
 		}
 		
