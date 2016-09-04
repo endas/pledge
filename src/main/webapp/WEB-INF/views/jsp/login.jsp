@@ -27,7 +27,9 @@
 
 <spring:message code="login.title" var="title" />
 <spring:message code="login.user.identifier" var="userIdentifier" />
+<spring:message code="login.user.identifier.required" var="userIdentifierRequired" />
 <spring:message code="login.user.password" var="passwordIdentifier" />
+<spring:message code="login.user.password.required" var="passwordRequired" />
 <spring:message code="login.remember.me" var="rememberMe" />
 <spring:message code="login.sign.in" var="signIn" />
 <jsp:include page="../jsp/includes/header.jsp">
@@ -72,7 +74,7 @@
 							<div class="alert alert-${css} alert-dismissible" role="alert">
 								<button type="button" class="close" data-dismiss="alert"
 									aria-label="Close">
-									<span aria-hidden="true">×</span>
+									<span aria-hidden="true">ï¿½</span>
 								</button>
 								<strong>${msg}</strong>
 							</div>
@@ -86,7 +88,7 @@
 								<label for="username" class="sr-only">${userIdentifier}</label>
 								<form:input type="text" id="username" path="username"
 									class="form-control" placeholder="${userIdentifier}"
-									required="required" autofocus="autofocus" />
+									required="required" autofocus="autofocus" oninvalid="this.setCustomValidity('${userIdentifierRequired}')" oninput="setCustomValidity('')" />
 								<form:errors path="username" class="help-block" />
 							</div>
 						</spring:bind>
@@ -99,7 +101,7 @@
 								<label for="password" class="sr-only">${passwordIdentifier}</label>
 								<form:input type="password" id="password" path="password"
 									class="form-control" placeholder="${passwordIdentifier}"
-									required="required" />
+									required="required" oninvalid="this.setCustomValidity('${passwordRequired}')" oninput="setCustomValidity('')"/>
 								<form:errors path="password" class="help-block" />
 							</div>
 						</spring:bind>
