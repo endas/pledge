@@ -92,10 +92,10 @@
       
 		<spring:bind path="city">
 		  <div id="frmAccommodationPledgeCityFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
-			<label class="col-sm-2 control-label">Townland/Town/City</label>
+			<label class="col-sm-2 control-label">City/Town/Village</label>
 			<div class="col-sm-10">
 				
-				<form:input path="city" type="text" maxlength="50" class="form-control" id="frmAccommodationPledgeCity" placeholder="Townland/Town/City"  />
+				<form:input path="city" type="text" maxlength="50" class="form-control" id="frmAccommodationPledgeCity" placeholder="City/Town/Village"  />
     
 				<span id="frmAccommodationPledgeCityJavascriptErrorDisplay" class="control-label"> </span>				  
 				<form:errors path="city" class="control-label" />

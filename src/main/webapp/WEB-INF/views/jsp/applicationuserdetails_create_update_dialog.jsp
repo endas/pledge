@@ -64,7 +64,7 @@
   
 		  <div id="frmApplicationUserDetailsCreateUpdateAddressTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.addresstwo.label" for="frmApplicationUserDetailsCreateUpdateAddressTwo" class="control-label"><spring:message code="frmApplicationUserDetailsAddressTwoLabel"/></label>
-			<input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCreateUpdateAddressTwo" placeholder="<spring:message code="frmApplicationUserDetailsAddressTwoPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCreateUpdateAddressTwo" placeholder="<spring:message code="frmOptionalPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmApplicationUserDetailsCreateUpdateAddressTwoHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsAddressTwoHelpBlock"/></span>
 			<div id="frmApplicationUserDetailsCreateUpdateAddressTwoAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -76,7 +76,7 @@
   
 		  <div id="frmApplicationUserDetailsCreateUpdateCityFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.city.label" for="frmApplicationUserDetailsCreateUpdateCity" class="control-label"><spring:message code="frmApplicationUserDetailsCityLabel"/></label>
-			<input type="text" data-display-name="Townland/Town/City" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCreateUpdateCity" placeholder="<spring:message code="frmApplicationUserDetailsCityPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateCityHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="City/Town/Village" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCreateUpdateCity" placeholder="<spring:message code="frmApplicationUserDetailsCityPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateCityHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmApplicationUserDetailsCreateUpdateCityHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsCityHelpBlock"/></span>
 			<div id="frmApplicationUserDetailsCreateUpdateCityAlertBlock" class="alert alert-dismissible hidden" role="alert">

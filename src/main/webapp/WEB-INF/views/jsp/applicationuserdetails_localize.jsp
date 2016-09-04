@@ -601,7 +601,7 @@
 
                                             <spring:message code="frmApplicationUserDetailsCityPlaceHolder" var="frmApplicationUserDetailsCityPlaceHolder" />
 
-                                            <form:input path="city" type="text" data-display-name="Townland/Town/City" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCity" placeholder="${frmApplicationUserDetailsCityPlaceHolder}" aria-describedby="frmApplicationUserDetailsCityHelpBlock" data-validate-key-press="true" />
+                                            <form:input path="city" type="text" data-display-name="City/Town/Village" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCity" placeholder="${frmApplicationUserDetailsCityPlaceHolder}" aria-describedby="frmApplicationUserDetailsCityHelpBlock" data-validate-key-press="true" />
 
                                             <span id="frmApplicationUserDetailsCityFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div id="frmApplicationUserDetailsCityAlertBlock" class="alert alert-dismissible hidden" role="alert">

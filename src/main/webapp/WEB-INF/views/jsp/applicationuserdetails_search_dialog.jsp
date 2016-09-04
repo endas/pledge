@@ -139,10 +139,10 @@
       
 		<spring:bind path="city">
 		  <div id="frmApplicationUserDetailsCityFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
-			<label class="col-sm-2 control-label">Townland/Town/City</label>
+			<label class="col-sm-2 control-label">City/Town/Village</label>
 			<div class="col-sm-10">
 				
-				<form:input path="city" type="text" maxlength="50" class="form-control" id="frmApplicationUserDetailsCity" placeholder="Townland/Town/City"  />
+				<form:input path="city" type="text" maxlength="50" class="form-control" id="frmApplicationUserDetailsCity" placeholder="City/Town/Village"  />
     
 				<span id="frmApplicationUserDetailsCityJavascriptErrorDisplay" class="control-label"> </span>				  
 				<form:errors path="city" class="control-label" />

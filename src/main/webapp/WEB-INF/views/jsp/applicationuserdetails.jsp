@@ -211,7 +211,7 @@
 
                                             <div class="col-sm-10">
 
-                                                <spring:message code="frmApplicationUserDetailsAddressTwoPlaceHolder" var="frmApplicationUserDetailsAddressTwoPlaceHolder" />
+                                                <spring:message code="frmOptionalPlaceHolder" var="frmApplicationUserDetailsAddressTwoPlaceHolder" />
 
                                                 <form:input path="addressTwo" type="text" data-display-name="Address Line 2" data-minlength="5" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsAddressTwo" placeholder="${frmApplicationUserDetailsAddressTwoPlaceHolder}" aria-describedby="frmApplicationUserDetailsAddressTwoHelpBlock" data-validate-key-press="true" />
 
@@ -246,7 +246,7 @@
 
                                                 <spring:message code="frmApplicationUserDetailsCityPlaceHolder" var="frmApplicationUserDetailsCityPlaceHolder" />
 
-                                                <form:input path="city" type="text" data-display-name="Townland/Town/City" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCity" placeholder="${frmApplicationUserDetailsCityPlaceHolder}" aria-describedby="frmApplicationUserDetailsCityHelpBlock" data-validate-key-press="true" />
+                                                <form:input path="city" type="text" data-display-name="City/Town/Village" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCity" placeholder="${frmApplicationUserDetailsCityPlaceHolder}" aria-describedby="frmApplicationUserDetailsCityHelpBlock" data-validate-key-press="true" />
 
                                                 <span id="frmApplicationUserDetailsCityFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                                 <div id="frmApplicationUserDetailsCityAlertBlock" class="alert alert-dismissible hidden" role="alert">

@@ -35,7 +35,7 @@
   
 		  <div id="frmAccommodationPledgeCreateUpdateAddressTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.addresstwo.label" for="frmAccommodationPledgeCreateUpdateAddressTwo" class="control-label"><spring:message code="frmAccommodationPledgeAddressTwoLabel"/></label>
-			<input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="true" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateAddressTwo" placeholder="<spring:message code="frmAccommodationPledgeAddressTwoPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateAddressTwo" placeholder="<spring:message code="frmOptionalPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmAccommodationPledgeCreateUpdateAddressTwoHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAddressTwoHelpBlock"/></span>
 			<div id="frmAccommodationPledgeCreateUpdateAddressTwoAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -47,7 +47,7 @@
   
 		  <div id="frmAccommodationPledgeCreateUpdateCityFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.city.label" for="frmAccommodationPledgeCreateUpdateCity" class="control-label"><spring:message code="frmAccommodationPledgeCityLabel"/></label>
-			<input type="text" data-display-name="Townland/Town/City" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateCity" placeholder="<spring:message code="frmAccommodationPledgeCityPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateCityHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="City/Town/Village" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateCity" placeholder="<spring:message code="frmAccommodationPledgeCityPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateCityHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmAccommodationPledgeCreateUpdateCityHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeCityHelpBlock"/></span>
 			<div id="frmAccommodationPledgeCreateUpdateCityAlertBlock" class="alert alert-dismissible hidden" role="alert">

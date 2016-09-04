@@ -286,7 +286,7 @@
 				
 				<spring:message code="frmAccommodationPledgeCityPlaceHolder" var="frmAccommodationPledgeCityPlaceHolder"/>    
     
-				<form:input path="city" type="text" data-display-name="Townland/Town/City" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCity" placeholder="${frmAccommodationPledgeCityPlaceHolder}" aria-describedby="frmAccommodationPledgeCityHelpBlock" data-validate-key-press="true"/>
+				<form:input path="city" type="text" data-display-name="City/Town/Village" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCity" placeholder="${frmAccommodationPledgeCityPlaceHolder}" aria-describedby="frmAccommodationPledgeCityHelpBlock" data-validate-key-press="true"/>
     
 				<span id="frmAccommodationPledgeCityFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
 				<div id="frmAccommodationPledgeCityAlertBlock" class="alert alert-dismissible hidden" role="alert">

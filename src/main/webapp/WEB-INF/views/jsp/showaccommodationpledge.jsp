@@ -58,7 +58,7 @@
 
 
 	<div class="row">
-		<label class="col-sm-2">Townland/Town/City</label>
+		<label class="col-sm-2">City/Town/Village</label>
 		<div class="col-sm-10">${accommodationPledge.city}</div>
 	</div>
 

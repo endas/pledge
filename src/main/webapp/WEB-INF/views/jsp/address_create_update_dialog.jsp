@@ -29,7 +29,7 @@
   
 		  <div id="frmAddressCreateUpdateAddressTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="address.addresstwo.label" for="frmAddressCreateUpdateAddressTwo" class="control-label"><spring:message code="frmAddressAddressTwoLabel"/></label>
-			<input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="true" maxlength="50" class="form-control" id="frmAddressCreateUpdateAddressTwo" placeholder="<spring:message code="frmAddressAddressTwoPlaceHolder"/>" aria-describedby="frmAddressCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="true" maxlength="50" class="form-control" id="frmAddressCreateUpdateAddressTwo" placeholder="<spring:message code="frmOptionalPlaceHolder"/>" aria-describedby="frmAddressCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmAddressCreateUpdateAddressTwoHelpBlock" class="help-block"><spring:message code="frmAddressAddressTwoHelpBlock"/></span>
 			<div id="frmAddressCreateUpdateAddressTwoAlertBlock" class="alert alert-dismissible hidden" role="alert">

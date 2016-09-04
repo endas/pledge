@@ -126,7 +126,7 @@
 
                                                 <spring:message code="frmAddressAddressTwoPlaceHolder" var="frmAddressAddressTwoPlaceHolder" />
 
-                                                <form:input path="addressTwo" type="text" data-display-name="Address Line 2" data-minlength="5" data-required="true" maxlength="50" class="form-control" id="frmAddressAddressTwo" placeholder="${frmAddressAddressTwoPlaceHolder}" aria-describedby="frmAddressAddressTwoHelpBlock" data-validate-key-press="true" />
+                                                <form:input path="addressTwo" type="text" data-display-name="Address Line 2" data-minlength="5" data-required="true" maxlength="50" class="form-control" id="frmAddressAddressTwo" placeholder="${frmOptionalPlaceHolder}" aria-describedby="frmAddressAddressTwoHelpBlock" data-validate-key-press="true" />
 
                                                 <span id="frmAddressAddressTwoFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                                 <div id="frmAddressAddressTwoAlertBlock" class="alert alert-dismissible hidden" role="alert">
