@@ -117,7 +117,9 @@ input[type=radio] {
     font-size: 0.9em;
 }
 
-
+.text-link{
+	font-size: 1em;
+}
 
 Media Queries
 

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 14, 2016 11:10:17 PM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="Referencecategory" table="REFERENCECATEGORY" catalog="netgrains" optimistic-lock="version">
+        <id name="referencecategoryid" type="java.lang.Long">
+            <column name="REFERENCECATEGORYID" />
+            <generator class="identity" />
+        </id>
+        <property name="referencecategorydesc" type="string">
+            <column name="REFERENCECATEGORYDESC" length="50" not-null="true" />
+        </property>
+        <property name="parentcategoryid" type="java.lang.Long">
+            <column name="PARENTCATEGORYID" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="200" />
+        </property>
+        <property name="createdbyid" type="java.lang.Long">
+            <column name="CREATEDBYID" />
+        </property>
+        <property name="updatedbyid" type="java.lang.Long">
+            <column name="UPDATEDBYID" />
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="DATECREATED" length="19" />
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="DATEUPDATED" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

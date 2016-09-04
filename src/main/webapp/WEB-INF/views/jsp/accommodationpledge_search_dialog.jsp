@@ -106,10 +106,10 @@
       
 		<spring:bind path="stateProvinceRegion">
 		  <div id="frmAccommodationPledgeStateProvinceRegionFormGroup" class="form-group ${status.error ? 'has-error' : ''}">
-			<label class="col-sm-2 control-label">State/Province/Region</label>
+			<label class="col-sm-2 control-label">County</label>
 			<div class="col-sm-10">
 				
-				<form:input path="stateProvinceRegion" type="text" maxlength="50" class="form-control" id="frmAccommodationPledgeStateProvinceRegion" placeholder="State/Province/Region"  />
+				<form:input path="stateProvinceRegion" type="text" maxlength="50" class="form-control" id="frmAccommodationPledgeStateProvinceRegion" placeholder="County"  />
     
 				<span id="frmAccommodationPledgeStateProvinceRegionJavascriptErrorDisplay" class="control-label"> </span>				  
 				<form:errors path="stateProvinceRegion" class="control-label" />

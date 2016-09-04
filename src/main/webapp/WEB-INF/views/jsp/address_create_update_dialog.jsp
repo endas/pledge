@@ -53,7 +53,7 @@
   
 		  <div id="frmAddressCreateUpdateStateProvinceRegionFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="address.stateprovinceregion.label" for="frmAddressCreateUpdateStateProvinceRegion" class="control-label"><spring:message code="frmAddressStateProvinceRegionLabel"/></label>
-			<input type="text" data-display-name="State/Province/Region" data-minlength="0" data-required="false" maxlength="50" class="form-control" id="frmAddressCreateUpdateStateProvinceRegion" placeholder="<spring:message code="frmAddressStateProvinceRegionPlaceHolder"/>" aria-describedby="frmAddressCreateUpdateStateProvinceRegionHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="County" data-minlength="0" data-required="false" maxlength="50" class="form-control" id="frmAddressCreateUpdateStateProvinceRegion" placeholder="<spring:message code="frmAddressStateProvinceRegionPlaceHolder"/>" aria-describedby="frmAddressCreateUpdateStateProvinceRegionHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmAddressCreateUpdateStateProvinceRegionHelpBlock" class="help-block"><spring:message code="frmAddressStateProvinceRegionHelpBlock"/></span>
 			<div id="frmAddressCreateUpdateStateProvinceRegionAlertBlock" class="alert alert-dismissible hidden" role="alert">

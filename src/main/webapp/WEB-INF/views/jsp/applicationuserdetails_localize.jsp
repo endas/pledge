@@ -676,7 +676,7 @@
 
                                             <spring:message code="frmApplicationUserDetailsStateProvinceRegionPlaceHolder" var="frmApplicationUserDetailsStateProvinceRegionPlaceHolder" />
 
-                                            <form:input path="stateProvinceRegion" type="text" data-display-name="State/Province/Region" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsStateProvinceRegion" placeholder="${frmApplicationUserDetailsStateProvinceRegionPlaceHolder}" aria-describedby="frmApplicationUserDetailsStateProvinceRegionHelpBlock" data-validate-key-press="true" />
+                                            <form:input path="stateProvinceRegion" type="text" data-display-name="County" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsStateProvinceRegion" placeholder="${frmApplicationUserDetailsStateProvinceRegionPlaceHolder}" aria-describedby="frmApplicationUserDetailsStateProvinceRegionHelpBlock" data-validate-key-press="true" />
 
                                             <span id="frmApplicationUserDetailsStateProvinceRegionFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div id="frmApplicationUserDetailsStateProvinceRegionAlertBlock" class="alert alert-dismissible hidden" role="alert">

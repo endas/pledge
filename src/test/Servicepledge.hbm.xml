@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 14, 2016 11:10:17 PM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="Servicepledge" table="SERVICEPLEDGE" catalog="netgrains" optimistic-lock="version">
+        <id name="servicepledgeid" type="java.lang.Long">
+            <column name="SERVICEPLEDGEID" />
+            <generator class="identity" />
+        </id>
+        <property name="pledgeservicelevelone" type="java.lang.Long">
+            <column name="PLEDGESERVICELEVELONE" />
+        </property>
+        <property name="pledgeserviceleveltwo" type="java.lang.Long">
+            <column name="PLEDGESERVICELEVELTWO" />
+        </property>
+        <property name="pledgeservicelevelthree" type="java.lang.Long">
+            <column name="PLEDGESERVICELEVELTHREE" />
+        </property>
+        <property name="additionalinformation" type="string">
+            <column name="ADDITIONALINFORMATION" />
+        </property>
+        <property name="pledgeservicequalification" type="string">
+            <column name="PLEDGESERVICEQUALIFICATION" />
+        </property>
+        <property name="pledgeservicedateavailable" type="timestamp">
+            <column name="PLEDGESERVICEDATEAVAILABLE" length="19" />
+        </property>
+        <property name="pledgeservicedateavailableto" type="timestamp">
+            <column name="PLEDGESERVICEDATEAVAILABLETO" length="19" />
+        </property>
+        <property name="pledgeservicehoursperweek" type="java.lang.Long">
+            <column name="PLEDGESERVICEHOURSPERWEEK" />
+        </property>
+        <property name="registerofpledgesid" type="java.lang.Long">
+            <column name="REGISTEROFPLEDGESID" />
+        </property>
+        <property name="createdbyid" type="java.lang.Long">
+            <column name="CREATEDBYID" />
+        </property>
+        <property name="updatedbyid" type="java.lang.Long">
+            <column name="UPDATEDBYID" />
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="DATECREATED" length="19" />
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="DATEUPDATED" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

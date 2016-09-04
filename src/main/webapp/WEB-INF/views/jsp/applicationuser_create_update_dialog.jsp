@@ -24,7 +24,7 @@
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   				<span id="frmApplicationUserCreateUpdateUsernameAlertBlockText"></span>
 			</div>
-				  
+			  
 		  </div>
   
 		  <div id="frmApplicationUserCreateUpdatePasswordFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">

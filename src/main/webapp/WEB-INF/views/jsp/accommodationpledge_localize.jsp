@@ -346,7 +346,7 @@
 				
 				<spring:message code="frmAccommodationPledgeStateProvinceRegionPlaceHolder" var="frmAccommodationPledgeStateProvinceRegionPlaceHolder"/>    
     
-				<form:input path="stateProvinceRegion" type="text" data-display-name="State/Province/Region" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeStateProvinceRegion" placeholder="${frmAccommodationPledgeStateProvinceRegionPlaceHolder}" aria-describedby="frmAccommodationPledgeStateProvinceRegionHelpBlock" data-validate-key-press="true"/>
+				<form:input path="stateProvinceRegion" type="text" data-display-name="County" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeStateProvinceRegion" placeholder="${frmAccommodationPledgeStateProvinceRegionPlaceHolder}" aria-describedby="frmAccommodationPledgeStateProvinceRegionHelpBlock" data-validate-key-press="true"/>
     
 				<span id="frmAccommodationPledgeStateProvinceRegionFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
 				<div id="frmAccommodationPledgeStateProvinceRegionAlertBlock" class="alert alert-dismissible hidden" role="alert">

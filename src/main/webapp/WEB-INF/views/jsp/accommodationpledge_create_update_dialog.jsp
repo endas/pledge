@@ -59,7 +59,7 @@
   
 		  <div id="frmAccommodationPledgeCreateUpdateStateProvinceRegionFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.stateprovinceregion.label" for="frmAccommodationPledgeCreateUpdateStateProvinceRegion" class="control-label"><spring:message code="frmAccommodationPledgeStateProvinceRegionLabel"/></label>
-			<input type="text" data-display-name="State/Province/Region" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateStateProvinceRegion" placeholder="<spring:message code="frmAccommodationPledgeStateProvinceRegionPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateStateProvinceRegionHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="County" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateStateProvinceRegion" placeholder="<spring:message code="frmAccommodationPledgeStateProvinceRegionPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateStateProvinceRegionHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmAccommodationPledgeCreateUpdateStateProvinceRegionHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeStateProvinceRegionHelpBlock"/></span>
 			<div id="frmAccommodationPledgeCreateUpdateStateProvinceRegionAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -71,14 +71,16 @@
   
 		  <div id="frmAccommodationPledgeCreateUpdatePostCodeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.postcode.label" for="frmAccommodationPledgeCreateUpdatePostCode" class="control-label"><spring:message code="frmAccommodationPledgePostCodeLabel"/></label>
-			<input type="text" data-display-name="Eircode" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAccommodationPledgeCreateUpdatePostCode" placeholder="<spring:message code="frmAccommodationPledgePostCodePlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="Eircode" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAccommodationPledgeCreateUpdatePostCode" placeholder="<spring:message code="frmOptionalPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmAccommodationPledgeCreateUpdatePostCodeHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgePostCodeHelpBlock"/></span>
 			<div id="frmAccommodationPledgeCreateUpdatePostCodeAlertBlock" class="alert alert-dismissible hidden" role="alert">
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   				<span id="frmAccommodationPledgeCreateUpdatePostCodeAlertBlockText"></span>
 			</div>
-				  
+			<p>
+				<a class="text-link" style="text-decoration:underline" href="https://finder.eircode.ie/#/" target="_blank">Find your Eircode</a>
+			</p>  
 		  </div>
   
 		  <div id="frmAccommodationPledgeCreateUpdateCountryFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 14, 2016 11:10:17 PM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="Messageresource" table="MESSAGERESOURCE" catalog="netgrains" optimistic-lock="version">
+        <id name="messageresourceid" type="java.lang.Long">
+            <column name="MESSAGERESOURCEID" />
+            <generator class="identity" />
+        </id>
+        <property name="messagekey" type="string">
+            <column name="MESSAGEKEY" length="200" not-null="true" />
+        </property>
+        <property name="locale" type="string">
+            <column name="LOCALE" length="10" not-null="true" />
+        </property>
+        <property name="localereferenceid" type="long">
+            <column name="LOCALEREFERENCEID" not-null="true" />
+        </property>
+        <property name="message" type="string">
+            <column name="MESSAGE" not-null="true" />
+        </property>
+        <property name="viewid" type="java.lang.Long">
+            <column name="VIEWID" />
+        </property>
+        <property name="createdbyid" type="java.lang.Long">
+            <column name="CREATEDBYID" />
+        </property>
+        <property name="updatedbyid" type="java.lang.Long">
+            <column name="UPDATEDBYID" />
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="DATECREATED" length="19" />
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="DATEUPDATED" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -94,7 +94,7 @@
 
 
 	<div class="row">
-		<label class="col-sm-2">State/Province/Region</label>
+		<label class="col-sm-2">County</label>
 		<div class="col-sm-10">${applicationUserDetails.stateProvinceRegion}</div>
 	</div>
 

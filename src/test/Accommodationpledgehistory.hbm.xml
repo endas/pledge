@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 14, 2016 11:10:17 PM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="Accommodationpledgehistory" table="ACCOMMODATIONPLEDGEHISTORY" catalog="netgrains" optimistic-lock="version">
+        <id name="accommodationpledgehistoryid" type="java.lang.Long">
+            <column name="ACCOMMODATIONPLEDGEHISTORYID" />
+            <generator class="identity" />
+        </id>
+        <property name="accommodationpledgeid" type="java.lang.Long">
+            <column name="ACCOMMODATIONPLEDGEID" />
+        </property>
+        <property name="addressone" type="string">
+            <column name="ADDRESSONE" length="50" />
+        </property>
+        <property name="addresstwo" type="string">
+            <column name="ADDRESSTWO" length="50" />
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" length="50" />
+        </property>
+        <property name="stateprovinceregion" type="string">
+            <column name="STATEPROVINCEREGION" length="50" />
+        </property>
+        <property name="postcode" type="string">
+            <column name="POSTCODE" length="10" />
+        </property>
+        <property name="country" type="java.lang.Long">
+            <column name="COUNTRY" />
+        </property>
+        <property name="owneroccupier" type="java.lang.Long">
+            <column name="OWNEROCCUPIER" />
+        </property>
+        <property name="accommodationdatefrom" type="timestamp">
+            <column name="ACCOMMODATIONDATEFROM" length="19" />
+        </property>
+        <property name="accommodationdateto" type="timestamp">
+            <column name="ACCOMMODATIONDATETO" length="19" />
+        </property>
+        <property name="accommodationtype" type="java.lang.Long">
+            <column name="ACCOMMODATIONTYPE" />
+        </property>
+        <property name="accommodationcondition" type="java.lang.Long">
+            <column name="ACCOMMODATIONCONDITION" />
+        </property>
+        <property name="numberofbeds" type="java.lang.Long">
+            <column name="NUMBEROFBEDS" />
+        </property>
+        <property name="vacantorshared" type="java.lang.Long">
+            <column name="VACANTORSHARED" />
+        </property>
+        <property name="otheramenities" type="string">
+            <column name="OTHERAMENITIES" />
+        </property>
+        <property name="accommodatefamily" type="java.lang.Boolean">
+            <column name="ACCOMMODATEFAMILY" />
+        </property>
+        <property name="accommodatecouple" type="java.lang.Boolean">
+            <column name="ACCOMMODATECOUPLE" />
+        </property>
+        <property name="accommodatesinglemale" type="java.lang.Boolean">
+            <column name="ACCOMMODATESINGLEMALE" />
+        </property>
+        <property name="accommodatesinglefemale" type="java.lang.Boolean">
+            <column name="ACCOMMODATESINGLEFEMALE" />
+        </property>
+        <property name="additionalinformation" type="string">
+            <column name="ADDITIONALINFORMATION" />
+        </property>
+        <property name="createdbyid" type="java.lang.Long">
+            <column name="CREATEDBYID" />
+        </property>
+        <property name="updatedbyid" type="java.lang.Long">
+            <column name="UPDATEDBYID" />
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="DATECREATED" length="19" />
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="DATEUPDATED" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

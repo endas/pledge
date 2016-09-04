@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 14, 2016 11:10:17 PM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="ReferencecategoryReference" table="REFERENCECATEGORY_REFERENCE" catalog="netgrains" optimistic-lock="version">
+        <composite-id name="id" class="ReferencecategoryReferenceId">
+            <key-property name="referencecategoryid" type="long">
+                <column name="REFERENCECATEGORYID" />
+            </key-property>
+            <key-property name="referenceid" type="long">
+                <column name="REFERENCEID" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1/netgrains</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping class="Addressfilter" />
+        <mapping class="Address" />
+        <mapping class="Goodspledgehistory" />
+        <mapping class="Registerofpledgeshistory" />
+        <mapping class="Servicepledgefilter" />
+        <mapping class="Referencehistory" />
+        <mapping class="Landingfilter" />
+        <mapping class="Registerofpledgesfilter" />
+        <mapping class="Referencecategoryhistory" />
+        <mapping class="Applicationuserhistory" />
+        <mapping class="Accommodationpledge" />
+        <mapping class="Referencecategory" />
+        <mapping class="Messageresourcefilter" />
+        <mapping class="Addresshistory" />
+        <mapping class="Accommodationpledgefilter" />
+        <mapping class="ReferencecategoryReference" />
+        <mapping class="Applicationuserfilter" />
+        <mapping class="Accommodationpledgehistory" />
+        <mapping class="Referencefilter" />
+        <mapping class="Viewfilter" />
+        <mapping class="Applicationuserdetails" />
+        <mapping class="Messageresourcehistory" />
+        <mapping class="Applicationuserdetailsfilter" />
+        <mapping class="Applicationuserdetailshistory" />
+        <mapping class="Reference" />
+        <mapping class="Registerofpledges" />
+        <mapping class="ApplicationuserUserroles" />
+        <mapping class="Landing" />
+        <mapping class="View" />
+        <mapping class="Servicepledge" />
+        <mapping class="Applicationuser" />
+        <mapping class="Viewhistory" />
+        <mapping class="Referencecategoryfilter" />
+        <mapping class="Landinghistory" />
+        <mapping class="Servicepledgehistory" />
+        <mapping class="Goodspledgefilter" />
+        <mapping class="Goodspledge" />
+        <mapping class="Messageresource" />
+    </session-factory>
+</hibernate-configuration>

@@ -192,7 +192,7 @@
 
                                                 <spring:message code="frmAddressStateProvinceRegionPlaceHolder" var="frmAddressStateProvinceRegionPlaceHolder" />
 
-                                                <form:input path="stateProvinceRegion" type="text" data-display-name="State/Province/Region" data-minlength="0" data-required="false" maxlength="50" class="form-control" id="frmAddressStateProvinceRegion" placeholder="${frmAddressStateProvinceRegionPlaceHolder}" aria-describedby="frmAddressStateProvinceRegionHelpBlock" data-validate-key-press="true" />
+                                                <form:input path="stateProvinceRegion" type="text" data-display-name="County" data-minlength="0" data-required="false" maxlength="50" class="form-control" id="frmAddressStateProvinceRegion" placeholder="${frmAddressStateProvinceRegionPlaceHolder}" aria-describedby="frmAddressStateProvinceRegionHelpBlock" data-validate-key-press="true" />
 
                                                 <span id="frmAddressStateProvinceRegionFeedbackIcon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                                 <div id="frmAddressStateProvinceRegionAlertBlock" class="alert alert-dismissible hidden" role="alert">

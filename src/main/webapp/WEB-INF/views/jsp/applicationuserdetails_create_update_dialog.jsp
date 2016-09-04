@@ -88,7 +88,7 @@
   
 		  <div id="frmApplicationUserDetailsCreateUpdateStateProvinceRegionFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="applicationuserdetails.stateprovinceregion.label" for="frmApplicationUserDetailsCreateUpdateStateProvinceRegion" class="control-label"><spring:message code="frmApplicationUserDetailsStateProvinceRegionLabel"/></label>
-			<input type="text" data-display-name="State/Province/Region" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCreateUpdateStateProvinceRegion" placeholder="<spring:message code="frmApplicationUserDetailsStateProvinceRegionPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateStateProvinceRegionHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+			<input type="text" data-display-name="County" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmApplicationUserDetailsCreateUpdateStateProvinceRegion" placeholder="<spring:message code="frmApplicationUserDetailsStateProvinceRegionPlaceHolder"/>" aria-describedby="frmApplicationUserDetailsCreateUpdateStateProvinceRegionHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
     
 			<span id="frmApplicationUserDetailsCreateUpdateStateProvinceRegionHelpBlock" class="help-block"><spring:message code="frmApplicationUserDetailsStateProvinceRegionHelpBlock"/></span>
 			<div id="frmApplicationUserDetailsCreateUpdateStateProvinceRegionAlertBlock" class="alert alert-dismissible hidden" role="alert">
@@ -107,7 +107,10 @@
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   				<span id="frmApplicationUserDetailsCreateUpdatePostCodeAlertBlockText"></span>
 			</div>
-				  
+			<p>
+			<a style="text-decoration:underline" href="https://finder.eircode.ie/#/" target="_blank">Find your Eircode</a>
+			</p>		  
+		
 		  </div>
   
 		  <div id="frmApplicationUserDetailsCreateUpdateCountryFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
