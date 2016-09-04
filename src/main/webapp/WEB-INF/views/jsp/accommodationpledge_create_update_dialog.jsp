@@ -109,6 +109,116 @@
 				  
 		  </div>
   
+  			<div id="frmAccommodationPledgeCreateUpdateAccommodationTypeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.accommodationtype.label" for="frmAccommodationPledgeCreateUpdateAccommodationType" class="control-label"><spring:message code="frmAccommodationPledgeAccommodationTypeLabel"/></label>	
+			<select class="form-control" data-display-name="What kind of accommodation are you pledging?" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateAccommodationType" aria-describedby="frmAccommodationPledgeCreateUpdateAccommodationTypeHelpBlock">
+			</select>
+	  
+			<span id="frmAccommodationPledgeCreateUpdateAccommodationTypeHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAccommodationTypeHelpBlock"/></span>
+			<div id="frmAccommodationPledgeCreateUpdateAccommodationTypeAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateAccommodationTypeAlertBlockText"></span>
+			</div>
+				  
+		  </div>
+		  
+		   <div id="frmAccommodationPledgeCreateUpdateVacantOrSharedFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.vacantorshared.label" for="frmAccommodationPledgeCreateUpdateVacantOrShared" class="control-label"><spring:message code="frmAccommodationPledgeVacantOrSharedLabel"/></label>	
+			<select class="form-control" data-display-name="Vacant or Shared" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateVacantOrShared" aria-describedby="frmAccommodationPledgeCreateUpdateVacantOrSharedHelpBlock">
+			</select>
+	  
+			<span id="frmAccommodationPledgeCreateUpdateVacantOrSharedHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeVacantOrSharedHelpBlock"/></span>
+			<div id="frmAccommodationPledgeCreateUpdateVacantOrSharedAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateVacantOrSharedAlertBlockText"></span>
+			</div>
+				  
+		  </div>
+  
+  			<div id="frmAccommodationPledgeCreateUpdateAccommodationConditionFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.accommodationcondition.label" for="frmAccommodationPledgeCreateUpdateAccommodationCondition" class="control-label"><spring:message code="frmAccommodationPledgeAccommodationConditionLabel"/></label>	
+			<select class="form-control" data-display-name="Condition" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateAccommodationCondition" aria-describedby="frmAccommodationPledgeCreateUpdateAccommodationConditionHelpBlock">
+			</select>
+	  
+			<span id="frmAccommodationPledgeCreateUpdateAccommodationConditionHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAccommodationConditionHelpBlock"/></span>
+			<div id="frmAccommodationPledgeCreateUpdateAccommodationConditionAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateAccommodationConditionAlertBlockText"></span>
+			</div>
+				  
+		  </div>
+  			
+  			<div id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.numberofbedrooms.label" for="frmAccommodationPledgeCreateUpdateNumberOfBedrooms" class="control-label"><spring:message code="frmAccommodationPledgeNumberOfBedroomsLabel"/></label>	
+			<select class="form-control" data-display-name="Number of bedrooms" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateNumberOfBedrooms" aria-describedby="frmAccommodationPledgeCreateUpdateNumberOfBedroomsHelpBlock">
+			<option value="-1">Select number of bedrooms</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
+			<option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+			<option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option>
+			<option value="19">19</option><option value="20">20</option>
+			</select>
+	  
+			<span id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeNumberOfBedroomsHelpBlock"/></span>
+			<div id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsAlertBlockText"></span>
+			</div>
+				  
+		  </div>
+  			
+  		<div id="frmAccommodationPledgeCreateUpdateNumberOfBedsFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.numberofbeds.label" for="frmAccommodationPledgeCreateUpdateNumberOfBeds" class="control-label"><spring:message code="frmAccommodationPledgeNumberOfBedsLabel"/></label>	
+			<select class="form-control" data-display-name="Number of beds" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateNumberOfBeds" aria-describedby="frmAccommodationPledgeCreateUpdateNumberOfBedsHelpBlock">
+			</select>
+	  
+			<span id="frmAccommodationPledgeCreateUpdateNumberOfBedsHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeNumberOfBedsHelpBlock"/></span>
+			<div id="frmAccommodationPledgeCreateUpdateNumberOfBedsAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateNumberOfBedsAlertBlockText"></span>
+			</div>
+				  
+		  </div>
+		  
+		  <div id="frmAccommodationPledgeCreateUpdateAccommodateWhoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.accommodatewho.label" for="frmAccommodationPledgeCreateUpdateAccommodateWhoSelect" class="control-label"><spring:message code="frmAccommodationPledgeAccommodateWhoLabel"/></label>
+			<select id="frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect" name="accommodatewho" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeAccommodateWhoPlaceHolder"/>" >
+      			  
+   			 </select>
+			<span id="frmAccommodationPledgeCreateUpdateAccommodateWhoCountBlock" class="help-block"></span>
+			<span id="frmAccommodationPledgeAccommodateWhoHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAccommodateWhoHelpBlock"/></span>
+			
+			<div id="frmAccommodationPledgeCreateUpdateAccommodateWhoAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateAccommodateWhoAlertBlockText"></span>
+			</div>	  
+		  </div>
+  				
+  			 <div id="frmAccommodationPledgeCreateUpdateFacilitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.amenities.label" for="frmAccommodationPledgeCreateUpdateFacilities" class="control-label"><spring:message code="frmAccommodationPledgeFacilitiesLabel"/></label>
+			<select id="frmApplicationUserDetailsCreateUpdateFacilitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeFacilitiesPlaceHolder"/>" >
+      			  
+   			 </select>
+			<span id="frmAccommodationPledgeCreateUpdateFacilitiesCountBlock" class="help-block"></span>
+			<div id="frmAccommodationPledgeCreateUpdateFacilitiesAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateFacilitiesAlertBlockText"></span>
+			</div>	  
+		  </div>
+  
+  		
+		  <div id="frmAccommodationPledgeCreateUpdateAmenitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.amenities.label" for="frmAccommodationPledgeCreateUpdateAmenities" class="control-label"><spring:message code="frmAccommodationPledgeAmenitiesLabel"/></label>
+			<select id="frmApplicationUserDetailsCreateUpdateAmenitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeAmenitiesPlaceHolder"/>" >
+      			  
+   			 </select>
+			<span id="frmAccommodationPledgeCreateUpdateAmenitiesCountBlock" class="help-block"></span>
+			<div id="frmAccommodationPledgeCreateUpdateAmenitiesAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdateAmenitiesAlertBlockText"></span>
+			</div>	  
+		  </div>
+  		
+  			
+  				
 		  <div id="frmAccommodationPledgeCreateUpdateAccommodationDateFromFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.accommodationdatefrom.label" for="frmAccommodationPledgeCreateUpdateAccommodationDateFrom" class="control-label"><spring:message code="frmAccommodationPledgeAccommodationDateFromLabel"/></label>
 			<input type="text" data-display-name="When is the accommodation available from?" data-minlength="10" data-required="false" maxlength="10" class="form-control datepicker" id="frmAccommodationPledgeCreateUpdateAccommodationDateFrom" placeholder="<spring:message code="frmAccommodationPledgeAccommodationDateFromPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateAccommodationDateFromHelpBlock"  data-toggle="popover"/>
@@ -133,102 +243,14 @@
 			</div>	  
 		  </div>
   
-		  <div id="frmAccommodationPledgeCreateUpdateAccommodationTypeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.accommodationtype.label" for="frmAccommodationPledgeCreateUpdateAccommodationType" class="control-label"><spring:message code="frmAccommodationPledgeAccommodationTypeLabel"/></label>	
-			<select class="form-control" data-display-name="What kind of accommodation are you pledging?" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateAccommodationType" aria-describedby="frmAccommodationPledgeCreateUpdateAccommodationTypeHelpBlock">
-			</select>
-	  
-			<span id="frmAccommodationPledgeCreateUpdateAccommodationTypeHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAccommodationTypeHelpBlock"/></span>
-			<div id="frmAccommodationPledgeCreateUpdateAccommodationTypeAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateAccommodationTypeAlertBlockText"></span>
-			</div>
-				  
-		  </div>
-  
-		  <div id="frmAccommodationPledgeCreateUpdateAccommodationConditionFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.accommodationcondition.label" for="frmAccommodationPledgeCreateUpdateAccommodationCondition" class="control-label"><spring:message code="frmAccommodationPledgeAccommodationConditionLabel"/></label>	
-			<select class="form-control" data-display-name="Condition" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateAccommodationCondition" aria-describedby="frmAccommodationPledgeCreateUpdateAccommodationConditionHelpBlock">
-			</select>
-	  
-			<span id="frmAccommodationPledgeCreateUpdateAccommodationConditionHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAccommodationConditionHelpBlock"/></span>
-			<div id="frmAccommodationPledgeCreateUpdateAccommodationConditionAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateAccommodationConditionAlertBlockText"></span>
-			</div>
-				  
-		  </div>
-  
-		  <div id="frmAccommodationPledgeCreateUpdateNumberOfBedsFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.numberofbeds.label" for="frmAccommodationPledgeCreateUpdateNumberOfBeds" class="control-label"><spring:message code="frmAccommodationPledgeNumberOfBedsLabel"/></label>	
-			<select class="form-control" data-display-name="Number of beds" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateNumberOfBeds" aria-describedby="frmAccommodationPledgeCreateUpdateNumberOfBedsHelpBlock">
-			</select>
-	  
-			<span id="frmAccommodationPledgeCreateUpdateNumberOfBedsHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeNumberOfBedsHelpBlock"/></span>
-			<div id="frmAccommodationPledgeCreateUpdateNumberOfBedsAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateNumberOfBedsAlertBlockText"></span>
-			</div>
-				  
-		  </div>
-  
-  		<div id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.numberofbedrooms.label" for="frmAccommodationPledgeCreateUpdateNumberOfBedrooms" class="control-label"><spring:message code="frmAccommodationPledgeNumberOfBedroomsLabel"/></label>	
-			<select class="form-control" data-display-name="Number of bedrooms" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateNumberOfBedrooms" aria-describedby="frmAccommodationPledgeCreateUpdateNumberOfBedroomsHelpBlock">
-			<option value="-1">Select number of bedrooms</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
-			<option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
-			<option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option>
-			<option value="19">19</option><option value="20">20</option>
-			</select>
-	  
-			<span id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeNumberOfBedroomsHelpBlock"/></span>
-			<div id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateNumberOfBedroomsAlertBlockText"></span>
-			</div>
-				  
-		  </div>
-  
-  
-		  <div id="frmAccommodationPledgeCreateUpdateVacantOrSharedFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.vacantorshared.label" for="frmAccommodationPledgeCreateUpdateVacantOrShared" class="control-label"><spring:message code="frmAccommodationPledgeVacantOrSharedLabel"/></label>	
-			<select class="form-control" data-display-name="Vacant or Shared" data-select-type="standalone" data-required="false" id="frmAccommodationPledgeCreateUpdateVacantOrShared" aria-describedby="frmAccommodationPledgeCreateUpdateVacantOrSharedHelpBlock">
-			</select>
-	  
-			<span id="frmAccommodationPledgeCreateUpdateVacantOrSharedHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeVacantOrSharedHelpBlock"/></span>
-			<div id="frmAccommodationPledgeCreateUpdateVacantOrSharedAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateVacantOrSharedAlertBlockText"></span>
-			</div>
-				  
-		  </div>
 		  
 		  
-		  <div id="frmAccommodationPledgeCreateUpdateFacilitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.amenities.label" for="frmAccommodationPledgeCreateUpdateFacilities" class="control-label"><spring:message code="frmAccommodationPledgeFacilitiesLabel"/></label>
-			<select id="frmApplicationUserDetailsCreateUpdateFacilitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeFacilitiesPlaceHolder"/>" >
-      			  
-   			 </select>
-			<span id="frmAccommodationPledgeCreateUpdateFacilitiesCountBlock" class="help-block"></span>
-			<div id="frmAccommodationPledgeCreateUpdateFacilitiesAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateFacilitiesAlertBlockText"></span>
-			</div>	  
-		  </div>
+  
+		  
   
   		
-		  <div id="frmAccommodationPledgeCreateUpdateAmenitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.amenities.label" for="frmAccommodationPledgeCreateUpdateAmenities" class="control-label"><spring:message code="frmAccommodationPledgeAmenitiesLabel"/></label>
-			<select id="frmApplicationUserDetailsCreateUpdateAmenitiesSelect" name="amenities" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeAmenitiesPlaceHolder"/>" >
-      			  
-   			 </select>
-			<span id="frmAccommodationPledgeCreateUpdateAmenitiesCountBlock" class="help-block"></span>
-			<div id="frmAccommodationPledgeCreateUpdateAmenitiesAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateAmenitiesAlertBlockText"></span>
-			</div>	  
-		  </div>
   
+		 
   
 		  <div id="frmAccommodationPledgeCreateUpdateOtherAmenitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.otheramenities.label" for="frmAccommodationPledgeCreateUpdateOtherAmenities" class="control-label"><spring:message code="frmAccommodationPledgeOtherAmenitiesLabel"/></label>
@@ -242,17 +264,7 @@
 				  
 		  </div>
 
-  		<div id="frmAccommodationPledgeCreateUpdateAccommodateWhoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.accommodatewho.label" for="frmAccommodationPledgeCreateUpdateAccommodateWhoSelect" class="control-label"><spring:message code="frmAccommodationPledgeAccommodateWhoLabel"/></label>
-			<select id="frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect" name="accommodatewho" class="chosen" multiple style="width: 500px;" data-placeholder="<spring:message code="frmAccommodationPledgeAccommodateWhoPlaceHolder"/>" >
-      			  
-   			 </select>
-			<span id="frmAccommodationPledgeCreateUpdateAccommodateWhoCountBlock" class="help-block"></span>
-			<div id="frmAccommodationPledgeCreateUpdateAccommodateWhoAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdateAccommodateWhoAlertBlockText"></span>
-			</div>	  
-		  </div>
+  		
   
   
 		  <div id="frmAccommodationPledgeCreateUpdateAdditionalInformationFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">

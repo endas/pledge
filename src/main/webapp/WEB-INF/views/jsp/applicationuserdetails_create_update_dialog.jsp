@@ -108,7 +108,7 @@
   				<span id="frmApplicationUserDetailsCreateUpdatePostCodeAlertBlockText"></span>
 			</div>
 			<p>
-			<a style="text-decoration:underline" href="https://finder.eircode.ie/#/" target="_blank">Find your Eircode</a>
+			<a class="text-link" style="text-decoration:underline" href="https://finder.eircode.ie/#/" target="_blank">Find your Eircode</a>
 			</p>		  
 		
 		  </div>
