@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import org.volunteertech.pledges.accommodationpledge.dao.AccommodationFlaggedIssuesEnum;
+import org.volunteertech.pledges.servicepledge.dao.ServicePlegdeFlaggedIssuesEnum;
 import org.volunteertech.pledges.users.security.SecurityUser;
 
 import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
@@ -511,6 +513,8 @@ public class AccommodationPledgeController extends BaseController
 		model.addAttribute("canYouAccommodateMap", localizeServiceMap(referenceStore.getYouCanAccommodate(),locale));
 
 		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
+
+        model.addAttribute("flaggedIssues", AccommodationFlaggedIssuesEnum.values());
 	}
 	
 

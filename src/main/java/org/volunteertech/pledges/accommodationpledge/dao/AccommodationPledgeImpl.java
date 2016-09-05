@@ -144,6 +144,8 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
+
+    private AccommodationFlaggedIssuesEnum flaggedIssue;
     
    
     private Set<Long> amenities = new HashSet<Long>();
@@ -802,7 +804,13 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 	}
 
 
+    public AccommodationFlaggedIssuesEnum getFlaggedIssue() {
+        return flaggedIssue;
+    }
 
+    public void setFlaggedIssue(AccommodationFlaggedIssuesEnum flaggedIssue) {
+        this.flaggedIssue = flaggedIssue;
+    }
 }
     
     
