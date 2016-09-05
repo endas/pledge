@@ -105,16 +105,8 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
 
-    private String language;
+    private ServicePlegdeFlaggedIssuesEnum flaggedIssue;
 
-    private Boolean accredited;
-
-    private String other;
-
-    private Date timeLimit;
-
-
-    
 
     /**
      * Default Constructor for the ServicePledge bean
@@ -511,15 +503,7 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 		return this.pledgeServiceDateAvailableTo;
 	}
 
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-	@Override
+    @Override
 	public String toString() {
 		return "ServicePledgeImpl [id=" + id + ", parentObjectId=" + parentObjectId + ", currentMode=" + currentMode
 				+ ", pledgeServiceLevelOne=" + pledgeServiceLevelOne + ", pledgeServiceLevelOneReferenceTranslation="
@@ -546,29 +530,12 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 		this.pledgeServiceTravelAbilities = pledgeServiceTravelAbilities;	
 	}
 
-
-    public Boolean getAccredited() {
-        return accredited;
+    public ServicePlegdeFlaggedIssuesEnum getFlaggedIssue() {
+        return flaggedIssue;
     }
 
-    public void setAccredited(Boolean accredited) {
-        this.accredited = accredited;
-    }
-
-    public String getOther() {
-        return other;
-    }
-
-    public void setOther(String other) {
-        this.other = other;
-    }
-
-    public Date getTimeLimit() {
-        return timeLimit;
-    }
-
-    public void setTimeLimit(Date timeLimit) {
-        this.timeLimit = timeLimit;
+    public void setFlaggedIssue(ServicePlegdeFlaggedIssuesEnum flaggedIssue) {
+        this.flaggedIssue = flaggedIssue;
     }
 }
     

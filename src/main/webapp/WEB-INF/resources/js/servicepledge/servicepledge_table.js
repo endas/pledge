@@ -68,10 +68,6 @@
 			{
 				"targets": 7,
 				"data": "pledgeServiceHoursPerWeekReferenceTranslation"
-			},
-			{
-				"targets": 8,
-				"data": "language"
 			}
 			]
 		} );
