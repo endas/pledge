@@ -4,22 +4,9 @@
             <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
                 <!DOCTYPE html>
                 <html lang="en">
-                <c:choose>
-                    <c:when test="${accommodationPledgeFormModel['currentMode'] == 'ADD'}">
-                        <spring:message code="accommodationpledge.form.header" var="headerText" />
-                    </c:when>
-                    <c:when test="${accommodationPledgeFormModel['currentMode'] == 'UPDATE'}">
-                        <spring:message code="accommodationpledge.form.header" var="headerText" />
-                    </c:when>
-                    <c:when test="${accommodationPledgeFormModel['currentMode'] == 'LOCALIZE'}">
-                        <spring:message code="accommodationpledge.form.header" var="headerText" />
-                    </c:when>
-                    <c:otherwise>
-                        <spring:message code="accommodationpledge.form.header" var="headerText" />
-                    </c:otherwise>
-                </c:choose>
+                <spring:message code="accommodationpledge.form.header" var="headerText" />
                 <spring:message code="accommodationpledge.form.title" var="title" />
-                <jsp:include page="../jsp/includes/header.jsp">
+                <jsp:include page="../includes/header.jsp">
                     <jsp:param name="title" value="${title}" />
                     <jsp:param name="beanName" value="accommodationPledge" />
                 </jsp:include>
@@ -647,7 +634,7 @@
 
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </form:form>
-                    <jsp:include page="../jsp/includes/redcrossfooter.jsp" />
+                    <jsp:include page="../includes/redcrossfooter.jsp" />
 
                     <script>
                         var rootContext = "${pageContext.request.contextPath}";

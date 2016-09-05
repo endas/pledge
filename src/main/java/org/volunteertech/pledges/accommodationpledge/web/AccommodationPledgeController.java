@@ -1,16 +1,9 @@
 package org.volunteertech.pledges.accommodationpledge.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,15 +27,12 @@ import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledge;
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeImpl;
 import org.volunteertech.pledges.accommodationpledge.service.AccommodationPledgeService;
-import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeLoadException;
-import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeSaveException;
 import org.volunteertech.pledges.accommodationpledge.validator.AccommodationPledgeFormValidator;
 import org.volunteertech.pledges.accommodationpledge.view.AccommodationPledgeTranslationBackingBean;
 import org.volunteertech.pledges.accommodationpledge.view.AccommodationPledgeTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
@@ -115,7 +105,7 @@ public class AccommodationPledgeController extends BaseController
 
 		logger.debug("showAllAccommodationPledge()");
 			
-		return "accommodationpledge_table";
+		return "accommodations/accommodationpledge_table";
 
 	}
 	
@@ -132,10 +122,10 @@ public class AccommodationPledgeController extends BaseController
 		model.addAttribute("accommodationPledgeTranslationFormModel", accommodationPledgeTranslationBackingBean);
 		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
-		setDropDownContents(model, null, locale);		
+		setDropDownContents(model, locale);
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "accommodationpledge_localize";
+		return "accommodations/accommodationpledge_localize";
 
 	}
 	
@@ -157,12 +147,12 @@ public class AccommodationPledgeController extends BaseController
 		
 
 		if (result.hasErrors()) {
-			setDropDownContents(model, accommodationPledge, locale);
+			setDropDownContents(model, locale);
 			String updateIssueMessage = messageSource.getMessage("accommodationPledgeUpdateIssueMessage", new String[0], locale);
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "accommodationpledge";
+			return "accommodations/accommodationpledge";
 		} else {
 
 			// Add message to flash scope
@@ -211,9 +201,9 @@ public class AccommodationPledgeController extends BaseController
 
 		model.addAttribute("accommodationPledgeFormModel", accommodationPledge);
 
-		setDropDownContents(model, accommodationPledge, locale);
+		setDropDownContents(model, locale);
 
-		return "accommodationpledge";
+		return "accommodations/accommodationpledge";
 
 	}
 	
@@ -236,9 +226,9 @@ public class AccommodationPledgeController extends BaseController
 
 		model.addAttribute("accommodationPledgeFormModel", accommodationPledge);
 
-		setDropDownContents(model, accommodationPledge, locale);
+		setDropDownContents(model, locale);
 
-		return "accommodationpledgewebpage";
+		return "accommodations/accommodationpledgewebpage";
 
 	}
 	
@@ -262,9 +252,9 @@ public class AccommodationPledgeController extends BaseController
 		
 		model.addAttribute("accommodationPledgeFormModel", accommodationPledge);
 		
-		setDropDownContents(model, accommodationPledge, locale);
+		setDropDownContents(model, locale);
 		
-		return "accommodationpledge";
+		return "accommodations/accommodationpledge";
 
 	}
 
@@ -305,7 +295,7 @@ public class AccommodationPledgeController extends BaseController
 		}
 		model.addAttribute("accommodationPledge", accommodationPledge);
 		
-		setDropDownContents(model, accommodationPledge, locale);
+		setDropDownContents(model, locale);
 
 		return "showaccommodationpledge";
 
@@ -504,65 +494,23 @@ public class AccommodationPledgeController extends BaseController
 
 	
 
-	private void setDropDownContents(Model model, AccommodationPledge accommodationPledge, Locale locale) {
+	private void setDropDownContents(Model model, Locale locale) {
 		
-		Map<Long, String> countryMap = referenceStore.getEuropeCountry();
-		SortedMap<Long, String> localizedcountryMap = new TreeMap<Long, String>(countryMap);
-		for (Map.Entry<Long, String> entry : countryMap.entrySet()) {
-			localizedcountryMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("countryMap", localizedcountryMap);
+		model.addAttribute("countryMap", localizeServiceMap( referenceStore.getEuropeCountry(),locale));
 	      
-		Map<Long, String> ownerOccupierMap = referenceStore.getOwnerOccupierType();
-		SortedMap<Long, String> localizedownerOccupierMap = new TreeMap<Long, String>(ownerOccupierMap);
-		for (Map.Entry<Long, String> entry : ownerOccupierMap.entrySet()) {
-			localizedownerOccupierMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("ownerOccupierMap", localizedownerOccupierMap);
+		model.addAttribute("ownerOccupierMap", localizeServiceMap(referenceStore.getOwnerOccupierType(),locale));
+
+		model.addAttribute("accommodationTypeMap", localizeServiceMap(referenceStore.getAccommodationType(),locale));
 	      
-		Map<Long, String> accommodationTypeMap = referenceStore.getAccommodationType();
-		SortedMap<Long, String> localizedaccommodationTypeMap = new TreeMap<Long, String>(accommodationTypeMap);
-		for (Map.Entry<Long, String> entry : accommodationTypeMap.entrySet()) {
-			localizedaccommodationTypeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("accommodationTypeMap", localizedaccommodationTypeMap);
+		model.addAttribute("accommodationConditionMap", localizeServiceMap(referenceStore.getAccommodationCondition(),locale));
+
+		model.addAttribute("numberOfBedsMap", localizeServiceMap(referenceStore.getNumberOfBeds(),locale));
 	      
-		Map<Long, String> accommodationConditionMap = referenceStore.getAccommodationCondition();
-		SortedMap<Long, String> localizedaccommodationConditionMap = new TreeMap<Long, String>(accommodationConditionMap);
-		for (Map.Entry<Long, String> entry : accommodationConditionMap.entrySet()) {
-			localizedaccommodationConditionMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("accommodationConditionMap", localizedaccommodationConditionMap);
+		model.addAttribute("vacantOrSharedMap", localizeServiceMap(referenceStore.getYouCanAccommodate(),locale));
 	      
-		Map<Long, String> numberOfBedsMap = referenceStore.getNumberOfBeds();
-		SortedMap<Long, String> localizednumberOfBedsMap = new TreeMap<Long, String>(numberOfBedsMap);
-		for (Map.Entry<Long, String> entry : numberOfBedsMap.entrySet()) {
-			localizednumberOfBedsMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("numberOfBedsMap", localizednumberOfBedsMap);
-	      
-		Map<Long, String> vacantOrSharedMap = referenceStore.getVacantOrShared();
-		SortedMap<Long, String> localizedvacantOrSharedMap = new TreeMap<Long, String>(vacantOrSharedMap);
-		for (Map.Entry<Long, String> entry : vacantOrSharedMap.entrySet()) {
-			localizedvacantOrSharedMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("vacantOrSharedMap", localizedvacantOrSharedMap);
-	      
-		Map<Long, String> canYouAccommodateMap = referenceStore.getYouCanAccommodate();
-		SortedMap<Long, String> localizedcanYouAccommodateMap = new TreeMap<Long, String>(canYouAccommodateMap);
-		for (Map.Entry<Long, String> entry : canYouAccommodateMap.entrySet()) {
-			localizedcanYouAccommodateMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("canYouAccommodateMap", localizedcanYouAccommodateMap);
-	      
-		
-		Map<Long, String> localeMap = referenceStore.getLocale();
-		SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
-		for (Map.Entry<Long, String> entry : localeMap.entrySet()) {
-			localizedLocaleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		
-		model.addAttribute("localeMap", localizedLocaleMap);
+		model.addAttribute("canYouAccommodateMap", localizeServiceMap(referenceStore.getYouCanAccommodate(),locale));
+
+		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
 	}
 	
 

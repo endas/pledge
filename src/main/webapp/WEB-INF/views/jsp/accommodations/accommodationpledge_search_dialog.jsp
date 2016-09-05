@@ -18,7 +18,7 @@
 <br />
 
 
-<jsp:include page="../jsp/includes/header.jsp">
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="subtitle" value="${title}" />
 </jsp:include>
 <body>
@@ -339,7 +339,7 @@
 	</div>
 
 </div>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
 <script>
 
 var rootContext = "${pageContext.request.contextPath}";
