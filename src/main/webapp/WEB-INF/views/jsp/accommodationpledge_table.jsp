@@ -77,10 +77,8 @@
 					<th><spring:message code="frmAccommodationPledgeNumberOfBedsLabel"/></th>      
        
 					<th><spring:message code="frmAccommodationPledgeVacantOrSharedLabel"/></th>      
-       
-					<th><spring:message code="frmAccommodationPledgeCanYouAccommodateLabel"/></th>      
-       
-					<th><spring:message code="frmAccommodationPledgeAdditionalInformationLabel"/></th>      
+
+					<th><spring:message code="frmAccommodationPledgeAdditionalInformationLabel"/></th>
       
 					<th></th> <!-- Associations links -->
 					

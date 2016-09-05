@@ -92,10 +92,6 @@
 			},
 			{
 				"targets": 13,
-				"data": "canYouAccommodateReferenceTranslation"
-			},
-			{
-				"targets": 14,
 				"data": "additionalInformation"
 			}
 			]
