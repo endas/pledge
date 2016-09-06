@@ -73,6 +73,14 @@ public class GoodsPledgeHistory
     
     private Date dateAvailableTo;
     
+    private int status=0;
+    public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
     /**
      * Default Constructor for the GoodsPledge bean
      */

@@ -22,6 +22,9 @@
 		<property name="postCode" type="string" column="POSTCODE" length="10" ></property>	
 	  
 		<property name="country" type="long" column="COUNTRY" length="10" not-null="true"></property>	
+	  	<property name="status" type="int">
+  			<column name="STATUS" not-null="true" default="0" />
+  		</property>
 	  
         <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>

@@ -24,7 +24,9 @@
 		<property name="pledgeServiceDateAvailableTo" type="timestamp" column="PLEDGESERVICEDATEAVAILABLETO"  not-null="false"></property>	
 	  
 		<property name="pledgeServiceHoursPerWeek" type="long" column="PLEDGESERVICEHOURSPERWEEK" length="10"></property>	
-	  
+	  	<property name="status" type="int">
+  			<column name="STATUS" not-null="true" default="0" />
+  		</property>
         <property name="createdByID" type="long" column="CREATEDBYID"/>
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED"/>

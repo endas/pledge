@@ -222,6 +222,11 @@ public interface Address extends Serializable {
      * @return A member of the CurrentMode Enumeration
      */
 	public CurrentMode getCurrentMode();
+	
+
+	public int getStatus();
+
+	public void setStatus(int status);
 }
     
     

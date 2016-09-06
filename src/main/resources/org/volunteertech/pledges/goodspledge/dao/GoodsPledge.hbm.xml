@@ -29,6 +29,10 @@
 	  
 		<property name="itemSize" type="string" column="ITEMSIZE" length="500" ></property>	
 		
+		<property name="status" type="int">
+  			<column name="STATUS" not-null="true" default="0" />
+  		</property>
+  		
 		<property name="dateAvailableFrom" type="timestamp" column="DATEAVAILABLEFROM" ></property>
 		<property name="dateAvailableTo" type="timestamp" column="DATEAVAILABLETO" ></property>		
 	  

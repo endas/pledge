@@ -85,8 +85,16 @@ public class AddressImpl implements Address, Serializable {
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
     
+    private int status=0;
+    public int getStatus() {
+		return status;
+	}
 
-    /**
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	/**
      * Default Constructor for the Address bean
      */
     public AddressImpl()

@@ -356,6 +356,11 @@ public interface GoodsPledge extends Serializable {
 	public Date getDateAvailableTo();
 	
 	public void setDateAvailableTo(Date d);
+	
+
+	public int getStatus();
+
+	public void setStatus(int status);
 }
     
     

@@ -99,7 +99,10 @@ public class AccommodationPledgeHistory
 	private Set<Long> facilities = new HashSet<Long>();
 	private Set<Long> accommodateWho = new HashSet<Long>();
     
-    /**
+	private int status = 0;
+   
+
+	/**
      * Default Constructor for the AccommodationPledge bean
      */
     public AccommodationPledgeHistory()
@@ -593,6 +596,22 @@ public class AccommodationPledgeHistory
         return dateUpdated;
     }
     	
+	
+	 public Long getCanYouAccommodate() {
+			return canYouAccommodate;
+		}
+
+		public void setCanYouAccommodate(Long canYouAccommodate) {
+			this.canYouAccommodate = canYouAccommodate;
+		}
+
+		public int getStatus() {
+			return status;
+		}
+
+		public void setStatus(int status) {
+			this.status = status;
+		}
 
 	
 }

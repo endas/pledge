@@ -36,11 +36,22 @@
         }
         .btn {
             width: 30%;
-            min-width: 250px;
+            min-width: 40px;
         }
         .btn-login {
             width: 100% !important;
         }
         .modal-footer {
             text-align: center;
+        }
+        
+        .btn-primary {
+        	border-color:#fff;
+		   	color: #fff;
+		    background-color: #cc0001;
+        }
+
+        .btn-primary:hover {
+        	color: #fff;
+		    background-color: #404040;
         }

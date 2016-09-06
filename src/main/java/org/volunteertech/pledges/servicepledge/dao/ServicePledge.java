@@ -295,6 +295,11 @@ public interface ServicePledge extends Serializable {
 	public Set<Long> getPledgeServiceTravelAbilities();
 
 	public void setPledgeServiceTravelAbilities(Set<Long> pledgeServiceTravelAbilities);
+	
+
+	public int getStatus();
+
+	public void setStatus(int status);
 }
     
     

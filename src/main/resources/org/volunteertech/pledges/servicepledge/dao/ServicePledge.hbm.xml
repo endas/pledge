@@ -24,7 +24,9 @@
 		<property name="pledgeServiceDateAvailable" type="timestamp" column="PLEDGESERVICEDATEAVAILABLE" ></property>	
 	  	<property name="pledgeServiceDateAvailableTo" type="timestamp" column="PLEDGESERVICEDATEAVAILABLETO"  not-null="false"></property>	
 		<property name="pledgeServiceHoursPerWeek" type="long" column="PLEDGESERVICEHOURSPERWEEK" length="10" ></property>	
-	  
+	  	<property name="status" type="int">
+  			<column name="STATUS" not-null="true" default="0" />
+  		</property>
 	  	<set name="pledgeServiceTravelAbilities" table="SERVICE_TRAVEL_ABILITY" fetch="join" cascade="all">
             <key>
                 <column name="SERVICEPLEDGEID" not-null="true" />

@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
+import org.volunteertech.pledges.pledge.dao.PledgeStatus;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 
 
@@ -150,6 +150,9 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     private Set<Long> facilities = new HashSet<Long>();
     private Set<Long> accommodateWho = new HashSet<Long>();
     
+    private int status = 0;
+    
+  
     /**
      * Default Constructor for the AccommodationPledge bean
      */
@@ -189,6 +192,7 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();
         this.sameAsProfileAddress = true;
+        this.status = 0;
     }
     
     /**
@@ -799,6 +803,14 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 
 	public void setNumberOfBedrooms(Long numberOfBedrooms) {
 		this.numberOfBedrooms = numberOfBedrooms;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 

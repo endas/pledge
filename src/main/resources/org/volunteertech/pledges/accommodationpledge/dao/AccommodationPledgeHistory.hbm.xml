@@ -42,6 +42,9 @@
 	  
 		<property name="additionalInformation" type="string" column="ADDITIONALINFORMATION" length="500"></property>	
 	  
+	  	<property name="status" type="int">
+  			<column name="STATUS" not-null="true" default="0" />
+  		</property>
 	    
 		<set name="facilities" table="ACCOMMODATION_FACILITIES_HISTORY" fetch="join" cascade="all">
             <key>

@@ -48,7 +48,15 @@
             <column name="REGISTEROFPLEDGESID" not-null="false" />
         </many-to-one>
   
-  		
+  		<!-- <property name="status" column="STATUS">
+		    <type name="org.hibernate.type.EnumType">
+		        <param name="enumClass">org.volunteertech.pledges.pledge.dao.PledgeStatus</param>
+		        <param name="useNamed">true</param>
+		    </type>
+		</property> -->
+  		<property name="status" type="int">
+  			<column name="STATUS" not-null="true" default="0" />
+  		</property>
 		<set name="facilities" table="ACCOMMODATION_FACILITIES" fetch="join" cascade="all">
             <key>
                 <column name="ACCOMMODATIONPLEDGEID" not-null="true" />
@@ -73,7 +81,7 @@
              --><element type="long" column="REFERENCE_ID" not-null="true"  />
         </set>  
   		
-  		  		
+  		
         <property name="createdByID" type="long" column="CREATEDBYID" update="false"/>
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
