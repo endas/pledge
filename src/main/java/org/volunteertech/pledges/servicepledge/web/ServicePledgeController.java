@@ -1,16 +1,9 @@
 package org.volunteertech.pledges.servicepledge.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,21 +21,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import org.volunteertech.pledges.servicepledge.dao.ServicePlegdeFlaggedIssuesEnum;
 import org.volunteertech.pledges.users.security.SecurityUser;
 
 import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.servicepledge.dao.ServicePledge;
 import org.volunteertech.pledges.servicepledge.dao.ServicePledgeImpl;
 import org.volunteertech.pledges.servicepledge.service.ServicePledgeService;
-import org.volunteertech.pledges.servicepledge.dao.ServicePledgeLoadException;
-import org.volunteertech.pledges.servicepledge.dao.ServicePledgeSaveException;
 import org.volunteertech.pledges.servicepledge.validator.ServicePledgeFormValidator;
 import org.volunteertech.pledges.servicepledge.view.ServicePledgeTranslationBackingBean;
 import org.volunteertech.pledges.servicepledge.view.ServicePledgeTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
@@ -134,7 +125,7 @@ public class ServicePledgeController extends BaseController
 		model.addAttribute("servicePledgeTranslationFormModel", servicePledgeTranslationBackingBean);
 		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
-		setDropDownContents(model, null, locale);		
+		setDropDownContents(model, locale);
 		model.addAttribute("defaultLocale", defaultLocale);
 		
 		return TEMPLATE_PREFIX + "servicepledge_localize";
@@ -160,7 +151,7 @@ public class ServicePledgeController extends BaseController
 
 
 		if (result.hasErrors()) {
-			setDropDownContents(model, servicePledge, locale);
+			setDropDownContents(model, locale);
 			String updateIssueMessage = messageSource.getMessage("servicePledgeUpdateIssueMessage", new String[0], locale);
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
@@ -208,7 +199,7 @@ public class ServicePledgeController extends BaseController
 
 		model.addAttribute("servicePledgeFormModel", servicePledge);
 
-		setDropDownContents(model, servicePledge, locale);
+		setDropDownContents(model, locale);
 
 		return TEMPLATE_PREFIX + "servicepledge";
 
@@ -233,7 +224,7 @@ public class ServicePledgeController extends BaseController
 
 		model.addAttribute("servicePledgeFormModel", servicePledge);
 
-		setDropDownContents(model, servicePledge, locale);
+		setDropDownContents(model, locale);
 
 		return TEMPLATE_PREFIX + "servicepledgewebpage";
 
@@ -259,7 +250,7 @@ public class ServicePledgeController extends BaseController
 		
 		model.addAttribute("servicePledgeFormModel", servicePledge);
 		
-		setDropDownContents(model, servicePledge, locale);
+		setDropDownContents(model, locale);
 		
 		return TEMPLATE_PREFIX + "servicepledge";
 
@@ -302,7 +293,7 @@ public class ServicePledgeController extends BaseController
 		}
 		model.addAttribute("servicePledge", servicePledge);
 		
-		setDropDownContents(model, servicePledge, locale);
+		setDropDownContents(model, locale);
 
 		return TEMPLATE_PREFIX + "showservicepledge";
 
@@ -446,7 +437,7 @@ public class ServicePledgeController extends BaseController
 
 	
 
-	private void setDropDownContents(Model model, ServicePledge servicePledge, Locale locale) {
+	private void setDropDownContents(Model model, Locale locale) {
 		
 		model.addAttribute("pledgeServiceLevelOneMap", localizeServiceMap(referenceStore.getPledgeServiceLevelOne(),locale));
 	      
@@ -455,8 +446,10 @@ public class ServicePledgeController extends BaseController
 		model.addAttribute("pledgeServiceLevelThreeMap", localizeServiceMap(referenceStore.getPledgeServiceLevelThree(),locale));
 	      
 		model.addAttribute("pledgeServiceHoursPerWeekMap", localizeServiceMap(referenceStore.getIntegerCount1to40(),locale));
-	      
+
 		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
+
+		model.addAttribute("flaggedIssues", ServicePlegdeFlaggedIssuesEnum.values());
 	}
 	
 

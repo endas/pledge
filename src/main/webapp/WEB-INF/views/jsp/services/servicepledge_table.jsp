@@ -68,8 +68,6 @@
        
 					<th><spring:message code="frmServicePledgePledgeServiceHoursPerWeekLabel"/></th>
 
-					<th><spring:message code="serviceplegde.language"/></th>
-      
 					<th></th> <!-- Associations links -->
 					
 				</tr>

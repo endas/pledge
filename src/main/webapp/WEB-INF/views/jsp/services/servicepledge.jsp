@@ -418,14 +418,19 @@
                 <div
                      class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
-                    <form:label path="language"
+                    <form:label path="flaggedIssue"
                            class="col-sm-2 control-label"><spring:message
-                            code="serviceplegde.language"/></form:label>
+                            code="serviceplegde.flaggedIssue"/></form:label>
 
                     <div class="col-sm-10">
+                        <%--todo: add proper translation mechanism--%>
+                        <form:select path="flaggedIssue" class="form-control">
+                            <c:forEach items="${flaggedIssues}" var="issue">
+                                <spring:message code="${issue.name}" var="label"/>
+                                <form:option value="${issue.code}" label="${label}"/>
+                            </c:forEach>
+                        </form:select>
 
-
-                        <form:select path="language" class="form-control bfh-languages"  data-language="${servicePledgeFormModel.language}" />
 
                     </div>
                     <c:choose>
@@ -435,65 +440,6 @@
                     </c:choose>
                 </div>
 
-                <div
-                        class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-
-                    <form:label path="timeLimit"
-                                class="col-sm-2 control-label"><spring:message
-                            code="serviceplegde.timelimit"/></form:label>
-
-                    <div class="col-sm-10">
-
-
-                        <form:input path="timeLimit" class="form-control form-control datepicker"   />
-
-                    </div>
-                    <c:choose>
-                        <c:when test="${status.error}">
-                            <form:errors path="timeLimit" class="help-block col-sm-9"/>
-                        </c:when>
-                    </c:choose>
-                </div>
-
-                <div
-                        class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-
-                    <form:label path="other"
-                                class="col-sm-2 control-label"><spring:message
-                            code="serviceplegde.other"/></form:label>
-
-                    <div class="col-sm-10">
-
-
-                        <form:textarea path="other" class="form-control "   />
-
-                    </div>
-                    <c:choose>
-                        <c:when test="${status.error}">
-                            <form:errors path="other" class="help-block col-sm-9"/>
-                        </c:when>
-                    </c:choose>
-                </div>
-
-                <div
-                        class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-
-                    <form:label path="accredited"
-                                class="col-sm-2 control-label"><spring:message
-                            code="serviceplegde.accredited"/></form:label>
-
-                    <div class="col-sm-10">
-
-
-                        <form:checkbox path="accredited" class="form-control "   />
-
-                    </div>
-                    <c:choose>
-                        <c:when test="${status.error}">
-                            <form:errors path="other" class="help-block col-sm-9"/>
-                        </c:when>
-                    </c:choose>
-                </div>
 
 
 
@@ -534,8 +480,6 @@
 
 
 <script src="${bundledJs}"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-formhelpers/2.3.0/js/bootstrap-formhelpers.js" ></script>
 
 
 </body>

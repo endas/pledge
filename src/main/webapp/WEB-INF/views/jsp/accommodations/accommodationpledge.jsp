@@ -4,22 +4,9 @@
             <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
                 <!DOCTYPE html>
                 <html lang="en">
-                <c:choose>
-                    <c:when test="${accommodationPledgeFormModel['currentMode'] == 'ADD'}">
-                        <spring:message code="accommodationpledge.form.header" var="headerText" />
-                    </c:when>
-                    <c:when test="${accommodationPledgeFormModel['currentMode'] == 'UPDATE'}">
-                        <spring:message code="accommodationpledge.form.header" var="headerText" />
-                    </c:when>
-                    <c:when test="${accommodationPledgeFormModel['currentMode'] == 'LOCALIZE'}">
-                        <spring:message code="accommodationpledge.form.header" var="headerText" />
-                    </c:when>
-                    <c:otherwise>
-                        <spring:message code="accommodationpledge.form.header" var="headerText" />
-                    </c:otherwise>
-                </c:choose>
+                <spring:message code="accommodationpledge.form.header" var="headerText" />
                 <spring:message code="accommodationpledge.form.title" var="title" />
-                <jsp:include page="../jsp/includes/header.jsp">
+                <jsp:include page="../includes/header.jsp">
                     <jsp:param name="title" value="${title}" />
                     <jsp:param name="beanName" value="accommodationPledge" />
                 </jsp:include>
@@ -92,8 +79,6 @@
 
                                 <div class="panel-body">
 
-                                    <spring:bind path="addressOne">
-
                                         <div id="frmAccommodationPledgeAddressOneFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgeAddressOneLabel" for="frmAccommodationPledgeAddressOne" class="col-sm-2 control-label">
@@ -123,9 +108,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="addressTwo">
 
                                         <div id="frmAccommodationPledgeAddressTwoFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -156,9 +138,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="city">
 
                                         <div id="frmAccommodationPledgeCityFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -189,10 +168,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="stateProvinceRegion">
-
                                         <div id="frmAccommodationPledgeStateProvinceRegionFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgeStateProvinceRegionLabel" for="frmAccommodationPledgeStateProvinceRegion" class="col-sm-2 control-label">
@@ -222,10 +197,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="postCode">
-
                                         <div id="frmAccommodationPledgePostCodeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgePostCodeLabel" for="frmAccommodationPledgePostCode" class="col-sm-2 control-label">
@@ -254,10 +225,6 @@
                                                 </c:otherwise>
                                             </c:choose>
                                         </div>
-
-                                    </spring:bind>
-
-                                    <spring:bind path="country">
 
                                         <div id="frmAccommodationPledgeCountryFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -293,10 +260,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="ownerOccupier">
-
                                         <div id="frmAccommodationPledgeOwnerOccupierFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgeOwnerOccupierLabel" for="frmAccommodationPledgeOwnerOccupier" class="col-sm-2 control-label">
@@ -331,10 +294,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="accommodationDateFrom">
-
                                         <div id="frmAccommodationPledgeAccommodationDateFromFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgeAccommodationDateFromLabel" for="frmAccommodationPledgeAccommodationDateFrom" class="col-sm-2 control-label">
@@ -364,10 +323,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="accommodationDateTo">
-
                                         <div id="frmAccommodationPledgeAccommodationDateToFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgeAccommodationDateToLabel" for="frmAccommodationPledgeAccommodationDateTo" class="col-sm-2 control-label">
@@ -396,10 +351,6 @@
                                                 </c:otherwise>
                                             </c:choose>
                                         </div>
-
-                                    </spring:bind>
-
-                                    <spring:bind path="accommodationType">
 
                                         <div id="frmAccommodationPledgeAccommodationTypeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -435,10 +386,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="accommodationCondition">
-
                                         <div id="frmAccommodationPledgeAccommodationConditionFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgeAccommodationConditionLabel" for="frmAccommodationPledgeAccommodationCondition" class="col-sm-2 control-label">
@@ -472,10 +419,6 @@
                                                 </c:otherwise>
                                             </c:choose>
                                         </div>
-
-                                    </spring:bind>
-
-                                    <spring:bind path="numberOfBeds">
 
                                         <div id="frmAccommodationPledgeNumberOfBedsFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -511,10 +454,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="vacantOrShared">
-
                                         <div id="frmAccommodationPledgeVacantOrSharedFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgeVacantOrSharedLabel" for="frmAccommodationPledgeVacantOrShared" class="col-sm-2 control-label">
@@ -549,10 +488,6 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
-
-                                    <spring:bind path="otherAmenities">
-
                                         <div id="frmAccommodationPledgeOtherAmenitiesFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
                                             <label id="frmAccommodationPledgeOtherAmenitiesLabel" for="frmAccommodationPledgeOtherAmenities" class="col-sm-2 control-label">
@@ -581,15 +516,6 @@
                                                 </c:otherwise>
                                             </c:choose>
                                         </div>
-
-                                    </spring:bind>
-
-
-		  
-
-		
-
-                                    <spring:bind path="additionalInformation">
 
                                         <div id="frmAccommodationPledgeAdditionalInformationFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -620,7 +546,30 @@
                                             </c:choose>
                                         </div>
 
-                                    </spring:bind>
+                                    <div
+                                            class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+
+                                        <form:label path="flaggedIssue"
+                                                    class="col-sm-2 control-label"><spring:message
+                                                code="serviceplegde.flaggedIssue"/></form:label>
+
+                                        <div class="col-sm-10">
+                                                <%--todo: add proper translation mechanism--%>
+                                            <form:select path="flaggedIssue" class="form-control">
+                                                <c:forEach items="${flaggedIssues}" var="issue">
+                                                    <spring:message code="${issue.name}" var="label"/>
+                                                    <form:option value="${issue.code}" label="${label}"/>
+                                                </c:forEach>
+                                            </form:select>
+
+
+                                        </div>
+                                        <c:choose>
+                                            <c:when test="${status.error}">
+                                                <form:errors path="languge" class="help-block col-sm-9"/>
+                                            </c:when>
+                                        </c:choose>
+                                    </div>
 
                                 </div>
                                 <!-- class="panel-body" -->
@@ -647,7 +596,7 @@
 
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </form:form>
-                    <jsp:include page="../jsp/includes/redcrossfooter.jsp" />
+                    <jsp:include page="../includes/redcrossfooter.jsp" />
 
                     <script>
                         var rootContext = "${pageContext.request.contextPath}";

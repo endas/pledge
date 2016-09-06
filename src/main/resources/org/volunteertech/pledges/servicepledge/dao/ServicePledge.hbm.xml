@@ -42,10 +42,11 @@
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
         <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
-        <property name="language" type="string" length="200" column="LANGUAGE"/>
-        <property name="accredited" type="boolean" column="ACCREDITED" />
-        <property name="other" type="string"  column="OTHER"/>
-        <property name="timeLimit" type="timestamp" column="TIMELIMIT"/>
+        <property name="flaggedIssue" column="FLAGGEDISSUE">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">org.volunteertech.pledges.servicepledge.dao.ServicePlegdeFlaggedIssuesEnum</param>
+            </type>
+        </property>
     </class>
 
 </hibernate-mapping>
