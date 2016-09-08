@@ -1,7 +1,5 @@
 package org.volunteertech.pledges.users.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
@@ -10,7 +8,6 @@ import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,20 +28,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.volunteertech.pledges.users.security.SecurityUser;
 
 import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
-import org.volunteertech.pledges.users.dao.ApplicationUser;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetails;
 import org.volunteertech.pledges.users.dao.ApplicationUserDetailsImpl;
 import org.volunteertech.pledges.users.service.ApplicationUserDetailsService;
-import org.volunteertech.pledges.users.dao.ApplicationUserDetailsLoadException;
-import org.volunteertech.pledges.users.dao.ApplicationUserDetailsSaveException;
-import org.volunteertech.pledges.users.dao.ApplicationUserImpl;
 import org.volunteertech.pledges.users.validator.ApplicationUserDetailsFormValidator;
 import org.volunteertech.pledges.users.view.ApplicationUserDetailsTranslationBackingBean;
 import org.volunteertech.pledges.users.view.ApplicationUserDetailsTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
@@ -114,7 +106,7 @@ public class ApplicationUserDetailsController extends BaseController
 
 		logger.debug("showAllApplicationUserDetails()");
 			
-		return "applicationuserdetails_table";
+		return "users/applicationuserdetails_table";
 
 	}
 	
@@ -134,7 +126,7 @@ public class ApplicationUserDetailsController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "applicationuserdetails_localize";
+		return "users/applicationuserdetails_localize";
 
 	}
 	
@@ -161,7 +153,7 @@ public class ApplicationUserDetailsController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "applicationuserdetails";
+			return "users/applicationuserdetails";
 		} else {
 
 			// Add message to flash scope
@@ -212,7 +204,7 @@ public class ApplicationUserDetailsController extends BaseController
 
 		setDropDownContents(model, applicationUserDetails, locale);
 
-		return "applicationuserdetails";
+		return "users/applicationuserdetails";
 
 	}
 	
@@ -243,7 +235,7 @@ public class ApplicationUserDetailsController extends BaseController
 
 		setDropDownContents(model, applicationUserDetails, locale);
 
-		return "applicationuserdetailswebpage";
+		return "users/applicationuserdetailswebpage";
 
 	}
 	
@@ -272,7 +264,7 @@ public class ApplicationUserDetailsController extends BaseController
 		
 		setDropDownContents(model, applicationUserDetails, locale);
 		
-		return "applicationuserdetails";
+		return "users/applicationuserdetails";
 
 	}
 

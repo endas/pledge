@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><!DOCTYPE html>
 <html lang="en">
 <spring:message code="applicationuserdetails.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 	<jsp:param name="beanName" value="applicationUserDetails" />
 </jsp:include>
@@ -85,7 +85,7 @@
 		</div>
 		</div> <!-- class="well" -->
 	</div> <!-- class="container" -->
-		<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
+		<jsp:include page="../includes/redcrossfooter.jsp" />
 	
 <script>  
 var rootContext = "${pageContext.request.contextPath}";

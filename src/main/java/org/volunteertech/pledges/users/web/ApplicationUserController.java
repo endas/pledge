@@ -1,12 +1,9 @@
 package org.volunteertech.pledges.users.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,15 +31,12 @@ import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.users.dao.ApplicationUser;
 import org.volunteertech.pledges.users.dao.ApplicationUserImpl;
 import org.volunteertech.pledges.users.service.ApplicationUserService;
-import org.volunteertech.pledges.users.dao.ApplicationUserLoadException;
-import org.volunteertech.pledges.users.dao.ApplicationUserSaveException;
 import org.volunteertech.pledges.users.validator.ApplicationUserFormValidator;
 import org.volunteertech.pledges.users.view.ApplicationUserTranslationBackingBean;
 import org.volunteertech.pledges.users.view.ApplicationUserTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -115,7 +109,7 @@ public class ApplicationUserController extends BaseController
 
 		logger.debug("showAllApplicationUser()");
 			
-		return "applicationuser_table";
+		return "users/applicationuser_table";
 
 	}
 	
@@ -135,7 +129,7 @@ public class ApplicationUserController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "applicationuser_localize";
+		return "users/applicationuser_localize";
 
 	}
 	
@@ -286,7 +280,7 @@ public class ApplicationUserController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "applicationuser";
+			return "users/applicationuser";
 		} else {
 
 			// Add message to flash scope
@@ -336,7 +330,7 @@ public class ApplicationUserController extends BaseController
 
 		setDropDownContents(model, applicationUser, locale);
 
-		return "applicationuser";
+		return "users/applicationuser";
 
 	}
 	
@@ -361,7 +355,7 @@ public class ApplicationUserController extends BaseController
 
 		setDropDownContents(model, applicationUser, locale);
 
-		return "applicationuserwebpage";
+		return "users/applicationuserwebpage";
 
 	}
 	
@@ -387,7 +381,7 @@ public class ApplicationUserController extends BaseController
 		
 		setDropDownContents(model, applicationUser, locale);
 		
-		return "applicationuser";
+		return "users/applicationuser";
 
 	}
 

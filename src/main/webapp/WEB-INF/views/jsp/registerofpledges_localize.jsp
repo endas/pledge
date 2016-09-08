@@ -26,7 +26,7 @@
 
                 <body>
 
-                    <jsp:include page="../jsp/applicationuserdetails_create_update_dialog.jsp" />
+                    <jsp:include page="users/applicationuserdetails_create_update_dialog.jsp" />
 
                     <jsp:include page="accommodations/accommodationpledge_create_update_dialog.jsp" />
 

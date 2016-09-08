@@ -1,9 +1,9 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><!DOCTYPE html>
 <html lang="en">
-<spring:message code="applicationuserdetails.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="applicationuser.form.title" var="title"/>
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
-	<jsp:param name="beanName" value="applicationUserDetails" />
+	<jsp:param name="beanName" value="applicationUser" />
 </jsp:include>
 <body>
 
@@ -50,9 +50,9 @@
      <div class="container-fluid hero">
      		<spring:url value="/resources/images/redcross-banner.jpg" var="headerBanner" />
 			<div class="jumbotron">
-			  <h1><spring:message code="applicationuserdetails.form.header"/></h1>
+			  <h1><spring:message code="applicationuser.form.header"/></h1>
 			  
-			  <p><spring:message code="applicationuserdetails.form.subheader"/></p>
+			  <p><spring:message code="applicationuser.form.subheader"/></p>
 			  <a class="btn btn-primary btn-lg" data-toggle="modal" data-backdrop="static" data-target="#contactInformationCreateUpdateModal" data-id="${landingFormModel.id}" data-modal-title="Contact Us" data-association-type="one-to-one" data-callback-display-type="inline" data-callback-table-body-id="contactInformationTableBody" data-property-url="contactinformation">Contact Us</a>
 			  <h2>Built by Netgrains</h2>
 			  <p>This system was built using Netgrains Data Harvester software.</p>
@@ -60,18 +60,14 @@
 			</div>
     </div>
     
-	  	<spring:url value="/applicationuserdetailss" var="applicationUserDetailsActionUrl" />
+	  	<spring:url value="/applicationusers" var="applicationUserActionUrl" />
 	
-	<spring:message code="frmApplicationUserDetailsRepresentOrganisationPlaceHolder" var="unselectedRepresentOrganisation"/>
-    
-	<spring:message code="frmApplicationUserDetailsCountryPlaceHolder" var="unselectedCountry"/>
-    
-	<form:form id="frmApplicationUserDetails" class="form-horizontal" method="post" accept-charset="utf-8"
-                modelAttribute="applicationUserDetailsFormModel" action="${applicationUserDetailsActionUrl}">
-		<form:hidden id="frmApplicationUserDetailsApplicationUserDetailsId" path="id" />
-		<input type="hidden" id="frmApplicationUserDetailsApplicationUserDetailsMode" value="webpage" />
+	<form:form id="frmApplicationUser" class="form-horizontal" method="post" accept-charset="utf-8"
+                modelAttribute="applicationUserFormModel" action="${applicationUserActionUrl}">
+		<form:hidden id="frmApplicationUserApplicationUserId" path="id" />
+		<input type="hidden" id="frmApplicationUserApplicationUserMode" value="webpage" />
 	</form:form>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
 
 
 <script>  
@@ -79,9 +75,9 @@ var rootContext = "${pageContext.request.contextPath}";
 </script>
 
   
-<spring:url value="/wro/applicationUserDetailsJs.js" var="applicationUserDetailsJs" />
+<spring:url value="/wro/applicationUserJs.js" var="applicationUserJs" />
   
-<script src="${applicationUserDetailsJs}"></script>
+<script src="${applicationUserJs}"></script>
 
 </body>
 </html>
