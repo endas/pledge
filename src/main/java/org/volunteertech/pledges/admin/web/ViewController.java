@@ -1,16 +1,12 @@
 package org.volunteertech.pledges.admin.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,40 +30,13 @@ import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.admin.dao.View;
 import org.volunteertech.pledges.admin.dao.ViewImpl;
 import org.volunteertech.pledges.admin.service.ViewService;
-import org.volunteertech.pledges.admin.dao.ViewLoadException;
-import org.volunteertech.pledges.admin.dao.ViewSaveException;
 import org.volunteertech.pledges.admin.validator.ViewFormValidator;
 import org.volunteertech.pledges.admin.view.ViewTranslationBackingBean;
 import org.volunteertech.pledges.admin.view.ViewTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
-import org.volunteertech.pledges.address.view.AddressTranslationBackingBean;	
-import org.volunteertech.pledges.address.view.AddressTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.pledge.view.RegisterOfPledgesTranslationBackingBean;	
-import org.volunteertech.pledges.pledge.view.RegisterOfPledgesTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.accommodationpledge.view.AccommodationPledgeTranslationBackingBean;	
-import org.volunteertech.pledges.accommodationpledge.view.AccommodationPledgeTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.servicepledge.view.ServicePledgeTranslationBackingBean;	
-import org.volunteertech.pledges.servicepledge.view.ServicePledgeTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.goodspledge.view.GoodsPledgeTranslationBackingBean;	
-import org.volunteertech.pledges.goodspledge.view.GoodsPledgeTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.reference.view.ReferenceCategoryTranslationBackingBean;	
-import org.volunteertech.pledges.reference.view.ReferenceCategoryTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.reference.view.ReferenceTranslationBackingBean;	
-import org.volunteertech.pledges.reference.view.ReferenceTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.startup.view.LandingTranslationBackingBean;	
-import org.volunteertech.pledges.startup.view.LandingTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.admin.view.ViewTranslationBackingBean;	
-import org.volunteertech.pledges.admin.view.ViewTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.localisation.view.MessageResourceTranslationBackingBean;	
-import org.volunteertech.pledges.localisation.view.MessageResourceTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.users.view.ApplicationUserTranslationBackingBean;	
-import org.volunteertech.pledges.users.view.ApplicationUserTranslationBackingBeanImpl; 	
-import org.volunteertech.pledges.users.view.ApplicationUserDetailsTranslationBackingBean;	
-import org.volunteertech.pledges.users.view.ApplicationUserDetailsTranslationBackingBeanImpl; 	
 
 
 import org.volunteertech.pledges.reference.ReferenceStore;
@@ -137,7 +106,7 @@ public class ViewController extends BaseController
 
 		logger.debug("showAllView()");
 			
-		return "view_table";
+		return "views/view_table";
 
 	}
 	
@@ -157,7 +126,7 @@ public class ViewController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "view_localize";
+		return "views/view_localize";
 
 	}
 	
@@ -184,7 +153,7 @@ public class ViewController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "view";
+			return "views/view";
 		} else {
 
 			// Add message to flash scope
@@ -234,7 +203,7 @@ public class ViewController extends BaseController
 
 		setDropDownContents(model, view, locale);
 
-		return "view";
+		return "views/view";
 
 	}
 	
@@ -259,7 +228,7 @@ public class ViewController extends BaseController
 
 		setDropDownContents(model, view, locale);
 
-		return "viewwebpage";
+		return "views/viewwebpage";
 
 	}
 	
@@ -285,7 +254,7 @@ public class ViewController extends BaseController
 		
 		setDropDownContents(model, view, locale);
 		
-		return "view";
+		return "views/view";
 
 	}
 

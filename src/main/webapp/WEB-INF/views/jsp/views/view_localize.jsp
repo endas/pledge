@@ -15,13 +15,13 @@
 	</c:otherwise>
 </c:choose>
 <spring:message code="view.form.title" var="title"/>	
-<jsp:include page="../jsp/includes/header.jsp">
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 	<jsp:param name="beanName" value="view" />
 </jsp:include>
 <body>
 
-<jsp:include page="messages/messageresource_create_update_dialog.jsp"/>
+<jsp:include page="../messages/messageresource_create_update_dialog.jsp"/>
 
 <spring:url value="/landingwebpage" var="urlHome"/>
 <spring:url value="/entitylist" var="urlAppHome"/>
@@ -253,7 +253,7 @@
     
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	</form:form>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />	
+<jsp:include page="../includes/redcrossfooter.jsp" />
 
 <script>  
 var rootContext = "${pageContext.request.contextPath}";
