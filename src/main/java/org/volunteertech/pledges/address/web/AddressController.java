@@ -1,16 +1,12 @@
 package org.volunteertech.pledges.address.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,15 +30,12 @@ import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.address.dao.Address;
 import org.volunteertech.pledges.address.dao.AddressImpl;
 import org.volunteertech.pledges.address.service.AddressService;
-import org.volunteertech.pledges.address.dao.AddressLoadException;
-import org.volunteertech.pledges.address.dao.AddressSaveException;
 import org.volunteertech.pledges.address.validator.AddressFormValidator;
 import org.volunteertech.pledges.address.view.AddressTranslationBackingBean;
 import org.volunteertech.pledges.address.view.AddressTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 
@@ -113,7 +106,7 @@ public class AddressController extends BaseController
 
 		logger.debug("showAllAddress()");
 			
-		return "address_table";
+		return "addresses/address_table";
 
 	}
 	
@@ -133,7 +126,7 @@ public class AddressController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "address_localize";
+		return "addresses/address_localize";
 
 	}
 	
@@ -160,7 +153,7 @@ public class AddressController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "address";
+			return "addresses/address";
 		} else {
 
 			// Add message to flash scope
@@ -210,7 +203,7 @@ public class AddressController extends BaseController
 
 		setDropDownContents(model, address, locale);
 
-		return "address";
+		return "addresses/address";
 
 	}
 	
@@ -235,7 +228,7 @@ public class AddressController extends BaseController
 
 		setDropDownContents(model, address, locale);
 
-		return "addresswebpage";
+		return "addresses/addresswebpage";
 
 	}
 	
@@ -261,7 +254,7 @@ public class AddressController extends BaseController
 		
 		setDropDownContents(model, address, locale);
 		
-		return "address";
+		return "addresses/address";
 
 	}
 
