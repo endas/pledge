@@ -5,8 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,25 +12,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl;
 import org.volunteertech.pledges.pledge.service.RegisterOfPledgesService;
-import org.volunteertech.pledges.users.dao.ApplicationUser;
-import org.volunteertech.pledges.users.dao.ApplicationUserImpl;
 import org.volunteertech.pledges.users.security.SecurityUser;
 import org.volunteertech.pledges.users.service.ApplicationUserDetailsService;
 import org.volunteertech.pledges.users.service.ApplicationUserService;
-
-
-import com.netgrains.security.HashEncoderGenerator;
 
 
 /**
@@ -136,7 +125,7 @@ public class HomeController
 
 		}
 
-		model.setViewName("403");
+		model.setViewName("errors/403");
 		return model;
 
 	}	
