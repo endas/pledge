@@ -424,7 +424,7 @@ public class ApplicationUserController extends BaseController
 		
 		setDropDownContents(model, applicationUser, locale);
 
-		return "showapplicationuser";
+		return "users/showapplicationuser";
 
 	}
 	

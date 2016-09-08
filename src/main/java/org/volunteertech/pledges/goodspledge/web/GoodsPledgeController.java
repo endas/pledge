@@ -1,9 +1,6 @@
 package org.volunteertech.pledges.goodspledge.web;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import org.volunteertech.pledges.accommodationpledge.dao.AccommodationFlaggedIssuesEnum;
 import org.volunteertech.pledges.goodspledge.dao.GoodsFlaggedIssuesEnum;
 import org.volunteertech.pledges.users.security.SecurityUser;
 
@@ -38,7 +34,6 @@ import org.volunteertech.pledges.goodspledge.view.GoodsPledgeTranslationBackingB
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 
@@ -294,7 +289,7 @@ public class GoodsPledgeController extends BaseController
 		
 		setDropDownContents(model, locale);
 
-		return "showgoodspledge";
+		return "goods/showgoodspledge";
 
 	}
 	

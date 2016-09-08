@@ -1,7 +1,7 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><!DOCTYPE html>
 <html lang="en">
-<spring:message code="registerofpledges.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="address.form.title" var="title"/>
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 </jsp:include>
 <body>
@@ -38,42 +38,63 @@
 		</div>
 	</c:if>
 
-	<h1><spring:message code="registerofpledges.form.header"/></h1>
+	<h1><spring:message code="address.form.header"/></h1>
 	<br />
 	
 	
 
 	<div class="row">
-		<label class="col-sm-2"></label>
-		<div class="col-sm-10">${registerOfPledges.contactInformationInstructions}</div>
+		<label class="col-sm-2">Address Line 1</label>
+		<div class="col-sm-10">${address.addressOne}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2"></label>
-		<div class="col-sm-10">${registerOfPledges.accommodationPledgeInstructions}</div>
+		<label class="col-sm-2">Address Line 2</label>
+		<div class="col-sm-10">${address.addressTwo}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">About Netgrain Systems</label>
-		<div class="col-sm-10">${registerOfPledges.servicePledgeInstructions}</div>
+		<label class="col-sm-2">Town/Townland/City</label>
+		<div class="col-sm-10">${address.city}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">About Netgrain Systems</label>
-		<div class="col-sm-10">${registerOfPledges.goodsPledgeInstructions}</div>
+		<label class="col-sm-2">County</label>
+		<div class="col-sm-10">${address.stateProvinceRegion}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Eircode</label>
+		<div class="col-sm-10">${address.postCode}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Country</label>
+		<div class="col-sm-10">${address.country}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Save</label>
+		<div class="col-sm-10">${address.saveButton}</div>
 	</div>
 
 
 
 
 </div>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
-<spring:url value="/scripts/js/registerofpledges/registerofpledges.js" var="registerofpledgesJs" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
+<spring:url value="/scripts/js/address/address.js" var="addressJs" />
 </body>
 </html>

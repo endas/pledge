@@ -297,7 +297,7 @@ public class AddressController extends BaseController
 		
 		setDropDownContents(model, address, locale);
 
-		return "showaddress";
+		return "addresses/showaddress";
 
 	}
 	

@@ -298,7 +298,7 @@ public class RegisterOfPledgesController extends BaseController
 		
 		setDropDownContents(model, registerOfPledges, locale);
 
-		return "showregisterofpledges";
+		return "registrations/showregisterofpledges";
 
 	}
 	

@@ -1,7 +1,7 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><!DOCTYPE html>
 <html lang="en">
-<spring:message code="goodspledge.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="applicationuserdetails.form.title" var="title"/>
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 </jsp:include>
 <body>
@@ -38,84 +38,99 @@
 		</div>
 	</c:if>
 
-	<h1><spring:message code="goodspledge.form.header"/></h1>
+	<h1><spring:message code="applicationuserdetails.form.header"/></h1>
 	<br />
 	
 	
 
 	<div class="row">
-		<label class="col-sm-2">Goods Category One</label>
-		<div class="col-sm-10">${goodsPledge.goodsCategoryOne}</div>
+		<label class="col-sm-2"></label>
+		<div class="col-sm-10">${applicationUserDetails.contactInformationInstructions}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Goods Category Two</label>
-		<div class="col-sm-10">${goodsPledge.goodsCategoryTwo}</div>
+		<label class="col-sm-2">Contact Name</label>
+		<div class="col-sm-10">${applicationUserDetails.contactName}</div>
+	</div>
+
+	<div class="row">
+		<label class="col-sm-2">Are you pledging on behalf of an organisation?</label>
+		<div class="col-sm-10">${applicationUserDetails.representOrganisation}</div>
+	</div>
+	
+	<div class="row">
+		<label class="col-sm-2">What is the organisation name?</label>
+		<div class="col-sm-10">${applicationUserDetails.organisationName}</div>
+	</div>
+
+	<div class="row">
+		<label class="col-sm-2">Phone Number</label>
+		<div class="col-sm-10">${applicationUserDetails.telephoneNumber}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Goods Category Three</label>
-		<div class="col-sm-10">${goodsPledge.goodsCategoryThree}</div>
+		<label class="col-sm-2">Address Line 1</label>
+		<div class="col-sm-10">${applicationUserDetails.addressOne}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Size</label>
-		<div class="col-sm-10">${goodsPledge.goodsSize}</div>
+		<label class="col-sm-2">Address Line 2</label>
+		<div class="col-sm-10">${applicationUserDetails.addressTwo}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">New/Used</label>
-		<div class="col-sm-10">${goodsPledge.goodsNewOrUsed}</div>
+		<label class="col-sm-2">City/Town/Village</label>
+		<div class="col-sm-10">${applicationUserDetails.city}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Goods Condition</label>
-		<div class="col-sm-10">${goodsPledge.goodsCondition}</div>
+		<label class="col-sm-2">County</label>
+		<div class="col-sm-10">${applicationUserDetails.stateProvinceRegion}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Quantity</label>
-		<div class="col-sm-10">${goodsPledge.goodsQuantity}</div>
+		<label class="col-sm-2">Eircode</label>
+		<div class="col-sm-10">${applicationUserDetails.postCode}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Additional Information</label>
-		<div class="col-sm-10">${goodsPledge.additionalInformation}</div>
+		<label class="col-sm-2">Country</label>
+		<div class="col-sm-10">${applicationUserDetails.country}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Package Size</label>
-		<div class="col-sm-10">${goodsPledge.itemSize}</div>
+		<label class="col-sm-2">Email Address</label>
+		<div class="col-sm-10">${applicationUserDetails.emailAddress}</div>
 	</div>
 
 
 
 	<div class="row">
 		<label class="col-sm-2">Save</label>
-		<div class="col-sm-10">${goodsPledge.saveButton}</div>
+		<div class="col-sm-10">${applicationUserDetails.saveButton}</div>
 	</div>
 
 
 
 
 </div>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
-<spring:url value="/scripts/js/goodspledge/goodspledge.js" var="goodspledgeJs" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
+<spring:url value="/scripts/js/applicationuserdetails/applicationuserdetails.js" var="applicationuserdetailsJs" />
 </body>
 </html>

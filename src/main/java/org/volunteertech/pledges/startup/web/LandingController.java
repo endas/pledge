@@ -297,7 +297,7 @@ public class LandingController extends BaseController
 		
 		setDropDownContents(model, landing, locale);
 
-		return "showlanding";
+		return "ladnings/showlanding";
 
 	}
 	

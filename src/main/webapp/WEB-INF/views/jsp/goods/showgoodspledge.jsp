@@ -1,7 +1,7 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><!DOCTYPE html>
 <html lang="en">
-<spring:message code="applicationuser.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="goodspledge.form.title" var="title"/>
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 </jsp:include>
 <body>
@@ -38,49 +38,84 @@
 		</div>
 	</c:if>
 
-	<h1><spring:message code="applicationuser.form.header"/></h1>
+	<h1><spring:message code="goodspledge.form.header"/></h1>
 	<br />
 	
 	
 
 	<div class="row">
-		<label class="col-sm-2">Email Address</label>
-		<div class="col-sm-10">${applicationUser.username}</div>
+		<label class="col-sm-2">Goods Category One</label>
+		<div class="col-sm-10">${goodsPledge.goodsCategoryOne}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Password</label>
-		<div class="col-sm-10">${applicationUser.password}</div>
+		<label class="col-sm-2">Goods Category Two</label>
+		<div class="col-sm-10">${goodsPledge.goodsCategoryTwo}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">User Enabled</label>
-		<div class="col-sm-10">${applicationUser.enabled}</div>
+		<label class="col-sm-2">Goods Category Three</label>
+		<div class="col-sm-10">${goodsPledge.goodsCategoryThree}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">User Roles</label>
-		<div class="col-sm-10">${applicationUser.userRoles}</div>
+		<label class="col-sm-2">Size</label>
+		<div class="col-sm-10">${goodsPledge.goodsSize}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">New/Used</label>
+		<div class="col-sm-10">${goodsPledge.goodsNewOrUsed}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Goods Condition</label>
+		<div class="col-sm-10">${goodsPledge.goodsCondition}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Quantity</label>
+		<div class="col-sm-10">${goodsPledge.goodsQuantity}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Additional Information</label>
+		<div class="col-sm-10">${goodsPledge.additionalInformation}</div>
+	</div>
+
+
+
+	<div class="row">
+		<label class="col-sm-2">Package Size</label>
+		<div class="col-sm-10">${goodsPledge.itemSize}</div>
 	</div>
 
 
 
 	<div class="row">
 		<label class="col-sm-2">Save</label>
-		<div class="col-sm-10">${applicationUser.saveButton}</div>
+		<div class="col-sm-10">${goodsPledge.saveButton}</div>
 	</div>
 
 
 
 
 </div>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
-<spring:url value="/scripts/js/applicationuser/applicationuser.js" var="applicationuserJs" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
+<spring:url value="/scripts/js/goodspledge/goodspledge.js" var="goodspledgeJs" />
 </body>
 </html>

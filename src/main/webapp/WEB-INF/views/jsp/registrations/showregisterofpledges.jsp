@@ -1,7 +1,7 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><!DOCTYPE html>
 <html lang="en">
-<spring:message code="messageresource.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="registerofpledges.form.title" var="title"/>
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 </jsp:include>
 <body>
@@ -38,49 +38,42 @@
 		</div>
 	</c:if>
 
-	<h1><spring:message code="messageresource.form.header"/></h1>
+	<h1><spring:message code="registerofpledges.form.header"/></h1>
 	<br />
 	
 	
 
 	<div class="row">
-		<label class="col-sm-2">Message Key</label>
-		<div class="col-sm-10">${messageResource.messageKey}</div>
+		<label class="col-sm-2"></label>
+		<div class="col-sm-10">${registerOfPledges.contactInformationInstructions}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Locale</label>
-		<div class="col-sm-10">${messageResource.locale}</div>
+		<label class="col-sm-2"></label>
+		<div class="col-sm-10">${registerOfPledges.accommodationPledgeInstructions}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Reference Id</label>
-		<div class="col-sm-10">${messageResource.localeReferenceId}</div>
+		<label class="col-sm-2">About Netgrain Systems</label>
+		<div class="col-sm-10">${registerOfPledges.servicePledgeInstructions}</div>
 	</div>
 
 
 
 	<div class="row">
-		<label class="col-sm-2">Message</label>
-		<div class="col-sm-10">${messageResource.message}</div>
-	</div>
-
-
-
-	<div class="row">
-		<label class="col-sm-2">Save</label>
-		<div class="col-sm-10">${messageResource.saveButton}</div>
+		<label class="col-sm-2">About Netgrain Systems</label>
+		<div class="col-sm-10">${registerOfPledges.goodsPledgeInstructions}</div>
 	</div>
 
 
 
 
 </div>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
-<spring:url value="/scripts/js/messageresource/messageresource.js" var="messageresourceJs" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
+<spring:url value="/scripts/js/registerofpledges/registerofpledges.js" var="registerofpledgesJs" />
 </body>
 </html>

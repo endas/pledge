@@ -294,7 +294,7 @@ public class MessageResourceController extends BaseController
 		
 		setDropDownContents(model, messageResource, locale);
 
-		return "showmessageresource";
+		return "messages/showmessageresource";
 
 	}
 	
