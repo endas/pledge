@@ -1,16 +1,12 @@
 package org.volunteertech.pledges.localisation.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,16 +30,11 @@ import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
 import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
-import org.volunteertech.pledges.localisation.dao.MessageResourceLoadException;
-import org.volunteertech.pledges.localisation.dao.MessageResourceSaveException;
 import org.volunteertech.pledges.localisation.validator.MessageResourceFormValidator;
 import org.volunteertech.pledges.localisation.view.MessageResourceTranslationBackingBean;
 import org.volunteertech.pledges.localisation.view.MessageResourceTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
-import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
-import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 import org.volunteertech.pledges.admin.dao.View;
 
@@ -112,7 +103,7 @@ public class MessageResourceController extends BaseController
 
 		logger.debug("showAllMessageResource()");
 			
-		return "messageresource_table";
+		return "messages/messageresource_table";
 
 	}
 	
@@ -132,7 +123,7 @@ public class MessageResourceController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "messageresource_localize";
+		return "messages/messageresource_localize";
 
 	}
 	
@@ -159,7 +150,7 @@ public class MessageResourceController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "messageresource";
+			return "messages/messageresource";
 		} else {
 
 			// Add message to flash scope
@@ -209,7 +200,7 @@ public class MessageResourceController extends BaseController
 
 		setDropDownContents(model, messageResource, locale);
 
-		return "messageresource";
+		return "messages/messageresource";
 
 	}
 	
@@ -234,7 +225,7 @@ public class MessageResourceController extends BaseController
 
 		setDropDownContents(model, messageResource, locale);
 
-		return "messageresourcewebpage";
+		return "messages/messageresourcewebpage";
 
 	}
 	
@@ -260,7 +251,7 @@ public class MessageResourceController extends BaseController
 		
 		setDropDownContents(model, messageResource, locale);
 		
-		return "messageresource";
+		return "messages/messageresource";
 
 	}
 

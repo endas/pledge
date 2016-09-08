@@ -26,7 +26,7 @@
 
                 <body>
 
-                    <jsp:include page="../jsp/messageresource_create_update_dialog.jsp" />
+                    <jsp:include page="messages/messageresource_create_update_dialog.jsp" />
 
                     <spring:url value="/landingwebpage" var="urlHome" />
                     <spring:url value="/entitylist" var="urlAppHome" />
