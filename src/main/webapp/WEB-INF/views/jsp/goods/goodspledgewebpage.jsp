@@ -1,7 +1,7 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><!DOCTYPE html>
 <html lang="en">
 <spring:message code="goodspledge.form.title" var="title"/>
-<jsp:include page="../jsp/includes/header.jsp">
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 	<jsp:param name="beanName" value="goodsPledge" />
 </jsp:include>
@@ -81,7 +81,7 @@
 		<form:hidden id="frmGoodsPledgeGoodsPledgeId" path="id" />
 		<input type="hidden" id="frmGoodsPledgeGoodsPledgeMode" value="webpage" />
 	</form:form>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />
+<jsp:include page="../includes/redcrossfooter.jsp" />
 
 
 <script>  

@@ -1,16 +1,12 @@
 package org.volunteertech.pledges.goodspledge.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,21 +24,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import org.volunteertech.pledges.accommodationpledge.dao.AccommodationFlaggedIssuesEnum;
+import org.volunteertech.pledges.goodspledge.dao.GoodsFlaggedIssuesEnum;
 import org.volunteertech.pledges.users.security.SecurityUser;
 
 import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.goodspledge.dao.GoodsPledge;
 import org.volunteertech.pledges.goodspledge.dao.GoodsPledgeImpl;
 import org.volunteertech.pledges.goodspledge.service.GoodsPledgeService;
-import org.volunteertech.pledges.goodspledge.dao.GoodsPledgeLoadException;
-import org.volunteertech.pledges.goodspledge.dao.GoodsPledgeSaveException;
 import org.volunteertech.pledges.goodspledge.validator.GoodsPledgeFormValidator;
 import org.volunteertech.pledges.goodspledge.view.GoodsPledgeTranslationBackingBean;
 import org.volunteertech.pledges.goodspledge.view.GoodsPledgeTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
@@ -92,14 +87,7 @@ public class GoodsPledgeController extends BaseController
 	
     @Autowired
     private DatabaseDrivenMessageSource messageSource;
-    
 
-
-    @Autowired
-    private MessageResourceService messageResourceService;
-  
-    
-	
 	//Set a form validator
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
@@ -115,7 +103,7 @@ public class GoodsPledgeController extends BaseController
 
 		logger.debug("showAllGoodsPledge()");
 			
-		return "goodspledge_table";
+		return "goods/goodspledge_table";
 
 	}
 	
@@ -132,10 +120,10 @@ public class GoodsPledgeController extends BaseController
 		model.addAttribute("goodsPledgeTranslationFormModel", goodsPledgeTranslationBackingBean);
 		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
-		setDropDownContents(model, null, locale);		
+		setDropDownContents(model, locale);
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "goodspledge_localize";
+		return "goods/goodspledge_localize";
 
 	}
 	
@@ -157,12 +145,12 @@ public class GoodsPledgeController extends BaseController
 		
 
 		if (result.hasErrors()) {
-			setDropDownContents(model, goodsPledge, locale);
+			setDropDownContents(model, locale);
 			String updateIssueMessage = messageSource.getMessage("goodsPledgeUpdateIssueMessage", new String[0], locale);
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "goodspledge";
+			return "goods/goodspledge";
 		} else {
 
 			// Add message to flash scope
@@ -210,9 +198,9 @@ public class GoodsPledgeController extends BaseController
 
 		model.addAttribute("goodsPledgeFormModel", goodsPledge);
 
-		setDropDownContents(model, goodsPledge, locale);
+		setDropDownContents(model, locale);
 
-		return "goodspledge";
+		return "goods/goodspledge";
 
 	}
 	
@@ -235,9 +223,9 @@ public class GoodsPledgeController extends BaseController
 
 		model.addAttribute("goodsPledgeFormModel", goodsPledge);
 
-		setDropDownContents(model, goodsPledge, locale);
+		setDropDownContents(model, locale);
 
-		return "goodspledgewebpage";
+		return "goods/goodspledgewebpage";
 
 	}
 	
@@ -261,9 +249,9 @@ public class GoodsPledgeController extends BaseController
 		
 		model.addAttribute("goodsPledgeFormModel", goodsPledge);
 		
-		setDropDownContents(model, goodsPledge, locale);
+		setDropDownContents(model, locale);
 		
-		return "goodspledge";
+		return "goods/goodspledge";
 
 	}
 
@@ -304,7 +292,7 @@ public class GoodsPledgeController extends BaseController
 		}
 		model.addAttribute("goodsPledge", goodsPledge);
 		
-		setDropDownContents(model, goodsPledge, locale);
+		setDropDownContents(model, locale);
 
 		return "showgoodspledge";
 
@@ -454,65 +442,17 @@ public class GoodsPledgeController extends BaseController
 
 	
 
-	private void setDropDownContents(Model model, GoodsPledge goodsPledge, Locale locale) {
+	private void setDropDownContents(Model model, Locale locale) {
 		
-		Map<Long, String> goodsCategoryOneMap = referenceStore.getGoodsCategoryOne();
-		SortedMap<Long, String> localizedgoodsCategoryOneMap = new TreeMap<Long, String>(goodsCategoryOneMap);
-		for (Map.Entry<Long, String> entry : goodsCategoryOneMap.entrySet()) {
-			localizedgoodsCategoryOneMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("goodsCategoryOneMap", localizedgoodsCategoryOneMap);
-	      
-		Map<Long, String> goodsCategoryTwoMap = referenceStore.getGoodsCategoryTwo();
-		SortedMap<Long, String> localizedgoodsCategoryTwoMap = new TreeMap<Long, String>(goodsCategoryTwoMap);
-		for (Map.Entry<Long, String> entry : goodsCategoryTwoMap.entrySet()) {
-			localizedgoodsCategoryTwoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("goodsCategoryTwoMap", localizedgoodsCategoryTwoMap);
-	      
-		Map<Long, String> goodsCategoryThreeMap = referenceStore.getGoodsCategoryThree();
-		SortedMap<Long, String> localizedgoodsCategoryThreeMap = new TreeMap<Long, String>(goodsCategoryThreeMap);
-		for (Map.Entry<Long, String> entry : goodsCategoryThreeMap.entrySet()) {
-			localizedgoodsCategoryThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("goodsCategoryThreeMap", localizedgoodsCategoryThreeMap);
-	      
-		Map<Long, String> goodsSizeMap = referenceStore.getGoodsSize();
-		SortedMap<Long, String> localizedgoodsSizeMap = new TreeMap<Long, String>(goodsSizeMap);
-		for (Map.Entry<Long, String> entry : goodsSizeMap.entrySet()) {
-			localizedgoodsSizeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("goodsSizeMap", localizedgoodsSizeMap);
-	      
-		Map<Long, String> goodsNewOrUsedMap = referenceStore.getNewOrUsed();
-		SortedMap<Long, String> localizedgoodsNewOrUsedMap = new TreeMap<Long, String>(goodsNewOrUsedMap);
-		for (Map.Entry<Long, String> entry : goodsNewOrUsedMap.entrySet()) {
-			localizedgoodsNewOrUsedMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("goodsNewOrUsedMap", localizedgoodsNewOrUsedMap);
-	      
-		Map<Long, String> goodsConditionMap = referenceStore.getGoodsCondition();
-		SortedMap<Long, String> localizedgoodsConditionMap = new TreeMap<Long, String>(goodsConditionMap);
-		for (Map.Entry<Long, String> entry : goodsConditionMap.entrySet()) {
-			localizedgoodsConditionMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("goodsConditionMap", localizedgoodsConditionMap);
-	      
-		Map<Long, String> goodsQuantityMap = referenceStore.getGoodsQuantity();
-		SortedMap<Long, String> localizedgoodsQuantityMap = new TreeMap<Long, String>(goodsQuantityMap);
-		for (Map.Entry<Long, String> entry : goodsQuantityMap.entrySet()) {
-			localizedgoodsQuantityMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		model.addAttribute("goodsQuantityMap", localizedgoodsQuantityMap);
-	      
-		
-		Map<Long, String> localeMap = referenceStore.getLocale();
-		SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
-		for (Map.Entry<Long, String> entry : localeMap.entrySet()) {
-			localizedLocaleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
-		}
-		
-		model.addAttribute("localeMap", localizedLocaleMap);
+		model.addAttribute("goodsCategoryOneMap", localizeServiceMap(referenceStore.getGoodsCategoryOne(),locale));
+        model.addAttribute("goodsCategoryTwoMap", localizeServiceMap(referenceStore.getGoodsCategoryTwo(),locale));
+		model.addAttribute("goodsCategoryThreeMap", localizeServiceMap(referenceStore.getGoodsCategoryThree(),locale));
+		model.addAttribute("goodsSizeMap", localizeServiceMap(referenceStore.getGoodsSize(),locale));
+		model.addAttribute("goodsNewOrUsedMap", localizeServiceMap(referenceStore.getNewOrUsed(),locale));
+		model.addAttribute("goodsConditionMap", localizeServiceMap(referenceStore.getGoodsCondition(),locale));
+		model.addAttribute("goodsQuantityMap", localizeServiceMap(referenceStore.getGoodsQuantity(),locale));
+		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
+		model.addAttribute("flaggedIssues", GoodsFlaggedIssuesEnum.values());
 	}
 	
 

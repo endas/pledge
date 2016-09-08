@@ -27,7 +27,7 @@
 
 <jsp:include page="services/servicepledge_create_update_dialog.jsp"/>
 
-<jsp:include page="../jsp/goodspledge_create_update_dialog.jsp"/>
+<jsp:include page="goods/goodspledge_create_update_dialog.jsp"/>
 
 <spring:url value="/landingwebpage" var="urlHome"/>
 <spring:url value="/entitylist" var="urlAppHome"/>

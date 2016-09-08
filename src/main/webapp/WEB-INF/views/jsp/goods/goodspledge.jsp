@@ -15,7 +15,7 @@
 	</c:otherwise>
 </c:choose>
 <spring:message code="goodspledge.form.title" var="title"/>	
-<jsp:include page="../jsp/includes/header.jsp">
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 	<jsp:param name="beanName" value="goodsPledge" />
 </jsp:include>
@@ -84,8 +84,6 @@
 	    
 			<div class="panel-body">
 		    
-		<spring:bind path="goodsCategoryOne">
-      
 		  <div id="frmGoodsPledgeGoodsCategoryOneFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
 			<label id="frmGoodsPledgeGoodsCategoryOneLabel" for="frmGoodsPledgeGoodsCategoryOne" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsCategoryOneLabel"/></label>
@@ -118,10 +116,6 @@
 				  </c:otherwise>
 				</c:choose>
 		  </div>
-      
-		</spring:bind>
-      
-		<spring:bind path="goodsCategoryTwo">
       
 		  <div id="frmGoodsPledgeGoodsCategoryTwoFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
@@ -156,10 +150,6 @@
 				</c:choose>
 		  </div>
       
-		</spring:bind>
-      
-		<spring:bind path="goodsCategoryThree">
-      
 		  <div id="frmGoodsPledgeGoodsCategoryThreeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
 			<label id="frmGoodsPledgeGoodsCategoryThreeLabel" for="frmGoodsPledgeGoodsCategoryThree" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsCategoryThreeLabel"/></label>
@@ -192,10 +182,6 @@
 				  </c:otherwise>
 				</c:choose>
 		  </div>
-      
-		</spring:bind>
-      
-		<spring:bind path="goodsSize">
       
 		  <div id="frmGoodsPledgeGoodsSizeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
@@ -230,10 +216,6 @@
 				</c:choose>
 		  </div>
       
-		</spring:bind>
-      
-		<spring:bind path="goodsNewOrUsed">
-      
 		  <div id="frmGoodsPledgeGoodsNewOrUsedFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
 			<label id="frmGoodsPledgeGoodsNewOrUsedLabel" for="frmGoodsPledgeGoodsNewOrUsed" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsNewOrUsedLabel"/></label>
@@ -266,10 +248,6 @@
 				  </c:otherwise>
 				</c:choose>
 		  </div>
-      
-		</spring:bind>
-      
-		<spring:bind path="goodsCondition">
       
 		  <div id="frmGoodsPledgeGoodsConditionFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
@@ -304,10 +282,6 @@
 				</c:choose>
 		  </div>
       
-		</spring:bind>
-      
-		<spring:bind path="goodsQuantity">
-      
 		  <div id="frmGoodsPledgeGoodsQuantityFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
 			<label id="frmGoodsPledgeGoodsQuantityLabel" for="frmGoodsPledgeGoodsQuantity" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsQuantityLabel"/></label>
@@ -341,10 +315,6 @@
 				</c:choose>
 		  </div>
       
-		</spring:bind>
-      
-		<spring:bind path="additionalInformation">
-      
 		  <div id="frmGoodsPledgeAdditionalInformationFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
 			<label id="frmGoodsPledgeAdditionalInformationLabel" for="frmGoodsPledgeAdditionalInformation" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeAdditionalInformationLabel"/></label>
@@ -371,10 +341,6 @@
 				  </c:otherwise>
 				</c:choose>
 		  </div>
-      
-		</spring:bind>
-      
-		<spring:bind path="itemSize">
       
 		  <div id="frmGoodsPledgeItemSizeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 		  
@@ -403,7 +369,31 @@
 				</c:choose>
 		  </div>
       
-		</spring:bind>
+
+				<div
+						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+
+					<form:label path="flaggedIssue"
+								class="col-sm-2 control-label"><spring:message
+							code="serviceplegde.flaggedIssue"/></form:label>
+
+					<div class="col-sm-10">
+							<%--todo: add proper translation mechanism--%>
+						<form:select path="flaggedIssue" class="form-control">
+							<c:forEach items="${flaggedIssues}" var="issue">
+								<spring:message code="${issue.name}" var="label"/>
+								<form:option value="${issue.code}" label="${label}"/>
+							</c:forEach>
+						</form:select>
+
+
+					</div>
+					<c:choose>
+						<c:when test="${status.error}">
+							<form:errors path="flaggedIssue" class="help-block col-sm-9"/>
+						</c:when>
+					</c:choose>
+				</div>
       
 			</div> <!-- class="panel-body" -->
 		</div> <!-- class="panel panel-default" -->
@@ -422,7 +412,7 @@
     
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	</form:form>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />	
+<jsp:include page="../includes/redcrossfooter.jsp" />
 
 <script>  
 var rootContext = "${pageContext.request.contextPath}";

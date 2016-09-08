@@ -435,7 +435,7 @@
                     </div>
                     <c:choose>
                         <c:when test="${status.error}">
-                            <form:errors path="languge" class="help-block col-sm-9"/>
+                            <form:errors path="flaggedIssue" class="help-block col-sm-9"/>
                         </c:when>
                     </c:choose>
                 </div>

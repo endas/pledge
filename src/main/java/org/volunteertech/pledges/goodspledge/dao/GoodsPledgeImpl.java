@@ -128,13 +128,9 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
     
     private Date dateAvailableTo;
     private int status=0;
-    public int getStatus() {
-		return status;
-	}
 
-	public void setStatus(int status) {
-		this.status = status;
-	}
+    private GoodsFlaggedIssuesEnum flaggedIssue;
+
 
     /**
      * Default Constructor for the GoodsPledge bean
@@ -648,9 +644,23 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
 	public void setDateAvailableTo(Date dateAvailableTo) {
 		this.dateAvailableTo = dateAvailableTo;
 	}
-	
-	
-	
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+
+    public GoodsFlaggedIssuesEnum getFlaggedIssue() {
+        return flaggedIssue;
+    }
+
+    public void setFlaggedIssue(GoodsFlaggedIssuesEnum flaggedIssue) {
+        this.flaggedIssue = flaggedIssue;
+    }
 }
     
     

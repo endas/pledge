@@ -31,7 +31,7 @@ import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
  * $Log$
  *
  */
-public class ServicePledgeImpl implements ServicePledge, Serializable { 
+public class ServicePledgeImpl implements ServicePledge, Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -106,6 +106,8 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     private Date dateUpdated;
 
     private ServicePlegdeFlaggedIssuesEnum flaggedIssue;
+
+    private int status;
 
 
     /**
@@ -529,6 +531,16 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 	public void setPledgeServiceTravelAbilities(Set<Long> pledgeServiceTravelAbilities) {
 		this.pledgeServiceTravelAbilities = pledgeServiceTravelAbilities;	
 	}
+
+    @Override
+    public int getStatus() {
+        return status;
+    }
+
+    @Override
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public ServicePlegdeFlaggedIssuesEnum getFlaggedIssue() {
         return flaggedIssue;

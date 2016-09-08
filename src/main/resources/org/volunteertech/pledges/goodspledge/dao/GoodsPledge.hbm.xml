@@ -44,6 +44,12 @@
         <property name="updatedByID" type="long" column="UPDATEDBYID"/>
         <property name="dateCreated" type="timestamp" column="DATECREATED" update="false"/>
         <property name="dateUpdated" type="timestamp" column="DATEUPDATED"/>
+
+		<property name="flaggedIssue" column="FLAGGEDISSUE">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">org.volunteertech.pledges.goodspledge.dao.GoodsFlaggedIssuesEnum</param>
+			</type>
+		</property>
     </class>
 </hibernate-mapping>
 
