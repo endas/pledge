@@ -1,16 +1,12 @@
 package org.volunteertech.pledges.startup.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,15 +30,12 @@ import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.startup.dao.Landing;
 import org.volunteertech.pledges.startup.dao.LandingImpl;
 import org.volunteertech.pledges.startup.service.LandingService;
-import org.volunteertech.pledges.startup.dao.LandingLoadException;
-import org.volunteertech.pledges.startup.dao.LandingSaveException;
 import org.volunteertech.pledges.startup.validator.LandingFormValidator;
 import org.volunteertech.pledges.startup.view.LandingTranslationBackingBean;
 import org.volunteertech.pledges.startup.view.LandingTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 
@@ -113,7 +106,7 @@ public class LandingController extends BaseController
 
 		logger.debug("showAllLanding()");
 			
-		return "landing_table";
+		return "ladnings/landing_table";
 
 	}
 	
@@ -133,7 +126,7 @@ public class LandingController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "landing_localize";
+		return "ladnings/landing_localize";
 
 	}
 	
@@ -160,7 +153,7 @@ public class LandingController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "landing";
+			return "ladnings/landing";
 		} else {
 
 			// Add message to flash scope
@@ -210,7 +203,7 @@ public class LandingController extends BaseController
 
 		setDropDownContents(model, landing, locale);
 
-		return "landing";
+		return "ladnings/landing";
 
 	}
 	
@@ -235,7 +228,7 @@ public class LandingController extends BaseController
 
 		setDropDownContents(model, landing, locale);
 
-		return "landingwebpage";
+		return "ladnings/landingwebpage";
 
 	}
 	
@@ -261,7 +254,7 @@ public class LandingController extends BaseController
 		
 		setDropDownContents(model, landing, locale);
 		
-		return "landing";
+		return "ladnings/landing";
 
 	}
 

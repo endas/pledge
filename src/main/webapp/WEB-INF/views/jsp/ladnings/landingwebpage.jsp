@@ -1,21 +1,7 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><!DOCTYPE html>
 <html lang="en">
-<c:choose>
-	<c:when test="${landingFormModel['currentMode'] == 'ADD'}">
-		<spring:message code="landing.form.header" var="headerText"/>
-	</c:when>
-	<c:when test="${landingFormModel['currentMode'] == 'UPDATE'}">
-		<spring:message code="landing.form.header" var="headerText"/>
-	</c:when>
-	<c:when test="${landingFormModel['currentMode'] == 'LOCALIZE'}">
-		<spring:message code="landing.form.header" var="headerText"/>
-	</c:when>
-	<c:otherwise>
-		<spring:message code="landing.form.header" var="headerText"/>	
-	</c:otherwise>
-</c:choose>
-<spring:message code="landing.form.title" var="title"/>	
-<jsp:include page="../jsp/includes/header.jsp">
+<spring:message code="landing.form.title" var="title"/>
+<jsp:include page="../includes/header.jsp">
 	<jsp:param name="title" value="${title}" />
 	<jsp:param name="beanName" value="landing" />
 </jsp:include>
@@ -23,7 +9,11 @@
 
 <spring:url value="/landingwebpage" var="urlHome"/>
 <spring:url value="/entitylist" var="urlAppHome"/>
+<spring:url value="/logout" var="urlLogout"/>
 <spring:url value="/resources/images/redcross-brand-logo.png" var="headerLogo" />
+
+<spring:url value="applicationuser/createuser" var="urlCreateUser" />
+
     <nav class="navbar navbar-fixed-top navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -37,40 +27,34 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="${urlAppHome}">App Home</a></li>
-            <li><a href="javascript:logoutFormSubmit()">Logout</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><spring:message code="loginMainMenuItem"/><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              
+                <li><a href="${urlCreateUser}"><spring:message code="userActionCreateAccount"/></a></li>
+              
+                <li><a href="${urlAppHome}"><spring:message code="userActionLogin"/></a></li>
+              </ul>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
+        
       </div>
     </nav>
-	
-	<spring:url value="/landing/post" var="landingActionUrl" />
-	  
-	<form:form id="frmLanding" role="form" class="form-horizontal" method="post" accept-charset="utf-8"
-                modelAttribute="landingFormModel" action="${landingActionUrl}">
-
-		<form:hidden id="frmLandingLandingId" path="id" />
-		
-		<form:hidden id="frmLandingMode" path="currentMode" />
-		
-		<input type="hidden" id="frmLandingLoadedFeedbackMessage" value="${msg}" />
-		<input type="hidden" id="frmLandingLoadedFeedbackCss" value="${css}" />
-    
     
     <section id="landingBannerOneSection" class="">
-		<div class="">
       	
 			<spring:url value="/resources/images/redcross-banner.jpg" var="landingBannerOneImage"/>
 	  	
 			<div class="jumbotron" style="background-image: url(${landingBannerOneImage});">
 				<div class="container">
-		    	
+				  <h1><spring:message code="global.project.title"/></h1>
+				  <p><spring:message code="global.project.subtitle"/></p>
+			    </div> <!-- class="container" -->
 			</div> <!-- class="jumbotron" -->
-		</div> <!-- class="" -->
 	</section> <!-- section id="landingBannerOneSection" -->
-    
-	<section id="landingMessagesOneSection" class="">
-	    <div class="container">
+	<section id="landingMainMessagesSection" class="">
+		<div class="container">
 	    
           <div class="row" id="landingMainMessagesWrapperRow">
 	        
@@ -98,12 +82,18 @@
     
           </div> <!--  class="row" -->
 	    
-        </div> <!--  class="container" -->
-    </section> <!-- id="landingMessagesOneSection -->
+			</div> <!--  class="container" -->    			
+		</section> <!-- id="landingMainMessagesSection" -->
     
-		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+	  	<spring:url value="/landings" var="landingActionUrl" />
+	
+	<form:form id="frmLanding" class="form-horizontal" method="post" accept-charset="utf-8"
+                modelAttribute="landingFormModel" action="${landingActionUrl}">
+		<form:hidden id="frmLandingLandingId" path="id" />
+		<input type="hidden" id="frmLandingLandingMode" value="webpage" />
 	</form:form>
-<jsp:include page="../jsp/includes/redcrossfooter.jsp" />	
+<jsp:include page="../includes/redcrossfooter.jsp" />
+
 
 <script>  
 var rootContext = "${pageContext.request.contextPath}";
