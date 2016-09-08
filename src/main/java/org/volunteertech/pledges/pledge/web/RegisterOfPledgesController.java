@@ -1,16 +1,12 @@
 package org.volunteertech.pledges.pledge.web;
 import java.util.ArrayList;
-import java.util.Arrays; 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import com.netgrains.security.Authorisation;
 import org.slf4j.Logger;
@@ -35,15 +31,12 @@ import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl;
 import org.volunteertech.pledges.pledge.service.RegisterOfPledgesService;
-import org.volunteertech.pledges.pledge.dao.RegisterOfPledgesLoadException;
-import org.volunteertech.pledges.pledge.dao.RegisterOfPledgesSaveException;
 import org.volunteertech.pledges.pledge.validator.RegisterOfPledgesFormValidator;
 import org.volunteertech.pledges.pledge.view.RegisterOfPledgesTranslationBackingBean;
 import org.volunteertech.pledges.pledge.view.RegisterOfPledgesTranslationBackingBeanImpl;
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
-import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 
@@ -114,7 +107,7 @@ public class RegisterOfPledgesController extends BaseController
 
 		logger.debug("showAllRegisterOfPledges()");
 			
-		return "registerofpledges_table";
+		return "registrations/registerofpledges_table";
 
 	}
 	
@@ -134,7 +127,7 @@ public class RegisterOfPledgesController extends BaseController
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
 		
-		return "registerofpledges_localize";
+		return "registrations/registerofpledges_localize";
 
 	}
 	
@@ -161,7 +154,7 @@ public class RegisterOfPledgesController extends BaseController
 			model.addAttribute("msg", updateIssueMessage);
 			model.addAttribute("css", "alert-danger");
 			
-			return "registerofpledges";
+			return "registrations/registerofpledges";
 		} else {
 
 			// Add message to flash scope
@@ -211,7 +204,7 @@ public class RegisterOfPledgesController extends BaseController
 
 		setDropDownContents(model, registerOfPledges, locale);
 
-		return "registerofpledges";
+		return "registrations/registerofpledges";
 
 	}
 	
@@ -236,7 +229,7 @@ public class RegisterOfPledgesController extends BaseController
 
 		setDropDownContents(model, registerOfPledges, locale);
 
-		return "registerofpledgeswebpage";
+		return "registrations/registerofpledgeswebpage";
 
 	}
 	
@@ -262,7 +255,7 @@ public class RegisterOfPledgesController extends BaseController
 		
 		setDropDownContents(model, registerOfPledges, locale);
 		
-		return "registerofpledges";
+		return "registrations/registerofpledges";
 
 	}
 
