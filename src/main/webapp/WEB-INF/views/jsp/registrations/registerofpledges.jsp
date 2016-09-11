@@ -1,4 +1,9 @@
-<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><!DOCTYPE html>
+<%@ page session="false"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html lang="en">
 <c:choose>
 	<c:when test="${registerOfPledgesFormModel['currentMode'] == 'ADD'}">
@@ -102,7 +107,7 @@
 				<div class="form-group">
 				  <div class="col-sm-12">
 					
-        		<button type="button" id="frmRegisterOfPledgesApplicationUserDetailsEditButton" class="btn btn-primary pull-left btn-primary-custom" data-toggle="modal" data-backdrop="static" data-target="#applicationUserDetailsCreateUpdateModal" data-association-type="one-to-one" data-callback-display-type="inline" data-id="${registerOfPledgesFormModel.id}" data-invalid-parent-id-message="You must save the Pledge Profile before you can edit your Contact Information" data-modal-title="Edit your Contact Information" data-callback-table-body-id="applicationUserDetailsTableBody" data-property-url="applicationuserdetails" >Edit your Contact Information</button>
+        		<button type="button" id="frmRegisterOfPledgesApplicationUserDetailsEditButton" class="btn btn-primary pull-left btn-primary" data-toggle="modal" data-backdrop="static" data-target="#applicationUserDetailsCreateUpdateModal" data-association-type="one-to-one" data-callback-display-type="inline" data-id="${registerOfPledgesFormModel.id}" data-invalid-parent-id-message="You must save the Pledge Profile before you can edit your Contact Information" data-modal-title="Edit your Contact Information" data-callback-table-body-id="applicationUserDetailsTableBody" data-property-url="applicationuserdetails" >Edit your Contact Information</button>
           
 				  </div>
 				</div>        
@@ -228,12 +233,12 @@
 				<span id="frmRegisterOfPledgesAccommodationPledgeInstructionsHelpBlock" class="help-block col-sm-offset-2 col-sm-10"><spring:message code="frmRegisterOfPledgesAccommodationPledgeInstructionsHelpBlock"/></span>				  
 				  </c:otherwise>
 				</c:choose>
-		  </div>
+		 	 </div>
       
 				<div class="form-group">
 				  <div class="col-sm-12">
 					
-        		<button type="button" id="frmRegisterOfPledgesAccommodationPledgesAddNewButton" class="btn btn-primary pull-left btn-primary-custom" data-toggle="modal" data-backdrop="static" data-target="#accommodationPledgeCreateUpdateModal" data-association-type="one-to-many" data-callback-display-type="table" data-id=null data-invalid-parent-id-message="You must save the Pledge Profile before you can offer Accommodation" data-modal-title="Offer Accommodation" data-callback-table-body-id="accommodationPledgesTableBody" data-property-url="accommodationpledges" >Offer Accommodation</button>
+        		<button type="button" id="frmRegisterOfPledgesAccommodationPledgesAddNewButton" class="btn btn-primary pull-left btn-primary" data-toggle="modal" data-backdrop="static" data-target="#accommodationPledgeCreateUpdateModal" data-association-type="one-to-many" data-callback-display-type="table" data-id=null data-invalid-parent-id-message="You must save the Pledge Profile before you can offer Accommodation" data-modal-title="Offer Accommodation" data-callback-table-body-id="accommodationPledgesTableBody" data-property-url="accommodationpledges" >Offer Accommodation</button>
       
 				  </div>
 				</div>        
@@ -257,6 +262,9 @@
 					<th><spring:message code="frmAccommodationPledgeAccommodationDateFromLabel"/></th>
 
 					<th><spring:message code="frmAccommodationPledgeAccommodationDateToLabel"/></th>
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+					<th id="status"><spring:message code="frmPledgeStatusLabel"/></th>
+					</sec:authorize>
 
 							</tr>
 						</thead>	
@@ -304,7 +312,7 @@
 				<div class="form-group">
 				  <div class="col-sm-12">
 					
-        		<button type="button" id="frmRegisterOfPledgesServicePledgesAddNewButton" class="btn btn-primary pull-left btn-primary-custom" data-toggle="modal" data-backdrop="static" data-target="#servicePledgeCreateUpdateModal" data-association-type="one-to-many" data-callback-display-type="table" data-id=null data-invalid-parent-id-message="You must save the Pledge Profile before you can offer a Skill/Service" data-modal-title="Offer a Skill/Service" data-callback-table-body-id="servicePledgesTableBody" data-property-url="servicepledges" >Offer a Skill/Service</button>
+        		<button type="button" id="frmRegisterOfPledgesServicePledgesAddNewButton" class="btn btn-primary pull-left btn-primary" data-toggle="modal" data-backdrop="static" data-target="#servicePledgeCreateUpdateModal" data-association-type="one-to-many" data-callback-display-type="table" data-id=null data-invalid-parent-id-message="You must save the Pledge Profile before you can offer a Skill/Service" data-modal-title="Offer a Skill/Service" data-callback-table-body-id="servicePledgesTableBody" data-property-url="servicepledges" >Offer a Skill/Service</button>
       
 				  </div>
 				</div>        
@@ -327,8 +335,10 @@
 					<th><spring:message code="frmServicePledgePledgeServiceQualificationLabel"/></th>
 
 					<th><spring:message code="frmServicePledgeAdditionalInformationLabel"/></th>
-
-							</tr>
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+					<th id="status"><spring:message code="frmPledgeStatusLabel"/></th>
+					</sec:authorize>
+					</tr>
 						</thead>	
 						<tbody id="servicePledgesTableBody">
 						</tbody>				   
@@ -374,7 +384,7 @@
 				<div class="form-group">
 				  <div class="col-sm-12">
 					
-        		<button type="button" id="frmRegisterOfPledgesGoodsPledgesAddNewButton" class="btn btn-primary pull-left btn-primary-custom" data-toggle="modal" data-backdrop="static" data-target="#goodsPledgeCreateUpdateModal" data-association-type="one-to-many" data-callback-display-type="table" data-id=null data-invalid-parent-id-message="You must save the Pledge Profile before you can offer Goods/items/Medicines" data-modal-title="Offer Goods/items/Medicines" data-callback-table-body-id="goodsPledgesTableBody" data-property-url="goodspledges" >Offer Goods/items/Medicines</button>
+        		<button type="button" id="frmRegisterOfPledgesGoodsPledgesAddNewButton" class="btn btn-primary pull-left btn-primary" data-toggle="modal" data-backdrop="static" data-target="#goodsPledgeCreateUpdateModal" data-association-type="one-to-many" data-callback-display-type="table" data-id=null data-invalid-parent-id-message="You must save the Pledge Profile before you can offer Goods/items/Medicines" data-modal-title="Offer Goods/items/Medicines" data-callback-table-body-id="goodsPledgesTableBody" data-property-url="goodspledges" >Offer Goods/items/Medicines</button>
       
 				  </div>
 				</div>        
@@ -390,7 +400,9 @@
 					<th><spring:message code="frmGoodsPledgeGoodsCategoryTwoLabel"/></th>
 
 					<th><spring:message code="frmGoodsPledgeGoodsCategoryThreeLabel"/></th>
-
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+					<th><spring:message code="frmPledgeStatusLabel"/></th>
+					</sec:authorize>
 							</tr>
 						</thead>	
 						<tbody id="goodsPledgesTableBody">

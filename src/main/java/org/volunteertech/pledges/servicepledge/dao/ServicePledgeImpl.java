@@ -107,9 +107,17 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 
     private ServicePlegdeFlaggedIssuesEnum flaggedIssue;
 
-    private int status;
+
+    private int status=0;
+    public int getStatus() {
+		return status;
+	}
 
 
+	public void setStatus(int status) {
+		this.status = status;
+	}	
+    
     /**
      * Default Constructor for the ServicePledge bean
      */
@@ -532,15 +540,7 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 		this.pledgeServiceTravelAbilities = pledgeServiceTravelAbilities;	
 	}
 
-    @Override
-    public int getStatus() {
-        return status;
-    }
 
-    @Override
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
     public ServicePlegdeFlaggedIssuesEnum getFlaggedIssue() {
         return flaggedIssue;

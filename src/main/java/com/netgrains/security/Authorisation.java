@@ -4,6 +4,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.volunteertech.pledges.users.security.SecurityUser;
+import org.volunteertech.pledges.main.constants.Constants;
+
 
 public class Authorisation
 {
@@ -42,7 +44,9 @@ public class Authorisation
 	public static void checkAccess(Authentication authentication, int id) {
 		SecurityUser securityUser = (SecurityUser) authentication.getPrincipal();
 		logger.debug("Checking access of {} against id {}", securityUser.getApplicationUser().getUsername(), id);
-		if (!securityUser.getApplicationUser().getApplicationUserDetails().getId().equals((long)id)) {
+		
+		if (!securityUser.getApplicationUser().getUserRoles().contains(Constants.REFERENCE_USERROLE__ROLE_ADMIN) && 
+				!securityUser.getApplicationUser().getApplicationUserDetails().getId().equals((long)id)) {
 			logger.warn("Blocking illegal access by {} of other user details {}", securityUser.getApplicationUser().getApplicationUserDetails().getId(), id);
 			throw new AccessDeniedException("Illegal access");
 		}

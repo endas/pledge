@@ -109,6 +109,9 @@ var frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesTextBuffer = null;
 var frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesValueBuffer = 0;
 var frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesSetupCompleted = false;
 
+var frmServicePledgeStatusTextBuffer = null;
+var frmServicePledgeStatusValueBuffer = 0;
+var frmServicePledgeStatusSetupCompleted = false;
 
 var frmServicePledgeCreateUpdatePledgeServiceQualificationBuffer = null;
 
@@ -236,17 +239,30 @@ $( document ).ready(function() {
 
 
 	if (displayTextAreaCount){
-
 		registerTextareaCount();
 	}
 
 	if (validateOnKeyEvents){
 		registerKeyEventListeners();
 	}
-
+	var pledgeStatusOptions=[];
+	$.ajax({
+		dataType: "json",
+		url: rootContext + "/restful/referenceslist",
+		data: {
+			referenceType: "PledgeStatus"
+		},
+		success: function( data ) {
+			pledgeStatusOptions=data;
+		}
+	});
 
 	var accommodationPledgesTableBody = document.getElementById("accommodationPledgesTableBody");
-
+	function addCell(row, text){
+		var cell = document.createElement("td");
+		cell.appendChild(text);
+		row.appendChild(cell);
+	}
 	if (mainFormObjectId.length > 0){
 		$.ajax({
 			dataType: "json",
@@ -263,42 +279,15 @@ $( document ).ready(function() {
 					var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
 					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.accommodationTypeReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.accommodationConditionReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.numberOfBedsReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.vacantOrSharedReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.canYouAccommodateReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.accommodationDateFrom);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.accommodationDateTo);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-					accommodationPledgesTableBody.appendChild(row);
+					addCell(row, document.createTextNode(obj.accommodationTypeReferenceTranslation));
+					addCell(row, document.createTextNode(obj.accommodationConditionReferenceTranslation));
+					addCell(row, document.createTextNode(obj.numberOfBedsReferenceTranslation));
+					addCell(row, document.createTextNode(obj.vacantOrSharedReferenceTranslation));
+					addCell(row, document.createTextNode(obj.canYouAccommodateReferenceTranslation));
+					addCell(row, document.createTextNode(obj.accommodationDateFrom));
+					addCell(row, document.createTextNode(obj.accommodationDateTo));
+					addCell(row, document.createTextNode(obj.pledgeStatus));
+					accommodationPledgesTableBody.appendChild(row);	
 				});
 			}
 		});
@@ -324,42 +313,16 @@ $( document ).ready(function() {
 					var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
 					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.pledgeServiceDateAvailable);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.pledgeServiceDateAvailableTo);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.pledgeServiceLevelOneReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.pledgeServiceLevelTwoReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.pledgeServiceLevelThreeReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.pledgeServiceQualification);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.additionalInformation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
+					addCell(row, document.createTextNode(obj.pledgeServiceDateAvailable));
+					addCell(row,document.createTextNode(obj.pledgeServiceDateAvailableTo));
+					addCell(row,document.createTextNode(obj.pledgeServiceLevelOneReferenceTranslation));
+					addCell(row,document.createTextNode(obj.pledgeServiceLevelTwoReferenceTranslation));
+					addCell(row,document.createTextNode(obj.pledgeServiceLevelThreeReferenceTranslation));
+					addCell(row,document.createTextNode(obj.pledgeServiceQualification));
+					addCell(row,document.createTextNode(obj.additionalInformation));
+					if($(document.getElementById("#servicePledgesTable")).find('#status').length){
+						addCell(row,document.createTextNode(obj.status));
+					}
 					servicePledgesTableBody.appendChild(row);
 				});
 			}
@@ -385,21 +348,12 @@ $( document ).ready(function() {
 					var editAnchorText = "<a href='" + editAnchorURI + "' class='btn btn-primary btn-sm' aria-label='view'><span class='glyphicon glyphicon-pencil'></a>";
 					cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.goodsCategoryOneReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.goodsCategoryTwoReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
-
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode(obj.goodsCategoryThreeReferenceTranslation);
-					cell.appendChild(cellText);
-					row.appendChild(cell);
+					addCell(row, document.createTextNode(obj.goodsCategoryOneReferenceTranslation));
+					addCell(row, document.createTextNode(obj.goodsCategoryTwoReferenceTranslation));
+					addCell(row, document.createTextNode(obj.goodsCategoryThreeReferenceTranslation));
+					if($(document.getElementById("#goodsPledgesTable")).find('#status').length){
+						addCell(row,document.createTextNode(obj.status));
+					}
 					goodsPledgesTableBody.appendChild(row);
 				});
 			}
@@ -596,6 +550,12 @@ $( document ).ready(function() {
 			frmApplicationUserDetailsCreateUpdateAccommodateWhoSetupCompleted = true;
 		}
 
+		
+		
+		
+		
+		
+		
 		// Reset all of the input contents.
 		resetModalInputs(modal);
 
@@ -803,56 +763,17 @@ $( document ).ready(function() {
 							row.appendChild(cell);
 
 							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.contactName);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-//							var cellText = document.createTextNode(obj.representOrganisation) == "true"?"Yes":"No";
-							var cellText = document.createTextNode(obj.representOrganisationReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.emailAddress);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.telephoneNumber);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.addressOne);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.addressTwo);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.city);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.stateProvinceRegion);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.postCode);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.countryReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
+							addCell(row,document.createTextNode(obj.contactName));
+							addCell(row,document.createTextNode(obj.representOrganisationReferenceTranslation));
+							addCell(row,document.createTextNode(obj.emailAddress));
+							addCell(row,document.createTextNode(obj.telephoneNumber));
+							addCell(row,document.createTextNode(obj.addressOne));
+							addCell(row,document.createTextNode(obj.addressTwo));
+							addCell(row,document.createTextNode(obj.city));
+							addCell(row,document.createTextNode(obj.stateProvinceRegion));
+							addCell(row,document.createTextNode(obj.postCode));
+							addCell(row,document.createTextNode(obj.countryReferenceTranslation));
+//							addCell(row,document.createTextNode(obj.status));
 							new_tbody.appendChild(row);
 						});
 
@@ -1408,7 +1329,7 @@ $( document ).ready(function() {
 
 					// Display a count of the characters in the Is there anything else that you would like to say about the accommodation? textarea input
 					$('#frmAccommodationPledgeCreateUpdateAdditionalInformationCountBlock').text($('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val().length.toString().concat('/').concat('500'));
-
+					modal.find('#frmAccommodationPledgeStatusSelect').val(data.status);
 					
 					configureMultiSelect(modal, '#frmApplicationUserDetailsCreateUpdateAmenitiesSelect', data.amenities);
 					configureMultiSelect(modal, '#frmApplicationUserDetailsCreateUpdateFacilitiesSelect', data.facilities);
@@ -1524,7 +1445,8 @@ $( document ).ready(function() {
 				amenities : _.map(modal.find('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect').val(), Number),
 				otherAmenities : modal.find('#frmAccommodationPledgeCreateUpdateOtherAmenities').val(),
 				accommodateWho : _.map(modal.find('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect').val(), Number),
-				additionalInformation : modal.find('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val()
+				additionalInformation : modal.find('#frmAccommodationPledgeCreateUpdateAdditionalInformation').val(),
+				status: modal.find('#frmAccommodationPledgeStatusSelect').val()
 		};
 
 		var propertyUrl = modal.find('#frmAccommodationPledgeCreateUpdatePropertyUrl').val();
@@ -1552,40 +1474,22 @@ $( document ).ready(function() {
 							cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 							row.appendChild(cell);
 
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.accommodationTypeReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.accommodationConditionReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.numberOfBedsReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.vacantOrSharedReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.canYouAccommodateReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.accommodationDateFrom);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.accommodationDateTo);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
+							addCell(row, document.createTextNode(obj.accommodationTypeReferenceTranslation));
+							
+							addCell(row,document.createTextNode(obj.accommodationConditionReferenceTranslation));
+							
+							addCell(row,document.createTextNode(obj.numberOfBedsReferenceTranslation));
+							
+							addCell(row,document.createTextNode(obj.vacantOrSharedReferenceTranslation));
+							
+							addCell(row,document.createTextNode(obj.canYouAccommodateReferenceTranslation));
+							
+							addCell(row,document.createTextNode(obj.accommodationDateFrom));
+							
+							addCell(row,document.createTextNode(obj.accommodationDateTo));
+							if($(document.getElementById("#goodsPledgesTableBody")).find('#status').length){
+								addCell(row,document.createTextNode(obj.status));
+							}
 
 							new_tbody.appendChild(row);
 						});
@@ -1662,7 +1566,7 @@ $( document ).ready(function() {
 		modal.find('#frmServicePledgeCreateUpdateCallBackDisplayType').val(callBackDisplayType);
 		modal.find('#frmServicePledgeCreateUpdateCallBackTableBodyId').val(callBackTableId);
 		modal.find('#frmServicePledgeCreateUpdatePropertyUrl').val(propertyUrl);
-
+		modal.find('#frmServicePledgeStatusSelect').val(0);//default
 
 		if (mainFormObjectId == ''){
 			var invalidParentIdMessage = button.data('invalid-parent-id-message'); // Extract info from data-* attributes
@@ -1807,12 +1711,29 @@ $( document ).ready(function() {
 			frmApplicationUserDetailsCreateUpdateTravelAbilitiesSetupCompleted = true;
 		}
 		
+		
+		var servicePledgeStatusSelectInput = document.getElementById('frmServicePledgeStatusSelect');
+		if (servicePledgeStatusSelectInput.length == 0 ){
+			$.each( pledgeStatusOptions, function( key, val ) {
+				var el = document.createElement("option");
+				el.textContent = val;
+				el.value = key;
+				 servicePledgeStatusSelectInput.appendChild(el);
+				frmServicePledgeStatusSetupCompleted = true;
+			});	
+		}
+		else{
+			frmServiceStatusSetupCompleted = true;
+		}
+		
+		
 		//Reset all of the modal inputs
 		resetModalInputs(modal);
+
 		
 		var select = modal.find('#frmServicePledgeCreateUpdateTravelAbilitiesSelect');
 		select.find('option').prop('selected', false).end().trigger("chosen:updated");
-
+		
 		if (id != null){
 			$.ajax({
 				dataType: "json",
@@ -1917,7 +1838,8 @@ $( document ).ready(function() {
 					}
 						
 					frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekTimeOut();
-					
+
+					modal.find('#frmServicePledgeStatusSelect').val(data.pledgeStatus);
 					
 					frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesBuffer = data.pledgeServiceTravelAbilities;
 					configureMultiSelect(modal, '#frmServicePledgeCreateUpdateTravelAbilitiesSelect', data.pledgeServiceTravelAbilities);
@@ -1928,10 +1850,12 @@ $( document ).ready(function() {
 
 					// Display a count of the characters in the Qualification to provide Service textarea input
 					$('#frmServicePledgeCreateUpdatePledgeServiceQualificationCountBlock').text($('#frmServicePledgeCreateUpdatePledgeServiceQualification').val().length.toString().concat('/').concat('500'));
-
+					modal.find('#frmServicePledgeStatusSelect').val(data.status);
 
 				}
 			});
+		}else{// no data
+			modal.find('#frmServicePledgeStatusSelect').val(modal.find("#frmServicePledgeStatusSelect option:first").val());
 		}
 
 		// Display a count of the characters in the Additional Information textarea input
@@ -2001,8 +1925,6 @@ $( document ).ready(function() {
 		}
 
 
-
-
 		var servicePledge = {
 				parentObjectId : modal.find('#frmServicePledgeCreateUpdateParentObjectId').val(),
 				id : modal.find('#frmServicePledgeCreateUpdateLoadedObjectId').val(),
@@ -2014,7 +1936,8 @@ $( document ).ready(function() {
 				pledgeServiceDateAvailable : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailable').val(),
 				pledgeServiceDateAvailableTo : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo').val(),
 				pledgeServiceHoursPerWeek : modal.find('#frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek').val(),
-				pledgeServiceTravelAbilities : _.map(modal.find('#frmServicePledgeCreateUpdateTravelAbilitiesSelect').val(), Number)				
+				pledgeServiceTravelAbilities : _.map(modal.find('#frmServicePledgeCreateUpdateTravelAbilitiesSelect').val(), Number),
+				status: modal.find('#frmServicePledgeStatusSelect').val()
 		};
 
 		var propertyUrl = modal.find('#frmServicePledgeCreateUpdatePropertyUrl').val();
@@ -2042,45 +1965,26 @@ $( document ).ready(function() {
 							cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 							row.appendChild(cell);
 
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.pledgeServiceDateAvailable);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.pledgeServiceDateAvailableTo);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.pledgeServiceLevelOneReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.pledgeServiceLevelTwoReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.pledgeServiceLevelThreeReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.pledgeServiceQualification);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
+							
+							addCell(row,document.createTextNode(obj.pledgeServiceDateAvailable));
+							
+							addCell(row,document.createTextNode(obj.pledgeServiceDateAvailableTo));
+							
+							addCell(row,document.createTextNode(obj.pledgeServiceLevelOneReferenceTranslation));
+							
+							addCell(row,document.createTextNode(obj.pledgeServiceLevelTwoReferenceTranslation));
+							
+							addCell(row,document.createTextNode(obj.pledgeServiceLevelThreeReferenceTranslation));
+							
+							addCell(row,document.createTextNode(obj.pledgeServiceQualification));
+							
 							
 //							var cell = document.createElement("td");
-//							var cellText = document.createTextNode(obj.pledgeServiceTravelAbilitiesReferenceTranslation);
+//							addCell(document.createTextNode(obj.pledgeServiceTravelAbilitiesReferenceTranslation);
 //							cell.appendChild(cellText);
 //							row.appendChild(cell);
-							
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.additionalInformation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
+							addCell(row,document.createTextNode(obj.additionalInformation));
+							addCell(row,document.createTextNode(obj.status));
 							
 						
 							new_tbody.appendChild(row);
@@ -2639,21 +2543,10 @@ $( document ).ready(function() {
 							cell.innerHTML = "<div class='btn-group-vertical' role='group'>" + editModalAnchorText  + "</div>";
 							row.appendChild(cell);
 
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.goodsCategoryOneReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.goodsCategoryTwoReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
-							var cell = document.createElement("td");
-							var cellText = document.createTextNode(obj.goodsCategoryThreeReferenceTranslation);
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-
+							addCell(row,document.createTextNode(obj.goodsCategoryOneReferenceTranslation));
+							addCell(row,document.createTextNode(obj.goodsCategoryTwoReferenceTranslation));
+							addCell(row,document.createTextNode(obj.goodsCategoryThreeReferenceTranslation));
+							addCell(row,document.createTextNode(obj.status));
 							new_tbody.appendChild(row);
 						});
 
