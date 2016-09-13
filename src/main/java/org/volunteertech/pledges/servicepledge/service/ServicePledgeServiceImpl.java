@@ -469,6 +469,13 @@ public class ServicePledgeServiceImpl implements ServicePledgeService
 			}
 			
 			servicePledge.setPledgeServiceHoursPerWeekReferenceTranslation(pledgeServiceHoursPerWeekLocaleReference);
+			
+			ServicePledge pledge = servicePledge;
+			if (pledge.getStatus() == null || pledge.getStatus() == -1){
+				pledge.setStatusReferenceTranslation(this.messageResourceService.getMessage("global.select.noselection", new String[0], locale));
+			}else{
+				pledge.setStatusReferenceTranslation(this.messageResourceService.getMessage(pledge.getStatus(), new String[0], locale));
+			}
 
     	return servicePledge;
     }

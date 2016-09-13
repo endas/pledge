@@ -1,4 +1,5 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><!DOCTYPE html>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html lang="en">
 <c:choose>
 	<c:when test="${goodsPledgeFormModel['currentMode'] == 'ADD'}">
@@ -394,6 +395,32 @@
 						</c:when>
 					</c:choose>
 				</div>
+				<div class="form-group has-feedback ${status.error ? 'has-error' : ''}"
+					<sec:authorize access="hasRole('ROLE_ADMIN')">class="form-group has-feedback  ${status.error ? 'has-error' : ''}"</sec:authorize>
+						<sec:authorize access="!hasRole('ROLE_ADMIN')">class="hidden"</sec:authorize>>
+
+						<form:label path="status" class="col-sm-2 control-label">
+							<spring:message code="frmPledgeStatusLabel" />
+						</form:label>
+						<div class="col-sm-10">
+						
+						
+						<form:select path="status" data-display-name="Status"
+								data-reference-type="PledgeStatus"
+								data-select-type="standalone" data-required="true"
+								class="form-control" id="frmPledgeStatus"
+								aria-describedby="frmpledgeStatusHelpBlock"
+								onchange="">
+								<form:options items="${statusMap}" />
+						</form:select>
+						</div>
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors path="status" class="help-block col-sm-9" />
+							</c:when>
+						</c:choose>
+				
+					</div>
       
 			</div> <!-- class="panel-body" -->
 		</div> <!-- class="panel panel-default" -->

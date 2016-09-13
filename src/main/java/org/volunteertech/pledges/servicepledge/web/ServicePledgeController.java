@@ -448,6 +448,8 @@ public class ServicePledgeController extends BaseController
 		model.addAttribute("pledgeServiceHoursPerWeekMap", localizeServiceMap(referenceStore.getIntegerCount1to40(),locale));
 
 		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
+		
+		model.addAttribute("statusMap", localizeServiceMap(referenceStore.getPledgeStatuses(),locale));
 
 		model.addAttribute("flaggedIssues", ServicePlegdeFlaggedIssuesEnum.values());
 	}

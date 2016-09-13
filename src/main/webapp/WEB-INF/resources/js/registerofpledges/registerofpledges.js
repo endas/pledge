@@ -166,7 +166,17 @@ function configureMultiSelect(modal, elementID, entries){
 	});
 	$(elementID).chosen();
 }
-
+var pledgeStatusOptions=[];
+$.ajax({
+	dataType: "json",
+	url: rootContext + "/restful/referenceslist",
+	data: {
+		referenceType: "PledgeStatus"
+	},
+	success: function( data ) {
+		pledgeStatusOptions=data;
+	}
+});
 function resetModalInputs(modal){
 $( modal.find("input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea, select")).each(function(){
 	var containerId = ('#').concat($(this).attr('id')).concat('FormGroup');
@@ -196,6 +206,38 @@ $( modal.find("input[type=text], input[type=tel], input[type=email], input[type=
 	$(containerId).toggleClass('has-error', false);
 	$(feedbackIconContainerId).toggleClass('glyphicon-remove', false);
 });
+
+
+	
+	function populateStatusSelect(pledgeStatusSelectInput){
+		$.each( pledgeStatusOptions, function( key, val ) {
+			var el = document.createElement("option");
+			el.textContent = val;
+			el.value = key;
+			pledgeStatusSelectInput.appendChild(el);
+		});	
+	}
+	var pledgeStatusSelectInput = modal.find('.js-status-select');
+	if ($(pledgeStatusSelectInput).length){
+		if ($(pledgeStatusSelectInput).find('option').length == 0 ){
+			if (pledgeStatusOptions.length ==0){
+				$.ajax({
+					dataType: "json",
+					url: rootContext + "/restful/referenceslist",
+					data: {
+						referenceType: "PledgeStatus"
+					},
+					success: function( data ) {
+						pledgeStatusOptions=data;
+						populateStatusSelect(pledgeStatusSelectInput[0]);
+					}
+				});
+			}else{
+				populateStatusSelect(pledgeStatusSelectInput[0]);
+			}
+		}
+	}
+	$(pledgeStatusSelectInput).val($(pledgeStatusSelectInput).find("option:first").val());
 }
 
 $( document ).ready(function() {
@@ -245,17 +287,7 @@ $( document ).ready(function() {
 	if (validateOnKeyEvents){
 		registerKeyEventListeners();
 	}
-	var pledgeStatusOptions=[];
-	$.ajax({
-		dataType: "json",
-		url: rootContext + "/restful/referenceslist",
-		data: {
-			referenceType: "PledgeStatus"
-		},
-		success: function( data ) {
-			pledgeStatusOptions=data;
-		}
-	});
+	
 
 	var accommodationPledgesTableBody = document.getElementById("accommodationPledgesTableBody");
 	function addCell(row, text){
@@ -286,7 +318,9 @@ $( document ).ready(function() {
 					addCell(row, document.createTextNode(obj.canYouAccommodateReferenceTranslation));
 					addCell(row, document.createTextNode(obj.accommodationDateFrom));
 					addCell(row, document.createTextNode(obj.accommodationDateTo));
-					addCell(row, document.createTextNode(obj.pledgeStatus));
+					if($('#frmRegisterOfPledges').data('admin')){
+						addCell(row, document.createTextNode(obj.statusReferenceTranslation));
+					}
 					accommodationPledgesTableBody.appendChild(row);	
 				});
 			}
@@ -320,8 +354,8 @@ $( document ).ready(function() {
 					addCell(row,document.createTextNode(obj.pledgeServiceLevelThreeReferenceTranslation));
 					addCell(row,document.createTextNode(obj.pledgeServiceQualification));
 					addCell(row,document.createTextNode(obj.additionalInformation));
-					if($(document.getElementById("#servicePledgesTable")).find('#status').length){
-						addCell(row,document.createTextNode(obj.status));
+					if($('#frmRegisterOfPledges').data('admin')){
+						addCell(row,document.createTextNode(obj.statusReferenceTranslation));
 					}
 					servicePledgesTableBody.appendChild(row);
 				});
@@ -351,8 +385,8 @@ $( document ).ready(function() {
 					addCell(row, document.createTextNode(obj.goodsCategoryOneReferenceTranslation));
 					addCell(row, document.createTextNode(obj.goodsCategoryTwoReferenceTranslation));
 					addCell(row, document.createTextNode(obj.goodsCategoryThreeReferenceTranslation));
-					if($(document.getElementById("#goodsPledgesTable")).find('#status').length){
-						addCell(row,document.createTextNode(obj.status));
+					if($('#frmRegisterOfPledges').data('admin')){
+						addCell(row,document.createTextNode(obj.statusReferenceTranslation));
 					}
 					goodsPledgesTableBody.appendChild(row);
 				});
@@ -773,6 +807,9 @@ $( document ).ready(function() {
 							addCell(row,document.createTextNode(obj.stateProvinceRegion));
 							addCell(row,document.createTextNode(obj.postCode));
 							addCell(row,document.createTextNode(obj.countryReferenceTranslation));
+							if($('#frmRegisterOfPledges').data('admin')){
+								addCell(row,document.createTextNode(obj.statusReferenceTranslation));
+							}
 //							addCell(row,document.createTextNode(obj.status));
 							new_tbody.appendChild(row);
 						});
@@ -1337,6 +1374,8 @@ $( document ).ready(function() {
 					
 				}
 			});
+		}else{
+			modal.find('#frmAccommodationPledgeStatusSelect').val(modal.find("#frmAccommodationPledgeStatusSelect option:first").val());
 		}
 
 
@@ -1487,8 +1526,8 @@ $( document ).ready(function() {
 							addCell(row,document.createTextNode(obj.accommodationDateFrom));
 							
 							addCell(row,document.createTextNode(obj.accommodationDateTo));
-							if($(document.getElementById("#goodsPledgesTableBody")).find('#status').length){
-								addCell(row,document.createTextNode(obj.status));
+							if($('#frmRegisterOfPledges').data('admin')){
+								addCell(row,document.createTextNode(obj.statusReferenceTranslation));
 							}
 
 							new_tbody.appendChild(row);
@@ -1712,19 +1751,6 @@ $( document ).ready(function() {
 		}
 		
 		
-		var servicePledgeStatusSelectInput = document.getElementById('frmServicePledgeStatusSelect');
-		if (servicePledgeStatusSelectInput.length == 0 ){
-			$.each( pledgeStatusOptions, function( key, val ) {
-				var el = document.createElement("option");
-				el.textContent = val;
-				el.value = key;
-				 servicePledgeStatusSelectInput.appendChild(el);
-				frmServicePledgeStatusSetupCompleted = true;
-			});	
-		}
-		else{
-			frmServiceStatusSetupCompleted = true;
-		}
 		
 		
 		//Reset all of the modal inputs
@@ -1839,7 +1865,7 @@ $( document ).ready(function() {
 						
 					frmServicePledgeCreateUpdatePledgeServiceHoursPerWeekTimeOut();
 
-					modal.find('#frmServicePledgeStatusSelect').val(data.pledgeStatus);
+					modal.find('#frmServicePledgeStatusSelect').val(data.status);
 					
 					frmServicePledgeCreateUpdatePledgeServiceTravelAbilitiesBuffer = data.pledgeServiceTravelAbilities;
 					configureMultiSelect(modal, '#frmServicePledgeCreateUpdateTravelAbilitiesSelect', data.pledgeServiceTravelAbilities);
@@ -1984,8 +2010,9 @@ $( document ).ready(function() {
 //							cell.appendChild(cellText);
 //							row.appendChild(cell);
 							addCell(row,document.createTextNode(obj.additionalInformation));
-							addCell(row,document.createTextNode(obj.status));
-							
+							if($('#frmRegisterOfPledges').data('admin')){
+								addCell(row,document.createTextNode(obj.statusReferenceTranslation));
+							}
 						
 							new_tbody.appendChild(row);
 						});
@@ -2259,7 +2286,7 @@ $( document ).ready(function() {
 
 		// Reset all of the input contents.
 		resetModalInputs(modal);
-
+		
 		if (id != null){
 			$.ajax({
 				dataType: "json",
@@ -2425,12 +2452,11 @@ $( document ).ready(function() {
 
 					modal.find('#frmGoodsPledgeCreateUpdateGoodsDateFrom').val(data.dateAvailableFrom);
 					modal.find('#frmGoodsPledgeCreateUpdateGoodsDateTo').val(data.dateAvailableTo);
+					modal.find('.js-status-select').val(data.status);
 					frmGoodsPledgeCreateUpdateItemSizeBuffer = data.itemSize;
 
 					// Display a count of the characters in the Additional Information textarea input
 					$('#frmGoodsPledgeCreateUpdateAdditionalInformationCountBlock').text($('#frmGoodsPledgeCreateUpdateAdditionalInformation').val().length.toString().concat('/').concat('500'));
-
-
 				}
 			});
 		}
@@ -2516,6 +2542,7 @@ $( document ).ready(function() {
 				itemSize : modal.find('#frmGoodsPledgeCreateUpdateItemSize').val(),
 				dateAvailableFrom: modal.find('#frmGoodsPledgeCreateUpdateGoodsDateFrom').val(),
 				dateAvailableTo: modal.find('#frmGoodsPledgeCreateUpdateGoodsDateTo').val(),
+				status: modal.find('.js-status-select').val()
 		};
 
 		var propertyUrl = modal.find('#frmGoodsPledgeCreateUpdatePropertyUrl').val();
@@ -2546,7 +2573,9 @@ $( document ).ready(function() {
 							addCell(row,document.createTextNode(obj.goodsCategoryOneReferenceTranslation));
 							addCell(row,document.createTextNode(obj.goodsCategoryTwoReferenceTranslation));
 							addCell(row,document.createTextNode(obj.goodsCategoryThreeReferenceTranslation));
-							addCell(row,document.createTextNode(obj.status));
+							if($('#frmRegisterOfPledges').data('admin')){
+								addCell(row,document.createTextNode(obj.statusReferenceTranslation));
+							}
 							new_tbody.appendChild(row);
 						});
 

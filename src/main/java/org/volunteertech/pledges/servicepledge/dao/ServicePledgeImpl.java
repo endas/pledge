@@ -108,17 +108,27 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     private ServicePlegdeFlaggedIssuesEnum flaggedIssue;
 
 
-    private int status=0;
-    public int getStatus() {
+    private Long status;;
+    private String statusReferenceTranslation;
+    
+    public Long getStatus() {
 		return status;
 	}
 
-
-	public void setStatus(int status) {
+	public void setStatus(Long status) {
 		this.status = status;
 	}	
     
-    /**
+	
+    public String getStatusReferenceTranslation() {
+		return statusReferenceTranslation;
+	}
+
+	public void setStatusReferenceTranslation(String statusReferenceTranslation) {
+		this.statusReferenceTranslation = statusReferenceTranslation;
+	}
+
+	/**
      * Default Constructor for the ServicePledge bean
      */
     public ServicePledgeImpl()

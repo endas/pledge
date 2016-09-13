@@ -152,8 +152,16 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     private Set<Long> facilities = new HashSet<Long>();
     private Set<Long> accommodateWho = new HashSet<Long>();
     
-    private int status = 0;
+    private Long status = new Long(0);
+    private String statusReferenceTranslation;
     
+    public String getStatusReferenceTranslation() {
+		return statusReferenceTranslation;
+	}
+
+	public void setStatusReferenceTranslation(String statusReferenceTranslation) {
+		this.statusReferenceTranslation = statusReferenceTranslation;
+	}
   
     /**
      * Default Constructor for the AccommodationPledge bean
@@ -194,7 +202,7 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();
         this.sameAsProfileAddress = true;
-        this.status = 0;
+        this.status = new Long("0");
     }
     
     /**
@@ -807,11 +815,11 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 		this.numberOfBedrooms = numberOfBedrooms;
 	}
 
-	public int getStatus() {
+	public Long getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Long status) {
 		this.status = status;
 	}
 

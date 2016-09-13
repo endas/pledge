@@ -127,8 +127,10 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
     private Date dateAvailableFrom;
     
     private Date dateAvailableTo;
-    private int status=0;
-
+    private Long status=new Long(0);
+    private String statusReferenceTranslation;
+    
+  
     private GoodsFlaggedIssuesEnum flaggedIssue;
 
 
@@ -645,11 +647,11 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
 		this.dateAvailableTo = dateAvailableTo;
 	}
 
-    public int getStatus() {
+    public Long getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Long status) {
         this.status = status;
     }
 
@@ -661,6 +663,14 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
     public void setFlaggedIssue(GoodsFlaggedIssuesEnum flaggedIssue) {
         this.flaggedIssue = flaggedIssue;
     }
+    
+    public String getStatusReferenceTranslation() {
+		return statusReferenceTranslation;
+	}
+
+	public void setStatusReferenceTranslation(String statusReferenceTranslation) {
+		this.statusReferenceTranslation = statusReferenceTranslation;
+	}
 }
     
     

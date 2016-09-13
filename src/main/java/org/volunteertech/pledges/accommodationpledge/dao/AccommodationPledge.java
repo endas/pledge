@@ -458,11 +458,13 @@ public interface AccommodationPledge extends Serializable {
 
 	public void setNumberOfBedrooms(Long numberOfBedrooms);
 	
-	public int getStatus();
+	public Long getStatus();
 
-	public void setStatus(int status);
+	public void setStatus(Long status);
 	
-	
+	public String getStatusReferenceTranslation();
+
+	public void setStatusReferenceTranslation(String statusReferenceTranslation);
 }
     
     

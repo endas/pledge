@@ -5,6 +5,8 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
+<!--  Use this as advice.. don't do important permission stuff with it. that would be stupid -->
+<sec:authorize access="hasRole('ROLE_ADMIN')" var="isAdmin" />
 <c:choose>
 	<c:when test="${registerOfPledgesFormModel['currentMode'] == 'ADD'}">
 		<spring:message code="registerofpledges.form.header" var="headerText"/>
@@ -59,12 +61,13 @@
 	
 	<spring:url value="/registerofpledges/post" var="registerOfPledgesActionUrl" />
 	  
-	<form:form id="frmRegisterOfPledges" role="form" class="form-horizontal" method="post" accept-charset="utf-8"
+	<form:form id="frmRegisterOfPledges" role="form" class="form-horizontal" method="post" accept-charset="utf-8" data-admin="${isAdmin}"
                 modelAttribute="registerOfPledgesFormModel" action="${registerOfPledgesActionUrl}">
 
 		<form:hidden id="frmRegisterOfPledgesRegisterOfPledgesId" path="id" />
 		
 		<form:hidden id="frmRegisterOfPledgesMode" path="currentMode" />
+		
 		
 		<input type="hidden" id="frmRegisterOfPledgesLoadedFeedbackMessage" value="${msg}" />
 		<input type="hidden" id="frmRegisterOfPledgesLoadedFeedbackCss" value="${css}" />

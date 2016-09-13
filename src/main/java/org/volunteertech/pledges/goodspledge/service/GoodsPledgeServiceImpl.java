@@ -3,6 +3,7 @@ import com.netgrains.security.Authorisation;
 import com.netgrains.security.AuthorisationException;
 import com.netgrains.security.InvalidUserIDException;
 import org.volunteertech.pledges.goodspledge.dao.GoodsPledge;
+import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledge;
 import org.volunteertech.pledges.goodspledge.business.GoodsPledgeBo;
 import org.volunteertech.pledges.goodspledge.dao.GoodsPledgeFilter;
 import org.volunteertech.pledges.goodspledge.dao.GoodsPledgeHistory;
@@ -524,6 +525,13 @@ public class GoodsPledgeServiceImpl implements GoodsPledgeService
 			
 			goodsPledge.setGoodsQuantityReferenceTranslation(goodsQuantityLocaleReference);
 
+			GoodsPledge pledge= goodsPledge;
+			if (pledge.getStatus() == null || pledge.getStatus() == -1){
+				pledge.setStatusReferenceTranslation(this.messageResourceService.getMessage("global.select.noselection", new String[0], locale));
+			}else{
+				pledge.setStatusReferenceTranslation(this.messageResourceService.getMessage(pledge.getStatus(), new String[0], locale));
+			}
+				
     	return goodsPledge;
     }
     

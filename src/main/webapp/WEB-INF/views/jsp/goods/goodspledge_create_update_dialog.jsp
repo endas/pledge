@@ -1,4 +1,6 @@
-<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><div class="modal fade" id="goodsPledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<div class="modal fade" id="goodsPledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -155,7 +157,32 @@
   				<span id="frmGoodsPledgeCreateUpdateGoodsDateToAlertBlockText"></span>
 			</div>	  
 		  </div>
-		
+			
+			<div id="frmGoodsPledgeCreateUpdatePledgeStatusFormGroup"
+						<sec:authorize access="hasRole('ROLE_ADMIN')">class="form-group has-feedback  ${status.error ? 'has-error' : ''}"</sec:authorize>
+						<sec:authorize access="!hasRole('ROLE_ADMIN')">class="hidden"</sec:authorize>
+						>
+						<label id="goodspledge.status.label"
+							for="frmGoodsPledgeCreateUpdatePledgeStatus"
+							class="control-label"><spring:message
+								code="frmPledgeStatusLabel" /></label> 
+								<select class="form-control js-status-select"
+							id="frmGoodsPledgeStatusSelect" name="goodsPledgeStatus"
+							data-select-type="standalone" data-required="true"
+							style="width: 500px;"
+							data-placeholder="<spring:message code="frmPledgeStatusPlaceHolder"/>">
+					
+						</select> <span id="frmGoodsPledgeCreateUpdatePledgeStatusCountBlock"
+							class="help-block"></span>
+						<div id="frmGoodsPledgeCreateUpdatePledgeStatusAlertBlock"
+							class="alert alert-dismissible hidden" role="alert">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<span id="frmGoodsPledgeCreateUpdatePledgeStatusAlertBlockText"></span>
+						</div>
+					</div>
 		  
 		  
 		  

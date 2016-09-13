@@ -1,4 +1,7 @@
-<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><div class="modal fade" id="accommodationPledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<div class="modal fade" id="accommodationPledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -16,7 +19,6 @@
           <input id="frmAccommodationPledgeCreateUpdateTitle" type="hidden"/>
           
         <div class="form-group">
-
 						<input type="checkbox" data-display-name="Same Address as Profile"
 							data-required="false" id="AccomodationSameAsProfileAddress"
 							onclick='sameAsProfileAddressSelected();' /> <label id="accommodationpledge.sameAsProfileAddress.label" for="AccomodationSameAsProfileAddress" class="control-label"><spring:message code="frmAccomodationSameAsProfileAddress"/></label> 
@@ -288,22 +290,22 @@
 			</div>
 				  
 		  </div> --%>
-			<div id="frmAccommodationPledgeCreateUpdatePledgeStatusFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="accommodationpledge.travel.label" for="frmAccommodationPledgeCreateUpdatePledgeStatus" class="control-label"><spring:message code="frmPledgeStatusLabel"/></label>
-			
-			<select  class="form-control" id="frmAccommodationPledgeStatusSelect" name="servicePledgeStatus" data-select-type="standalone" data-required="true" style="width: 500px;" 
-			data-placeholder="<spring:message code="frmPledgeStatusPlaceHolder"/>" >
-      		<option value="0" selected><spring:message code="frmPledgeStatusNotTakenUp"/></option>
-      		<option value="1"><spring:message code="frmPledgeStatusTakenUp"/></option>
-      		<option value="2"><spring:message code="frmPledgeStatusScheduled"/></option>
-      		</select>
-   			 
-			<span id="frmAccommodationPledgeCreateUpdatePledgeStatusCountBlock" class="help-block"></span>
-			<div id="frmAccommodationPledgeCreateUpdatePledgeStatusAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmAccommodationPledgeCreateUpdatePledgeStatusAlertBlockText"></span>
-			</div>	  
-		  </div>
+		   
+			<div id="frmAccommodationPledgeCreateUpdatePledgeStatusFormGroup" 
+				<sec:authorize access="hasRole('ROLE_ADMIN')">class="form-group has-feedback  ${status.error ? 'has-error' : ''}"</sec:authorize>
+				<sec:authorize access="!hasRole('ROLE_ADMIN')">class="hidden"</sec:authorize>>
+				<label id="accommodationpledge.travel.label" for="frmAccommodationPledgeCreateUpdatePledgeStatus" class="control-label"><spring:message code="frmPledgeStatusLabel"/></label>
+				<select class="form-control js-status-select" id="frmAccommodationPledgeStatusSelect" name="servicePledgeStatus" data-select-type="standalone" data-required="true" style="width: 500px;" 
+				data-placeholder="<spring:message code="frmPledgeStatusPlaceHolder"/>" >
+				</select>
+	   			 
+				<span id="frmAccommodationPledgeCreateUpdatePledgeStatusCountBlock" class="help-block"></span>
+				<div id="frmAccommodationPledgeCreateUpdatePledgeStatusAlertBlock" class="alert alert-dismissible hidden" role="alert">
+	  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  				<span id="frmAccommodationPledgeCreateUpdatePledgeStatusAlertBlockText"></span>
+				</div>	  
+		  	</div>
+		  
         </form>
       </div>
       <div class="modal-footer">

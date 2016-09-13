@@ -1,4 +1,8 @@
-	<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><div class="modal fade" id="servicePledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+	<div class="modal fade" id="servicePledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	
+	<sec:authorize access="hasRole('ROLE_ADMIN')" var="isAdmin" />
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -129,28 +133,36 @@
   				<span id="frmServicePledgeCreateUpdateTravelAbilitiesAlertBlockText"></span>
 			</div>	  
 		  </div>
-		  
-		  <div id="frmServicePledgeCreateUpdatePledgeStatusFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
-			<label id="servicepledge.travel.label" for="frmServicePledgeCreateUpdatePledgeStatus" class="control-label"><spring:message code="frmPledgeStatusLabel"/></label>
-			
-			<select  class="form-control" id="frmServicePledgeStatusSelect" name="servicePledgeStatus" data-select-type="standalone" data-required="true" style="width: 500px;" 
-			data-placeholder="<spring:message code="frmPledgeStatusPlaceHolder"/>" >
-      		<%-- <option value="0" ><spring:message code="frmPledgeStatusNotTakenUp"/></option>
-      		<option value="1"><spring:message code="frmPledgeStatusTakenUp"/></option>
-      		<option value="2"><spring:message code="frmPledgeStatusScheduled"/></option> --%>
-      		</select>
-   			 
-			<span id="frmServicePledgeCreateUpdatePledgeStatusCountBlock" class="help-block"></span>
-			<div id="frmServicePledgeCreateUpdatePledgeStatusAlertBlock" class="alert alert-dismissible hidden" role="alert">
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  				<span id="frmServicePledgeCreateUpdatePledgeStatusAlertBlockText"></span>
-			</div>	  
-		  </div>
-		  
-		  
-		  
-  	
-		 <%--  <div id="frmServicePledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+					<div id="frmServicePledgeCreateUpdatePledgeStatusFormGroup"
+						<sec:authorize access="hasRole('ROLE_ADMIN')">class="form-group has-feedback  ${status.error ? 'has-error' : ''}"</sec:authorize>
+						<sec:authorize access="!hasRole('ROLE_ADMIN')">class="hidden"</sec:authorize>
+						>
+						<label id="servicepledge.travel.label"
+							for="frmServicePledgeCreateUpdatePledgeStatus"
+							class="control-label"><spring:message
+								code="frmPledgeStatusLabel" /></label> 
+								<select class="form-control js-status-select"
+							id="frmServicePledgeStatusSelect" name="servicePledgeStatus"
+							data-select-type="standalone" data-required="true"
+							style="width: 500px;"
+							data-placeholder="<spring:message code="frmPledgeStatusPlaceHolder"/>">
+					
+						</select> <span id="frmServicePledgeCreateUpdatePledgeStatusCountBlock"
+							class="help-block"></span>
+						<div id="frmServicePledgeCreateUpdatePledgeStatusAlertBlock"
+							class="alert alert-dismissible hidden" role="alert">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<span id="frmServicePledgeCreateUpdatePledgeStatusAlertBlockText"></span>
+						</div>
+					</div>
+
+
+
+
+					<%--  <div id="frmServicePledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.savebutton.label" for="frmServicePledgeCreateUpdateSaveButton" class="control-label"><spring:message code="frmServicePledgeSaveButtonLabel"/></label>
 			<span id="frmServicePledgeCreateUpdateSaveButtonHelpBlock" class="help-block"><spring:message code="frmServicePledgeSaveButtonHelpBlock"/></span>
 			<div id="frmServicePledgeCreateUpdateSaveButtonAlertBlock" class="alert alert-dismissible hidden" role="alert">

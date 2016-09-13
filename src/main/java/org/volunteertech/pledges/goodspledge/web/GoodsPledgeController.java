@@ -447,6 +447,7 @@ public class GoodsPledgeController extends BaseController
 		model.addAttribute("goodsConditionMap", localizeServiceMap(referenceStore.getGoodsCondition(),locale));
 		model.addAttribute("goodsQuantityMap", localizeServiceMap(referenceStore.getGoodsQuantity(),locale));
 		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
+		model.addAttribute("statusMap", localizeServiceMap(referenceStore.getPledgeStatuses(),locale));
 		model.addAttribute("flaggedIssues", GoodsFlaggedIssuesEnum.values());
 	}
 	

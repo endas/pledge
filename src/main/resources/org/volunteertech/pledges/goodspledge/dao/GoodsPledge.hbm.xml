@@ -29,7 +29,7 @@
 	  
 		<property name="itemSize" type="string" column="ITEMSIZE" length="500" ></property>	
 		
-		<property name="status" type="int">
+		<property name="status" type="long">
   			<column name="STATUS" not-null="true" default="0" />
   		</property>
   		
