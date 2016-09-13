@@ -1,4 +1,4 @@
-<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><div class="modal fade" id="servicePledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><div class="modal fade" id="servicePledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -19,13 +19,11 @@
 			<label id="servicepledge.pledgeservicelevelone.label" for="frmServicePledgeCreateUpdatePledgeServiceLevelOne" class="control-label"><spring:message code="frmServicePledgePledgeServiceLevelOneLabel"/></label>	
 			<select class="form-control" data-display-name="Your Service" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceLevelOne" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceLevelOneHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmServicePledgeCreateUpdatePledgeServiceLevelTwo'), 'theValueToSet', 'PledgeServiceLevelTwo', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>')">
 			</select>
-	  
 			<span id="frmServicePledgeCreateUpdatePledgeServiceLevelOneHelpBlock" class="help-block"><spring:message code="frmServicePledgePledgeServiceLevelOneHelpBlock"/></span>
 			<div id="frmServicePledgeCreateUpdatePledgeServiceLevelOneAlertBlock" class="alert alert-dismissible hidden" role="alert">
   				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   				<span id="frmServicePledgeCreateUpdatePledgeServiceLevelOneAlertBlockText"></span>
-			</div>
-				  
+			</div>	  
 		  </div>
   
 		  <div id="frmServicePledgeCreateUpdatePledgeServiceLevelTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''} collapse">
@@ -131,6 +129,26 @@
   				<span id="frmServicePledgeCreateUpdateTravelAbilitiesAlertBlockText"></span>
 			</div>	  
 		  </div>
+		  
+		  <div id="frmServicePledgeCreateUpdatePledgeStatusFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="servicepledge.travel.label" for="frmServicePledgeCreateUpdatePledgeStatus" class="control-label"><spring:message code="frmPledgeStatusLabel"/></label>
+			
+			<select  class="form-control" id="frmServicePledgeStatusSelect" name="servicePledgeStatus" data-select-type="standalone" data-required="true" style="width: 500px;" 
+			data-placeholder="<spring:message code="frmPledgeStatusPlaceHolder"/>" >
+      		<%-- <option value="0" ><spring:message code="frmPledgeStatusNotTakenUp"/></option>
+      		<option value="1"><spring:message code="frmPledgeStatusTakenUp"/></option>
+      		<option value="2"><spring:message code="frmPledgeStatusScheduled"/></option> --%>
+      		</select>
+   			 
+			<span id="frmServicePledgeCreateUpdatePledgeStatusCountBlock" class="help-block"></span>
+			<div id="frmServicePledgeCreateUpdatePledgeStatusAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmServicePledgeCreateUpdatePledgeStatusAlertBlockText"></span>
+			</div>	  
+		  </div>
+		  
+		  
+		  
   	
 		 <%--  <div id="frmServicePledgeCreateUpdateSaveButtonFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.savebutton.label" for="frmServicePledgeCreateUpdateSaveButton" class="control-label"><spring:message code="frmServicePledgeSaveButtonLabel"/></label>
@@ -145,7 +163,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" id="frmServicePledgeCreateUpdateCloseButton" class="btn btn-default">Close</button>
+        <button type="button" id="frmServicePledgeCreateUpdateCloseButton" class="btn btn-primary">Close</button>
         <button type="button" id="frmServicePledgeCreateUpdateSubmitButton" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-size="35"><span class="ladda-label">Save Pledge</span></button>
       </div>
     </div>

@@ -360,6 +360,12 @@ public class ReferenceStoreImpl implements ReferenceStore
 	 */
 	private SortedMap<Long,String> travelAbilities = null;
 	
+
+	/**
+	 * I'm adding this to be consistent.. but really, I think its all ridiculous.. The whole thing.
+	 */
+	private SortedMap<Long,String> pledgeStatuses = null;
+	
     /**
      * Default Constructor for the ReferenceStore class
      */
@@ -417,7 +423,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		goodsQuantity = initialiseGoodsQuantity();		
 		newOrUsed = initialiseNewOrUsed();		
 		travelAbilities = initialiseTravelAbilities();
-		
+		pledgeStatuses = initialisePledgeStatuses();
     }
 	
     /**
@@ -1583,7 +1589,34 @@ public class ReferenceStoreImpl implements ReferenceStore
 		
 		return map;
 	}    
-	
+	/**
+	 * Initialise the possible choices for Facilities
+	 * from the REFERENCE table
+	 */ 
+	public SortedMap<Long,String> initialisePledgeStatuses()
+	{
+		TreeMap<Long,String> map = new TreeMap<Long,String>();
+		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
+		List<Reference> referenceRecords = null;
+		Reference dataRow = null;
+		logger.debug("Initialising the thing wot we want to make! YEH");
+		try
+		{
+			referenceRecords = this.referenceDao.listReferenceByRefType("PledgeStatus");
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				map.put(dataRow.getId(), dataRow.getRefDesc());
+	        }
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of yer thing failed. Deal with that!", ex);
+		}
+		return map;
+	}  
 	
 	
 	
@@ -3090,6 +3123,15 @@ public class ReferenceStoreImpl implements ReferenceStore
 			initialiseTravelAbilities();
 		}
 		return travelAbilities;
+	}
+
+	@Override
+	public SortedMap<Long, String> getPledgeStatuses() {
+		if (pledgeStatuses == null)
+		{
+			initialisePledgeStatuses();
+		}
+		return pledgeStatuses;
 	}
 	
 }

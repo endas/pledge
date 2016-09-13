@@ -288,7 +288,22 @@
 			</div>
 				  
 		  </div> --%>
-
+			<div id="frmAccommodationPledgeCreateUpdatePledgeStatusFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+			<label id="accommodationpledge.travel.label" for="frmAccommodationPledgeCreateUpdatePledgeStatus" class="control-label"><spring:message code="frmPledgeStatusLabel"/></label>
+			
+			<select  class="form-control" id="frmAccommodationPledgeStatusSelect" name="servicePledgeStatus" data-select-type="standalone" data-required="true" style="width: 500px;" 
+			data-placeholder="<spring:message code="frmPledgeStatusPlaceHolder"/>" >
+      		<option value="0" selected><spring:message code="frmPledgeStatusNotTakenUp"/></option>
+      		<option value="1"><spring:message code="frmPledgeStatusTakenUp"/></option>
+      		<option value="2"><spring:message code="frmPledgeStatusScheduled"/></option>
+      		</select>
+   			 
+			<span id="frmAccommodationPledgeCreateUpdatePledgeStatusCountBlock" class="help-block"></span>
+			<div id="frmAccommodationPledgeCreateUpdatePledgeStatusAlertBlock" class="alert alert-dismissible hidden" role="alert">
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<span id="frmAccommodationPledgeCreateUpdatePledgeStatusAlertBlockText"></span>
+			</div>	  
+		  </div>
         </form>
       </div>
       <div class="modal-footer">

@@ -512,6 +512,15 @@ public class ReferenceCategoryRestController extends BaseController
 				}
 				returnValue = localizedTravelAbilityMap;
 				break;
+				
+			case("PledgeStatus"):
+				Map<Long, String> sMap = referenceStore.getPledgeStatuses(); 
+				SortedMap<Long, String> localizedsMap = new TreeMap<Long, String>(sMap);
+				for (Map.Entry<Long, String> entry : localizedsMap.entrySet()) {
+					localizedsMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
+				}
+				returnValue = localizedsMap;
+				break;
 		  
 		
 			default:

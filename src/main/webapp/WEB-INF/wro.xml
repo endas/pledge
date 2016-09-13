@@ -52,11 +52,7 @@
      
    </group>
    
-   <group name="formStylesCss">
    
-     <css>/resources/css/formstyles.css</css>
-     
-   </group>
    
 
    <group name="registerOfPledgesJs">
@@ -248,7 +244,11 @@
      <css>/resources/css/redcross.css</css>
      
    </group>
+   <group name="formStylesCss">
    
+     <css>/resources/css/formstyles.css</css>
+     
+   </group>
 
    
  

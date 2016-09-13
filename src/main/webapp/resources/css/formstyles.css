@@ -18,6 +18,7 @@
             text-decoration: none;
             border-radius: 0px;
             width: 30%;
+            min-width: 40px;
             border-color: #f80000;
         }
         .btn:hover {
@@ -34,10 +35,7 @@
         .form-control-static {
             padding: 0px 15px;
         }
-        .btn {
-            width: 30%;
-            min-width: 40px;
-        }
+        
         .btn-login {
             width: 100% !important;
         }
@@ -45,13 +43,25 @@
             text-align: center;
         }
         
+        .btn-info,
         .btn-primary {
         	border-color:#fff;
 		   	color: #fff;
-		    background-color: #cc0001;
+		    background-color: #f80000;
         }
-
-        .btn-primary:hover {
-        	color: #fff;
-		    background-color: #404040;
+        .btn-info.focus{
+            color: #fff;
+     		background-color: #cc0001;
+		    border-color:#cc0001;
+		    outline-color:#cc0001;
+		  }
+		.btn-info:hover,.btn-info:active,.btn-info:focus,.btn-primary:hover,.btn-primary:active,.btn-primary:focus {
+		    /*  background-color: #404040;*/
+		    background-color: #cc0001 !important;
+		    border-color:#cc0001 !important;
+		    outline-color:#cc0001 !important;
+		   /*  color: #333;
+    		background-color: #e6e6e6; */
         }
+       
+ 
