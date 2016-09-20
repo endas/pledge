@@ -178,7 +178,7 @@
 
 
                     <div id="frmServicePledgePledgeServiceLevelThreeFormGroup"
-                         class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+                         class="form-group has-feedback ${status.error ? 'has-error' : ''} collapse">
 
                         <label id="frmServicePledgePledgeServiceLevelThreeLabel"
                                for="frmServicePledgePledgeServiceLevelThree"
@@ -364,8 +364,54 @@
                             </c:otherwise>
                         </c:choose>
                     </div>
+				
+				 <div id="frmServicePledgePledgeServiceDateAvailableToFormGroup"
+                         class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
+                        <label id="frmServicePledgePledgeServiceDateAvailableToLabel"
+                               for="frmServicePledgePledgeServiceDateAvailableTo"
+                               class="col-sm-2 control-label"><spring:message
+                                code="frmServicePledgePledgeServiceDateAvailableToLabel"/></label>
+				
+					<div class="col-sm-10">
 
+                            <spring:message code="frmServicePledgePledgeServiceDateAvailableToPlaceHolder"
+                                            var="frmServicePledgePledgeServiceDateAvailableToPlaceHolder"/>
+
+                            <form:input path="pledgeServiceDateAvailableTo" type="text"
+                                        data-display-name="Date Available for Use Until" data-minlength="10"
+                                        data-required="false" maxlength="10" class="form-control datepicker"
+                                        id="frmServicePledgePledgeServiceDateAvailableTo"
+                                        placeholder="${frmServicePledgePledgeServiceDateAvailableToPlaceHolder}"
+                                        aria-describedby="frmServicePledgePledgeServiceDateAvailableToHelpBlock"
+                                        data-data-type="date" data-validate-key-press="true"/>
+
+                            <span id="frmServicePledgePledgeServiceDateAvailableToFeedbackIcon"
+                                  class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <div id="frmServicePledgePledgeServiceDateAvailableToAlertBlock"
+                                 class="alert alert-dismissible hidden" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <span id="frmServicePledgePledgeServiceDateAvailableToAlertBlockText"></span>
+                            </div>
+                        </div>
+
+                        <c:choose>
+                            <c:when test="${status.error}">
+                                <form:errors id="frmServicePledgePledgeServiceDateAvailableToHelpBlock"
+                                             path="pledgeServiceDateAvailableTo"
+                                             class="help-block col-sm-offset-2 col-sm-10"/>
+                            </c:when>
+                            <c:otherwise>
+                                <span id="frmServicePledgePledgeServiceDateAvailableToHelpBlock"
+                                      class="help-block col-sm-offset-2 col-sm-10"><spring:message
+                                        code="frmServicePledgePledgeServiceDateAvailableToHelpBlock"/></span>
+                            </c:otherwise>
+                        </c:choose>
+                        
+                      </div>  
+				
+	
                     <div id="frmServicePledgePledgeServiceHoursPerWeekFormGroup"
                          class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -415,7 +461,45 @@
                             </c:otherwise>
                         </c:choose>
                     </div>
+				<div id="frmServicePledgePledgeServiceTravelAbilitiesFormGroup"
+                         class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
+                        <label id="frmServicePledgeTravelLabel" for="frmServiceTravelAbilities" class="col-sm-2 control-label">
+                        <spring:message code="frmServicePledgeTravelLabel"/></label>
+
+                        <div class="col-sm-5 select-container">
+
+                            <spring:message code="frmServicePledgeTravelAbilitiesPlaceHolder" var="unselectedPledgeServiceTravelAbilities"/>
+
+                            <form:select path="pledgeServiceTravelAbilities" 
+                                         data-reference-type="TravelAbilities"  data-placeholder="${unselectedPledgeServiceTravelAbilities}"
+                                         data-required="false" class="form-control chosen" 
+                                         id="frmServiceTravelAbilities"
+                                         aria-describedby="frmServicePledgePledgeServiceTravelAbilitiesHelpBlock">
+
+                                <form:options items="${pledgeServiceTravelAbilitiesMap}"/>
+
+                            </form:select>
+
+                            <span id="frmServicePledgePledgeServiceTravelAbilitiesFeedbackIcon"
+                                  class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <div id="frmServicePledgePledgeServiceTravelAbilitiesAlertBlock"
+                                 class="alert alert-dismissible hidden" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <span id="frmServicePledgePledgeServiceTravelAbilitiesAlertBlockText"></span>
+                            </div>
+                        </div>
+
+                        <c:choose>
+                            <c:when test="${status.error}">
+                                <form:errors id="frmServicePledgePledgeServiceTravelAbilitiesHelpBlock"
+                                             path="pledgeServiceTravelAbilities"
+                                             class="help-block col-sm-offset-2 col-sm-10"/>
+                            </c:when>
+                           
+                        </c:choose>
+                    </div>
                 <div
                      class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 

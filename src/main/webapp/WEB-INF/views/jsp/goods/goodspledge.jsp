@@ -93,8 +93,11 @@
 				
 	<spring:message code="frmGoodsPledgeGoodsCategoryOnePlaceHolder" var="unselectedGoodsCategoryOne"/>
     	
-				<form:select path="goodsCategoryOne" data-display-name="Goods Category One" data-reference-type="GoodsCategoryOne" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryOne" aria-describedby="frmGoodsPledgeGoodsCategoryOneHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
->
+				<form:select path="goodsCategoryOne" data-display-name="Goods Category One" data-reference-type="GoodsCategoryOne" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryOne" aria-describedby="frmGoodsPledgeGoodsCategoryOneHelpBlock" 
+			  onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsCategoryTwo'), 'theValueToSet', 'GoodsCategoryTwo', '');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsCondition'), 'theValueToSet', 'GoodsCondition', '');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsQuantity'), 'theValueToSet', 'GoodsQuantity', '');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsSize'), 'theValueToSet', 'GoodsSize', '');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsCategoryThree'), 'theValueToSet', 'GoodsCategoryThree', '')"
+			>
+			
+			
 					<form:option value="-1" label="${unselectedGoodsCategoryOne}" />
 					
 					<form:options items="${goodsCategoryOneMap}" />
@@ -118,7 +121,7 @@
 				</c:choose>
 		  </div>
       
-		  <div id="frmGoodsPledgeGoodsCategoryTwoFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  <div id="frmGoodsPledgeGoodsCategoryTwoFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''} collapse">
 		  
 			<label id="frmGoodsPledgeGoodsCategoryTwoLabel" for="frmGoodsPledgeGoodsCategoryTwo" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsCategoryTwoLabel"/></label>
 		  
@@ -126,7 +129,10 @@
 				
 	<spring:message code="frmGoodsPledgeGoodsCategoryTwoPlaceHolder" var="unselectedGoodsCategoryTwo"/>
     	
-				<form:select path="goodsCategoryTwo" data-display-name="Goods Category Two" data-reference-type="GoodsCategoryTwo" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryTwo" aria-describedby="frmGoodsPledgeGoodsCategoryTwoHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+				<form:select path="goodsCategoryTwo" data-display-name="Goods Category Two" data-reference-type="GoodsCategoryTwo" 
+				data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryTwo"
+				 aria-describedby="frmGoodsPledgeGoodsCategoryTwoHelpBlock" 
+				 onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsCategoryThree'), 'theValueToSet', 'GoodsCategoryThree', '');loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledgeGoodsSize'), 'theValueToSet', 'GoodsSize', '')"
 >
 					<form:option value="-1" label="${unselectedGoodsCategoryTwo}" />
 					
@@ -151,7 +157,7 @@
 				</c:choose>
 		  </div>
       
-		  <div id="frmGoodsPledgeGoodsCategoryThreeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  <div id="frmGoodsPledgeGoodsCategoryThreeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''} collapse">
 		  
 			<label id="frmGoodsPledgeGoodsCategoryThreeLabel" for="frmGoodsPledgeGoodsCategoryThree" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsCategoryThreeLabel"/></label>
 		  
@@ -159,7 +165,8 @@
 				
 	<spring:message code="frmGoodsPledgeGoodsCategoryThreePlaceHolder" var="unselectedGoodsCategoryThree"/>
     	
-				<form:select path="goodsCategoryThree" data-display-name="Goods Category Three" data-reference-type="GoodsCategoryThree" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryThree" aria-describedby="frmGoodsPledgeGoodsCategoryThreeHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+				<form:select path="goodsCategoryThree" data-display-name="Goods Category Three" data-reference-type="GoodsCategoryThree" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCategoryThree" aria-describedby="frmGoodsPledgeGoodsCategoryThreeHelpBlock" 
+				
 >
 					<form:option value="-1" label="${unselectedGoodsCategoryThree}" />
 					
@@ -184,7 +191,7 @@
 				</c:choose>
 		  </div>
       
-		  <div id="frmGoodsPledgeGoodsSizeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		  <div id="frmGoodsPledgeGoodsSizeFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''} collapse" >
 		  
 			<label id="frmGoodsPledgeGoodsSizeLabel" for="frmGoodsPledgeGoodsSize" class="col-sm-2 control-label"><spring:message code="frmGoodsPledgeGoodsSizeLabel"/></label>
 		  
@@ -192,7 +199,8 @@
 				
 	<spring:message code="frmGoodsPledgeGoodsSizePlaceHolder" var="unselectedGoodsSize"/>
     	
-				<form:select path="goodsSize" data-display-name="Size" data-reference-type="GoodsSize" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsSize" aria-describedby="frmGoodsPledgeGoodsSizeHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+				<form:select path="goodsSize" data-display-name="Size" data-reference-type="GoodsSize" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsSize" aria-describedby="frmGoodsPledgeGoodsSizeHelpBlock" 
+				
 >
 					<form:option value="-1" label="${unselectedGoodsSize}" />
 					
@@ -225,7 +233,8 @@
 				
 	<spring:message code="frmGoodsPledgeGoodsNewOrUsedPlaceHolder" var="unselectedGoodsNewOrUsed"/>
     	
-				<form:select path="goodsNewOrUsed" data-display-name="New/Used" data-reference-type="NewOrUsed" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsNewOrUsed" aria-describedby="frmGoodsPledgeGoodsNewOrUsedHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+				<form:select path="goodsNewOrUsed" data-display-name="New/Used" data-reference-type="NewOrUsed" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsNewOrUsed" aria-describedby="frmGoodsPledgeGoodsNewOrUsedHelpBlock" 
+				
 >
 					<form:option value="-1" label="${unselectedGoodsNewOrUsed}" />
 					
@@ -258,7 +267,8 @@
 				
 	<spring:message code="frmGoodsPledgeGoodsConditionPlaceHolder" var="unselectedGoodsCondition"/>
     	
-				<form:select path="goodsCondition" data-display-name="Goods Condition" data-reference-type="GoodsCondition" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCondition" aria-describedby="frmGoodsPledgeGoodsConditionHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+				<form:select path="goodsCondition" data-display-name="Goods Condition" data-reference-type="GoodsCondition" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsCondition" aria-describedby="frmGoodsPledgeGoodsConditionHelpBlock" 
+				
 >
 					<form:option value="-1" label="${unselectedGoodsCondition}" />
 					
@@ -291,7 +301,8 @@
 				
 	<spring:message code="frmGoodsPledgeGoodsQuantityPlaceHolder" var="unselectedGoodsQuantity"/>
     	
-				<form:select path="goodsQuantity" data-display-name="Quantity" data-reference-type="GoodsQuantity" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsQuantity" aria-describedby="frmGoodsPledgeGoodsQuantityHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmGoodsPledge'), frmGoodsPledgeBuffer, '', 'Select placeholder')"
+				<form:select path="goodsQuantity" data-display-name="Quantity" data-reference-type="GoodsQuantity" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsQuantity" aria-describedby="frmGoodsPledgeGoodsQuantityHelpBlock" 
+				
 >
 					<form:option value="-1" label="${unselectedGoodsQuantity}" />
 					

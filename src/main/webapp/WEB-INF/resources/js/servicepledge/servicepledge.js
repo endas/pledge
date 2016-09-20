@@ -61,7 +61,7 @@ $( document ).ready(function() {
 	    event.stopPropagation();
 	});
 	
-
+	$('.chosen').chosen();
 
 
 	if (displayTextAreaCount){
