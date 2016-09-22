@@ -91,6 +91,11 @@
                 <param name="enumClass">org.volunteertech.pledges.accommodationpledge.dao.AccommodationFlaggedIssuesEnum</param>
             </type>
         </property>
+        <property name="activeStatus" column="ACTIVE_STATUS">
+        	<type name="org.hibernate.type.EnumType">
+                <param name="enumClass">org.volunteertech.pledges.pledge.status.ActiveStatusEnum</param>
+            </type>
+        </property>
         
     </class>
 </hibernate-mapping>

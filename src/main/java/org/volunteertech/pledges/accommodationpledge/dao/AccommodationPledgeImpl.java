@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import org.volunteertech.pledges.pledge.dao.PledgeStatus;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
+import org.volunteertech.pledges.pledge.status.ActiveStatusEnum;
 
 
 
@@ -154,6 +155,8 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     
     private Long status = new Long(0);
     private String statusReferenceTranslation;
+    
+    private ActiveStatusEnum activeStatus = ActiveStatusEnum.ACTIVE;
     
     public String getStatusReferenceTranslation() {
 		return statusReferenceTranslation;
@@ -831,6 +834,18 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     public void setFlaggedIssue(AccommodationFlaggedIssuesEnum flaggedIssue) {
         this.flaggedIssue = flaggedIssue;
     }
+
+	@Override
+	public ActiveStatusEnum getActiveStatus() {
+		// TODO Auto-generated method stub
+		return this.activeStatus;
+	}
+
+	@Override
+	public void setActiveStatus(ActiveStatusEnum a) {
+		this.activeStatus = a;
+		
+	}
 }
     
     
