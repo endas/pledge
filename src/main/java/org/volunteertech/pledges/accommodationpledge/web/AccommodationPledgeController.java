@@ -515,6 +515,8 @@ public class AccommodationPledgeController extends BaseController
 		
 		model.addAttribute("canYouAccommodateMap", localizeServiceMap(referenceStore.getYouCanAccommodate(),locale));
 		
+		model.addAttribute("vacantOrSharedMap", localizeServiceMap(referenceStore.getVacantOrShared(),locale));
+		
 		model.addAttribute("statusMap", localizeServiceMap(referenceStore.getPledgeStatuses(),locale));
 
 		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));

@@ -544,7 +544,6 @@
 
 
 
-					<!-- END -->
 					<div id="frmAccommodationPledgeAccommodationDateFromFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
