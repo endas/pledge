@@ -21,7 +21,7 @@
 	<jsp:param name="beanName" value="goodsPledge" />
 </jsp:include>
 <body>
-
+<spring:message code="global.date.dateformat.upper" var="dateFormat"/>  
 <spring:url value="/landingwebpage" var="urlHome"/>
 <spring:url value="/entitylist" var="urlAppHome"/>
 <spring:url value="/resources/images/redcross-brand-logo.png" var="headerLogo" />
@@ -233,10 +233,10 @@
 				
 	<spring:message code="frmGoodsPledgeGoodsNewOrUsedPlaceHolder" var="unselectedGoodsNewOrUsed"/>
     	
-				<form:select path="goodsNewOrUsed" data-display-name="New/Used" data-reference-type="NewOrUsed" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsNewOrUsed" aria-describedby="frmGoodsPledgeGoodsNewOrUsedHelpBlock" 
+				<form:select path="goodsNewOrUsed" data-display-name="New/Used" data-placeholder="test" data-reference-type="NewOrUsed" data-select-type="standalone" data-required="false" class="form-control" id="frmGoodsPledgeGoodsNewOrUsed" aria-describedby="frmGoodsPledgeGoodsNewOrUsedHelpBlock" 
 				
 >
-					<form:option value="-1" label="${unselectedGoodsNewOrUsed}" />
+					 <form:option value="-1" label="${unselectedGoodsNewOrUsed}" /> 
 					
 					<form:options items="${goodsNewOrUsedMap}" />
 					
@@ -380,7 +380,102 @@
 				  </c:otherwise>
 				</c:choose>
 		  </div>
-      
+      <div id="frmGoodsPledgeDateFromFormGroup"
+						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+
+						<label id="frmAccommodationPledgeAccommodationDateFromLabel"
+							for="frmGoodsPledgeDateFrom"
+							class="col-sm-2 control-label"> <spring:message
+								code="frmGoodsPledgeGoodsDateFromLabel" />
+						</label>
+
+						<div class="col-sm-10">
+
+							<spring:message
+								code="frmGoodsPledgeGoodsDateFromPlaceHolder"
+								var="frmGoodsPledgeDateFromPlaceHolder" />
+
+							<form:input path="dateAvailableFrom" type="text"
+								data-display-name="When are the goods available from?"
+								data-minlength="10" data-required="false" maxlength="10"
+								class="form-control datepicker"
+								id="frmGoodsPledgeDateFrom"
+								placeholder="${dateFormat}"
+								aria-describedby="frmGoodsPledgeDateFromHelpBlock"
+								data-data-type="date" data-validate-key-press="true" />
+
+							<span
+								id="frmGoodsPledgeDateFromFeedbackIcon"
+								class="glyphicon form-control-feedback" aria-hidden="true"></span>
+							<div id="frmGoodsPledgeDateFromAlertBlock"
+								class="alert alert-dismissible hidden" role="alert">
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<span
+									id="frmGoodsPledgeDateFromAlertBlockText"></span>
+							</div>
+						</div>
+
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors
+									id="frmGoodsPledgeDateFromHelpBlock"
+									path="dateAvailableFrom"
+									class="help-block col-sm-offset-2 col-sm-10" />
+							</c:when>
+							
+						</c:choose>
+					</div>
+
+					<div id="frmGoodsPledgeDateToFormGroup"
+						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+
+						<label id="frmGoodsPledgeDateToLabel"
+							for="frmGoodsPledgeDateTo"
+							class="col-sm-2 control-label"> <spring:message
+								code="frmGoodsPledgeGoodsDateToLabel" />
+						</label>
+
+						<div class="col-sm-10">
+
+							<spring:message
+								code="frmGoodsPledgeGoodsDateToPlaceHolder"
+								var="frmGoodsPledgeDateToPlaceHolder" />
+
+							<form:input path="dateAvailableTo" type="text"
+								data-display-name="When are the goods available until?"
+								data-minlength="10" data-required="false" maxlength="10"
+								class="form-control datepicker"
+								id="frmGoodsPledgeDateTo"
+								placeholder="${dateFormat}"
+								aria-describedby="frmGoodsPledgeDateToHelpBlock"
+								data-data-type="date" data-validate-key-press="true" />
+
+							<span id="frmGoodsPledgeDateToFeedbackIcon"
+								class="glyphicon form-control-feed∑back" aria-hidden="true"></span>
+							<div id="frmGoodsPledgeDateToAlertBlock"
+								class="alert alert-dismissible hidden" role="alert">
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<span
+									id="frmGoodsPledgeDateToAlertBlockText"></span>
+							</div>
+						</div>
+
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors
+									id="frmGoodsPledgeDateToHelpBlock"
+									path="dateAvailableTo"
+									class="help-block col-sm-offset-2 col-sm-10" />
+							</c:when>
+							
+						</c:choose>
+					</div>
 
 				<div
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">

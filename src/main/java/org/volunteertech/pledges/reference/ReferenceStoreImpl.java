@@ -360,6 +360,11 @@ public class ReferenceStoreImpl implements ReferenceStore
 	 */
 	private SortedMap<Long,String> travelAbilities = null;
 	
+	/**
+	 * Map to hold values related to the Travel Ability Reference Type
+	 */
+	private SortedMap<Long,String> amenities = null;
+	
 
 	/**
 	 * I'm adding this to be consistent.. but really, I think its all ridiculous.. The whole thing.
@@ -424,6 +429,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		newOrUsed = initialiseNewOrUsed();		
 		travelAbilities = initialiseTravelAbilities();
 		pledgeStatuses = initialisePledgeStatuses();
+		amenities = initialiseAmenities();
     }
 	
     /**
@@ -1553,7 +1559,41 @@ public class ReferenceStoreImpl implements ReferenceStore
 		
 		return map;
 	}    
-	
+	/**
+	 * lalala all this code is a load of shite lalalalala
+	 * WHY doesnt it just do all this with one paramterised function.
+	 * 
+	 */ 
+	public SortedMap<Long,String> initialiseAmenities()
+	{
+		TreeMap<Long,String> map = new TreeMap<Long,String>();
+		TreeMap<Long,TreeMap<Long,String>> parentIdMap = new TreeMap<Long,TreeMap<Long,String>>();
+		List<Reference> referenceRecords = null;
+		Reference dataRow = null;
+
+		logger.debug("Initialising the Amenities what did you wanted so you did");
+		
+		try
+		{
+			// Load all values of referenceCategoryDesc Facilities
+			
+//			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_TRAVEL_ABILITIES, new Long(1));
+			referenceRecords = this.referenceDao.listReferenceByRefType("LocalAmenity");
+			Iterator<Reference> it = referenceRecords.iterator();
+			
+			while(it.hasNext())
+	        {
+				dataRow =(Reference)it.next();
+				map.put(dataRow.getId(), dataRow.getRefDesc());
+	        }
+		}
+		catch(Exception ex)
+		{
+    		logger.error("Initialisation of Local Amenity dropdown buffer failed", ex);
+		}
+		
+		return map;
+	}  
 	
 	/**
 	 * Initialise the possible choices for Facilities
@@ -3132,6 +3172,15 @@ public class ReferenceStoreImpl implements ReferenceStore
 			initialisePledgeStatuses();
 		}
 		return pledgeStatuses;
+	}
+
+	@Override
+	public SortedMap<Long, String> getAmenities() {
+		if (amenities == null)
+		{
+			initialiseAmenities();
+		}
+		return amenities;
 	}
 	
 }

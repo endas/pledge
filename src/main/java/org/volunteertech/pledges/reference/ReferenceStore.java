@@ -578,5 +578,7 @@ public interface ReferenceStore
     
     public SortedMap<Long,String> getTravelAbilities();	
     
+    public SortedMap<Long,String> getAmenities();	
+    
     public SortedMap<Long,String> getPledgeStatuses();	
 }

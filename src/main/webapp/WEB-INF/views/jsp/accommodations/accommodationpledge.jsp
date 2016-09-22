@@ -1,8 +1,9 @@
 <%@ page session="false"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html lang="en">
 <spring:message code="accommodationpledge.form.header" var="headerText" />
@@ -59,6 +60,9 @@
 
 	<spring:message code="frmAccommodationPledgeVacantOrSharedPlaceHolder"
 		var="unselectedVacantOrShared" />
+	<spring:message code="global.select.placeholder"
+		var="unselectedDefault" />
+
 	<%-- 
                     <spring:message code="frmAccommodationPledgeCanYouAccommodatePlaceHolder" var="unselectedCanYouAccommodate" />
      --%>
@@ -451,7 +455,96 @@
 							</c:otherwise>
 						</c:choose>
 					</div>
+					<!-- START -->
 
+					<div id="frmAccommodationPledgeCreateUpdateAccommodateWhoFormGroup"
+						class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+						<label id="accommodationpledge.accommodatewho.label"
+							for="frmAccommodationPledgeCreateUpdateAccommodateWhoSelect"
+							class="col-sm-2 control-label"> <spring:message
+								code="frmAccommodationPledgeAccommodateWhoLabel" />
+						</label>
+						<div class="col-sm-5 select-container">
+							<form:select
+								id="frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect"
+								path="accommodateWho" data-placeholder="${unselectedDefault}"
+								name="accommodatewho" class="form-control chosen">
+								<form:options items="${canYouAccommodateMap}" />
+							</form:select>
+						</div>
+
+
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors path="accommodateWho"
+									class="help-block col-sm-offset-2 col-sm-10" />
+							</c:when>
+							<c:otherwise>
+								<span class="help-block col-sm-offset-2 col-sm-10"><spring:message
+										code="frmAccommodationPledgeAccommodateWhoHelpBlock" /></span>
+							</c:otherwise>
+						</c:choose>
+
+					</div>
+
+					<div id="frmAccommodationPledgeCreateUpdateFacilitiesFormGroup"
+						class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+						<label id="accommodationpledge.amenities.label"
+							for="frmAccommodationPledgeCreateUpdateFacilities"
+							class="col-sm-2 control-label"> <spring:message
+								code="frmAccommodationPledgeFacilitiesLabel" />
+						</label>
+						<div class="col-sm-5 select-container">
+							<form:select
+								id="frmApplicationUserDetailsCreateUpdateFacilitiesSelect"
+								path="facilities" data-placeholder="${unselectedDefault}"
+								name="facilities" class="form-control chosen">
+								<form:options items="${facilitiesMap}" />
+							</form:select>
+
+						</div>
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors path="facilities"
+									class="help-block col-sm-offset-2 col-sm-10" />
+							</c:when>
+							<c:otherwise>
+								<span class="help-block col-sm-offset-2 col-sm-10"></span>
+							</c:otherwise>
+						</c:choose>
+					</div>
+
+
+					<div id="frmAccommodationPledgeCreateUpdateAmenitiesFormGroup"
+						class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+						<label id="accommodationpledge.amenities.label"
+							for="frmAccommodationPledgeCreateUpdateAmenities"
+							class="col-sm-2 control-label"><spring:message
+								code="frmAccommodationPledgeAmenitiesLabel" /></label>
+						<div class="col-sm-5 select-container">
+							<form:select
+								id="frmApplicationUserDetailsCreateUpdateAmenitiesSelect"
+								name="amenities" path="amenities" class="form-control chosen"
+								data-placeholder="${unselectedDefault}">
+								<form:options items="${amenitiesMap}" />
+
+							</form:select>
+
+						</div>
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors path="amenities"
+									class="help-block col-sm-offset-2 col-sm-10" />
+							</c:when>
+							<c:otherwise>
+								<span class="help-block col-sm-offset-2 col-sm-10"></span>
+							</c:otherwise>
+						</c:choose>
+					</div>
+
+
+
+					<!-- END -->
 					<div id="frmAccommodationPledgeAccommodationDateFromFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -908,31 +1001,30 @@
 						</c:choose>
 					</div>
 
-					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}"
-					<sec:authorize access="hasRole('ROLE_ADMIN')">class="form-group has-feedback  ${status.error ? 'has-error' : ''}"</sec:authorize>
+					<div
+						class="form-group has-feedback ${status.error ? 'has-error' : ''}"
+						<sec:authorize access="hasRole('ROLE_ADMIN')">class="form-group has-feedback  ${status.error ? 'has-error' : ''}"</sec:authorize>
 						<sec:authorize access="!hasRole('ROLE_ADMIN')">class="hidden"</sec:authorize>>
 
 						<form:label path="status" class="col-sm-2 control-label">
 							<spring:message code="frmPledgeStatusLabel" />
 						</form:label>
 						<div class="col-sm-10">
-						
-						
-						<form:select path="status" data-display-name="Status"
-								data-reference-type="PledgeStatus"
-								data-select-type="standalone" data-required="true"
-								class="form-control" id="frmPledgeStatus"
-								aria-describedby="frmpledgeStatusHelpBlock"
-								onchange="">
+
+
+							<form:select path="status" data-display-name="Status"
+								data-reference-type="PledgeStatus" data-select-type="standalone"
+								data-required="true" class="form-control" id="frmPledgeStatus"
+								aria-describedby="frmpledgeStatusHelpBlock" onchange="">
 								<form:options items="${statusMap}" />
-						</form:select>
+							</form:select>
 						</div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors path="status" class="help-block col-sm-9" />
 							</c:when>
 						</c:choose>
-				
+
 					</div>
 
 				</div>

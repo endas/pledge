@@ -39,8 +39,8 @@ var frmAccommodationPledgeVacantOrSharedTextBuffer = getSelectedText(document.ge
       
 var frmAccommodationPledgeOtherAmenitiesBuffer = document.getElementById("frmAccommodationPledgeOtherAmenities").value;
       
-var frmAccommodationPledgeCanYouAccommodateBuffer = document.getElementById("frmAccommodationPledgeCanYouAccommodate").value;
-      
+//var frmAccommodationPledgeCanYouAccommodateBuffer = document.getElementById("frmAccommodationPledgeCanYouAccommodate").value;
+//      
 var frmAccommodationPledgeCanYouAccommodateTextBuffer = getSelectedText(document.getElementById("frmAccommodationPledgeCanYouAccommodate"));      
       
 var frmAccommodationPledgeAdditionalInformationBuffer = document.getElementById("frmAccommodationPledgeAdditionalInformation").value;
@@ -74,7 +74,7 @@ $( document ).ready(function() {
 	checkFocus(document.getElementById("frmAccommodationPledge"));
 
 
-
+	$('.chosen').chosen();
 	$.fn.datepicker.defaults.format = "dd/mm/yyyy";
 	$.fn.datepicker.defaults.autoclose = true;
 	$('.datepicker').datepicker();
