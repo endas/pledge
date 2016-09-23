@@ -975,13 +975,8 @@
 						</c:choose>
 					</div>
 
-					<div
-						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-
-						<form:label path="flaggedIssue" class="col-sm-2 control-label">
-							<spring:message code="serviceplegde.flaggedIssue" />
-						</form:label>
-
+					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+						<form:label path="flaggedIssue" class="col-sm-2 control-label"><spring:message code="serviceplegde.flaggedIssue" /></form:label>
 						<div class="col-sm-10">
 							<%--todo: add proper translation mechanism--%>
 							<form:select path="flaggedIssue" class="form-control">
@@ -990,8 +985,6 @@
 									<form:option value="${issue.code}" label="${label}" />
 								</c:forEach>
 							</form:select>
-
-
 						</div>
 						<c:choose>
 							<c:when test="${status.error}">
@@ -1025,6 +1018,61 @@
 						</c:choose>
 
 					</div>
+					
+					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+						<form:label path="activeStatus" class="col-sm-2 control-label"><spring:message code="activeStatus.label	" /></form:label>
+						<div class="col-sm-10">
+							<%--todo: add proper translation mechanism--%>
+							<form:select path="activeStatus" class="form-control">
+								<c:forEach items="${activeStatusValues}" var="status">
+									<spring:message code="${status.name}" var="label" />
+									<form:option value="${status.code}" label="${label}" />
+								</c:forEach>
+							</form:select>
+						</div>
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors path="activeStatus" class="help-block col-sm-9" />
+							</c:when>
+						</c:choose>
+					</div>
+					
+					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+						<form:label path="pledgeTakenStatus" class="col-sm-2 control-label"><spring:message code="pledgeTakenStatus.label	" /></form:label>
+						<div class="col-sm-10">
+							<%--todo: add proper translation mechanism--%>
+							<form:select path="pledgeTakenStatus" class="form-control">
+								<c:forEach items="${pledgeTakenStatusValues}" var="status">
+									<spring:message code="${status.name}" var="label" />
+									<form:option value="${status.code}" label="${label}" />
+								</c:forEach>
+							</form:select>
+						</div>
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors path="activeStatus" class="help-block col-sm-9" />
+							</c:when>
+						</c:choose>
+					</div>
+					
+					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+						<form:label path="verificationProgress" class="col-sm-2 control-label"><spring:message code="verificationProgress.label	" /></form:label>
+						<div class="col-sm-10">
+							<%--todo: add proper translation mechanism--%>
+							<form:select path="verificationProgress" class="form-control">
+								<c:forEach items="${verificationProgressValues}" var="status">
+									<spring:message code="${status.name}" var="label" />
+									<form:option value="${status.code}" label="${label}" />
+								</c:forEach>
+							</form:select>
+						</div>
+						<c:choose>
+							<c:when test="${status.error}">
+								<form:errors path="activeStatus" class="help-block col-sm-9" />
+							</c:when>
+						</c:choose>
+					</div>
+					
 
 				</div>
 				<!-- class="panel-body" -->

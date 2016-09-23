@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 import org.volunteertech.pledges.pledge.dao.PledgeStatus;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 import org.volunteertech.pledges.pledge.status.ActiveStatusEnum;
+import org.volunteertech.pledges.pledge.status.PledgeTakenStatusEnum;
+import org.volunteertech.pledges.pledge.status.VerificationProgressEnum;
 
 
 
@@ -470,6 +472,14 @@ public interface AccommodationPledge extends Serializable {
 	public ActiveStatusEnum getActiveStatus();
 	
 	public void setActiveStatus(ActiveStatusEnum a);
+	
+	public PledgeTakenStatusEnum getPledgeTakenStatus();
+
+	public void setPledgeTakenStatus(PledgeTakenStatusEnum pledgeTakenStatus);
+
+	public VerificationProgressEnum getVerificationProgress();
+
+	public void setVerificationProgress(VerificationProgressEnum verificationProgress);
 }
     
     

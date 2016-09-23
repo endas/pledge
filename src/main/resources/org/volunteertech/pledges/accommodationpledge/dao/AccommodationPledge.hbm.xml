@@ -96,6 +96,16 @@
                 <param name="enumClass">org.volunteertech.pledges.pledge.status.ActiveStatusEnum</param>
             </type>
         </property>
+        <property name="pledgeTakenStatus" column="TAKEN_STATUS">
+        	<type name="org.hibernate.type.EnumType">
+                <param name="enumClass">org.volunteertech.pledges.pledge.status.PledgeTakenStatusEnum</param>
+            </type>
+        </property>
+        <property name="verificationProgress" column="VERIFICATON_PROGRESS">
+        	<type name="org.hibernate.type.EnumType">
+                <param name="enumClass">org.volunteertech.pledges.pledge.status.VerificationProgressEnum</param>
+            </type>
+        </property>
         
     </class>
 </hibernate-mapping>

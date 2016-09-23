@@ -17,6 +17,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.volunteertech.pledges.pledge.dao.PledgeStatus;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 import org.volunteertech.pledges.pledge.status.ActiveStatusEnum;
+import org.volunteertech.pledges.pledge.status.PledgeTakenStatusEnum;
+import org.volunteertech.pledges.pledge.status.VerificationProgressEnum;
 
 
 
@@ -157,6 +159,9 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     private String statusReferenceTranslation;
     
     private ActiveStatusEnum activeStatus = ActiveStatusEnum.ACTIVE;
+ 
+    private PledgeTakenStatusEnum pledgeTakenStatus = PledgeTakenStatusEnum.NOT_TAKEN;
+    private VerificationProgressEnum verificationProgress = VerificationProgressEnum.NOT_READY_TO_PROGRESS;
     
     public String getStatusReferenceTranslation() {
 		return statusReferenceTranslation;
@@ -845,6 +850,22 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 	public void setActiveStatus(ActiveStatusEnum a) {
 		this.activeStatus = a;
 		
+	}
+
+	public PledgeTakenStatusEnum getPledgeTakenStatus() {
+		return pledgeTakenStatus;
+	}
+
+	public void setPledgeTakenStatus(PledgeTakenStatusEnum pledgeTakenStatus) {
+		this.pledgeTakenStatus = pledgeTakenStatus;
+	}
+
+	public VerificationProgressEnum getVerificationProgress() {
+		return verificationProgress;
+	}
+
+	public void setVerificationProgress(VerificationProgressEnum verificationProgress) {
+		this.verificationProgress = verificationProgress;
 	}
 }
     

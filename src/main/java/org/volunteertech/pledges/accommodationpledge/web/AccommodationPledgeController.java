@@ -37,8 +37,9 @@ import org.volunteertech.pledges.localisation.dao.MessageResource;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
 
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
-
-
+import org.volunteertech.pledges.pledge.status.ActiveStatusEnum;
+import org.volunteertech.pledges.pledge.status.PledgeTakenStatusEnum;
+import org.volunteertech.pledges.pledge.status.VerificationProgressEnum;
 import org.volunteertech.pledges.reference.ReferenceStore;
 
 /**
@@ -522,6 +523,12 @@ public class AccommodationPledgeController extends BaseController
 		model.addAttribute("localeMap", localizeServiceMap(referenceStore.getLocale(),locale));
 
         model.addAttribute("flaggedIssues", AccommodationFlaggedIssuesEnum.values());
+        
+        model.addAttribute("activeStatusValues", ActiveStatusEnum.values());
+        
+        model.addAttribute("verificationProgressValues", VerificationProgressEnum.values());
+        
+        model.addAttribute("pledgeTakenStatusValues", PledgeTakenStatusEnum.values());
 	}
 	
 
