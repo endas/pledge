@@ -1,5 +1,6 @@
 package org.volunteertech.pledges.goodspledge.dao;
 
+import org.volunteertech.pledges.accommodationpledge.dao.AccommodationFlaggedIssuesEnum;
 import org.volunteertech.pledges.goodspledge.dao.GoodsPledge;
 
 import java.io.Serializable;
@@ -14,6 +15,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
+import org.volunteertech.pledges.pledge.status.ActiveStatusEnum;
+import org.volunteertech.pledges.pledge.status.PledgeTakenStatusEnum;
+import org.volunteertech.pledges.pledge.status.VerificationProgressEnum;
 
 
 
@@ -51,6 +55,28 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
      */
     private CurrentMode currentMode;
 
+    private Boolean sameAsProfileAddress;
+    
+    /** the street or house address */
+    private String addressOne;
+	
+    /** the town or city address */
+    private String addressTwo;
+	
+    /** the post code */
+    private String city;
+	
+    /** the post code */
+    private String stateProvinceRegion;
+	
+    /** the post code */
+    private String postCode;
+	
+    /** the address type */
+    private Long country;
+    
+    /** the address type */
+    private String countryReferenceTranslation;
     
     /** the goods category level one */
     private Long goodsCategoryOne;
@@ -127,8 +153,14 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
     private Date dateAvailableFrom;
     
     private Date dateAvailableTo;
-    private Long status=new Long(0);
+
+    private Long status = new Long(0);
     private String statusReferenceTranslation;
+    
+    private ActiveStatusEnum activeStatus = ActiveStatusEnum.ACTIVE;
+ 
+    private PledgeTakenStatusEnum pledgeTakenStatus = PledgeTakenStatusEnum.NOT_TAKEN;
+    private VerificationProgressEnum verificationProgress = VerificationProgressEnum.NOT_READY_TO_PROGRESS;
     
   
     private GoodsFlaggedIssuesEnum flaggedIssue;
@@ -199,6 +231,154 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
         this.parentObjectId = parentObjectId;
     }
 
+    public void setSameAsProfileAddress(Boolean sameAsProfileAddress) {
+        this.sameAsProfileAddress = sameAsProfileAddress;
+
+    }
+
+    public Boolean getSameAsProfileAddress() {
+        return this.sameAsProfileAddress;
+    }
+
+
+    /**
+     * Sets the street or house address
+     * @param addressOne is the street or house address
+     */
+    public void setAddressOne(String addressOne)
+    {
+      this.addressOne = addressOne;
+    }
+
+    /**
+     * Returns the street or house address
+     * @return the street or house address
+     */
+    public String getAddressOne()
+    {
+      return addressOne;
+    }
+    
+    
+    
+    /**
+     * Sets the town or city address
+     * @param addressTwo is the town or city address
+     */
+    public void setAddressTwo(String addressTwo)
+    {
+      this.addressTwo = addressTwo;
+    }
+
+    /**
+     * Returns the town or city address
+     * @return the town or city address
+     */
+    public String getAddressTwo()
+    {
+      return addressTwo;
+    }
+    
+    
+    
+    /**
+     * Sets the post code
+     * @param city is the post code
+     */
+    public void setCity(String city)
+    {
+      this.city = city;
+    }
+
+    /**
+     * Returns the post code
+     * @return the post code
+     */
+    public String getCity()
+    {
+      return city;
+    }
+    
+    
+    
+    /**
+     * Sets the post code
+     * @param stateProvinceRegion is the post code
+     */
+    public void setStateProvinceRegion(String stateProvinceRegion)
+    {
+      this.stateProvinceRegion = stateProvinceRegion;
+    }
+
+    /**
+     * Returns the post code
+     * @return the post code
+     */
+    public String getStateProvinceRegion()
+    {
+      return stateProvinceRegion;
+    }
+    
+    
+    
+    /**
+     * Sets the post code
+     * @param postCode is the post code
+     */
+    public void setPostCode(String postCode)
+    {
+      this.postCode = postCode;
+    }
+
+    /**
+     * Returns the post code
+     * @return the post code
+     */
+    public String getPostCode()
+    {
+      return postCode;
+    }
+    
+    
+    
+    /**
+     * Sets the address type that has been chosen by the user
+     * @param country is the address type
+     */
+    public void setCountry(Long country)
+    {
+      this.country = country;
+    }
+
+    /**
+     * Returns the address type that has been chosen by the user or saved in the database
+     * @return the address type
+     */
+    public Long getCountry()
+    {
+      return country;
+    }
+    
+    
+    /**
+     * Sets the translated reference mapping for the address type that has been chosen by the user
+     * @param the translated reference mapping for country is the address type
+     */
+    public void setCountryReferenceTranslation(String countryReferenceTranslation)
+    {
+      this.countryReferenceTranslation = countryReferenceTranslation;
+    }
+
+    /**
+     * Returns the translated reference mapping for the address type that has been chosen by the user or saved in the database
+     * @return the translated reference mapping for the address type
+     */
+    public String getCountryReferenceTranslation()
+    {
+      return countryReferenceTranslation;
+    }
+      
+    
     
     
     /**
@@ -647,13 +827,7 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
 		this.dateAvailableTo = dateAvailableTo;
 	}
 
-    public Long getStatus() {
-        return status;
-    }
-
-    public void setStatus(Long status) {
-        this.status = status;
-    }
+  
 
 
     public GoodsFlaggedIssuesEnum getFlaggedIssue() {
@@ -670,6 +844,43 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
 
 	public void setStatusReferenceTranslation(String statusReferenceTranslation) {
 		this.statusReferenceTranslation = statusReferenceTranslation;
+	}
+	
+	public Long getStatus() {
+		return status;
+	}
+
+	public void setStatus(Long status) {
+		this.status = status;
+	}
+
+
+    
+	public ActiveStatusEnum getActiveStatus() {
+		// TODO Auto-generated method stub
+		return this.activeStatus;
+	}
+
+
+	public void setActiveStatus(ActiveStatusEnum a) {
+		this.activeStatus = a;
+		
+	}
+
+	public PledgeTakenStatusEnum getPledgeTakenStatus() {
+		return pledgeTakenStatus;
+	}
+
+	public void setPledgeTakenStatus(PledgeTakenStatusEnum pledgeTakenStatus) {
+		this.pledgeTakenStatus = pledgeTakenStatus;
+	}
+
+	public VerificationProgressEnum getVerificationProgress() {
+		return verificationProgress;
+	}
+
+	public void setVerificationProgress(VerificationProgressEnum verificationProgress) {
+		this.verificationProgress = verificationProgress;
 	}
 }
     

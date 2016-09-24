@@ -31,6 +31,9 @@ import org.volunteertech.pledges.main.localisation.DatabaseDrivenMessageSource;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledgesImpl;
 import org.volunteertech.pledges.pledge.service.RegisterOfPledgesService;
+import org.volunteertech.pledges.pledge.status.ActiveStatusEnum;
+import org.volunteertech.pledges.pledge.status.PledgeTakenStatusEnum;
+import org.volunteertech.pledges.pledge.status.VerificationProgressEnum;
 import org.volunteertech.pledges.pledge.validator.RegisterOfPledgesFormValidator;
 import org.volunteertech.pledges.pledge.view.RegisterOfPledgesTranslationBackingBean;
 import org.volunteertech.pledges.pledge.view.RegisterOfPledgesTranslationBackingBeanImpl;
@@ -391,6 +394,11 @@ public class RegisterOfPledgesController extends BaseController
 		}
 		
 		model.addAttribute("localeMap", localizedLocaleMap);
+		  model.addAttribute("activeStatusValues", ActiveStatusEnum.values());
+	        
+	        model.addAttribute("verificationProgressValues", VerificationProgressEnum.values());
+	        
+	        model.addAttribute("pledgeTakenStatusValues", PledgeTakenStatusEnum.values());
 	}
 
 

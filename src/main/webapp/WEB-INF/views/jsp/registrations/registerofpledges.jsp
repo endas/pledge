@@ -260,8 +260,8 @@
 
 					<th><spring:message code="frmAccommodationPledgeVacantOrSharedLabel"/></th>
 
-					<th><spring:message code="frmAccommodationPledgeCanYouAccommodateLabel"/></th>
-
+					<%-- <th><spring:message code="frmAccommodationPledgeCanYouAccommodateLabel"/></th>
+ --%>
 					<th><spring:message code="frmAccommodationPledgeAccommodationDateFromLabel"/></th>
 
 					<th><spring:message code="frmAccommodationPledgeAccommodationDateToLabel"/></th>

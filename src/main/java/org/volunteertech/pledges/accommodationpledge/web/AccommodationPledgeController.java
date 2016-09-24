@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -96,6 +97,7 @@ public class AccommodationPledgeController extends BaseController
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		binder.setValidator(accommodationPledgeFormValidator);
+		binder.registerCustomEditor(String.class, "verificationProgress", new StringTrimmerEditor(true));
 	}
 	
 	

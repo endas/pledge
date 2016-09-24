@@ -16,7 +16,85 @@
           <input id="frmGoodsPledgeCreateUpdateCallBackTableBodyId" type="hidden"/>
           <input id="frmGoodsPledgeCreateUpdatePropertyUrl" type="hidden"/>
           <input id="frmGoodsPledgeCreateUpdateTitle" type="hidden"/>
-		  
+		   <div class="form-group">
+            <input type="checkbox" data-display-name="Same Address as Profile"
+              data-required="false" id="AccomodationSameAsProfileAddress"
+              onclick='sameAsProfileAddressSelected();' /> <label id="accommodationpledge.sameAsProfileAddress.label" for="AccomodationSameAsProfileAddress" class="control-label"><spring:message code="frmAccomodationSameAsProfileAddress"/></label> 
+        </div>
+      
+      <div id="frmAccommodationPledgeCreateUpdateAddressOneFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+      <label id="accommodationpledge.addressone.label" for="frmAccommodationPledgeCreateUpdateAddressOne" class="control-label"><spring:message code="frmAccommodationPledgeAddressOneLabel"/></label>
+      <input type="text" data-display-name="Address Line 1" data-minlength="5" data-required="true" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateAddressOne" placeholder="<spring:message code="frmAccommodationPledgeAddressOnePlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateAddressOneHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+    
+      <span id="frmAccommodationPledgeCreateUpdateAddressOneHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAddressOneHelpBlock"/></span>
+      <div id="frmAccommodationPledgeCreateUpdateAddressOneAlertBlock" class="alert alert-dismissible hidden" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <span id="frmAccommodationPledgeCreateUpdateAddressOneAlertBlockText"></span>
+      </div>  
+      </div>
+  
+      <div id="frmAccommodationPledgeCreateUpdateAddressTwoFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+      <label id="accommodationpledge.addresstwo.label" for="frmAccommodationPledgeCreateUpdateAddressTwo" class="control-label"><spring:message code="frmAccommodationPledgeAddressTwoLabel"/></label>
+      <input type="text" data-display-name="Address Line 2" data-minlength="5" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateAddressTwo" placeholder="<spring:message code="frmOptionalPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateAddressTwoHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+    
+      <span id="frmAccommodationPledgeCreateUpdateAddressTwoHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeAddressTwoHelpBlock"/></span>
+      <div id="frmAccommodationPledgeCreateUpdateAddressTwoAlertBlock" class="alert alert-dismissible hidden" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <span id="frmAccommodationPledgeCreateUpdateAddressTwoAlertBlockText"></span>
+      </div>
+          
+      </div>
+  
+      <div id="frmAccommodationPledgeCreateUpdateCityFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+      <label id="accommodationpledge.city.label" for="frmAccommodationPledgeCreateUpdateCity" class="control-label"><spring:message code="frmAccommodationPledgeCityLabel"/></label>
+      <input type="text" data-display-name="City/Town/Village" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateCity" placeholder="<spring:message code="frmAccommodationPledgeCityPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateCityHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+    
+      <span id="frmAccommodationPledgeCreateUpdateCityHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeCityHelpBlock"/></span>
+      <div id="frmAccommodationPledgeCreateUpdateCityAlertBlock" class="alert alert-dismissible hidden" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <span id="frmAccommodationPledgeCreateUpdateCityAlertBlockText"></span>
+      </div>
+          
+      </div>
+  
+      <div id="frmAccommodationPledgeCreateUpdateStateProvinceRegionFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+      <label id="accommodationpledge.stateprovinceregion.label" for="frmAccommodationPledgeCreateUpdateStateProvinceRegion" class="control-label"><spring:message code="frmAccommodationPledgeStateProvinceRegionLabel"/></label>
+      <input type="text" data-display-name="County" data-minlength="2" data-required="false" maxlength="50" class="form-control" id="frmAccommodationPledgeCreateUpdateStateProvinceRegion" placeholder="<spring:message code="frmAccommodationPledgeStateProvinceRegionPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateStateProvinceRegionHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+    
+      <span id="frmAccommodationPledgeCreateUpdateStateProvinceRegionHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeStateProvinceRegionHelpBlock"/></span>
+      <div id="frmAccommodationPledgeCreateUpdateStateProvinceRegionAlertBlock" class="alert alert-dismissible hidden" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <span id="frmAccommodationPledgeCreateUpdateStateProvinceRegionAlertBlockText"></span>
+      </div>
+          
+      </div>
+  
+      <div id="frmAccommodationPledgeCreateUpdatePostCodeFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+      <label id="accommodationpledge.postcode.label" for="frmAccommodationPledgeCreateUpdatePostCode" class="control-label"><spring:message code="frmAccommodationPledgePostCodeLabel"/></label>
+      <input type="text" data-display-name="Eircode" data-minlength="0" data-required="false" maxlength="10" class="form-control" id="frmAccommodationPledgeCreateUpdatePostCode" placeholder="<spring:message code="frmOptionalPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdatePostCodeHelpBlock" data-validate-key-press="true" data-toggle="popover"/>
+    
+      <span id="frmAccommodationPledgeCreateUpdatePostCodeHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgePostCodeHelpBlock"/></span>
+      <div id="frmAccommodationPledgeCreateUpdatePostCodeAlertBlock" class="alert alert-dismissible hidden" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <span id="frmAccommodationPledgeCreateUpdatePostCodeAlertBlockText"></span>
+      </div>
+      <p>
+        <a class="text-link" style="text-decoration:underline" href="https://finder.eircode.ie/#/" target="_blank">Find your Eircode</a>
+      </p>  
+      </div>
+  
+      <div id="frmAccommodationPledgeCreateUpdateCountryFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+      <label id="accommodationpledge.country.label" for="frmAccommodationPledgeCreateUpdateCountry" class="control-label"><spring:message code="frmAccommodationPledgeCountryLabel"/></label> 
+      <select class="form-control" data-display-name="Country" data-select-type="standalone" data-required="true" id="frmAccommodationPledgeCreateUpdateCountry" aria-describedby="frmAccommodationPledgeCreateUpdateCountryHelpBlock">
+      </select>
+    
+      <span id="frmAccommodationPledgeCreateUpdateCountryHelpBlock" class="help-block"><spring:message code="frmAccommodationPledgeCountryHelpBlock"/></span>
+      <div id="frmAccommodationPledgeCreateUpdateCountryAlertBlock" class="alert alert-dismissible hidden" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <span id="frmAccommodationPledgeCreateUpdateCountryAlertBlockText"></span>
+      </div>
+          
+      </div>
 		  <div id="frmGoodsPledgeCreateUpdateGoodsCategoryOneFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="goodspledge.goodscategoryone.label" for="frmGoodsPledgeCreateUpdateGoodsCategoryOne" class="control-label"><spring:message code="frmGoodsPledgeGoodsCategoryOneLabel"/></label>	
 			<select class="form-control" data-display-name="Goods Category One" data-select-type="standalone" data-required="false" id="frmGoodsPledgeCreateUpdateGoodsCategoryOne" aria-describedby="frmGoodsPledgeCreateUpdateGoodsCategoryOneHelpBlock" 

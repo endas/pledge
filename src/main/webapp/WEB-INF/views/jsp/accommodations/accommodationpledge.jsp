@@ -88,10 +88,10 @@
 		<section id="accommodationPledgeFormHeaderSection" class="">
 			<div class="container">
 				<div class="page-header">
-					<h1>
+					<%-- <h1>
 						<spring:message
 							code="accommodationpledge.form.pageheader.accommodationpledgeformheader.headertext" />
-					</h1>
+					</h1> --%>
 				</div>
 			</div>
 		</section>
@@ -108,7 +108,8 @@
 				</div>
 
 				<div class="panel-body">
-
+					
+					<spring:bind path="addressOne">
 					<div id="frmAccommodationPledgeAddressOneFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -118,7 +119,7 @@
 								code="frmAccommodationPledgeAddressOneLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message
 								code="frmAccommodationPledgeAddressOnePlaceHolder"
@@ -143,20 +144,21 @@
 								<span id="frmAccommodationPledgeAddressOneAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors id="frmAccommodationPledgeAddressOneHelpBlock"
-									path="addressOne" class="help-block col-sm-offset-2 col-sm-10" />
+									path="addressOne" class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeAddressOneHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeAddressOneHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					<spring:bind path="addressTwo">
 
 					<div id="frmAccommodationPledgeAddressTwoFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
@@ -167,7 +169,7 @@
 								code="frmAccommodationPledgeAddressTwoLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message
 								code="frmAccommodationPledgeAddressTwoPlaceHolder"
@@ -192,21 +194,23 @@
 								<span id="frmAccommodationPledgeAddressTwoAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
+						
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors id="frmAccommodationPledgeAddressTwoHelpBlock"
-									path="addressTwo" class="help-block col-sm-offset-2 col-sm-10" />
+									path="addressTwo" class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeAddressTwoHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeAddressTwoHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
 
-
+					</spring:bind>
+					<spring:bind path="city">
 					<div id="frmAccommodationPledgeCityFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -215,7 +219,7 @@
 							<spring:message code="frmAccommodationPledgeCityLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message code="frmAccommodationPledgeCityPlaceHolder"
 								var="frmAccommodationPledgeCityPlaceHolder" />
@@ -239,20 +243,22 @@
 								<span id="frmAccommodationPledgeCityAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
+						
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors id="frmAccommodationPledgeCityHelpBlock"
-									path="city" class="help-block col-sm-offset-2 col-sm-10" />
+									path="city" class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeCityHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeCityHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					<spring:bind path="stateProvinceRegion">
 					<div id="frmAccommodationPledgeStateProvinceRegionFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -262,7 +268,7 @@
 								code="frmAccommodationPledgeStateProvinceRegionLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message
 								code="frmAccommodationPledgeStateProvinceRegionPlaceHolder"
@@ -288,22 +294,24 @@
 									id="frmAccommodationPledgeStateProvinceRegionAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors
 									id="frmAccommodationPledgeStateProvinceRegionHelpBlock"
 									path="stateProvinceRegion"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeStateProvinceRegionHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeStateProvinceRegionHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					
+					<spring:bind path="postCode">
 					<div id="frmAccommodationPledgePostCodeFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -313,7 +321,7 @@
 								code="frmAccommodationPledgePostCodeLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message code="frmAccommodationPledgePostCodePlaceHolder"
 								var="frmAccommodationPledgePostCodePlaceHolder" />
@@ -337,20 +345,21 @@
 								<span id="frmAccommodationPledgePostCodeAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors id="frmAccommodationPledgePostCodeHelpBlock"
-									path="postCode" class="help-block col-sm-offset-2 col-sm-10" />
+									path="postCode" class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgePostCodeHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgePostCodeHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					<spring:bind path="country">
 					<div id="frmAccommodationPledgeCountryFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -360,7 +369,7 @@
 								code="frmAccommodationPledgeCountryLabel" />
 						</label>
 
-						<div class="col-sm-5 select-container">
+						<div class="col-sm-5 redcross-field select-container">
 
 							<spring:message code="frmAccommodationPledgeCountryPlaceHolder"
 								var="unselectedCountry" />
@@ -388,20 +397,22 @@
 								<span id="frmAccommodationPledgeCountryAlertBlockText"></span>
 							</div>
 						</div>
-
-						<c:choose>
+						<div class="clearfix"></div>
+						<form:errors id="frmAccommodationPledgeCountryHelpBlock"
+									path="country" class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
+						<%-- <c:choose>
 							<c:when test="${status.error}">
-								<form:errors id="frmAccommodationPledgeCountryHelpBlock"
-									path="country" class="help-block col-sm-offset-2 col-sm-10" />
+								
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeCountryHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeCountryHelpBlock" /></span>
 							</c:otherwise>
-						</c:choose>
+						</c:choose> --%>
 					</div>
-
+					</spring:bind>
+					<spring:bind path="ownerOccupier">
 					<div id="frmAccommodationPledgeOwnerOccupierFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -411,7 +422,7 @@
 								code="frmAccommodationPledgeOwnerOccupierLabel" />
 						</label>
 
-						<div class="col-sm-5 select-container">
+						<div class="col-sm-5 redcross-field select-container">
 
 							<spring:message
 								code="frmAccommodationPledgeOwnerOccupierPlaceHolder"
@@ -441,30 +452,33 @@
 								<span id="frmAccommodationPledgeOwnerOccupierAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors id="frmAccommodationPledgeOwnerOccupierHelpBlock"
 									path="ownerOccupier"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeOwnerOccupierHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeOwnerOccupierHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-					<!-- START -->
-
+					</spring:bind>
+					<spring:bind path="accommodateWho">
+					
 					<div id="frmAccommodationPledgeCreateUpdateAccommodateWhoFormGroup"
 						class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+						<div class="col-sm-2">
 						<label id="accommodationpledge.accommodatewho.label"
 							for="frmAccommodationPledgeCreateUpdateAccommodateWhoSelect"
-							class="col-sm-2 control-label"> <spring:message
+							class="control-label"> <spring:message
 								code="frmAccommodationPledgeAccommodateWhoLabel" />
 						</label>
-						<div class="col-sm-5 select-container">
+						</div>
+						<div class="col-sm-5 redcross-field select-container">
 							<form:select
 								id="frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect"
 								path="accommodateWho" data-placeholder="${unselectedDefault}"
@@ -472,21 +486,22 @@
 								<form:options items="${canYouAccommodateMap}" />
 							</form:select>
 						</div>
-
+						<div class="clearfix"></div>
 
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors path="accommodateWho"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
-								<span class="help-block col-sm-offset-2 col-sm-10"><spring:message
+								<span class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeAccommodateWhoHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 
 					</div>
-
+					</spring:bind>
+					<spring:bind path="facilities">
 					<div id="frmAccommodationPledgeCreateUpdateFacilitiesFormGroup"
 						class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 						<label id="accommodationpledge.amenities.label"
@@ -494,7 +509,7 @@
 							class="col-sm-2 control-label"> <spring:message
 								code="frmAccommodationPledgeFacilitiesLabel" />
 						</label>
-						<div class="col-sm-5 select-container">
+						<div class="col-sm-5 redcross-field select-container">
 							<form:select
 								id="frmApplicationUserDetailsCreateUpdateFacilitiesSelect"
 								path="facilities" data-placeholder="${unselectedDefault}"
@@ -503,25 +518,27 @@
 							</form:select>
 
 						</div>
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors path="facilities"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
-								<span class="help-block col-sm-offset-2 col-sm-10"></span>
+								<span class="help-block col-sm-offset-2 col-sm-5 redcross-field"></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
 
-
+					</spring:bind>
+					<spring:bind path="amenities">
 					<div id="frmAccommodationPledgeCreateUpdateAmenitiesFormGroup"
 						class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 						<label id="accommodationpledge.amenities.label"
 							for="frmAccommodationPledgeCreateUpdateAmenities"
 							class="col-sm-2 control-label"><spring:message
 								code="frmAccommodationPledgeAmenitiesLabel" /></label>
-						<div class="col-sm-5 select-container">
+						<div class="col-sm-5 redcross-field select-container">
 							<form:select
 								id="frmApplicationUserDetailsCreateUpdateAmenitiesSelect"
 								name="amenities" path="amenities" class="form-control chosen"
@@ -531,18 +548,20 @@
 							</form:select>
 
 						</div>
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors path="amenities"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
-								<span class="help-block col-sm-offset-2 col-sm-10"></span>
+								<span class="help-block col-sm-offset-2 col-sm-5 redcross-field"></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
 
-
+					</spring:bind>
+					<spring:bind path="accommodationDateFrom">
 
 					<div id="frmAccommodationPledgeAccommodationDateFromFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
@@ -553,7 +572,7 @@
 								code="frmAccommodationPledgeAccommodationDateFromLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message
 								code="frmAccommodationPledgeAccommodationDateFromPlaceHolder"
@@ -581,22 +600,23 @@
 									id="frmAccommodationPledgeAccommodationDateFromAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors
 									id="frmAccommodationPledgeAccommodationDateFromHelpBlock"
 									path="accommodationDateFrom"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeAccommodationDateFromHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeAccommodationDateFromHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					<spring:bind path="accommodationDateTo">
 					<div id="frmAccommodationPledgeAccommodationDateToFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -606,7 +626,7 @@
 								code="frmAccommodationPledgeAccommodationDateToLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message
 								code="frmAccommodationPledgeAccommodationDateToPlaceHolder"
@@ -633,22 +653,23 @@
 									id="frmAccommodationPledgeAccommodationDateToAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors
 									id="frmAccommodationPledgeAccommodationDateToHelpBlock"
 									path="accommodationDateTo"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeAccommodationDateToHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeAccommodationDateToHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					<spring:bind path="accommodationType">
 					<div id="frmAccommodationPledgeAccommodationTypeFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -658,7 +679,7 @@
 								code="frmAccommodationPledgeAccommodationTypeLabel" />
 						</label>
 
-						<div class="col-sm-5 select-container">
+						<div class="col-sm-5 redcross-field select-container">
 
 							<spring:message
 								code="frmAccommodationPledgeAccommodationTypePlaceHolder"
@@ -689,22 +710,24 @@
 								<span id="frmAccommodationPledgeAccommodationTypeAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors
 									id="frmAccommodationPledgeAccommodationTypeHelpBlock"
 									path="accommodationType"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeAccommodationTypeHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeAccommodationTypeHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					
+					<spring:bind path="accommodationCondition">
 					<div id="frmAccommodationPledgeAccommodationConditionFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -714,7 +737,7 @@
 								code="frmAccommodationPledgeAccommodationConditionLabel" />
 						</label>
 
-						<div class="col-sm-5 select-container">
+						<div class="col-sm-5 redcross-field select-container">
 
 							<spring:message
 								code="frmAccommodationPledgeAccommodationConditionPlaceHolder"
@@ -748,22 +771,24 @@
 									id="frmAccommodationPledgeAccommodationConditionAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors
 									id="frmAccommodationPledgeAccommodationConditionHelpBlock"
 									path="accommodationCondition"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeAccommodationConditionHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeAccommodationConditionHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					
+					<spring:bind path="numberOfBeds">
 					<div id="frmAccommodationPledgeNumberOfBedsFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -773,7 +798,7 @@
 								code="frmAccommodationPledgeNumberOfBedsLabel" />
 						</label>
 
-						<div class="col-sm-5 select-container">
+						<div class="col-sm-5 redcross-field select-container">
 
 							<spring:message
 								code="frmAccommodationPledgeNumberOfBedsPlaceHolder"
@@ -803,21 +828,23 @@
 								<span id="frmAccommodationPledgeNumberOfBedsAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors id="frmAccommodationPledgeNumberOfBedsHelpBlock"
 									path="numberOfBeds"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeNumberOfBedsHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeNumberOfBedsHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					
+					<spring:bind path="vacantOrShared">
 					<div id="frmAccommodationPledgeVacantOrSharedFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -827,7 +854,7 @@
 								code="frmAccommodationPledgeVacantOrSharedLabel" />
 						</label>
 
-						<div class="col-sm-5 select-container">
+						<div class="col-sm-5 redcross-field select-container">
 
 							<spring:message
 								code="frmAccommodationPledgeVacantOrSharedPlaceHolder"
@@ -857,21 +884,23 @@
 								<span id="frmAccommodationPledgeVacantOrSharedAlertBlockText"></span>
 							</div>
 						</div>
-
+						<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors id="frmAccommodationPledgeVacantOrSharedHelpBlock"
 									path="vacantOrShared"
-									class="help-block col-sm-offset-2 col-sm-10" />
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeVacantOrSharedHelpBlock"
-									class="help-block col-sm-offset-2 col-sm-10"><spring:message
+									class="help-block col-sm-offset-2 col-sm-5 redcross-field"><spring:message
 										code="frmAccommodationPledgeVacantOrSharedHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					
+					<spring:bind path="otherAmenities">
 					<div id="frmAccommodationPledgeOtherAmenitiesFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -881,7 +910,7 @@
 								code="frmAccommodationPledgeOtherAmenitiesLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message
 								code="frmAccommodationPledgeOtherAmenitiesPlaceHolder"
@@ -909,6 +938,7 @@
 						</div>
 						<span id="frmAccommodationPledgeOtherAmenitiesCountBlock"
 							class="help-block col-sm-offset-2 col-sm-1"></span>
+							<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors id="frmAccommodationPledgeOtherAmenitiesHelpBlock"
@@ -921,7 +951,9 @@
 							</c:otherwise>
 						</c:choose>
 					</div>
-
+					</spring:bind>
+					
+					<spring:bind path="additionalInformation">
 					<div id="frmAccommodationPledgeAdditionalInformationFormGroup"
 						class="form-group has-feedback ${status.error ? 'has-error' : ''}">
 
@@ -931,7 +963,7 @@
 								code="frmAccommodationPledgeAdditionalInformationLabel" />
 						</label>
 
-						<div class="col-sm-10">
+						<div class="col-sm-5 redcross-field">
 
 							<spring:message
 								code="frmAccommodationPledgeAdditionalInformationPlaceHolder"
@@ -946,134 +978,164 @@
 								aria-describedby="frmAccommodationPledgeAdditionalInformationHelpBlock"
 								data-validate-key-press="true" />
 
-							<span
-								id="frmAccommodationPledgeAdditionalInformationFeedbackIcon"
+							<span id="frmAccommodationPledgeAdditionalInformationFeedbackIcon"
 								class="glyphicon form-control-feedback" aria-hidden="true"></span>
+							
 							<div id="frmAccommodationPledgeAdditionalInformationAlertBlock"
 								class="alert alert-dismissible hidden" role="alert">
-								<button type="button" class="close" data-dismiss="alert"
-									aria-label="Close">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<span
-									id="frmAccommodationPledgeAdditionalInformationAlertBlockText"></span>
+								<span id="frmAccommodationPledgeAdditionalInformationAlertBlockText"></span>
 							</div>
 						</div>
 						<span id="frmAccommodationPledgeAdditionalInformationCountBlock"
-							class="help-block col-sm-offset-2 col-sm-1"></span>
+							class="help-block col-sm-2"></span>
+							<div class="clearfix"></div>
 						<c:choose>
 							<c:when test="${status.error}">
 								<form:errors
 									id="frmAccommodationPledgeAdditionalInformationHelpBlock"
-									path="additionalInformation" class="help-block col-sm-9" />
+									path="additionalInformation" class="help-block col-sm-5 redcross-field col-sm-offset-2" />
 							</c:when>
 							<c:otherwise>
 								<span id="frmAccommodationPledgeAdditionalInformationHelpBlock"
-									class="help-block col-sm-9"><spring:message
+									class="help-block col-sm-5 redcross-field col-sm-offset-2"><spring:message
 										code="frmAccommodationPledgeAdditionalInformationHelpBlock" /></span>
 							</c:otherwise>
 						</c:choose>
 					</div>
-
-					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-						<form:label path="flaggedIssue" class="col-sm-2 control-label"><spring:message code="serviceplegde.flaggedIssue" /></form:label>
-						<div class="col-sm-10">
-							<%--todo: add proper translation mechanism--%>
-							<form:select path="flaggedIssue" class="form-control">
-								<c:forEach items="${flaggedIssues}" var="issue">
-									<spring:message code="${issue.name}" var="label" />
-									<form:option value="${issue.code}" label="${label}" />
-								</c:forEach>
-							</form:select>
-						</div>
-						<c:choose>
-							<c:when test="${status.error}">
-								<form:errors path="flaggedIssue" class="help-block col-sm-9" />
-							</c:when>
-						</c:choose>
-					</div>
-
-					<div
-						class="form-group has-feedback ${status.error ? 'has-error' : ''}"
-						<sec:authorize access="hasRole('ROLE_ADMIN')">class="form-group has-feedback  ${status.error ? 'has-error' : ''}"</sec:authorize>
-						<sec:authorize access="!hasRole('ROLE_ADMIN')">class="hidden"</sec:authorize>>
-
-						<form:label path="status" class="col-sm-2 control-label">
-							<spring:message code="frmPledgeStatusLabel" />
-						</form:label>
-						<div class="col-sm-10">
-
-
-							<form:select path="status" data-display-name="Status"
-								data-reference-type="PledgeStatus" data-select-type="standalone"
-								data-required="true" class="form-control" id="frmPledgeStatus"
-								aria-describedby="frmpledgeStatusHelpBlock" onchange="">
-								<form:options items="${statusMap}" />
-							</form:select>
-						</div>
-						<c:choose>
-							<c:when test="${status.error}">
-								<form:errors path="status" class="help-block col-sm-9" />
-							</c:when>
-						</c:choose>
-
-					</div>
+					</spring:bind>
 					
-					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-						<form:label path="activeStatus" class="col-sm-2 control-label"><spring:message code="activeStatus.label	" /></form:label>
-						<div class="col-sm-10">
-							<%--todo: add proper translation mechanism--%>
-							<form:select path="activeStatus" class="form-control">
-								<c:forEach items="${activeStatusValues}" var="status">
-									<spring:message code="${status.name}" var="label" />
-									<form:option value="${status.code}" label="${label}" />
-								</c:forEach>
-							</form:select>
-						</div>
-						<c:choose>
-							<c:when test="${status.error}">
-								<form:errors path="activeStatus" class="help-block col-sm-9" />
-							</c:when>
-						</c:choose>
-					</div>
-					
-					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-						<form:label path="pledgeTakenStatus" class="col-sm-2 control-label"><spring:message code="pledgeTakenStatus.label	" /></form:label>
-						<div class="col-sm-10">
-							<%--todo: add proper translation mechanism--%>
-							<form:select path="pledgeTakenStatus" class="form-control">
-								<c:forEach items="${pledgeTakenStatusValues}" var="status">
-									<spring:message code="${status.name}" var="label" />
-									<form:option value="${status.code}" label="${label}" />
-								</c:forEach>
-							</form:select>
-						</div>
-						<c:choose>
-							<c:when test="${status.error}">
-								<form:errors path="activeStatus" class="help-block col-sm-9" />
-							</c:when>
-						</c:choose>
-					</div>
-					
-					<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
-						<form:label path="verificationProgress" class="col-sm-2 control-label"><spring:message code="verificationProgress.label	" /></form:label>
-						<div class="col-sm-10">
-							<%--todo: add proper translation mechanism--%>
-							<form:select path="verificationProgress" class="form-control">
-								<c:forEach items="${verificationProgressValues}" var="status">
-									<spring:message code="${status.name}" var="label" />
-									<form:option value="${status.code}" label="${label}" />
-								</c:forEach>
-							</form:select>
-						</div>
-						<c:choose>
-							<c:when test="${status.error}">
-								<form:errors path="activeStatus" class="help-block col-sm-9" />
-							</c:when>
-						</c:choose>
-					</div>
-					
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+               	 
+<spring:bind path="flaggedIssue">
+	<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		<form:label path="flaggedIssue" class="col-sm-2 control-label">
+			<spring:message code="serviceplegde.flaggedIssue" />
+		</form:label>
+		<div class="col-sm-5 redcross-field">
+			<%--todo: add proper translation mechanism--%>
+			<form:select path="flaggedIssue" class="form-control">
+				<c:forEach items="${flaggedIssues}" var="issue">
+					<spring:message code="${issue.name}" var="label" />
+					<form:option value="${issue.code}" label="${label}" />
+				</c:forEach>
+			</form:select>
+		</div>
+		<div class="clearfix"></div>
+		<c:choose>
+			<c:when test="${status.error}">
+				<form:errors path="flaggedIssue"
+					class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
+			</c:when>
+		</c:choose>
+	</div>
+</spring:bind>
 
+<spring:bind path="status">
+	<div class="form-group has-feedback ${status.error ? 'has-error' : ''}"
+		<sec:authorize access="hasRole('ROLE_ADMIN')">class="form-group has-feedback  ${status.error ? 'has-error' : ''}"</sec:authorize>
+		<sec:authorize access="!hasRole('ROLE_ADMIN')">class="hidden"</sec:authorize>>
+
+		<form:label path="status" class="col-sm-2 control-label">
+			<spring:message code="frmPledgeStatusLabel" />
+		</form:label>
+		<div class="col-sm-5 redcross-field">
+
+
+			<form:select path="status" data-display-name="Status"
+				data-reference-type="PledgeStatus" data-select-type="standalone"
+				data-required="true" class="form-control" id="frmPledgeStatus"
+				aria-describedby="frmpledgeStatusHelpBlock" onchange="">
+				<form:options items="${statusMap}" />
+			</form:select>
+		</div>
+		<div class="clearfix"></div>
+		<c:choose>
+			<c:when test="${status.error}">
+				<form:errors path="status"
+					class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
+			</c:when>
+		</c:choose>
+
+	</div>
+</spring:bind>
+
+<spring:bind path="activeStatus">
+	<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		<form:label path="activeStatus" class="col-sm-2 control-label">
+			<spring:message code="activeStatus.label" />
+		</form:label>
+		<div class="col-sm-5 redcross-field">
+			<%--todo: add proper translation mechanism--%>
+			<form:select path="activeStatus" class="form-control">
+				<c:forEach items="${activeStatusValues}" var="status">
+					<spring:message code="${status.name}" var="label" />
+					<form:option value="${status.code}" label="${label}" />
+				</c:forEach>
+			</form:select>
+		</div>
+		<div class="clearfix"></div>
+		<c:choose>
+			<c:when test="${status.error}">
+				<form:errors path="activeStatus"
+					class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
+			</c:when>
+		</c:choose>
+	</div>
+</spring:bind>
+
+<spring:bind path="pledgeTakenStatus">
+	<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		<form:label path="pledgeTakenStatus" class="col-sm-2 control-label">
+			<spring:message code="pledgeTakenStatus.label" />
+		</form:label>
+		<div class="col-sm-5 redcross-field">
+
+			<form:select path="pledgeTakenStatus" class="form-control">
+				<c:forEach items="${pledgeTakenStatusValues}" var="status">
+					<spring:message code="${status.name}" var="label" />
+					<form:option value="${status.code}" label="${label}" />
+				</c:forEach>
+			</form:select>
+		</div>
+		<div class="clearfix"></div>
+		<c:choose>
+			<c:when test="${status.error}">
+				<form:errors path="activeStatus"
+					class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
+			</c:when>
+		</c:choose>
+	</div>
+</spring:bind>
+
+<spring:bind path="verificationProgress">
+	<div class="form-group has-feedback ${status.error ? 'has-error' : ''}">
+		<form:label path="verificationProgress" class="col-sm-2 control-label">
+			<spring:message code="verificationProgress.label" />
+		</form:label>
+		<div class="col-sm-5 redcross-field">
+
+			<form:select path="verificationProgress" class="form-control">
+				<form:option value="" label="${unselectedDefault}" />
+				<c:forEach items="${verificationProgressValues}" var="status">
+					<spring:message code="${status.name}" var="label" />
+					<form:option value="${status.code}" label="${label}" />
+				</c:forEach>
+			</form:select>
+		</div>
+		<div class="clearfix"></div>
+		<c:choose>
+			<c:when test="${status.error}">
+				<form:errors path="activeStatus"
+					class="help-block col-sm-offset-2 col-sm-5 redcross-field" />
+			</c:when>
+		</c:choose>
+	</div>
+</spring:bind>
+
+				</sec:authorize>
 				</div>
 				<!-- class="panel-body" -->
 			</div>
@@ -1113,7 +1175,7 @@
 	<script src="${accommodationPledgeJs}"></script>
 	<style>
 body {
-	background: url('../aboutuBG.png') no-repeat center center fixed;
+	/* background: url('../aboutuBG.png') no-repeat center center fixed; */
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -1163,6 +1225,8 @@ body {
 .modal-footer {
 	text-align: center;
 }
+
+
 </style>
 </body>
 

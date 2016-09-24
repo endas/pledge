@@ -83,8 +83,10 @@ $( document ).ready(function() {
 	    event.stopPropagation();
 	});
 	
+	$('#frmAccommodationPledgeCountry').find('option[value="159"]').prop('selected', true).end().trigger('chosen:updated');
 
-
+//	$('#frmAccommodationPledgeCountry').prop('disabled', 'disabled');
+	
 
 	if (displayTextAreaCount){
 		

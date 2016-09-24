@@ -7,8 +7,11 @@ import java.util.HashSet;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-
+import org.volunteertech.pledges.accommodationpledge.dao.AccommodationFlaggedIssuesEnum;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
+import org.volunteertech.pledges.pledge.status.ActiveStatusEnum;
+import org.volunteertech.pledges.pledge.status.PledgeTakenStatusEnum;
+import org.volunteertech.pledges.pledge.status.VerificationProgressEnum;
 
 
 
@@ -46,6 +49,25 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
      */
     private CurrentMode currentMode;
 
+    private Boolean sameAsProfileAddress;
+    
+    /** the street or house address */
+    private String addressOne;
+	
+    /** the town or city address */
+    private String addressTwo;
+	
+    /** the post code */
+    private String city;
+	
+    /** the post code */
+    private String stateProvinceRegion;
+	
+    /** the post code */
+    private String postCode;
+	
+    /** the address type */
+    private Long country;
     
     /** the address type */
     private Long pledgeServiceLevelOne;
@@ -106,18 +128,13 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     private Date dateUpdated;
 
     private ServicePlegdeFlaggedIssuesEnum flaggedIssue;
-
-
-    private Long status;;
+    private Long status = new Long(0);
     private String statusReferenceTranslation;
     
-    public Long getStatus() {
-		return status;
-	}
-
-	public void setStatus(Long status) {
-		this.status = status;
-	}	
+    private ActiveStatusEnum activeStatus = ActiveStatusEnum.ACTIVE;
+ 
+    private PledgeTakenStatusEnum pledgeTakenStatus = PledgeTakenStatusEnum.NOT_TAKEN;
+    private VerificationProgressEnum verificationProgress = VerificationProgressEnum.NOT_READY_TO_PROGRESS;	
     
 	
     public String getStatusReferenceTranslation() {
@@ -515,6 +532,62 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 		return this.currentMode;
 	}
     
+	public Boolean getSameAsProfileAddress() {
+		return sameAsProfileAddress;
+	}
+
+	public void setSameAsProfileAddress(Boolean sameAsProfileAddress) {
+		this.sameAsProfileAddress = sameAsProfileAddress;
+	}
+
+	public String getAddressOne() {
+		return addressOne;
+	}
+
+	public void setAddressOne(String addressOne) {
+		this.addressOne = addressOne;
+	}
+
+	public String getAddressTwo() {
+		return addressTwo;
+	}
+
+	public void setAddressTwo(String addressTwo) {
+		this.addressTwo = addressTwo;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getStateProvinceRegion() {
+		return stateProvinceRegion;
+	}
+
+	public void setStateProvinceRegion(String stateProvinceRegion) {
+		this.stateProvinceRegion = stateProvinceRegion;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+
+	public Long getCountry() {
+		return country;
+	}
+
+	public void setCountry(Long country) {
+		this.country = country;
+	}
+
 	public void setPledgeServiceDateAvailableTo(Date date){
 		this.pledgeServiceDateAvailableTo = date;
 	}
@@ -551,6 +624,15 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 	}
 
 
+	public Long getStatus() {
+		return status;
+	}
+
+	public void setStatus(Long status) {
+		this.status = status;
+	}
+
+
 
     public ServicePlegdeFlaggedIssuesEnum getFlaggedIssue() {
         return flaggedIssue;
@@ -559,6 +641,34 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     public void setFlaggedIssue(ServicePlegdeFlaggedIssuesEnum flaggedIssue) {
         this.flaggedIssue = flaggedIssue;
     }
+
+
+	public ActiveStatusEnum getActiveStatus() {
+		// TODO Auto-generated method stub
+		return this.activeStatus;
+	}
+
+
+	public void setActiveStatus(ActiveStatusEnum a) {
+		this.activeStatus = a;
+		
+	}
+
+	public PledgeTakenStatusEnum getPledgeTakenStatus() {
+		return pledgeTakenStatus;
+	}
+
+	public void setPledgeTakenStatus(PledgeTakenStatusEnum pledgeTakenStatus) {
+		this.pledgeTakenStatus = pledgeTakenStatus;
+	}
+
+	public VerificationProgressEnum getVerificationProgress() {
+		return verificationProgress;
+	}
+
+	public void setVerificationProgress(VerificationProgressEnum verificationProgress) {
+		this.verificationProgress = verificationProgress;
+	}
 }
     
     

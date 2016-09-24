@@ -148,13 +148,14 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
     private Date dateUpdated;
 
-    private AccommodationFlaggedIssuesEnum flaggedIssue;
+   
     
    
     private Set<Long> amenities = new HashSet<Long>();
     private Set<Long> facilities = new HashSet<Long>();
     private Set<Long> accommodateWho = new HashSet<Long>();
     
+    private AccommodationFlaggedIssuesEnum flaggedIssue;
     private Long status = new Long(0);
     private String statusReferenceTranslation;
     
@@ -867,6 +868,8 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 	public void setVerificationProgress(VerificationProgressEnum verificationProgress) {
 		this.verificationProgress = verificationProgress;
 	}
+
+	
 }
     
     

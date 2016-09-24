@@ -315,7 +315,7 @@ $( document ).ready(function() {
 					addCell(row, document.createTextNode(obj.accommodationConditionReferenceTranslation));
 					addCell(row, document.createTextNode(obj.numberOfBedsReferenceTranslation));
 					addCell(row, document.createTextNode(obj.vacantOrSharedReferenceTranslation));
-					addCell(row, document.createTextNode(obj.canYouAccommodateReferenceTranslation));
+//					addCell(row, document.createTextNode(obj.canYouAccommodateReferenceTranslation));
 					addCell(row, document.createTextNode(obj.accommodationDateFrom));
 					addCell(row, document.createTextNode(obj.accommodationDateTo));
 					if($('#frmRegisterOfPledges').data('admin')){
