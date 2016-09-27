@@ -9,7 +9,19 @@
             <generator class="native"/>
         </id>
         <property name="goodsPledgeID" type="long" column="GOODSPLEDGEID"/>
+        <property name="sameAsProfileAddress" type="boolean" column="SAMEASPROFILEADDRESS" not-null="false"></property>
         
+		<property name="addressOne" type="string" column="ADDRESSONE" length="50" not-null="false"></property>	
+	  
+		<property name="addressTwo" type="string" column="ADDRESSTWO" length="50" not-null="false"></property>	
+	  
+		<property name="city" type="string" column="CITY" length="50" ></property>	
+	  
+		<property name="stateProvinceRegion" type="string" column="STATEPROVINCEREGION" length="50" ></property>	
+	  
+		<property name="postCode" type="string" column="POSTCODE" length="10" ></property>	
+	  
+		<property name="country" type="long" column="COUNTRY" length="10" not-null="false"></property>	
 		<property name="goodsCategoryOne" type="long" column="GOODSCATEGORYONE" length="10"></property>	
 	  
 		<property name="goodsCategoryTwo" type="long" column="GOODSCATEGORYTWO" length="10"></property>	

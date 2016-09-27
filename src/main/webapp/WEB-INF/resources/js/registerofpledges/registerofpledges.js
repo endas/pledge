@@ -154,7 +154,7 @@ var frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = null;
 
 var frmGoodsPledgeCreateUpdateItemSizeBuffer = null;
 
-//var eircodeRegex = /^[AC-FHKNPRTV-Y]{1}[0-9]{1}[0-9W]{1}[ \-]?[0-9AC-FHKNPRTV-Y]{4}$/;
+
 var eircodeRegex = /(^$|^[AC-FHKNPRTV-Y]{1}[0-9]{1}[0-9W]{1}[ \-]?[0-9AC-FHKNPRTV-Y]{4}$)/;
 
 function configureMultiSelect(modal, elementID, entries){
@@ -175,6 +175,25 @@ $.ajax({
 	},
 	success: function( data ) {
 		pledgeStatusOptions=data;
+	}
+});
+
+var countries=[];
+$.ajax({
+	dataType: "json",
+	url: rootContext + "/restful/referenceslist",
+	data: {
+		referenceType: "EuropeCountry"
+	},
+	success: function( data ) {
+		$.each( data, function( key, val ) {
+			var el = document.createElement("option");
+			el.textContent = val;
+			el.value = key;
+			$('.js-country-select').append(el);
+		});
+		$('.js-country-select').val("159");
+		$('.js-country-select').prop("disabled", "disabled");
 	}
 });
 function resetModalInputs(modal){
@@ -217,6 +236,7 @@ $( modal.find("input[type=text], input[type=tel], input[type=email], input[type=
 			pledgeStatusSelectInput.appendChild(el);
 		});	
 	}
+	
 	var pledgeStatusSelectInput = modal.find('.js-status-select');
 	if ($(pledgeStatusSelectInput).length){
 		if ($(pledgeStatusSelectInput).find('option').length == 0 ){
@@ -267,7 +287,36 @@ $( document ).ready(function() {
 	// focus on the first input capable of receiving focus.
 	checkFocus(document.getElementById("frmRegisterOfPledges"));
 
-
+	$('.js-address-same-as-profile').click(function(event){
+		var modal = $(event.currentTarget).closest('.modal');
+		if($(event.currentTarget).is(':checked')){
+			$.ajax({
+				dataType: "json",
+				method: "GET",
+				url : rootContext + "/restful/currentUserAddress",
+				success: function( data ) {
+					modal.find('#frmPledgeCreateUpdateAddressOne').val(data.addressOne); 
+					modal.find('#frmPledgeCreateUpdateAddressTwo').val(data.addressTwo);
+					modal.find('#frmPledgeCreateUpdateCity').val(data.city);
+					modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(data.stateProvinceRegion);
+					modal.find('#frmPledgeCreateUpdatePostCode').val(data.postCode);
+					modal.find('.js-address-section').slideUp();
+				},
+				error: function( data ){
+					
+				}
+			});
+		}else{
+			modal.find('#frmPledgeCreateUpdateAddressOne').val(""); 
+			modal.find('#frmPledgeCreateUpdateAddressTwo').val("");
+			modal.find('#frmPledgeCreateUpdateCity').val("");
+			modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val("");
+			modal.find('#frmPledgeCreateUpdatePostCode').val("");
+			modal.find('.js-country-select').val("159");
+			modal.find('.js-address-section').slideDown();
+		}
+	});
+	
 
 	$.fn.datepicker.defaults.format = "dd/mm/yyyy";
 	$.fn.datepicker.defaults.autoclose = true;
@@ -769,6 +818,7 @@ $( document ).ready(function() {
 				postCode : modal.find('#frmApplicationUserDetailsCreateUpdatePostCode').val(),
 				country : modal.find('#frmApplicationUserDetailsCreateUpdateCountry').val(),
 				emailAddress : modal.find('#frmApplicationUserDetailsCreateUpdateEmailAddress').val()
+				
 		};
 
 		var propertyUrl = modal.find('#frmApplicationUserDetailsCreateUpdatePropertyUrl').val();
@@ -907,39 +957,6 @@ $( document ).ready(function() {
 
 		frmAccommodationPledgeCreateUpdateLaddaSubmitButtonHandler.start();
 
-
-		var countrySelectInput = document.getElementById('frmAccommodationPledgeCreateUpdateCountry');
-
-		if (countrySelectInput.length == 0){
-			$.ajax({
-				dataType: "json",
-				url: rootContext + "/restful/referenceslist",
-				data: {
-					referenceType: "EuropeCountry"
-				},
-				success: function( data ) {
-					var unselectedOption = document.createElement("option");
-					unselectedOption.value = -1;
-					unselectedOption.textContent = "Select Country";
-					countrySelectInput.appendChild(unselectedOption);
-
-					$.each( data, function( key, val ) {
-						var el = document.createElement("option");
-						el.textContent = val;
-						el.value = key;
-
-						countrySelectInput.appendChild(el);
-						frmAccommodationPledgeCreateUpdateCountrySetupCompleted = true;
-					});
-				}
-			});
-		}
-		else{
-			frmAccommodationPledgeCreateUpdateCountrySetupCompleted = true;
-		}
-		$(countrySelectInput).val(131);
-		$(countrySelectInput).prop('disabled', 'disabled');
-		
 		var facilitiesSelectInput = document.getElementById('frmApplicationUserDetailsCreateUpdateFacilitiesSelect');
 		if (facilitiesSelectInput.length == 0 ){
 			$.ajax({
@@ -1195,20 +1212,20 @@ $( document ).ready(function() {
 				},
 				success: function( data ) {
 					//modal.find('#frmAccommodationPledgeCreateUpdateAddressOne').focus();
-
-					modal.find('#frmAccommodationPledgeCreateUpdateAddressOne').val(data.addressOne);
+					if(data.sameAsProfileAddress){
+						modal.find('.js-address-same-as-profile').click();
+					}else{
+						modal.find('#frmPledgeCreateUpdateAddressOne').val(data.addressOne);
+						modal.find('#frmPledgeCreateUpdateAddressTwo').val(data.addressTwo);
+						modal.find('#frmPledgeCreateUpdateCity').val(data.city);
+						modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(data.stateProvinceRegion);
+						modal.find('#frmPledgeCreateUpdatePostCode').val(data.postCode);
+						modal.find('#frmPledgeCreateUpdateCountry').val(data.country);
+					}
 					frmAccommodationPledgeCreateUpdateAddressOneBuffer = data.addressOne;
-
-					modal.find('#frmAccommodationPledgeCreateUpdateAddressTwo').val(data.addressTwo);
 					frmAccommodationPledgeCreateUpdateAddressTwoBuffer = data.addressTwo;
-
-					modal.find('#frmAccommodationPledgeCreateUpdateCity').val(data.city);
 					frmAccommodationPledgeCreateUpdateCityBuffer = data.city;
-
-					modal.find('#frmAccommodationPledgeCreateUpdateStateProvinceRegion').val(data.stateProvinceRegion);
 					frmAccommodationPledgeCreateUpdateStateProvinceRegionBuffer = data.stateProvinceRegion;
-
-					modal.find('#frmAccommodationPledgeCreateUpdatePostCode').val(data.postCode);
 					frmAccommodationPledgeCreateUpdatePostCodeBuffer = data.postCode;
 					
 					modal.find('#frmAccommodationPledgeCreateUpdateNumberOfBedrooms').val(data.numberOfBedrooms)
@@ -1388,7 +1405,7 @@ $( document ).ready(function() {
 
 
 	});	
-
+	
 	$('#accommodationPledgeCreateUpdateModal').on('shown.bs.modal', function (event) {
 		if (frmAccommodationPledgeCreateUpdateLaddaSubmitButtonHandler != null){
 			frmAccommodationPledgeCreateUpdateLaddaSubmitButtonHandler.stop();
@@ -1396,7 +1413,7 @@ $( document ).ready(function() {
 		
 		var isNewAccomodation = $('#accommodationPledgeCreateUpdateModal').find('#frmAccommodationPledgeCreateUpdateLoadedObjectId').val().length == 0;
 		if(isNewAccomodation){
-			$('#AccomodationSameAsProfileAddress').click();
+			$('#accommodationPledgeCreateUpdateModal').find('.js-address-same-as-profile').click();
 		}
 		
 		
@@ -1404,6 +1421,7 @@ $( document ).ready(function() {
 		$('#frmApplicationUserDetailsCreateUpdateAmenitiesSelect').chosen();
 		$('#frmApplicationUserDetailsCreateUpdateFacilitiesSelect').chosen();
 		$('#frmApplicationUserDetailsCreateUpdateAccommodateWhoSelect').chosen();
+		$('.chosen-container').width("100%");
 	});	
 
 
@@ -1466,12 +1484,13 @@ $( document ).ready(function() {
 		var accommodationPledge = {
 				parentObjectId : modal.find('#frmAccommodationPledgeCreateUpdateParentObjectId').val(),
 				id : modal.find('#frmAccommodationPledgeCreateUpdateLoadedObjectId').val(),
-				addressOne : modal.find('#frmAccommodationPledgeCreateUpdateAddressOne').val(),
-				addressTwo : modal.find('#frmAccommodationPledgeCreateUpdateAddressTwo').val(),
-				city : modal.find('#frmAccommodationPledgeCreateUpdateCity').val(),
-				stateProvinceRegion : modal.find('#frmAccommodationPledgeCreateUpdateStateProvinceRegion').val(),
-				postCode : modal.find('#frmAccommodationPledgeCreateUpdatePostCode').val(),
-				country : modal.find('#frmAccommodationPledgeCreateUpdateCountry').val(),
+				sameAsProfileAddress: modal.find('.js-address-same-as-profile').is(":checked"),
+				addressOne : modal.find('#frmPledgeCreateUpdateAddressOne').val(),
+				addressTwo : modal.find('#frmPledgeCreateUpdateAddressTwo').val(),
+				city : modal.find('#frmPledgeCreateUpdateCity').val(),
+				stateProvinceRegion : modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(),
+				postCode : modal.find('#frmPledgeCreateUpdatePostCode').val(),
+				country : modal.find('#frmPledgeCreateUpdateCountry').val(),
 				ownerOccupier : modal.find('#frmAccommodationPledgeCreateUpdateOwnerOccupier').val(),
 				accommodationDateFrom : modal.find('#frmAccommodationPledgeCreateUpdateAccommodationDateFrom').val(),
 				accommodationDateTo : modal.find('#frmAccommodationPledgeCreateUpdateAccommodationDateTo').val(),
@@ -1833,7 +1852,18 @@ $( document ).ready(function() {
 					}
 
 					frmServicePledgeCreateUpdatePledgeServiceLevelThreeTimeOut();
-
+					if(data.sameAsProfileAddress){
+						modal.find('.js-address-same-as-profile').click();
+					}else{
+						modal.find('#frmPledgeCreateUpdateAddressOne').val(data.addressOne);
+						modal.find('#frmPledgeCreateUpdateAddressTwo').val(data.addressTwo);
+						modal.find('#frmPledgeCreateUpdateCity').val(data.city);
+						modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(data.stateProvinceRegion);
+						modal.find('#frmPledgeCreateUpdatePostCode').val(data.postCode);
+						modal.find('#frmPledgeCreateUpdateCountry').val(data.country);
+					}
+					
+					
 					modal.find('#frmServicePledgeCreateUpdateAdditionalInformation').val(data.additionalInformation);
 					frmServicePledgeCreateUpdateAdditionalInformationBuffer = data.additionalInformation;
 
@@ -1892,13 +1922,18 @@ $( document ).ready(function() {
 
 
 	});	
-
-	$('#servicePledgeCreateUpdateModal').on('shown.bs.modal', function (event) {
+	var serviceModal = $('#servicePledgeCreateUpdateModal');
+	serviceModal.on('shown.bs.modal', function (event) {
 		if (frmServicePledgeCreateUpdateLaddaSubmitButtonHandler != null){
 			frmServicePledgeCreateUpdateLaddaSubmitButtonHandler.stop();
 		}
+		var isNew = $('#servicePledgeCreateUpdateModal').find('#frmServicePledgeCreateUpdateLoadedObjectId').val().length == 0;
+		if(isNew){
+			$(serviceModal).find('.js-address-same-as-profile').click();
+		}
 		$('#frmServicePledgeCreateUpdateTravelAbilitiesSelect').chosen();
-		$('#frmServicePledgeCreateUpdatePledgeServiceLevelOne').focus();	
+		$('#frmServicePledgeCreateUpdatePledgeServiceLevelOne').focus();
+		$('.chosen-container').width("100%");
 	});	
 
 
@@ -1963,7 +1998,14 @@ $( document ).ready(function() {
 				pledgeServiceDateAvailableTo : modal.find('#frmServicePledgeCreateUpdatePledgeServiceDateAvailableTo').val(),
 				pledgeServiceHoursPerWeek : modal.find('#frmServicePledgeCreateUpdatePledgeServiceHoursPerWeek').val(),
 				pledgeServiceTravelAbilities : _.map(modal.find('#frmServicePledgeCreateUpdateTravelAbilitiesSelect').val(), Number),
-				status: modal.find('#frmServicePledgeStatusSelect').val()
+				status: modal.find('#frmServicePledgeStatusSelect').val(),
+				sameAsProfileAddress: modal.find('.js-address-same-as-profile').is(":checked"),
+				addressOne : modal.find('#frmPledgeCreateUpdateAddressOne').val(),
+				addressTwo : modal.find('#frmPledgeCreateUpdateAddressTwo').val(),
+				city : modal.find('#frmPledgeCreateUpdateCity').val(),
+				stateProvinceRegion : modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(),
+				postCode : modal.find('#frmPledgeCreateUpdatePostCode').val(),
+				country : modal.find('#frmPledgeCreateUpdateCountry').val()
 		};
 
 		var propertyUrl = modal.find('#frmServicePledgeCreateUpdatePropertyUrl').val();
@@ -2444,8 +2486,16 @@ $( document ).ready(function() {
 					}
 
 					frmGoodsPledgeCreateUpdateGoodsQuantityTimeOut();
-
-					modal.find('#frmGoodsPledgeCreateUpdateAdditionalInformation').val(data.additionalInformation);
+					if(data.sameAsProfileAddress){
+						modal.find('.js-address-same-as-profile').click();
+					}else{
+						modal.find('#frmPledgeCreateUpdateAddressOne').val(data.addressOne);
+						modal.find('#frmPledgeCreateUpdateAddressTwo').val(data.addressTwo);
+						modal.find('#frmPledgeCreateUpdateCity').val(data.city);
+						modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(data.stateProvinceRegion);
+						modal.find('#frmPledgeCreateUpdatePostCode').val(data.postCode);
+						modal.find('#frmPledgeCreateUpdateCountry').val(data.country);
+					}
 					frmGoodsPledgeCreateUpdateAdditionalInformationBuffer = data.additionalInformation;
 
 					modal.find('#frmGoodsPledgeCreateUpdateItemSize').val(data.itemSize);
@@ -2471,6 +2521,10 @@ $( document ).ready(function() {
 	$('#goodsPledgeCreateUpdateModal').on('shown.bs.modal', function (event) {
 		if (frmGoodsPledgeCreateUpdateLaddaSubmitButtonHandler != null){
 			frmGoodsPledgeCreateUpdateLaddaSubmitButtonHandler.stop();
+		}
+		var isNew = $('#goodsPledgeCreateUpdateModal').find('#frmGoodsPledgeCreateUpdateLoadedObjectId').val().length == 0;
+		if(isNew){
+			$('#goodsPledgeCreateUpdateModal').find('.js-address-same-as-profile').click();
 		}
 		$('#frmGoodsPledgeCreateUpdateGoodsCategoryOne').focus()
 	});	
@@ -2542,7 +2596,14 @@ $( document ).ready(function() {
 				itemSize : modal.find('#frmGoodsPledgeCreateUpdateItemSize').val(),
 				dateAvailableFrom: modal.find('#frmGoodsPledgeCreateUpdateGoodsDateFrom').val(),
 				dateAvailableTo: modal.find('#frmGoodsPledgeCreateUpdateGoodsDateTo').val(),
-				status: modal.find('.js-status-select').val()
+				status: modal.find('.js-status-select').val(),
+				sameAsProfileAddress: modal.find('.js-address-same-as-profile').is(":checked"),
+				addressOne : modal.find('#frmPledgeCreateUpdateAddressOne').val(),
+				addressTwo : modal.find('#frmPledgeCreateUpdateAddressTwo').val(),
+				city : modal.find('#frmPledgeCreateUpdateCity').val(),
+				stateProvinceRegion : modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(),
+				postCode : modal.find('#frmPledgeCreateUpdatePostCode').val(),
+				country : modal.find('#frmPledgeCreateUpdateCountry').val()
 		};
 
 		var propertyUrl = modal.find('#frmGoodsPledgeCreateUpdatePropertyUrl').val();
@@ -2764,48 +2825,6 @@ $( document ).ready(function() {
 });// end of document.ready line (133)
 
 
-/**
- * This function will retrieve the profile address from the database 
- * and set it in the Create Acomodation pledge by default 
- * @returns
- */
-function sameAsProfileAddressSelected(){
-	
-	if($('#AccomodationSameAsProfileAddress').is(':checked')){
-		getCurrentProfileAddressFromDB();	
-	} else{
-		$('#frmAccommodationPledgeCreateUpdateAddressOne').val(""); 
-		$('#frmAccommodationPledgeCreateUpdateAddressTwo').val("");
-		$('#frmAccommodationPledgeCreateUpdateCity').val("");
-		$('#frmAccommodationPledgeCreateUpdateStateProvinceRegion').val("");
-		$('#frmAccommodationPledgeCreateUpdatePostCode').val("");
-//		$('#frmAccommodationPledgeCreateUpdateCountry').val("");
-	}
-	
-		
-}
-
-function getCurrentProfileAddressFromDB(){
-
-	$.ajax({
-		dataType: "json",
-		method: "GET",
-		url : rootContext + "/restful/currentUserAddress",
-		success: function( data ) {
-			
-			$('#frmAccommodationPledgeCreateUpdateAddressOne').val(data.addressOne); 
-			$('#frmAccommodationPledgeCreateUpdateAddressTwo').val(data.addressTwo);
-			$('#frmAccommodationPledgeCreateUpdateCity').val(data.city);
-			$('#frmAccommodationPledgeCreateUpdateStateProvinceRegion').val(data.city);
-			$('#frmAccommodationPledgeCreateUpdatePostCode').val(data.postCode);
-			$('#frmAccommodationPledgeCreateUpdateCountry').val(data.country);
-		},
-		error: function( data ){
-			
-		}
-	});
-
-}
 
 
 /**

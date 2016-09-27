@@ -18,7 +18,7 @@
           <input id="frmServicePledgeCreateUpdateCallBackTableBodyId" type="hidden"/>
           <input id="frmServicePledgeCreateUpdatePropertyUrl" type="hidden"/>
           <input id="frmServicePledgeCreateUpdateTitle" type="hidden"/>
-		  
+		 
 		  <div id="frmServicePledgeCreateUpdatePledgeServiceLevelOneFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="servicepledge.pledgeservicelevelone.label" for="frmServicePledgeCreateUpdatePledgeServiceLevelOne" class="control-label"><spring:message code="frmServicePledgePledgeServiceLevelOneLabel"/></label>	
 			<select class="form-control" data-display-name="Your Service" data-select-type="standalone" data-required="false" id="frmServicePledgeCreateUpdatePledgeServiceLevelOne" aria-describedby="frmServicePledgeCreateUpdatePledgeServiceLevelOneHelpBlock" onchange="loadChildSelectAndSelectValue(this, document.getElementById('frmServicePledgeCreateUpdatePledgeServiceLevelTwo'), 'theValueToSet', 'PledgeServiceLevelTwo', '<spring:message code="frmGoodsPledgePledgedGoodsPlaceHolder"/>')">
@@ -171,7 +171,13 @@
 			</div>
 				  
 		  </div> --%>
-
+		  	 <div class="form-group">
+            <input type="checkbox" data-display-name="Same Address as Profile"
+              data-required="false" id="pledgeSameAsProfileAddress" class="js-address-same-as-profile"
+              /> <label id="pledge.sameAsProfileAddress.label" for="pledgeSameAsProfileAddress" class="control-label"><spring:message code="frmServiceSameAsProfileAddress"/></label> 
+        </div>
+			<jsp:include page="../includes/address_modal_fields.jsp"></jsp:include>
+      	
         </form>
       </div>
       <div class="modal-footer">

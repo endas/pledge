@@ -192,7 +192,12 @@
 			<label id="frmApplicationUserDetailsPostCodeLabel" for="frmApplicationUserDetailsPostCode" class="col-sm-2 control-label"><spring:message code="frmApplicationUserDetailsPostCodeLabel"/></label>
 			<div class="col-sm-10">
 			  <p id="frmApplicationUserDetailsPostCodeMessage" class="form-control-static"><c:out value="${registerOfPledgesFormModel.applicationUserDetails.postCode}"></c:out></p>    
+
 			</div>
+			<span id="frmApplicationUserDetailsPostCodeHelpBlock" class="help-block col-sm-offset-2 col-sm-10">
+                                                    <%-- <spring:message code="frmApplicationUserDetailsPostCodeHelpBlock"/> --%>
+                                                     <a class="text-link" style="text-decoration:underline" href="https://finder.eircode.ie/#/" target="_blank">Find your Eircode</a>
+             </span>
 		  </div>
       
 		  <div id="frmApplicationUserDetailsCountryFormGroup" class="form-group has-feedback ${status.error ? 'has-error' : ''}">

@@ -24,322 +24,398 @@ public class ServicePledgeHistory
 {
 	/** Hibernate Id */
 	private Long id;
-	
+
 	/** id from the parent table for which this represents an historic record **/
 	private Long servicePledgeID;
-	 
-    
-    /** the address type */
-    private Long pledgeServiceLevelOne;
-	
-    /** the address type */
-    private Long pledgeServiceLevelTwo;
-	
-    /** the address type */
-    private Long pledgeServiceLevelThree;
-	
-    /** the participant comments */
-    private String additionalInformation;
-	
-    /** the participant comments */
-    private String pledgeServiceQualification;
-	
-    /** the participant date of birth */
-    private Date pledgeServiceDateAvailable;
-    private Date pledgeServiceDateAvailableTo;
-    
-    /** the address type */
-    private Long pledgeServiceHoursPerWeek;
-	     
-    
-    /** The user ID of the person that originally created the underlying record **/
-    private Long createdByID;
 
-    /** The user ID of the person that last updated the underlying record **/
-    private Long updatedByID;
+	private Boolean sameAsProfileAddress;
 
-    /** The date that the underlying record was created DD/MM/YYYY-HH:MM format **/
-    private Date dateCreated;
+	/** the street or house address */
+	private String addressOne;
 
-    /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
-    private Date dateUpdated;
-    
-    private int status=0;
-    public int getStatus() {
+	/** the town or city address */
+	private String addressTwo;
+
+	/** the post code */
+	private String city;
+
+	/** the post code */
+	private String stateProvinceRegion;
+
+	/** the post code */
+	private String postCode;
+
+	/** the address type */
+	private Long country;
+
+
+	/** the address type */
+	private Long pledgeServiceLevelOne;
+
+	/** the address type */
+	private Long pledgeServiceLevelTwo;
+
+	/** the address type */
+	private Long pledgeServiceLevelThree;
+
+	/** the participant comments */
+	private String additionalInformation;
+
+	/** the participant comments */
+	private String pledgeServiceQualification;
+
+	/** the participant date of birth */
+	private Date pledgeServiceDateAvailable;
+	private Date pledgeServiceDateAvailableTo;
+
+	/** the address type */
+	private Long pledgeServiceHoursPerWeek;
+
+
+	/** The user ID of the person that originally created the underlying record **/
+	private Long createdByID;
+
+	/** The user ID of the person that last updated the underlying record **/
+	private Long updatedByID;
+
+	/** The date that the underlying record was created DD/MM/YYYY-HH:MM format **/
+	private Date dateCreated;
+
+	/** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
+	private Date dateUpdated;
+
+	private int status=0;
+	public int getStatus() {
 		return status;
 	}
 
 	public void setStatus(int status) {
 		this.status = status;
 	}
-    /**
-     * Default Constructor for the ServicePledge bean
-     */
-    public ServicePledgeHistory()
-    {
-    	servicePledgeID = new Long(0);
-    	pledgeServiceLevelOne = new Long("0");
+	/**
+	 * Default Constructor for the ServicePledge bean
+	 */
+	public ServicePledgeHistory()
+	{
+		servicePledgeID = new Long(0);
+		pledgeServiceLevelOne = new Long("0");
 		pledgeServiceLevelTwo = new Long("0");
 		pledgeServiceLevelThree = new Long("0");
 		additionalInformation = new String();
 		pledgeServiceQualification = new String();
 		pledgeServiceDateAvailable = new Date();
 		pledgeServiceHoursPerWeek = new Long("0");
-		
-    }
-    
-    /*
-     * Returns the Id for the underlying database table record
-     */
+
+	}
+
+	/*
+	 * Returns the Id for the underlying database table record
+	 */
 	public Long getId()
 	{
-        return id;
-    }
+		return id;
+	}
 
 	/**
 	 * We usually do not manipulate the identity of an object, hence the setter method should be private.
 	 */
 	@SuppressWarnings("unused")
-    private void setId(Long id)
-    {
-        this.id = id;
-    }    
+	private void setId(Long id)
+	{
+		this.id = id;
+	}    
 
 
-    /*
-     * Returns the ServicePledgeID for the parent record
-     */
+	/*
+	 * Returns the ServicePledgeID for the parent record
+	 */
 	public Long getServicePledgeID()
 	{
-        return servicePledgeID;
-    }
+		return servicePledgeID;
+	}
 
 	/**
 	 * We usually do not manipulate the identity of an object, hence the setter method should be private.
 	 */
 	@SuppressWarnings("unused")
-    private void setServicePledgeID(Long servicePledgeID)
-    {
-        this.servicePledgeID = servicePledgeID;
-    }    
-
-    
-
-    
-    
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param pledgeServiceLevelOne is the address type
-     */
-    public void setPledgeServiceLevelOne(Long pledgeServiceLevelOne)
-    {
-      this.pledgeServiceLevelOne = pledgeServiceLevelOne;
-    }
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getPledgeServiceLevelOne()
-    {
-      return pledgeServiceLevelOne;
-    }
-
-    
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param pledgeServiceLevelTwo is the address type
-     */
-    public void setPledgeServiceLevelTwo(Long pledgeServiceLevelTwo)
-    {
-      this.pledgeServiceLevelTwo = pledgeServiceLevelTwo;
-    }
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getPledgeServiceLevelTwo()
-    {
-      return pledgeServiceLevelTwo;
-    }
-
-    
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param pledgeServiceLevelThree is the address type
-     */
-    public void setPledgeServiceLevelThree(Long pledgeServiceLevelThree)
-    {
-      this.pledgeServiceLevelThree = pledgeServiceLevelThree;
-    }
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getPledgeServiceLevelThree()
-    {
-      return pledgeServiceLevelThree;
-    }
-
-    
-    /**
-     * Sets the participant comments
-     * @param additionalInformation is the participant comments
-     */
-    public void setAdditionalInformation(String additionalInformation)
-    {
-      this.additionalInformation = additionalInformation;
-    }
-
-    /**
-     * Returns the participant comments
-     * @return the participant comments
-     */
-    public String getAdditionalInformation()
-    {
-      return additionalInformation;
-    }
-
-    
-    /**
-     * Sets the participant comments
-     * @param pledgeServiceQualification is the participant comments
-     */
-    public void setPledgeServiceQualification(String pledgeServiceQualification)
-    {
-      this.pledgeServiceQualification = pledgeServiceQualification;
-    }
-
-    /**
-     * Returns the participant comments
-     * @return the participant comments
-     */
-    public String getPledgeServiceQualification()
-    {
-      return pledgeServiceQualification;
-    }
-
-    
-    /**
-     * Sets the participant date of birth
-     * @param pledgeServiceDateAvailable is the participant date of birth
-     */
-    public void setPledgeServiceDateAvailable(Date pledgeServiceDateAvailable)
-    {
-      this.pledgeServiceDateAvailable = pledgeServiceDateAvailable;
-    }
-
-    /**
-     * Returns the participant date of birth
-     * @return the participant date of birth
-     */
-    public Date getPledgeServiceDateAvailable()
-    {
-      return pledgeServiceDateAvailable;
-    }
-
-    
-    /**
-     * Sets the address type that has been chosen by the user
-     * @param pledgeServiceHoursPerWeek is the address type
-     */
-    public void setPledgeServiceHoursPerWeek(Long pledgeServiceHoursPerWeek)
-    {
-      this.pledgeServiceHoursPerWeek = pledgeServiceHoursPerWeek;
-    }
-
-    /**
-     * Returns the address type that has been chosen by the user or saved in the database
-     * @return the address type
-     */
-    public Long getPledgeServiceHoursPerWeek()
-    {
-      return pledgeServiceHoursPerWeek;
-    }
+	private void setServicePledgeID(Long servicePledgeID)
+	{
+		this.servicePledgeID = servicePledgeID;
+	}    
 
 
-    /**
-     * sets the ID of the user that created the underlying record
-     */
-    public void setCreatedByID(Long createdByID)
-    {
-        this.createdByID = createdByID;
-    }
 
 
-    /**
-     * gets the ID of the user that created the underlying record
-     */
-    public Long getCreatedByID()
-    {
-        return createdByID;
-    }
-     
-     
-    /**
-     * sets the ID of the user that last updated the underlying record
-     */
-    public void setUpdatedByID(Long updatedByID)
-    {
-        this.updatedByID = updatedByID;
-    }
-     
-     
-    /**
-     * gets the ID of the user that last updated the underlying record
-     */
-    public Long getUpdatedByID()
-    {
-        return updatedByID;
-    }
+
+	/**
+	 * Sets the address type that has been chosen by the user
+	 * @param pledgeServiceLevelOne is the address type
+	 */
+	public void setPledgeServiceLevelOne(Long pledgeServiceLevelOne)
+	{
+		this.pledgeServiceLevelOne = pledgeServiceLevelOne;
+	}
+
+	/**
+	 * Returns the address type that has been chosen by the user or saved in the database
+	 * @return the address type
+	 */
+	public Long getPledgeServiceLevelOne()
+	{
+		return pledgeServiceLevelOne;
+	}
 
 
-    /**
-     * sets the date that the underlying record was first created as a <code>java.util.Date</code> object
-     */
-    public void setDateCreated(Date dateCreated)
-    {
-        this.dateCreated = dateCreated;
-    }
+	/**
+	 * Sets the address type that has been chosen by the user
+	 * @param pledgeServiceLevelTwo is the address type
+	 */
+	public void setPledgeServiceLevelTwo(Long pledgeServiceLevelTwo)
+	{
+		this.pledgeServiceLevelTwo = pledgeServiceLevelTwo;
+	}
 
-     
-    /**
-     * Gets the date that the underlying record was first created as a <code>java.util.Date</code> object
-     */
-    public Date getDateCreated()
-    {
-        return dateCreated;
-    }
-
-    /**
-     * sets the date that the underlying record was last updated as a <code>java.util.Date</code> object
-     */
-    public void setDateUpdated(Date dateUpdated)
-    {
-        this.dateUpdated = dateUpdated;
-    }
+	/**
+	 * Returns the address type that has been chosen by the user or saved in the database
+	 * @return the address type
+	 */
+	public Long getPledgeServiceLevelTwo()
+	{
+		return pledgeServiceLevelTwo;
+	}
 
 
-    
-    /**
-     * Gets the date that the underlying record was last updated as a <code>java.util.Date</code> object
-     */
-    public Date getDateUpdated()
-    {
-        return dateUpdated;
-    }
-    
-    public void setPledgeServiceDateAvailableTo(Date date){
+	/**
+	 * Sets the address type that has been chosen by the user
+	 * @param pledgeServiceLevelThree is the address type
+	 */
+	public void setPledgeServiceLevelThree(Long pledgeServiceLevelThree)
+	{
+		this.pledgeServiceLevelThree = pledgeServiceLevelThree;
+	}
+
+	/**
+	 * Returns the address type that has been chosen by the user or saved in the database
+	 * @return the address type
+	 */
+	public Long getPledgeServiceLevelThree()
+	{
+		return pledgeServiceLevelThree;
+	}
+
+
+	/**
+	 * Sets the participant comments
+	 * @param additionalInformation is the participant comments
+	 */
+	public void setAdditionalInformation(String additionalInformation)
+	{
+		this.additionalInformation = additionalInformation;
+	}
+
+	/**
+	 * Returns the participant comments
+	 * @return the participant comments
+	 */
+	public String getAdditionalInformation()
+	{
+		return additionalInformation;
+	}
+
+
+	/**
+	 * Sets the participant comments
+	 * @param pledgeServiceQualification is the participant comments
+	 */
+	public void setPledgeServiceQualification(String pledgeServiceQualification)
+	{
+		this.pledgeServiceQualification = pledgeServiceQualification;
+	}
+
+	/**
+	 * Returns the participant comments
+	 * @return the participant comments
+	 */
+	public String getPledgeServiceQualification()
+	{
+		return pledgeServiceQualification;
+	}
+
+
+	/**
+	 * Sets the participant date of birth
+	 * @param pledgeServiceDateAvailable is the participant date of birth
+	 */
+	public void setPledgeServiceDateAvailable(Date pledgeServiceDateAvailable)
+	{
+		this.pledgeServiceDateAvailable = pledgeServiceDateAvailable;
+	}
+
+	/**
+	 * Returns the participant date of birth
+	 * @return the participant date of birth
+	 */
+	public Date getPledgeServiceDateAvailable()
+	{
+		return pledgeServiceDateAvailable;
+	}
+
+
+	/**
+	 * Sets the address type that has been chosen by the user
+	 * @param pledgeServiceHoursPerWeek is the address type
+	 */
+	public void setPledgeServiceHoursPerWeek(Long pledgeServiceHoursPerWeek)
+	{
+		this.pledgeServiceHoursPerWeek = pledgeServiceHoursPerWeek;
+	}
+
+	/**
+	 * Returns the address type that has been chosen by the user or saved in the database
+	 * @return the address type
+	 */
+	public Long getPledgeServiceHoursPerWeek()
+	{
+		return pledgeServiceHoursPerWeek;
+	}
+
+
+	/**
+	 * sets the ID of the user that created the underlying record
+	 */
+	public void setCreatedByID(Long createdByID)
+	{
+		this.createdByID = createdByID;
+	}
+
+
+	/**
+	 * gets the ID of the user that created the underlying record
+	 */
+	public Long getCreatedByID()
+	{
+		return createdByID;
+	}
+
+
+	/**
+	 * sets the ID of the user that last updated the underlying record
+	 */
+	public void setUpdatedByID(Long updatedByID)
+	{
+		this.updatedByID = updatedByID;
+	}
+
+
+	/**
+	 * gets the ID of the user that last updated the underlying record
+	 */
+	public Long getUpdatedByID()
+	{
+		return updatedByID;
+	}
+
+
+	/**
+	 * sets the date that the underlying record was first created as a <code>java.util.Date</code> object
+	 */
+	public void setDateCreated(Date dateCreated)
+	{
+		this.dateCreated = dateCreated;
+	}
+
+
+	/**
+	 * Gets the date that the underlying record was first created as a <code>java.util.Date</code> object
+	 */
+	public Date getDateCreated()
+	{
+		return dateCreated;
+	}
+
+	/**
+	 * sets the date that the underlying record was last updated as a <code>java.util.Date</code> object
+	 */
+	public void setDateUpdated(Date dateUpdated)
+	{
+		this.dateUpdated = dateUpdated;
+	}
+
+
+
+	/**
+	 * Gets the date that the underlying record was last updated as a <code>java.util.Date</code> object
+	 */
+	public Date getDateUpdated()
+	{
+		return dateUpdated;
+	}
+
+	public void setPledgeServiceDateAvailableTo(Date date){
 		this.pledgeServiceDateAvailableTo = date;
 	}
-	
+
 	public Date getPledgeServiceDateAvailableTo(){
 		return this.pledgeServiceDateAvailableTo;
 	}
+
+	public Boolean getSameAsProfileAddress() {
+		return sameAsProfileAddress;
+	}
+
+	public void setSameAsProfileAddress(Boolean sameAsProfileAddress) {
+		this.sameAsProfileAddress = sameAsProfileAddress;
+	}
+
+	public String getAddressOne() {
+		return addressOne;
+	}
+
+	public void setAddressOne(String addressOne) {
+		this.addressOne = addressOne;
+	}
+
+	public String getAddressTwo() {
+		return addressTwo;
+	}
+
+	public void setAddressTwo(String addressTwo) {
+		this.addressTwo = addressTwo;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getStateProvinceRegion() {
+		return stateProvinceRegion;
+	}
+
+	public void setStateProvinceRegion(String stateProvinceRegion) {
+		this.stateProvinceRegion = stateProvinceRegion;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+
+	public Long getCountry() {
+		return country;
+	}
+
+	public void setCountry(Long country) {
+		this.country = country;
+	}
 }
-    
-    
-    
+
+
+
 

@@ -24,70 +24,90 @@ public class GoodsPledgeHistory
 {
 	/** Hibernate Id */
 	private Long id;
-	
+
 	/** id from the parent table for which this represents an historic record **/
 	private Long goodsPledgeID;
-	 
-    
-    /** the goods category level one */
-    private Long goodsCategoryOne;
-	
-    /** the goods category level two */
-    private Long goodsCategoryTwo;
-	
-    /** the goods category level three */
-    private Long goodsCategoryThree;
-	
-    /** the goods size */
-    private Long goodsSize;
-	
-    /** the goods size */
-    private Long goodsNewOrUsed;
-	
-    /** the goods condition */
-    private Long goodsCondition;
-	
-    /** the quantity of goods */
-    private Long goodsQuantity;
-	
-    /** the participant comments */
-    private String additionalInformation;
-	
-    /** the participant comments */
-    private String itemSize;
-	     
-    
-    /** The user ID of the person that originally created the underlying record **/
-    private Long createdByID;
 
-    /** The user ID of the person that last updated the underlying record **/
-    private Long updatedByID;
+	private Boolean sameAsProfileAddress;
 
-    /** The date that the underlying record was created DD/MM/YYYY-HH:MM format **/
-    private Date dateCreated;
+	/** the street or house address */
+	private String addressOne;
 
-    /** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
-    private Date dateUpdated;
-    
-    private Date dateAvailableFrom;
-    
-    private Date dateAvailableTo;
-    
-    private int status=0;
-    public int getStatus() {
+	/** the town or city address */
+	private String addressTwo;
+
+	/** the post code */
+	private String city;
+
+	/** the post code */
+	private String stateProvinceRegion;
+
+	/** the post code */
+	private String postCode;
+
+	/** the address type */
+	private Long country;
+
+
+	/** the goods category level one */
+	private Long goodsCategoryOne;
+
+	/** the goods category level two */
+	private Long goodsCategoryTwo;
+
+	/** the goods category level three */
+	private Long goodsCategoryThree;
+
+	/** the goods size */
+	private Long goodsSize;
+
+	/** the goods size */
+	private Long goodsNewOrUsed;
+
+	/** the goods condition */
+	private Long goodsCondition;
+
+	/** the quantity of goods */
+	private Long goodsQuantity;
+
+	/** the participant comments */
+	private String additionalInformation;
+
+	/** the participant comments */
+	private String itemSize;
+
+
+	/** The user ID of the person that originally created the underlying record **/
+	private Long createdByID;
+
+	/** The user ID of the person that last updated the underlying record **/
+	private Long updatedByID;
+
+	/** The date that the underlying record was created DD/MM/YYYY-HH:MM format **/
+	private Date dateCreated;
+
+	/** The date that the underlying record was last updated DD/MM/YYYY-HH:MM format **/
+	private Date dateUpdated;
+
+	private Date dateAvailableFrom;
+
+	private Date dateAvailableTo;
+
+	private int status=0;
+	public int getStatus() {
 		return status;
 	}
 
 	public void setStatus(int status) {
 		this.status = status;
 	}
-    /**
-     * Default Constructor for the GoodsPledge bean
-     */
-    public GoodsPledgeHistory()
-    {
-    	goodsPledgeID = new Long(0);
-    	goodsCategoryOne = new Long("0");
+	/**
+	 * Default Constructor for the GoodsPledge bean
+	 */
+	public GoodsPledgeHistory()
+	{
+		goodsPledgeID = new Long(0);
+		goodsCategoryOne = new Long("0");
 		goodsCategoryTwo = new Long("0");
 		goodsCategoryThree = new Long("0");
 		goodsSize = new Long("0");
@@ -96,291 +116,291 @@ public class GoodsPledgeHistory
 		goodsQuantity = new Long("0");
 		additionalInformation = new String();
 		itemSize = new String();
-		
-    }
-    
-    /*
-     * Returns the Id for the underlying database table record
-     */
+
+	}
+
+	/*
+	 * Returns the Id for the underlying database table record
+	 */
 	public Long getId()
 	{
-        return id;
-    }
+		return id;
+	}
 
 	/**
 	 * We usually do not manipulate the identity of an object, hence the setter method should be private.
 	 */
 	@SuppressWarnings("unused")
-    private void setId(Long id)
-    {
-        this.id = id;
-    }    
+	private void setId(Long id)
+	{
+		this.id = id;
+	}    
 
 
-    /*
-     * Returns the GoodsPledgeID for the parent record
-     */
+	/*
+	 * Returns the GoodsPledgeID for the parent record
+	 */
 	public Long getGoodsPledgeID()
 	{
-        return goodsPledgeID;
-    }
+		return goodsPledgeID;
+	}
 
 	/**
 	 * We usually do not manipulate the identity of an object, hence the setter method should be private.
 	 */
 	@SuppressWarnings("unused")
-    private void setGoodsPledgeID(Long goodsPledgeID)
-    {
-        this.goodsPledgeID = goodsPledgeID;
-    }    
-
-    
-
-    
-    
-    /**
-     * Sets the goods category level one that has been chosen by the user
-     * @param goodsCategoryOne is the goods category level one
-     */
-    public void setGoodsCategoryOne(Long goodsCategoryOne)
-    {
-      this.goodsCategoryOne = goodsCategoryOne;
-    }
-
-    /**
-     * Returns the goods category level one that has been chosen by the user or saved in the database
-     * @return the goods category level one
-     */
-    public Long getGoodsCategoryOne()
-    {
-      return goodsCategoryOne;
-    }
-
-    
-    /**
-     * Sets the goods category level two that has been chosen by the user
-     * @param goodsCategoryTwo is the goods category level two
-     */
-    public void setGoodsCategoryTwo(Long goodsCategoryTwo)
-    {
-      this.goodsCategoryTwo = goodsCategoryTwo;
-    }
-
-    /**
-     * Returns the goods category level two that has been chosen by the user or saved in the database
-     * @return the goods category level two
-     */
-    public Long getGoodsCategoryTwo()
-    {
-      return goodsCategoryTwo;
-    }
-
-    
-    /**
-     * Sets the goods category level three that has been chosen by the user
-     * @param goodsCategoryThree is the goods category level three
-     */
-    public void setGoodsCategoryThree(Long goodsCategoryThree)
-    {
-      this.goodsCategoryThree = goodsCategoryThree;
-    }
-
-    /**
-     * Returns the goods category level three that has been chosen by the user or saved in the database
-     * @return the goods category level three
-     */
-    public Long getGoodsCategoryThree()
-    {
-      return goodsCategoryThree;
-    }
-
-    
-    /**
-     * Sets the goods size that has been chosen by the user
-     * @param goodsSize is the goods size
-     */
-    public void setGoodsSize(Long goodsSize)
-    {
-      this.goodsSize = goodsSize;
-    }
-
-    /**
-     * Returns the goods size that has been chosen by the user or saved in the database
-     * @return the goods size
-     */
-    public Long getGoodsSize()
-    {
-      return goodsSize;
-    }
-
-    
-    /**
-     * Sets the goods size that has been chosen by the user
-     * @param goodsNewOrUsed is the goods size
-     */
-    public void setGoodsNewOrUsed(Long goodsNewOrUsed)
-    {
-      this.goodsNewOrUsed = goodsNewOrUsed;
-    }
-
-    /**
-     * Returns the goods size that has been chosen by the user or saved in the database
-     * @return the goods size
-     */
-    public Long getGoodsNewOrUsed()
-    {
-      return goodsNewOrUsed;
-    }
-
-    
-    /**
-     * Sets the goods condition that has been chosen by the user
-     * @param goodsCondition is the goods condition
-     */
-    public void setGoodsCondition(Long goodsCondition)
-    {
-      this.goodsCondition = goodsCondition;
-    }
-
-    /**
-     * Returns the goods condition that has been chosen by the user or saved in the database
-     * @return the goods condition
-     */
-    public Long getGoodsCondition()
-    {
-      return goodsCondition;
-    }
-
-    
-    /**
-     * Sets the quantity of goods that has been chosen by the user
-     * @param goodsQuantity is the quantity of goods
-     */
-    public void setGoodsQuantity(Long goodsQuantity)
-    {
-      this.goodsQuantity = goodsQuantity;
-    }
-
-    /**
-     * Returns the quantity of goods that has been chosen by the user or saved in the database
-     * @return the quantity of goods
-     */
-    public Long getGoodsQuantity()
-    {
-      return goodsQuantity;
-    }
-
-    
-    /**
-     * Sets the participant comments
-     * @param additionalInformation is the participant comments
-     */
-    public void setAdditionalInformation(String additionalInformation)
-    {
-      this.additionalInformation = additionalInformation;
-    }
-
-    /**
-     * Returns the participant comments
-     * @return the participant comments
-     */
-    public String getAdditionalInformation()
-    {
-      return additionalInformation;
-    }
-
-    
-    /**
-     * Sets the participant comments
-     * @param itemSize is the participant comments
-     */
-    public void setItemSize(String itemSize)
-    {
-      this.itemSize = itemSize;
-    }
-
-    /**
-     * Returns the participant comments
-     * @return the participant comments
-     */
-    public String getItemSize()
-    {
-      return itemSize;
-    }
+	private void setGoodsPledgeID(Long goodsPledgeID)
+	{
+		this.goodsPledgeID = goodsPledgeID;
+	}    
 
 
-    /**
-     * sets the ID of the user that created the underlying record
-     */
-    public void setCreatedByID(Long createdByID)
-    {
-        this.createdByID = createdByID;
-    }
 
 
-    /**
-     * gets the ID of the user that created the underlying record
-     */
-    public Long getCreatedByID()
-    {
-        return createdByID;
-    }
-     
-     
-    /**
-     * sets the ID of the user that last updated the underlying record
-     */
-    public void setUpdatedByID(Long updatedByID)
-    {
-        this.updatedByID = updatedByID;
-    }
-     
-     
-    /**
-     * gets the ID of the user that last updated the underlying record
-     */
-    public Long getUpdatedByID()
-    {
-        return updatedByID;
-    }
+
+	/**
+	 * Sets the goods category level one that has been chosen by the user
+	 * @param goodsCategoryOne is the goods category level one
+	 */
+	public void setGoodsCategoryOne(Long goodsCategoryOne)
+	{
+		this.goodsCategoryOne = goodsCategoryOne;
+	}
+
+	/**
+	 * Returns the goods category level one that has been chosen by the user or saved in the database
+	 * @return the goods category level one
+	 */
+	public Long getGoodsCategoryOne()
+	{
+		return goodsCategoryOne;
+	}
 
 
-    /**
-     * sets the date that the underlying record was first created as a <code>java.util.Date</code> object
-     */
-    public void setDateCreated(Date dateCreated)
-    {
-        this.dateCreated = dateCreated;
-    }
+	/**
+	 * Sets the goods category level two that has been chosen by the user
+	 * @param goodsCategoryTwo is the goods category level two
+	 */
+	public void setGoodsCategoryTwo(Long goodsCategoryTwo)
+	{
+		this.goodsCategoryTwo = goodsCategoryTwo;
+	}
 
-     
-    /**
-     * Gets the date that the underlying record was first created as a <code>java.util.Date</code> object
-     */
-    public Date getDateCreated()
-    {
-        return dateCreated;
-    }
-
-    /**
-     * sets the date that the underlying record was last updated as a <code>java.util.Date</code> object
-     */
-    public void setDateUpdated(Date dateUpdated)
-    {
-        this.dateUpdated = dateUpdated;
-    }
+	/**
+	 * Returns the goods category level two that has been chosen by the user or saved in the database
+	 * @return the goods category level two
+	 */
+	public Long getGoodsCategoryTwo()
+	{
+		return goodsCategoryTwo;
+	}
 
 
-    
-    /**
-     * Gets the date that the underlying record was last updated as a <code>java.util.Date</code> object
-     */
-    public Date getDateUpdated()
-    {
-        return dateUpdated;
-    }
+	/**
+	 * Sets the goods category level three that has been chosen by the user
+	 * @param goodsCategoryThree is the goods category level three
+	 */
+	public void setGoodsCategoryThree(Long goodsCategoryThree)
+	{
+		this.goodsCategoryThree = goodsCategoryThree;
+	}
 
-    
+	/**
+	 * Returns the goods category level three that has been chosen by the user or saved in the database
+	 * @return the goods category level three
+	 */
+	public Long getGoodsCategoryThree()
+	{
+		return goodsCategoryThree;
+	}
+
+
+	/**
+	 * Sets the goods size that has been chosen by the user
+	 * @param goodsSize is the goods size
+	 */
+	public void setGoodsSize(Long goodsSize)
+	{
+		this.goodsSize = goodsSize;
+	}
+
+	/**
+	 * Returns the goods size that has been chosen by the user or saved in the database
+	 * @return the goods size
+	 */
+	public Long getGoodsSize()
+	{
+		return goodsSize;
+	}
+
+
+	/**
+	 * Sets the goods size that has been chosen by the user
+	 * @param goodsNewOrUsed is the goods size
+	 */
+	public void setGoodsNewOrUsed(Long goodsNewOrUsed)
+	{
+		this.goodsNewOrUsed = goodsNewOrUsed;
+	}
+
+	/**
+	 * Returns the goods size that has been chosen by the user or saved in the database
+	 * @return the goods size
+	 */
+	public Long getGoodsNewOrUsed()
+	{
+		return goodsNewOrUsed;
+	}
+
+
+	/**
+	 * Sets the goods condition that has been chosen by the user
+	 * @param goodsCondition is the goods condition
+	 */
+	public void setGoodsCondition(Long goodsCondition)
+	{
+		this.goodsCondition = goodsCondition;
+	}
+
+	/**
+	 * Returns the goods condition that has been chosen by the user or saved in the database
+	 * @return the goods condition
+	 */
+	public Long getGoodsCondition()
+	{
+		return goodsCondition;
+	}
+
+
+	/**
+	 * Sets the quantity of goods that has been chosen by the user
+	 * @param goodsQuantity is the quantity of goods
+	 */
+	public void setGoodsQuantity(Long goodsQuantity)
+	{
+		this.goodsQuantity = goodsQuantity;
+	}
+
+	/**
+	 * Returns the quantity of goods that has been chosen by the user or saved in the database
+	 * @return the quantity of goods
+	 */
+	public Long getGoodsQuantity()
+	{
+		return goodsQuantity;
+	}
+
+
+	/**
+	 * Sets the participant comments
+	 * @param additionalInformation is the participant comments
+	 */
+	public void setAdditionalInformation(String additionalInformation)
+	{
+		this.additionalInformation = additionalInformation;
+	}
+
+	/**
+	 * Returns the participant comments
+	 * @return the participant comments
+	 */
+	public String getAdditionalInformation()
+	{
+		return additionalInformation;
+	}
+
+
+	/**
+	 * Sets the participant comments
+	 * @param itemSize is the participant comments
+	 */
+	public void setItemSize(String itemSize)
+	{
+		this.itemSize = itemSize;
+	}
+
+	/**
+	 * Returns the participant comments
+	 * @return the participant comments
+	 */
+	public String getItemSize()
+	{
+		return itemSize;
+	}
+
+
+	/**
+	 * sets the ID of the user that created the underlying record
+	 */
+	public void setCreatedByID(Long createdByID)
+	{
+		this.createdByID = createdByID;
+	}
+
+
+	/**
+	 * gets the ID of the user that created the underlying record
+	 */
+	public Long getCreatedByID()
+	{
+		return createdByID;
+	}
+
+
+	/**
+	 * sets the ID of the user that last updated the underlying record
+	 */
+	public void setUpdatedByID(Long updatedByID)
+	{
+		this.updatedByID = updatedByID;
+	}
+
+
+	/**
+	 * gets the ID of the user that last updated the underlying record
+	 */
+	public Long getUpdatedByID()
+	{
+		return updatedByID;
+	}
+
+
+	/**
+	 * sets the date that the underlying record was first created as a <code>java.util.Date</code> object
+	 */
+	public void setDateCreated(Date dateCreated)
+	{
+		this.dateCreated = dateCreated;
+	}
+
+
+	/**
+	 * Gets the date that the underlying record was first created as a <code>java.util.Date</code> object
+	 */
+	public Date getDateCreated()
+	{
+		return dateCreated;
+	}
+
+	/**
+	 * sets the date that the underlying record was last updated as a <code>java.util.Date</code> object
+	 */
+	public void setDateUpdated(Date dateUpdated)
+	{
+		this.dateUpdated = dateUpdated;
+	}
+
+
+
+	/**
+	 * Gets the date that the underlying record was last updated as a <code>java.util.Date</code> object
+	 */
+	public Date getDateUpdated()
+	{
+		return dateUpdated;
+	}
+
+
 	public Date getDateAvailableFrom() {
 		return dateAvailableFrom;
 	}
@@ -396,12 +416,68 @@ public class GoodsPledgeHistory
 	public void setDateAvailableTo(Date dateAvailableTo) {
 		this.dateAvailableTo = dateAvailableTo;
 	}
-    
-    
-    
-     
+
+	public Boolean getSameAsProfileAddress() {
+		return sameAsProfileAddress;
+	}
+
+	public void setSameAsProfileAddress(Boolean sameAsProfileAddress) {
+		this.sameAsProfileAddress = sameAsProfileAddress;
+	}
+
+	public String getAddressOne() {
+		return addressOne;
+	}
+
+	public void setAddressOne(String addressOne) {
+		this.addressOne = addressOne;
+	}
+
+	public String getAddressTwo() {
+		return addressTwo;
+	}
+
+	public void setAddressTwo(String addressTwo) {
+		this.addressTwo = addressTwo;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getStateProvinceRegion() {
+		return stateProvinceRegion;
+	}
+
+	public void setStateProvinceRegion(String stateProvinceRegion) {
+		this.stateProvinceRegion = stateProvinceRegion;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+
+	public Long getCountry() {
+		return country;
+	}
+
+	public void setCountry(Long country) {
+		this.country = country;
+	}
+
+
+
+
 }
-    
-    
-    
+
+
+
 
