@@ -111,7 +111,7 @@ public class ApplicationUserRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	applicationUser = applicationUserService.load(new Long(id), userId);
+	    	applicationUser = applicationUserService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

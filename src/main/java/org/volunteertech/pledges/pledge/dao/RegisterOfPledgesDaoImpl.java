@@ -330,7 +330,7 @@ public class RegisterOfPledgesDaoImpl implements RegisterOfPledgesDao
      */
     public Long createAndStoreRegisterOfPledges(RegisterOfPledges registerOfPledges, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         registerOfPledges.setCreatedByID(userId);
         registerOfPledges.setUpdatedByID(userId);
@@ -425,7 +425,7 @@ public class RegisterOfPledgesDaoImpl implements RegisterOfPledgesDao
     public Long createAndStoreRegisterOfPledgesFilter(RegisterOfPledgesFilter registerOfPledgesFilter,  Long userId)
         throws RegisterOfPledgesSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -462,7 +462,7 @@ public class RegisterOfPledgesDaoImpl implements RegisterOfPledgesDao
     public Long updateRegisterOfPledgesFilter(RegisterOfPledgesFilter registerOfPledgesFilter, Long userId)
         throws RegisterOfPledgesLoadException, RegisterOfPledgesSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("RegisterOfPledges", userID, REGISTEROFPLEDGESID) == false)
         //{

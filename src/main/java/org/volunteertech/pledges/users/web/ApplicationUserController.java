@@ -72,7 +72,7 @@ public class ApplicationUserController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(ApplicationUserController.class);
 	
@@ -124,7 +124,7 @@ public class ApplicationUserController extends BaseController
 		ApplicationUserTranslationBackingBean applicationUserTranslationBackingBean = new ApplicationUserTranslationBackingBeanImpl();
 		applicationUserTranslationBackingBean.setCurrentMode(ApplicationUser.CurrentMode.LOCALIZE);
 		model.addAttribute("applicationUserTranslationFormModel", applicationUserTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -368,7 +368,7 @@ public class ApplicationUserController extends BaseController
 		ApplicationUser applicationUser = null;
 		try{
 			// TODO: Needs exception handling policy
-			applicationUser = applicationUserService.load(new Long(id), userId);
+			applicationUser = applicationUserService.load(Long.valueOf(id), userId);
 			applicationUser.setCurrentMode(ApplicationUser.CurrentMode.UPDATE);
 			this.applicationUserService.translateReferenceValues(applicationUser, locale);
 		}
@@ -409,7 +409,7 @@ public class ApplicationUserController extends BaseController
 		ApplicationUser applicationUser = null;
 		try{
 			// TODO: Needs exception handling policy
-			applicationUser = applicationUserService.load(new Long(id), userId);
+			applicationUser = applicationUserService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

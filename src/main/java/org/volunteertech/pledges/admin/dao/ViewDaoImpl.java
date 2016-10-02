@@ -212,7 +212,7 @@ public class ViewDaoImpl implements ViewDao
      */
     public Long createAndStoreView(View view, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         view.setCreatedByID(userId);
         view.setUpdatedByID(userId);
@@ -297,7 +297,7 @@ public class ViewDaoImpl implements ViewDao
     public Long createAndStoreViewFilter(ViewFilter viewFilter,  Long userId)
         throws ViewSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -334,7 +334,7 @@ public class ViewDaoImpl implements ViewDao
     public Long updateViewFilter(ViewFilter viewFilter, Long userId)
         throws ViewLoadException, ViewSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("View", userID, VIEWID) == false)
         //{

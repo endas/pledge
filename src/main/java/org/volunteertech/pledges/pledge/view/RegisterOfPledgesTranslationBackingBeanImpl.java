@@ -39,7 +39,7 @@ public class RegisterOfPledgesTranslationBackingBeanImpl extends RegisterOfPledg
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the Pledge Profile view */
-    public static final Long VIEW_ID = new Long(2);
+    public static final Long VIEW_ID = Long.valueOf(2);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String REGISTEROFPLEDGES_TITLE_MAPPING_KEY = "registerofpledges.form.title";

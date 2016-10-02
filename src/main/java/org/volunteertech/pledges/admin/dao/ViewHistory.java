@@ -51,7 +51,7 @@ public class ViewHistory
      */
     public ViewHistory()
     {
-    	viewID = new Long(0);
+    	viewID = Long.valueOf(0);
     	viewName = "";
 		
     }

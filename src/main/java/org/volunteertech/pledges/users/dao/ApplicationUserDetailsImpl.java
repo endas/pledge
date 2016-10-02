@@ -133,7 +133,7 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 
 		this.postCode = "";
 
-		this.country = new Long("0");
+		this.country = Long.valueOf("0");
 
 		this.emailAddress = "";
 

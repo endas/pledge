@@ -68,7 +68,7 @@ public class GoodsPledgeController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(GoodsPledgeController.class);
 	
@@ -114,7 +114,7 @@ public class GoodsPledgeController extends BaseController
 		GoodsPledgeTranslationBackingBean goodsPledgeTranslationBackingBean = new GoodsPledgeTranslationBackingBeanImpl();
 		goodsPledgeTranslationBackingBean.setCurrentMode(GoodsPledge.CurrentMode.LOCALIZE);
 		model.addAttribute("goodsPledgeTranslationFormModel", goodsPledgeTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, locale);
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -234,7 +234,7 @@ public class GoodsPledgeController extends BaseController
 		GoodsPledge goodsPledge = null;
 		try{
 			// TODO: Needs exception handling policy
-			goodsPledge = goodsPledgeService.load(new Long(id), userId);
+			goodsPledge = goodsPledgeService.load(Long.valueOf(id), userId);
 			goodsPledge.setCurrentMode(GoodsPledge.CurrentMode.UPDATE);
 			this.goodsPledgeService.translateReferenceValues(goodsPledge, locale);
 		}
@@ -275,7 +275,7 @@ public class GoodsPledgeController extends BaseController
 		GoodsPledge goodsPledge = null;
 		try{
 			// TODO: Needs exception handling policy
-			goodsPledge = goodsPledgeService.load(new Long(id), userId);
+			goodsPledge = goodsPledgeService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -423,7 +423,7 @@ public class GoodsPledgeController extends BaseController
         Long userId = user.getApplicationUser().getId();
 		//TODO: Needs exception handling
 		
-		List<RegisterOfPledges> registerOfPledgesList = this.goodsPledgeService.getGoodsPledgeBo().getGoodsPledgeDao().listRegisterOfPledgesByGoodsPledgeId(new Long(id), userId);
+		List<RegisterOfPledges> registerOfPledgesList = this.goodsPledgeService.getGoodsPledgeBo().getGoodsPledgeDao().listRegisterOfPledgesByGoodsPledgeId(Long.valueOf(id), userId);
 
 		if (registerOfPledgesList.size() == 1){
 			returnPath = "forward:/registerofpledges/" + registerOfPledgesList.get(0).getId() + "/update";

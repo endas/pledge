@@ -57,7 +57,7 @@ public class ApplicationUserHistory
      */
     public ApplicationUserHistory()
     {
-    	applicationUserID = new Long(0);
+    	applicationUserID = Long.valueOf(0);
     	username = "";
 		password = "";
 		enabled = new Boolean(Boolean.FALSE);

@@ -236,7 +236,7 @@ public class ReferenceDaoImpl implements ReferenceDao
      */
     public Long createAndStoreReference(Reference reference, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         reference.setCreatedByID(userId);
         reference.setUpdatedByID(userId);
@@ -321,7 +321,7 @@ public class ReferenceDaoImpl implements ReferenceDao
     public Long createAndStoreReferenceFilter(ReferenceFilter referenceFilter,  Long userId)
         throws ReferenceSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -358,7 +358,7 @@ public class ReferenceDaoImpl implements ReferenceDao
     public Long updateReferenceFilter(ReferenceFilter referenceFilter, Long userId)
         throws ReferenceLoadException, ReferenceSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("Reference", userID, REFERENCEID) == false)
         //{

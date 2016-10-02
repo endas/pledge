@@ -121,7 +121,7 @@ public class ApplicationUserDetailsController extends BaseController
 		ApplicationUserDetailsTranslationBackingBean applicationUserDetailsTranslationBackingBean = new ApplicationUserDetailsTranslationBackingBeanImpl();
 		applicationUserDetailsTranslationBackingBean.setCurrentMode(ApplicationUserDetails.CurrentMode.LOCALIZE);
 		model.addAttribute("applicationUserDetailsTranslationFormModel", applicationUserDetailsTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -250,7 +250,7 @@ public class ApplicationUserDetailsController extends BaseController
 			// TODO: Needs exception handling policy
 			SecurityUser user = (SecurityUser)authentication.getPrincipal();
 	        Long userId = user.getApplicationUser().getId();
-			applicationUserDetails = applicationUserDetailsService.load(new Long(id), userId);
+			applicationUserDetails = applicationUserDetailsService.load(Long.valueOf(id), userId);
 			logger.info("\n\n\n\n Application user details : " + applicationUserDetails.toString());
 			applicationUserDetails.setCurrentMode(ApplicationUserDetails.CurrentMode.UPDATE);
 			applicationUserDetailsService.translateReferenceValues(applicationUserDetails, locale);
@@ -294,7 +294,7 @@ public class ApplicationUserDetailsController extends BaseController
 			// TODO: Needs exception handling policy
 			SecurityUser user = (SecurityUser)authentication.getPrincipal();
 	        Long userId = user.getApplicationUser().getId();
-			applicationUserDetails = applicationUserDetailsService.load(new Long(id), userId);
+			applicationUserDetails = applicationUserDetailsService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -458,7 +458,7 @@ public class ApplicationUserDetailsController extends BaseController
         Long userId = user.getApplicationUser().getId();
 		//TODO: Needs exception handling
 		
-		List<RegisterOfPledges> registerOfPledgesList = this.applicationUserDetailsService.getApplicationUserDetailsBo().getApplicationUserDetailsDao().listRegisterOfPledgesByApplicationUserDetailsId(new Long(id), userId);
+		List<RegisterOfPledges> registerOfPledgesList = this.applicationUserDetailsService.getApplicationUserDetailsBo().getApplicationUserDetailsDao().listRegisterOfPledgesByApplicationUserDetailsId(Long.valueOf(id), userId);
 
 		if (registerOfPledgesList.size() == 1){
 			returnPath = "forward:/registerofpledges/" + registerOfPledgesList.get(0).getId() + "/update";

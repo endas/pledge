@@ -33,7 +33,7 @@ public class MessageResourceTranslationBackingBeanImpl extends MessageResourceIm
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the Messages view */
-    public static final Long VIEW_ID = new Long(10);
+    public static final Long VIEW_ID = Long.valueOf(10);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String MESSAGERESOURCE_TITLE_MAPPING_KEY = "messageresource.form.title";

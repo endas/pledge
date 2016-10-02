@@ -78,16 +78,16 @@ public class ApplicationUserDetailsHistory
      */
     public ApplicationUserDetailsHistory()
     {
-    	applicationUserDetailsID = new Long(0);
+    	applicationUserDetailsID = Long.valueOf(0);
     	contactName = "";
-		representOrganisation = new Long("0");
+		representOrganisation = Long.valueOf("0");
 		telephoneNumber = "";
 		addressOne = "";
 		addressTwo = "";
 		city = "";
 		stateProvinceRegion = "";
 		postCode = "";
-		country = new Long("0");
+		country = Long.valueOf("0");
 		emailAddress = "";
 		
     }

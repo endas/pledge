@@ -22,7 +22,7 @@ public class SetMapper
 			{
 				try
 				{
-					hashSet.add(new Long(stringArray[i]));
+					hashSet.add(Long.valueOf(stringArray[i]));
 				}
 				catch (NumberFormatException ex)
 				{

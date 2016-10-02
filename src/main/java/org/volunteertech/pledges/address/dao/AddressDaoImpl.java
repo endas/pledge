@@ -233,7 +233,7 @@ public class AddressDaoImpl implements AddressDao
      */
     public Long createAndStoreAddress(Address address, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         address.setCreatedByID(userId);
         address.setUpdatedByID(userId);
@@ -318,7 +318,7 @@ public class AddressDaoImpl implements AddressDao
     public Long createAndStoreAddressFilter(AddressFilter addressFilter,  Long userId)
         throws AddressSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -355,7 +355,7 @@ public class AddressDaoImpl implements AddressDao
     public Long updateAddressFilter(AddressFilter addressFilter, Long userId)
         throws AddressLoadException, AddressSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("Address", userID, ADDRESSID) == false)
         //{

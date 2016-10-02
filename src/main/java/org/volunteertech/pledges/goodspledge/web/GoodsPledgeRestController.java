@@ -113,7 +113,7 @@ public class GoodsPledgeRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	goodsPledge = goodsPledgeService.load(new Long(id), userId);
+	    	goodsPledge = goodsPledgeService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -178,7 +178,7 @@ public class GoodsPledgeRestController extends BaseController
     public List<GoodsPledge> getGoodsPledgeByRegisterOfPledgesId(@RequestParam(value="registerOfPledgesId") String registerOfPledgesId) {
 		logger.info("Inside getGoodsPledgeByRegisterOfPledgesId() method...");
 		
-    	List<GoodsPledge> goodsPledgeList = goodsPledgeService.getGoodsPledgeBo().getGoodsPledgeDao().listGoodsPledgeByRegisterOfPledgesId(new Long(registerOfPledgesId));
+    	List<GoodsPledge> goodsPledgeList = goodsPledgeService.getGoodsPledgeBo().getGoodsPledgeDao().listGoodsPledgeByRegisterOfPledgesId(Long.valueOf(registerOfPledgesId));
 		
     	return goodsPledgeList;
     }

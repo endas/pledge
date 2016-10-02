@@ -214,7 +214,7 @@ public class ApplicationUserBoImpl implements ApplicationUserBo
     public Long createAndStoreApplicationUser(ApplicationUser applicationUser, Long userID)
         throws ApplicationUserSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -307,7 +307,7 @@ public class ApplicationUserBoImpl implements ApplicationUserBo
     public Long createAndStoreApplicationUserFilter(ApplicationUserFilter applicationUserFilter,  Long userId)
         throws ApplicationUserSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -341,7 +341,7 @@ public class ApplicationUserBoImpl implements ApplicationUserBo
     public Long updateApplicationUserFilter(ApplicationUserFilter applicationUserFilter, Long userId)
         throws ApplicationUserLoadException, ApplicationUserSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("ApplicationUser", userId, APPLICATIONUSERID) == false)
         //{

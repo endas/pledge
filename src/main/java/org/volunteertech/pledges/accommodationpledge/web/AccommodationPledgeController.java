@@ -70,7 +70,7 @@ public class AccommodationPledgeController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(AccommodationPledgeController.class);
 	
@@ -124,7 +124,7 @@ public class AccommodationPledgeController extends BaseController
 		AccommodationPledgeTranslationBackingBean accommodationPledgeTranslationBackingBean = new AccommodationPledgeTranslationBackingBeanImpl();
 		accommodationPledgeTranslationBackingBean.setCurrentMode(AccommodationPledge.CurrentMode.LOCALIZE);
 		model.addAttribute("accommodationPledgeTranslationFormModel", accommodationPledgeTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, locale);
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -245,7 +245,7 @@ public class AccommodationPledgeController extends BaseController
 		AccommodationPledge accommodationPledge = null;
 		try{
 			// TODO: Needs exception handling policy
-			accommodationPledge = accommodationPledgeService.load(new Long(id), userId);
+			accommodationPledge = accommodationPledgeService.load(Long.valueOf(id), userId);
 			accommodationPledge.setCurrentMode(AccommodationPledge.CurrentMode.UPDATE);
 			this.accommodationPledgeService.translateReferenceValues(accommodationPledge, locale);
 		}
@@ -286,7 +286,7 @@ public class AccommodationPledgeController extends BaseController
 		AccommodationPledge accommodationPledge = null;
 		try{
 			// TODO: Needs exception handling policy
-			accommodationPledge = accommodationPledgeService.load(new Long(id), userId);
+			accommodationPledge = accommodationPledgeService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -483,7 +483,7 @@ public class AccommodationPledgeController extends BaseController
         Long userId = user.getApplicationUser().getId();
 		//TODO: Needs exception handling
 		
-		List<RegisterOfPledges> registerOfPledgesList = this.accommodationPledgeService.getAccommodationPledgeBo().getAccommodationPledgeDao().listRegisterOfPledgesByAccommodationPledgeId(new Long(id), userId);
+		List<RegisterOfPledges> registerOfPledgesList = this.accommodationPledgeService.getAccommodationPledgeBo().getAccommodationPledgeDao().listRegisterOfPledgesByAccommodationPledgeId(Long.valueOf(id), userId);
 
 		if (registerOfPledgesList.size() == 1){
 			returnPath = "forward:/registerofpledges/" + registerOfPledgesList.get(0).getId() + "/update";

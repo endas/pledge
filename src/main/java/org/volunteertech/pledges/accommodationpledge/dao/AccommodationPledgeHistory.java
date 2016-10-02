@@ -107,22 +107,22 @@ public class AccommodationPledgeHistory
      */
     public AccommodationPledgeHistory()
     {
-    	accommodationPledgeID = new Long(0);
+    	accommodationPledgeID = Long.valueOf(0);
     	addressOne = "";
 		addressTwo = "";
 		city = "";
 		stateProvinceRegion = "";
 		postCode = "";
-		country = new Long("0");
-		ownerOccupier = new Long("0");
+		country = Long.valueOf("0");
+		ownerOccupier = Long.valueOf("0");
 		accommodationDateFrom = new Date();
 		accommodationDateTo = new Date();
-		accommodationType = new Long("0");
-		accommodationCondition = new Long("0");
-		numberOfBeds = new Long("0");
-		vacantOrShared = new Long("0");
+		accommodationType = Long.valueOf("0");
+		accommodationCondition = Long.valueOf("0");
+		numberOfBeds = Long.valueOf("0");
+		vacantOrShared = Long.valueOf("0");
 		otherAmenities = "";
-		canYouAccommodate = new Long("0");
+		canYouAccommodate = Long.valueOf("0");
 		additionalInformation = "";
 		
     }

@@ -363,7 +363,7 @@ public class RegisterOfPledgesServiceImpl implements RegisterOfPledgesService
     public Long createAndStoreRegisterOfPledgesFilter(RegisterOfPledgesFilter registerOfPledgesFilter, Long userId)
         throws RegisterOfPledgesSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -398,7 +398,7 @@ public class RegisterOfPledgesServiceImpl implements RegisterOfPledgesService
     public Long updateRegisterOfPledgesFilter(RegisterOfPledgesFilter registerOfPledgesFilter, Long userId)
         throws RegisterOfPledgesLoadException, RegisterOfPledgesSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("RegisterOfPledges", userId, REGISTEROFPLEDGESID) == false)
         //{

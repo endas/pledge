@@ -113,7 +113,7 @@ public class MessageResourceRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	messageResource = messageResourceService.load(new Long(id), userId);
+	    	messageResource = messageResourceService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -178,7 +178,7 @@ public class MessageResourceRestController extends BaseController
     public List<MessageResource> getMessageResourceByViewId(@RequestParam(value="viewId") String viewId) {
 		logger.info("Inside getMessageResourceByViewId() method...");
 		
-    	List<MessageResource> messageResourceList = messageResourceService.getMessageResourceBo().getMessageResourceDao().listMessageResourceByViewId(new Long(viewId));
+    	List<MessageResource> messageResourceList = messageResourceService.getMessageResourceBo().getMessageResourceDao().listMessageResourceByViewId(Long.valueOf(viewId));
 		
     	return messageResourceList;
     }

@@ -31,7 +31,7 @@ public class LandingTranslationBackingBeanImpl extends LandingImpl implements La
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the Red Cross Migrant Appeal view */
-    public static final Long VIEW_ID = new Long(8);
+    public static final Long VIEW_ID = Long.valueOf(8);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String LANDING_TITLE_MAPPING_KEY = "landing.form.title";

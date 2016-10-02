@@ -34,7 +34,7 @@ public class ApplicationUserDetailsTranslationBackingBeanImpl extends Applicatio
 	private static final long serialVersionUID = 1L;
     
     /** The identifier for the About You view */
-    public static final Long VIEW_ID = new Long(12);
+    public static final Long VIEW_ID = Long.valueOf(12);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String APPLICATIONUSERDETAILS_TITLE_MAPPING_KEY = "applicationuserdetails.form.title";

@@ -156,7 +156,7 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     private Set<Long> accommodateWho = new HashSet<Long>();
     
     private AccommodationFlaggedIssuesEnum flaggedIssue;
-    private Long status = new Long(0);
+    private Long status = Long.valueOf(0);
     private String statusReferenceTranslation;
     
     private ActiveStatusEnum activeStatus = ActiveStatusEnum.ACTIVE;
@@ -188,21 +188,21 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 		
 		this.postCode = "";
 		
-		this.country = new Long("0");
+		this.country = Long.valueOf("0");
 		
-		this.ownerOccupier = new Long("0");
+		this.ownerOccupier = Long.valueOf("0");
 		
 		this.accommodationDateFrom = null;
 		
 		this.accommodationDateTo = null;
 		
-		this.accommodationType = new Long("0");
+		this.accommodationType = Long.valueOf("0");
 		
-		this.accommodationCondition = new Long("0");
+		this.accommodationCondition = Long.valueOf("0");
 		
-		this.numberOfBeds = new Long("0");
+		this.numberOfBeds = Long.valueOf("0");
 		
-		this.vacantOrShared = new Long("0");
+		this.vacantOrShared = Long.valueOf("0");
 		
 		this.otherAmenities = "";
 		
@@ -211,7 +211,7 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();
         this.sameAsProfileAddress = true;
-        this.status = new Long("0");
+        this.status = Long.valueOf("0");
     }
     
     /**

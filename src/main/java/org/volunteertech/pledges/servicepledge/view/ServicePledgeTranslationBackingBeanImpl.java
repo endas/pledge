@@ -33,7 +33,7 @@ public class ServicePledgeTranslationBackingBeanImpl extends ServicePledgeImpl i
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the Service Pledge view */
-    public static final Long VIEW_ID = new Long(4);
+    public static final Long VIEW_ID = Long.valueOf(4);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String SERVICEPLEDGE_TITLE_MAPPING_KEY = "servicepledge.form.title";

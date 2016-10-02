@@ -237,7 +237,7 @@ public class AddressBoImpl implements AddressBo
     public Long createAndStoreAddress(Address address, Long userID)
         throws AddressSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -330,7 +330,7 @@ public class AddressBoImpl implements AddressBo
     public Long createAndStoreAddressFilter(AddressFilter addressFilter,  Long userId)
         throws AddressSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -364,7 +364,7 @@ public class AddressBoImpl implements AddressBo
     public Long updateAddressFilter(AddressFilter addressFilter, Long userId)
         throws AddressLoadException, AddressSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("Address", userId, ADDRESSID) == false)
         //{

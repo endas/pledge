@@ -60,10 +60,10 @@ public class MessageResourceHistory
      */
     public MessageResourceHistory()
     {
-    	messageResourceID = new Long(0);
+    	messageResourceID = Long.valueOf(0);
     	messageKey = "";
 		locale = "";
-		localeReferenceId = new Long("0");
+		localeReferenceId = Long.valueOf("0");
 		message = "";
 		
     }

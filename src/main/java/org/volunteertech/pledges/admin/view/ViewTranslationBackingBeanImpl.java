@@ -33,7 +33,7 @@ public class ViewTranslationBackingBeanImpl extends ViewImpl implements ViewTran
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the Page Administration view */
-    public static final Long VIEW_ID = new Long(9);
+    public static final Long VIEW_ID = Long.valueOf(9);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String VIEW_TITLE_MAPPING_KEY = "view.form.title";

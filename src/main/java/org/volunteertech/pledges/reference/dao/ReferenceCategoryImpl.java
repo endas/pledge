@@ -87,7 +87,7 @@ public class ReferenceCategoryImpl implements ReferenceCategory, Serializable {
     	
 		this.referenceCategoryDesc = "";
 		
-		this.parentCategoryId = new Long("0");
+		this.parentCategoryId = Long.valueOf("0");
 		
 		this.description = "";
 		

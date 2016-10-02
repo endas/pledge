@@ -95,9 +95,9 @@ public class ReferenceImpl implements Reference, Serializable {
 		
 		this.refDesc = "";
 		
-		this.parentId = new Long("0");
+		this.parentId = Long.valueOf("0");
 		
-		this.refIndex = new Long("0");
+		this.refIndex = Long.valueOf("0");
 		
 		this.description = "";
 		

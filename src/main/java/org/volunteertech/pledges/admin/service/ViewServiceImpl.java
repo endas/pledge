@@ -315,7 +315,7 @@ public class ViewServiceImpl implements ViewService
     public Long createAndStoreViewFilter(ViewFilter viewFilter, Long userId)
         throws ViewSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -350,7 +350,7 @@ public class ViewServiceImpl implements ViewService
     public Long updateViewFilter(ViewFilter viewFilter, Long userId)
         throws ViewLoadException, ViewSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("View", userId, VIEWID) == false)
         //{

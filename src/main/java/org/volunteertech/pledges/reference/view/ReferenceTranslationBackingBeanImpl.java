@@ -33,7 +33,7 @@ public class ReferenceTranslationBackingBeanImpl extends ReferenceImpl implement
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the References view */
-    public static final Long VIEW_ID = new Long(7);
+    public static final Long VIEW_ID = Long.valueOf(7);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String REFERENCE_TITLE_MAPPING_KEY = "reference.form.title";

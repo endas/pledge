@@ -63,11 +63,11 @@ public class ReferenceHistory
      */
     public ReferenceHistory()
     {
-    	referenceID = new Long(0);
+    	referenceID = Long.valueOf(0);
     	refType = "";
 		refDesc = "";
-		parentId = new Long("0");
-		refIndex = new Long("0");
+		parentId = Long.valueOf("0");
+		refIndex = Long.valueOf("0");
 		description = "";
 		
     }

@@ -68,7 +68,7 @@ public class AddressController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(AddressController.class);
 	
@@ -121,7 +121,7 @@ public class AddressController extends BaseController
 		AddressTranslationBackingBean addressTranslationBackingBean = new AddressTranslationBackingBeanImpl();
 		addressTranslationBackingBean.setCurrentMode(Address.CurrentMode.LOCALIZE);
 		model.addAttribute("addressTranslationFormModel", addressTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -241,7 +241,7 @@ public class AddressController extends BaseController
 		Address address = null;
 		try{
 			// TODO: Needs exception handling policy
-			address = addressService.load(new Long(id), userId);
+			address = addressService.load(Long.valueOf(id), userId);
 			address.setCurrentMode(Address.CurrentMode.UPDATE);
 			this.addressService.translateReferenceValues(address, locale);
 		}
@@ -282,7 +282,7 @@ public class AddressController extends BaseController
 		Address address = null;
 		try{
 			// TODO: Needs exception handling policy
-			address = addressService.load(new Long(id), userId);
+			address = addressService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

@@ -57,9 +57,9 @@ public class ReferenceCategoryHistory
      */
     public ReferenceCategoryHistory()
     {
-    	referenceCategoryID = new Long(0);
+    	referenceCategoryID = Long.valueOf(0);
     	referenceCategoryDesc = "";
-		parentCategoryId = new Long("0");
+		parentCategoryId = Long.valueOf("0");
 		description = "";
 		
     }

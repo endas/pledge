@@ -380,7 +380,7 @@ public class MessageResourceServiceImpl implements MessageResourceService
     public Long createAndStoreMessageResourceFilter(MessageResourceFilter messageResourceFilter, Long userId)
         throws MessageResourceSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -415,7 +415,7 @@ public class MessageResourceServiceImpl implements MessageResourceService
     public Long updateMessageResourceFilter(MessageResourceFilter messageResourceFilter, Long userId)
         throws MessageResourceLoadException, MessageResourceSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("MessageResource", userId, MESSAGERESOURCEID) == false)
         //{

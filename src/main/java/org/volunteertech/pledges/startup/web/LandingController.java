@@ -68,7 +68,7 @@ public class LandingController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(LandingController.class);
 	
@@ -121,7 +121,7 @@ public class LandingController extends BaseController
 		LandingTranslationBackingBean landingTranslationBackingBean = new LandingTranslationBackingBeanImpl();
 		landingTranslationBackingBean.setCurrentMode(Landing.CurrentMode.LOCALIZE);
 		model.addAttribute("landingTranslationFormModel", landingTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -241,7 +241,7 @@ public class LandingController extends BaseController
 		Landing landing = null;
 		try{
 			// TODO: Needs exception handling policy
-			landing = landingService.load(new Long(id), userId);
+			landing = landingService.load(Long.valueOf(id), userId);
 			landing.setCurrentMode(Landing.CurrentMode.UPDATE);
 			this.landingService.translateReferenceValues(landing, locale);
 		}
@@ -282,7 +282,7 @@ public class LandingController extends BaseController
 		Landing landing = null;
 		try{
 			// TODO: Needs exception handling policy
-			landing = landingService.load(new Long(id), userId);
+			landing = landingService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

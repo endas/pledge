@@ -237,7 +237,7 @@ public class MessageResourceDaoImpl implements MessageResourceDao
      */
     public Long createAndStoreMessageResource(MessageResource messageResource, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         messageResource.setCreatedByID(userId);
         messageResource.setUpdatedByID(userId);
@@ -322,7 +322,7 @@ public class MessageResourceDaoImpl implements MessageResourceDao
     public Long createAndStoreMessageResourceFilter(MessageResourceFilter messageResourceFilter,  Long userId)
         throws MessageResourceSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -359,7 +359,7 @@ public class MessageResourceDaoImpl implements MessageResourceDao
     public Long updateMessageResourceFilter(MessageResourceFilter messageResourceFilter, Long userId)
         throws MessageResourceLoadException, MessageResourceSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("MessageResource", userID, MESSAGERESOURCEID) == false)
         //{

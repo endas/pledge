@@ -110,7 +110,7 @@ public class AddressImpl implements Address, Serializable {
 		
 		this.postCode = "";
 		
-		this.country = new Long("0");
+		this.country = Long.valueOf("0");
 		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();

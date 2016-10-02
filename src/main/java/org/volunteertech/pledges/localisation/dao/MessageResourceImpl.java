@@ -92,7 +92,7 @@ public class MessageResourceImpl implements MessageResource, Serializable {
 		
 		this.locale = "";
 		
-		this.localeReferenceId = new Long("0");
+		this.localeReferenceId = Long.valueOf("0");
 		
 		this.message = "";
 		

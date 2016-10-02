@@ -113,7 +113,7 @@ public class ReferenceRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	reference = referenceService.load(new Long(id), userId);
+	    	reference = referenceService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -178,7 +178,7 @@ public class ReferenceRestController extends BaseController
     public List<Reference> getReferenceByReferenceCategoryId(@RequestParam(value="referenceCategoryId") String referenceCategoryId) {
 		logger.info("Inside getReferenceByReferenceCategoryId() method...");
 		
-    	List<Reference> referenceList = referenceService.getReferenceBo().getReferenceDao().listReferenceByReferenceCategoryId(new Long(referenceCategoryId));
+    	List<Reference> referenceList = referenceService.getReferenceBo().getReferenceDao().listReferenceByReferenceCategoryId(Long.valueOf(referenceCategoryId));
 		
     	return referenceList;
     }

@@ -33,7 +33,7 @@ public class ReferenceCategoryTranslationBackingBeanImpl extends ReferenceCatego
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the Reference Categories view */
-    public static final Long VIEW_ID = new Long(6);
+    public static final Long VIEW_ID = Long.valueOf(6);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String REFERENCECATEGORY_TITLE_MAPPING_KEY = "referencecategory.form.title";

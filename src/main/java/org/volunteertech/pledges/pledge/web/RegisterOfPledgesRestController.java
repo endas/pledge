@@ -124,7 +124,7 @@ public class RegisterOfPledgesRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	registerOfPledges = registerOfPledgesService.load(new Long(id), userId);
+	    	registerOfPledges = registerOfPledgesService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -217,7 +217,7 @@ public class RegisterOfPledgesRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy and calls moved inside the business object.
-	    	accommodationPledgeList = registerOfPledgesService.getAccommodationPledges(new Long(registerOfPledgesId), userId);
+	    	accommodationPledgeList = registerOfPledgesService.getAccommodationPledges(Long.valueOf(registerOfPledgesId), userId);
 	    	accommodationPledgeList = this.registerOfPledgesService.translateAccommodationPledgeReferenceValues(accommodationPledgeList, locale);
 			
 		}
@@ -289,7 +289,7 @@ public class RegisterOfPledgesRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy and calls moved inside the business object.
-	    	servicePledgeList = registerOfPledgesService.getServicePledges(new Long(registerOfPledgesId), userId);
+	    	servicePledgeList = registerOfPledgesService.getServicePledges(Long.valueOf(registerOfPledgesId), userId);
 	    	servicePledgeList = this.registerOfPledgesService.translateServicePledgeReferenceValues(servicePledgeList, locale);
 			
 		}
@@ -361,7 +361,7 @@ public class RegisterOfPledgesRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy and calls moved inside the business object.
-	    	goodsPledgeList = registerOfPledgesService.getGoodsPledges(new Long(registerOfPledgesId), userId);
+	    	goodsPledgeList = registerOfPledgesService.getGoodsPledges(Long.valueOf(registerOfPledgesId), userId);
 	    	goodsPledgeList = this.registerOfPledgesService.translateGoodsPledgeReferenceValues(goodsPledgeList, locale);
 			
 		}

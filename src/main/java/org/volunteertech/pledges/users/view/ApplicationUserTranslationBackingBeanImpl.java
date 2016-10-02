@@ -31,7 +31,7 @@ public class ApplicationUserTranslationBackingBeanImpl extends ApplicationUserIm
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the User Details view */
-    public static final Long VIEW_ID = new Long(11);
+    public static final Long VIEW_ID = Long.valueOf(11);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String APPLICATIONUSER_TITLE_MAPPING_KEY = "applicationuser.form.title";

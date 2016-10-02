@@ -72,7 +72,7 @@ public class RegisterOfPledgesController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(RegisterOfPledgesController.class);
 	
@@ -125,7 +125,7 @@ public class RegisterOfPledgesController extends BaseController
 		RegisterOfPledgesTranslationBackingBean registerOfPledgesTranslationBackingBean = new RegisterOfPledgesTranslationBackingBeanImpl();
 		registerOfPledgesTranslationBackingBean.setCurrentMode(RegisterOfPledges.CurrentMode.LOCALIZE);
 		model.addAttribute("registerOfPledgesTranslationFormModel", registerOfPledgesTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -245,7 +245,7 @@ public class RegisterOfPledgesController extends BaseController
 		RegisterOfPledges registerOfPledges = null;
 		try{
 			// TODO: Needs exception handling policy
-			registerOfPledges = registerOfPledgesService.load(new Long(id), userId);
+			registerOfPledges = registerOfPledgesService.load(Long.valueOf(id), userId);
 			registerOfPledges.setCurrentMode(RegisterOfPledges.CurrentMode.UPDATE);
 			this.registerOfPledgesService.translateReferenceValues(registerOfPledges, locale);
 		}
@@ -286,7 +286,7 @@ public class RegisterOfPledgesController extends BaseController
 		RegisterOfPledges registerOfPledges = null;
 		try{
 			// TODO: Needs exception handling policy
-			registerOfPledges = registerOfPledgesService.load(new Long(id), userId);
+			registerOfPledges = registerOfPledgesService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
