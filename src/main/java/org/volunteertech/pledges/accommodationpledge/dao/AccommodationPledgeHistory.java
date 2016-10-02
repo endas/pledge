@@ -108,11 +108,11 @@ public class AccommodationPledgeHistory
     public AccommodationPledgeHistory()
     {
     	accommodationPledgeID = new Long(0);
-    	addressOne = new String();
-		addressTwo = new String();
-		city = new String();
-		stateProvinceRegion = new String();
-		postCode = new String();
+    	addressOne = "";
+		addressTwo = "";
+		city = "";
+		stateProvinceRegion = "";
+		postCode = "";
 		country = new Long("0");
 		ownerOccupier = new Long("0");
 		accommodationDateFrom = new Date();
@@ -121,9 +121,9 @@ public class AccommodationPledgeHistory
 		accommodationCondition = new Long("0");
 		numberOfBeds = new Long("0");
 		vacantOrShared = new Long("0");
-		otherAmenities = new String();
+		otherAmenities = "";
 		canYouAccommodate = new Long("0");
-		additionalInformation = new String();
+		additionalInformation = "";
 		
     }
     

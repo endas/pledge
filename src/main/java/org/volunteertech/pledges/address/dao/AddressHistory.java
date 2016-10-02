@@ -75,11 +75,11 @@ public class AddressHistory
     public AddressHistory()
     {
     	addressID = new Long(0);
-    	addressOne = new String();
-		addressTwo = new String();
-		city = new String();
-		stateProvinceRegion = new String();
-		postCode = new String();
+    	addressOne = "";
+		addressTwo = "";
+		city = "";
+		stateProvinceRegion = "";
+		postCode = "";
 		country = new Long("0");
 		
     }

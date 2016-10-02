@@ -130,26 +130,26 @@ public class LandingTranslationBackingBeanImpl extends LandingImpl implements La
     public LandingTranslationBackingBeanImpl()
     {
     	setViewId(LandingTranslationBackingBeanImpl.VIEW_ID);
-		landingMainMessages1MessageKey = new String();
-		landingMainMessages1Message = new String();
-			landingMainMessages1LabelMessageKey = new String();  
-		landingMainMessages1Label = new String();
-		landingMainMessages1PlaceHolderMessageKey = new String();
-		landingMainMessages1PlaceHolder = new String();
-		landingMainMessages1HelpTextMessageKey = new String();
-		landingMainMessages1HelpText = new String();
-		landingMainMessages1TooltipMessageKey = new String();
-		landingMainMessages1Tooltip = new String();
-		landingMainMessages2MessageKey = new String();
-		landingMainMessages2Message = new String();
-			landingMainMessages2LabelMessageKey = new String();  
-		landingMainMessages2Label = new String();
-		landingMainMessages2PlaceHolderMessageKey = new String();
-		landingMainMessages2PlaceHolder = new String();
-		landingMainMessages2HelpTextMessageKey = new String();
-		landingMainMessages2HelpText = new String();
-		landingMainMessages2TooltipMessageKey = new String();
-		landingMainMessages2Tooltip = new String();
+		landingMainMessages1MessageKey = "";
+		landingMainMessages1Message = "";
+			landingMainMessages1LabelMessageKey = "";
+		landingMainMessages1Label = "";
+		landingMainMessages1PlaceHolderMessageKey = "";
+		landingMainMessages1PlaceHolder = "";
+		landingMainMessages1HelpTextMessageKey = "";
+		landingMainMessages1HelpText = "";
+		landingMainMessages1TooltipMessageKey = "";
+		landingMainMessages1Tooltip = "";
+		landingMainMessages2MessageKey = "";
+		landingMainMessages2Message = "";
+			landingMainMessages2LabelMessageKey = "";
+		landingMainMessages2Label = "";
+		landingMainMessages2PlaceHolderMessageKey = "";
+		landingMainMessages2PlaceHolder = "";
+		landingMainMessages2HelpTextMessageKey = "";
+		landingMainMessages2HelpText = "";
+		landingMainMessages2TooltipMessageKey = "";
+		landingMainMessages2Tooltip = "";
 
     }
     

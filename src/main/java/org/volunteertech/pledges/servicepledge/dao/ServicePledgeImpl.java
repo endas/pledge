@@ -157,9 +157,9 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
 		
 		this.pledgeServiceLevelThree = new Long("0");
 
-		this.additionalInformation = new String();
+		this.additionalInformation = "";
 		
-		this.pledgeServiceQualification = new String();
+		this.pledgeServiceQualification = "";
 		
 		this.pledgeServiceDateAvailable = null;
 		

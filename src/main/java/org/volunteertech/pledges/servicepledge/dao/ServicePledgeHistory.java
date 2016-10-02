@@ -101,8 +101,8 @@ public class ServicePledgeHistory
 		pledgeServiceLevelOne = new Long("0");
 		pledgeServiceLevelTwo = new Long("0");
 		pledgeServiceLevelThree = new Long("0");
-		additionalInformation = new String();
-		pledgeServiceQualification = new String();
+		additionalInformation = "";
+		pledgeServiceQualification = "";
 		pledgeServiceDateAvailable = new Date();
 		pledgeServiceHoursPerWeek = new Long("0");
 

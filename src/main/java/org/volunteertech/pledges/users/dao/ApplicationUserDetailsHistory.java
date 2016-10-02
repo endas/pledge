@@ -79,16 +79,16 @@ public class ApplicationUserDetailsHistory
     public ApplicationUserDetailsHistory()
     {
     	applicationUserDetailsID = new Long(0);
-    	contactName = new String();
+    	contactName = "";
 		representOrganisation = new Long("0");
-		telephoneNumber = new String();
-		addressOne = new String();
-		addressTwo = new String();
-		city = new String();
-		stateProvinceRegion = new String();
-		postCode = new String();
+		telephoneNumber = "";
+		addressOne = "";
+		addressTwo = "";
+		city = "";
+		stateProvinceRegion = "";
+		postCode = "";
 		country = new Long("0");
-		emailAddress = new String();
+		emailAddress = "";
 		
     }
     

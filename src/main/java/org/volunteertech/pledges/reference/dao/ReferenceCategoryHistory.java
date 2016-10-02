@@ -58,9 +58,9 @@ public class ReferenceCategoryHistory
     public ReferenceCategoryHistory()
     {
     	referenceCategoryID = new Long(0);
-    	referenceCategoryDesc = new String();
+    	referenceCategoryDesc = "";
 		parentCategoryId = new Long("0");
-		description = new String();
+		description = "";
 		
     }
     

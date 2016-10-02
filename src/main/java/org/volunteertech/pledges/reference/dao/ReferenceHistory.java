@@ -64,11 +64,11 @@ public class ReferenceHistory
     public ReferenceHistory()
     {
     	referenceID = new Long(0);
-    	refType = new String();
-		refDesc = new String();
+    	refType = "";
+		refDesc = "";
 		parentId = new Long("0");
 		refIndex = new Long("0");
-		description = new String();
+		description = "";
 		
     }
     

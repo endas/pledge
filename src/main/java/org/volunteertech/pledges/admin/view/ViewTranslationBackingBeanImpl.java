@@ -120,22 +120,22 @@ public class ViewTranslationBackingBeanImpl extends ViewImpl implements ViewTran
     public ViewTranslationBackingBeanImpl()
     {
     	setViewId(ViewTranslationBackingBeanImpl.VIEW_ID);
-		viewNameLabelMessageKey = new String();  
-		viewNameLabel = new String();
-		viewNamePlaceHolderMessageKey = new String();
-		viewNamePlaceHolder = new String();
-		viewNameHelpTextMessageKey = new String();
-		viewNameHelpText = new String();
-		viewNameTooltipMessageKey = new String();
-		viewNameTooltip = new String();
-		saveButtonLabelMessageKey = new String();  
-		saveButtonLabel = new String();
-		saveButtonPlaceHolderMessageKey = new String();
-		saveButtonPlaceHolder = new String();
-		saveButtonHelpTextMessageKey = new String();
-		saveButtonHelpText = new String();
-		saveButtonTooltipMessageKey = new String();
-		saveButtonTooltip = new String();
+		viewNameLabelMessageKey = "";
+		viewNameLabel = "";
+		viewNamePlaceHolderMessageKey = "";
+		viewNamePlaceHolder = "";
+		viewNameHelpTextMessageKey = "";
+		viewNameHelpText = "";
+		viewNameTooltipMessageKey = "";
+		viewNameTooltip = "";
+		saveButtonLabelMessageKey = "";
+		saveButtonLabel = "";
+		saveButtonPlaceHolderMessageKey = "";
+		saveButtonPlaceHolder = "";
+		saveButtonHelpTextMessageKey = "";
+		saveButtonHelpText = "";
+		saveButtonTooltipMessageKey = "";
+		saveButtonTooltip = "";
 
     }
     

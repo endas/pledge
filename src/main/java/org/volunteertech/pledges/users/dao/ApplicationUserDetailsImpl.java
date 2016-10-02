@@ -117,25 +117,25 @@ public class ApplicationUserDetailsImpl implements ApplicationUserDetails, Seria
 	public ApplicationUserDetailsImpl()
 	{
 
-		this.contactName = new String();
+		this.contactName = "";
 
 		this.representOrganisation = false;
 
-		this.telephoneNumber = new String();
+		this.telephoneNumber = "";
 
-		this.addressOne = new String();
+		this.addressOne = "";
 
-		this.addressTwo = new String();
+		this.addressTwo = "";
 
-		this.city = new String();
+		this.city = "";
 
-		this.stateProvinceRegion = new String();
+		this.stateProvinceRegion = "";
 
-		this.postCode = new String();
+		this.postCode = "";
 
 		this.country = new Long("0");
 
-		this.emailAddress = new String();
+		this.emailAddress = "";
 
 		this.dateCreated = new Date();
 		this.dateUpdated = new Date();

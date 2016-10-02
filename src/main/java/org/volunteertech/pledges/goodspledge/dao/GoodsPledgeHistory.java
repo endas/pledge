@@ -114,8 +114,8 @@ public class GoodsPledgeHistory
 		goodsNewOrUsed = new Long("0");
 		goodsCondition = new Long("0");
 		goodsQuantity = new Long("0");
-		additionalInformation = new String();
-		itemSize = new String();
+		additionalInformation = "";
+		itemSize = "";
 
 	}
 

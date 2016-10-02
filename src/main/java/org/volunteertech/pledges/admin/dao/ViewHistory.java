@@ -52,7 +52,7 @@ public class ViewHistory
     public ViewHistory()
     {
     	viewID = new Long(0);
-    	viewName = new String();
+    	viewName = "";
 		
     }
     

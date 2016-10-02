@@ -100,15 +100,15 @@ public class AddressImpl implements Address, Serializable {
     public AddressImpl()
     {
     	
-		this.addressOne = new String();
+		this.addressOne = "";
 		
-		this.addressTwo = new String();
+		this.addressTwo = "";
 		
-		this.city = new String();
+		this.city = "";
 		
-		this.stateProvinceRegion = new String();
+		this.stateProvinceRegion = "";
 		
-		this.postCode = new String();
+		this.postCode = "";
 		
 		this.country = new Long("0");
 		

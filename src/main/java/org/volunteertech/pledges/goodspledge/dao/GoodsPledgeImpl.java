@@ -186,9 +186,9 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
 		
 		this.goodsQuantity = new Long("0");
 		
-		this.additionalInformation = new String();
+		this.additionalInformation = "";
 		
-		this.itemSize = new String();
+		this.itemSize = "";
 		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();
