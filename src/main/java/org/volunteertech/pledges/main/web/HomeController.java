@@ -98,8 +98,6 @@ public class HomeController
 				return "forward:/registerofpledges/" + registerOfPledgesImpl.getId() + "/update";
 			}
 		
-		}else{
-			logger.info("Non client login \n\n\n\n\n\n\n\n XXXXXX \n\n\n\n\n");
 		}
 		
 		logger.debug("showEntityList()");

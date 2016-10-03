@@ -3,21 +3,15 @@
 	uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ taglib
 	prefix="form" uri="http://www.springframework.org/tags/form"%><!DOCTYPE html>
 <html lang="en">
+<spring:message code="userActionCreateAccount" var="createAccountInstruction" />
+<spring:message code="userActionLogin" var="loginInstruction" />
+<c:url value="/applicationuser/createuser" var="createUserUrl" />
+<c:url value="/login" var="loginUrl" />
+
 <c:choose>
-	<c:when test="${applicationUserFormModel['currentMode'] == 'ADD'}">
-		<spring:message code="userActionCreateAccount" var="loginInstruction" />
-		<c:url value="/applicationuser/createuser" var="loginUrl" />
-	</c:when>
-	<c:when test="${applicationUserFormModel['currentMode'] == 'UPDATE'}">
-		<spring:message code="userActionLogin" var="loginInstruction" />
-		<c:url value="/login" var="loginUrl" />
-	</c:when>
 	<c:when test="${applicationUserFormModel['currentMode'] == 'LOCALIZE'}">
 		<spring:message code="userActionCreateAccount" var="loginInstruction" />
 	</c:when>
-	<c:otherwise>
-		<spring:message code="userActionCreateAccount" var="loginInstruction" />
-	</c:otherwise>
 </c:choose>
 
 <spring:url value="/resources/images/redx.png" var="loginLogo" />
@@ -38,17 +32,56 @@
 </jsp:include>
 <body class="fullbg">
 
+<div class="container-fluid">
+  <div class="row">
+     <div class="col-xs-12"></div>
+   	 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-6">
+   	 	<form:form id='frmSignIn'  class="navbar-form redcross-login "  action="${loginUrl}" method="post" accept-charset="utf-8" modelAttribute="applicationUserFormModel">
+						 
+						 <spring:bind path="username">
+						 <div class="form-group">
+	                        <form:input type="text" class="form-control" name="username" placeholder="Username" path="username"/>
+	                    </div>
+	                    </spring:bind>
+	                    <spring:bind path="password">
+	                     <div class="form-group">
+	                        <form:input  type="password" id="sign-in-password" path="password" class="form-control" placeholder="${passwordIdentifier}"
+										required="required" oninvalid="this.setCustomValidity('${passwordRequired}')" oninput="setCustomValidity('')" ></form:input> 
+									<form:errors path="password" class="help-block" />
+	                    </div> 
+	                    </spring:bind>
+	                    <div class="form-group">
+	                    <button type="submit" class="btn btn-lg btn-primary btn-block btn-login">Sign In</button>
+	                   </div>
+	                    <input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" /> 
+						<form:errors element="div" />
+						<c:if test="${not empty msg2}">
+                        
+						<div class="form-group alert alert-danger alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                               	<strong>${msg2}</strong>
+                            </div>
+   
+                    	</c:if>
+	                </form:form> 
+
+   	 </div>
+  </div>
+</div>
+
+
 	<div class="row fill">
 		<!-- Left Column -->
 		<div class="col-sm-6"></div>
 
 		<!-- Right Column -->
 		<div class="col-md-6 col-lg-5 fill ">
-
-
+			
+            
 			<!-- Content Area -->
 			<div class="col-lg-10 col-md-10 loginbackground vertical-center">
-
+				
 
 				<!-- Branding -->
 				<div id="branding" class="col-lg-12 text-right">
@@ -63,18 +96,18 @@
 
 					</table>
 
-					<h3 class="text-center">${loginInstruction}</h3>
+					<h3 class="text-center">${createAccountInstruction}</h3>
 					
 					
 
-					<form:form id="frmSignIn" class="form-signin" action="${loginUrl}"
+					<form:form id="frmSignUp" class="form-signin" action="${createUserUrl}"
 						method="post" accept-charset="utf-8"
 						modelAttribute="applicationUserFormModel">
 						<c:if test="${not empty msg}">
 							<div class="alert alert-${css} alert-dismissible" role="alert">
 								<button type="button" class="close" data-dismiss="alert"
 									aria-label="Close">
-									<span aria-hidden="true">�</span>
+									<!-- <span aria-hidden="true">�</span> -->
 								</button>
 								<strong>${msg}</strong>
 							</div>
@@ -112,12 +145,12 @@
 						<br />
 						
 					</form:form>
-					<c:choose>
-					<c:when test="${applicationUserFormModel['currentMode'] == 'ADD'}">
+					 <c:choose>
+					 <c:when test="${applicationUserFormModel['currentMode'] == 'ADD'}">
 						<div class="text-center">
 							<span>Already have an account? <a class="home-login-link" href="<c:url value="/login" />">Click here </a>to log in</span>
 						</div>
-					</c:when>
+					</c:when> 
 					</c:choose>
 					<c:choose>
 						<c:when test="${applicationUserFormModel['currentMode'] == 'UPDATE'}">
@@ -125,7 +158,7 @@
 							<a href="<c:url value="/applicationuser/createuser" />">Return Home</a>
 						</div>
 						</c:when>
-					</c:choose>
+					</c:choose> 
 				</div>
 
 				<!-- Empty Space -->
@@ -144,12 +177,12 @@
 									"alert-danger", 50000);
 						});
 	</script>
-	<style>
+	 <style>
 	/* CUSTOM STYLES */
 
 	body {
-	    overflow-x: hidden;
-	    overflow-y: hidden;
+	    /* overflow-x: hidden; */
+	     overflow-y: hidden; 
 	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	    color: #112223;
 	}
@@ -245,7 +278,29 @@
 	    text-decoration: none;
 	    background: #f80000;
 	}
-
+/* 	.redcross-login{
+		background-color: rgba(255, 255, 255, 0.7);
+	} */
+	.redcross-login .form-group{
+		/* display:inline-block; */
+		padding:5px;
+	}
+	.redcross-login .btn-login{
+  		padding-bottom: 5px;
+	}
+	.login-form-btn{
+		font-size:0.8em;
+		margin-top: 1px;
+		min-width:10em;
+	}
+	.navbar-form{
+		text-align:right;
+	}
+	#frmSignIn input,
+	#frmSignIn button{
+		max-width: 300px;
+		margin: 0 auto;
+	}
 	/* Media Queries */
 
 
@@ -372,6 +427,6 @@
 	    }
 	}
 
-	</style>
+	</style> 
 </body>
 </html>

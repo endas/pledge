@@ -221,7 +221,8 @@ public class ApplicationUserController extends BaseController
     	}
     	else{
     		String loginIssueMessage = messageSource.getMessage("login.invalid.credentials", new String[0], locale);
-    		model.addAttribute("msg", loginIssueMessage);
+    		model.addAttribute("msg", "");
+    		model.addAttribute("msg2", loginIssueMessage);
     	}
 
     	model.addAttribute("css", "danger");
