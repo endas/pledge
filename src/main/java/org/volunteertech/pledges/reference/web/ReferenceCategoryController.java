@@ -76,7 +76,7 @@ public class ReferenceCategoryController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(ReferenceCategoryController.class);
 	
@@ -129,7 +129,7 @@ public class ReferenceCategoryController extends BaseController
 		ReferenceCategoryTranslationBackingBean referenceCategoryTranslationBackingBean = new ReferenceCategoryTranslationBackingBeanImpl();
 		referenceCategoryTranslationBackingBean.setCurrentMode(ReferenceCategory.CurrentMode.LOCALIZE);
 		model.addAttribute("referenceCategoryTranslationFormModel", referenceCategoryTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -249,7 +249,7 @@ public class ReferenceCategoryController extends BaseController
 		ReferenceCategory referenceCategory = null;
 		try{
 			// TODO: Needs exception handling policy
-			referenceCategory = referenceCategoryService.load(new Long(id), userId);
+			referenceCategory = referenceCategoryService.load(Long.valueOf(id), userId);
 			referenceCategory.setCurrentMode(ReferenceCategory.CurrentMode.UPDATE);
 			this.referenceCategoryService.translateReferenceValues(referenceCategory, locale);
 		}
@@ -290,7 +290,7 @@ public class ReferenceCategoryController extends BaseController
 		ReferenceCategory referenceCategory = null;
 		try{
 			// TODO: Needs exception handling policy
-			referenceCategory = referenceCategoryService.load(new Long(id), userId);
+			referenceCategory = referenceCategoryService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

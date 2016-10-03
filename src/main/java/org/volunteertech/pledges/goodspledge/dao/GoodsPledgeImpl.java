@@ -154,7 +154,7 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
     
     private Date dateAvailableTo;
 
-    private Long status = new Long(0);
+    private Long status = Long.valueOf(0);
     private String statusReferenceTranslation;
     
     private ActiveStatusEnum activeStatus = ActiveStatusEnum.ACTIVE;
@@ -172,23 +172,23 @@ public class GoodsPledgeImpl implements GoodsPledge, Serializable {
     public GoodsPledgeImpl()
     {
     	
-		this.goodsCategoryOne = new Long("0");
+		this.goodsCategoryOne = Long.valueOf("0");
 		
-		this.goodsCategoryTwo = new Long("0");
+		this.goodsCategoryTwo = Long.valueOf("0");
 		
-		this.goodsCategoryThree = new Long("0");
+		this.goodsCategoryThree = Long.valueOf("0");
 		
-		this.goodsSize = new Long("0");
+		this.goodsSize = Long.valueOf("0");
 		
-		this.goodsNewOrUsed = new Long("0");
+		this.goodsNewOrUsed = Long.valueOf("0");
 		
-		this.goodsCondition = new Long("0");
+		this.goodsCondition = Long.valueOf("0");
 		
-		this.goodsQuantity = new Long("0");
+		this.goodsQuantity = Long.valueOf("0");
 		
-		this.additionalInformation = new String();
+		this.additionalInformation = "";
 		
-		this.itemSize = new String();
+		this.itemSize = "";
 		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();

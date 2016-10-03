@@ -77,7 +77,7 @@ public class ReferenceController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(ReferenceController.class);
 	
@@ -130,7 +130,7 @@ public class ReferenceController extends BaseController
 		ReferenceTranslationBackingBean referenceTranslationBackingBean = new ReferenceTranslationBackingBeanImpl();
 		referenceTranslationBackingBean.setCurrentMode(Reference.CurrentMode.LOCALIZE);
 		model.addAttribute("referenceTranslationFormModel", referenceTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -250,7 +250,7 @@ public class ReferenceController extends BaseController
 		Reference reference = null;
 		try{
 			// TODO: Needs exception handling policy
-			reference = referenceService.load(new Long(id), userId);
+			reference = referenceService.load(Long.valueOf(id), userId);
 			reference.setCurrentMode(Reference.CurrentMode.UPDATE);
 			this.referenceService.translateReferenceValues(reference, locale);
 		}
@@ -291,7 +291,7 @@ public class ReferenceController extends BaseController
 		Reference reference = null;
 		try{
 			// TODO: Needs exception handling policy
-			reference = referenceService.load(new Long(id), userId);
+			reference = referenceService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -415,7 +415,7 @@ public class ReferenceController extends BaseController
         Long userId = user.getApplicationUser().getId();
 		//TODO: Needs exception handling
 		
-		List<ReferenceCategory> referenceCategoryList = this.referenceService.getReferenceBo().getReferenceDao().listReferenceCategoryByReferenceId(new Long(id), userId);
+		List<ReferenceCategory> referenceCategoryList = this.referenceService.getReferenceBo().getReferenceDao().listReferenceCategoryByReferenceId(Long.valueOf(id), userId);
 
 		if (referenceCategoryList.size() == 1){
 			returnPath = "forward:/referencecategory"+referenceCategoryList.get(0).getId() + "/update";

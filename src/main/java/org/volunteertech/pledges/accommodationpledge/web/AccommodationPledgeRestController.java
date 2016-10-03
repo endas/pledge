@@ -113,7 +113,7 @@ public class AccommodationPledgeRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	accommodationPledge = accommodationPledgeService.load(new Long(id), userId);
+	    	accommodationPledge = accommodationPledgeService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -178,7 +178,7 @@ public class AccommodationPledgeRestController extends BaseController
     public List<AccommodationPledge> getAccommodationPledgeByRegisterOfPledgesId(@RequestParam(value="registerOfPledgesId") String registerOfPledgesId) {
 		logger.info("Inside getAccommodationPledgeByRegisterOfPledgesId() method...");
 		
-    	List<AccommodationPledge> accommodationPledgeList = accommodationPledgeService.getAccommodationPledgeBo().getAccommodationPledgeDao().listAccommodationPledgeByRegisterOfPledgesId(new Long(registerOfPledgesId));
+    	List<AccommodationPledge> accommodationPledgeList = accommodationPledgeService.getAccommodationPledgeBo().getAccommodationPledgeDao().listAccommodationPledgeByRegisterOfPledgesId(Long.valueOf(registerOfPledgesId));
 		
     	return accommodationPledgeList;
     }

@@ -390,7 +390,7 @@ public class GoodsPledgeServiceImpl implements GoodsPledgeService
     public Long createAndStoreGoodsPledgeFilter(GoodsPledgeFilter goodsPledgeFilter, Long userId)
         throws GoodsPledgeSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -425,7 +425,7 @@ public class GoodsPledgeServiceImpl implements GoodsPledgeService
     public Long updateGoodsPledgeFilter(GoodsPledgeFilter goodsPledgeFilter, Long userId)
         throws GoodsPledgeLoadException, GoodsPledgeSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("GoodsPledge", userId, GOODSPLEDGEID) == false)
         //{

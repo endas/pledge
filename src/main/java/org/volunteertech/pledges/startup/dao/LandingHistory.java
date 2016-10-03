@@ -48,7 +48,7 @@ public class LandingHistory
      */
     public LandingHistory()
     {
-    	landingID = new Long(0);
+    	landingID = Long.valueOf(0);
     	
     }
     

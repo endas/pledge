@@ -288,7 +288,7 @@ public class GoodsPledgeDaoImpl implements GoodsPledgeDao
      */
     public Long createAndStoreGoodsPledge(GoodsPledge goodsPledge, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         goodsPledge.setCreatedByID(userId);
         goodsPledge.setUpdatedByID(userId);
@@ -373,7 +373,7 @@ public class GoodsPledgeDaoImpl implements GoodsPledgeDao
     public Long createAndStoreGoodsPledgeFilter(GoodsPledgeFilter goodsPledgeFilter,  Long userId)
         throws GoodsPledgeSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -410,7 +410,7 @@ public class GoodsPledgeDaoImpl implements GoodsPledgeDao
     public Long updateGoodsPledgeFilter(GoodsPledgeFilter goodsPledgeFilter, Long userId)
         throws GoodsPledgeLoadException, GoodsPledgeSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("GoodsPledge", userID, GOODSPLEDGEID) == false)
         //{

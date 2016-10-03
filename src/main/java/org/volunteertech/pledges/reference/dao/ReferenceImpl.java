@@ -91,15 +91,15 @@ public class ReferenceImpl implements Reference, Serializable {
     public ReferenceImpl()
     {
     	
-		this.refType = new String();
+		this.refType = "";
 		
-		this.refDesc = new String();
+		this.refDesc = "";
 		
-		this.parentId = new Long("0");
+		this.parentId = Long.valueOf("0");
 		
-		this.refIndex = new Long("0");
+		this.refIndex = Long.valueOf("0");
 		
-		this.description = new String();
+		this.description = "";
 		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();

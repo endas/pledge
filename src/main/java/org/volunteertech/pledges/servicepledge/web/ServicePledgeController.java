@@ -71,7 +71,7 @@ public class ServicePledgeController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(ServicePledgeController.class);
 	
@@ -124,7 +124,7 @@ public class ServicePledgeController extends BaseController
 		ServicePledgeTranslationBackingBean servicePledgeTranslationBackingBean = new ServicePledgeTranslationBackingBeanImpl();
 		servicePledgeTranslationBackingBean.setCurrentMode(ServicePledge.CurrentMode.LOCALIZE);
 		model.addAttribute("servicePledgeTranslationFormModel", servicePledgeTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, locale);
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -240,7 +240,7 @@ public class ServicePledgeController extends BaseController
 		ServicePledge servicePledge = null;
 		try{
 			// TODO: Needs exception handling policy
-			servicePledge = servicePledgeService.load(new Long(id), userId);
+			servicePledge = servicePledgeService.load(Long.valueOf(id), userId);
 			servicePledge.setCurrentMode(ServicePledge.CurrentMode.UPDATE);
 			this.servicePledgeService.translateReferenceValues(servicePledge, locale);
 		}
@@ -281,7 +281,7 @@ public class ServicePledgeController extends BaseController
 		ServicePledge servicePledge = null;
 		try{
 			// TODO: Needs exception handling policy
-			servicePledge = servicePledgeService.load(new Long(id), userId);
+			servicePledge = servicePledgeService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -423,7 +423,7 @@ public class ServicePledgeController extends BaseController
         Long userId = user.getApplicationUser().getId();
 		//TODO: Needs exception handling
 		
-		List<RegisterOfPledges> registerOfPledgesList = this.servicePledgeService.getServicePledgeBo().getServicePledgeDao().listRegisterOfPledgesByServicePledgeId(new Long(id), userId);
+		List<RegisterOfPledges> registerOfPledgesList = this.servicePledgeService.getServicePledgeBo().getServicePledgeDao().listRegisterOfPledgesByServicePledgeId(Long.valueOf(id), userId);
 
 		if (registerOfPledgesList.size() == 1){
 			returnPath = "forward:/registerofpledges/" + registerOfPledgesList.get(0).getId() + "/update";

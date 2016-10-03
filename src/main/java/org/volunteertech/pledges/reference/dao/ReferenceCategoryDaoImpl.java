@@ -238,7 +238,7 @@ public class ReferenceCategoryDaoImpl implements ReferenceCategoryDao
      */
     public Long createAndStoreReferenceCategory(ReferenceCategory referenceCategory, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         referenceCategory.setCreatedByID(userId);
         referenceCategory.setUpdatedByID(userId);
@@ -323,7 +323,7 @@ public class ReferenceCategoryDaoImpl implements ReferenceCategoryDao
     public Long createAndStoreReferenceCategoryFilter(ReferenceCategoryFilter referenceCategoryFilter,  Long userId)
         throws ReferenceCategorySaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -360,7 +360,7 @@ public class ReferenceCategoryDaoImpl implements ReferenceCategoryDao
     public Long updateReferenceCategoryFilter(ReferenceCategoryFilter referenceCategoryFilter, Long userId)
         throws ReferenceCategoryLoadException, ReferenceCategorySaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("ReferenceCategory", userID, REFERENCECATEGORYID) == false)
         //{

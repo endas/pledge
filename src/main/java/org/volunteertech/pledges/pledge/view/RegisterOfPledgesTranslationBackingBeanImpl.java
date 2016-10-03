@@ -39,7 +39,7 @@ public class RegisterOfPledgesTranslationBackingBeanImpl extends RegisterOfPledg
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the Pledge Profile view */
-    public static final Long VIEW_ID = new Long(2);
+    public static final Long VIEW_ID = Long.valueOf(2);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String REGISTEROFPLEDGES_TITLE_MAPPING_KEY = "registerofpledges.form.title";
@@ -192,46 +192,46 @@ public class RegisterOfPledgesTranslationBackingBeanImpl extends RegisterOfPledg
     public RegisterOfPledgesTranslationBackingBeanImpl()
     {
     	setViewId(RegisterOfPledgesTranslationBackingBeanImpl.VIEW_ID);
-		contactInformationInstructionsMessageKey = new String();
-		contactInformationInstructionsMessage = new String();
-			contactInformationInstructionsLabelMessageKey = new String();  
-		contactInformationInstructionsLabel = new String();
-		contactInformationInstructionsPlaceHolderMessageKey = new String();
-		contactInformationInstructionsPlaceHolder = new String();
-		contactInformationInstructionsHelpTextMessageKey = new String();
-		contactInformationInstructionsHelpText = new String();
-		contactInformationInstructionsTooltipMessageKey = new String();
-		contactInformationInstructionsTooltip = new String();
-		accommodationPledgeInstructionsMessageKey = new String();
-		accommodationPledgeInstructionsMessage = new String();
-			accommodationPledgeInstructionsLabelMessageKey = new String();  
-		accommodationPledgeInstructionsLabel = new String();
-		accommodationPledgeInstructionsPlaceHolderMessageKey = new String();
-		accommodationPledgeInstructionsPlaceHolder = new String();
-		accommodationPledgeInstructionsHelpTextMessageKey = new String();
-		accommodationPledgeInstructionsHelpText = new String();
-		accommodationPledgeInstructionsTooltipMessageKey = new String();
-		accommodationPledgeInstructionsTooltip = new String();
-		servicePledgeInstructionsMessageKey = new String();
-		servicePledgeInstructionsMessage = new String();
-			servicePledgeInstructionsLabelMessageKey = new String();  
-		servicePledgeInstructionsLabel = new String();
-		servicePledgeInstructionsPlaceHolderMessageKey = new String();
-		servicePledgeInstructionsPlaceHolder = new String();
-		servicePledgeInstructionsHelpTextMessageKey = new String();
-		servicePledgeInstructionsHelpText = new String();
-		servicePledgeInstructionsTooltipMessageKey = new String();
-		servicePledgeInstructionsTooltip = new String();
-		goodsPledgeInstructionsMessageKey = new String();
-		goodsPledgeInstructionsMessage = new String();
-			goodsPledgeInstructionsLabelMessageKey = new String();  
-		goodsPledgeInstructionsLabel = new String();
-		goodsPledgeInstructionsPlaceHolderMessageKey = new String();
-		goodsPledgeInstructionsPlaceHolder = new String();
-		goodsPledgeInstructionsHelpTextMessageKey = new String();
-		goodsPledgeInstructionsHelpText = new String();
-		goodsPledgeInstructionsTooltipMessageKey = new String();
-		goodsPledgeInstructionsTooltip = new String();
+		contactInformationInstructionsMessageKey = "";
+		contactInformationInstructionsMessage = "";
+			contactInformationInstructionsLabelMessageKey = "";
+		contactInformationInstructionsLabel = "";
+		contactInformationInstructionsPlaceHolderMessageKey = "";
+		contactInformationInstructionsPlaceHolder = "";
+		contactInformationInstructionsHelpTextMessageKey = "";
+		contactInformationInstructionsHelpText = "";
+		contactInformationInstructionsTooltipMessageKey = "";
+		contactInformationInstructionsTooltip = "";
+		accommodationPledgeInstructionsMessageKey = "";
+		accommodationPledgeInstructionsMessage = "";
+			accommodationPledgeInstructionsLabelMessageKey = "";
+		accommodationPledgeInstructionsLabel = "";
+		accommodationPledgeInstructionsPlaceHolderMessageKey = "";
+		accommodationPledgeInstructionsPlaceHolder = "";
+		accommodationPledgeInstructionsHelpTextMessageKey = "";
+		accommodationPledgeInstructionsHelpText = "";
+		accommodationPledgeInstructionsTooltipMessageKey = "";
+		accommodationPledgeInstructionsTooltip = "";
+		servicePledgeInstructionsMessageKey = "";
+		servicePledgeInstructionsMessage = "";
+			servicePledgeInstructionsLabelMessageKey = "";
+		servicePledgeInstructionsLabel = "";
+		servicePledgeInstructionsPlaceHolderMessageKey = "";
+		servicePledgeInstructionsPlaceHolder = "";
+		servicePledgeInstructionsHelpTextMessageKey = "";
+		servicePledgeInstructionsHelpText = "";
+		servicePledgeInstructionsTooltipMessageKey = "";
+		servicePledgeInstructionsTooltip = "";
+		goodsPledgeInstructionsMessageKey = "";
+		goodsPledgeInstructionsMessage = "";
+			goodsPledgeInstructionsLabelMessageKey = "";
+		goodsPledgeInstructionsLabel = "";
+		goodsPledgeInstructionsPlaceHolderMessageKey = "";
+		goodsPledgeInstructionsPlaceHolder = "";
+		goodsPledgeInstructionsHelpTextMessageKey = "";
+		goodsPledgeInstructionsHelpText = "";
+		goodsPledgeInstructionsTooltipMessageKey = "";
+		goodsPledgeInstructionsTooltip = "";
 
     }
     

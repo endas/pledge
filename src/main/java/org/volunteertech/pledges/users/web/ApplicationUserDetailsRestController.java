@@ -119,7 +119,7 @@ public class ApplicationUserDetailsRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	applicationUserDetails = applicationUserDetailsService.load(new Long(id), userId);
+	    	applicationUserDetails = applicationUserDetailsService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

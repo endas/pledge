@@ -48,7 +48,7 @@ public class RegisterOfPledgesHistory
      */
     public RegisterOfPledgesHistory()
     {
-    	registerOfPledgesID = new Long(0);
+    	registerOfPledgesID = Long.valueOf(0);
     	
     }
     

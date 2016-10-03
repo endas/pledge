@@ -111,7 +111,7 @@ public class AddressRestController extends BaseController {
 
 		try {
 			// TODO: Needs exception handling policy
-			address = addressService.load(new Long(id), userId);
+			address = addressService.load(Long.valueOf(id), userId);
 		} catch (Exception ex) {
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
 		}

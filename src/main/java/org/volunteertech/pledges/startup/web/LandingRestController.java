@@ -111,7 +111,7 @@ public class LandingRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	landing = landingService.load(new Long(id), userId);
+	    	landing = landingService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

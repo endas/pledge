@@ -281,7 +281,7 @@ public class LandingServiceImpl implements LandingService
     public Long createAndStoreLandingFilter(LandingFilter landingFilter, Long userId)
         throws LandingSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -316,7 +316,7 @@ public class LandingServiceImpl implements LandingService
     public Long updateLandingFilter(LandingFilter landingFilter, Long userId)
         throws LandingLoadException, LandingSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("Landing", userId, LANDINGID) == false)
         //{

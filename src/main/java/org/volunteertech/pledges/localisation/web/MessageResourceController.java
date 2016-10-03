@@ -68,7 +68,7 @@ public class MessageResourceController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(MessageResourceController.class);
 	
@@ -118,7 +118,7 @@ public class MessageResourceController extends BaseController
 		MessageResourceTranslationBackingBean messageResourceTranslationBackingBean = new MessageResourceTranslationBackingBeanImpl();
 		messageResourceTranslationBackingBean.setCurrentMode(MessageResource.CurrentMode.LOCALIZE);
 		model.addAttribute("messageResourceTranslationFormModel", messageResourceTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -238,7 +238,7 @@ public class MessageResourceController extends BaseController
 		MessageResource messageResource = null;
 		try{
 			// TODO: Needs exception handling policy
-			messageResource = messageResourceService.load(new Long(id), userId);
+			messageResource = messageResourceService.load(Long.valueOf(id), userId);
 			messageResource.setCurrentMode(MessageResource.CurrentMode.UPDATE);
 			this.messageResourceService.translateReferenceValues(messageResource, locale);
 		}
@@ -279,7 +279,7 @@ public class MessageResourceController extends BaseController
 		MessageResource messageResource = null;
 		try{
 			// TODO: Needs exception handling policy
-			messageResource = messageResourceService.load(new Long(id), userId);
+			messageResource = messageResourceService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -392,7 +392,7 @@ public class MessageResourceController extends BaseController
         Long userId = user.getApplicationUser().getId();
 		//TODO: Needs exception handling
 		
-		List<View> viewList = this.messageResourceService.getMessageResourceBo().getMessageResourceDao().listViewByMessageResourceId(new Long(id), userId);
+		List<View> viewList = this.messageResourceService.getMessageResourceBo().getMessageResourceDao().listViewByMessageResourceId(Long.valueOf(id), userId);
 
 		if (viewList.size() == 1){
 			returnPath = "forward:/view/" + viewList.get(0).getId() + "/update";

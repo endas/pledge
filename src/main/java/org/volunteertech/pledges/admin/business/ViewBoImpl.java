@@ -225,7 +225,7 @@ public class ViewBoImpl implements ViewBo
     public Long createAndStoreView(View view, Long userID)
         throws ViewSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -318,7 +318,7 @@ public class ViewBoImpl implements ViewBo
     public Long createAndStoreViewFilter(ViewFilter viewFilter,  Long userId)
         throws ViewSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -352,7 +352,7 @@ public class ViewBoImpl implements ViewBo
     public Long updateViewFilter(ViewFilter viewFilter, Long userId)
         throws ViewLoadException, ViewSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("View", userId, VIEWID) == false)
         //{

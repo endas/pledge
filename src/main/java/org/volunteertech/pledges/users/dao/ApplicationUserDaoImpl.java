@@ -222,7 +222,7 @@ public class ApplicationUserDaoImpl implements ApplicationUserDao
      */
     public Long createAndStoreApplicationUser(ApplicationUser applicationUser, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         applicationUser.setCreatedByID(userId);
         applicationUser.setUpdatedByID(userId);
@@ -307,7 +307,7 @@ public class ApplicationUserDaoImpl implements ApplicationUserDao
     public Long createAndStoreApplicationUserFilter(ApplicationUserFilter applicationUserFilter,  Long userId)
         throws ApplicationUserSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -344,7 +344,7 @@ public class ApplicationUserDaoImpl implements ApplicationUserDao
     public Long updateApplicationUserFilter(ApplicationUserFilter applicationUserFilter, Long userId)
         throws ApplicationUserLoadException, ApplicationUserSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("ApplicationUser", userID, APPLICATIONUSERID) == false)
         //{

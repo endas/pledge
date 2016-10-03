@@ -97,14 +97,14 @@ public class ServicePledgeHistory
 	 */
 	public ServicePledgeHistory()
 	{
-		servicePledgeID = new Long(0);
-		pledgeServiceLevelOne = new Long("0");
-		pledgeServiceLevelTwo = new Long("0");
-		pledgeServiceLevelThree = new Long("0");
-		additionalInformation = new String();
-		pledgeServiceQualification = new String();
+		servicePledgeID = Long.valueOf(0);
+		pledgeServiceLevelOne = Long.valueOf("0");
+		pledgeServiceLevelTwo = Long.valueOf("0");
+		pledgeServiceLevelThree = Long.valueOf("0");
+		additionalInformation = "";
+		pledgeServiceQualification = "";
 		pledgeServiceDateAvailable = new Date();
-		pledgeServiceHoursPerWeek = new Long("0");
+		pledgeServiceHoursPerWeek = Long.valueOf("0");
 
 	}
 

@@ -237,7 +237,7 @@ public class ReferenceBoImpl implements ReferenceBo
     public Long createAndStoreReference(Reference reference, Long userID)
         throws ReferenceSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -330,7 +330,7 @@ public class ReferenceBoImpl implements ReferenceBo
     public Long createAndStoreReferenceFilter(ReferenceFilter referenceFilter,  Long userId)
         throws ReferenceSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -364,7 +364,7 @@ public class ReferenceBoImpl implements ReferenceBo
     public Long updateReferenceFilter(ReferenceFilter referenceFilter, Long userId)
         throws ReferenceLoadException, ReferenceSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("Reference", userId, REFERENCEID) == false)
         //{

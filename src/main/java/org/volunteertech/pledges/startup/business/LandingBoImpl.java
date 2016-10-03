@@ -165,7 +165,7 @@ public class LandingBoImpl implements LandingBo
     public Long createAndStoreLanding(Landing landing, Long userID)
         throws LandingSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -258,7 +258,7 @@ public class LandingBoImpl implements LandingBo
     public Long createAndStoreLandingFilter(LandingFilter landingFilter,  Long userId)
         throws LandingSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -292,7 +292,7 @@ public class LandingBoImpl implements LandingBo
     public Long updateLandingFilter(LandingFilter landingFilter, Long userId)
         throws LandingLoadException, LandingSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("Landing", userId, LANDINGID) == false)
         //{

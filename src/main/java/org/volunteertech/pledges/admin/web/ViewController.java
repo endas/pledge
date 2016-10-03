@@ -68,7 +68,7 @@ public class ViewController extends BaseController
     /**
      * userId used for development. This should be taken from the session.
      */
-	private Long userId = new Long(0);
+	private Long userId = Long.valueOf(0);
 	 
 	final Logger logger = LoggerFactory.getLogger(ViewController.class);
 	
@@ -121,7 +121,7 @@ public class ViewController extends BaseController
 		ViewTranslationBackingBean viewTranslationBackingBean = new ViewTranslationBackingBeanImpl();
 		viewTranslationBackingBean.setCurrentMode(View.CurrentMode.LOCALIZE);
 		model.addAttribute("viewTranslationFormModel", viewTranslationBackingBean);
-		Long defaultLocale = new Long(Constants.REFERENCE_LOCALE__EN);
+		Long defaultLocale = Long.valueOf(Constants.REFERENCE_LOCALE__EN);
 		setTranslationDropDownContents(model, locale);
 		setDropDownContents(model, null, locale);		
 		model.addAttribute("defaultLocale", defaultLocale);
@@ -241,7 +241,7 @@ public class ViewController extends BaseController
 		View view = null;
 		try{
 			// TODO: Needs exception handling policy
-			view = viewService.load(new Long(id), userId);
+			view = viewService.load(Long.valueOf(id), userId);
 			view.setCurrentMode(View.CurrentMode.UPDATE);
 			this.viewService.translateReferenceValues(view, locale);
 		}
@@ -282,7 +282,7 @@ public class ViewController extends BaseController
 		View view = null;
 		try{
 			// TODO: Needs exception handling policy
-			view = viewService.load(new Long(id), userId);
+			view = viewService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);

@@ -182,13 +182,13 @@ public class ApplicationUserServiceImpl implements ApplicationUserService, UserD
         applicationUser.setPassword(HashEncoderGenerator.encode(applicationUser.getPassword()));
         applicationUser.setEnabled(true);
         Set<Long> userRolesSet = new HashSet<Long>();
-        Long userRoles1 = new Long(Constants.REFERENCE_USERROLE__ROLE_USER);
+        Long userRoles1 = Long.valueOf(Constants.REFERENCE_USERROLE__ROLE_USER);
         userRolesSet.add(userRoles1);
-        Long userRoles2 = new Long(Constants.REFERENCE_USERROLE__ROLE_CLIENT);
+        Long userRoles2 = Long.valueOf(Constants.REFERENCE_USERROLE__ROLE_CLIENT);
         userRolesSet.add(userRoles2);        
                 
           applicationUser.setUserRoles(userRolesSet);
-       	Long userId = applicationUserBo.createAndStoreApplicationUser(applicationUser, new Long(1)); 
+       	Long userId = applicationUserBo.createAndStoreApplicationUser(applicationUser, Long.valueOf(1));
         
         if (userId != null)
         {
@@ -437,7 +437,7 @@ public class ApplicationUserServiceImpl implements ApplicationUserService, UserD
     public Long createAndStoreApplicationUserFilter(ApplicationUserFilter applicationUserFilter, Long userId)
         throws ApplicationUserSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -472,7 +472,7 @@ public class ApplicationUserServiceImpl implements ApplicationUserService, UserD
     public Long updateApplicationUserFilter(ApplicationUserFilter applicationUserFilter, Long userId)
         throws ApplicationUserLoadException, ApplicationUserSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("ApplicationUser", userId, APPLICATIONUSERID) == false)
         //{

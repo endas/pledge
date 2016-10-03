@@ -155,7 +155,7 @@ public class LandingDaoImpl implements LandingDao
      */
     public Long createAndStoreLanding(Landing landing, Long userId)
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
 
         landing.setCreatedByID(userId);
         landing.setUpdatedByID(userId);
@@ -240,7 +240,7 @@ public class LandingDaoImpl implements LandingDao
     public Long createAndStoreLandingFilter(LandingFilter landingFilter,  Long userId)
         throws LandingSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -277,7 +277,7 @@ public class LandingDaoImpl implements LandingDao
     public Long updateLandingFilter(LandingFilter landingFilter, Long userId)
         throws LandingLoadException, LandingSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("Landing", userID, LANDINGID) == false)
         //{

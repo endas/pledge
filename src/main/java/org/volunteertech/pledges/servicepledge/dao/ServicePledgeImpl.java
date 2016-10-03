@@ -128,7 +128,7 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     private Date dateUpdated;
 
     private ServicePlegdeFlaggedIssuesEnum flaggedIssue;
-    private Long status = new Long(0);
+    private Long status = Long.valueOf(0);
     private String statusReferenceTranslation;
     
     private ActiveStatusEnum activeStatus = ActiveStatusEnum.ACTIVE;
@@ -151,19 +151,19 @@ public class ServicePledgeImpl implements ServicePledge, Serializable {
     public ServicePledgeImpl()
     {
     	
-		this.pledgeServiceLevelOne = new Long("0");
+		this.pledgeServiceLevelOne = Long.valueOf("0");
 		
-		this.pledgeServiceLevelTwo = new Long("0");
+		this.pledgeServiceLevelTwo = Long.valueOf("0");
 		
-		this.pledgeServiceLevelThree = new Long("0");
+		this.pledgeServiceLevelThree = Long.valueOf("0");
 
-		this.additionalInformation = new String();
+		this.additionalInformation = "";
 		
-		this.pledgeServiceQualification = new String();
+		this.pledgeServiceQualification = "";
 		
 		this.pledgeServiceDateAvailable = null;
 		
-		this.pledgeServiceHoursPerWeek = new Long("0");
+		this.pledgeServiceHoursPerWeek = Long.valueOf("0");
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();
     }

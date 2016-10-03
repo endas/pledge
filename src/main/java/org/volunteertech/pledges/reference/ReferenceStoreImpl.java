@@ -513,7 +513,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc IrelandCounty
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_IRELANDCOUNTY, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_IRELANDCOUNTY, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("IrelandCounty");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -613,7 +613,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc AccommodationType
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_ACCOMMODATIONTYPE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_ACCOMMODATIONTYPE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("AccommodationType");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -713,7 +713,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc AccommodationCondition
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_ACCOMMODATIONCONDITION, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_ACCOMMODATIONCONDITION, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("AccommodationCondition");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -813,7 +813,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc NumberOfBeds
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_NUMBEROFBEDS, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_NUMBEROFBEDS, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("NumberOfBeds");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -913,7 +913,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc VacantOrShared
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_VACANTORSHARED, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_VACANTORSHARED, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("VacantOrShared");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1013,7 +1013,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc YouCanAccommodate
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_YOUCANACCOMMODATE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_YOUCANACCOMMODATE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("YouCanAccommodate");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1113,7 +1113,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc LocalAmenity
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_LOCALAMENITY, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_LOCALAMENITY, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("LocalAmenity");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1213,7 +1213,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc MonthRange
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_MONTHRANGE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_MONTHRANGE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("MonthRange");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1313,7 +1313,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc Yes_No
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_YES_NO, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_YES_NO, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("Yes_No");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1413,7 +1413,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc EuropeCountry
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_EUROPECOUNTRY, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_EUROPECOUNTRY, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("EuropeCountry");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1513,7 +1513,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc Facilities
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_FACILITIES, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_FACILITIES, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("Facilities");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1577,7 +1577,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc Facilities
 			
-//			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_TRAVEL_ABILITIES, new Long(1));
+//			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_TRAVEL_ABILITIES, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("LocalAmenity");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1612,7 +1612,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc Facilities
 			
-//			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_TRAVEL_ABILITIES, new Long(1));
+//			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_TRAVEL_ABILITIES, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("TravelAbility");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1712,7 +1712,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc IntegerCount1to40
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_INTEGERCOUNT1TO40, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_INTEGERCOUNT1TO40, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("IntegerCount1to40");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1812,7 +1812,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc PledgeServiceLevelOne
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_PLEDGESERVICELEVELONE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_PLEDGESERVICELEVELONE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("PledgeServiceLevelOne");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -1912,7 +1912,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc PledgeServiceLevelTwo
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_PLEDGESERVICELEVELTWO, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_PLEDGESERVICELEVELTWO, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("PledgeServiceLevelTwo");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2012,7 +2012,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc GoodsCategoryOne
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYONE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYONE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsCategoryOne");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2112,7 +2112,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc GoodsCategoryTwo
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYTWO, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYTWO, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsCategoryTwo");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2212,7 +2212,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc GoodsCondition
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCONDITION, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCONDITION, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsCondition");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2312,7 +2312,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc OwnerOccupierType
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_OWNEROCCUPIERTYPE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_OWNEROCCUPIERTYPE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("OwnerOccupierType");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2412,7 +2412,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc Locale
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_LOCALE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_LOCALE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("Locale");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2512,7 +2512,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc UserRole
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_USERROLE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_USERROLE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("UserRole");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2612,7 +2612,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc PledgeServiceLevelThree
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_PLEDGESERVICELEVELTHREE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_PLEDGESERVICELEVELTHREE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("PledgeServiceLevelThree");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2712,7 +2712,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc GoodsCategoryThree
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYTHREE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSCATEGORYTHREE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsCategoryThree");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2812,7 +2812,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc GoodsSize
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSSIZE, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSSIZE, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsSize");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -2912,7 +2912,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc GoodsQuantity
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSQUANTITY, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_GOODSQUANTITY, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("GoodsQuantity");
 			Iterator<Reference> it = referenceRecords.iterator();
 			
@@ -3012,7 +3012,7 @@ public class ReferenceStoreImpl implements ReferenceStore
 		{
 			// Load all values of referenceCategoryDesc NewOrUsed
 			
-			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_NEWORUSED, new Long(1));
+			referenceRecords = this.referenceCategoryDao.getReferences(Constants.REFERENCE_CATEGORY_NEWORUSED, Long.valueOf(1));
 			referenceRecords = this.referenceDao.listReferenceByRefType("NewOrUsed");
 			Iterator<Reference> it = referenceRecords.iterator();
 			

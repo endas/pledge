@@ -411,7 +411,7 @@ public class ApplicationUserDetailsServiceImpl implements ApplicationUserDetails
     public Long createAndStoreApplicationUserDetailsFilter(ApplicationUserDetailsFilter applicationUserDetailsFilter, Long userId)
         throws ApplicationUserDetailsSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -446,7 +446,7 @@ public class ApplicationUserDetailsServiceImpl implements ApplicationUserDetails
     public Long updateApplicationUserDetailsFilter(ApplicationUserDetailsFilter applicationUserDetailsFilter, Long userId)
         throws ApplicationUserDetailsLoadException, ApplicationUserDetailsSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("ApplicationUserDetails", userId, APPLICATIONUSERDETAILSID) == false)
         //{

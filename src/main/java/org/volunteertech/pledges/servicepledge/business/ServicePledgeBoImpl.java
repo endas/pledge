@@ -261,7 +261,7 @@ public class ServicePledgeBoImpl implements ServicePledgeBo
     public Long createAndStoreServicePledge(ServicePledge servicePledge, Long userID)
         throws ServicePledgeSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -354,7 +354,7 @@ public class ServicePledgeBoImpl implements ServicePledgeBo
     public Long createAndStoreServicePledgeFilter(ServicePledgeFilter servicePledgeFilter,  Long userId)
         throws ServicePledgeSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -388,7 +388,7 @@ public class ServicePledgeBoImpl implements ServicePledgeBo
     public Long updateServicePledgeFilter(ServicePledgeFilter servicePledgeFilter, Long userId)
         throws ServicePledgeLoadException, ServicePledgeSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("ServicePledge", userId, SERVICEPLEDGEID) == false)
         //{

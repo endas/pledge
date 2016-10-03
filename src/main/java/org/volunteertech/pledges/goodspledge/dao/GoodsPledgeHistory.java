@@ -106,16 +106,16 @@ public class GoodsPledgeHistory
 	 */
 	public GoodsPledgeHistory()
 	{
-		goodsPledgeID = new Long(0);
-		goodsCategoryOne = new Long("0");
-		goodsCategoryTwo = new Long("0");
-		goodsCategoryThree = new Long("0");
-		goodsSize = new Long("0");
-		goodsNewOrUsed = new Long("0");
-		goodsCondition = new Long("0");
-		goodsQuantity = new Long("0");
-		additionalInformation = new String();
-		itemSize = new String();
+		goodsPledgeID = Long.valueOf(0);
+		goodsCategoryOne = Long.valueOf("0");
+		goodsCategoryTwo = Long.valueOf("0");
+		goodsCategoryThree = Long.valueOf("0");
+		goodsSize = Long.valueOf("0");
+		goodsNewOrUsed = Long.valueOf("0");
+		goodsCondition = Long.valueOf("0");
+		goodsQuantity = Long.valueOf("0");
+		additionalInformation = "";
+		itemSize = "";
 
 	}
 

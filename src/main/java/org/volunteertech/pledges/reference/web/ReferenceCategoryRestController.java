@@ -118,7 +118,7 @@ public class ReferenceCategoryRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	referenceCategory = referenceCategoryService.load(new Long(id), userId);
+	    	referenceCategory = referenceCategoryService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -188,7 +188,7 @@ public class ReferenceCategoryRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy and calls moved inside the business object.
-	    	referenceList = referenceCategoryService.getReferences(new Long(referenceCategoryId), userId);
+	    	referenceList = referenceCategoryService.getReferences(Long.valueOf(referenceCategoryId), userId);
 	    	referenceList = this.referenceCategoryService.translateReferenceReferenceValues(referenceList, locale);
 			
 		}
@@ -524,7 +524,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 		
 			default:
-				returnValue.put(new Long(-1), "Internal Fault");
+				returnValue.put(Long.valueOf(-1), "Internal Fault");
      	}
 
     	return returnValue;
@@ -545,7 +545,7 @@ public class ReferenceCategoryRestController extends BaseController
 		switch (referenceType) {
 				  
 			case("IrelandCounty"):
-				Map<Long, String> irelandCountyMap = referenceStore.getIrelandCountyByParentId(new Long(parentId)); 
+				Map<Long, String> irelandCountyMap = referenceStore.getIrelandCountyByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedIrelandCountyMap = new TreeMap<Long, String>(irelandCountyMap);
 				for (Map.Entry<Long, String> entry : localizedIrelandCountyMap.entrySet()) {
 					localizedIrelandCountyMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -555,7 +555,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("AccommodationType"):
-				Map<Long, String> accommodationTypeMap = referenceStore.getAccommodationTypeByParentId(new Long(parentId)); 
+				Map<Long, String> accommodationTypeMap = referenceStore.getAccommodationTypeByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedAccommodationTypeMap = new TreeMap<Long, String>(accommodationTypeMap);
 				for (Map.Entry<Long, String> entry : localizedAccommodationTypeMap.entrySet()) {
 					localizedAccommodationTypeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -565,7 +565,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("AccommodationCondition"):
-				Map<Long, String> accommodationConditionMap = referenceStore.getAccommodationConditionByParentId(new Long(parentId)); 
+				Map<Long, String> accommodationConditionMap = referenceStore.getAccommodationConditionByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedAccommodationConditionMap = new TreeMap<Long, String>(accommodationConditionMap);
 				for (Map.Entry<Long, String> entry : localizedAccommodationConditionMap.entrySet()) {
 					localizedAccommodationConditionMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -575,7 +575,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("NumberOfBeds"):
-				Map<Long, String> numberOfBedsMap = referenceStore.getNumberOfBedsByParentId(new Long(parentId)); 
+				Map<Long, String> numberOfBedsMap = referenceStore.getNumberOfBedsByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedNumberOfBedsMap = new TreeMap<Long, String>(numberOfBedsMap);
 				for (Map.Entry<Long, String> entry : localizedNumberOfBedsMap.entrySet()) {
 					localizedNumberOfBedsMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -585,7 +585,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("VacantOrShared"):
-				Map<Long, String> vacantOrSharedMap = referenceStore.getVacantOrSharedByParentId(new Long(parentId)); 
+				Map<Long, String> vacantOrSharedMap = referenceStore.getVacantOrSharedByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedVacantOrSharedMap = new TreeMap<Long, String>(vacantOrSharedMap);
 				for (Map.Entry<Long, String> entry : localizedVacantOrSharedMap.entrySet()) {
 					localizedVacantOrSharedMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -595,7 +595,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("YouCanAccommodate"):
-				Map<Long, String> youCanAccommodateMap = referenceStore.getYouCanAccommodateByParentId(new Long(parentId)); 
+				Map<Long, String> youCanAccommodateMap = referenceStore.getYouCanAccommodateByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedYouCanAccommodateMap = new TreeMap<Long, String>(youCanAccommodateMap);
 				for (Map.Entry<Long, String> entry : localizedYouCanAccommodateMap.entrySet()) {
 					localizedYouCanAccommodateMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -605,7 +605,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("LocalAmenity"):
-				Map<Long, String> localAmenityMap = referenceStore.getLocalAmenityByParentId(new Long(parentId)); 
+				Map<Long, String> localAmenityMap = referenceStore.getLocalAmenityByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedLocalAmenityMap = new TreeMap<Long, String>(localAmenityMap);
 				for (Map.Entry<Long, String> entry : localizedLocalAmenityMap.entrySet()) {
 					localizedLocalAmenityMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -615,7 +615,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("MonthRange"):
-				Map<Long, String> monthRangeMap = referenceStore.getMonthRangeByParentId(new Long(parentId)); 
+				Map<Long, String> monthRangeMap = referenceStore.getMonthRangeByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedMonthRangeMap = new TreeMap<Long, String>(monthRangeMap);
 				for (Map.Entry<Long, String> entry : localizedMonthRangeMap.entrySet()) {
 					localizedMonthRangeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -625,7 +625,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("Yes_No"):
-				Map<Long, String> yes_NoMap = referenceStore.getYes_NoByParentId(new Long(parentId)); 
+				Map<Long, String> yes_NoMap = referenceStore.getYes_NoByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedYes_NoMap = new TreeMap<Long, String>(yes_NoMap);
 				for (Map.Entry<Long, String> entry : localizedYes_NoMap.entrySet()) {
 					localizedYes_NoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -635,7 +635,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("EuropeCountry"):
-				Map<Long, String> europeCountryMap = referenceStore.getEuropeCountryByParentId(new Long(parentId)); 
+				Map<Long, String> europeCountryMap = referenceStore.getEuropeCountryByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedEuropeCountryMap = new TreeMap<Long, String>(europeCountryMap);
 				for (Map.Entry<Long, String> entry : localizedEuropeCountryMap.entrySet()) {
 					localizedEuropeCountryMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -645,7 +645,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("Facilities"):
-				Map<Long, String> facilitiesMap = referenceStore.getFacilitiesByParentId(new Long(parentId)); 
+				Map<Long, String> facilitiesMap = referenceStore.getFacilitiesByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedFacilitiesMap = new TreeMap<Long, String>(facilitiesMap);
 				for (Map.Entry<Long, String> entry : localizedFacilitiesMap.entrySet()) {
 					localizedFacilitiesMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -655,7 +655,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("IntegerCount1to40"):
-				Map<Long, String> integerCount1to40Map = referenceStore.getIntegerCount1to40ByParentId(new Long(parentId)); 
+				Map<Long, String> integerCount1to40Map = referenceStore.getIntegerCount1to40ByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedIntegerCount1to40Map = new TreeMap<Long, String>(integerCount1to40Map);
 				for (Map.Entry<Long, String> entry : localizedIntegerCount1to40Map.entrySet()) {
 					localizedIntegerCount1to40Map.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -665,7 +665,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("PledgeServiceLevelOne"):
-				Map<Long, String> pledgeServiceLevelOneMap = referenceStore.getPledgeServiceLevelOneByParentId(new Long(parentId)); 
+				Map<Long, String> pledgeServiceLevelOneMap = referenceStore.getPledgeServiceLevelOneByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedPledgeServiceLevelOneMap = new TreeMap<Long, String>(pledgeServiceLevelOneMap);
 				for (Map.Entry<Long, String> entry : localizedPledgeServiceLevelOneMap.entrySet()) {
 					localizedPledgeServiceLevelOneMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -675,7 +675,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("PledgeServiceLevelTwo"):
-				Map<Long, String> pledgeServiceLevelTwoMap = referenceStore.getPledgeServiceLevelTwoByParentId(new Long(parentId)); 
+				Map<Long, String> pledgeServiceLevelTwoMap = referenceStore.getPledgeServiceLevelTwoByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedPledgeServiceLevelTwoMap = new TreeMap<Long, String>(pledgeServiceLevelTwoMap);
 				for (Map.Entry<Long, String> entry : localizedPledgeServiceLevelTwoMap.entrySet()) {
 					localizedPledgeServiceLevelTwoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -685,7 +685,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("GoodsCategoryOne"):
-				Map<Long, String> goodsCategoryOneMap = referenceStore.getGoodsCategoryOneByParentId(new Long(parentId)); 
+				Map<Long, String> goodsCategoryOneMap = referenceStore.getGoodsCategoryOneByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedGoodsCategoryOneMap = new TreeMap<Long, String>(goodsCategoryOneMap);
 				for (Map.Entry<Long, String> entry : localizedGoodsCategoryOneMap.entrySet()) {
 					localizedGoodsCategoryOneMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -695,7 +695,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("GoodsCategoryTwo"):
-				Map<Long, String> goodsCategoryTwoMap = referenceStore.getGoodsCategoryTwoByParentId(new Long(parentId)); 
+				Map<Long, String> goodsCategoryTwoMap = referenceStore.getGoodsCategoryTwoByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedGoodsCategoryTwoMap = new TreeMap<Long, String>(goodsCategoryTwoMap);
 				for (Map.Entry<Long, String> entry : localizedGoodsCategoryTwoMap.entrySet()) {
 					localizedGoodsCategoryTwoMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -710,7 +710,7 @@ public class ReferenceCategoryRestController extends BaseController
 					parentId = Long.toString(Constants.REFERENCE_GOODSCATEGORYONE__TECHNOLOGY);
 				}
 				
-				Map<Long, String> goodsConditionMap = referenceStore.getGoodsConditionByParentId(new Long(parentId)); 
+				Map<Long, String> goodsConditionMap = referenceStore.getGoodsConditionByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedGoodsConditionMap = new TreeMap<Long, String>(goodsConditionMap);
 				for (Map.Entry<Long, String> entry : localizedGoodsConditionMap.entrySet()) {
 					localizedGoodsConditionMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -720,7 +720,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("OwnerOccupierType"):
-				Map<Long, String> ownerOccupierTypeMap = referenceStore.getOwnerOccupierTypeByParentId(new Long(parentId)); 
+				Map<Long, String> ownerOccupierTypeMap = referenceStore.getOwnerOccupierTypeByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedOwnerOccupierTypeMap = new TreeMap<Long, String>(ownerOccupierTypeMap);
 				for (Map.Entry<Long, String> entry : localizedOwnerOccupierTypeMap.entrySet()) {
 					localizedOwnerOccupierTypeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -730,7 +730,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("Locale"):
-				Map<Long, String> localeMap = referenceStore.getLocaleByParentId(new Long(parentId)); 
+				Map<Long, String> localeMap = referenceStore.getLocaleByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedLocaleMap = new TreeMap<Long, String>(localeMap);
 				for (Map.Entry<Long, String> entry : localizedLocaleMap.entrySet()) {
 					localizedLocaleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -740,7 +740,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("UserRole"):
-				Map<Long, String> userRoleMap = referenceStore.getUserRoleByParentId(new Long(parentId)); 
+				Map<Long, String> userRoleMap = referenceStore.getUserRoleByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedUserRoleMap = new TreeMap<Long, String>(userRoleMap);
 				for (Map.Entry<Long, String> entry : localizedUserRoleMap.entrySet()) {
 					localizedUserRoleMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -750,7 +750,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("PledgeServiceLevelThree"):
-				Map<Long, String> pledgeServiceLevelThreeMap = referenceStore.getPledgeServiceLevelThreeByParentId(new Long(parentId)); 
+				Map<Long, String> pledgeServiceLevelThreeMap = referenceStore.getPledgeServiceLevelThreeByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedPledgeServiceLevelThreeMap = new TreeMap<Long, String>(pledgeServiceLevelThreeMap);
 				for (Map.Entry<Long, String> entry : localizedPledgeServiceLevelThreeMap.entrySet()) {
 					localizedPledgeServiceLevelThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -760,7 +760,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("GoodsCategoryThree"):
-				Map<Long, String> goodsCategoryThreeMap = referenceStore.getGoodsCategoryThreeByParentId(new Long(parentId)); 
+				Map<Long, String> goodsCategoryThreeMap = referenceStore.getGoodsCategoryThreeByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedGoodsCategoryThreeMap = new TreeMap<Long, String>(goodsCategoryThreeMap);
 				for (Map.Entry<Long, String> entry : localizedGoodsCategoryThreeMap.entrySet()) {
 					localizedGoodsCategoryThreeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -770,7 +770,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("GoodsSize"):
-				Map<Long, String> goodsSizeMap = referenceStore.getGoodsSizeByParentId(new Long(parentId)); 
+				Map<Long, String> goodsSizeMap = referenceStore.getGoodsSizeByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedGoodsSizeMap = new TreeMap<Long, String>(goodsSizeMap);
 				for (Map.Entry<Long, String> entry : localizedGoodsSizeMap.entrySet()) {
 					localizedGoodsSizeMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -790,7 +790,7 @@ public class ReferenceCategoryRestController extends BaseController
 					parentId = Long.toString(Constants.REFERENCE_GOODSCATEGORYONE__TECHNOLOGY);
 				}
 			
-				Map<Long, String> goodsQuantityMap = referenceStore.getGoodsQuantityByParentId(new Long(parentId)); 
+				Map<Long, String> goodsQuantityMap = referenceStore.getGoodsQuantityByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedGoodsQuantityMap = new TreeMap<Long, String>(goodsQuantityMap);
 				for (Map.Entry<Long, String> entry : localizedGoodsQuantityMap.entrySet()) {
 					localizedGoodsQuantityMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -800,7 +800,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 				  
 			case("NewOrUsed"):
-				Map<Long, String> newOrUsedMap = referenceStore.getNewOrUsedByParentId(new Long(parentId)); 
+				Map<Long, String> newOrUsedMap = referenceStore.getNewOrUsedByParentId(Long.valueOf(parentId));
 				SortedMap<Long, String> localizedNewOrUsedMap = new TreeMap<Long, String>(newOrUsedMap);
 				for (Map.Entry<Long, String> entry : localizedNewOrUsedMap.entrySet()) {
 					localizedNewOrUsedMap.replace(entry.getKey(), messageSource.getMessage(entry.getValue(), new String[0], locale));
@@ -810,7 +810,7 @@ public class ReferenceCategoryRestController extends BaseController
 		  
 		
 			default:
-				returnValue.put(new Long(-1), "Internal Fault");
+				returnValue.put(Long.valueOf(-1), "Internal Fault");
      	}
 
     	return returnValue;

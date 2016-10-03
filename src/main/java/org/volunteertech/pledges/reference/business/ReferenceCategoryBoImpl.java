@@ -249,7 +249,7 @@ public class ReferenceCategoryBoImpl implements ReferenceCategoryBo
     public Long createAndStoreReferenceCategory(ReferenceCategory referenceCategory, Long userID)
         throws ReferenceCategorySaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -342,7 +342,7 @@ public class ReferenceCategoryBoImpl implements ReferenceCategoryBo
     public Long createAndStoreReferenceCategoryFilter(ReferenceCategoryFilter referenceCategoryFilter,  Long userId)
         throws ReferenceCategorySaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -376,7 +376,7 @@ public class ReferenceCategoryBoImpl implements ReferenceCategoryBo
     public Long updateReferenceCategoryFilter(ReferenceCategoryFilter referenceCategoryFilter, Long userId)
         throws ReferenceCategoryLoadException, ReferenceCategorySaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("ReferenceCategory", userId, REFERENCECATEGORYID) == false)
         //{

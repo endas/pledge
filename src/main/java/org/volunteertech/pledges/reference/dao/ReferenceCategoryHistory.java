@@ -57,10 +57,10 @@ public class ReferenceCategoryHistory
      */
     public ReferenceCategoryHistory()
     {
-    	referenceCategoryID = new Long(0);
-    	referenceCategoryDesc = new String();
-		parentCategoryId = new Long("0");
-		description = new String();
+    	referenceCategoryID = Long.valueOf(0);
+    	referenceCategoryDesc = "";
+		parentCategoryId = Long.valueOf("0");
+		description = "";
 		
     }
     

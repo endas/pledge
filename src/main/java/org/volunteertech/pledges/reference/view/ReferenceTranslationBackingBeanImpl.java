@@ -33,7 +33,7 @@ public class ReferenceTranslationBackingBeanImpl extends ReferenceImpl implement
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the References view */
-    public static final Long VIEW_ID = new Long(7);
+    public static final Long VIEW_ID = Long.valueOf(7);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String REFERENCE_TITLE_MAPPING_KEY = "reference.form.title";
@@ -207,54 +207,54 @@ public class ReferenceTranslationBackingBeanImpl extends ReferenceImpl implement
     public ReferenceTranslationBackingBeanImpl()
     {
     	setViewId(ReferenceTranslationBackingBeanImpl.VIEW_ID);
-		refTypeLabelMessageKey = new String();  
-		refTypeLabel = new String();
-		refTypePlaceHolderMessageKey = new String();
-		refTypePlaceHolder = new String();
-		refTypeHelpTextMessageKey = new String();
-		refTypeHelpText = new String();
-		refTypeTooltipMessageKey = new String();
-		refTypeTooltip = new String();
-		refDescLabelMessageKey = new String();  
-		refDescLabel = new String();
-		refDescPlaceHolderMessageKey = new String();
-		refDescPlaceHolder = new String();
-		refDescHelpTextMessageKey = new String();
-		refDescHelpText = new String();
-		refDescTooltipMessageKey = new String();
-		refDescTooltip = new String();
-		parentIdLabelMessageKey = new String();  
-		parentIdLabel = new String();
-		parentIdPlaceHolderMessageKey = new String();
-		parentIdPlaceHolder = new String();
-		parentIdHelpTextMessageKey = new String();
-		parentIdHelpText = new String();
-		parentIdTooltipMessageKey = new String();
-		parentIdTooltip = new String();
-		refIndexLabelMessageKey = new String();  
-		refIndexLabel = new String();
-		refIndexPlaceHolderMessageKey = new String();
-		refIndexPlaceHolder = new String();
-		refIndexHelpTextMessageKey = new String();
-		refIndexHelpText = new String();
-		refIndexTooltipMessageKey = new String();
-		refIndexTooltip = new String();
-		descriptionLabelMessageKey = new String();  
-		descriptionLabel = new String();
-		descriptionPlaceHolderMessageKey = new String();
-		descriptionPlaceHolder = new String();
-		descriptionHelpTextMessageKey = new String();
-		descriptionHelpText = new String();
-		descriptionTooltipMessageKey = new String();
-		descriptionTooltip = new String();
-		saveButtonLabelMessageKey = new String();  
-		saveButtonLabel = new String();
-		saveButtonPlaceHolderMessageKey = new String();
-		saveButtonPlaceHolder = new String();
-		saveButtonHelpTextMessageKey = new String();
-		saveButtonHelpText = new String();
-		saveButtonTooltipMessageKey = new String();
-		saveButtonTooltip = new String();
+		refTypeLabelMessageKey = "";
+		refTypeLabel = "";
+		refTypePlaceHolderMessageKey = "";
+		refTypePlaceHolder = "";
+		refTypeHelpTextMessageKey = "";
+		refTypeHelpText = "";
+		refTypeTooltipMessageKey = "";
+		refTypeTooltip = "";
+		refDescLabelMessageKey = "";
+		refDescLabel = "";
+		refDescPlaceHolderMessageKey = "";
+		refDescPlaceHolder = "";
+		refDescHelpTextMessageKey = "";
+		refDescHelpText = "";
+		refDescTooltipMessageKey = "";
+		refDescTooltip = "";
+		parentIdLabelMessageKey = "";
+		parentIdLabel = "";
+		parentIdPlaceHolderMessageKey = "";
+		parentIdPlaceHolder = "";
+		parentIdHelpTextMessageKey = "";
+		parentIdHelpText = "";
+		parentIdTooltipMessageKey = "";
+		parentIdTooltip = "";
+		refIndexLabelMessageKey = "";
+		refIndexLabel = "";
+		refIndexPlaceHolderMessageKey = "";
+		refIndexPlaceHolder = "";
+		refIndexHelpTextMessageKey = "";
+		refIndexHelpText = "";
+		refIndexTooltipMessageKey = "";
+		refIndexTooltip = "";
+		descriptionLabelMessageKey = "";
+		descriptionLabel = "";
+		descriptionPlaceHolderMessageKey = "";
+		descriptionPlaceHolder = "";
+		descriptionHelpTextMessageKey = "";
+		descriptionHelpText = "";
+		descriptionTooltipMessageKey = "";
+		descriptionTooltip = "";
+		saveButtonLabelMessageKey = "";
+		saveButtonLabel = "";
+		saveButtonPlaceHolderMessageKey = "";
+		saveButtonPlaceHolder = "";
+		saveButtonHelpTextMessageKey = "";
+		saveButtonHelpText = "";
+		saveButtonTooltipMessageKey = "";
+		saveButtonTooltip = "";
 
     }
     

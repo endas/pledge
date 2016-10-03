@@ -84,9 +84,9 @@ public class ApplicationUserImpl implements ApplicationUser, Serializable {
     public ApplicationUserImpl()
     {
     	
-		this.username = new String();
+		this.username = "";
 		
-		this.password = new String();
+		this.password = "";
 		
 		this.enabled = new Boolean(Boolean.FALSE);
 		

@@ -114,7 +114,7 @@ public class ViewRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy
-	    	view = viewService.load(new Long(id), userId);
+	    	view = viewService.load(Long.valueOf(id), userId);
 		}
 		catch (Exception ex){
 			logger.error("Exception caught !!!!!!!!!!!!!!", ex);
@@ -184,7 +184,7 @@ public class ViewRestController extends BaseController
 		
 		try{
 			// TODO: Needs exception handling policy and calls moved inside the business object.
-	    	messageResourceList = viewService.getMessageResource(new Long(viewId), userId);
+	    	messageResourceList = viewService.getMessageResource(Long.valueOf(viewId), userId);
 	    	messageResourceList = this.viewService.translateMessageResourceReferenceValues(messageResourceList, locale);
 			
 		}

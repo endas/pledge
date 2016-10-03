@@ -369,7 +369,7 @@ public class AccommodationPledgeBoImpl implements AccommodationPledgeBo
     public Long createAndStoreAccommodationPledge(AccommodationPledge accommodationPledge, Long userID)
         throws AccommodationPledgeSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -462,7 +462,7 @@ public class AccommodationPledgeBoImpl implements AccommodationPledgeBo
     public Long createAndStoreAccommodationPledgeFilter(AccommodationPledgeFilter accommodationPledgeFilter,  Long userId)
         throws AccommodationPledgeSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 		try
 		{
@@ -496,7 +496,7 @@ public class AccommodationPledgeBoImpl implements AccommodationPledgeBo
     public Long updateAccommodationPledgeFilter(AccommodationPledgeFilter accommodationPledgeFilter, Long userId)
         throws AccommodationPledgeLoadException, AccommodationPledgeSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("AccommodationPledge", userId, ACCOMMODATIONPLEDGEID) == false)
         //{

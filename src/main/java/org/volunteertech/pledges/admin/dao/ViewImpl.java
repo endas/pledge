@@ -79,7 +79,7 @@ public class ViewImpl implements View, Serializable {
     public ViewImpl()
     {
     	
-		this.viewName = new String();
+		this.viewName = "";
 		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();

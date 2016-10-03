@@ -31,7 +31,7 @@ public class ApplicationUserTranslationBackingBeanImpl extends ApplicationUserIm
     private static final long serialVersionUID = 1L;
     
     /** The identifier for the User Details view */
-    public static final Long VIEW_ID = new Long(11);
+    public static final Long VIEW_ID = Long.valueOf(11);
     
     /** The mapping key for the page title as displayed in the browser tab */
     public static String APPLICATIONUSER_TITLE_MAPPING_KEY = "applicationuser.form.title";
@@ -181,46 +181,46 @@ public class ApplicationUserTranslationBackingBeanImpl extends ApplicationUserIm
     public ApplicationUserTranslationBackingBeanImpl()
     {
     	setViewId(ApplicationUserTranslationBackingBeanImpl.VIEW_ID);
-		usernameLabelMessageKey = new String();  
-		usernameLabel = new String();
-		usernamePlaceHolderMessageKey = new String();
-		usernamePlaceHolder = new String();
-		usernameHelpTextMessageKey = new String();
-		usernameHelpText = new String();
-		usernameTooltipMessageKey = new String();
-		usernameTooltip = new String();
-		passwordLabelMessageKey = new String();  
-		passwordLabel = new String();
-		passwordPlaceHolderMessageKey = new String();
-		passwordPlaceHolder = new String();
-		passwordHelpTextMessageKey = new String();
-		passwordHelpText = new String();
-		passwordTooltipMessageKey = new String();
-		passwordTooltip = new String();
-		enabledLabelMessageKey = new String();  
-		enabledLabel = new String();
-		enabledPlaceHolderMessageKey = new String();
-		enabledPlaceHolder = new String();
-		enabledHelpTextMessageKey = new String();
-		enabledHelpText = new String();
-		enabledTooltipMessageKey = new String();
-		enabledTooltip = new String();
-		userRolesLabelMessageKey = new String();  
-		userRolesLabel = new String();
-		userRolesPlaceHolderMessageKey = new String();
-		userRolesPlaceHolder = new String();
-		userRolesHelpTextMessageKey = new String();
-		userRolesHelpText = new String();
-		userRolesTooltipMessageKey = new String();
-		userRolesTooltip = new String();
-		saveButtonLabelMessageKey = new String();  
-		saveButtonLabel = new String();
-		saveButtonPlaceHolderMessageKey = new String();
-		saveButtonPlaceHolder = new String();
-		saveButtonHelpTextMessageKey = new String();
-		saveButtonHelpText = new String();
-		saveButtonTooltipMessageKey = new String();
-		saveButtonTooltip = new String();
+		usernameLabelMessageKey = "";
+		usernameLabel = "";
+		usernamePlaceHolderMessageKey = "";
+		usernamePlaceHolder = "";
+		usernameHelpTextMessageKey = "";
+		usernameHelpText = "";
+		usernameTooltipMessageKey = "";
+		usernameTooltip = "";
+		passwordLabelMessageKey = "";
+		passwordLabel = "";
+		passwordPlaceHolderMessageKey = "";
+		passwordPlaceHolder = "";
+		passwordHelpTextMessageKey = "";
+		passwordHelpText = "";
+		passwordTooltipMessageKey = "";
+		passwordTooltip = "";
+		enabledLabelMessageKey = "";
+		enabledLabel = "";
+		enabledPlaceHolderMessageKey = "";
+		enabledPlaceHolder = "";
+		enabledHelpTextMessageKey = "";
+		enabledHelpText = "";
+		enabledTooltipMessageKey = "";
+		enabledTooltip = "";
+		userRolesLabelMessageKey = "";
+		userRolesLabel = "";
+		userRolesPlaceHolderMessageKey = "";
+		userRolesPlaceHolder = "";
+		userRolesHelpTextMessageKey = "";
+		userRolesHelpText = "";
+		userRolesTooltipMessageKey = "";
+		userRolesTooltip = "";
+		saveButtonLabelMessageKey = "";
+		saveButtonLabel = "";
+		saveButtonPlaceHolderMessageKey = "";
+		saveButtonPlaceHolder = "";
+		saveButtonHelpTextMessageKey = "";
+		saveButtonHelpText = "";
+		saveButtonTooltipMessageKey = "";
+		saveButtonTooltip = "";
 
     }
     

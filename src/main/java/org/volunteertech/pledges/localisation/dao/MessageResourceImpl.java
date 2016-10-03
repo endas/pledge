@@ -88,13 +88,13 @@ public class MessageResourceImpl implements MessageResource, Serializable {
     public MessageResourceImpl()
     {
     	
-		this.messageKey = new String();
+		this.messageKey = "";
 		
-		this.locale = new String();
+		this.locale = "";
 		
-		this.localeReferenceId = new Long("0");
+		this.localeReferenceId = Long.valueOf("0");
 		
-		this.message = new String();
+		this.message = "";
 		
     	this.dateCreated = new Date();
     	this.dateUpdated = new Date();

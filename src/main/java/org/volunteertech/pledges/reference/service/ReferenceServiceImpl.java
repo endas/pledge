@@ -348,7 +348,7 @@ public class ReferenceServiceImpl implements ReferenceService
     public Long createAndStoreReferenceFilter(ReferenceFilter referenceFilter, Long userId)
         throws ReferenceSaveException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
         
 
 		try
@@ -383,7 +383,7 @@ public class ReferenceServiceImpl implements ReferenceService
     public Long updateReferenceFilter(ReferenceFilter referenceFilter, Long userId)
         throws ReferenceLoadException, ReferenceSaveException, AuthorisationException, InvalidUserIDException
     {
-    	Long returnValue = new Long(0);
+    	Long returnValue = Long.valueOf(0);
     	
         //if (Authorisation.isAuthorisedUpdate("Reference", userId, REFERENCEID) == false)
         //{
