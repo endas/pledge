@@ -1,4 +1,4 @@
-<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><div class="modal fade" id="applicationUserDetailsCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><div class="modal fade" id="applicationUserDetailsCreateUpdateModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

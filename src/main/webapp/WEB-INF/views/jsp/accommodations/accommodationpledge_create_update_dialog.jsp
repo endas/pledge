@@ -1,6 +1,6 @@
 <%@ page session="false"%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<div class="modal fade" id="accommodationPledgeCreateUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div class="modal fade" id="accommodationPledgeCreateUpdateModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 
   <div class="modal-dialog" role="document">
     <div class="modal-content">
