@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.math.BigDecimal;
 
-
+import org.volunteertech.pledges.address.dao.Address;
 import org.volunteertech.pledges.pledge.dao.RegisterOfPledges;
 
 
@@ -464,6 +464,8 @@ public interface AccommodationPledge extends Serializable {
 	public Long getNumberOfBedrooms();
 
 	public void setNumberOfBedrooms(Long numberOfBedrooms);
+	
+	public Address getAddress();
 }
     
     

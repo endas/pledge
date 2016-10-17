@@ -113,7 +113,7 @@ public class AddressImpl implements Address, Serializable {
     }
     
     public AddressImpl(String addressOne, String addressTwo, String city, 
-    		String state, String postcode, Long country){
+    		String state, String postcode, Long country, String countryTranlation){
     	
     	this.addressOne = addressOne;		
 		this.addressTwo = addressTwo;		
@@ -121,6 +121,7 @@ public class AddressImpl implements Address, Serializable {
 		this.stateProvinceRegion = state;		
 		this.postCode = postcode;		
 		this.country = country;
+		this.countryReferenceTranslation = countryTranlation;
     	
     }
     

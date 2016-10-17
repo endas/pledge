@@ -1,6 +1,8 @@
 package org.volunteertech.pledges.accommodationpledge.dao;
 
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledge;
+import org.volunteertech.pledges.address.dao.Address;
+import org.volunteertech.pledges.address.dao.AddressImpl;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -826,6 +828,19 @@ public class AccommodationPledgeImpl implements AccommodationPledge, Serializabl
 	@Override
 	public double getLongitude() {
 		return longitude;
+	}
+
+	@Override
+	public Address getAddress() {
+		
+		return new AddressImpl(getAddressOne(), 
+				getAddressTwo(), 
+				getCity(), 
+				getStateProvinceRegion(), 
+				getPostCode(), 
+				getCountry(), 
+				getCountryReferenceTranslation());
+
 	}
 
 }

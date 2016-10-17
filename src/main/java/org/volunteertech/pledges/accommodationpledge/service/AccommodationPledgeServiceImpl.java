@@ -1,4 +1,5 @@
 package org.volunteertech.pledges.accommodationpledge.service;
+import com.google.maps.model.LatLng;
 import com.netgrains.security.Authorisation;
 import com.netgrains.security.AuthorisationException;
 import com.netgrains.security.InvalidUserIDException;
@@ -8,6 +9,8 @@ import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeFilt
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeHistory;
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeLoadException;
 import org.volunteertech.pledges.accommodationpledge.dao.AccommodationPledgeSaveException;
+import org.volunteertech.pledges.geolocation.GeoCodingService;
+import org.volunteertech.pledges.geolocation.IGeocodingService;
 
 import java.util.Date;
 import java.util.List;
@@ -414,6 +417,13 @@ public class AccommodationPledgeServiceImpl implements AccommodationPledgeServic
 		try
 		{
 			if(accommodationPledge.isNew()){
+				IGeocodingService geoService = new GeoCodingService();
+				
+				LatLng latLng = geoService.getLatitudeAndLongitude(accommodationPledge.getAddress());
+				if(latLng != null){
+					accommodationPledge.setLatitude(latLng.lat);
+					accommodationPledge.setLongitude(latLng.lng);
+				}
 		    	this.getAccommodationPledgeBo().createAndStoreAccommodationPledge(accommodationPledge, userId);
 			}else{
 		    	this.getAccommodationPledgeBo().updateAccommodationPledge(accommodationPledge, userId);

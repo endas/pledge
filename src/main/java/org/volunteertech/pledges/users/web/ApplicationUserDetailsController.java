@@ -41,8 +41,14 @@ import org.volunteertech.pledges.users.dao.ApplicationUserImpl;
 import org.volunteertech.pledges.users.validator.ApplicationUserDetailsFormValidator;
 import org.volunteertech.pledges.users.view.ApplicationUserDetailsTranslationBackingBean;
 import org.volunteertech.pledges.users.view.ApplicationUserDetailsTranslationBackingBeanImpl;
+
+import com.google.maps.model.LatLng;
+
 import org.volunteertech.pledges.main.web.BaseController;
 import org.volunteertech.pledges.main.constants.Constants;
+import org.volunteertech.pledges.address.dao.AddressImpl;
+import org.volunteertech.pledges.geolocation.GeoCodingService;
+import org.volunteertech.pledges.geolocation.IGeocodingService;
 import org.volunteertech.pledges.localisation.dao.MessageResource;
 import org.volunteertech.pledges.localisation.dao.MessageResourceImpl;
 import org.volunteertech.pledges.localisation.service.MessageResourceService;
@@ -179,15 +185,27 @@ public class ApplicationUserDetailsController extends BaseController
 			}
 
 
-			try{
-				// TODO: Needs exception handling policy
-			    	applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);
-			    	user.getApplicationUser().setApplicationUserDetails(applicationUserDetails);
-			}
-			catch (Exception ex){
+			try {
+
+				IGeocodingService geoService = new GeoCodingService();
+
+				AddressImpl address = new AddressImpl(applicationUserDetails.getAddressOne(),
+						applicationUserDetails.getAddressTwo(),
+						applicationUserDetails.getCity(),
+						applicationUserDetails.getStateProvinceRegion(),
+						applicationUserDetails.getPostCode(),
+						applicationUserDetails.getCountry(),
+						applicationUserDetails.getCountryReferenceTranslation());
+				LatLng latLng = geoService.getLatitudeAndLongitude(address);
+				if (latLng != null) {
+					applicationUserDetails.setLatitude(latLng.lat);
+					applicationUserDetails.setLongitude(latLng.lng);
+				}
+				applicationUserDetailsService.storeApplicationUserDetails(applicationUserDetails, userId);
+				user.getApplicationUser().setApplicationUserDetails(applicationUserDetails);
+			} catch (Exception ex) {
 				logger.error("Exception caught !!!!!!!!!!!!!!", ex);
 			}
-			
 	
 			
 

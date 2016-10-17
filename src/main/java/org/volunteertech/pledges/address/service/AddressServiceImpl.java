@@ -1,4 +1,5 @@
 package org.volunteertech.pledges.address.service;
+import com.google.maps.model.LatLng;
 import com.netgrains.security.Authorisation;
 import com.netgrains.security.AuthorisationException;
 import com.netgrains.security.InvalidUserIDException;
@@ -8,6 +9,8 @@ import org.volunteertech.pledges.address.dao.AddressFilter;
 import org.volunteertech.pledges.address.dao.AddressHistory;
 import org.volunteertech.pledges.address.dao.AddressLoadException;
 import org.volunteertech.pledges.address.dao.AddressSaveException;
+import org.volunteertech.pledges.geolocation.GeoCodingService;
+import org.volunteertech.pledges.geolocation.IGeocodingService;
 
 import java.util.Date;
 import java.util.List;
@@ -293,6 +296,12 @@ public class AddressServiceImpl implements AddressService
     	
 		try
 		{
+			IGeocodingService geoService = new GeoCodingService();
+			LatLng latLng = geoService.getLatitudeAndLongitude(address);
+			if(latLng != null){
+				address.setLatitude(latLng.lat);
+				address.setLongitude(latLng.lng);
+			}
 			if(address.isNew()){
 		    	this.getAddressBo().createAndStoreAddress(address, userId);
 			}else{
