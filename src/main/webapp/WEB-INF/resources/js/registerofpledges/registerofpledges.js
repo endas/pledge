@@ -60,7 +60,6 @@ var frmAccommodationPledgeCreateUpdateOwnerOccupierValueBuffer = 0;
 var frmAccommodationPledgeCreateUpdateOwnerOccupierSetupCompleted = false;
 
 var frmAccommodationPledgeCreateUpdateAccommodationDateFromBuffer = null;
-
 var frmAccommodationPledgeCreateUpdateAccommodationDateToBuffer = null;
 
 var frmAccommodationPledgeCreateUpdateAccommodationTypeTextBuffer = null;
@@ -300,6 +299,7 @@ $( document ).ready(function() {
 					modal.find('#frmPledgeCreateUpdateCity').val(data.city);
 					modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(data.stateProvinceRegion);
 					modal.find('#frmPledgeCreateUpdatePostCode').val(data.postCode);
+					modal.find('#frmPledgeCreateUpdateCountry').val(data.country);
 					modal.find('.js-address-section').slideUp();
 				},
 				error: function( data ){
@@ -1186,8 +1186,68 @@ $( document ).ready(function() {
 		else{
 			frmAccommodationPledgeCreateUpdateVacantOrSharedSetupCompleted = true;
 		}
+		
+		
+		var ownerOccupierSelectInput = document.getElementById('frmAccommodationPledgeCreateUpdateOwnerOccupier');
 
+		if (ownerOccupierSelectInput.length == 0){
+			$.ajax({
+				dataType: "json",
+				url: rootContext + "/restful/referenceslist",
+				data: {
+					referenceType: "OwnerOccupierType"
+				},
+				success: function( data ) {
+					var unselectedOption = document.createElement("option");
+					unselectedOption.value = -1;
+					unselectedOption.textContent = "Select Who owns the accommodation?";
+					ownerOccupierSelectInput.appendChild(unselectedOption);
 
+					$.each( data, function( key, val ) {
+						var el = document.createElement("option");
+						el.textContent = val;
+						el.value = key;
+
+						ownerOccupierSelectInput.appendChild(el);
+						frmAccommodationPledgeCreateUpdateOwnerOccupierSetupCompleted = true;
+					});
+				}
+			});
+		}
+		else{
+			frmAccommodationPledgeCreateUpdateOwnerOccupierSetupCompleted = true;
+		}
+
+		
+		var countrySelectInput = document.getElementById('frmPledgeCreateUpdateCountry');
+
+		if (countrySelectInput.length == 0){
+			$.ajax({
+				dataType: "json",
+				url: rootContext + "/restful/referenceslist",
+				data: {
+					referenceType: "EuropeCountry"
+				},
+				success: function( data ) {
+					var unselectedOption = document.createElement("option");
+					unselectedOption.value = -1;
+					unselectedOption.textContent = "Select Country";
+					countrySelectInput.appendChild(unselectedOption);
+
+					$.each( data, function( key, val ) {
+						var el = document.createElement("option");
+						el.textContent = val;
+						el.value = key;
+
+						countrySelectInput.appendChild(el);
+						frmAccommodationPledgeCreateUpdateCountrySetupCompleted = true;
+					});
+				}
+			});
+		}
+		else{
+			frmAccommodationPledgeCreateUpdateCountrySetupCompleted = true;
+		}
 
 		// Reset all of the input contents.
 		resetModalInputs(modal);
@@ -1490,7 +1550,8 @@ $( document ).ready(function() {
 				city : modal.find('#frmPledgeCreateUpdateCity').val(),
 				stateProvinceRegion : modal.find('#frmPledgeCreateUpdateStateProvinceRegion').val(),
 				postCode : modal.find('#frmPledgeCreateUpdatePostCode').val(),
-				country : modal.find('#frmPledgeCreateUpdateCountry').val(),
+//				country : modal.find('#frmPledgeCreateUpdateCountry').val(),
+				country : "159", // if you want any other country other than ireland comment out the above line.. 
 				ownerOccupier : modal.find('#frmAccommodationPledgeCreateUpdateOwnerOccupier').val(),
 				accommodationDateFrom : modal.find('#frmAccommodationPledgeCreateUpdateAccommodationDateFrom').val(),
 				accommodationDateTo : modal.find('#frmAccommodationPledgeCreateUpdateAccommodationDateTo').val(),
@@ -1540,7 +1601,7 @@ $( document ).ready(function() {
 							
 							addCell(row,document.createTextNode(obj.vacantOrSharedReferenceTranslation));
 							
-							addCell(row,document.createTextNode(obj.canYouAccommodateReferenceTranslation));
+//							addCell(row,document.createTextNode(obj.canYouAccommodateReferenceTranslation));
 							
 							addCell(row,document.createTextNode(obj.accommodationDateFrom));
 							

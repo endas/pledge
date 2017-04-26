@@ -166,15 +166,6 @@
 			</div>	  
 		  </div>
   
-		  
-		  
-  
-		  
-  
-  		
-  
-		 
-  
 		  <div id="frmAccommodationPledgeCreateUpdateOtherAmenitiesFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.otheramenities.label" for="frmAccommodationPledgeCreateUpdateOtherAmenities" class="control-label"><spring:message code="frmAccommodationPledgeOtherAmenitiesLabel"/></label>
 			<textarea rows="5" data-display-name="Description of other Amenities" data-minlength="0" data-required="false" maxlength="500" class="form-control" id="frmAccommodationPledgeCreateUpdateOtherAmenities" placeholder="<spring:message code="frmAccommodationPledgeOtherAmenitiesPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateOtherAmenitiesHelpBlock" oninput="check_textarea_length(500, this, document.getElementById('frmAccommodationPledgeCreateUpdateOtherAmenitiesCountBlock'))" data-validate-key-press="true" data-toggle="popover"></textarea>
@@ -186,11 +177,7 @@
 			</div>
 				  
 		  </div>
-
-  		
-  
-  
-		  <div id="frmAccommodationPledgeCreateUpdateAdditionalInformationFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
+ 		<div id="frmAccommodationPledgeCreateUpdateAdditionalInformationFormGroup" class="form-group has-feedback  ${status.error ? 'has-error' : ''}">
 			<label id="accommodationpledge.additionalinformation.label" for="frmAccommodationPledgeCreateUpdateAdditionalInformation" class="control-label"><spring:message code="frmAccommodationPledgeAdditionalInformationLabel"/></label>
 			<textarea rows="5" data-display-name="Is there anything else that you would like to say about the accommodation?" data-minlength="0" data-required="false" maxlength="500" class="form-control" id="frmAccommodationPledgeCreateUpdateAdditionalInformation" placeholder="<spring:message code="frmAccommodationPledgeAdditionalInformationPlaceHolder"/>" aria-describedby="frmAccommodationPledgeCreateUpdateAdditionalInformationHelpBlock" oninput="check_textarea_length(500, this, document.getElementById('frmAccommodationPledgeCreateUpdateAdditionalInformationCountBlock'))" data-validate-key-press="true" data-toggle="popover"></textarea>
     <span id="frmAccommodationPledgeCreateUpdateAdditionalInformationCountBlock" class="help-block"></span>
@@ -226,6 +213,8 @@
 	  				<span id="frmAccommodationPledgeCreateUpdatePledgeStatusAlertBlockText"></span>
 				</div>	  
 		  	</div>
+		  	
+		  	
 		  <div class="form-group">
             <input type="checkbox" data-display-name="Same Address as Profile"
               data-required="false" id="pledgeSameAsProfileAddress" class="js-address-same-as-profile"
